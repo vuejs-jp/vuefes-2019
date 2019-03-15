@@ -1,8 +1,8 @@
 {
   "name": "vuefes-2019",
   "version": "1.0.0",
-  "description": "My tiptop Nuxt.js project",
-  "author": "INOUE Takuya",
+  "description": "Vue Fes Japan 2019",
+  "author": "INOUE Takuya <inouetakuya5@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
