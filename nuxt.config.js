@@ -1,3 +1,4 @@
+import StylelintPlugin from 'stylelint-webpack-plugin'
 import pkg from './package'
 
 export default {
@@ -63,6 +64,11 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+        config.plugins.push(
+          new StylelintPlugin({
+            files: ['**/*.vue', '**/*.scss']
+          })
+        )
       }
     }
   },
