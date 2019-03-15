@@ -35,7 +35,17 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: ['@nuxtjs/pwa'],
+  modules: [
+    '@nuxtjs/style-resources',
+    [
+      '@nuxtjs/pwa',
+      {
+        icon: {
+          iconSrc: 'src/static/apple-touch-icon.png'
+        }
+      }
+    ]
+  ],
 
   /*
   ** Build configuration
@@ -55,5 +65,11 @@ export default {
         })
       }
     }
+  },
+  styleResources: {
+    scss: [
+      '~/assets/stylesheets/foundation/variables.scss',
+      '~/assets/stylesheets/foundation/colors.scss'
+    ]
   }
 }
