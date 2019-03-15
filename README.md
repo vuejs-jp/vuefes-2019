@@ -1,22 +1,41 @@
-# vuefes-2019
+# Vue Fes Japan 2019
 
-> My tiptop Nuxt.js project
+このリポジトリは Vue Fes Japan 2019 の Web サイトのソースコードです。
 
-## Build Setup
+## Setup
 
-``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
+```shell
+yarn install
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+## Development
+
+下記コマンドを実行すると Web サーバーがホットリロードで起動して `http://localhost:3000/2019/` で確認できます。
+
+```shell
+yarn dev
+```
+
+### 画像の最適化
+
+画像ファイルを追加または変更した場合には、コミット時に imagemin により自動で最適化されます。
+
+ただし Windows を使っている場合にエラーが発生するという報告を受けています。画像の最適化をスキップする場合はコミット時に `--no-verify` オプションを使ってください。
+
+```shell
+git commit --no-verify
+``` 
+
+## Testing
+
+```shell
+yarn test
+```
+
+## Generate
+
+下記コマンドを実行すると、静的ファイルを `dist/2019/` 配下に生成できます。
+
+```shell
+yarn generate
+```
