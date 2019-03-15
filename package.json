@@ -16,7 +16,8 @@
     "stylelint": "stylelint 'src/**/*.vue' 'src/**/*.scss'",
     "stylelint:fix": "yarn stylelint --fix",
     "precommit": "npm run lint",
-    "test": "jest"
+    "test": "jest --verbose",
+    "test:ci": "jest --ci --coverage --no-cache"
   },
   "dependencies": {
     "@nuxtjs/pwa": "^2.6.0",
