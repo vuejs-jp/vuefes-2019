@@ -4,6 +4,9 @@ import pkg from './package'
 export default {
   mode: 'universal',
   srcDir: 'src/',
+  router: {
+    base: '/2019/'
+  },
 
   /*
   ** Headers of the page
@@ -71,6 +74,9 @@ export default {
         )
       }
     }
+  },
+  generate: {
+    dir: 'dist/2019'
   },
   styleResources: {
     scss: [
