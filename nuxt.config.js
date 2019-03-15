@@ -7,10 +7,6 @@ export default {
   router: {
     base: '/2019/'
   },
-
-  /*
-  ** Headers of the page
-  */
   head: {
     title: pkg.name,
     meta: [
@@ -20,25 +16,9 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#fff' },
-
-  /*
-  ** Global CSS
-  */
   css: [{ src: '~/assets/stylesheets/main.scss', lang: 'scss' }],
-
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [],
-
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     '@nuxtjs/style-resources',
     [
@@ -50,16 +30,8 @@ export default {
       }
     ]
   ],
-
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend(config, ctx) {
-      // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
