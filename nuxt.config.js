@@ -1,11 +1,12 @@
-const pkg = require('./package')
+import StylelintPlugin from 'stylelint-webpack-plugin'
+import pkg from './package'
 
-module.exports = {
+export default {
   mode: 'universal',
-
-  /*
-  ** Headers of the page
-  */
+  srcDir: 'src/',
+  router: {
+    base: '/2019/'
+  },
   head: {
     title: pkg.name,
     meta: [
@@ -15,36 +16,22 @@ module.exports = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#fff' },
-
-  /*
-  ** Global CSS
-  */
-  css: [],
-
-  /*
-  ** Plugins to load before mounting the App
-  */
+  css: [{ src: '~/assets/stylesheets/main.scss', lang: 'scss' }],
   plugins: [],
-
-  /*
-  ** Nuxt.js modules
-  */
-  modules: ['@nuxtjs/pwa'],
-
-  /*
-  ** Build configuration
-  */
+  modules: [
+    '@nuxtjs/style-resources',
+    [
+      '@nuxtjs/pwa',
+      {
+        icon: {
+          iconSrc: 'src/static/apple-touch-icon.png'
+        }
+      }
+    ]
+  ],
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend(config, ctx) {
-      // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -52,7 +39,21 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+        config.plugins.push(
+          new StylelintPlugin({
+            files: ['**/*.vue', '**/*.scss']
+          })
+        )
       }
     }
+  },
+  generate: {
+    dir: 'dist/2019'
+  },
+  styleResources: {
+    scss: [
+      '~/assets/stylesheets/foundation/variables.scss',
+      '~/assets/stylesheets/foundation/colors.scss'
+    ]
   }
 }
