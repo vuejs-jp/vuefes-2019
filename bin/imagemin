@@ -7,7 +7,7 @@ set -ue -o pipefail
 export LC_ALL=C
 
 for file in `git diff --cached --name-status | \
-  awk '$1 ~ /[AM]/ && tolower($2) ~ /\.(jpg?g|png|gif|svg)$/ {print $2}'`
+  awk '$1 ~ /[AM]/ && tolower($2) ~ /\.(jpe?g|png|gif|svg)$/ {print $2}'`
 do
   echo $file を最適化します
   cat $file | ./node_modules/.bin/imagemin \
