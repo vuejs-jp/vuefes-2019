@@ -24,14 +24,16 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
 import Logo from '~/components/Logo.vue'
 
-export default {
+@Component({
   components: {
     Logo
   }
-}
+})
+export default class IndexPage extends Vue {}
 </script>
 
 <style>
