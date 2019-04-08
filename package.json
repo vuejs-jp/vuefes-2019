@@ -28,7 +28,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.12",
     "cross-env": "^5.2.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.4.0"
+    "nuxt": "^2.6.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
