@@ -1,18 +1,18 @@
-import NuxtConfiguration from '@nuxt/config'
 import StylelintPlugin from 'stylelint-webpack-plugin'
+import pkg from './package'
 
-const config: NuxtConfiguration = {
+export default {
   mode: 'universal',
   srcDir: 'src/',
   router: {
     base: '/2019/'
   },
   head: {
-    title: 'vuefes-2019',
+    title: pkg.name,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Vue Fes Japan 2019' }
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
@@ -57,5 +57,3 @@ const config: NuxtConfiguration = {
     ]
   }
 }
-
-export default config
