@@ -1,45 +1,31 @@
 <template>
   <div class="home-page">
-    <section class="container">
-      <div>
-        <logo />
-
-        <h1 class="title">
-          vuefes-2019
-        </h1>
-
-        <h2 class="subtitle">
-          My tiptop Nuxt.js project
-        </h2>
-
-        <div class="links">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            class="button--green"
-          >
-            Documentation
-          </a>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            class="button--grey"
-          >
-            GitHub
-          </a>
-        </div>
-      </div>
-    </section>
+    <TheHeadSection />
+    <TheSpeakersSection />
+    <TheSponsorsSection />
+    <TheCallForPresentersSection />
+    <TheTeamSection />
+    <TheFooter />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import Logo from '~/components/Logo.vue'
+import TheCallForPresentersSection from '~/components/TheCallForPresentersSection.vue'
+import TheFooter from '~/components/TheFooter.vue'
+import TheHeadSection from '~/components/TheHeadSection.vue'
+import TheSponsorsSection from '~/components/TheSponsorsSection.vue'
+import TheSpeakersSection from '~/components/TheSpeakersSection.vue'
+import TheTeamSection from '~/components/TheTeamSection.vue'
 
 @Component({
   components: {
-    Logo
+    TheCallForPresentersSection,
+    TheFooter,
+    TheHeadSection,
+    TheSponsorsSection,
+    TheSpeakersSection,
+    TheTeamSection
   }
 })
 export default class HomePage extends Vue {}
