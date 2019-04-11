@@ -2,8 +2,17 @@ $vue-dark-blue: #34495e;
 $vue-green: #42b983;
 
 $white: #fff;
-$gray: #d4d4d4;
+$gray: #bababa;
 $black: #000;
+
+$hiwamoegi: #90b44b;
+$tohoh: #ffc408;
+$sangosyu: #f17c67;
+$asagi: #33a6b8;
+
+$tohoh--gradient: linear-gradient(to right, #ffc408, #f17c67);
+$asagi--gradient: linear-gradient(to right, #33a6b8, #90b44b);
+$asagi--gradient-invert: linear-gradient(to right, #90b44b, #33a6b8);
 
 // Primary color
 
@@ -11,6 +20,6 @@ $primary-color: $vue-dark-blue;
 
 // Text color
 
-$primary-text-color: $black;
-$primary-text-color--inverse: $white;
+$primary-text-color: $vue-dark-blue;
+$primary-text-color--invert: $white;
 $haze-text-color: $gray;
