@@ -1,5 +1,5 @@
 <template>
-  <section class="the-speakers-section">
+  <section class="the-speaker-section">
     SPEAKERS
   </section>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <section class="the-sponsors-section">
+  <section class="the-sponsor-section">
     SPONSORS
   </section>
 </template>

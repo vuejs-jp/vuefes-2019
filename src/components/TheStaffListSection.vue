@@ -1,5 +1,5 @@
 <template>
-  <section class="the-team-section">
+  <section class="the-staff-list-section">
     TEAM
   </section>
 </template>
