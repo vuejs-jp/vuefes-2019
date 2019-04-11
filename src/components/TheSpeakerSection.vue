@@ -66,5 +66,47 @@ export default class TheSpeakersSection extends Vue {
 <style lang="scss" scoped>
 .the-speaker-section {
   padding: 60px 7.8%;
+  background-image: url('~assets/images/texture.png');
+  background-repeat: repeat;
+}
+
+.heading {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 10.41vw;
+  font-weight: bold;
+  color: $primary-text-color;
+}
+
+.avatar {
+  width: 100%;
+}
+
+.title {
+  font-size: 3vw;
+}
+
+.name {
+  margin-bottom: 4px;
+  font-size: 5.21vw;
+}
+
+.social img {
+  width: 24px;
+  height: 24px;
+}
+
+.social .github {
+  margin-left: 12px;
+}
+
+.description {
+  .readable {
+    font-size: 3.5vw;
+  }
+}
+
+.more {
+  font-size: 3.5vw;
 }
 </style>
