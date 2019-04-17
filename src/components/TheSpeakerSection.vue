@@ -167,4 +167,10 @@ export default class TheSpeakersSection extends Vue {
     font-size: 18px;
   }
 }
+
+@media screen and (min-width: $layout-breakpoint--is-medium-up) {
+  .section-container {
+    max-width: $page-container-max-width;
+  }
+}
 </style>
