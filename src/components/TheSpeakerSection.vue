@@ -1,68 +1,71 @@
 <template>
-  <section class="the-speaker-section">
-    <div class="section-container">
-      <h2 class="heading">
-        SPEAKERS
-      </h2>
+  <BaseSection>
+    <template slot="heading">
+      SPEAKERS
+    </template>
 
-      <div class="speaker-container">
-        <img
-          class="avatar"
-          :srcset="`${avatar}, ${avatar2x} 2x`"
-          :src="avatar2x"
-        />
+    <div class="speaker-container">
+      <img
+        class="avatar"
+        :srcset="`${avatar}, ${avatar2x} 2x`"
+        :src="avatar2x"
+      />
 
-        <div class="speaker-content">
-          <div class="title">
-            Vue.js クリエーター
-          </div>
+      <div class="speaker-content">
+        <div class="title">
+          Vue.js クリエーター
+        </div>
 
-          <h3 class="name">
-            Evan you
-          </h3>
+        <h3 class="name">
+          Evan you
+        </h3>
 
-          <div class="social">
-            <a
-              class="twitter"
-              href="https://twitter.com/youyuxi"
-              target="_blank"
-              rel="noopener"
-            >
-              <img src="~/assets/images/icon-twitter.svg" />
-            </a>
-            <a
-              class="github"
-              href="https://github.com/yyx990803"
-              target="_blank"
-              rel="noopener"
-            >
-              <img src="~/assets/images/icon-github.svg" />
-            </a>
-          </div>
+        <div class="social">
+          <a
+            class="twitter"
+            href="https://twitter.com/youyuxi"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="~/assets/images/icon-twitter.svg" />
+          </a>
+          <a
+            class="github"
+            href="https://github.com/yyx990803"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="~/assets/images/icon-github.svg" />
+          </a>
+        </div>
 
-          <div class="description">
-            <p>
-              Evan は開発者、デザイナー、そしてクリエイティブコーダーです。彼は、リアクティブなコンポーネントでモダンな Web インターフェイスを構築するための JavaScript フレームワーク、Vue.js の作者です。
-            </p>
+        <div class="description">
+          <p>
+            Evan は開発者、デザイナー、そしてクリエイティブコーダーです。彼は、リアクティブなコンポーネントでモダンな Web インターフェイスを構築するための JavaScript フレームワーク、Vue.js の作者です。
+          </p>
 
-            <p>
-              かつて、GitHub で最もスターを集めたフルスタック JavaScript フレームワークであった Meteor の開発グループでも働いていました。Google Creative Lab で、さまざまな Google プロダクト向けの実験的な UI プロトタイプに、2年間取り組んでいた経験もあります。
-            </p>
-          </div>
+          <p>
+            かつて、GitHub で最もスターを集めたフルスタック JavaScript フレームワークであった Meteor の開発グループでも働いていました。Google Creative Lab で、さまざまな Google プロダクト向けの実験的な UI プロトタイプに、2年間取り組んでいた経験もあります。
+          </p>
         </div>
       </div>
-
-      <div class="more">
-        他スピーカーは決定次第、更新予定です。
-      </div>
     </div>
-  </section>
+
+    <div class="more">
+      他スピーカーは決定次第、更新予定です。
+    </div>
+  </BaseSection>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import BaseSection from '~/components/BaseSection.vue'
 
-@Component
+@Component({
+  components: {
+    BaseSection
+  }
+})
 export default class TheSpeakersSection extends Vue {
   private avatar = require('~/assets/images/speakers/evan.jpg')
   private avatar2x = require('~/assets/images/speakers/evan@2x.jpg')
@@ -70,19 +73,6 @@ export default class TheSpeakersSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.the-speaker-section {
-  padding: 60px 7.8%;
-  background-image: url('~assets/images/texture.png');
-  background-repeat: repeat;
-}
-
-.heading {
-  margin-top: 0;
-  margin-bottom: 40px;
-  font-size: 10.41vw;
-  font-weight: bold;
-}
-
 .avatar {
   width: 100%;
 }
@@ -119,20 +109,6 @@ export default class TheSpeakersSection extends Vue {
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .the-speaker-section {
-    padding: 80px 70px;
-  }
-
-  .section-container {
-    margin: 0 auto;
-  }
-
-  .heading {
-    margin-bottom: 45px;
-    font-size: 80px;
-    line-height: 1;
-  }
-
   .speaker-container {
     display: flex;
     align-items: flex-start;
@@ -165,12 +141,6 @@ export default class TheSpeakersSection extends Vue {
   .more {
     margin-top: 30px;
     font-size: 18px;
-  }
-}
-
-@media screen and (min-width: $layout-breakpoint--is-medium-up) {
-  .section-container {
-    max-width: $page-container-max-width;
   }
 }
 </style>
