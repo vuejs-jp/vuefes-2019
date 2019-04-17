@@ -81,7 +81,6 @@ export default class TheSpeakersSection extends Vue {
   margin-bottom: 40px;
   font-size: 10.41vw;
   font-weight: bold;
-  color: $primary-text-color;
 }
 
 .avatar {
@@ -90,12 +89,14 @@ export default class TheSpeakersSection extends Vue {
 
 .title {
   font-size: 3vw;
+  line-height: 1.6;
 }
 
 .name {
   margin-top: 0;
   margin-bottom: 4px;
   font-size: 5.21vw;
+  line-height: 1.3;
 }
 
 .social img {
@@ -108,7 +109,9 @@ export default class TheSpeakersSection extends Vue {
 }
 
 .description p {
+  margin: 6vw 0;
   font-size: 3.5vw;
+  line-height: 1.8;
 }
 
 .more {
@@ -117,19 +120,24 @@ export default class TheSpeakersSection extends Vue {
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .the-speaker-section {
-    padding-left: 70px;
-    padding-right: 70px;
+    padding: 80px 70px;
   }
 
   .section-container {
     margin: 0 auto;
-    width: calc(100% - 140px);
-    min-width: 70%; // TODO: これで合っているか要確認
+  }
+
+  .heading {
+    margin-bottom: 45px;
+    font-size: 80px;
+    line-height: 1;
   }
 
   .speaker-container {
     display: flex;
     align-items: flex-start;
+    margin: 0 auto;
+    width: 70%;
   }
 
   .avatar {
@@ -139,6 +147,24 @@ export default class TheSpeakersSection extends Vue {
 
   .speaker-content {
     width: calc((5 / 7) * 100%);
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .description p {
+    margin: 30px 0;
+    font-size: 16px;
+  }
+
+  .more {
+    margin-top: 30px;
+    font-size: 18px;
   }
 }
 </style>
