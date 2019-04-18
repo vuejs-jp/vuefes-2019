@@ -1,6 +1,10 @@
 $font-size-default: 16px;
 
 html {
+  // stylelint-disable
+  // Unexpected missing generic font family / font-family-no-missing-generic-family-keyword
+  font-family: 'din-2014', 游ゴシック Medium, sans-serif;
+  // stylelint-enable
   font-size: $font-size-default;
   line-height: 1.5;
   word-spacing: 1px;
@@ -8,6 +12,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: $primary-text-color;
 }
 
 h1,
