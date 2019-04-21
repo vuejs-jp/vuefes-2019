@@ -1,8 +1,18 @@
 <template>
   <section class="the-head-section">
     <BaseSection>
-      <div class="svg">
-        <TheMainVisual />
+      <div class="main-visual-wrapper">
+        <svg :viewBox="viewBox" :width="width" :height="height">
+          <g transform="translate(-6, -6)">
+            <g v-for="(row, i) in items" :key="i">
+              <g v-for="(col, j) in row" :key="j">
+                <g v-if="col.type === 'circle'" :transform="createTranform(col.x, col.y)">
+                  <circle cx="0" cy="0" r="60" />
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
       </div>
 
       <div class="title">
@@ -58,19 +68,105 @@
 
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
-import TheMainVisual from '~/components/TheMainVisual.vue'
 
+type PartsType = 'circle' | 'rect'
+
+interface Parts {
+  type: PartsType
+  x: number
+  y: number
+}
+let timer;
+ 
 @Component({
   components: {
-    BaseSection,
-    TheMainVisual
+    BaseSection
   }
 })
 export default class TheHeadSection extends Vue {
+  createTranform(x, y){
+    return `translate(${x}, ${y})`
+  }
+
+  get viewBox() {
+    return `0 0 ${this.width} ${this.height}`
+  }
+  get items(): Parts[][] {
+    return this.pattern.map((line, row) =>
+      Array.from(line).map((p, col) => {
+        let type: PartsType = 'circle'
+        switch (p) {
+          case 'x':
+            type = 'circle'
+            break
+          case '\\':
+            type = 'circle'
+            break
+          case '/':
+            type = 'circle'
+            break
+          case '|':
+            type = 'circle'
+            break
+          case 'o':
+            type = 'circle'
+            break
+        }
+        return {
+          type: type,
+          x: 66 + col * 126,
+          y: 66 + row * 126
+        }
+      })
+    )
+  }
+
+  width = 0
+  height = 384
+  pattern = ['x/x/|x\\|x', '\\p|x/|/o|', 'x/\\|/ox/\\']
+
+  adjustSvg() {
+    // SSR時にはSVGの表示を確定することができないため、
+    // 初期表示時にちらついてしまう
+    const gap = 6;
+    const grid = 120;
+
+    //sm
+    this.width = (grid + gap) * 5 - gap;
+    //md
+    if(window.innerWidth > 768){
+      this.width = (grid + gap) * 6 - gap;
+    }
+    //lg
+    if(window.innerWidth > 980){
+      this.width = (grid + gap) * 9 - gap;
+    }
+  }
+
+  mounted() {
+    this.adjustSvg()
+
+    window.addEventListener("resize", () => {
+      if (timer > 0) {
+        clearTimeout(timer);
+      }
+    
+      timer = setTimeout( () => {
+        this.adjustSvg()
+        console.log('window resized'); //ここに処理の内容が入る
+      }, 200);
+
+    })
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+
+.main-visual-wrapper {
+  text-align: center;
+}
+
 .the-head-section {
   background: linear-gradient(to bottom, $hiwamoegi, $asagi);
 }
@@ -107,15 +203,19 @@ p a {
   text-align: center;
 }
 
-.svg {
-  height: calc(120px * 3 + 12px * 2);
-  background: rgb(58, 56, 56);
+circle {
+  fill: #34495e;
 }
 
 .title {
   font-size: 9vw; /* TBD */
   font-weight: 700;
   color: white;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
 .btn__fold {
