@@ -1,8 +1,15 @@
 <template>
   <section class="the-head-section">
-    <BaseSection>
+    <a href="/2019">
+      <img class="logo-vfj logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
+    </a>
+
+    <BaseSection class="base-section--head">
+      <a href="/2019">
+        <img class="logo-vfj logo-vfj--relative" src="~/assets/images/logo_vfj.svg" />
+      </a>
       <div class="main-visual-wrapper">
-        <svg :viewBox="viewBox" :width="width" :height="height">
+        <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
           <g transform="translate(-6, -6)">
             <g v-for="(row, i) in items" :key="i">
               <g v-for="(col, j) in row" :key="j">
@@ -41,7 +48,7 @@
             国内外の著名スピーカーによるセッションの他、ユーザー同士が相互に楽しめるカンファレンスを目指します。
             ぜひ、一緒に Vue.js を楽しみ、盛り上げましょう！
           </p>
-          <p>
+          <p class="message-content__author">
             Vue.js 日本ユーザーグループ 代表 川口 和也
             <a href="https://github.com/kazupon">@kazupon</a>
           </p>
@@ -49,15 +56,19 @@
       </div>
 
       <div class="btn-wrapper">
-        <div class="btn">
-          <!-- TODO: Twitterアイコン -->
-          <div class="btn__fold">
-            Vue Fes Japan 公式 Twitter
+        <a href="https://twitter.com/vuefes">
+          <div class="btn">
+            <img src="~/assets/images/icon-twitter-inside-btn.svg" />
+            <div class="btn__text">
+              <div class="btn__fold">
+                Vue Fes Japan 公式 Twitter
+              </div>
+              <div class="btn__fold">
+                で最新情報をチェック
+              </div>
+            </div>
           </div>
-          <div class="btn__fold">
-            で最新情報をチェック
-          </div>
-        </div>
+        </a>
       </div>
     </BaseSection>
   </section>
@@ -153,7 +164,6 @@ export default class TheHeadSection extends Vue {
     
       timer = setTimeout( () => {
         this.adjustSvg()
-        console.log('window resized'); //ここに処理の内容が入る
       }, 200);
 
     })
@@ -167,40 +177,71 @@ export default class TheHeadSection extends Vue {
   text-align: center;
 }
 
+.base-section--head {
+  padding: 0 7.8% 60px 7.8%;
+}
+
 .the-head-section {
   background: linear-gradient(to bottom, $hiwamoegi, $asagi);
 }
 
-p {
+.message-content {
   color: white;
 }
 
-p a {
+.message-content a {
   color: white;
 }
 
 .date-place {
   color: white;
-  font-size: 4.5vw;
+  font-size: 4.1vw;
   margin-top: -0.6em;
 }
 
 .date-place__day {
-  /* TBD */
-  font-size: 2vw;
+  font-size: 2.3vw;
+}
+
+.message-content__author {
+  text-align: right;
 }
 
 .btn {
   background: #34495e;
+  font-size: 24px;
   color: white;
-  text-align: center;
-  display: inline-block;
-  padding: 1em 2em;
-  margin: 0 auto;
+  display: flex;
+  padding: 1em;
+  margin: 20px auto 0 auto;
+  max-width: 60%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 3px solid #34495e;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: white;
+  border: 3px solid #34495e;
+  color: #34495e;
+}
+
+.btn__text {
+  flex: 1;
 }
 
 .btn-wrapper {
   text-align: center;
+}
+
+.logo-vfj--fixed {
+  display: none;
+}
+
+.logo-vfj--relative {
+  margin-top: 30px;
 }
 
 circle {
@@ -208,14 +249,15 @@ circle {
 }
 
 .title {
-  font-size: 9vw; /* TBD */
+  font-size: 8.3vw;
   font-weight: 700;
   color: white;
 }
 
-svg {
+svg.main-visual {
   max-width: 100%;
   height: auto;
+  margin-top: 30px;
 }
 
 .btn__fold {
@@ -223,6 +265,10 @@ svg {
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .base-section--head {
+    padding: 0 70px 80px 70px;
+  }
+
   .message-container {
     display: flex;
     align-items: flex-start;
@@ -231,7 +277,7 @@ svg {
   }
 
   .message-content {
-    width: calc((5 / 7) * 100%);
+    width: 65%;
   }
 
   .title {
@@ -245,8 +291,22 @@ svg {
   }
 
   .date-place__day {
-    /* TBD */
-    font-size: 16px;
+    font-size: 18px;
+  }
+
+  .logo-vfj--fixed {
+    display: block;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+  }
+
+  .logo-vfj--relative {
+    display: none;
+  }
+
+  svg.main-visual {
+    margin-top: 120px;
   }
 }
 </style>
