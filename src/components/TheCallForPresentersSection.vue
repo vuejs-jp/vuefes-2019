@@ -64,4 +64,27 @@ export default class TheCallForPresentersSection extends Vue {}
   display: block;
   text-align: center;
 }
+
+@media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .notification {
+    margin-left: auto;
+    margin-bottom: 60px;
+    width: 80%;
+    padding: 40px;
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .link-to-twitter {
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .icon-twitter {
+    margin-right: 20px;
+    width: 32px;
+  }
+}
 </style>

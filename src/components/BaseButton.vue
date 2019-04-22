@@ -38,6 +38,7 @@ export default class BaseButton extends Vue {
 
 <style lang="scss">
 .base-button {
+  max-width: 700px;
   padding: 30px 40px;
   background-color: $primary-color;
   font-size: 5vw;
@@ -47,5 +48,11 @@ export default class BaseButton extends Vue {
 
 a.base-button {
   text-decoration: none;
+}
+
+@media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .base-button {
+    font-size: 24px;
+  }
 }
 </style>
