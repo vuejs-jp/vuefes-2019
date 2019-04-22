@@ -13,9 +13,7 @@
           <g transform="translate(-6, -6)">
             <g v-for="(row, i) in items" :key="i">
               <g v-for="(col, j) in row" :key="j">
-                <g v-if="col.type === 'circle'" :transform="createTranform(col.x, col.y)">
-                  <circle cx="0" cy="0" r="60" />
-                </g>
+                <component :is="col.type" :item="col" />
               </g>
             </g>
           </g>
@@ -79,8 +77,13 @@
 
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
+import HeadCircle from '~/components/HeadCircle.vue'
+import HeadHorizontal from '~/components/HeadHorizontal.vue'
+import HeadSquare from '~/components/HeadSquare.vue'
+import HeadTriangle from '~/components/HeadTriangle.vue'
+import HeadCross from '~/components/HeadCross.vue'
 
-type PartsType = 'circle' | 'rect'
+type PartsType = 'head-circle' | 'head-horizontal' | 'head-square' | 'head-triangle' | 'head-cross'
 
 interface Parts {
   type: PartsType
@@ -91,42 +94,61 @@ let timer;
  
 @Component({
   components: {
-    BaseSection
+    BaseSection,
+    HeadCircle,
+    HeadHorizontal,
+    HeadSquare,
+    HeadTriangle,
+    HeadCross
   }
 })
 export default class TheHeadSection extends Vue {
-  createTranform(x, y){
-    return `translate(${x}, ${y})`
-  }
-
   get viewBox() {
     return `0 0 ${this.width} ${this.height}`
   }
   get items(): Parts[][] {
     return this.pattern.map((line, row) =>
       Array.from(line).map((p, col) => {
-        let type: PartsType = 'circle'
+        let type: PartsType = 'head-circle'
+        let rotate = 0;
         switch (p) {
           case 'x':
-            type = 'circle'
+            type = 'head-cross'
             break
           case '\\':
-            type = 'circle'
+            type = 'head-square'
+            rotate = 90
             break
           case '/':
-            type = 'circle'
+            type = 'head-square'
             break
           case '|':
-            type = 'circle'
+            type = 'head-horizontal'
+            rotate = 90
             break
           case 'o':
-            type = 'circle'
+            type = 'head-circle'
+            break
+          case '-':
+            type = 'head-horizontal'
+            break
+          case '_':
+            type = 'head-triangle'
+            break
+          case '^':
+            type = 'head-triangle'
+            rotate = 270
+            break
+          case 'L':
+            type = 'head-triangle'
+            rotate = 90
             break
         }
         return {
           type: type,
-          x: 66 + col * 126,
-          y: 66 + row * 126
+          x: 66 + col * 132,
+          y: 66 + row * 132,
+          rotate: rotate
         }
       })
     )
@@ -134,12 +156,12 @@ export default class TheHeadSection extends Vue {
 
   width = 0
   height = 384
-  pattern = ['x/x/|x\\|x', '\\p|x/|/o|', 'x/\\|/ox/\\']
+  pattern = ['-/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/']
 
   adjustSvg() {
     // SSR時にはSVGの表示を確定することができないため、
     // 初期表示時にちらついてしまう
-    const gap = 6;
+    const gap = 12;
     const grid = 120;
 
     //sm
@@ -208,7 +230,7 @@ export default class TheHeadSection extends Vue {
 }
 
 .btn {
-  background: #34495e;
+  background: $vue-dark-blue;
   font-size: 24px;
   color: white;
   display: flex;
@@ -218,14 +240,14 @@ export default class TheHeadSection extends Vue {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  border: 3px solid #34495e;
+  border: 3px solid $vue-dark-blue;
   cursor: pointer;
 }
 
 .btn:hover {
   background: white;
-  border: 3px solid #34495e;
-  color: #34495e;
+  border: 3px solid $vue-dark-blue;
+  color: $vue-dark-blue;
 }
 
 .btn__text {
@@ -245,7 +267,7 @@ export default class TheHeadSection extends Vue {
 }
 
 circle {
-  fill: #34495e;
+  fill: $vue-dark-blue;
 }
 
 .title {
