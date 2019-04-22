@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator'
+import { Component, Prop, Emit, Vue } from 'nuxt-property-decorator'
 import { VNode, VNodeData } from 'vue'
 
 @Component
@@ -16,12 +16,21 @@ export default class BaseButton extends Vue {
   @Prop(Boolean)
   readonly disabled?: boolean
 
+  @Emit()
+  click(e: MouseEvent) {
+    return e
+  }
+
   private render(h): VNode {
     let tag: string
 
     const data: VNodeData = {
       attrs: { disabled: this.disabled },
-      props: {}
+      props: {},
+      [this.to ? 'nativeOn' : 'on']: {
+        ...this.$listeners,
+        click: this.click
+      }
     }
 
     if (this.to) {
@@ -35,7 +44,7 @@ export default class BaseButton extends Vue {
       }
     }
 
-    return h(tag, data)
+    return h(tag, data, this.$slots.default)
   }
 }
 </script>
