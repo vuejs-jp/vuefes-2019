@@ -38,6 +38,9 @@ export default class BaseButton extends Vue {
 
 <style lang="scss">
 .base-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 700px;
   padding: 30px 40px;
   background-color: $primary-color;

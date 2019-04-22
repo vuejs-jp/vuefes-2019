@@ -49,11 +49,6 @@ export default class TheCallForPresentersSection extends Vue {}
   }
 }
 
-.link-to-twitter {
-  display: flex;
-  align-items: center;
-}
-
 .icon-twitter {
   display: block;
   margin-right: 3.5%;
@@ -79,7 +74,6 @@ export default class TheCallForPresentersSection extends Vue {}
 
   .link-to-twitter {
     margin: 0 auto;
-    justify-content: center;
   }
 
   .icon-twitter {
