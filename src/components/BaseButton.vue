@@ -5,16 +5,7 @@ import { VNode, VNodeData } from 'vue'
 @Component
 export default class BaseButton extends Vue {
   @Prop(String)
-  readonly href?: string
-
-  @Prop(String)
   readonly to?: string
-
-  @Prop(String)
-  readonly target?: string
-
-  @Prop(Boolean)
-  readonly disabled?: boolean
 
   @Emit()
   click(e: MouseEvent) {
@@ -25,7 +16,7 @@ export default class BaseButton extends Vue {
     let tag: string
 
     const data: VNodeData = {
-      attrs: { disabled: this.disabled },
+      class: 'base-button',
       props: {},
       [this.to ? 'nativeOn' : 'on']: {
         ...this.$listeners,
@@ -37,11 +28,7 @@ export default class BaseButton extends Vue {
       tag = 'nuxt-link'
       data.props!.to = this.to
     } else {
-      tag = (this.href && 'a') || 'button'
-
-      if (tag === 'a' && this.href) {
-        data.attrs!.href = this.href
-      }
+      tag = (this.$attrs.href && 'a') || 'button'
     }
 
     return h(tag, data, this.$slots.default)

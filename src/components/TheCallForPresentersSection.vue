@@ -14,18 +14,20 @@
       </p>
     </div>
 
-    <a href="#">
+    <BaseButton href="#">
       Vue Fes Japan 公式 Twitter で最新情報をチェック
-    </a>
+    </BaseButton>
   </BaseSection>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import BaseButton from '~/components/BaseButton.vue'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
   components: {
+    BaseButton,
     BaseSection
   }
 })
