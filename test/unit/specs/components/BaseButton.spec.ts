@@ -2,7 +2,7 @@ import { mount, RouterLinkStub } from '@vue/test-utils'
 import BaseButton from '~/components/BaseButton.vue'
 
 describe('BaseButton', () => {
-  describe('href プロパティを持っているとき', () => {
+  describe('href 属性を持っているとき', () => {
     test('a タグが返ってくる', () => {
       const wrapper = mount(BaseButton, {
         propsData: {
@@ -30,10 +30,18 @@ describe('BaseButton', () => {
     })
   })
 
-  describe('href プロパティも to プロパティを持っていないとき', () => {
+  describe('href 属性も to プロパティを持っていないとき', () => {
     test('button タグが返ってくる', () => {
       const wrapper = mount(BaseButton)
       expect(wrapper.is('button')).toBeTruthy()
+    })
+  })
+
+  describe('クリックされたとき', () => {
+    test('click イベントが emit される', () => {
+      const wrapper = mount(BaseButton)
+      wrapper.trigger('click')
+      expect(wrapper.emitted().click).toBeTruthy()
     })
   })
 })
