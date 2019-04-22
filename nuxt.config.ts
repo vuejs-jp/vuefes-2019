@@ -14,7 +14,10 @@ const config: NuxtConfiguration = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Vue Fes Japan 2019' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'stylesheet', href: 'https://use.typekit.net/ecl1lua.css' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
   loading: { color: '#fff' },
   css: ['~/assets/stylesheets/main.scss'],
