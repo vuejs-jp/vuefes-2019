@@ -1,13 +1,33 @@
-import { mount } from '@vue/test-utils'
+import { mount, RouterLinkStub } from '@vue/test-utils'
 import BaseButton from '~/components/BaseButton.vue'
 
 describe('BaseButton', () => {
-  xdescribe('href プロパティを持っているとき', () => {
-    xtest('a タグが返ってくる', () => {})
+  describe('href プロパティを持っているとき', () => {
+    test('a タグが返ってくる', () => {
+      const wrapper = mount(BaseButton, {
+        propsData: {
+          href: 'https://example.com/'
+        }
+      })
+
+      expect(wrapper.is('a')).toBeTruthy()
+    })
   })
 
-  xdescribe('to プロパティを持っているとき', () => {
-    xtest('nuxt-link タグが返ってくる', () => {})
+  describe('to プロパティを持っているとき', () => {
+    test('nuxt-link タグが返ってくる', () => {
+      const toProp = '/'
+      const wrapper = mount(BaseButton, {
+        propsData: {
+          to: toProp
+        },
+        stubs: {
+          NuxtLink: RouterLinkStub
+        }
+      })
+
+      expect(wrapper.find('a').props().to).toEqual(toProp)
+    })
   })
 
   describe('href プロパティも to プロパティを持っていないとき', () => {
