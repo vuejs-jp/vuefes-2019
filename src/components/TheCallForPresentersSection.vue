@@ -14,7 +14,8 @@
       </p>
     </div>
 
-    <BaseButton href="#">
+    <BaseButton href="https://twitter.com/vuefes" target="_blank" rel="noopener">
+      <img class="logo-twitter" src="~/assets/images/logo-twitter.svg" />
       Vue Fes Japan 公式 Twitter で最新情報をチェック
     </BaseButton>
   </BaseSection>
@@ -33,3 +34,9 @@ import BaseSection from '~/components/BaseSection.vue'
 })
 export default class TheCallForPresentersSection extends Vue {}
 </script>
+
+<style lang="scss">
+.logo-twitter {
+  width: 9.6%;
+}
+</style>
