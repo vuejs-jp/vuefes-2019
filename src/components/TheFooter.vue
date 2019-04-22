@@ -108,12 +108,28 @@
 
 <style lang="scss" scoped>
 .the-footer {
-  padding: 30px;
+  padding: 70px;
   background-color: $primary-color;
   color: $primary-text-color--invert;
 
   a {
     color: $primary-text-color--invert;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .the-footer {
+    padding: 80px 70px;
+  }
+
+  .footer-container {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint--is-medium-up) {
+  .footer-container {
+    max-width: $page-container-max-width;
   }
 }
 </style>
