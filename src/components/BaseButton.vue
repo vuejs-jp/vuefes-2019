@@ -36,7 +36,7 @@ export default class BaseButton extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .base-button {
   display: flex;
   justify-content: center;

@@ -14,30 +14,25 @@
       </p>
     </div>
 
-    <BaseButton class="link-to-twitter" href="https://twitter.com/vuefes" target="_blank" rel="noopener">
-      <img class="icon-twitter" src="~/assets/images/icon-twitter.svg" />
-      <span class="button-text">
-        Vue Fes Japan 公式 Twitter で最新情報をチェック
-      </span>
-    </BaseButton>
+    <LinkToTwitter />
   </BaseSection>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import BaseButton from '~/components/BaseButton.vue'
 import BaseSection from '~/components/BaseSection.vue'
+import LinkToTwitter from '~/components/LinkToTwitter.vue'
 
 @Component({
   components: {
-    BaseButton,
-    BaseSection
+    BaseSection,
+    LinkToTwitter
   }
 })
 export default class TheCallForPresentersSection extends Vue {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .notification {
   margin-bottom: 40px;
   padding: 40px 6.7%;
@@ -47,17 +42,6 @@ export default class TheCallForPresentersSection extends Vue {}
     font-size: 4vw;
     line-height: 1.8;
   }
-}
-
-.icon-twitter {
-  display: block;
-  margin-right: 3.5%;
-  width: 9.6%;
-}
-
-.button-text {
-  display: block;
-  text-align: center;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -74,11 +58,6 @@ export default class TheCallForPresentersSection extends Vue {}
 
   .link-to-twitter {
     margin: 0 auto;
-  }
-
-  .icon-twitter {
-    margin-right: 20px;
-    width: 32px;
   }
 }
 </style>
