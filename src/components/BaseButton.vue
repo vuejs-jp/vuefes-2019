@@ -38,7 +38,10 @@ export default class BaseButton extends Vue {
 
 <style lang="scss">
 .base-button {
+  padding: 30px 40px;
   background-color: $primary-color;
+  font-size: 5vw;
+  line-height: 1.2;
   color: $primary-text-color--invert;
 }
 
