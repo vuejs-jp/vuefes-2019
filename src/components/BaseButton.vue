@@ -35,3 +35,14 @@ export default class BaseButton extends Vue {
   }
 }
 </script>
+
+<style lang="scss">
+.base-button {
+  background-color: $primary-color;
+  color: $primary-text-color--invert;
+}
+
+a.base-button {
+  text-decoration: none;
+}
+</style>
