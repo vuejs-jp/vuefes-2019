@@ -132,4 +132,38 @@
     max-width: $page-container-max-width;
   }
 }
+
+.social-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+}
+
+.social-button {
+  width: 13.75%;
+  max-width: 57px;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+
+  & + & {
+    margin-left: 13.75%;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-left: 22px;
+    }
+  }
+
+  img {
+    display: block;
+  }
+}
 </style>
