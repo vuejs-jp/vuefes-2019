@@ -1,5 +1,5 @@
 <template>
-  <BaseSection>
+  <BaseSection class="the-speaker-section">
     <template slot="heading">
       SPEAKERS
     </template>
