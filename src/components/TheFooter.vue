@@ -7,7 +7,9 @@
         </div>
 
         <div class="menu-list">
-          <h3 class="list-title">メニュー</h3>
+          <h3 class="list-title">
+            メニュー
+          </h3>
           <nuxt-link to="/code-of-conduct/">
             行動規範
           </nuxt-link>
@@ -20,7 +22,9 @@
         </div>
 
         <div class="social-list">
-          <h3 class="list-title">ソーシャル</h3>
+          <h3 class="list-title">
+            ソーシャル
+          </h3>
           <a
             href="https://twitter.com/vuefes"
             target="_blank"
@@ -48,7 +52,9 @@
         </div>
 
         <div class="link-list">
-          <h3 class="list-title">各種リンク</h3>
+          <h3 class="list-title">
+            各種リンク
+          </h3>
           <a
             href="https://jp.vuejs.org/"
             target="_blank"
