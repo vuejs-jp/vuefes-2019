@@ -29,18 +29,16 @@
             <img src="~/assets/images/white-icon-twitter.svg" />
             Twitter
           </a>
-          <!-- TODO: URLを確認する -->
           <a
-            href=""
+            href="https://www.youtube.com/channel/UC6KPwA1kZJtQYdlh8_2hxCA"
             target="_blank"
             rel="noopener"
           >
             <img src="~/assets/images/white-icon-youtube.svg" />
             YouTube
           </a>
-          <!-- TODO: URLを確認する -->
           <a
-            href=""
+            href="https://github.com/vuejs-jp/home"
             target="_blank"
             rel="noopener"
           >
