@@ -73,8 +73,6 @@
 </template>
 
 <script lang="ts">
-/* eslint-disable */
-
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
 import HeadCircle from '~/components/HeadCircle.vue'
@@ -83,15 +81,20 @@ import HeadSquare from '~/components/HeadSquare.vue'
 import HeadTriangle from '~/components/HeadTriangle.vue'
 import HeadCross from '~/components/HeadCross.vue'
 
-type PartsType = 'head-circle' | 'head-horizontal' | 'head-square' | 'head-triangle' | 'head-cross'
+type PartsType =
+  | 'head-circle'
+  | 'head-horizontal'
+  | 'head-square'
+  | 'head-triangle'
+  | 'head-cross'
 
 interface Parts {
   type: PartsType
   x: number
   y: number
 }
-let timer;
- 
+let timer
+
 @Component({
   components: {
     BaseSection,
@@ -110,7 +113,7 @@ export default class TheHeadSection extends Vue {
     return this.pattern.map((line, row) =>
       Array.from(line).map((p, col) => {
         let type: PartsType = 'head-circle'
-        let rotate = 0;
+        let rotate = 0
         switch (p) {
           case 'x':
             type = 'head-cross'
@@ -161,40 +164,38 @@ export default class TheHeadSection extends Vue {
   adjustSvg() {
     // SSR時にはSVGの表示を確定することができないため、
     // 初期表示時にちらついてしまう
-    const gap = 12;
-    const grid = 120;
+    const gap = 12
+    const grid = 120
 
-    //sm
-    this.width = (grid + gap) * 5 - gap;
-    //md
-    if(window.innerWidth > 768){
-      this.width = (grid + gap) * 6 - gap;
+    // sm
+    this.width = (grid + gap) * 5 - gap
+    // md
+    if (window.innerWidth > 768) {
+      this.width = (grid + gap) * 6 - gap
     }
-    //lg
-    if(window.innerWidth > 980){
-      this.width = (grid + gap) * 9 - gap;
+    // lg
+    if (window.innerWidth > 980) {
+      this.width = (grid + gap) * 9 - gap
     }
   }
 
   mounted() {
     this.adjustSvg()
 
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       if (timer > 0) {
-        clearTimeout(timer);
+        clearTimeout(timer)
       }
-    
-      timer = setTimeout( () => {
-        this.adjustSvg()
-      }, 200);
 
+      timer = setTimeout(() => {
+        this.adjustSvg()
+      }, 200)
     })
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 .main-visual-wrapper {
   text-align: center;
 }
@@ -209,6 +210,11 @@ export default class TheHeadSection extends Vue {
 
 .message-content {
   color: white;
+}
+
+.message-content p {
+  line-height: 1.8em;
+  font-size: 4vw;
 }
 
 .message-content a {
@@ -231,12 +237,11 @@ export default class TheHeadSection extends Vue {
 
 .btn {
   background: $vue-dark-blue;
-  font-size: 24px;
+  font-size: 4vw;
   color: white;
   display: flex;
   padding: 1em;
   margin: 20px auto 0 auto;
-  max-width: 60%;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -302,6 +307,10 @@ svg.main-visual {
     width: 65%;
   }
 
+  .message-content p {
+    font-size: 18px;
+  }
+
   .title {
     font-size: 64px;
   }
@@ -329,6 +338,11 @@ svg.main-visual {
 
   svg.main-visual {
     margin-top: 120px;
+  }
+
+  .btn {
+    font-size: 24px;
+    max-width: 60%;
   }
 }
 </style>
