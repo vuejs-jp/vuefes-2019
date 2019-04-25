@@ -229,13 +229,42 @@
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .content-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 40px;
   }
 
   .logo img {
     display: block;
     max-width: 220px;
+  }
+
+  .logo {
+    width: 25%;
+    order: 1;
+  }
+
+  .social-wrapper {
+    width: 20%;
+    order: 3;
+  }
+
+  .list-wrapper {
+    width: 55%;
+    order: 2;
+    flex-wrap: nowrap;
+
+    .list-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    a {
+      font-size: 14px;
+    }
+  }
+
+  .licence p {
+    font-size: 12px;
   }
 }
 </style>
