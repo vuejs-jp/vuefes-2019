@@ -88,6 +88,9 @@ type PartsType =
   | 'head-triangle'
   | 'head-cross'
 
+const gap = 12
+const grid = 120
+
 interface Parts {
   type: PartsType
   x: number
@@ -149,8 +152,8 @@ export default class TheHeadSection extends Vue {
         }
         return {
           type: type,
-          x: 66 + col * 132,
-          y: 66 + row * 132,
+          x: (gap + grid) / 2 + col * (gap + grid),
+          y: (gap + grid) / 2 + row * (gap + grid),
           rotate: rotate
         }
       })
@@ -164,8 +167,6 @@ export default class TheHeadSection extends Vue {
   adjustSvg() {
     // SSR時にはSVGの表示を確定することができないため、
     // 初期表示時にちらついてしまう
-    const gap = 12
-    const grid = 120
 
     // sm
     this.width = (grid + gap) * 5 - gap
