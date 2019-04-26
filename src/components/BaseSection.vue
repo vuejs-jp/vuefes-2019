@@ -25,10 +25,10 @@ export default class BaseSection extends Vue {}
 }
 
 .heading {
-  margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 56px;
   font-size: 10.41vw;
   font-weight: bold;
+  line-height: 1;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -43,7 +43,6 @@ export default class BaseSection extends Vue {}
   .heading {
     margin-bottom: 45px;
     font-size: 80px;
-    line-height: 1;
   }
 }
 
