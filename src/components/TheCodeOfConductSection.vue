@@ -39,7 +39,7 @@
           </p>
         </div>
 
-        <div class="last-description">
+        <div class="description">
           <h3 class="description-title">
             詳細
           </h3>
@@ -112,8 +112,7 @@ export default class TheCodeOfConductSection extends Vue {}
   margin-bottom: 65px;
 }
 
-/* FIXME: .descriptionと共存させるいい方法がある気がする */
-.last-description {
+.description:last-of-type {
   margin-bottom: 60px;
 }
 
