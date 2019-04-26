@@ -1,10 +1,10 @@
 <template>
-  <section>
+  <section class="the-code-of-conduct-section">
     <a href="/2019">
       <img class="logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
     </a>
 
-    <BaseSection class="the-code-of-conduct-section">
+    <BaseSection class="base-section">
       <a href="/2019">
         <img class="logo-vfj--relative" src="~/assets/images/logo_vfj.svg" />
       </a>
@@ -89,7 +89,7 @@ export default class TheCodeOfConductSection extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.the-code-of-conduct-section {
+.base-section {
   padding-top: 30px;
   padding-bottom: 100px;
 }
@@ -130,7 +130,7 @@ export default class TheCodeOfConductSection extends Vue {}
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .the-code-of-conduct-section {
+  .base-section {
     margin-top: 50px;
     padding-bottom: 132px;
   }
