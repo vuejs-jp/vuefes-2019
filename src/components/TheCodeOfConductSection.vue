@@ -48,20 +48,22 @@
       <p class="description">
         私たちは、すべての参加者が会場やワークショップ、Vue Fes Japan に関連するソーシャルイベントにて、これらのルールに従うことを期待しています。
       </p>
-    </div>
 
-    <nuxt-link to="/">
-      トップに戻る
-    </nuxt-link>
+      <BaseButton class="link-to-top" to="/">
+        トップに戻る
+      </BaseButton>
+    </div>
   </BaseSection>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
+import BaseButton from '~/components/BaseButton.vue'
 
 @Component({
   components: {
+    BaseButton,
     BaseSection
   }
 })
