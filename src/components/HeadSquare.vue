@@ -1,7 +1,9 @@
 <template>
   <g :transform="transform">
-    <polygon ref="shape1" points="-60 -60 -60 -60 -60 -60" />
-    <polygon ref="shape2" points="60 60 60 60 60 60" />
+    <transition-group tag="g" @leave="leave">
+      <polygon v-show="visible" key="0" ref="shape1" :points="keyFrame1[0]" />
+      <polygon v-show="visible" key="1" ref="shape2" :points="keyFrame2[0]" />
+    </transition-group>
   </g>
 </template>
 
@@ -12,11 +14,14 @@ import { TweenMax, Power2 } from 'gsap'
 
 @Component({
   props: {
-    item: Object
+    item: Object,
+    visible: Boolean
   }
 })
 export default class HeadSquare extends Vue {
   item = this.item
+  keyFrame1 = ['-60 -60 -60 -60 -60 -60', '-60 -60 52 -60 -60 52']
+  keyFrame2 = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
   get transform() {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${
@@ -24,17 +29,35 @@ export default class HeadSquare extends Vue {
     })`
   }
 
+  leave(el, done) {
+    TweenMax.to(this.$refs.shape1, 0.5, {
+      attr: {
+        points: this.keyFrame1[0]
+      },
+      ease: Power2.easeOut,
+      onComplete() {
+        done()
+      }
+    })
+    TweenMax.to(this.$refs.shape2, 0.5, {
+      attr: {
+        points: this.keyFrame2[0]
+      },
+      ease: Power2.easeOut
+    })
+  }
+
   created() {
     setTimeout(() => {
       TweenMax.to(this.$refs.shape1, 1, {
         attr: {
-          points: '-60 -60 52 -60 -60 52'
+          points: this.keyFrame1[1]
         },
         ease: Power2.easeOut
       })
       TweenMax.to(this.$refs.shape2, 1, {
         attr: {
-          points: '60 60 -52 60 60 -52'
+          points: this.keyFrame2[1]
         },
         ease: Power2.easeOut
       })

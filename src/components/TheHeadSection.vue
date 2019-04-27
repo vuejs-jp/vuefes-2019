@@ -99,6 +99,21 @@ interface Parts {
 }
 let timer
 
+type WindowMode = 'sm' | 'md' | 'lg'
+
+/**
+ * 現在の画面サイズ名を返す
+ */
+function getWindowMode(): WindowMode {
+  if (window.innerWidth > 980) {
+    return 'lg'
+  }
+  if (window.innerWidth > 768) {
+    return 'md'
+  }
+  return 'sm'
+}
+
 @Component({
   components: {
     BaseSection,
@@ -168,26 +183,25 @@ export default class TheHeadSection extends Vue {
   pattern = ['-/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/']
   t = 0
   visible = true
+  windowMode: WindowMode = 'sm'
 
-  adjustSvg() {
+  adjustSvg(mode: WindowMode) {
     // SSR時にはSVGの表示を確定することができないため、
     // 初期表示時にちらついてしまう
     this.t = 0
 
-    // sm
     this.width = (grid + gap) * 5 - gap
-    // md
-    if (window.innerWidth > 768) {
+    if (mode === 'md') {
       this.width = (grid + gap) * 6 - gap
     }
-    // lg
-    if (window.innerWidth > 980) {
+    if (mode === 'lg') {
       this.width = (grid + gap) * 9 - gap
     }
   }
 
   mounted() {
-    this.adjustSvg()
+    this.windowMode = getWindowMode()
+    this.adjustSvg('lg')
 
     setInterval(() => {
       this.t++
@@ -199,11 +213,17 @@ export default class TheHeadSection extends Vue {
       }
 
       timer = setTimeout(() => {
-        this.visible = false
-        setTimeout(() => {
-          this.visible = true
-          this.adjustSvg()
-        }, 500)
+        // 画面サイズ名が変更になったときのみリドローをかける
+        const preWindowMode = this.windowMode
+        this.windowMode = getWindowMode()
+
+        if (preWindowMode !== this.windowMode) {
+          this.visible = false
+          setTimeout(() => {
+            this.visible = true
+            this.adjustSvg(this.windowMode)
+          }, 500)
+        }
       }, 200)
     })
   }
