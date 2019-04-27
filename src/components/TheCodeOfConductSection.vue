@@ -4,7 +4,7 @@
       <img class="logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
     </a>
 
-    <BaseSection class="base-section">
+    <section class="base-section">
       <a href="/2019">
         <img class="logo-vfj--relative" src="~/assets/images/logo_vfj.svg" />
       </a>
@@ -70,28 +70,30 @@
           トップに戻る
         </BaseButton>
       </div>
-    </BaseSection>
+    </section>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import BaseSection from '~/components/BaseSection.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
 @Component({
   components: {
-    BaseButton,
-    BaseSection
+    BaseButton
   }
 })
 export default class TheCodeOfConductSection extends Vue {}
 </script>
 
 <style lang="scss" scoped>
+.the-code-of-conduct-section {
+  background-image: url('~assets/images/texture.png');
+  background-repeat: repeat;
+}
+
 .base-section {
-  padding-top: 30px;
-  padding-bottom: 100px;
+  padding: 30px 7.8% 100px;
 }
 
 .logo-vfj--relative {
@@ -131,8 +133,8 @@ export default class TheCodeOfConductSection extends Vue {}
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .base-section {
-    margin-top: 50px;
-    padding-bottom: 132px;
+    margin: 0 auto;
+    padding: 70px 70px 132px;
   }
 
   .logo-vfj--relative {
@@ -161,6 +163,12 @@ export default class TheCodeOfConductSection extends Vue {}
 
   .link-to-top {
     margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint--is-medium-up) {
+  .base-section {
+    max-width: $page-container-max-width;
   }
 }
 </style>
