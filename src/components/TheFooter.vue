@@ -177,28 +177,12 @@ export default class TheFooter extends Vue {
 
 <style lang="scss" scoped>
 .the-footer {
-  padding: 60px 7.8%;
+  padding: 80px 7.8%;
   background-color: $primary-color;
   color: $primary-text-color--invert;
 
   a {
     color: $primary-text-color--invert;
-  }
-}
-
-@media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .the-footer {
-    padding: 80px 70px;
-  }
-
-  .footer-container {
-    margin: 0 auto;
-  }
-}
-
-@media screen and (min-width: $layout-breakpoint--is-medium-up) {
-  .footer-container {
-    max-width: $page-container-max-width;
   }
 }
 
@@ -209,11 +193,12 @@ export default class TheFooter extends Vue {
 }
 
 .logo {
+  margin-bottom: 45.6px;
   float: left;
   width: 50%;
 
   img {
-    width: 97%;
+    width: 96.9%;
   }
 }
 
@@ -222,7 +207,6 @@ export default class TheFooter extends Vue {
   width: 50%;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 30px;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     justify-content: flex-start;
@@ -254,6 +238,7 @@ export default class TheFooter extends Vue {
 }
 
 .list-wrapper {
+  margin-bottom: 40px;
   clear: both;
   display: flex;
   flex-wrap: wrap;
@@ -268,16 +253,29 @@ export default class TheFooter extends Vue {
 
   .list-title {
     margin-top: 0;
+    margin-bottom: 50px;
     font-size: 6vw;
     font-weight: bold;
   }
 
   a {
     font-size: 4vw;
-    margin-bottom: 15%;
-    line-height: 1.2;
+    line-height: 1.81;
     text-decoration: none;
+
+    &:not(:last-of-type) {
+      margin-bottom: 10%;
+    }
   }
+}
+
+.menu-list a:last-of-type,
+.social-list a:last-of-type {
+  margin-bottom: 50px;
+}
+
+.link-list a:last-of-type {
+  margin-bottom: 0;
 }
 
 .licence p {
@@ -286,6 +284,14 @@ export default class TheFooter extends Vue {
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .the-footer {
+    padding: 80px 70px;
+  }
+
+  .footer-container {
+    margin: 0 auto;
+  }
+
   .content-wrapper {
     display: flex;
     justify-content: flex-start;
@@ -324,6 +330,12 @@ export default class TheFooter extends Vue {
 
   .licence p {
     font-size: 12px;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint--is-medium-up) {
+  .footer-container {
+    max-width: $page-container-max-width;
   }
 }
 </style>
