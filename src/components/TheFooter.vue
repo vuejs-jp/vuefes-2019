@@ -137,6 +137,41 @@ export default class TheFooter extends Vue {
   get faYoutube(): any {
     return faYoutube
   }
+
+  get encodedUri(): string {
+    return encodeURIComponent(location.href)
+  }
+
+  get hostAndPath(): string {
+    return location.host + location.pathname
+  }
+
+  // TODO: 文言を正式版に差し替える
+  openTwitterForm(): void {
+    window.open(
+      `https://twitter.com/share?url=${
+        this.encodedUri
+      }&hashtags=vuefes,vuejs&text=${encodeURIComponent(
+        '日本最大級の Vue.js カンファレンス「Vue Fes Japan 2019」'
+      )}`,
+      'tweet',
+      'width=650, height=470'
+    )
+  }
+
+  openFacebookForm(): void {
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${
+        this.encodedUri
+      }&src=sdkpreparse`,
+      'share',
+      'width=670, height=328'
+    )
+  }
+
+  openHatenaBookmarkForm(): void {
+    window.open(`http://b.hatena.ne.jp/entry/s/${this.hostAndPath}`, 'bookmark')
+  }
 }
 </script>
 
