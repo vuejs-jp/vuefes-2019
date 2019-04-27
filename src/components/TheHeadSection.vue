@@ -91,10 +91,11 @@ type PartsType =
 const gap = 12
 const grid = 120
 
-interface Parts {
+export interface Parts {
   type: PartsType
   x: number
   y: number
+  rotate: number
 }
 let timer
 

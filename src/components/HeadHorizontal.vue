@@ -7,15 +7,13 @@
 
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { Parts } from './TheHeadSection.vue'
 
-@Component({
-  props: {
-    item: Object
-  }
-})
+@Component
 export default class HeadHorizontal extends Vue {
-  item = this.item
+  @Prop()
+  readonly item!: Parts
 
   get transform() {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${
