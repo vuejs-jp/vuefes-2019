@@ -6,11 +6,11 @@
 
     <div class="description">
       <p>
-        Vue.jsに関わる人々が集まるVue Fes Japan 2019をよりよいイベントにするため、スポンサーを募集します。募集開始は、2019年4月下旬を予定しています。
+        Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。募集開始は、2019 年 5 月下旬を予定しています。
       </p>
 
       <p>
-        最新情報は、Vue Fes JapanのTwitterでご確認ください。
+        最新情報は、Vue Fes Japan の Twitter でご確認ください。
       </p>
     </div>
 
@@ -79,11 +79,6 @@ export default class TheSponsorsSection extends Vue {
 
   p {
     font-size: 4vw;
-    margin: 0;
-
-    &:first-child {
-      margin-bottom: 1em;
-    }
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 18px;
