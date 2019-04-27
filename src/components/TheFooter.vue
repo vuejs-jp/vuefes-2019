@@ -46,7 +46,7 @@
               target="_blank"
               rel="noopener"
             >
-              <img src="~/assets/images/white-icon-twitter.svg" />
+              <fa :icon="faTwitter" />
               Twitter
             </a>
             <a
@@ -54,7 +54,7 @@
               target="_blank"
               rel="noopener"
             >
-              <img src="~/assets/images/white-icon-youtube.svg" />
+              <fa :icon="faYoutube" />
               YouTube
             </a>
             <a
@@ -62,7 +62,7 @@
               target="_blank"
               rel="noopener"
             >
-              <img src="~/assets/images/white-icon-github.svg" />
+              <fa :icon="faGithub" />
               GitHub
             </a>
           </div>
@@ -115,6 +115,30 @@
     </div>
   </footer>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+import {
+  faGithub,
+  faTwitter,
+  faYoutube
+} from '@fortawesome/free-brands-svg-icons'
+
+@Component({})
+export default class TheFooter extends Vue {
+  get faGithub(): any {
+    return faGithub
+  }
+
+  get faTwitter(): any {
+    return faTwitter
+  }
+
+  get faYoutube(): any {
+    return faYoutube
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .the-footer {
