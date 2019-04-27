@@ -59,4 +59,24 @@ export default class TheSponsorsSection extends Vue {
 .the-sponsor-section {
   background: linear-gradient(to bottom, $tohoh, $sangosyu);
 }
+
+.description {
+  background-color: $white;
+  padding: 6.17%;
+  margin-bottom: 40px;
+
+  p {
+    font-size: 4vw;
+    margin: 0;
+
+    &:first-child {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+}
 </style>
