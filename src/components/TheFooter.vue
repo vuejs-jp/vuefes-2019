@@ -207,29 +207,14 @@ export default class TheFooter extends Vue {
   width: 50%;
   display: flex;
   justify-content: flex-end;
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    justify-content: flex-start;
-    margin-bottom: 0;
-  }
 }
 
 .social-button {
   width: 20%;
   max-width: 57px;
 
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-  }
-
   & + & {
     margin-left: 8.8%;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      margin-left: 15px;
-    }
   }
 
   img {
@@ -295,17 +280,19 @@ export default class TheFooter extends Vue {
   .content-wrapper {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 40px;
-  }
-
-  .logo img {
-    display: block;
-    max-width: 220px;
+    margin-bottom: 22px;
   }
 
   .logo {
+    margin-bottom: 0;
     width: 25%;
     order: 1;
+
+    img {
+      display: block;
+      width: 72.4%;
+      max-width: 220px;
+    }
   }
 
   .social-wrapper {
@@ -313,19 +300,53 @@ export default class TheFooter extends Vue {
     order: 3;
   }
 
+  .social-button {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    & + & {
+      margin-left: 16px;
+    }
+  }
+
   .list-wrapper {
+    margin-bottom: 0;
     width: 55%;
     order: 2;
     flex-wrap: nowrap;
 
     .list-title {
+      margin-bottom: 25px;
       font-size: 18px;
       font-weight: bold;
     }
 
     a {
       font-size: 14px;
+      line-height: 1.1;
+
+      &:not(:last-of-type) {
+        margin-bottom: 25px;
+      }
     }
+  }
+
+  .menu-list a:last-of-type,
+  .social-list a:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .menu-list {
+    flex-basis: 38%;
+  }
+
+  .social-list {
+    flex-basis: 32%;
+  }
+
+  .link-list {
+    flex-basis: 30%;
   }
 
   .licence p {
@@ -336,6 +357,10 @@ export default class TheFooter extends Vue {
 @media screen and (min-width: $layout-breakpoint--is-medium-up) {
   .footer-container {
     max-width: $page-container-max-width;
+  }
+
+  .content-wrapper {
+    margin-bottom: 42px;
   }
 }
 </style>
