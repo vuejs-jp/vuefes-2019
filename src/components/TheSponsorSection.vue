@@ -4,14 +4,18 @@
       SPONSORS
     </template>
 
-    <div class="description">
-      <p>
-        Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。募集開始は、2019 年 5 月下旬を予定しています。
-      </p>
+    <div class="content">
+      <div class="description">
+        <p>
+          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。募集開始は、2019 年 5 月下旬を予定しています。
+        </p>
 
-      <p>
-        最新情報は、Vue Fes Japan の Twitter でご確認ください。
-      </p>
+        <p>
+          最新情報は、Vue Fes Japan の Twitter でご確認ください。
+        </p>
+      </div>
+
+      <LinkToTwitter class="is-pc" />
     </div>
 
     <div class="image">
@@ -30,16 +34,20 @@
         :src="imageThree2x"
       />
     </div>
+
+    <LinkToTwitter class="is-sp" />
   </BaseSection>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
+import LinkToTwitter from '~/components/LinkToTwitter.vue'
 
 @Component({
   components: {
-    BaseSection
+    BaseSection,
+    LinkToTwitter
   }
 })
 export default class TheSponsorsSection extends Vue {
@@ -55,6 +63,23 @@ export default class TheSponsorsSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.is-sp,
+.is-pc {
+  display: none;
+}
+
+@media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .is-pc {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: $layout-breakpoint--is-small) {
+  .is-sp {
+    display: flex;
+  }
+}
+
 .the-sponsor-section {
   background: linear-gradient(to bottom, $tohoh, $sangosyu);
 
@@ -64,15 +89,22 @@ export default class TheSponsorsSection extends Vue {
   }
 }
 
+.content {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    position: absolute;
+    width: calc(100% - 140px);
+    max-width: $page-container-max-width;
+  }
+}
+
 .description {
   background-color: $white;
   padding: 6.17%;
   margin-bottom: 40px;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    position: absolute;
-    width: calc((100% - 140px) * 0.7);
-    max-width: calc(1180px * 0.7);
+    width: 70%;
+    max-width: calc(#{$page-container-max-width} * 0.7);
     padding: 40px;
     z-index: 1;
   }
@@ -86,7 +118,18 @@ export default class TheSponsorsSection extends Vue {
   }
 }
 
+.link-to-twitter {
+  width: 100%;
+  max-width: 100%;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 700px;
+  }
+}
+
 .image {
+  margin-bottom: 40px;
+
   img {
     display: block;
     width: 100%;
