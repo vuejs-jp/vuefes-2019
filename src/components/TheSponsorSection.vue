@@ -72,7 +72,7 @@ export default class TheSponsorsSection extends Vue {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     position: absolute;
     width: calc((100% - 140px) * 0.7);
-    max-width: calc((1180px - 140px) * 0.7);
+    max-width: calc(1180px * 0.7);
     padding: 40px;
     z-index: 1;
   }
@@ -100,6 +100,10 @@ export default class TheSponsorsSection extends Vue {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 340px;
     margin: -125px 0 0 auto;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin: -125px 5% 0 auto;
   }
 }
 </style>
