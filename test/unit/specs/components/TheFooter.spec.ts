@@ -1,15 +1,15 @@
 import { mount, RouterLinkStub } from '@vue/test-utils'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import HomePage from '~/pages/index.vue'
+import TheFooter from '~/components/TheFooter.vue'
 
-describe('HomePage', () => {
+describe('TheFooter', () => {
   test('レンダリングできる', () => {
-    const wrapper = mount(HomePage, {
+    const wrapper = mount(TheFooter, {
       stubs: {
         NuxtLink: RouterLinkStub,
         Fa: FontAwesomeIcon
       }
     })
-    expect(wrapper.find('.home-page').isVisible()).toBeTruthy()
+    expect(wrapper.find('.the-footer').isVisible()).toBeTruthy()
   })
 })
