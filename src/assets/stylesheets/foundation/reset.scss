@@ -9,6 +9,17 @@ body {
   padding: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  margin: 0;
+}
+
 ol,
 ul {
   padding: 0;
@@ -39,16 +50,6 @@ select::-ms-expand {
   display: none;
 }
 
-div,
-header,
-main,
-section,
-footer,
-ul,
-li {
-  box-sizing: border-box;
-}
-
 button {
   padding: 0;
   border: none;
@@ -56,10 +57,4 @@ button {
   &::-moz-focus-inner {
     border: 0;
   }
-}
-
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
 }
