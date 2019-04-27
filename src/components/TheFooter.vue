@@ -123,18 +123,19 @@ import {
   faTwitter,
   faYoutube
 } from '@fortawesome/free-brands-svg-icons'
+import { IconDefinition } from '@fortawesome/fontawesome-common-types'
 
 @Component({})
 export default class TheFooter extends Vue {
-  get faGithub(): any {
+  get faGithub(): IconDefinition {
     return faGithub
   }
 
-  get faTwitter(): any {
+  get faTwitter(): IconDefinition {
     return faTwitter
   }
 
-  get faYoutube(): any {
+  get faYoutube(): IconDefinition {
     return faYoutube
   }
 
