@@ -1,25 +1,54 @@
 <template>
   <g :transform="transform">
-    <circle cx="0" cy="0" r="60" />
+    <transition @leave="leave">
+      <circle v-show="visible" ref="shape" cx="0" cy="0" r="0" />
+    </transition>
   </g>
 </template>
 
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import { TweenMax, Power2 } from 'gsap'
 
 @Component({
   props: {
-    item: Object
+    item: Object,
+    visible: Boolean
   }
 })
 export default class HeadCircle extends Vue {
   item = this.item
+  t = 0
+  keyFrame = [0, 60]
 
   get transform() {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${
       this.item.rotate
     })`
+  }
+
+  leave(el, done) {
+    TweenMax.to(this.$refs.shape, 0.5, {
+      attr: {
+        r: this.keyFrame[0]
+      },
+      ease: Power2.easeOut,
+      onComplete() {
+        done()
+      }
+    })
+  }
+
+  created() {
+    setTimeout(() => {
+      TweenMax.to(this.$refs.shape, 1, {
+        attr: {
+          r: this.keyFrame[1]
+        },
+        ease: Power2.easeOut
+      })
+    }, 0)
   }
 }
 </script>

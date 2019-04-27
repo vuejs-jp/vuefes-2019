@@ -13,7 +13,7 @@
           <g transform="translate(-6, -6)">
             <g v-for="(row, i) in items" :key="i">
               <g v-for="(col, j) in row" :key="j">
-                <component :is="col.type" :item="col" />
+                <component :is="col.type" :item="col" :visible="visible" />
               </g>
             </g>
           </g>
@@ -73,6 +73,7 @@
 </template>
 
 <script lang="ts">
+import { setInterval } from 'timers'
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
 import HeadCircle from '~/components/HeadCircle.vue'
@@ -114,59 +115,64 @@ export default class TheHeadSection extends Vue {
   }
   get items(): Parts[][] {
     return this.pattern.map((line, row) =>
-      Array.from(line).map((p, col) => {
-        let type: PartsType = 'head-circle'
-        let rotate = 0
-        switch (p) {
-          case 'x':
-            type = 'head-cross'
-            break
-          case '\\':
-            type = 'head-square'
-            rotate = 90
-            break
-          case '/':
-            type = 'head-square'
-            break
-          case '|':
-            type = 'head-horizontal'
-            rotate = 90
-            break
-          case 'o':
-            type = 'head-circle'
-            break
-          case '-':
-            type = 'head-horizontal'
-            break
-          case '_':
-            type = 'head-triangle'
-            break
-          case '^':
-            type = 'head-triangle'
-            rotate = 270
-            break
-          case 'L':
-            type = 'head-triangle'
-            rotate = 90
-            break
-        }
-        return {
-          type: type,
-          x: (gap + grid) / 2 + col * (gap + grid),
-          y: (gap + grid) / 2 + row * (gap + grid),
-          rotate: rotate
-        }
-      })
+      Array.from(line)
+        .slice(0, this.t)
+        .map((p, col) => {
+          let type: PartsType = 'head-circle'
+          let rotate = 0
+          switch (p) {
+            case 'x':
+              type = 'head-cross'
+              break
+            case '\\':
+              type = 'head-square'
+              rotate = 90
+              break
+            case '/':
+              type = 'head-square'
+              break
+            case '|':
+              type = 'head-horizontal'
+              rotate = 90
+              break
+            case 'o':
+              type = 'head-circle'
+              break
+            case '-':
+              type = 'head-horizontal'
+              break
+            case '_':
+              type = 'head-triangle'
+              break
+            case '^':
+              type = 'head-triangle'
+              rotate = 270
+              break
+            case 'L':
+              type = 'head-triangle'
+              rotate = 90
+              break
+          }
+          return {
+            type: type,
+            x: (gap + grid) / 2 + col * (gap + grid),
+            y: (gap + grid) / 2 + row * (gap + grid),
+            rotate: rotate
+          }
+        })
     )
   }
 
   width = 0
   height = 384
   pattern = ['-/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/']
+  t = 0
+  visible = true
 
   adjustSvg() {
     // SSR時にはSVGの表示を確定することができないため、
     // 初期表示時にちらついてしまう
+    this.t = 0
 
     // sm
     this.width = (grid + gap) * 5 - gap
@@ -183,13 +189,21 @@ export default class TheHeadSection extends Vue {
   mounted() {
     this.adjustSvg()
 
+    setInterval(() => {
+      this.t++
+    }, 200)
+
     window.addEventListener('resize', () => {
       if (timer > 0) {
         clearTimeout(timer)
       }
 
       timer = setTimeout(() => {
-        this.adjustSvg()
+        this.visible = false
+        setTimeout(() => {
+          this.visible = true
+          this.adjustSvg()
+        }, 500)
       }, 200)
     })
   }
