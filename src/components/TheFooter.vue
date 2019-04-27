@@ -125,7 +125,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { IconDefinition } from '@fortawesome/fontawesome-common-types'
 
-@Component({})
+@Component
 export default class TheFooter extends Vue {
   get faGithub(): IconDefinition {
     return faGithub
