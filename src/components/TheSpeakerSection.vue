@@ -27,7 +27,7 @@
             target="_blank"
             rel="noopener"
           >
-            <img src="~/assets/images/icon-twitter.svg" />
+            <img src="~/assets/images/logo-twitter.svg" />
           </a>
           <a
             class="github"
