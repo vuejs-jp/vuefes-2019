@@ -201,7 +201,7 @@ export default class TheHeadSection extends Vue {
   text-align: center;
 }
 
-.base-section--head {
+.base-section.base-section--head {
   padding: 0 7.8% 60px 7.8%;
 }
 
@@ -293,7 +293,7 @@ svg.main-visual {
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .base-section--head {
+  .base-section.base-section--head {
     padding: 0 70px 80px 70px;
   }
 
