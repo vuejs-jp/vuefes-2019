@@ -8,14 +8,14 @@
 
         <div class="social-wrapper">
           <div class="social-button" @click="openTwitterForm">
-            <img src="~/assets/images/logo-twitter.svg" alt="Twitter" />
+            <img src="~/assets/images/icon-twitter.svg" alt="Twitter" />
           </div>
           <div class="social-button" @click="openFacebookForm">
-            <img src="~/assets/images/logo-facebook.svg" alt="Facebook" />
+            <img src="~/assets/images/icon-facebook.svg" alt="Facebook" />
           </div>
           <div class="social-button" @click="openHatenaBookmarkForm">
             <img
-              src="~/assets/images/logo-hatena-bookmark.svg"
+              src="~/assets/images/icon-hatena-bookmark.svg"
               alt="はてなブックマーク"
             />
           </div>
