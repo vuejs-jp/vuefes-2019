@@ -89,7 +89,7 @@ import TheFooter from '~/components/TheFooter.vue'
     TheFooter
   }
 })
-export default class CodeOfConduct extends Vue {}
+export default class CodeOfConductPage extends Vue {}
 </script>
 
 <style lang="scss" scoped>
