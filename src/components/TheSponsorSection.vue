@@ -63,6 +63,7 @@ export default class TheSponsorsSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+// TODO: sp と pc で要素を切り替える実装はイケてないと思うので、もっと良い実装にしたい
 .is-sp,
 .is-pc {
   display: none;
