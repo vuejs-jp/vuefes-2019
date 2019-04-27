@@ -87,6 +87,34 @@ import TheFooter from '~/components/TheFooter.vue'
   components: {
     BaseButton,
     TheFooter
+  },
+
+  asyncData({ route }) {
+    return {
+      path: route.path
+    }
+  },
+
+  head() {
+    const url = `https://vuefes.jp/2019${this.path}`
+    const title = '行動規範 - Vue Fes Japan 2019'
+    const description =
+      'すべての参加者、スピーカー、スポンサーとボランティアは行動規範（ポリシー）に同意していただく必要があります。誰にとっても安全な環境を守るために、ご協力をお願いいたします。'
+    return {
+      title,
+      meta: [
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'og:url', name: 'og:url', content: url },
+        { hid: 'og:title', name: 'og:title', content: title },
+        { hid: 'og:description', name: 'og:description', content: description },
+        { hid: 'twitter:title', name: 'twitter:title', content: title },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: description
+        }
+      ]
+    }
   }
 })
 export default class CodeOfConductPage extends Vue {}
