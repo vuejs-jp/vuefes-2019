@@ -1,14 +1,14 @@
 <template>
   <div class="code-of-conduct">
     <section class="the-code-of-conduct-section">
-      <a href="/2019">
+      <nuxt-link to="/">
         <img class="logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
-      </a>
+      </nuxt-link>
 
       <section class="base-section">
-        <a href="/2019">
+        <nuxt-link to="/">
           <img class="logo-vfj--relative" src="~/assets/images/logo_vfj.svg" />
-        </a>
+        </nuxt-link>
 
         <div class="title">
           行動規範
