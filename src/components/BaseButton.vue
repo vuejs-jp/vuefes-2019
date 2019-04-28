@@ -13,7 +13,7 @@ export default class BaseButton extends Vue {
   }
 
   private render(h): VNode {
-    let tag: string
+    let tag: number
 
     const data: VNodeData = {
       class: 'base-button',
