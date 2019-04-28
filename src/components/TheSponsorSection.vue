@@ -15,7 +15,7 @@
         </p>
       </div>
 
-      <LinkToTwitter class="is-pc" />
+      <LinkToTwitter class="is-small-up" />
     </div>
 
     <div class="image">
@@ -35,7 +35,7 @@
       />
     </div>
 
-    <LinkToTwitter class="is-sp" />
+    <LinkToTwitter class="is-small" />
   </BaseSection>
 </template>
 
@@ -63,20 +63,20 @@ export default class TheSponsorsSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-// TODO: sp と pc で要素を切り替える実装はイケてないと思うので、もっと良い実装にしたい
-.is-sp,
-.is-pc {
+// TODO: small サイズとそれより上のサイズで要素を切り替える実装はイケてないと思うので、もっと良い実装にしたい
+.is-small,
+.is-small-up {
   display: none;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .is-pc {
+  .is-small-up {
     display: flex;
   }
 }
 
 @media screen and (max-width: $layout-breakpoint--is-small) {
-  .is-sp {
+  .is-small {
     display: flex;
   }
 }
