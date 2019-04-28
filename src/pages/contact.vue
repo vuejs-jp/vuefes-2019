@@ -158,6 +158,7 @@ export default class ContactPage extends Vue {
         'form-name': 'contact',
         name: target.name.value,
         email: target.email.value,
+        organization: target.organization.value,
         message: target.message.value
       }
 
