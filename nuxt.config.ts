@@ -23,6 +23,12 @@ const config: NuxtConfiguration = {
   css: ['~/assets/stylesheets/main.scss'],
   plugins: [],
   modules: [
+    [
+      'nuxt-fontawesome',
+      {
+        component: 'fa'
+      }
+    ],
     '@nuxtjs/style-resources',
     [
       '@nuxtjs/pwa',
