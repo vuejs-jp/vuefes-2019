@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="content-wrapper">
         <div class="logo">
-          <img src="~/assets/images/logo-vuefes.svg" alt="VueFes" />
+          <img src="~/assets/images/logo-vuefes-invert.svg" alt="VueFes" />
         </div>
 
         <div class="social-wrapper">

@@ -2,12 +2,12 @@
   <div class="code-of-conduct">
     <div class="the-code-of-conduct-section">
       <nuxt-link to="/">
-        <img class="logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
+        <img class="logo-vfj--fixed" src="~/assets/images/logo-vuefes.svg" />
       </nuxt-link>
 
       <div class="base-section">
         <nuxt-link to="/">
-          <img class="logo-vfj--relative" src="~/assets/images/logo_vfj.svg" />
+          <img class="logo-vfj--relative" src="~/assets/images/logo-vuefes.svg" />
         </nuxt-link>
 
         <h1 class="title">
