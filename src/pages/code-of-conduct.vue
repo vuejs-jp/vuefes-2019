@@ -88,14 +88,16 @@ import TheFooter from '~/components/TheFooter.vue'
     BaseButton,
     TheFooter
   },
-
   asyncData({ route }) {
     return {
       path: route.path
     }
-  },
+  }
+})
+export default class CodeOfConductPage extends Vue {
+  path!: string
 
-  head() {
+  private head() {
     const url = `https://vuefes.jp/2019${this.path}`
     const title = '行動規範 - Vue Fes Japan 2019'
     const description =
@@ -116,8 +118,7 @@ import TheFooter from '~/components/TheFooter.vue'
       ]
     }
   }
-})
-export default class CodeOfConductPage extends Vue {}
+}
 </script>
 
 <style lang="scss" scoped>
