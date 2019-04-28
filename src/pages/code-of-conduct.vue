@@ -10,9 +10,9 @@
           <img class="logo-vfj--relative" src="~/assets/images/logo_vfj.svg" />
         </nuxt-link>
 
-        <div class="title">
+        <h1 class="title">
           行動規範
-        </div>
+        </h1>
 
         <!-- TODO: 仮の文章を入れているので、正式なものに差し替える -->
         <div class="code-of-conduct-container">
