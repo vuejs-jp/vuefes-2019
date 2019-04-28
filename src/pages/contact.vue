@@ -1,113 +1,115 @@
 <template>
-  <div class="container">
-    <div class="header">
-      <nuxt-link to="/">
-        <img class="logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
-      </nuxt-link>
-    </div>
-    <div class="title">
-      <h1>
-        お問い合わせ
-      </h1>
-    </div>
-    <div>
-      Vue Fes Japan 実行委員会へのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者からX営業日以内でお答えさせていただきます。
-    </div>
-    <div class="content">
-      <form
-        name="contact"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        netlify
-        @submit.prevent="handleSubmit"
-      >
-        <div>
-          <!-- Anti-spam Measures -->
-          <input
-            type="hidden"
-            name="form-name"
-            value="contact"
-          />
-          <p class="hidden">     
-            <label>Don’t fill this out: <input name="bot-field" /></label>   
-          </p>
-        </div>
-        <!-- Name -->
-        <div>
-          <label class="required" for="name">
-            お名前
-          </label>
-          <input
-            id="name"
-            v-model.trim="name"
-            v-validate="'required'"
-            :error-messages="errors.collect('name')"
-            data-vv-validate-on="change|blur"
-            data-vv-as="name"
-            name="name"
-            placeholder="お名前"
-            type="text"
-          />
-          <div v-show="errors.has('name')" class="has-error">
-            {{ errors.first('name') }}
+  <div>
+    <div class="container">
+      <div class="header">
+        <nuxt-link to="/">
+          <img class="logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
+        </nuxt-link>
+      </div>
+      <div class="title">
+        <h1>
+          お問い合わせ
+        </h1>
+      </div>
+      <div>
+        Vue Fes Japan 実行委員会へのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者からX営業日以内でお答えさせていただきます。
+      </div>
+      <div class="content">
+        <form
+          name="contact"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          netlify
+          @submit.prevent="handleSubmit"
+        >
+          <div>
+            <!-- Anti-spam Measures -->
+            <input
+              type="hidden"
+              name="form-name"
+              value="contact"
+            />
+            <p class="hidden">     
+              <label>Don’t fill this out: <input name="bot-field" /></label>   
+            </p>
           </div>
-        </div>
-        <!-- Email -->
-        <div>
-          <label class="required" for="email">
-            メールアドレス
-          </label>
-          <input
-            id="email"
-            v-model.trim="email"
-            v-validate="'required|email'"
-            :error-messages="errors.collect('email')"
-            data-vv-validate-on="change|blur"
-            data-vv-as="email"
-            name="email"
-            placeholder="メールアドレス"
-            type="text"
-          />
-          <div v-show="errors.has('email')" class="has-error">
-            {{ errors.first('email') }}
+          <!-- Name -->
+          <div>
+            <label class="required" for="name">
+              お名前
+            </label>
+            <input
+              id="name"
+              v-model.trim="name"
+              v-validate="'required'"
+              :error-messages="errors.collect('name')"
+              data-vv-validate-on="change|blur"
+              data-vv-as="name"
+              name="name"
+              placeholder="お名前"
+              type="text"
+            />
+            <div v-show="errors.has('name')" class="has-error">
+              {{ errors.first('name') }}
+            </div>
           </div>
-        </div>
-        <!-- Organization -->
-        <div>
-          <label for="organization">
-            会社・団体名等
-          </label>
-          <input
-            id="organization"
-            v-model="organization"
-            name="organization"
-            placeholder="会社・団体名等"
-            type="text"
-          />
-        </div>
-        <!-- Message -->
-        <div>
-          <label class="required" for="message">
-            内容
-          </label>
-          <textarea
-            id="message"
-            v-model="message"
-            v-validate="'required'"
-            :error-messages="errors.collect('message')"
-            data-vv-validate-on="change|blur"
-            data-vv-as="required"
-            name="message"
-            placeholder="例：お問い合わせ内容をご記入ください"
-          />
-          <div v-show="errors.has('message')" class="has-error">
-            {{ errors.first('message') }}
+          <!-- Email -->
+          <div>
+            <label class="required" for="email">
+              メールアドレス
+            </label>
+            <input
+              id="email"
+              v-model.trim="email"
+              v-validate="'required|email'"
+              :error-messages="errors.collect('email')"
+              data-vv-validate-on="change|blur"
+              data-vv-as="email"
+              name="email"
+              placeholder="メールアドレス"
+              type="text"
+            />
+            <div v-show="errors.has('email')" class="has-error">
+              {{ errors.first('email') }}
+            </div>
           </div>
-        </div>
-        <BaseButton class="form-button" type="submit">
-          {{ buttomValue }}
-        </BaseButton>
-      </form>
+          <!-- Organization -->
+          <div>
+            <label for="organization">
+              会社・団体名等
+            </label>
+            <input
+              id="organization"
+              v-model="organization"
+              name="organization"
+              placeholder="会社・団体名等"
+              type="text"
+            />
+          </div>
+          <!-- Message -->
+          <div>
+            <label class="required" for="message">
+              内容
+            </label>
+            <textarea
+              id="message"
+              v-model="message"
+              v-validate="'required'"
+              :error-messages="errors.collect('message')"
+              data-vv-validate-on="change|blur"
+              data-vv-as="required"
+              name="message"
+              placeholder="例：お問い合わせ内容をご記入ください"
+            />
+            <div v-show="errors.has('message')" class="has-error">
+              {{ errors.first('message') }}
+            </div>
+          </div>
+          <BaseButton class="form-button" type="submit">
+            {{ buttomValue }}
+          </BaseButton>
+        </form>
+      </div>
     </div>
     <TheFooter />
   </div>
