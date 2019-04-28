@@ -16,31 +16,31 @@
 
         <!-- TODO: 仮の文章を入れているので、正式なものに差し替える -->
         <div class="code-of-conduct-container">
-          <div class="description">
+          <section class="description">
             <p class="description-paragraph">
               すべての参加者、スピーカー、スポンサーとボランティアは以下の行動規範（ポリシー）に同意していただく必要があります。Vue Fes Japan 実行委員会はカンファレンスの期間中、この規範の実施を尊守します。誰にとっても安全な環境を守るために、すべての参加者からの協力をお願いいたします。
             </p>
-          </div>
+          </section>
 
-          <div class="description">
+          <section class="description">
             <h3 class="description-title">
               何かお困りですか？
             </h3>
             <p class="description-paragraph">
               Vue Fes Japan 実行委員会へのお問合わせは、メールにてご連絡ください。また、Vue Fes Japan 会場内でお困りの場合はお近くのスタッフにお尋ねください。
             </p>
-          </div>
+          </section>
 
-          <div class="description">
+          <section class="description">
             <h3 class="description-title">
               簡単にいうと
             </h3>
             <p class="description-paragraph">
               Vue Fes Japan では、性別、性別の表現、性的指向、障害の有無、外見、身体の大きさ、人種、民族、宗教、技術選択にかかわりなく、すべての参加者がハラスメント行為なく Vue Fes Japan に参加できる環境の提供に最善を尽くします。Vue Fes Japan 実行委員会は参加者によるハラスメント行為を一切容認しません。性的な言葉や画像は会話、ワークショップ、懇親会、パーティ、Twitter などのオンラインメディアやソーシャル・ネットワーク・サービスなどにおける発言など Vue Fes Japan に関連するあらゆる場面、場所に不適切であり、これらの規則に規則に違反している参加者は Vue Fes Japan 実行委員会の判断により Vue Fes Japan 内での行動を制限、または 参加費の払い戻しなく Vue Fes Japan からの退席をしていただく場合があります。
             </p>
-          </div>
+          </section>
 
-          <div class="description">
+          <section class="description">
             <h3 class="description-title">
               詳細
             </h3>
@@ -65,7 +65,7 @@
             <p class="description-paragraph">
               私たちは、すべての参加者が会場やワークショップ、Vue Fes Japan に関連するソーシャルイベントにて、これらのルールに従うことを期待しています。
             </p>
-          </div>
+          </section>
 
           <BaseButton class="link-to-top" to="/">
             トップに戻る
