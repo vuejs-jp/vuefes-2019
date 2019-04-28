@@ -4,7 +4,8 @@ import VeeValidate, { Validator } from 'vee-validate'
 const dict = {
   custom: {
     email: {
-      required: 'メールアドレスを正しく入力してください'
+      required: 'メールアドレスを正しく入力してください',
+      email: 'メールアドレスを正しく入力してください'
     },
     name: {
       required: '名前を正しく入力してください'
@@ -15,5 +16,5 @@ const dict = {
   }
 }
 
+Vue.use(VeeValidate, { inject: false })
 Validator.localize('ja', dict)
-Vue.use(VeeValidate)

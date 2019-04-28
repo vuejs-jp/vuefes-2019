@@ -49,11 +49,7 @@
             type="text"
           />
           <div v-show="errors.has('name')" class="has-error">
-            <!-- TODO: エラーメッセージのハードコーディングをやめる -->
-            名前を正しく入力してください
-            <!--
             {{ errors.first('name') }}
-            -->
           </div>
         </div>
         <!-- Email -->
@@ -73,11 +69,7 @@
             type="text"
           />
           <div v-show="errors.has('email')" class="has-error">
-            <!-- TODO: エラーメッセージのハードコーディングをやめる -->
-            メールアドレスを正しく入力してください
-            <!--
             {{ errors.first('email') }}
-             -->
           </div>
         </div>
         <!-- Organization -->
@@ -109,11 +101,7 @@
             placeholder="例：お問い合わせ内容をご記入ください"
           />
           <div v-show="errors.has('message')" class="has-error">
-            <!-- TODO: エラーメッセージのハードコーディングをやめる -->
-            内容を正しく入力してください
-            <!--
             {{ errors.first('message') }}
-             -->
           </div>
         </div>
         <BaseButton class="form-button" type="submit">
