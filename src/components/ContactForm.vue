@@ -37,13 +37,12 @@
             v-model.trim="name"
             v-validate="'required'"
             :error-messages="errors.collect('name')"
-            data-vv-validate-on="change|blur"
-            data-vv-as="name"
+            data-vv-validate-on="blur"
             name="name"
             placeholder="お名前"
             type="text"
           />
-          <div v-show="errors.has('name')" class="has-error">
+          <div v-show="errors.has('name')" id="name-error" class="has-error">
             {{ errors.first('name') }}
           </div>
         </div>
@@ -57,13 +56,12 @@
             v-model.trim="email"
             v-validate="'required|email'"
             :error-messages="errors.collect('email')"
-            data-vv-validate-on="change|blur"
-            data-vv-as="email"
+            data-vv-validate-on="blur"
             name="email"
             placeholder="メールアドレス"
             type="text"
           />
-          <div v-show="errors.has('email')" class="has-error">
+          <div v-show="errors.has('email')" id="email-error" class="has-error">
             {{ errors.first('email') }}
           </div>
         </div>
@@ -90,12 +88,11 @@
             v-model="message"
             v-validate="'required'"
             :error-messages="errors.collect('message')"
-            data-vv-validate-on="change|blur"
-            data-vv-as="required"
+            data-vv-validate-on="blur"
             name="message"
             placeholder="例：お問い合わせ内容をご記入ください"
           />
-          <div v-show="errors.has('message')" class="has-error">
+          <div v-show="errors.has('message')" id="message-error" class="has-error">
             {{ errors.first('message') }}
           </div>
         </div>
