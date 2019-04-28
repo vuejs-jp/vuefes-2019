@@ -116,8 +116,9 @@
              -->
           </div>
         </div>
-        <!-- TODO: BaseButton を使う -->
-        <input v-model="buttomValue" class="form-button" type="submit" />
+        <BaseButton class="form-button" type="submit">
+          {{ buttomValue }}
+        </BaseButton>
       </form>
     </div>
     <TheFooter />
