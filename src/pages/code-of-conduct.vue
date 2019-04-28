@@ -1,11 +1,11 @@
 <template>
   <div class="code-of-conduct">
-    <section class="the-code-of-conduct-section">
+    <div class="the-code-of-conduct-section">
       <nuxt-link to="/">
         <img class="logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
       </nuxt-link>
 
-      <section class="base-section">
+      <div class="base-section">
         <nuxt-link to="/">
           <img class="logo-vfj--relative" src="~/assets/images/logo_vfj.svg" />
         </nuxt-link>
@@ -71,8 +71,8 @@
             トップに戻る
           </BaseButton>
         </div>
-      </section>
-    </section>
+      </div>
+    </div>
 
     <TheFooter />
   </div>
