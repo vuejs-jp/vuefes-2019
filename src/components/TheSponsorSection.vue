@@ -15,7 +15,7 @@
         </p>
       </div>
 
-      <LinkToTwitter class="is-small-up" />
+      <LinkToTwitter class="show-on-medium-and-up" />
     </div>
 
     <div class="image">
@@ -35,7 +35,7 @@
       />
     </div>
 
-    <LinkToTwitter class="is-small" />
+    <LinkToTwitter class="show-on-small" />
   </BaseSection>
 </template>
 
@@ -63,24 +63,6 @@ export default class TheSponsorsSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-// TODO: small サイズとそれより上のサイズで要素を切り替える実装はイケてないと思うので、もっと良い実装にしたい
-.is-small,
-.is-small-up {
-  display: none;
-}
-
-@media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .is-small-up {
-    display: flex;
-  }
-}
-
-@media screen and (max-width: $layout-breakpoint--is-small) {
-  .is-small {
-    display: flex;
-  }
-}
-
 .the-sponsor-section {
   background: linear-gradient(to bottom, $tohoh, $sangosyu);
 
