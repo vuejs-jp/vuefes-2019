@@ -98,6 +98,9 @@ export interface Parts {
   y: number
   rotate: number
 }
+export const partsLeaveTime = 0.2
+export const partsCreateTime = 0.6
+
 let timer
 
 type WindowMode = 'sm' | 'md' | 'lg'
@@ -206,7 +209,7 @@ export default class TheHeadSection extends Vue {
 
     setInterval(() => {
       this.t++
-    }, 200)
+    }, 90)
 
     window.addEventListener('resize', () => {
       if (timer > 0) {
@@ -223,9 +226,9 @@ export default class TheHeadSection extends Vue {
           setTimeout(() => {
             this.visible = true
             this.adjustSvg(this.windowMode)
-          }, 500)
+          }, 400)
         }
-      }, 200)
+      }, 100)
     })
   }
 }

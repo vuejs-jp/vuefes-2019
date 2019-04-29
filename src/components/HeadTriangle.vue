@@ -10,7 +10,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import { TweenMax, Power2 } from 'gsap'
-import { Parts } from './TheHeadSection.vue'
+import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 
 @Component
 export default class HeadTriangle extends Vue {
@@ -27,7 +27,7 @@ export default class HeadTriangle extends Vue {
   }
 
   leave(el, done) {
-    TweenMax.to(this.$refs.shape, 0.5, {
+    TweenMax.to(this.$refs.shape, partsLeaveTime, {
       attr: {
         points: this.keyFrame[0]
       },
@@ -40,7 +40,7 @@ export default class HeadTriangle extends Vue {
 
   created() {
     setTimeout(() => {
-      TweenMax.to(this.$refs.shape, 1, {
+      TweenMax.to(this.$refs.shape, partsCreateTime, {
         attr: {
           points: this.keyFrame[1]
         },

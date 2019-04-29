@@ -11,7 +11,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import { TweenMax, Power2 } from 'gsap'
-import { Parts } from './TheHeadSection.vue'
+import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 
 @Component
 export default class HeadSquare extends Vue {
@@ -29,7 +29,7 @@ export default class HeadSquare extends Vue {
   }
 
   leave(el, done) {
-    TweenMax.to(this.$refs.shape1, 0.5, {
+    TweenMax.to(this.$refs.shape1, partsLeaveTime, {
       attr: {
         points: this.keyFrame1[0]
       },
@@ -38,7 +38,7 @@ export default class HeadSquare extends Vue {
         done()
       }
     })
-    TweenMax.to(this.$refs.shape2, 0.5, {
+    TweenMax.to(this.$refs.shape2, partsLeaveTime, {
       attr: {
         points: this.keyFrame2[0]
       },
@@ -48,13 +48,13 @@ export default class HeadSquare extends Vue {
 
   created() {
     setTimeout(() => {
-      TweenMax.to(this.$refs.shape1, 1, {
+      TweenMax.to(this.$refs.shape1, partsCreateTime, {
         attr: {
           points: this.keyFrame1[1]
         },
         ease: Power2.easeOut
       })
-      TweenMax.to(this.$refs.shape2, 1, {
+      TweenMax.to(this.$refs.shape2, partsCreateTime, {
         attr: {
           points: this.keyFrame2[1]
         },

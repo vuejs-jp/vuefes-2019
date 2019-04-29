@@ -13,7 +13,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import { TweenMax, Power2 } from 'gsap'
-import { Parts } from './TheHeadSection.vue'
+import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 
 @Component
 export default class HeadCross extends Vue {
@@ -34,7 +34,7 @@ export default class HeadCross extends Vue {
   }
 
   leave(el, done) {
-    TweenMax.to(this.$refs.shape1, 0.5, {
+    TweenMax.to(this.$refs.shape1, partsLeaveTime, {
       attr: {
         points: this.keyFrame1[0]
       },
@@ -43,19 +43,19 @@ export default class HeadCross extends Vue {
         done()
       }
     })
-    TweenMax.to(this.$refs.shape2, 0.5, {
+    TweenMax.to(this.$refs.shape2, partsLeaveTime, {
       attr: {
         points: this.keyFrame2[0]
       },
       ease: Power2.easeOut
     })
-    TweenMax.to(this.$refs.shape3, 0.5, {
+    TweenMax.to(this.$refs.shape3, partsLeaveTime, {
       attr: {
         points: this.keyFrame3[0]
       },
       ease: Power2.easeOut
     })
-    TweenMax.to(this.$refs.shape4, 0.5, {
+    TweenMax.to(this.$refs.shape4, partsLeaveTime, {
       attr: {
         points: this.keyFrame4[0]
       },
@@ -65,25 +65,25 @@ export default class HeadCross extends Vue {
 
   created() {
     setTimeout(() => {
-      TweenMax.to(this.$refs.shape1, 1, {
+      TweenMax.to(this.$refs.shape1, partsCreateTime, {
         attr: {
           points: this.keyFrame1[1]
         },
         ease: Power2.easeOut
       })
-      TweenMax.to(this.$refs.shape2, 1, {
+      TweenMax.to(this.$refs.shape2, partsCreateTime, {
         attr: {
           points: this.keyFrame2[1]
         },
         ease: Power2.easeOut
       })
-      TweenMax.to(this.$refs.shape3, 1, {
+      TweenMax.to(this.$refs.shape3, partsCreateTime, {
         attr: {
           points: this.keyFrame3[1]
         },
         ease: Power2.easeOut
       })
-      TweenMax.to(this.$refs.shape4, 1, {
+      TweenMax.to(this.$refs.shape4, partsCreateTime, {
         attr: {
           points: this.keyFrame4[1]
         },
