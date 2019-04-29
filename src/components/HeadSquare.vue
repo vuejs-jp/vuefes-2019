@@ -9,17 +9,16 @@
 
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import { TweenMax, Power2 } from 'gsap'
+import { Parts } from './TheHeadSection.vue'
 
-@Component({
-  props: {
-    item: Object,
-    visible: Boolean
-  }
-})
+@Component
 export default class HeadSquare extends Vue {
-  item = this.item
+  @Prop()
+  readonly item!: Parts
+  @Prop(Boolean)
+  readonly visible!: boolean
   keyFrame1 = ['-60 -60 -60 -60 -60 -60', '-60 -60 52 -60 -60 52']
   keyFrame2 = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 

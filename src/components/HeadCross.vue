@@ -11,17 +11,17 @@
 
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import { TweenMax, Power2 } from 'gsap'
+import { Parts } from './TheHeadSection.vue'
 
-@Component({
-  props: {
-    item: Object,
-    visible: Boolean
-  }
-})
+@Component
 export default class HeadCross extends Vue {
-  item = this.item
+  @Prop()
+  readonly item!: Parts
+  @Prop(Boolean)
+  readonly visible!: boolean
+
   keyFrame1 = ['0 -60 0 -60 0 -60', '-52 -60 52 -60 0 -8']
   keyFrame2 = ['-60 0 -60 0 -60 0', '-60 -52 -60 52 -8 0']
   keyFrame3 = ['0 60 0 60 0 60', '52 60 -52 60 0 8']
