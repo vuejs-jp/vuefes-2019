@@ -78,7 +78,7 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter-lg}) / #{$length-lg});
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 10px;
+    font-size: 1.3vw;
     color: #fff;
     text-decoration: none;
   }
@@ -107,6 +107,10 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter-lg}) / #{$length-lg});
     &:nth-of-type(#{$length-md}n) {
       margin-right: 0;
     }
+
+    a {
+      font-size: 10px;
+    }
   }
 }
 
@@ -117,6 +121,10 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter-lg}) / #{$length-lg});
 
     &:nth-of-type(#{$length-lg}n) {
       margin-right: 0;
+    }
+
+    a {
+      font-size: 10px;
     }
   }
 }
