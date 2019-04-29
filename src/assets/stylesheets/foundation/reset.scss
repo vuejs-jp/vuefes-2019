@@ -9,6 +9,17 @@ body {
   padding: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  margin: 0;
+}
+
 ol,
 ul {
   padding: 0;
@@ -21,23 +32,22 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0;
   font-weight: normal;
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 1em;
 }
 
 input::-ms-clear,
 input::-ms-reveal,
 select::-ms-expand {
   display: none;
-}
-
-div,
-header,
-main,
-section,
-footer,
-ul,
-li {
-  box-sizing: border-box;
 }
 
 button {
@@ -47,10 +57,4 @@ button {
   &::-moz-focus-inner {
     border: 0;
   }
-}
-
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
 }

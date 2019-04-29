@@ -15,7 +15,7 @@ yarn install
 下記コマンドを実行すると Web サーバーがホットリロードで起動して `http://localhost:3000/2019/` で確認できます。
 
 ```shell
-yarn dev
+yarn dev --open
 ```
 
 ### 画像の最適化

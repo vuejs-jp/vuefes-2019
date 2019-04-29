@@ -27,7 +27,7 @@
             target="_blank"
             rel="noopener"
           >
-            <img src="~/assets/images/icon-twitter.svg" />
+            <img src="~/assets/images/logo-twitter.svg" />
           </a>
           <a
             class="github"
@@ -90,8 +90,10 @@ export default class TheSpeakersSection extends Vue {
 }
 
 .social img {
-  width: 24px;
-  height: 24px;
+  width: 7.5vw;
+  max-width: 32px;
+  height: 7.5vw;
+  max-height: 32px;
 }
 
 .social .github {
