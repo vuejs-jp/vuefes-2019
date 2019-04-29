@@ -43,6 +43,16 @@ export default class TheCallForPresentersSection extends Vue {
 </script>
 
 <style scoped lang="scss">
+$gutter-sm: 10px;
+$gutter-md: 15px;
+$gutter-lg: 20px;
+$length-sm: 4;
+$length-md: 6;
+$length-lg: 8;
+$width-sm: calc((100% - #{$length-sm - 1} * #{$gutter-sm}) / #{$length-sm});
+$width-md: calc((100% - #{$length-md - 1} * #{$gutter-md}) / #{$length-md});
+$width-lg: calc((100% - #{$length-lg - 1} * #{$gutter-lg}) / #{$length-lg});
+
 .the-staff-list-section {
   background-color: green;
 }
@@ -56,8 +66,7 @@ export default class TheCallForPresentersSection extends Vue {
 }
 
 .teammate {
-  width: 25%;
-  padding: 5px;
+  margin-bottom: 10px;
 
   a {
     display: flex;
@@ -73,17 +82,36 @@ export default class TheCallForPresentersSection extends Vue {
   }
 }
 
-@media screen and (min-width: $layout-breakpoint--is-small-up) {
+@media screen and (max-width: $layout-breakpoint--is-small) {
   .teammate {
-    width: 16.6666%;
-    padding: 7px;
+    width: $width-sm;
+    margin-right: $gutter-sm;
+
+    &:nth-of-type(#{$length-sm}n) {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint--is-small-up) and (max-width: $layout-breakpoint--is-medium) {
+  .teammate {
+    width: $width-md;
+    margin-right: $gutter-md;
+
+    &:nth-of-type(#{$length-md}n) {
+      margin-right: 0;
+    }
   }
 }
 
 @media screen and (min-width: $layout-breakpoint--is-medium-up) {
   .teammate {
-    width: 12.5%;
-    padding: 10px;
+    width: $width-lg;
+    margin-right: $gutter-lg;
+
+    &:nth-of-type(#{$length-lg}n) {
+      margin-right: 0;
+    }
   }
 }
 </style>
