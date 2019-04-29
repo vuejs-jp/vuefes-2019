@@ -205,7 +205,7 @@ export default class TheHeadSection extends Vue {
 
   mounted() {
     this.windowMode = getWindowMode()
-    this.adjustSvg('lg')
+    this.adjustSvg(this.windowMode)
 
     setInterval(() => {
       this.t++
