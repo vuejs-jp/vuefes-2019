@@ -244,7 +244,7 @@ export default class TheHeadSection extends Vue {
 }
 
 .the-head-section {
-  background: linear-gradient(to right, $hiwamoegi, $asagi);
+  background: linear-gradient(to bottom right, $hiwamoegi, $asagi);
 }
 
 .message-content {
