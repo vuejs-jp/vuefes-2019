@@ -1,13 +1,11 @@
-import { mount, RouterLinkStub } from '@vue/test-utils'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { shallowMount, RouterLinkStub } from '@vue/test-utils'
 import CodeOfConductPage from '~/pages/code-of-conduct.vue'
 
 describe('CodeOfConductPage', () => {
   test('レンダリングできる', () => {
-    const wrapper = mount(CodeOfConductPage, {
+    const wrapper = shallowMount(CodeOfConductPage, {
       stubs: {
-        NuxtLink: RouterLinkStub,
-        Fa: FontAwesomeIcon
+        NuxtLink: RouterLinkStub
       }
     })
     expect(wrapper.find('.code-of-conduct').isVisible()).toBeTruthy()
