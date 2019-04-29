@@ -2,7 +2,10 @@
   <BaseSection class="the-staff-list-section">
     <template slot="heading">
       TEAM
-      <p>Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。</p>
+    </template>
+
+    <template slot="heading-copy">
+      Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
     <ul class="teammates">
@@ -43,18 +46,21 @@ export default class TheCallForPresentersSection extends Vue {
 </script>
 
 <style scoped lang="scss">
+// ガターの幅
 $gutter-sm: 10px;
 $gutter-md: 15px;
 $gutter-lg: 20px;
+// 1列のアイテム数
 $length-sm: 4;
 $length-md: 6;
 $length-lg: 8;
+// アイテムの幅 = ( 100% - 1列にあるガター幅の合計px ) / 1列にあるアイテム数
 $width-sm: calc((100% - #{$length-sm - 1} * #{$gutter-sm}) / #{$length-sm});
 $width-md: calc((100% - #{$length-md - 1} * #{$gutter-md}) / #{$length-md});
 $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter-lg}) / #{$length-lg});
 
 .the-staff-list-section {
-  background-color: green;
+  background: linear-gradient(to right bottom, #33a6b8, #84b259);
 }
 
 .teammates {
