@@ -1,12 +1,12 @@
 <template>
   <section class="the-head-section">
     <nuxt-link to="/">
-      <img class="logo-vfj logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
+      <img class="logo-vfj logo-vfj--fixed" src="~/assets/images/logo-vuefes.svg" />
     </nuxt-link>
 
     <BaseSection class="base-section--head">
       <nuxt-link to="/">
-        <img class="logo-vfj logo-vfj--relative" src="~/assets/images/logo_vfj.svg" />
+        <img class="logo-vfj logo-vfj--relative" src="~/assets/images/logo-vuefes.svg" />
       </nuxt-link>
       <div class="main-visual-wrapper">
         <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
