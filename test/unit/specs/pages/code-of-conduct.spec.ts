@@ -1,9 +1,9 @@
-import { mount, RouterLinkStub } from '@vue/test-utils'
+import { shallowMount, RouterLinkStub } from '@vue/test-utils'
 import CodeOfConductPage from '~/pages/code-of-conduct.vue'
 
 describe('CodeOfConductPage', () => {
   test('レンダリングできる', () => {
-    const wrapper = mount(CodeOfConductPage, {
+    const wrapper = shallowMount(CodeOfConductPage, {
       stubs: {
         NuxtLink: RouterLinkStub
       }
