@@ -202,11 +202,6 @@ export default class TheHeadSection extends Vue {
   color: white;
 }
 
-.message-content p {
-  line-height: 1.8em;
-  font-size: 4vw;
-}
-
 .message-content a {
   color: white;
 }
@@ -286,10 +281,6 @@ svg.main-visual {
 
   .message-content {
     width: 65%;
-  }
-
-  .message-content p {
-    font-size: 18px;
   }
 
   .title {

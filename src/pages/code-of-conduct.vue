@@ -144,8 +144,6 @@ export default class CodeOfConductPage extends Vue {
 .description-paragraph {
   margin-top: 0;
   margin-bottom: 25px;
-  font-size: 4vw;
-  line-height: 1.6;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -161,10 +159,6 @@ export default class CodeOfConductPage extends Vue {
 
   .description-title {
     font-size: 42px;
-  }
-
-  .description-paragraph {
-    font-size: 18px;
   }
 
   .link-to-top {

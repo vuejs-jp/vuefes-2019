@@ -37,11 +37,6 @@ export default class TheCallForPresentersSection extends Vue {}
   margin-bottom: 40px;
   padding: 40px 6.7%;
   border: $black 1px solid;
-
-  p {
-    font-size: 4vw;
-    line-height: 1.8;
-  }
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -50,10 +45,6 @@ export default class TheCallForPresentersSection extends Vue {}
     margin-bottom: 60px;
     width: 80%;
     padding: 40px;
-
-    p {
-      font-size: 18px;
-    }
   }
 
   .link-to-twitter {

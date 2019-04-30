@@ -41,7 +41,6 @@ h2 {
   line-height: 1;
 }
 
-p,
 li {
   font-size: 4vw;
 }
@@ -96,7 +95,6 @@ ul ol {
     font-size: 42px;
   }
 
-  p,
   li {
     font-size: 18px;
   }

@@ -103,11 +103,10 @@ export default class TheSpeakersSection extends Vue {
 .description p {
   margin: 6vw 0;
   font-size: 3.5vw;
-  line-height: 1.8;
 }
 
 .more {
-  font-size: 3.5vw;
+  font-size: 4vw;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
