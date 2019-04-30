@@ -1,5 +1,5 @@
-$font-size-default: 18px;
-$font-size-default--is-small: 4vw;
+$font-size-default: 4vw;
+$font-size-default--is-small-up: 18px;
 
 html {
   // stylelint-disable
@@ -23,11 +23,11 @@ h4,
 h5,
 h6,
 p {
-  font-size: $font-size-default--is-small;
+  font-size: $font-size-default;
   line-height: 1.8;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    font-size: $font-size-default;
+    font-size: $font-size-default--is-small-up;
   }
 }
 
