@@ -20,6 +20,10 @@
           rel="noopener"
         >
           <img
+            :srcset="`
+              ${require(`~/assets/images/teammates/${teammate.avatar}`)},
+              ${require(`~/assets/images/teammates/@2x/${teammate.avatar}`)} 2x
+            `"
             :src="require(`~/assets/images/teammates/${teammate.avatar}`)"
             :alt="teammate.name"
           />
