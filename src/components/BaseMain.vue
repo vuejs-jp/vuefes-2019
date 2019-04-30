@@ -30,8 +30,7 @@ export default class BaseMain extends Vue {}
   line-height: 1;
 }
 
-.description,
-section {
+.description {
   margin-bottom: 65px;
 }
 

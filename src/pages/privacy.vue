@@ -14,7 +14,7 @@
       </p>
     </div>
 
-    <section>
+    <section class="description">
       <h2>
         個人情報の定義
       </h2>
@@ -24,7 +24,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         個人情報の収集
       </h2>
@@ -64,7 +64,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         個人情報の利用目的
       </h2>
@@ -100,7 +100,7 @@
       </ol>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         個人情報利用目的の変更
       </h2>
@@ -110,7 +110,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         個人情報の利用期限
       </h2>
@@ -120,7 +120,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         個人情報の安全管理
       </h2>
@@ -130,7 +130,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         個人情報の第三者提供
       </h2>
@@ -158,7 +158,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         個人情報等の最新性、正確性の維持
       </h2>
@@ -168,7 +168,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         個人情報の照会、訂正、削除等
       </h2>
@@ -178,7 +178,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         Cookie または類似技術の利用と目的
       </h2>
@@ -188,7 +188,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         使用する Third Party Cookie
       </h2>
@@ -225,7 +225,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         Cookie の削除又は無効化
       </h2>
@@ -243,7 +243,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         継続的改善
       </h2>
@@ -253,7 +253,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         お問い合わせ
       </h2>
@@ -267,7 +267,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="description">
       <h2>
         附則
       </h2>
@@ -278,7 +278,6 @@
         </li>
       </ul>
     </section>
-
 
     <BaseButton class="link-to-top" to="/">
       トップに戻る
