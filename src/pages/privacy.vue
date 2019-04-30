@@ -326,3 +326,29 @@ export default class PrivacyPage extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+li {
+  font-size: 4vw;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 40px;
+}
+
+ul ul,
+ol ul {
+  list-style-type: circle;
+}
+
+ol ol,
+ul ol {
+  list-style-type: lower-latin;
+}
+</style>

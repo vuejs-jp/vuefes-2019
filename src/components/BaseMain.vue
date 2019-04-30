@@ -41,30 +41,6 @@ h2 {
   line-height: 1;
 }
 
-li {
-  font-size: 4vw;
-}
-
-ul {
-  list-style-type: disc;
-  padding-left: 40px;
-}
-
-ol {
-  list-style-type: decimal;
-  padding-left: 40px;
-}
-
-ul ul,
-ol ul {
-  list-style-type: circle;
-}
-
-ol ol,
-ul ol {
-  list-style-type: lower-latin;
-}
-
 .link {
   color: $vue-dark-blue;
   transition: 0.2s;
