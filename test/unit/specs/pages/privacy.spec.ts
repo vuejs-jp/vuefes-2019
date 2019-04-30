@@ -8,6 +8,6 @@ describe('PrivacyPage', () => {
         NuxtLink: RouterLinkStub
       }
     })
-    expect(wrapper.find('.privacy').isVisible()).toBeTruthy()
+    expect(wrapper.find('.privacy-page').isVisible()).toBeTruthy()
   })
 })

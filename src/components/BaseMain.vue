@@ -1,13 +1,13 @@
 <template>
-  <main class="base-main">
-    <div class="main-container">
+  <div class="base-main">
+    <main class="main-content">
       <h1 v-if="$slots.heading" class="heading">
         <slot name="heading" />
       </h1>
 
       <slot />
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
 
 <script lang="ts">
@@ -85,7 +85,7 @@ ul ol {
     padding: 130px 70px 120px;
   }
 
-  .main-container {
+  .main-content {
     margin: 0 auto;
   }
 
@@ -104,7 +104,7 @@ ul ol {
 }
 
 @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-  .main-container {
+  .main-content {
     max-width: $page-container-max-width;
   }
 }
