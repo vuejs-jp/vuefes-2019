@@ -218,9 +218,9 @@
       <ul>
         <li>
           Google 社の
-          <BaseLink href="https://policies.google.com/privacy?hl=ja" target="_brank" rel="noopener">
+          <a class="link" href="https://policies.google.com/privacy?hl=ja" target="_brank" rel="noopener">
             プライバシーポリシー
-          </BaseLink>
+          </a>
         </li>
       </ul>
     </BaseDescription>
@@ -260,9 +260,9 @@
 
       <p>
         開示等のお申出、ご意見、ご質問、苦情のお申出その他個人情報の取扱いに関するお問い合わせは、メールにて
-        <BaseLink href="mailto:privacy@vuefes.jp">
+        <a class="link" href="mailto:privacy@vuefes.jp">
           privacy@vuefes.jp
-        </BaseLink>
+        </a>
         にお問い合わせください。
       </p>
     </BaseDescription>
@@ -289,14 +289,12 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseDescription from '~/components/BaseDescription.vue'
-import BaseLink from '~/components/BaseLink.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
 @Component({
   components: {
     BaseMain,
     BaseDescription,
-    BaseLink,
     BaseButton
   },
   asyncData({ route }) {

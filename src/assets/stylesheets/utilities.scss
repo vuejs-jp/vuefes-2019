@@ -1,0 +1,9 @@
+.link {
+  font-size: inherit;
+  color: $vue-dark-blue;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.4;
+  }
+}
