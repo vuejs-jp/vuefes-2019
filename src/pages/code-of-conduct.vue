@@ -1,15 +1,7 @@
 <template>
   <div class="code-of-conduct">
     <div class="the-code-of-conduct-section">
-      <nuxt-link to="/">
-        <img class="logo-vfj--fixed" src="~/assets/images/logo-vuefes.svg" />
-      </nuxt-link>
-
       <div class="base-section">
-        <nuxt-link to="/">
-          <img class="logo-vfj--relative" src="~/assets/images/logo-vuefes.svg" />
-        </nuxt-link>
-
         <h1 class="title">
           行動規範
         </h1>
@@ -73,8 +65,6 @@
         </div>
       </div>
     </div>
-
-    <TheFooter />
   </div>
 </template>
 
@@ -131,14 +121,6 @@ export default class CodeOfConductPage extends Vue {
   padding: 30px 7.8% 100px;
 }
 
-.logo-vfj--relative {
-  margin-bottom: 30px;
-}
-
-.logo-vfj--fixed {
-  display: none;
-}
-
 .title {
   margin-bottom: 34px;
   font-size: 10.41vw;
@@ -170,17 +152,6 @@ export default class CodeOfConductPage extends Vue {
   .base-section {
     margin: 0 auto;
     padding: 70px 70px 132px;
-  }
-
-  .logo-vfj--relative {
-    display: none;
-  }
-
-  .logo-vfj--fixed {
-    position: fixed;
-    display: block;
-    top: 30px;
-    left: 30px;
   }
 
   .title {
