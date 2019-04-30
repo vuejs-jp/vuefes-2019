@@ -1,13 +1,13 @@
 <template>
-  <div class="base-main">
-    <main class="main-content">
+  <main class="base-main">
+    <div class="main-content">
       <h1 v-if="$slots.heading" class="heading">
         <slot name="heading" />
       </h1>
 
       <slot />
-    </main>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script lang="ts">
