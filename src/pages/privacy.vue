@@ -302,7 +302,7 @@ import BaseButton from '~/components/BaseButton.vue'
     }
   }
 })
-export default class CodeOfConductPage extends Vue {
+export default class PrivacyPage extends Vue {
   path!: string
 
   private head() {
