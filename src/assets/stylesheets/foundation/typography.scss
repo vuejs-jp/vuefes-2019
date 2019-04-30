@@ -1,11 +1,12 @@
-$font-size-default: 16px;
+$font-size-default: 4vw;
+$font-size-default--is-small-up: 18px;
 
 html {
   // stylelint-disable
   // Unexpected missing generic font family / font-family-no-missing-generic-family-keyword
   font-family: 'din-2014', 游ゴシック Medium, sans-serif;
   // stylelint-enable
-  font-size: $font-size-default;
+  font-size: 16px;
   line-height: 1.5;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -23,5 +24,13 @@ h5,
 h6,
 p {
   font-size: $font-size-default;
-  line-height: 1.5;
+  line-height: 1.8;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: $font-size-default--is-small-up;
+  }
+}
+
+p + p {
+  margin-top: 2em;
 }

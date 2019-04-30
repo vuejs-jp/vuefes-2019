@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import BaseSection from '~/components/BaseSection.vue'
+import BaseMain from '~/components/BaseMain.vue'
 
-describe('BaseSection', () => {
+describe('BaseMain', () => {
   test('$slots.heading を表示できる', () => {
-    const wrapper = mount(BaseSection, {
+    const wrapper = mount(BaseMain, {
       slots: {
         default: 'My Default',
         heading: 'MY HEADING'

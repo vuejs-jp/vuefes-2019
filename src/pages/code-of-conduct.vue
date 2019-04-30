@@ -1,15 +1,7 @@
 <template>
   <div class="code-of-conduct">
     <div class="the-code-of-conduct-section">
-      <nuxt-link to="/">
-        <img class="logo-vfj--fixed" src="~/assets/images/logo-vuefes.svg" />
-      </nuxt-link>
-
       <div class="base-section">
-        <nuxt-link to="/">
-          <img class="logo-vfj--relative" src="~/assets/images/logo-vuefes.svg" />
-        </nuxt-link>
-
         <h1 class="title">
           行動規範
         </h1>
@@ -18,7 +10,7 @@
         <div class="code-of-conduct-container">
           <section class="description">
             <p class="description-paragraph">
-              すべての参加者、スピーカー、スポンサーとボランティアは以下の行動規範（ポリシー）に同意していただく必要があります。Vue Fes Japan 実行委員会はカンファレンスの期間中、この規範の実施を尊守します。誰にとっても安全な環境を守るために、すべての参加者からの協力をお願いいたします。
+              すべての参加者、スピーカー、スポンサーとボランティアは以下の行動規範（ポリシー）に同意していただく必要があります。Vue.js 日本ユーザーグループはカンファレンスの期間中、この規範の実施を尊守します。誰にとっても安全な環境を守るために、すべての参加者からの協力をお願いいたします。
             </p>
           </section>
 
@@ -27,7 +19,7 @@
               何かお困りですか？
             </h3>
             <p class="description-paragraph">
-              Vue Fes Japan 実行委員会へのお問合わせは、メールにてご連絡ください。また、Vue Fes Japan 会場内でお困りの場合はお近くのスタッフにお尋ねください。
+              Vue.js 日本ユーザーグループへのお問合わせは、メールにてご連絡ください。また、Vue Fes Japan 会場内でお困りの場合はお近くのスタッフにお尋ねください。
             </p>
           </section>
 
@@ -36,7 +28,7 @@
               簡単にいうと
             </h3>
             <p class="description-paragraph">
-              Vue Fes Japan では、性別、性別の表現、性的指向、障害の有無、外見、身体の大きさ、人種、民族、宗教、技術選択にかかわりなく、すべての参加者がハラスメント行為なく Vue Fes Japan に参加できる環境の提供に最善を尽くします。Vue Fes Japan 実行委員会は参加者によるハラスメント行為を一切容認しません。性的な言葉や画像は会話、ワークショップ、懇親会、パーティ、Twitter などのオンラインメディアやソーシャル・ネットワーク・サービスなどにおける発言など Vue Fes Japan に関連するあらゆる場面、場所に不適切であり、これらの規則に規則に違反している参加者は Vue Fes Japan 実行委員会の判断により Vue Fes Japan 内での行動を制限、または 参加費の払い戻しなく Vue Fes Japan からの退席をしていただく場合があります。
+              Vue Fes Japan では、性別、性別の表現、性的指向、障害の有無、外見、身体の大きさ、人種、民族、宗教、技術選択にかかわりなく、すべての参加者がハラスメント行為なく Vue Fes Japan に参加できる環境の提供に最善を尽くします。Vue.js 日本ユーザーグループは参加者によるハラスメント行為を一切容認しません。性的な言葉や画像は会話、ワークショップ、懇親会、パーティ、Twitter などのオンラインメディアやソーシャル・ネットワーク・サービスなどにおける発言など Vue Fes Japan に関連するあらゆる場面、場所に不適切であり、これらの規則に規則に違反している参加者は Vue.js 日本ユーザーグループの判断により Vue Fes Japan 内での行動を制限、または 参加費の払い戻しなく Vue Fes Japan からの退席をしていただく場合があります。
             </p>
           </section>
 
@@ -73,8 +65,6 @@
         </div>
       </div>
     </div>
-
-    <TheFooter />
   </div>
 </template>
 
@@ -128,15 +118,7 @@ export default class CodeOfConductPage extends Vue {
 }
 
 .base-section {
-  padding: 30px 7.8% 100px;
-}
-
-.logo-vfj--relative {
-  margin-bottom: 30px;
-}
-
-.logo-vfj--fixed {
-  display: none;
+  padding: 100px 7.8% 100px;
 }
 
 .title {
@@ -162,25 +144,12 @@ export default class CodeOfConductPage extends Vue {
 .description-paragraph {
   margin-top: 0;
   margin-bottom: 25px;
-  font-size: 4vw;
-  line-height: 1.6;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .base-section {
     margin: 0 auto;
     padding: 70px 70px 132px;
-  }
-
-  .logo-vfj--relative {
-    display: none;
-  }
-
-  .logo-vfj--fixed {
-    position: fixed;
-    display: block;
-    top: 30px;
-    left: 30px;
   }
 
   .title {
@@ -190,10 +159,6 @@ export default class CodeOfConductPage extends Vue {
 
   .description-title {
     font-size: 42px;
-  }
-
-  .description-paragraph {
-    font-size: 18px;
   }
 
   .link-to-top {

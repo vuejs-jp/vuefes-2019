@@ -1,75 +1,66 @@
 <template>
-  <section class="the-head-section">
-    <nuxt-link to="/">
-      <img class="logo-vfj logo-vfj--fixed" src="~/assets/images/logo-vuefes.svg" />
-    </nuxt-link>
-
-    <BaseSection class="base-section--head">
-      <nuxt-link to="/">
-        <img class="logo-vfj logo-vfj--relative" src="~/assets/images/logo-vuefes.svg" />
-      </nuxt-link>
-      <div class="main-visual-wrapper">
-        <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
-          <g transform="translate(-6, -6)">
-            <g v-for="(row, i) in items" :key="i">
-              <g v-for="(col, j) in row" :key="j">
-                <component :is="col.type" :item="col" />
-              </g>
+  <BaseSection class="the-head-section">
+    <div class="main-visual-wrapper">
+      <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
+        <g transform="translate(-6, -6)">
+          <g v-for="(row, i) in items" :key="i">
+            <g v-for="(col, j) in row" :key="j">
+              <component :is="col.type" :item="col" />
             </g>
           </g>
-        </svg>
-      </div>
+        </g>
+      </svg>
+    </div>
 
-      <div class="title">
-        Vue Fes Japan 2019
-      </div>
+    <div class="title">
+      Vue Fes Japan 2019
+    </div>
 
-      <div class="date-place">
-        <span class="date-place__date">2019.10.12</span>
-        <span class="date-place__day">SAT</span>
-        <span class="date-place__place">TOC GOTANDA MESSE</span>
-      </div>
+    <div class="date-place">
+      <span class="date-place__date">2019.10.12</span>
+      <span class="date-place__day">SAT</span>
+      <span class="date-place__place">TOC GOTANDA MESSE</span>
+    </div>
 
-      <div class="message-container">
-        <div class="message-content">
-          <p>
-            2018 年は Vue.js にとって飛躍の年でした。
-            エコシステムの成熟、関連ツールのアップデート、コミュニティの拡大と、数多くのポジティブな出来事がありました。
-            また、世界各地でカンファレンスが開催され、Vue.js 日本ユーザーグループでも国内初の大規模カンファレンス
-            <a
-              href="https://vuefes.jp/2018/"
-            >Vue Fes Japan 2018</a> を大盛況で終えることができました。
-          </p>
-          <p>
-            今年はメジャーアップデートとなる Vue.js 3.0 のリリースが予定されており、
-            世界中からますます注目が集まることでしょう。「Vue Fes Japan 2019」では、
-            国内外の著名スピーカーによるセッションの他、ユーザー同士が相互に楽しめるカンファレンスを目指します。
-            ぜひ、一緒に Vue.js を楽しみ、盛り上げましょう！
-          </p>
-          <p class="message-content__author">
-            Vue.js 日本ユーザーグループ 代表 川口 和也
-            <a href="https://github.com/kazupon">@kazupon</a>
-          </p>
-        </div>
+    <div class="message-container">
+      <div class="message-content">
+        <p>
+          2018 年は Vue.js にとって飛躍の年でした。
+          エコシステムの成熟、関連ツールのアップデート、コミュニティの拡大と、数多くのポジティブな出来事がありました。
+          また、世界各地でカンファレンスが開催され、Vue.js 日本ユーザーグループでも国内初の大規模カンファレンス
+          <a
+            href="https://vuefes.jp/2018/"
+          >Vue Fes Japan 2018</a> を大盛況で終えることができました。
+        </p>
+        <p>
+          今年はメジャーアップデートとなる Vue.js 3.0 のリリースが予定されており、
+          世界中からますます注目が集まることでしょう。「Vue Fes Japan 2019」では、
+          国内外の著名スピーカーによるセッションの他、ユーザー同士が相互に楽しめるカンファレンスを目指します。
+          ぜひ、一緒に Vue.js を楽しみ、盛り上げましょう！
+        </p>
+        <p class="message-content__author">
+          Vue.js 日本ユーザーグループ 代表 川口 和也
+          <a href="https://github.com/kazupon">@kazupon</a>
+        </p>
       </div>
+    </div>
 
-      <div class="btn-wrapper">
-        <a href="https://twitter.com/vuefes">
-          <div class="btn">
-            <img src="~/assets/images/icon-twitter-inside-btn.svg" />
-            <div class="btn__text">
-              <div class="btn__fold">
-                Vue Fes Japan 公式 Twitter
-              </div>
-              <div class="btn__fold">
-                で最新情報をチェック
-              </div>
+    <div class="btn-wrapper">
+      <a href="https://twitter.com/vuefes">
+        <div class="btn">
+          <img src="~/assets/images/icon-twitter-inside-btn.svg" />
+          <div class="btn__text">
+            <div class="btn__fold">
+              Vue Fes Japan 公式 Twitter
+            </div>
+            <div class="btn__fold">
+              で最新情報をチェック
             </div>
           </div>
-        </a>
-      </div>
-    </BaseSection>
-  </section>
+        </div>
+      </a>
+    </div>
+  </BaseSection>
 </template>
 
 <script lang="ts">
@@ -198,25 +189,17 @@ export default class TheHeadSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.the-head-section {
+  padding: 100px 7.8% 60px;
+  background: linear-gradient(to right, $hiwamoegi, $asagi);
+}
+
 .main-visual-wrapper {
   text-align: center;
 }
 
-.base-section.base-section--head {
-  padding: 0 7.8% 60px 7.8%;
-}
-
-.the-head-section {
-  background: linear-gradient(to right, $hiwamoegi, $asagi);
-}
-
 .message-content {
   color: white;
-}
-
-.message-content p {
-  line-height: 1.8em;
-  font-size: 4vw;
 }
 
 .message-content a {
@@ -265,14 +248,6 @@ export default class TheHeadSection extends Vue {
   text-align: center;
 }
 
-.logo-vfj--fixed {
-  display: none;
-}
-
-.logo-vfj--relative {
-  margin-top: 30px;
-}
-
 circle {
   fill: $vue-dark-blue;
 }
@@ -286,7 +261,6 @@ circle {
 svg.main-visual {
   max-width: 100%;
   height: auto;
-  margin-top: 30px;
 }
 
 .btn__fold {
@@ -294,8 +268,8 @@ svg.main-visual {
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .base-section.base-section--head {
-    padding: 0 70px 80px 70px;
+  .the-head-section {
+    padding: 120px 70px 80px;
   }
 
   .message-container {
@@ -307,10 +281,6 @@ svg.main-visual {
 
   .message-content {
     width: 65%;
-  }
-
-  .message-content p {
-    font-size: 18px;
   }
 
   .title {
@@ -325,21 +295,6 @@ svg.main-visual {
 
   .date-place__day {
     font-size: 18px;
-  }
-
-  .logo-vfj--fixed {
-    display: block;
-    position: fixed;
-    top: 30px;
-    left: 30px;
-  }
-
-  .logo-vfj--relative {
-    display: none;
-  }
-
-  svg.main-visual {
-    margin-top: 120px;
   }
 
   .btn {
