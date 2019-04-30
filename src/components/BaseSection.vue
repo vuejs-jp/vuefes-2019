@@ -1,9 +1,15 @@
 <template>
   <section class="base-section">
     <div class="section-container">
-      <h2 v-if="$slots.heading" class="heading">
-        <slot name="heading" />
-      </h2>
+      <div class="heading-wrapper">
+        <h2 v-if="$slots.heading" class="heading">
+          <slot name="heading" />
+        </h2>
+
+        <p v-if="$slots['heading-copy']" class="heading-copy">
+          <slot name="heading-copy" />
+        </p>
+      </div>
 
       <slot />
     </div>
@@ -24,11 +30,20 @@ export default class BaseSection extends Vue {}
   background-repeat: repeat;
 }
 
-.heading {
+.heading-wrapper {
   margin-bottom: 40px;
+}
+
+.heading {
   font-size: 10.41vw;
   font-weight: bold;
   line-height: 1;
+}
+
+.heading-copy {
+  font-size: 4vw;
+  line-height: 1.8;
+  margin-top: 20px;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -40,9 +55,21 @@ export default class BaseSection extends Vue {}
     margin: 0 auto;
   }
 
-  .heading {
+  .heading-wrapper {
+    display: flex;
+    justify-content: center;
     margin-bottom: 45px;
+  }
+
+  .heading {
     font-size: 80px;
+  }
+
+  .heading-copy {
+    flex: 1;
+    margin-top: 7px;
+    margin-left: 100px;
+    font-size: 18px;
   }
 }
 
