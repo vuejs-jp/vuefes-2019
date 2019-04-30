@@ -48,12 +48,22 @@ interface Teammate {
   }
 })
 export default class TheCallForPresentersSection extends Vue {
-  teammates: Teammate[] = [
-    {
-      name: 'kazu_pon',
-      link: 'https://twitter.com/kazu_pon',
-      avatar: 'kazu_pon.png'
-    },
+  private get teammates(): Array<Teammate> {
+    return [
+      this.leader,
+      ...this.staffs.sort((a, b) => {
+        if (a.name < b.name) return -1
+        if (a.name > b.name) return 1
+        return 0
+      })
+    ]
+  }
+  leader: Teammate = {
+    name: 'kazu_pon',
+    link: 'https://twitter.com/kazu_pon',
+    avatar: 'kazu_pon.png'
+  }
+  staffs: Teammate[] = [
     {
       name: '448jp',
       link: 'https://twitter.com/448jp',
