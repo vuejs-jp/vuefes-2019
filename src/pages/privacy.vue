@@ -1,5 +1,5 @@
 <template>
-  <BaseMain class="privacy">
+  <BaseMain class="privacy-page">
     <template slot="heading">
       プライバシーポリシー
     </template>
