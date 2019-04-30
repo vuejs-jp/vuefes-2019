@@ -30,6 +30,7 @@ export default class BaseMain extends Vue {}
   line-height: 1;
 }
 
+.description,
 section {
   margin-bottom: 65px;
 }
@@ -41,13 +42,47 @@ h2 {
   line-height: 1;
 }
 
-p {
+p,
+li {
   font-size: 4vw;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 40px;
+}
+
+ul ul,
+ol ul {
+  list-style-type: circle;
+}
+
+ol ol,
+ul ol {
+  list-style-type: lower-latin;
+}
+
+.link {
+  color: $vue-dark-blue;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.4;
+  }
+}
+
+.link-to-top {
+  margin: 0 auto;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .base-main {
-    padding: 130px 70px 80px;
+    padding: 130px 70px 120px;
   }
 
   .main-container {
@@ -62,7 +97,8 @@ p {
     font-size: 42px;
   }
 
-  p {
+  p,
+  li {
     font-size: 18px;
   }
 }
