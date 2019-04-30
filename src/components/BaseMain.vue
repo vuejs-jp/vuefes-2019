@@ -30,30 +30,6 @@ export default class BaseMain extends Vue {}
   line-height: 1;
 }
 
-.description {
-  margin-bottom: 65px;
-}
-
-h2 {
-  margin-bottom: 25px;
-  font-size: 5.2vw;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.link {
-  color: $vue-dark-blue;
-  transition: 0.2s;
-
-  &:hover {
-    opacity: 0.4;
-  }
-}
-
-.link-to-top {
-  margin: 0 auto;
-}
-
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .base-main {
     padding: 130px 70px 120px;
@@ -65,14 +41,6 @@ h2 {
 
   .heading {
     font-size: 80px;
-  }
-
-  h2 {
-    font-size: 42px;
-  }
-
-  li {
-    font-size: 18px;
   }
 }
 

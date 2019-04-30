@@ -4,7 +4,7 @@
       プライバシーポリシー
     </template>
 
-    <div class="description">
+    <BaseDescription>
       <p>
         Vue Fes Japan 2019（以下、 カンファレンス）では、カンファレンスへの参加者およびスポンサー（以下、ユーザー）の個人情報保護の重要性について認識しています。
       </p>
@@ -12,22 +12,22 @@
       <p>
         個人情報の保護に関する法律を遵守できるよう、以下のプライバシーポリシー（以下、本プライバシーポリシー）に従い、適切な取扱い、保護そして継続的改善に努めます。
       </p>
-    </div>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         個人情報の定義
-      </h2>
+      </template>
 
       <p>
         本プライバシーポリシーにおいて、「個人情報」とは、個人情報保護法にいう、生存する個人に関する情報であり、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と容易に照合することができ、それにより特定の個人を識別することができることとなるものを含みます。）、もしくは個人識別符号が含まれる情報を意味するものとします。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         個人情報の収集
-      </h2>
+      </template>
 
       <p>
         当カンファレンスは、個人情報の入手を適法かつ公正な手段によって行うものとし、ユーザーの意思に反する不正な入手を行わないものとします。
@@ -62,12 +62,12 @@
           </li>
         </ul>
       </ul>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         個人情報の利用目的
-      </h2>
+      </template>
 
       <p>
         当カンファレンスは、ユーザーから収集した個人情報を、以下の目的で利用するものとします。
@@ -98,39 +98,39 @@
           当カンファレンスに関する規約等の変更などを通知する場合
         </li>
       </ol>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         個人情報利用目的の変更
-      </h2>
+      </template>
 
       <p>
         当カンファレンスは、個人情報の利用目的を、関連性を有すると合理的に認められる範囲内において変更することがあり、変更した場合には当カンファレンスに関わる皆様に通知又は公表します。本プライバシーポリシーの変更は、本プライバシーポリシーを本ウェブサイト上に掲載した時点で効力を生じるものとします。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         個人情報の利用期限
-      </h2>
+      </template>
 
       <p>
         当カンファレンスは、ユーザーから収集した個人情報は、当カンファレンスの開催月の2019年10月31日まで利用するものとします。その利用期限が過ぎましたら、速やかに個人情報を完全に削除します。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         個人情報の安全管理
-      </h2>
+      </template>
 
       <p>
         当カンファレンスは、個人情報の紛失、破壊、改ざん及び漏洩などのリスクに対して、個人情報の安全管理が図られるよう、当カンファレンスの当カンファレンス実行委員およびその関係者に対し、必要かつ適切な監督を行います。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
+    <BaseDescription>
       <h2>
         個人情報の第三者提供
       </h2>
@@ -156,42 +156,42 @@
           警察、検察、裁判所等公的機関等によって開示を求められた場合
         </li>
       </ul>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         個人情報等の最新性、正確性の維持
-      </h2>
+      </template>
 
       <p>
         当カンファレンスは、利用目的の達成に必要な範囲内において、ユーザーの個人情報等を正確かつ最新の内容に保つよう努めるものとします。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         個人情報の照会、訂正、削除等
-      </h2>
+      </template>
 
       <p>
         当カンファレンスは、ユーザーより当該ユーザーの個人情報の照会、訂正、追加、削除、利用の停止又は消去を求められた場合、本人確認を行うものとします。なお、当カンファレンスは、ユーザー本人による照会等であると当カンファレンスが判断した場合、合理的な期間内に同照会等に対応するものとします。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         Cookie または類似技術の利用と目的
-      </h2>
+      </template>
 
       <p>
         当カンファレンスのウェブサイトは、Cookie 及び類似技術を利用します。これらの技術で、本ウェブサイトの利便性の向上および利用状況を分析するために、Cookie を利用して情報を収集しています。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         使用する Third Party Cookie
-      </h2>
+      </template>
 
       <p>
         当カンファレンスでは、本ウェブサイトの利用状況や利便性を向上させるために、Third Party が提供するサービスを利用しており、そのThird Party によって Cookie が設定されることがあります。当カンファレンスで利用している Third Party のサービスは以下のとおりです。
@@ -218,17 +218,17 @@
       <ul>
         <li>
           Google 社の
-          <a class="link" href="https://policies.google.com/privacy?hl=ja" target="_brank" rel="noopener">
+          <BaseLink href="https://policies.google.com/privacy?hl=ja" target="_brank" rel="noopener">
             プライバシーポリシー
-          </a>
+          </BaseLink>
         </li>
       </ul>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         Cookie の削除又は無効化
-      </h2>
+      </template>
 
       <p>
         ほとんどのウェブブラウザでは自動的に Cookie を受信するよう初期設定されていますが、ユーザー自身で Cookie を拒否したり、Cookie が送信された際に警告が表示されたりするように設定変更できます。Cookie の管理にはいくつもの方法があります。
@@ -241,45 +241,45 @@
       <p>
         本ウェブサイト上におけるクッキーの保存期間は、ユーザーが本ウェブサイトに最後に訪問した日から最長で 2 年間です。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         継続的改善
-      </h2>
+      </template>
 
       <p>
         当カンファレンスでは、個人情報の取扱いに関する運用状況を適宜見直し、継続的な改善に努めるものとし、必要に応じて、本プライバシーポリシーを変更することがあります。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         お問い合わせ
-      </h2>
+      </template>
 
       <p>
         開示等のお申出、ご意見、ご質問、苦情のお申出その他個人情報の取扱いに関するお問い合わせは、メールにて
-        <a class="link" href="mailto:privacy@vuefes.jp">
+        <BaseLink href="mailto:privacy@vuefes.jp">
           privacy@vuefes.jp
-        </a>
+        </BaseLink>
         にお問い合わせください。
       </p>
-    </section>
+    </BaseDescription>
 
-    <section class="description">
-      <h2>
+    <BaseDescription>
+      <template slot="heading">
         附則
-      </h2>
+      </template>
 
       <ul>
         <li>
           2019年4月30日 制定・施行
         </li>
       </ul>
-    </section>
+    </BaseDescription>
 
-    <BaseButton class="link-to-top" to="/">
+    <BaseButton to="/">
       トップに戻る
     </BaseButton>
   </BaseMain>
@@ -288,11 +288,15 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseMain from '~/components/BaseMain.vue'
+import BaseDescription from '~/components/BaseDescription.vue'
+import BaseLink from '~/components/BaseLink.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
 @Component({
   components: {
     BaseMain,
+    BaseDescription,
+    BaseLink,
     BaseButton
   },
   asyncData({ route }) {
@@ -350,5 +354,11 @@ ol ul {
 ol ol,
 ul ol {
   list-style-type: lower-latin;
+}
+
+@media screen and (min-width: $layout-breakpoint--is-small-up) {
+  li {
+    font-size: 18px;
+  }
 }
 </style>
