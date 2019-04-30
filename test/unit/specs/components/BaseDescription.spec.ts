@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import BaseDescription from '~/components/BaseSection.vue'
+import BaseDescription from '~/components/BaseDescription.vue'
 
 describe('BaseDescription', () => {
   test('$slot.heading を表示できる', () => {
