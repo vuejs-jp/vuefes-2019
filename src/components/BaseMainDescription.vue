@@ -1,5 +1,5 @@
 <template>
-  <div class="base-description">
+  <div class="base-main-description">
     <h2 v-if="$slots.heading" class="heading">
       <slot name="heading" />
     </h2>
@@ -12,11 +12,11 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
-export default class BaseDescription extends Vue {}
+export default class BaseMainDescription extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.base-description {
+.base-main-description {
   margin-bottom: 65px;
 
   .heading {
@@ -28,7 +28,7 @@ export default class BaseDescription extends Vue {}
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .base-description .heading {
+  .base-main-description .heading {
     font-size: 42px;
   }
 }
