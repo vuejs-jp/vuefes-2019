@@ -46,9 +46,5 @@ export default class TheCallForPresentersSection extends Vue {}
     width: 80%;
     padding: 40px;
   }
-
-  .link-to-twitter {
-    margin: 0 auto;
-  }
 }
 </style>

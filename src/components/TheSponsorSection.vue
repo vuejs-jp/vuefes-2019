@@ -99,6 +99,7 @@ export default class TheSponsorsSection extends Vue {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 700px;
+    margin: 0 auto 0 0;
   }
 }
 
