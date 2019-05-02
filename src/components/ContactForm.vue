@@ -1,14 +1,12 @@
 <template>
-  <div class="container">
-    <div class="title">
-      <h1>
-        お問い合わせ
-      </h1>
-    </div>
-    <div>
+  <BaseMain class="container">
+    <template slot="heading">
+      お問い合わせ
+    </template>
+    <BaseMainDescription>
       Vue Fes Japan 実行委員会へのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者からX営業日以内でお答えさせていただきます。
-    </div>
-    <div class="content">
+    </BaseMainDescription>
+    <div class="form-content">
       <form
         name="contact"
         data-netlify="true"
@@ -36,7 +34,6 @@
             id="name"
             v-model.trim="formData.name"
             v-validate="'required'"
-            :error-messages="errors.collect('name')"
             data-vv-validate-on="blur"
             name="name"
             placeholder="お名前"
@@ -55,7 +52,6 @@
             id="email"
             v-model.trim="formData.email"
             v-validate="'required|email'"
-            :error-messages="errors.collect('email')"
             data-vv-validate-on="blur"
             name="email"
             placeholder="メールアドレス"
@@ -87,7 +83,6 @@
             id="message"
             v-model="formData.message"
             v-validate="'required'"
-            :error-messages="errors.collect('message')"
             data-vv-validate-on="blur"
             name="message"
             placeholder="例：お問い合わせ内容をご記入ください"
@@ -101,12 +96,14 @@
         </BaseButton>
       </form>
     </div>
-  </div>
+  </BaseMain>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Inject } from 'nuxt-property-decorator'
 import BaseButton from '~/components/BaseButton.vue'
+import BaseMain from '~/components/BaseMain.vue'
+import BaseMainDescription from '~/components/BaseMainDescription.vue'
 
 enum Messages {
   Success = '送信しました',
@@ -145,6 +142,8 @@ function createStatus() {
 
 @Component({
   components: {
+    BaseMain,
+    BaseMainDescription,
     BaseButton
   }
 })
@@ -214,15 +213,10 @@ export default class ContactForm extends Vue {
 </script>
 
 <style lang="scss" scoped>
-// TODO: スタイル調整
 .container {
   margin: 0 auto;
 
-  .content {
-    .title {
-      font-weight: bold;
-    }
-
+  .form-content {
     textarea,
     input[type='text'] {
       width: 100%;
@@ -253,48 +247,12 @@ export default class ContactForm extends Vue {
       margin: 0 auto;
       text-align: center;
     }
-
-    padding-bottom: 120px;
-  }
-}
-
-@media screen and (max-width: $layout-breakpoint--is-small) {
-  /* 画面サイズ 768pxまで適用 */
-  .container {
-    max-width: $page-container-small-width;
-
-    .content {
-      .title {
-        margin-top: 10px;
-      }
-
-      .has-error {
-        margin-bottom: 20px;
-      }
-
-      textarea,
-      input[type='text'] {
-        padding: 10px 20px;
-        margin: 10px 0;
-      }
-
-      .submit-button {
-        width: 648px;
-        height: 129px;
-        margin-top: 50px;
-      }
-
-      margin-top: 20px;
-    }
   }
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  /* 画面サイズ 769px以上から適用 */
   .container {
-    max-width: $page-container-medium-width;
-
-    .content {
+    .form-content {
       .title {
         margin-top: 20px;
       }
@@ -314,18 +272,13 @@ export default class ContactForm extends Vue {
         height: 111px;
         margin-top: 50px;
       }
-
-      margin-top: 50px;
     }
   }
 }
 
 @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-  /* 画面サイズ 981px以上から適用 */
   .container {
-    max-width: $page-container-max-width;
-
-    .content {
+    .form-content {
       .title {
         margin-top: 40px;
       }
@@ -345,8 +298,6 @@ export default class ContactForm extends Vue {
         height: 111px;
         margin-top: 50px;
       }
-
-      margin-top: 50px;
     }
   }
 }

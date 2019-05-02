@@ -1,8 +1,6 @@
 <template>
   <div>
-    <!-- TODO: ヘッダー追加 -->
     <ContactForm />
-    <TheFooter />
   </div>
 </template>
 
