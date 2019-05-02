@@ -63,6 +63,10 @@
         私たちは、すべての参加者が会場やワークショップ、Vue Fes Japan に関連するソーシャルイベントにて、これらのルールに従うことを期待しています。
       </p>
     </BaseMainDescription>
+
+    <BaseButton to="/">
+      トップに戻る
+    </BaseButton>
   </BaseMain>
 </template>
 
