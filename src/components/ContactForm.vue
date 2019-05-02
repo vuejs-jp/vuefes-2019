@@ -107,6 +107,42 @@
 <script lang="ts">
 import { Component, Vue, Inject } from 'nuxt-property-decorator'
 import BaseButton from '~/components/BaseButton.vue'
+
+enum Messages {
+  Success = '送信しました',
+  Error = '送信に失敗しました',
+  Progress = '送信しています...',
+  Default = '送信する'
+}
+
+function createStatus() {
+  const status = {
+    isProgressive: false,
+    hasSent: false,
+    hasError: false
+  }
+  return {
+    get() {
+      return status
+    },
+    setInProgress() {
+      status.hasSent = false
+      status.hasError = false
+      status.isProgressive = true
+    },
+    setFailure() {
+      status.hasSent = false
+      status.hasError = true
+      status.isProgressive = false
+    },
+    setSuccess() {
+      status.hasSent = true
+      status.hasError = false
+      status.isProgressive = false
+    }
+  }
+}
+
 @Component({
   components: {
     BaseButton
@@ -119,18 +155,26 @@ export default class ContactForm extends Vue {
     organization: '',
     message: ''
   }
+  status = createStatus()
 
   @Inject('$validator')
   $validator: any
 
   get buttomValue(): string {
-    if (!this.hasSent) {
-      return '送信する'
+    const status = this.status.get()
+    if (status.hasError) {
+      return Messages.Error
     }
-    return '送信しました'
+    if (status.isProgressive) {
+      return Messages.Progress
+    }
+    if (status.hasSent) {
+      return Messages.Success
+    }
+    return Messages.Default
   }
 
-  encode(data): string {
+  encode(data: object): string {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
       .join('&')
@@ -138,8 +182,12 @@ export default class ContactForm extends Vue {
 
   handleSubmit({ target }): void {
     this.$validator.validateAll().then(result => {
-      this.hasSent = false
-      if (!result) return
+      this.status.setInProgress()
+
+      if (!result) {
+        this.status.setFailure()
+        return
+      }
 
       const body = {
         'form-name': 'contact',
@@ -155,10 +203,10 @@ export default class ContactForm extends Vue {
         body: this.encode(body)
       })
         .then(() => {
-          this.hasSent = true
+          this.status.setSuccess()
         })
         .catch(() => {
-          this.hasSent = false
+          this.status.setFailure()
         })
     })
   }
