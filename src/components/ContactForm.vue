@@ -16,16 +16,16 @@
         netlify
         @submit.prevent="handleSubmit"
       >
+        <!-- Anti-spam Measures -->
         <div>
-          <!-- Anti-spam Measures -->
+          <p class="hidden">     
+            <label>Don’t fill this out: <input name="bot-field" /></label>   
+          </p>
           <input
             type="hidden"
             name="form-name"
             value="contact"
           />
-          <p class="hidden">     
-            <label>Don’t fill this out: <input name="bot-field" /></label>   
-          </p>
         </div>
         <!-- Name -->
         <div>
@@ -34,7 +34,7 @@
           </label>
           <input
             id="name"
-            v-model.trim="name"
+            v-model.trim="formData.name"
             v-validate="'required'"
             :error-messages="errors.collect('name')"
             data-vv-validate-on="blur"
@@ -53,7 +53,7 @@
           </label>
           <input
             id="email"
-            v-model.trim="email"
+            v-model.trim="formData.email"
             v-validate="'required|email'"
             :error-messages="errors.collect('email')"
             data-vv-validate-on="blur"
@@ -72,7 +72,7 @@
           </label>
           <input
             id="organization"
-            v-model="organization"
+            v-model="formData.organization"
             name="organization"
             placeholder="会社・団体名等"
             type="text"
@@ -85,7 +85,7 @@
           </label>
           <textarea
             id="message"
-            v-model="message"
+            v-model="formData.message"
             v-validate="'required'"
             :error-messages="errors.collect('message')"
             data-vv-validate-on="blur"
@@ -113,11 +113,12 @@ import BaseButton from '~/components/BaseButton.vue'
   }
 })
 export default class ContactForm extends Vue {
-  name: string = ''
-  email: string = ''
-  organization: string = ''
-  message: string = ''
-  hasSent: boolean = false
+  formData = {
+    name: '',
+    email: '',
+    organization: '',
+    message: ''
+  }
 
   @Inject('$validator')
   $validator: any
