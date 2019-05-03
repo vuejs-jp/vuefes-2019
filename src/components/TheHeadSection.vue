@@ -204,6 +204,7 @@ export default class TheHeadSection extends Vue {
 }
 
 .main-visual-wrapper {
+  text-align: center;
   margin-bottom: 40px;
 }
 
