@@ -8,6 +8,6 @@ describe('CodeOfConductPage', () => {
         NuxtLink: RouterLinkStub
       }
     })
-    expect(wrapper.find('.code-of-conduct').isVisible()).toBeTruthy()
+    expect(wrapper.find('.code-of-conduct-page').isVisible()).toBeTruthy()
   })
 })
