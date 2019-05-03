@@ -12,60 +12,60 @@
       </svg>
     </div>
 
-    <div class="title">
+    <h1 class="title">
       Vue Fes Japan 2019
-    </div>
+    </h1>
 
     <div class="date-place">
-      <span class="date-place__date">2019.10.12</span>
+      <time datetime="2019-10-12">2019.10.12</time>
       <span class="date-place__day">SAT</span>
-      <span class="date-place__place">TOC GOTANDA MESSE</span>
+      <span>TOC GOTANDA MESSE</span>
     </div>
 
-    <div class="message-container">
-      <div class="message-content">
-        <p>
-          2018 年は Vue.js にとって飛躍の年でした。
-          エコシステムの成熟、関連ツールのアップデート、コミュニティの拡大と、数多くのポジティブな出来事がありました。
-          また、世界各地でカンファレンスが開催され、Vue.js 日本ユーザーグループでも国内初の大規模カンファレンス
-          <a
-            href="https://vuefes.jp/2018/"
-          >Vue Fes Japan 2018</a> を大盛況で終えることができました。
-        </p>
-        <p>
-          今年はメジャーアップデートとなる Vue.js 3.0 のリリースが予定されており、
-          世界中からますます注目が集まることでしょう。「Vue Fes Japan 2019」では、
-          国内外の著名スピーカーによるセッションの他、ユーザー同士が相互に楽しめるカンファレンスを目指します。
-          ぜひ、一緒に Vue.js を楽しみ、盛り上げましょう！
-        </p>
-        <p class="message-content__author">
-          Vue.js 日本ユーザーグループ 代表 川口 和也
-          <a href="https://github.com/kazupon">@kazupon</a>
-        </p>
-      </div>
+    <div class="message">
+      <p>
+        2018 年は Vue.js にとって飛躍の年でした。
+        エコシステムの成熟、関連ツールのアップデート、コミュニティの拡大と、数多くのポジティブな出来事がありました。
+        また、世界各地でカンファレンスが開催され、Vue.js 日本ユーザーグループでも国内初の大規模カンファレンス
+        <a
+          class="link"
+          href="https://vuefes.jp/2018/"
+          target="_blank"
+          rel="noopener"
+        >
+          Vue Fes Japan 2018
+        </a>
+        を大盛況で終えることができました。
+      </p>
+
+      <p>
+        今年はメジャーアップデートとなる Vue.js 3.0 のリリースが予定されており、
+        世界中からますます注目が集まることでしょう。「Vue Fes Japan 2019」では、
+        国内外の著名スピーカーによるセッションの他、ユーザー同士が相互に楽しめるカンファレンスを目指します。
+        ぜひ、一緒に Vue.js を楽しみ、盛り上げましょう！
+      </p>
+
+      <p class="message__author">
+        Vue.js 日本ユーザーグループ 代表 川口 和也
+        <a 
+          class="link"
+          href="https://github.com/kazupon"
+          target="_blank"
+          rel="noopener"
+        >
+          @kazupon
+        </a>
+      </p>
     </div>
 
-    <div class="btn-wrapper">
-      <a href="https://twitter.com/vuefes">
-        <div class="btn">
-          <img src="~/assets/images/icon-twitter-inside-btn.svg" />
-          <div class="btn__text">
-            <div class="btn__fold">
-              Vue Fes Japan 公式 Twitter
-            </div>
-            <div class="btn__fold">
-              で最新情報をチェック
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
+    <LinkToTwitter />
   </BaseSection>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
+import LinkToTwitter from '~/components/LinkToTwitter.vue'
 import HeadCircle from '~/components/HeadCircle.vue'
 import HeadHorizontal from '~/components/HeadHorizontal.vue'
 import HeadSquare from '~/components/HeadSquare.vue'
@@ -93,6 +93,7 @@ let timer
 @Component({
   components: {
     BaseSection,
+    LinkToTwitter,
     HeadCircle,
     HeadHorizontal,
     HeadSquare,
@@ -190,72 +191,52 @@ export default class TheHeadSection extends Vue {
 
 <style lang="scss" scoped>
 .the-head-section {
-  padding: 100px 7.8% 60px;
-  background: linear-gradient(to right, $hiwamoegi, $asagi);
+  color: $white;
+  background: linear-gradient(to bottom, $hiwamoegi, $asagi);
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    background: linear-gradient(to bottom right, $hiwamoegi, $asagi);
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    background: linear-gradient(to right, $hiwamoegi, $asagi);
+  }
 }
 
 .main-visual-wrapper {
-  text-align: center;
-}
-
-.message-content {
-  color: white;
-}
-
-.message-content a {
-  color: white;
-}
-
-.date-place {
-  color: white;
-  font-size: 4.1vw;
-  margin-top: -0.6em;
-}
-
-.date-place__day {
-  font-size: 2.3vw;
-}
-
-.message-content__author {
-  text-align: right;
-}
-
-.btn {
-  background: $vue-dark-blue;
-  font-size: 4vw;
-  color: white;
-  display: flex;
-  padding: 1em;
-  margin: 20px auto 0 auto;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  border: 3px solid $vue-dark-blue;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: white;
-  border: 3px solid $vue-dark-blue;
-  color: $vue-dark-blue;
-}
-
-.btn__text {
-  flex: 1;
-}
-
-.btn-wrapper {
-  text-align: center;
-}
-
-circle {
-  fill: $vue-dark-blue;
+  margin-bottom: 40px;
 }
 
 .title {
   font-size: 8.3vw;
-  font-weight: 700;
-  color: white;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.date-place {
+  color: $white;
+  font-size: 4.1vw;
+  margin-bottom: 60px;
+
+  &__day {
+    font-size: 2.3vw;
+  }
+}
+
+.message {
+  margin-bottom: 40px;
+
+  &__author {
+    text-align: right;
+  }
+
+  .link {
+    color: $white;
+  }
+}
+
+circle {
+  fill: $vue-dark-blue;
 }
 
 svg.main-visual {
@@ -263,43 +244,22 @@ svg.main-visual {
   height: auto;
 }
 
-.btn__fold {
-  display: inline-block;
-}
-
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .the-head-section {
-    padding: 120px 70px 80px;
-  }
-
-  .message-container {
-    display: flex;
-    align-items: flex-start;
-    margin: 0 auto;
-    justify-content: flex-end;
-  }
-
-  .message-content {
-    width: 65%;
-  }
-
   .title {
     font-size: 64px;
   }
 
   .date-place {
-    color: white;
     font-size: 32px;
-    margin-top: -0.6em;
+
+    &__day {
+      font-size: 18px;
+    }
   }
 
-  .date-place__day {
-    font-size: 18px;
-  }
-
-  .btn {
-    font-size: 24px;
-    max-width: 60%;
+  .message {
+    width: 65%;
+    margin: 0 0 60px auto;
   }
 }
 </style>
