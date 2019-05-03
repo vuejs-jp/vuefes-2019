@@ -25,30 +25,31 @@ export default class BaseSection extends Vue {}
 
 <style lang="scss" scoped>
 .base-section {
-  padding: 60px 7.8%;
+  padding: 100px 7.8%;
   background-image: url('~assets/images/texture.png');
-  background-repeat: repeat;
 }
 
 .heading-wrapper {
-  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .heading {
   font-size: 10.41vw;
   font-weight: bold;
   line-height: 1;
+  margin-bottom: 40px;
 }
 
 .heading-copy {
   font-size: 4vw;
-  line-height: 1.8;
-  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .base-section {
-    padding: 80px 70px;
+    padding: 120px 70px;
   }
 
   .section-container {
@@ -56,9 +57,9 @@ export default class BaseSection extends Vue {}
   }
 
   .heading-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 45px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .heading {
@@ -66,9 +67,7 @@ export default class BaseSection extends Vue {}
   }
 
   .heading-copy {
-    flex: 1;
-    margin-top: 7px;
-    margin-left: 100px;
+    width: 65%;
     font-size: 18px;
   }
 }
