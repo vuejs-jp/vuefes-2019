@@ -108,36 +108,7 @@ import BaseMainDescription from '~/components/BaseMainDescription.vue'
 enum Messages {
   Success = '送信しました',
   Error = '送信に失敗しました',
-  Progress = '送信しています...',
   Default = '送信する'
-}
-
-function createStatus() {
-  const status = {
-    isProgressive: false,
-    hasSent: false,
-    hasError: false
-  }
-  return {
-    get() {
-      return status
-    },
-    setInProgress() {
-      status.hasSent = false
-      status.hasError = false
-      status.isProgressive = true
-    },
-    setFailure() {
-      status.hasSent = false
-      status.hasError = true
-      status.isProgressive = false
-    },
-    setSuccess() {
-      status.hasSent = true
-      status.hasError = false
-      status.isProgressive = false
-    }
-  }
 }
 
 @Component({
@@ -154,23 +125,37 @@ export default class ContactForm extends Vue {
     organization: '',
     message: ''
   }
-  status = createStatus()
+  status = {
+    hasSent: false,
+    hasError: false
+  }
 
   @Inject('$validator')
   $validator: any
 
-  get buttomValue(): string {
-    const status = this.status.get()
+  get buttomValue() {
+    const status = this.status
     if (status.hasError) {
       return Messages.Error
-    }
-    if (status.isProgressive) {
-      return Messages.Progress
-    }
-    if (status.hasSent) {
+    } else if (status.hasSent) {
       return Messages.Success
+    } else {
+      return Messages.Default
     }
-    return Messages.Default
+  }
+
+  setStatusError(): void {
+    this.status = {
+      hasSent: false,
+      hasError: true
+    }
+  }
+
+  setStatusSuccess(): void {
+    this.status = {
+      hasSent: true,
+      hasError: false
+    }
   }
 
   encode(data: object): string {
@@ -181,10 +166,7 @@ export default class ContactForm extends Vue {
 
   handleSubmit({ target }): void {
     this.$validator.validateAll().then(result => {
-      this.status.setInProgress()
-
       if (!result) {
-        this.status.setFailure()
         return
       }
 
@@ -202,10 +184,10 @@ export default class ContactForm extends Vue {
         body: this.encode(body)
       })
         .then(() => {
-          this.status.setSuccess()
+          this.setStatusSuccess()
         })
         .catch(() => {
-          this.status.setFailure()
+          this.setStatusError()
         })
     })
   }
