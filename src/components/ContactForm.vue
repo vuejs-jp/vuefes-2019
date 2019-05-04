@@ -165,8 +165,8 @@ export default class ContactForm extends Vue {
   }
 
   handleSubmit({ target }): void {
-    this.$validator.validateAll().then(result => {
-      if (!result) {
+    this.$validator.validateAll().then(isValid => {
+      if (!isValid) {
         return
       }
 
