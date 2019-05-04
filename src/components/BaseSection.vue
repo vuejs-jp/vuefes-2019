@@ -36,6 +36,8 @@ export default class BaseSection extends Vue {}
 }
 
 .heading {
+  position: relative;
+  z-index: 10;
   font-size: 10.41vw;
   font-weight: bold;
   line-height: 1;

@@ -70,6 +70,10 @@ export default class TheSponsorsSection extends Vue {
     position: relative;
     background: linear-gradient(to bottom right, $tohoh, $sangosyu);
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    background: linear-gradient(to right, $tohoh, $sangosyu);
+  }
 }
 
 .content {
@@ -89,6 +93,7 @@ export default class TheSponsorsSection extends Vue {
     width: 70%;
     max-width: calc(#{$page-container-max-width} * 0.7);
     padding: 40px;
+    margin-bottom: 60px;
     z-index: 1;
   }
 }
