@@ -195,7 +195,7 @@ export default class TheHeadSection extends Vue {
   background: linear-gradient(to bottom, $hiwamoegi, $asagi);
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    background: linear-gradient(to bottom right, $hiwamoegi, $asagi);
+    background: linear-gradient(to right bottom, $hiwamoegi, $asagi);
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {

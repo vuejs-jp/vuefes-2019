@@ -68,7 +68,7 @@ export default class TheSponsorsSection extends Vue {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     position: relative;
-    background: linear-gradient(to bottom right, $tohoh, $sangosyu);
+    background: linear-gradient(to right bottom, $tohoh, $sangosyu);
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
