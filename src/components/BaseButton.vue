@@ -43,7 +43,7 @@ export default class BaseButton extends Vue {
   align-items: center;
   max-width: 700px;
   margin: 0 auto;
-  padding: 6.17%;
+  padding: 3.9% 6%;
   background-color: $primary-color;
   font-size: 5vw;
   line-height: 1.2;
