@@ -191,7 +191,7 @@ export default class TheHeadSection extends Vue {
 
 <style lang="scss" scoped>
 .the-head-section {
-  color: $white;
+  color: $primary-text-color--invert;
   background: linear-gradient(to bottom, $hiwamoegi, $asagi);
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -215,7 +215,7 @@ export default class TheHeadSection extends Vue {
 }
 
 .date-place {
-  color: $white;
+  color: $primary-text-color--invert;
   font-size: 4.1vw;
   margin-bottom: 60px;
 
@@ -232,7 +232,7 @@ export default class TheHeadSection extends Vue {
   }
 
   .link {
-    color: $white;
+    color: $primary-text-color--invert;
   }
 }
 
