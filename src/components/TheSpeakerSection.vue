@@ -83,7 +83,6 @@ export default class TheSpeakersSection extends Vue {
 }
 
 .name {
-  margin-top: 0;
   margin-bottom: 4px;
   font-size: 5.21vw;
   line-height: 1.3;
@@ -91,9 +90,9 @@ export default class TheSpeakersSection extends Vue {
 
 .social img {
   width: 7.5vw;
-  max-width: 32px;
+  max-width: 50px;
   height: 7.5vw;
-  max-height: 32px;
+  max-height: 50px;
 }
 
 .social .github {
@@ -101,7 +100,7 @@ export default class TheSpeakersSection extends Vue {
 }
 
 .description p {
-  margin: 6vw 0;
+  margin: 2em 0;
   font-size: 3.5vw;
 }
 
@@ -119,7 +118,7 @@ export default class TheSpeakersSection extends Vue {
 
   .avatar {
     width: calc((2 / 7) * 100%);
-    margin-right: 40px;
+    margin-right: 20px;
   }
 
   .speaker-content {
@@ -132,6 +131,11 @@ export default class TheSpeakersSection extends Vue {
 
   .name {
     font-size: 32px;
+  }
+
+  .social img {
+    width: 32px;
+    height: 32px;
   }
 
   .description p {
