@@ -6,103 +6,127 @@
           <img src="~/assets/images/logo-vuefes-invert.svg" alt="VueFes" />
         </div>
 
-        <div class="social-wrapper">
-          <div class="social-button" @click="openTwitterForm">
+        <div class="social">
+          <button class="social-button" @click="openTwitterForm">
             <img src="~/assets/images/icon-twitter.svg" alt="Twitter" />
-          </div>
-          <div class="social-button" @click="openFacebookForm">
+          </button>
+
+          <button class="social-button" @click="openFacebookForm">
             <img src="~/assets/images/icon-facebook.svg" alt="Facebook" />
-          </div>
-          <div class="social-button" @click="openHatenaBookmarkForm">
+          </button>
+
+          <button class="social-button" @click="openHatenaBookmarkForm">
             <img
               src="~/assets/images/icon-hatena-bookmark.svg"
               alt="はてなブックマーク"
             />
-          </div>
+          </button>
         </div>
 
-        <div class="list-wrapper">
-          <div class="menu-list">
-            <h3 class="list-title">
-              メニュー
-            </h3>
-            <nuxt-link to="/code-of-conduct/">
-              行動規範
-            </nuxt-link>
-            <nuxt-link to="/privacy/">
-              プライバシーポリシー
-            </nuxt-link>
-            <nuxt-link to="/contact/">
-              お問い合わせ
-            </nuxt-link>
-          </div>
+        <div class="menu-list">
+          <h2 class="title">
+            メニュー
+          </h2>
 
-          <div class="social-list">
-            <h3 class="list-title">
-              ソーシャル
-            </h3>
-            <a
-              href="https://twitter.com/vuefes"
-              target="_blank"
-              rel="noopener"
-            >
-              <fa :icon="faTwitter" />
-              Twitter
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UC6KPwA1kZJtQYdlh8_2hxCA"
-              target="_blank"
-              rel="noopener"
-            >
-              <fa :icon="faYoutube" />
-              YouTube
-            </a>
-            <a
-              href="https://github.com/vuejs-jp/home"
-              target="_blank"
-              rel="noopener"
-            >
-              <fa :icon="faGithub" />
-              GitHub
-            </a>
-          </div>
+          <nuxt-link to="code-of-conduct">
+            行動規範
+          </nuxt-link>
+          <br />
 
-          <div class="link-list">
-            <h3 class="list-title">
-              各種リンク
-            </h3>
-            <a
-              href="https://jp.vuejs.org/"
-              target="_blank"
-              rel="noopener"
-            >
-              Vue.js
-            </a>
-            <a
-              href="https://github.com/vuejs-jp/home"
-              target="_blank"
-              rel="noopener"
-            >
-              Vue.js 日本ユーザーグループ
-            </a>
-            <a
-              href="https://vuefes.jp/2018/"
-              target="_blank"
-              rel="noopener"
-            >
-              Vue Fes Japan 2018
-            </a>
-          </div>
+          <nuxt-link to="privacy">
+            プライバシーポリシー
+          </nuxt-link>
+          <br />
+
+          <nuxt-link to="contact">
+            お問い合わせ
+          </nuxt-link>
+        </div>
+
+        <div class="social-list">
+          <h2 class="title">
+            ソーシャル
+          </h2>
+
+          <a
+            href="https://twitter.com/vuefes"
+            target="_blank"
+            rel="noopener"
+          >
+            <fa :icon="faTwitter" />
+            Twitter
+          </a>
+          <br />
+
+          <a
+            href="https://www.youtube.com/channel/UC6KPwA1kZJtQYdlh8_2hxCA"
+            target="_blank"
+            rel="noopener"
+          >
+            <fa :icon="faYoutube" />
+            YouTube
+          </a>
+          <br />
+
+          <a
+            href="https://github.com/vuejs-jp/home"
+            target="_blank"
+            rel="noopener"
+          >
+            <fa :icon="faGithub" />
+            GitHub
+          </a>
+        </div>
+
+        <div class="link-list">
+          <h2 class="title">
+            各種リンク
+          </h2>
+
+          <a
+            href="https://jp.vuejs.org/"
+            target="_blank"
+            rel="noopener"
+          >
+            Vue.js
+          </a>
+          <br />
+
+          <a
+            href="https://github.com/vuejs-jp/home"
+            target="_blank"
+            rel="noopener"
+          >
+            Vue.js 日本ユーザーグループ
+          </a>
+          <br />
+
+          <a
+            href="https://vuefes.jp/2018/"
+            target="_blank"
+            rel="noopener"
+          >
+            Vue Fes Japan 2018
+          </a>
         </div>
       </div>
 
       <div class="licence">
         <p>
-          © 2018-2019 Vue.js Japan Users Group some rights reserved.<br />
+          © 2018-2019 Vue.js Japan Users Group some rights reserved.
+          <br />
           Vue.js artworks by
-          <a href="https://github.com/yyx990803" target="_blank" rel="noopener">Evan You</a>
+          <a
+            class="link"
+            href="https://github.com/yyx990803"
+            target="_blank"
+            rel="noopener"
+          >
+            Evan You
+          </a>
           is licensed under a
           <a
+            class="link"
             href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja"
             target="_blank"
             rel="noopener"
@@ -185,183 +209,116 @@ export default class TheFooter extends Vue {
   a {
     color: $primary-text-color--invert;
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    padding: 80px 70px;
+
+    .footer-container {
+      margin: 0 auto;
+      max-width: $page-container-max-width;
+    }
+  }
 }
 
 .content-wrapper {
-  a {
-    display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    flex-wrap: nowrap;
   }
 }
 
 .logo {
-  margin-bottom: 45.6px;
-  float: left;
-  width: 50%;
+  margin-bottom: 45px;
+  width: calc(50% - 10px);
 
   img {
-    width: 96.9%;
+    width: 100%;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 20%;
+    min-width: 140px;
+    margin-right: 5%;
   }
 }
 
-.social-wrapper {
-  float: left;
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-}
+.social {
+  width: calc(50% - 10px);
+  text-align: right;
 
-.social-button {
-  width: 20%;
-  max-width: 57px;
+  &-button {
+    background-color: transparent;
+    width: 20%;
+    max-width: 57px;
 
-  & + & {
-    margin-left: 8.8%;
+    & + & {
+      margin-left: 8.8%;
+    }
   }
 
-  img {
-    display: block;
-  }
-}
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 20%;
+    order: 4;
 
-.list-wrapper {
-  margin-bottom: 40px;
-  clear: both;
-  display: flex;
-  flex-wrap: wrap;
+    &-button {
+      width: 32px;
+
+      & + & {
+        margin-left: 16px;
+      }
+    }
+  }
 }
 
 .menu-list,
 .social-list,
 .link-list {
-  width: 50%;
-  font-size: 14px;
-  line-height: 2;
+  width: calc(50% - 10px);
+  margin-bottom: 50px;
 
-  .list-title {
-    margin-top: 0;
-    margin-bottom: 50px;
+  .title {
+    margin-bottom: 40px;
     font-size: 6vw;
     font-weight: bold;
+    line-height: 1;
   }
 
   a {
+    display: inline-block;
     font-size: 4vw;
-    line-height: 1.81;
     text-decoration: none;
+    margin-bottom: 2vw;
 
-    &:not(:last-of-type) {
-      margin-bottom: 10%;
-    }
-  }
-}
-
-.menu-list a:last-of-type,
-.social-list a:last-of-type {
-  margin-bottom: 50px;
-}
-
-.link-list a:last-of-type {
-  margin-bottom: 0;
-}
-
-.licence p {
-  font-size: 2.5vw;
-  font-weight: 300;
-}
-
-@media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .the-footer {
-    padding: 80px 70px;
-  }
-
-  .footer-container {
-    margin: 0 auto;
-  }
-
-  .content-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 22px;
-  }
-
-  .logo {
-    margin-bottom: 0;
-    width: 25%;
-    order: 1;
-
-    img {
-      display: block;
-      width: 72.4%;
-      max-width: 220px;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
-  .social-wrapper {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 20%;
-    order: 3;
-  }
+    margin-bottom: 40px;
 
-  .social-button {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-
-    & + & {
-      margin-left: 16px;
-    }
-  }
-
-  .list-wrapper {
-    margin-bottom: 0;
-    width: 55%;
-    order: 2;
-    flex-wrap: nowrap;
-
-    .list-title {
-      margin-bottom: 25px;
+    .title {
       font-size: 18px;
-      font-weight: bold;
+      margin-bottom: 25px;
     }
 
     a {
       font-size: 14px;
-      line-height: 1.1;
-
-      &:not(:last-of-type) {
-        margin-bottom: 25px;
-      }
+      margin-bottom: 1em;
     }
-  }
-
-  .menu-list a:last-of-type,
-  .social-list a:last-of-type {
-    margin-bottom: 0;
-  }
-
-  .menu-list {
-    flex-basis: 38%;
-  }
-
-  .social-list {
-    flex-basis: 32%;
-  }
-
-  .link-list {
-    flex-basis: 30%;
-  }
-
-  .licence p {
-    font-size: 12px;
   }
 }
 
-@media screen and (min-width: $layout-breakpoint--is-medium-up) {
-  .footer-container {
-    max-width: $page-container-max-width;
-  }
+.licence p {
+  font-size: 2.5vw;
 
-  .content-wrapper {
-    margin-bottom: 42px;
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 12px;
   }
 }
 </style>
