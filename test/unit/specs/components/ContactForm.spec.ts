@@ -145,17 +145,19 @@ describe('ContactForm.Vue', () => {
         wrapper.find('#email').setValue(body.email)
         wrapper.find('#organization').setValue(body.organization)
         wrapper.find('#message').setValue(body.message)
-        const createRequestBodyMock = jest.fn(function() {
-          return body
-        })
         wrapper.setMethods({
-          createRequestBody: createRequestBodyMock
+          createRequestBody: jest.fn(function() {
+            return body
+          })
         })
-        fetchMock.post('/2019/contact', 200)
+        fetchMock.post('/2019/contact', {
+          status: 200
+        })
 
         wrapper.find('form').trigger('submit.prevent')
         await flushPromises()
 
+        expect(wrapper.vm.errors.any()).toEqual(false)
         expect(wrapper.vm.buttomValue).toBe('送信しました')
       })
 
@@ -164,11 +166,10 @@ describe('ContactForm.Vue', () => {
         wrapper.find('#email').setValue(body.email)
         wrapper.find('#organization').setValue(body.organization)
         wrapper.find('#message').setValue(body.message)
-        const createRequestBodyMock = jest.fn(function() {
-          return body
-        })
         wrapper.setMethods({
-          createRequestBody: createRequestBodyMock
+          createRequestBody: jest.fn(function() {
+            return body
+          })
         })
         fetchMock.post(
           '/2019/contact',
@@ -178,6 +179,7 @@ describe('ContactForm.Vue', () => {
         wrapper.find('form').trigger('submit.prevent')
         await flushPromises()
 
+        expect(wrapper.vm.errors.any()).toEqual(false)
         expect(wrapper.vm.buttomValue).toBe('送信に失敗しました')
       })
     })
