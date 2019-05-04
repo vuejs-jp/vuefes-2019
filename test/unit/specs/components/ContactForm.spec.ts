@@ -1,16 +1,18 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
-// import fetchMock from 'fetch-mock'
+import fetchMock from 'fetch-mock'
 import flushPromises from 'flush-promises'
 import ValidationProvider, { Validator } from 'vee-validate'
 import ContactForm from '~/components/ContactForm.vue'
 import dictionary from '~/plugins/validateDictionary'
 
-const localVue = createLocalVue()
-localVue.use(ValidationProvider, { inject: false })
-Validator.localize('ja', dictionary)
-
 describe('ContactForm.Vue', () => {
   let wrapper
+  const localVue = createLocalVue()
+
+  beforeAll(() => {
+    localVue.use(ValidationProvider, { inject: false })
+    Validator.localize('ja', dictionary)
+  })
 
   beforeEach(() => {
     wrapper = shallowMount(ContactForm, {
@@ -30,6 +32,7 @@ describe('ContactForm.Vue', () => {
     expect(wrapper.find('#organization').exists()).toBeTruthy()
     expect(wrapper.find('#message').exists()).toBeTruthy()
     expect(wrapper.find('.submit-button').exists()).toBeTruthy()
+    expect(wrapper.vm.buttomValue).toBe('送信する')
   })
 
   describe('フォーム操作', () => {
@@ -95,44 +98,88 @@ describe('ContactForm.Vue', () => {
 
       expect(error.text()).toBe('内容を正しく入力してください')
     })
-    /* TODO: Fix me
+
     test('内容が入力されている場合、エラーが表示されない', async () => {
       const error = wrapper.find('#message-error')
       expect(error.text()).toBe('')
 
-      wrapper.find('#message').setValue('Hello from test')
-      wrapper.find('#message').trigger('blur')
+      const message = wrapper.find('#message')
+      message.setValue('Hello from test')
+      message.trigger('blur')
       await flushPromises()
 
+      expect(message.element.value).toEqual('Hello from test')
       expect(error.text()).toBe('')
     })
-    */
 
-    test('送信ボタン押下でhandleSubmitが呼ばれる', () => {
-      const handleSubmitMock = jest.fn()
-      wrapper.setMethods({ handleSubmit: handleSubmitMock })
+    describe('フォーム送信', () => {
+      const body = {
+        'form-name': 'contact',
+        name: 'test',
+        email: 'vuefes@test.com',
+        organization: 'vuefesJp',
+        message: 'Hello from test'
+      }
 
-      wrapper.find('form').trigger('submit.prevent')
-      expect(handleSubmitMock).toBeCalled()
-    })
-
-    /* TODO: Fix me
-    test('フォームをすべて埋めた状態で送信ボタン押下した場合、送信に成功すること', async () => {
-      wrapper.find('#name').setValue('test')
-      wrapper.find('#email').setValue('vuefes@test.com')
-      wrapper.find('#organization').setValue('vuefesJp')
-      wrapper.find('#message').setValue('Hello, from test')
-      fetchMock.post('/2019/contact', {
-        status: 200
+      afterEach(() => {
+        fetchMock.restore()
       })
 
-      wrapper.find('form').trigger('submit.prevent')
-      await flushPromises()
+      test('送信ボタン押下でhandleSubmitが呼ばれる', () => {
+        const handleSubmitMock = jest.fn()
+        wrapper.setMethods({ handleSubmit: handleSubmitMock })
 
-      expect(wrapper.vm.buttomValue).toBe('送信ました')
+        wrapper.find('form').trigger('submit.prevent')
+        expect(handleSubmitMock).toBeCalled()
+      })
+
+      test('必須項目を入力していない状態で送信ボタン押下した場合、送信ボタンのテキストは変化しない', async () => {
+        wrapper.find('form').trigger('submit.prevent')
+        await flushPromises()
+
+        expect(wrapper.vm.buttomValue).toBe('送信する')
+      })
+
+      test('フォームをすべて埋めた状態で送信ボタン押下した場合、送信に成功する', async () => {
+        wrapper.find('#name').setValue(body.name)
+        wrapper.find('#email').setValue(body.email)
+        wrapper.find('#organization').setValue(body.organization)
+        wrapper.find('#message').setValue(body.message)
+        const createRequestBodyMock = jest.fn(function() {
+          return body
+        })
+        wrapper.setMethods({
+          createRequestBody: createRequestBodyMock
+        })
+        fetchMock.post('/2019/contact', 200)
+
+        wrapper.find('form').trigger('submit.prevent')
+        await flushPromises()
+
+        expect(wrapper.vm.buttomValue).toBe('送信しました')
+      })
+
+      test('送信に失敗した場合、エラーが表示される', async () => {
+        wrapper.find('#name').setValue(body.name)
+        wrapper.find('#email').setValue(body.email)
+        wrapper.find('#organization').setValue(body.organization)
+        wrapper.find('#message').setValue(body.message)
+        const createRequestBodyMock = jest.fn(function() {
+          return body
+        })
+        wrapper.setMethods({
+          createRequestBody: createRequestBodyMock
+        })
+        fetchMock.post(
+          '/2019/contact',
+          Promise.reject(new Error('something bad happened'))
+        )
+
+        wrapper.find('form').trigger('submit.prevent')
+        await flushPromises()
+
+        expect(wrapper.vm.buttomValue).toBe('送信に失敗しました')
+      })
     })
-    */
-
-    // TODO: 他のテストケースの実装
   })
 })
