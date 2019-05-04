@@ -133,11 +133,11 @@ describe('ContactForm.Vue', () => {
         expect(handleSubmitMock).toBeCalled()
       })
 
-      test('必須項目を入力していない状態で送信ボタン押下した場合、送信ボタンのテキストは変化しない', async () => {
+      test('必須項目を入力していない状態で送信ボタン押下した場合、バリデーションでエラーになる', async () => {
         wrapper.find('form').trigger('submit.prevent')
         await flushPromises()
 
-        expect(wrapper.vm.buttomValue).toBe('送信する')
+        expect(wrapper.vm.errors.any()).toEqual(true)
       })
 
       test('フォームをすべて埋めた状態で送信ボタン押下した場合、送信に成功する', async () => {
