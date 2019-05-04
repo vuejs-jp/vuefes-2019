@@ -254,6 +254,7 @@ export default class TheFooter extends Vue {
     background-color: transparent;
     width: 20%;
     max-width: 57px;
+    cursor: pointer;
 
     & + & {
       margin-left: 8.8%;
