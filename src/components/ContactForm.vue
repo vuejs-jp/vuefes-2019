@@ -94,7 +94,7 @@
             {{ errors.first('message') }}
           </div>
         </div>
-        <BaseButton class="submit-button" type="submit">
+        <BaseButton :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
           {{ buttomValue }}
         </BaseButton>
       </form>
@@ -199,19 +199,15 @@ export default class ContactForm extends Vue {
 
 <style lang="scss" scoped>
 .container {
-  margin: 0 auto;
-
   .form-content {
     textarea,
-    input[type='text'] {
+    input {
       width: 100%;
       display: block;
       border: 1px solid #eee;
       box-sizing: border-box;
-    }
-
-    .has-error {
-      color: #f17c67;
+      padding: 15px 20px;
+      margin: 16px 0;
     }
 
     textarea {
@@ -234,6 +230,11 @@ export default class ContactForm extends Vue {
       margin-bottom: 15px;
     }
 
+    .has-sent {
+      background-color: $white;
+      color: $primary-text-color;
+    }
+
     .hidden {
       display: none;
     }
@@ -244,9 +245,9 @@ export default class ContactForm extends Vue {
     }
 
     .submit-button {
-      display: block;
-      margin: 0 auto;
-      text-align: center;
+      width: 310px;
+      height: 80px;
+      margin-top: 50px;
     }
   }
 }
@@ -254,22 +255,18 @@ export default class ContactForm extends Vue {
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .container {
     .form-content {
-      .title {
-        margin-top: 20px;
-      }
-
       .has-error {
         margin-bottom: 25px;
       }
 
       textarea,
-      input[type='text'] {
+      input {
         padding: 15px 20px;
         margin: 16px 0;
       }
 
       .submit-button {
-        width: 700px;
+        width: 648px;
         height: 111px;
         margin-top: 50px;
       }
@@ -280,16 +277,12 @@ export default class ContactForm extends Vue {
 @media screen and (min-width: $layout-breakpoint--is-medium-up) {
   .container {
     .form-content {
-      .title {
-        margin-top: 40px;
-      }
-
       .has-error {
         margin-bottom: 30px;
       }
 
       textarea,
-      input[type='text'] {
+      input {
         padding: 15px 20px;
         margin: 16px 0;
       }
@@ -297,7 +290,6 @@ export default class ContactForm extends Vue {
       .submit-button {
         width: 700px;
         height: 111px;
-        margin-top: 50px;
       }
     }
   }
