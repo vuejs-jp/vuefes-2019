@@ -167,19 +167,23 @@ export default class ContactForm extends Vue {
       .join('&')
   }
 
+  createRequestBody(target): object {
+    return {
+      'form-name': 'contact',
+      name: target.name.value,
+      email: target.email.value,
+      organization: target.organization.value,
+      message: target.message.value
+    }
+  }
+
   handleSubmit({ target }): void {
     this.$validator.validateAll().then(isValid => {
       if (!isValid) {
         return
       }
 
-      const body = {
-        'form-name': 'contact',
-        name: target.name.value,
-        email: target.email.value,
-        organization: target.organization.value,
-        message: target.message.value
-      }
+      const body = this.createRequestBody(target)
 
       fetch('/2019/contact', {
         method: 'POST',
