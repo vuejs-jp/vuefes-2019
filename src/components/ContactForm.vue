@@ -34,6 +34,7 @@
             id="name"
             v-model.trim="formData.name"
             v-validate="'required'"
+            :class="{'error error-icon': errors.has('name')}"
             data-vv-validate-on="blur"
             name="name"
             placeholder="お名前"
@@ -52,6 +53,7 @@
             id="email"
             v-model.trim="formData.email"
             v-validate="'required|email'"
+            :class="{'error error-icon': errors.has('email')}"
             data-vv-validate-on="blur"
             name="email"
             placeholder="メールアドレス"
@@ -83,6 +85,7 @@
             id="message"
             v-model="formData.message"
             v-validate="'required'"
+            :class="{'error': errors.has('message')}"
             data-vv-validate-on="blur"
             name="message"
             placeholder="例：お問い合わせ内容をご記入ください"
@@ -213,6 +216,22 @@ export default class ContactForm extends Vue {
 
     textarea {
       height: 225px;
+    }
+
+    .error {
+      border-color: #f17c67;
+    }
+
+    .error-icon {
+      background-image: url('~assets/images/icon-exclamation.svg');
+      background-repeat: no-repeat;
+      background-position: 99% center;
+      background-size: auto 70%;
+    }
+
+    .has-error {
+      color: #f17c67;
+      margin-bottom: 15px;
     }
 
     .hidden {
