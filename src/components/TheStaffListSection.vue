@@ -195,84 +195,80 @@ export default class TheCallForPresentersSection extends Vue {
 
 <style scoped lang="scss">
 // ガターの幅
-$gutter-sm: 10px;
-$gutter-md: 15px;
-$gutter-lg: 20px;
+$gutter: 20px;
 // 1列のアイテム数
 $length-sm: 4;
 $length-md: 6;
 $length-lg: 8;
 // アイテムの幅 = ( 100% - 1列にあるガター幅の合計px ) / 1列にあるアイテム数
-$width-sm: calc((100% - #{$length-sm - 1} * #{$gutter-sm}) / #{$length-sm});
-$width-md: calc((100% - #{$length-md - 1} * #{$gutter-md}) / #{$length-md});
-$width-lg: calc((100% - #{$length-lg - 1} * #{$gutter-lg}) / #{$length-lg});
+$width-sm: calc((100% - #{$length-sm - 1} * #{$gutter}) / #{$length-sm});
+$width-md: calc((100% - #{$length-md - 1} * #{$gutter}) / #{$length-md});
+$width-lg: calc((100% - #{$length-lg - 1} * #{$gutter}) / #{$length-lg});
 
 .the-staff-list-section {
-  background: linear-gradient(to right bottom, #33a6b8, #84b259);
+  background: linear-gradient(to bottom, $asagi, $hiwamoegi);
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    position: relative;
+    background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    background: linear-gradient(to right, $asagi, $hiwamoegi);
+  }
 }
 
 .teammates {
-  max-width: 940px;
-  margin: 0 auto;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  margin: 0 auto;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 80%;
+  }
 }
 
 .teammate {
-  margin-bottom: 10px;
+  margin-right: $gutter;
+  margin-bottom: 20px;
+  width: $width-sm;
 
   a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.3vw;
+    font-size: 1.8vw;
     color: #fff;
     text-decoration: none;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 10px;
+    }
   }
 
   img {
     width: 100%;
   }
-}
 
-@media screen and (max-width: $layout-breakpoint--is-small) {
-  .teammate {
-    width: $width-sm;
-    margin-right: $gutter-sm;
-
+  @media screen and (max-width: $layout-breakpoint--is-small) {
     &:nth-of-type(#{$length-sm}n) {
       margin-right: 0;
     }
   }
-}
 
-@media screen and (min-width: $layout-breakpoint--is-small-up) and (max-width: $layout-breakpoint--is-medium) {
-  .teammate {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) and (max-width: $layout-breakpoint--is-medium) {
     width: $width-md;
-    margin-right: $gutter-md;
 
     &:nth-of-type(#{$length-md}n) {
       margin-right: 0;
     }
-
-    a {
-      font-size: 10px;
-    }
   }
-}
 
-@media screen and (min-width: $layout-breakpoint--is-medium-up) {
-  .teammate {
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     width: $width-lg;
-    margin-right: $gutter-lg;
 
     &:nth-of-type(#{$length-lg}n) {
       margin-right: 0;
-    }
-
-    a {
-      font-size: 10px;
     }
   }
 }
