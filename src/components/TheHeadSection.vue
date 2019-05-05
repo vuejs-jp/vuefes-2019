@@ -271,7 +271,7 @@ export default class TheHeadSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.the-head-section {
+.base-section.the-head-section {
   background: linear-gradient(to bottom right, $hiwamoegi, $asagi);
   padding: 100px 7.8% 60px;
 }
