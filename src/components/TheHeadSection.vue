@@ -45,21 +45,7 @@
       </div>
     </div>
 
-    <div class="btn-wrapper">
-      <a href="https://twitter.com/vuefes">
-        <div class="btn">
-          <img src="~/assets/images/icon-twitter-inside-btn.svg" />
-          <div class="btn__text">
-            <div class="btn__fold">
-              Vue Fes Japan 公式 Twitter
-            </div>
-            <div class="btn__fold">
-              で最新情報をチェック
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
+    <LinkToTwitter />
   </BaseSection>
 </template>
 
@@ -74,6 +60,7 @@ import HeadSlash from '~/components/HeadSlash.vue'
 import HeadTriangle from '~/components/HeadTriangle.vue'
 import HeadCross from '~/components/HeadCross.vue'
 import HeadPhoto from '~/components/HeadPhoto.vue'
+import LinkToTwitter from '~/components/LinkToTwitter.vue'
 
 type PartsType =
   | 'head-circle'
@@ -124,7 +111,8 @@ function getWindowMode(): WindowMode {
     HeadSlash,
     HeadTriangle,
     HeadCross,
-    HeadPhoto
+    HeadPhoto,
+    LinkToTwitter
   }
 })
 export default class TheHeadSection extends Vue {
@@ -145,7 +133,7 @@ export default class TheHeadSection extends Vue {
                 type = 'head-cross'
                 break
               case '⧅':
-                type = 'head-square'
+                type = 'head-slash'
                 rotate = 90
                 break
               case '⧄':
@@ -210,7 +198,7 @@ export default class TheHeadSection extends Vue {
               y: (gap + grid) / 2 + row * (gap + grid),
               rotate: rotate,
               src: src,
-              key: `${row}-${col}-${type}`
+              key: `${row}-${col}-${type}-${rotate}`
             }
           }
         )
@@ -314,38 +302,6 @@ export default class TheHeadSection extends Vue {
   text-align: right;
 }
 
-.btn {
-  background: $vue-dark-blue;
-  font-size: 4vw;
-  color: white;
-  display: flex;
-  padding: 1em;
-  margin: 20px auto 0 auto;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  border: 3px solid $vue-dark-blue;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: white;
-  border: 3px solid $vue-dark-blue;
-  color: $vue-dark-blue;
-}
-
-.btn__text {
-  flex: 1;
-}
-
-.btn-wrapper {
-  text-align: center;
-}
-
-circle {
-  fill: $vue-dark-blue;
-}
-
 .title {
   font-size: 8.3vw;
   font-weight: 700;
@@ -357,8 +313,8 @@ svg.main-visual {
   height: auto;
 }
 
-.btn__fold {
-  display: inline-block;
+.message-container {
+  margin: 0 auto 60px auto;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -369,7 +325,7 @@ svg.main-visual {
   .message-container {
     display: flex;
     align-items: flex-start;
-    margin: 0 auto;
+    margin: 0 auto 60px auto;
     justify-content: flex-end;
   }
 
