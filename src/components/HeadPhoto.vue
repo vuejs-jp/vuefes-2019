@@ -8,72 +8,79 @@
         height="120"
       />
     </clipPath>
-    <clipPath id="photo-clip">
-      <transition @leave="leave">
-        <circle
-          v-show="visible"
-          ref="shape"
-          cx="0"
-          cy="0"
-          r="0"
-          clip-path="url(#clip-boundary)"
-        />
-      </transition>
+    <clipPath :id="clipId">
+      <circle
+        ref="shape"
+        cx="0"
+        cy="0"
+        r="0"
+        clip-path="url(#clip-boundary)"
+      />
     </clipPath>
-    <image
-      v-if="item.src=='image01.png'"
-      href="~/assets/images/header/image01.png"
-      x="-60"
-      y="-60"
-      width="120"
-      height="120"
-      clip-path="url(#photo-clip)"
-    />
-    <image
-      v-if="item.src=='image02.png'"
-      href="~/assets/images/header/image02.png"
-      x="-60"
-      y="-60"
-      width="120"
-      height="120"
-      clip-path="url(#photo-clip)"
-    />
-    <image
-      v-if="item.src=='image03.png'"
-      href="~/assets/images/header/image03.png"
-      x="-60"
-      y="-60"
-      width="120"
-      height="120"
-      clip-path="url(#photo-clip)"
-    />
-    <image
-      v-if="item.src=='image04.png'"
-      href="~/assets/images/header/image04.png"
-      x="-60"
-      y="-60"
-      width="120"
-      height="120"
-      clip-path="url(#photo-clip)"
-    />
-    <image
-      v-if="item.src=='image05.png'"
-      href="~/assets/images/header/image05.png"
-      x="-60"
-      y="-60"
-      width="120"
-      height="120"
-      clip-path="url(#photo-clip)"
-    />
-    <image
-      v-if="item.src=='image06.png'"
-      href="~/assets/images/header/image06.png"
-      x="-60"
-      y="-60"
-      width="120"
-      height="120"
-      clip-path="url(#photo-clip)"
-    />
+    <transition @leave="leave">
+      <g v-show="visible">
+        <image
+          v-show="item.src=='image01.png'"
+          key="1"
+          href="~/assets/images/header/image01.png"
+          x="-60"
+          y="-60"
+          width="120"
+          height="120"
+          :clip-path="clipPath"
+        />
+        <image
+          v-show="item.src=='image02.png'"
+          key="2"
+          href="~/assets/images/header/image02.png"
+          x="-60"
+          y="-60"
+          width="120"
+          height="120"
+          :clip-path="clipPath"
+        />
+        <image
+          v-show="item.src=='image03.png'"
+          key="3"
+          href="~/assets/images/header/image03.png"
+          x="-60"
+          y="-60"
+          width="120"
+          height="120"
+          :clip-path="clipPath"
+        />
+        <image
+          v-show="item.src=='image04.png'"
+          key="4"
+          href="~/assets/images/header/image04.png"
+          x="-60"
+          y="-60"
+          width="120"
+          height="120"
+          :clip-path="clipPath"
+        />
+        <image
+          v-show="item.src=='image05.png'"
+          key="5"
+          href="~/assets/images/header/image05.png"
+          x="-60"
+          y="-60"
+          width="120"
+          height="120"
+          :clip-path="clipPath"
+        />
+        <image
+          v-show="item.src=='image06.png'"
+          key="6"
+          href="~/assets/images/header/image06.png"
+          x="-60"
+          y="-60"
+          width="120"
+          height="120"
+          :clip-path="clipPath"
+        />
+      </g>
+    </transition>
   </g>
 </template>
 
@@ -100,6 +107,14 @@ export default class HeadPhoto extends Vue {
 
   get href() {
     return `~/assets/images/header/${this.item.src}`
+  }
+
+  get clipId() {
+    return `photo-clip${this.item.key}`
+  }
+
+  get clipPath() {
+    return `url(#${this.clipId})`
   }
 
   leave(el, done) {

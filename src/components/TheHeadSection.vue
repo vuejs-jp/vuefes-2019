@@ -4,7 +4,7 @@
       <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
         <g transform="translate(-6, -6)">
           <g v-for="(row, i) in items" :key="i">
-            <g v-for="(col, j) in row" :key="j">
+            <g v-for="(col, j) in row" :key="j.key">
               <component :is="col.type" :item="col" :visible="visible" />
             </g>
           </g>
@@ -70,6 +70,7 @@ import BaseSection from '~/components/BaseSection.vue'
 import HeadCircle from '~/components/HeadCircle.vue'
 import HeadHorizontal from '~/components/HeadHorizontal.vue'
 import HeadSquare from '~/components/HeadSquare.vue'
+import HeadSlash from '~/components/HeadSlash.vue'
 import HeadTriangle from '~/components/HeadTriangle.vue'
 import HeadCross from '~/components/HeadCross.vue'
 import HeadPhoto from '~/components/HeadPhoto.vue'
@@ -81,6 +82,7 @@ type PartsType =
   | 'head-triangle'
   | 'head-cross'
   | 'head-photo'
+  | 'head-slash'
 
 const gap = 12
 const grid = 120
@@ -91,6 +93,7 @@ export interface Parts {
   y: number
   rotate: number
   src: string
+  key: string
 }
 export const partsLeaveTime = 0.2
 export const partsCreateTime = 0.6
@@ -118,6 +121,7 @@ function getWindowMode(): WindowMode {
     HeadCircle,
     HeadHorizontal,
     HeadSquare,
+    HeadSlash,
     HeadTriangle,
     HeadCross,
     HeadPhoto
@@ -131,87 +135,97 @@ export default class TheHeadSection extends Vue {
     return this.pattern[this.patternIndex].map((line, row) =>
       Array.from(line)
         .slice(0, this.t)
-        .map((p, col) => {
-          let type: PartsType = 'head-circle'
-          let rotate = 0
-          let src = ''
-          switch (p) {
-            case 'x':
-              type = 'head-cross'
-              break
-            case '\\':
-              type = 'head-square'
-              rotate = 90
-              break
-            case '/':
-              type = 'head-square'
-              break
-            case '|':
-              type = 'head-horizontal'
-              rotate = 90
-              break
-            case 'o':
-              type = 'head-circle'
-              break
-            case '-':
-              type = 'head-horizontal'
-              break
-            case '_':
-              type = 'head-triangle'
-              break
-            case '^':
-              type = 'head-triangle'
-              rotate = 270
-              break
-            case 'L':
-              type = 'head-triangle'
-              rotate = 90
-              break
-            case '1':
-              type = 'head-photo'
-              src = 'image01.png'
-              break
-            case '2':
-              type = 'head-photo'
-              src = 'image02.png'
-              break
-            case '3':
-              type = 'head-photo'
-              src = 'image03.png'
-              break
-            case '4':
-              type = 'head-photo'
-              src = 'image04.png'
-              break
-            case '5':
-              type = 'head-photo'
-              src = 'image05.png'
-              break
-            case '6':
-              type = 'head-photo'
-              src = 'image06.png'
-              break
+        .map(
+          (p, col): Parts => {
+            let type: PartsType = 'head-circle'
+            let rotate = 0
+            let src = ''
+            switch (p) {
+              case '⮽':
+                type = 'head-cross'
+                break
+              case '⧅':
+                type = 'head-square'
+                rotate = 90
+                break
+              case '⧄':
+                type = 'head-slash'
+                break
+              case '■':
+                type = 'head-square'
+                break
+              case '|':
+                type = 'head-horizontal'
+                rotate = 90
+                break
+              case 'o':
+                type = 'head-circle'
+                break
+              case '-':
+                type = 'head-horizontal'
+                break
+              case '◢':
+                type = 'head-triangle'
+                break
+              case '◥':
+                type = 'head-triangle'
+                rotate = 270
+                break
+              case '◣':
+                type = 'head-triangle'
+                rotate = 90
+                break
+              case '◤':
+                type = 'head-triangle'
+                rotate = 180
+                break
+              case '1':
+                type = 'head-photo'
+                src = 'image01.png'
+                break
+              case '2':
+                type = 'head-photo'
+                src = 'image02.png'
+                break
+              case '3':
+                type = 'head-photo'
+                src = 'image03.png'
+                break
+              case '4':
+                type = 'head-photo'
+                src = 'image04.png'
+                break
+              case '5':
+                type = 'head-photo'
+                src = 'image05.png'
+                break
+              case '6':
+                type = 'head-photo'
+                src = 'image06.png'
+                break
+            }
+            return {
+              type: type,
+              x: (gap + grid) / 2 + col * (gap + grid),
+              y: (gap + grid) / 2 + row * (gap + grid),
+              rotate: rotate,
+              src: src,
+              key: `${row}-${col}-${type}`
+            }
           }
-          return {
-            type: type,
-            x: (gap + grid) / 2 + col * (gap + grid),
-            y: (gap + grid) / 2 + row * (gap + grid),
-            rotate: rotate,
-            src: src
-          }
-        })
+        )
     )
   }
 
   width = 0
   height = 384
   pattern = [
-    ['-/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
-    ['1/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
-    ['2/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
-    ['3/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
-    ['4/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
-    ['5/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/']
+    ['-⧄|⧅⧄⧅⮽⧄o', 'o⮽⧄◢-⧄⧅◥|', '⧅◣⧅⧄⧅|⧄⧅⧄'],
+    ['1⧄|⧅o⧅⮽⧄◥', 'o⮽⧄◢⧄-⧅2|', '◥◣o⧄⧅|⧄⧅⧄'],
+    ['1⧄|3◤⧅o⧄◥', '-⮽■◣⧄4⧅2|', '⧅⧅o⧄⧅◤⧄■⧄'],
+    ['5⧄⧅3◤⧅o⧄6', '-⮽1⧅⧄4⧅|⧄', '⧅◣o⧄2-⧄⧄⧄'],
+    ['5⧄◣3◤⧅o⧄6', '-⮽1⧅⧄4⮽|⧄', '⧄◣o⧅2-⧄⧄⧄'],
+    ['5⧄⧅3⧄⧅o⧄6', '-⮽1⧅⧄4⧄|⧄', '⧄◣o⧄2⧅⧄◥⮽']
   ]
   patternIndex = 0
   t = 0
@@ -242,7 +256,7 @@ export default class TheHeadSection extends Vue {
 
     setInterval(() => {
       this.patternIndex = (this.patternIndex + 1) % this.pattern.length
-    }, 1000)
+    }, 2000)
 
     window.addEventListener('resize', () => {
       if (timer > 0) {

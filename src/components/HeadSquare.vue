@@ -1,9 +1,15 @@
 <template>
   <g :transform="transform">
-    <transition-group tag="g" @leave="leave">
-      <polygon v-show="visible" key="0" ref="shape1" :points="keyFrame1[0]" />
-      <polygon v-show="visible" key="1" ref="shape2" :points="keyFrame2[0]" />
-    </transition-group>
+    <transition @leave="leave">
+      <rect
+        v-show="visible"
+        ref="shape"
+        x="0"
+        y="0"
+        width="0"
+        height="0"
+      />
+    </transition>
   </g>
 </template>
 
@@ -19,8 +25,6 @@ export default class HeadSquare extends Vue {
   readonly item!: Parts
   @Prop(Boolean)
   readonly visible!: boolean
-  keyFrame1 = ['-60 -60 -60 -60 -60 -60', '-60 -60 52 -60 -60 52']
-  keyFrame2 = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
   get transform() {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${
@@ -29,34 +33,28 @@ export default class HeadSquare extends Vue {
   }
 
   leave(el, done) {
-    TweenMax.to(this.$refs.shape1, partsLeaveTime, {
+    TweenMax.to(this.$refs.shape, partsLeaveTime, {
       attr: {
-        points: this.keyFrame1[0]
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0
       },
       ease: Power2.easeOut,
       onComplete() {
         done()
       }
     })
-    TweenMax.to(this.$refs.shape2, partsLeaveTime, {
-      attr: {
-        points: this.keyFrame2[0]
-      },
-      ease: Power2.easeOut
-    })
   }
 
   created() {
     setTimeout(() => {
-      TweenMax.to(this.$refs.shape1, partsCreateTime, {
+      TweenMax.to(this.$refs.shape, partsCreateTime, {
         attr: {
-          points: this.keyFrame1[1]
-        },
-        ease: Power2.easeOut
-      })
-      TweenMax.to(this.$refs.shape2, partsCreateTime, {
-        attr: {
-          points: this.keyFrame2[1]
+          x: -60,
+          y: -60,
+          width: 120,
+          height: 120
         },
         ease: Power2.easeOut
       })
@@ -66,7 +64,7 @@ export default class HeadSquare extends Vue {
 </script>
 
 <style lang="scss" scoped>
-polygon {
+rect {
   fill: $vue-dark-blue;
 }
 </style>
