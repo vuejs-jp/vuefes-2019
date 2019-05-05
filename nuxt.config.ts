@@ -21,7 +21,7 @@ const config: NuxtConfiguration = {
   },
   loading: { color: '#fff' },
   css: ['~/assets/stylesheets/main.scss'],
-  plugins: [],
+  plugins: [{ src: '~/plugins/vee-validate' }],
   modules: [
     [
       'nuxt-fontawesome',
