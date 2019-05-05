@@ -81,6 +81,7 @@ import HeadHorizontal from '~/components/HeadHorizontal.vue'
 import HeadSquare from '~/components/HeadSquare.vue'
 import HeadTriangle from '~/components/HeadTriangle.vue'
 import HeadCross from '~/components/HeadCross.vue'
+import HeadPhoto from '~/components/HeadPhoto.vue'
 
 type PartsType =
   | 'head-circle'
@@ -88,6 +89,7 @@ type PartsType =
   | 'head-square'
   | 'head-triangle'
   | 'head-cross'
+  | 'head-photo'
 
 const gap = 12
 const grid = 120
@@ -97,6 +99,7 @@ export interface Parts {
   x: number
   y: number
   rotate: number
+  src: string
 }
 export const partsLeaveTime = 0.2
 export const partsCreateTime = 0.6
@@ -125,7 +128,8 @@ function getWindowMode(): WindowMode {
     HeadHorizontal,
     HeadSquare,
     HeadTriangle,
-    HeadCross
+    HeadCross,
+    HeadPhoto
   }
 })
 export default class TheHeadSection extends Vue {
@@ -133,12 +137,13 @@ export default class TheHeadSection extends Vue {
     return `0 0 ${this.width} ${this.height}`
   }
   get items(): Parts[][] {
-    return this.pattern.map((line, row) =>
+    return this.pattern[this.patternIndex].map((line, row) =>
       Array.from(line)
         .slice(0, this.t)
         .map((p, col) => {
           let type: PartsType = 'head-circle'
           let rotate = 0
+          let src = ''
           switch (p) {
             case 'x':
               type = 'head-cross'
@@ -171,12 +176,37 @@ export default class TheHeadSection extends Vue {
               type = 'head-triangle'
               rotate = 90
               break
+            case '1':
+              type = 'head-photo'
+              src = 'image01.png'
+              break
+            case '2':
+              type = 'head-photo'
+              src = 'image02.png'
+              break
+            case '3':
+              type = 'head-photo'
+              src = 'image03.png'
+              break
+            case '4':
+              type = 'head-photo'
+              src = 'image04.png'
+              break
+            case '5':
+              type = 'head-photo'
+              src = 'image05.png'
+              break
+            case '6':
+              type = 'head-photo'
+              src = 'image06.png'
+              break
           }
           return {
             type: type,
             x: (gap + grid) / 2 + col * (gap + grid),
             y: (gap + grid) / 2 + row * (gap + grid),
-            rotate: rotate
+            rotate: rotate,
+            src: src
           }
         })
     )
@@ -184,7 +214,15 @@ export default class TheHeadSection extends Vue {
 
   width = 0
   height = 384
-  pattern = ['-/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/']
+  pattern = [
+    ['-/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
+    ['1/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
+    ['2/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
+    ['3/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
+    ['4/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/'],
+    ['5/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/']
+  ]
+  patternIndex = 0
   t = 0
   visible = true
   windowMode: WindowMode = 'sm'
@@ -210,6 +248,10 @@ export default class TheHeadSection extends Vue {
     setInterval(() => {
       this.t++
     }, 90)
+
+    setInterval(() => {
+      this.patternIndex = (this.patternIndex + 1) % this.pattern.length
+    }, 1000)
 
     window.addEventListener('resize', () => {
       if (timer > 0) {
