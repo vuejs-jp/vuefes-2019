@@ -16,7 +16,6 @@
         netlify
         @submit.prevent="handleSubmit"
       >
-
         <!-- Anti-spam Measures -->
         <div class="hidden">
           <p>
