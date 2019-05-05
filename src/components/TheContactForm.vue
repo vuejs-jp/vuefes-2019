@@ -5,115 +5,124 @@
     </template>
 
     <BaseMainDescription>
-      Vue.js 日本ユーザーグループへのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者から3営業日以内でお答えさせていただきます。
+      <p>
+        Vue.js 日本ユーザーグループへのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者から3営業日以内でお答えさせていただきます。
+      </p>
     </BaseMainDescription>
 
-    <div class="form-content">
-      <form
-        name="contact"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        netlify
-        @submit.prevent="handleSubmit"
-      >
-        <!-- Anti-spam Measures -->
-        <div class="hidden">
-          <p>
-            <label>Don’t fill this out: <input name="bot-field" /></label>
-          </p>
+    <form
+      name="contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      netlify
+      @submit.prevent="handleSubmit"
+    >
+      <!-- Anti-spam Measures -->
+      <div class="hidden">
+        <p>
+          <label>Don’t fill this out: <input name="bot-field" /></label>
+        </p>
 
-          <input
-            type="hidden"
-            name="form-name"
-            value="contact"
-          />
+        <input
+          type="hidden"
+          name="form-name"
+          value="contact"
+        />
+      </div>
+
+      <!-- Name -->
+      <div class="form-content">
+        <label for="name">
+          お名前
+          <span class="required">
+            （必須）
+          </span>
+        </label>
+
+        <input
+          id="name"
+          v-model.trim="formData.name"
+          v-validate="'required'"
+          :class="{'error': errors.has('name')}"
+          data-vv-validate-on="blur"
+          name="name"
+          placeholder="お名前"
+          type="text"
+        />
+
+        <div v-show="errors.has('name')" id="name-error" class="has-error">
+          {{ errors.first('name') }}
         </div>
+      </div>
 
-        <!-- Name -->
-        <div>
-          <label class="required" for="name">
-            お名前
-          </label>
+      <!-- Email -->
+      <div class="form-content">
+        <label for="email">
+          メールアドレス
+          <span class="required">
+            （必須）
+          </span>
+        </label>
 
-          <input
-            id="name"
-            v-model.trim="formData.name"
-            v-validate="'required'"
-            :class="{'error error-icon': errors.has('name')}"
-            data-vv-validate-on="blur"
-            name="name"
-            placeholder="お名前"
-            type="text"
-          />
+        <input
+          id="email"
+          v-model.trim="formData.email"
+          v-validate="'required|email'"
+          :class="{'error': errors.has('email')}"
+          data-vv-validate-on="blur"
+          name="email"
+          placeholder="メールアドレス"
+          type="text"
+        />
 
-          <div v-show="errors.has('name')" id="name-error" class="has-error">
-            {{ errors.first('name') }}
-          </div>
+        <div v-show="errors.has('email')" id="email-error" class="has-error">
+          {{ errors.first('email') }}
         </div>
+      </div>
 
-        <!-- Email -->
-        <div>
-          <label class="required" for="email">
-            メールアドレス
-          </label>
+      <!-- Organization -->
+      <div class="form-content">
+        <label for="organization">
+          会社・団体名等
+        </label>
 
-          <input
-            id="email"
-            v-model.trim="formData.email"
-            v-validate="'required|email'"
-            :class="{'error error-icon': errors.has('email')}"
-            data-vv-validate-on="blur"
-            name="email"
-            placeholder="メールアドレス"
-            type="text"
-          />
+        <input
+          id="organization"
+          v-model="formData.organization"
+          name="organization"
+          placeholder="会社・団体名等"
+          type="text"
+        />
+      </div>
 
-          <div v-show="errors.has('email')" id="email-error" class="has-error">
-            {{ errors.first('email') }}
-          </div>
+      <!-- Message -->
+      <div class="form-content">
+        <label for="message">
+          内容
+          <span class="required">
+            （必須）
+          </span>
+        </label>
+
+        <textarea
+          id="message"
+          v-model="formData.message"
+          v-validate="'required'"
+          :class="{'error': errors.has('message')}"
+          data-vv-validate-on="blur"
+          name="message"
+          placeholder="例：お問い合わせ内容をご記入ください"
+        />
+
+        <div v-show="errors.has('message')" id="message-error" class="has-error">
+          {{ errors.first('message') }}
         </div>
+      </div>
 
-        <!-- Organization -->
-        <div>
-          <label for="organization">
-            会社・団体名等
-          </label>
-
-          <input
-            id="organization"
-            v-model="formData.organization"
-            name="organization"
-            placeholder="会社・団体名等"
-            type="text"
-          />
-        </div>
-
-        <!-- Message -->
-        <div>
-          <label class="required" for="message">
-            内容
-          </label>
-
-          <textarea
-            id="message"
-            v-model="formData.message"
-            v-validate="'required'"
-            :class="{'error': errors.has('message')}"
-            data-vv-validate-on="blur"
-            name="message"
-            placeholder="例：お問い合わせ内容をご記入ください"
-          />
-
-          <div v-show="errors.has('message')" id="message-error" class="has-error">
-            {{ errors.first('message') }}
-          </div>
-        </div>
-
-        <BaseButton :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
-          {{ buttomValue }}
-        </BaseButton>
-      </form>
-    </div>
+      <BaseButton :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
+        {{ buttomValue }}
+      </BaseButton>
+    </form>
   </BaseMain>
 </template>
 
@@ -217,93 +226,102 @@ export default class TheContactForm extends Vue {
 </script>
 
 <style lang="scss" scoped>
+$form-border-color: #eee;
+
+.hidden {
+  display: none;
+}
+
 .form-content {
+  margin-bottom: 38px;
+
+  &:last-of-type {
+    margin-bottom: 100px;
+  }
+
+  label {
+    display: block;
+    font-size: 4vw;
+    margin-bottom: 20px;
+
+    .required {
+      color: $sangosyu;
+    }
+  }
+
   textarea,
   input {
     width: 100%;
-    display: block;
-    border: 1px solid #eee;
-    box-sizing: border-box;
-    padding: 15px 20px;
-    margin: 16px 0;
+    padding: 3%;
+    font-size: 3.5vw;
+    border: 1px solid $form-border-color;
   }
 
   textarea {
     height: 225px;
+
+    &.error {
+      background-position: 97% 1.4vw;
+    }
   }
 
   .error {
-    border-color: #f17c67;
-  }
-
-  .error-icon {
+    border-color: $sangosyu;
     background-image: url('~assets/images/icon-exclamation.svg');
     background-repeat: no-repeat;
-    background-position: 99% center;
-    background-size: auto 70%;
+    background-position: 97% center;
+    background-size: auto 6vw;
+    padding-right: 10vw;
   }
 
   .has-error {
-    color: #f17c67;
-    margin-bottom: 15px;
+    color: $sangosyu;
+    font-size: 2vw;
+    margin-top: 16px;
   }
+}
 
-  .has-sent {
-    background-color: $white;
-    color: $primary-text-color;
-  }
+.has-sent {
+  color: $primary-text-color;
+  background-color: $white;
+}
 
-  .hidden {
-    display: none;
-  }
-
-  .required::after {
-    color: #f17c67;
-    content: '（必須）';
-  }
-
-  .submit-button {
-    width: 310px;
-    height: 80px;
-    margin-top: 50px;
-  }
+.submit-button {
+  width: 100%;
+  cursor: pointer;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .form-content {
-    .has-error {
-      margin-bottom: 25px;
+    margin-bottom: 35px;
+
+    &:last-of-type {
+      margin-bottom: 60px;
+    }
+
+    label {
+      font-size: 18px;
+      margin-bottom: 16px;
     }
 
     textarea,
     input {
-      padding: 15px 20px;
-      margin: 16px 0;
+      padding: 23px;
+      font-size: 16px;
     }
 
-    .submit-button {
-      width: 648px;
-      height: 111px;
-      margin-top: 50px;
+    textarea.error {
+      background-position: calc(100% - 23px) 13px;
     }
-  }
-}
 
-@media screen and (min-width: $layout-breakpoint--is-medium-up) {
-  .form-content {
+    .error {
+      background-position: calc(100% - 23px) center;
+      background-size: 38px;
+      padding-right: calc(23px + 23px + 38px);
+    }
+
     .has-error {
-      margin-bottom: 30px;
-    }
-
-    textarea,
-    input {
-      padding: 15px 20px;
-      margin: 16px 0;
-    }
-
-    .submit-button {
-      width: 700px;
-      height: 111px;
+      font-size: 16px;
     }
   }
 }
