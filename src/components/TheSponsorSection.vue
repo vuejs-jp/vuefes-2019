@@ -91,14 +91,6 @@ export default class TheSponsorsSection extends Vue {
     padding: 40px;
     z-index: 1;
   }
-
-  p {
-    font-size: 4vw;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: 18px;
-    }
-  }
 }
 
 .link-to-twitter {
@@ -107,6 +99,7 @@ export default class TheSponsorsSection extends Vue {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 700px;
+    margin: 0 auto 0 0;
   }
 }
 

@@ -1,13 +1,6 @@
 <template>
-  <section class="the-head-section">
-    <nuxt-link to="/">
-      <img alt="Vue Fes Japan" class="logo-vfj logo-vfj--fixed" src="~/assets/images/logo_vfj.svg" />
-    </nuxt-link>
-
+  <BaseSection class="the-head-section">
     <BaseSection class="base-section--head">
-      <nuxt-link to="/">
-        <img alt="Vue Fes Japan" class="logo-vfj logo-vfj--relative" src="~/assets/images/logo_vfj.svg" />
-      </nuxt-link>
       <div class="main-visual-wrapper">
         <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
           <g transform="translate(-6, -6)">
@@ -16,6 +9,7 @@
                 <component :is="col.type" :item="col" :visible="visible" />
               </g>
             </g>
+          </g>
           </g>
         </svg>
       </div>
@@ -69,7 +63,7 @@
         </a>
       </div>
     </BaseSection>
-  </section>
+  </BaseSection>
 </template>
 
 <script lang="ts">
@@ -277,25 +271,17 @@ export default class TheHeadSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.the-head-section {
+  background: linear-gradient(to bottom right, $hiwamoegi, $asagi);
+  padding: 100px 7.8% 60px;
+}
+
 .main-visual-wrapper {
   text-align: center;
 }
 
-.base-section.base-section--head {
-  padding: 0 7.8% 60px 7.8%;
-}
-
-.the-head-section {
-  background: linear-gradient(to bottom right, $hiwamoegi, $asagi);
-}
-
 .message-content {
   color: white;
-}
-
-.message-content p {
-  line-height: 1.8em;
-  font-size: 4vw;
 }
 
 .message-content a {
@@ -344,14 +330,6 @@ export default class TheHeadSection extends Vue {
   text-align: center;
 }
 
-.logo-vfj--fixed {
-  display: none;
-}
-
-.logo-vfj--relative {
-  margin-top: 30px;
-}
-
 circle {
   fill: $vue-dark-blue;
 }
@@ -365,7 +343,6 @@ circle {
 svg.main-visual {
   max-width: 100%;
   height: auto;
-  margin-top: 30px;
 }
 
 .btn__fold {
@@ -373,8 +350,8 @@ svg.main-visual {
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .base-section.base-section--head {
-    padding: 0 70px 80px 70px;
+  .the-head-section {
+    padding: 120px 70px 80px;
   }
 
   .message-container {
@@ -386,10 +363,6 @@ svg.main-visual {
 
   .message-content {
     width: 65%;
-  }
-
-  .message-content p {
-    font-size: 18px;
   }
 
   .title {
@@ -404,21 +377,6 @@ svg.main-visual {
 
   .date-place__day {
     font-size: 18px;
-  }
-
-  .logo-vfj--fixed {
-    display: block;
-    position: fixed;
-    top: 30px;
-    left: 30px;
-  }
-
-  .logo-vfj--relative {
-    display: none;
-  }
-
-  svg.main-visual {
-    margin-top: 120px;
   }
 
   .btn {
