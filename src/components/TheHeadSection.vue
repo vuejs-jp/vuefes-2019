@@ -61,6 +61,12 @@ import HeadTriangle from '~/components/HeadTriangle.vue'
 import HeadCross from '~/components/HeadCross.vue'
 import HeadPhoto from '~/components/HeadPhoto.vue'
 import LinkToTwitter from '~/components/LinkToTwitter.vue'
+const Image01 = require('~/assets/images/header/image01.png')
+const Image02 = require('~/assets/images/header/image02.png')
+const Image03 = require('~/assets/images/header/image03.png')
+const Image04 = require('~/assets/images/header/image04.png')
+const Image05 = require('~/assets/images/header/image05.png')
+const Image06 = require('~/assets/images/header/image06.png')
 
 type PartsType =
   | 'head-circle'
@@ -216,7 +222,7 @@ export default class TheHeadSection extends Vue {
     ['o⧄⧅3⧄⧅o⧄6', '-⮽1⧅⧄4⧄|⧄', '⧄◣o⧄2⧅⧄◥⮽'],
     ['3⧄4⧅⧄⧅⮽5o', 'o⮽⧄◤2⧄6◥|', '⧅◢⧅1⧅⧅⧄-⧄']
   ]
-  patternIndex = 0
+  patternIndex = 6
   t = 0
   visible = true
   windowMode: WindowMode = 'sm'
@@ -235,17 +241,37 @@ export default class TheHeadSection extends Vue {
     }
   }
 
+  loadedImages = 0
+
   mounted() {
     this.windowMode = getWindowMode()
     this.adjustSvg(this.windowMode)
+    const self = this
+
+    function preload(Image01) {
+      const img = new Image()
+      img.src = Image01
+      img.onload = () => {
+        self.loadedImages++
+      }
+    }
+
+    preload(Image01)
+    preload(Image02)
+    preload(Image03)
+    preload(Image04)
+    preload(Image05)
+    preload(Image06)
 
     setInterval(() => {
-      this.t++
+      if (this.loadedImages >= 6) {
+        this.t++
+      }
     }, 90)
 
-    setInterval(() => {
-      this.patternIndex = (this.patternIndex + 1) % this.pattern.length
-    }, 2000)
+    // setInterval(() => {
+    //   this.patternIndex = (this.patternIndex + 1) % this.pattern.length
+    // }, 2000)
 
     window.addEventListener('resize', () => {
       if (timer > 0) {
