@@ -26,7 +26,7 @@ describe('TheContactForm.Vue', () => {
   })
 
   test('レンダリングできる', () => {
-    expect(wrapper.find('.container').isVisible()).toBeTruthy()
+    expect(wrapper.find('.the-contact-form').isVisible()).toBeTruthy()
     expect(wrapper.find('#name').exists()).toBeTruthy()
     expect(wrapper.find('#email').exists()).toBeTruthy()
     expect(wrapper.find('#organization').exists()).toBeTruthy()

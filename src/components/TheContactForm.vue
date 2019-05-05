@@ -1,5 +1,5 @@
 <template>
-  <BaseMain class="container">
+  <BaseMain class="the-contact-form">
     <template slot="heading">
       お問い合わせ
     </template>
