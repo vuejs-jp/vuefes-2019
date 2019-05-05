@@ -136,7 +136,7 @@ enum Messages {
     BaseButton
   }
 })
-export default class ContactForm extends Vue {
+export default class TheContactForm extends Vue {
   formData = {
     name: '',
     email: '',

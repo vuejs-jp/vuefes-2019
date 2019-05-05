@@ -2,10 +2,10 @@ import { createLocalVue, shallowMount } from '@vue/test-utils'
 import fetchMock from 'fetch-mock'
 import flushPromises from 'flush-promises'
 import ValidationProvider, { Validator } from 'vee-validate'
-import ContactForm from '~/components/ContactForm.vue'
+import TheContactForm from '~/components/TheContactForm.vue'
 import dictionary from '~/plugins/validateDictionary'
 
-describe('ContactForm.Vue', () => {
+describe('TheContactForm.Vue', () => {
   let wrapper
   const localVue = createLocalVue()
 
@@ -15,7 +15,7 @@ describe('ContactForm.Vue', () => {
   })
 
   beforeEach(() => {
-    wrapper = shallowMount(ContactForm, {
+    wrapper = shallowMount(TheContactForm, {
       sync: false,
       localVue
     })
