@@ -1,23 +1,52 @@
 <template>
   <g :transform="transform">
-    <polygon points="60 60 -52 60 60 -52" />
+    <transition @leave="leave">
+      <polygon v-show="visible" ref="shape" :points="keyFrame[0]" />
+    </transition>
   </g>
 </template>
 
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
-import { Parts } from './TheHeadSection.vue'
+import { TweenMax, Power2 } from 'gsap'
+import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 
 @Component
 export default class HeadTriangle extends Vue {
   @Prop()
   readonly item!: Parts
+  @Prop(Boolean)
+  readonly visible!: boolean
+  keyFrame = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
   get transform() {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${
       this.item.rotate
     })`
+  }
+
+  leave(el, done) {
+    TweenMax.to(this.$refs.shape, partsLeaveTime, {
+      attr: {
+        points: this.keyFrame[0]
+      },
+      ease: Power2.easeOut,
+      onComplete() {
+        done()
+      }
+    })
+  }
+
+  created() {
+    setTimeout(() => {
+      TweenMax.to(this.$refs.shape, partsCreateTime, {
+        attr: {
+          points: this.keyFrame[1]
+        },
+        ease: Power2.easeOut
+      })
+    }, 0)
   }
 }
 </script>
