@@ -205,7 +205,7 @@ export default class TheFooter extends Vue {
 
 <style lang="scss" scoped>
 .the-footer {
-  padding: 80px 7.8%;
+  padding: 10vw 7.8%;
   background-color: $primary-color;
   color: $primary-text-color--invert;
 
@@ -235,7 +235,7 @@ export default class TheFooter extends Vue {
 }
 
 .logo {
-  margin-bottom: 45px;
+  margin-bottom: 5.8vw;
   width: calc(50% - 10px);
 
   img {
@@ -246,6 +246,7 @@ export default class TheFooter extends Vue {
     width: 20%;
     min-width: 140px;
     margin-right: 5%;
+    margin-bottom: 45px;
   }
 }
 
@@ -282,13 +283,13 @@ export default class TheFooter extends Vue {
 .social-list,
 .link-list {
   width: calc(50% - 10px);
-  margin-bottom: 50px;
+  margin-bottom: 6.5vw;
 
   .title {
-    margin-bottom: 40px;
     font-size: 6vw;
     font-weight: bold;
     line-height: 1;
+    margin-bottom: 5vw;
   }
 
   a {
