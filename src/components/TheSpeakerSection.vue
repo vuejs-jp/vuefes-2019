@@ -9,6 +9,7 @@
         class="avatar"
         :srcset="`${avatar}, ${avatar2x} 2x`"
         :src="avatar2x"
+        alt="Evan You"
       />
 
       <div class="speaker-content">
@@ -27,7 +28,7 @@
             target="_blank"
             rel="noopener"
           >
-            <img src="~/assets/images/logo-twitter.svg" />
+            <img src="~/assets/images/logo-twitter.svg" alt="Twitter" />
           </a>
           <a
             class="github"
@@ -35,7 +36,7 @@
             target="_blank"
             rel="noopener"
           >
-            <img src="~/assets/images/icon-github.svg" />
+            <img src="~/assets/images/icon-github.svg" alt="GitHub" />
           </a>
         </div>
 

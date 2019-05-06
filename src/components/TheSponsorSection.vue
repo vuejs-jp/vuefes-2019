@@ -22,16 +22,19 @@
       <img
         :srcset="`${imageOne}, ${imageOne2x} 2x`"
         :src="imageOne2x"
+        alt="VueFes Image"
       />
 
       <img
         :srcset="`${imageTwo}, ${imageTwo2x} 2x`"
         :src="imageTwo2x"
+        alt="VueFes Image"
       />
 
       <img
         :srcset="`${imageThree}, ${imageThree2x} 2x`"
         :src="imageThree2x"
+        alt="VueFes Image"
       />
     </div>
 
