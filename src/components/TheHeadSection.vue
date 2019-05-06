@@ -306,6 +306,10 @@ export default class TheHeadSection extends Vue {
   text-align: center;
 }
 
+.message-content {
+  color: white;
+}
+
 .message-content a {
   color: white;
 }
