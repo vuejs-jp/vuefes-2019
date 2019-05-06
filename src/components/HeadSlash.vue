@@ -1,24 +1,8 @@
 <template>
   <g :transform="transform">
     <transition-group tag="g" @leave="leave">
-      <rect
-        v-show="visible"
-        key="1"
-        ref="shape1"
-        x="-60"
-        y="-60"
-        width="120"
-        height="0"
-      />
-      <rect
-        v-show="visible"
-        key="2"
-        ref="shape2"
-        x="-60"
-        y="60"
-        width="120"
-        height="0"
-      />
+      <polygon v-show="visible" key="0" ref="shape1" :points="keyFrame1[0]" />
+      <polygon v-show="visible" key="1" ref="shape2" :points="keyFrame2[0]" />
     </transition-group>
   </g>
 </template>
@@ -30,11 +14,13 @@ import { TweenMax, Power2 } from 'gsap'
 import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 
 @Component
-export default class HeadHorizontal extends Vue {
+export default class HeadSlash extends Vue {
   @Prop()
   readonly item!: Parts
   @Prop(Boolean)
   readonly visible!: boolean
+  keyFrame1 = ['-60 -60 -60 -60 -60 -60', '-60 -60 52 -60 -60 52']
+  keyFrame2 = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
   get transform() {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${
@@ -45,8 +31,7 @@ export default class HeadHorizontal extends Vue {
   leave(el, done) {
     TweenMax.to(this.$refs.shape1, partsLeaveTime, {
       attr: {
-        y: -60,
-        height: 0
+        points: this.keyFrame1[0]
       },
       ease: Power2.easeOut,
       onComplete() {
@@ -55,8 +40,7 @@ export default class HeadHorizontal extends Vue {
     })
     TweenMax.to(this.$refs.shape2, partsLeaveTime, {
       attr: {
-        y: 60,
-        height: 0
+        points: this.keyFrame2[0]
       },
       ease: Power2.easeOut
     })
@@ -66,14 +50,13 @@ export default class HeadHorizontal extends Vue {
     setTimeout(() => {
       TweenMax.to(this.$refs.shape1, partsCreateTime, {
         attr: {
-          height: 54
+          points: this.keyFrame1[1]
         },
         ease: Power2.easeOut
       })
       TweenMax.to(this.$refs.shape2, partsCreateTime, {
         attr: {
-          y: 6,
-          height: 54
+          points: this.keyFrame2[1]
         },
         ease: Power2.easeOut
       })
@@ -83,7 +66,7 @@ export default class HeadHorizontal extends Vue {
 </script>
 
 <style lang="scss" scoped>
-rect {
+polygon {
   fill: $vue-dark-blue;
 }
 </style>

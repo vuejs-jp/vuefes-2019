@@ -4,8 +4,8 @@
       <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
         <g transform="translate(-6, -6)">
           <g v-for="(row, i) in items" :key="i">
-            <g v-for="(col, j) in row" :key="j">
-              <component :is="col.type" :item="col" />
+            <g v-for="(col, j) in row" :key="j.key">
+              <component :is="col.type" :item="col" :visible="visible" />
             </g>
           </g>
         </g>
@@ -45,32 +45,28 @@
       </div>
     </div>
 
-    <div class="btn-wrapper">
-      <a href="https://twitter.com/vuefes">
-        <div class="btn">
-          <img src="~/assets/images/icon-twitter-inside-btn.svg" />
-          <div class="btn__text">
-            <div class="btn__fold">
-              Vue Fes Japan 公式 Twitter
-            </div>
-            <div class="btn__fold">
-              で最新情報をチェック
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
+    <LinkToTwitter />
   </BaseSection>
 </template>
 
 <script lang="ts">
+import { setInterval } from 'timers'
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
 import HeadCircle from '~/components/HeadCircle.vue'
 import HeadHorizontal from '~/components/HeadHorizontal.vue'
 import HeadSquare from '~/components/HeadSquare.vue'
+import HeadSlash from '~/components/HeadSlash.vue'
 import HeadTriangle from '~/components/HeadTriangle.vue'
 import HeadCross from '~/components/HeadCross.vue'
+import HeadPhoto from '~/components/HeadPhoto.vue'
+import LinkToTwitter from '~/components/LinkToTwitter.vue'
+const Image01 = require('~/assets/images/header/image01.png')
+const Image02 = require('~/assets/images/header/image02.png')
+const Image03 = require('~/assets/images/header/image03.png')
+const Image04 = require('~/assets/images/header/image04.png')
+const Image05 = require('~/assets/images/header/image05.png')
+const Image06 = require('~/assets/images/header/image06.png')
 
 type PartsType =
   | 'head-circle'
@@ -78,6 +74,8 @@ type PartsType =
   | 'head-square'
   | 'head-triangle'
   | 'head-cross'
+  | 'head-photo'
+  | 'head-slash'
 
 const gap = 12
 const grid = 120
@@ -87,8 +85,28 @@ export interface Parts {
   x: number
   y: number
   rotate: number
+  src: string
+  key: string
 }
+export const partsLeaveTime = 0.2
+export const partsCreateTime = 0.6
+
 let timer
+
+type WindowMode = 'sm' | 'md' | 'lg'
+
+/**
+ * 現在の画面サイズ名を返す
+ */
+function getWindowMode(): WindowMode {
+  if (window.innerWidth > 980) {
+    return 'lg'
+  }
+  if (window.innerWidth > 768) {
+    return 'md'
+  }
+  return 'sm'
+}
 
 @Component({
   components: {
@@ -96,8 +114,11 @@ let timer
     HeadCircle,
     HeadHorizontal,
     HeadSquare,
+    HeadSlash,
     HeadTriangle,
-    HeadCross
+    HeadCross,
+    HeadPhoto,
+    LinkToTwitter
   }
 })
 export default class TheHeadSection extends Vue {
@@ -105,75 +126,152 @@ export default class TheHeadSection extends Vue {
     return `0 0 ${this.width} ${this.height}`
   }
   get items(): Parts[][] {
-    return this.pattern.map((line, row) =>
-      Array.from(line).map((p, col) => {
-        let type: PartsType = 'head-circle'
-        let rotate = 0
-        switch (p) {
-          case 'x':
-            type = 'head-cross'
-            break
-          case '\\':
-            type = 'head-square'
-            rotate = 90
-            break
-          case '/':
-            type = 'head-square'
-            break
-          case '|':
-            type = 'head-horizontal'
-            rotate = 90
-            break
-          case 'o':
-            type = 'head-circle'
-            break
-          case '-':
-            type = 'head-horizontal'
-            break
-          case '_':
-            type = 'head-triangle'
-            break
-          case '^':
-            type = 'head-triangle'
-            rotate = 270
-            break
-          case 'L':
-            type = 'head-triangle'
-            rotate = 90
-            break
-        }
-        return {
-          type: type,
-          x: (gap + grid) / 2 + col * (gap + grid),
-          y: (gap + grid) / 2 + row * (gap + grid),
-          rotate: rotate
-        }
-      })
+    return this.pattern[this.patternIndex].map((line, row) =>
+      Array.from(line)
+        .slice(0, this.t)
+        .map(
+          (p, col): Parts => {
+            let type: PartsType = 'head-circle'
+            let rotate = 0
+            let src = ''
+            switch (p) {
+              case '⮽':
+                type = 'head-cross'
+                break
+              case '⧅':
+                type = 'head-slash'
+                rotate = 90
+                break
+              case '⧄':
+                type = 'head-slash'
+                break
+              case '■':
+                type = 'head-square'
+                break
+              case '|':
+                type = 'head-horizontal'
+                rotate = 90
+                break
+              case 'o':
+                type = 'head-circle'
+                break
+              case '-':
+                type = 'head-horizontal'
+                break
+              case '◢':
+                type = 'head-triangle'
+                break
+              case '◥':
+                type = 'head-triangle'
+                rotate = 270
+                break
+              case '◣':
+                type = 'head-triangle'
+                rotate = 90
+                break
+              case '◤':
+                type = 'head-triangle'
+                rotate = 180
+                break
+              case '1':
+                type = 'head-photo'
+                src = 'image01.png'
+                break
+              case '2':
+                type = 'head-photo'
+                src = 'image02.png'
+                break
+              case '3':
+                type = 'head-photo'
+                src = 'image03.png'
+                break
+              case '4':
+                type = 'head-photo'
+                src = 'image04.png'
+                break
+              case '5':
+                type = 'head-photo'
+                src = 'image05.png'
+                break
+              case '6':
+                type = 'head-photo'
+                src = 'image06.png'
+                break
+            }
+            return {
+              type: type,
+              x: (gap + grid) / 2 + col * (gap + grid),
+              y: (gap + grid) / 2 + row * (gap + grid),
+              rotate: rotate,
+              src: src,
+              key: `${row}-${col}-${type}-${rotate}`
+            }
+          }
+        )
     )
   }
 
   width = 0
   height = 384
-  pattern = ['-/|\\/\\x/o', 'px/_-/\\^|', '\\L\\/\\|/\\/']
+  pattern = [
+    ['-⧄|⧅⧄⧅⮽⧄o', 'o⮽⧄◢-⧄⧅◥|', '⧅◣⧅⧄⧅|⧄⧅⧄'],
+    ['1⧄|⧅o⧅⮽⧄◥', 'o⮽⧄◢⧄-⧅2|', '◥◣o⧄⧅|⧄⧅⧄'],
+    ['1⧄|3◤⧅o⧄◥', '-⮽■◣⧄4⧅2|', '⧅⧅o⧄⧅◤⧄■⧄'],
+    ['◣⧄⧅3◤⧅o⧄6', '-⮽1⧅⧄4⧅|⧄', '⧅◣o⧄2-⧄⧄⧄'],
+    ['5⧄◣3◤⧅o⧄6', '-⮽1⧅⧄4⮽|⧄', '⧄◣o⧅2-⧄⧄⧄'],
+    ['o⧄⧅3⧄⧅o⧄6', '-⮽1⧅⧄4⧄|⧄', '⧄◣o⧄2⧅⧄◥⮽'],
+    ['3⧄4⧅⧄⧅⮽5o', 'o⮽⧄◤2⧄6◥|', '⧅◢⧅1⧅⧅⧄-⧄']
+  ]
+  patternIndex = 6
+  t = 0
+  visible = true
+  windowMode: WindowMode = 'sm'
 
-  adjustSvg() {
+  adjustSvg(mode: WindowMode) {
     // SSR時にはSVGの表示を確定することができないため、
     // 初期表示時にちらついてしまう
+    this.t = 0
 
-    // sm
     this.width = (grid + gap) * 5 - gap
-    // md
-    if (window.innerWidth > 768) {
+    if (mode === 'md') {
       this.width = (grid + gap) * 6 - gap
     }
-    // lg
-    if (window.innerWidth > 980) {
+    if (mode === 'lg') {
       this.width = (grid + gap) * 9 - gap
     }
   }
 
+  loadedImages = 0
+
   mounted() {
-    this.adjustSvg()
+    this.windowMode = getWindowMode()
+    this.adjustSvg(this.windowMode)
+    const self = this
+
+    function preload(Image01) {
+      const img = new Image()
+      img.src = Image01
+      img.onload = () => {
+        self.loadedImages++
+      }
+    }
+
+    preload(Image01)
+    preload(Image02)
+    preload(Image03)
+    preload(Image04)
+    preload(Image05)
+    preload(Image06)
+
+    setInterval(() => {
+      if (this.loadedImages >= 6) {
+        this.t++
+      }
+    }, 90)
+
+    // setInterval(() => {
+    //   this.patternIndex = (this.patternIndex + 1) % this.pattern.length
+    // }, 2000)
 
     window.addEventListener('resize', () => {
       if (timer > 0) {
@@ -181,17 +279,27 @@ export default class TheHeadSection extends Vue {
       }
 
       timer = setTimeout(() => {
-        this.adjustSvg()
-      }, 200)
+        // 画面サイズ名が変更になったときのみリドローをかける
+        const preWindowMode = this.windowMode
+        this.windowMode = getWindowMode()
+
+        if (preWindowMode !== this.windowMode) {
+          this.visible = false
+          setTimeout(() => {
+            this.visible = true
+            this.adjustSvg(this.windowMode)
+          }, 400)
+        }
+      }, 100)
     })
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.the-head-section {
+.base-section.the-head-section {
+  background: linear-gradient(to bottom right, $hiwamoegi, $asagi);
   padding: 100px 7.8% 60px;
-  background: linear-gradient(to right, $hiwamoegi, $asagi);
 }
 
 .main-visual-wrapper {
@@ -220,38 +328,6 @@ export default class TheHeadSection extends Vue {
   text-align: right;
 }
 
-.btn {
-  background: $vue-dark-blue;
-  font-size: 4vw;
-  color: white;
-  display: flex;
-  padding: 1em;
-  margin: 20px auto 0 auto;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  border: 3px solid $vue-dark-blue;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: white;
-  border: 3px solid $vue-dark-blue;
-  color: $vue-dark-blue;
-}
-
-.btn__text {
-  flex: 1;
-}
-
-.btn-wrapper {
-  text-align: center;
-}
-
-circle {
-  fill: $vue-dark-blue;
-}
-
 .title {
   font-size: 8.3vw;
   font-weight: 700;
@@ -263,8 +339,8 @@ svg.main-visual {
   height: auto;
 }
 
-.btn__fold {
-  display: inline-block;
+.message-container {
+  margin: 0 auto 60px auto;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -275,7 +351,7 @@ svg.main-visual {
   .message-container {
     display: flex;
     align-items: flex-start;
-    margin: 0 auto;
+    margin: 0 auto 60px auto;
     justify-content: flex-end;
   }
 
