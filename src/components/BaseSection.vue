@@ -78,5 +78,9 @@ export default class BaseSection extends Vue {}
   .section-container {
     max-width: $page-container-max-width;
   }
+
+  .heading-copy {
+    width: 75%;
+  }
 }
 </style>
