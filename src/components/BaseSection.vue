@@ -1,17 +1,19 @@
 <template>
   <section class="base-section">
     <div class="section-container">
-      <div class="heading-wrapper">
-        <h2 v-if="$slots.heading" class="heading">
-          <slot name="heading" />
-        </h2>
+      <div class="section-content">
+        <div class="heading-wrapper">
+          <h2 v-if="$slots.heading" class="heading">
+            <slot name="heading" />
+          </h2>
 
-        <p v-if="$slots['heading-copy']" class="heading-copy">
-          <slot name="heading-copy" />
-        </p>
+          <p v-if="$slots['heading-copy']" class="heading-copy">
+            <slot name="heading-copy" />
+          </p>
+        </div>
+
+        <slot />
       </div>
-
-      <slot />
     </div>
   </section>
 </template>
@@ -24,9 +26,13 @@ export default class BaseSection extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.base-section {
+.section-container {
   padding: 80px 7.8%;
   background-image: url('~assets/images/texture.png');
+}
+
+.section-content {
+  margin: 0 auto;
 }
 
 .heading-wrapper {
@@ -50,12 +56,8 @@ export default class BaseSection extends Vue {}
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .base-section {
-    padding: 120px 70px;
-  }
-
   .section-container {
-    margin: 0 auto;
+    padding: 120px 70px;
   }
 
   .heading-wrapper {
@@ -75,7 +77,7 @@ export default class BaseSection extends Vue {}
 }
 
 @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-  .section-container {
+  .section-content {
     max-width: $page-container-max-width;
   }
 
