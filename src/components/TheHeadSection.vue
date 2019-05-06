@@ -317,7 +317,7 @@ export default class TheHeadSection extends Vue {
 
 .main-visual-wrapper {
   text-align: center;
-  margin-bottom: 40px;
+  margin: 1vw 0 5vw;
   line-height: 0;
 }
 
@@ -330,7 +330,7 @@ export default class TheHeadSection extends Vue {
 .date-place {
   color: $primary-text-color--invert;
   font-size: 0;
-  margin-bottom: 60px;
+  margin-bottom: 7.8vw;
 
   time,
   &__place {
@@ -344,7 +344,7 @@ export default class TheHeadSection extends Vue {
 }
 
 .message {
-  margin-bottom: 40px;
+  margin-bottom: 5vw;
 
   &__author {
     text-align: right;
@@ -365,11 +365,17 @@ svg.main-visual {
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .main-visual-wrapper {
+    margin: 0 0 40px;
+  }
+
   .title {
     font-size: 64px;
   }
 
   .date-place {
+    margin-bottom: 60px;
+
     time,
     &__place {
       font-size: 32px;
