@@ -217,7 +217,7 @@ export default class TheCallForPresentersSection extends Vue {
 
 <style scoped lang="scss">
 // ガターの幅
-$gutter: 20px;
+$margin: 20px;
 
 // 1列のアイテム数
 $length-sm: 4;
@@ -225,9 +225,9 @@ $length-md: 6;
 $length-lg: 8;
 
 // アイテムの幅 = ( 100% - 1列にあるガター幅の合計px ) / 1列にあるアイテム数
-$width-sm: calc((100% - #{$length-sm - 1} * #{$gutter}) / #{$length-sm});
-$width-md: calc((100% - #{$length-md - 1} * #{$gutter}) / #{$length-md});
-$width-lg: calc((100% - #{$length-lg - 1} * #{$gutter}) / #{$length-lg});
+$width-sm: calc((100% - #{$length-sm - 1} * #{$margin}) / #{$length-sm});
+$width-md: calc((100% - #{$length-md - 1} * #{$margin}) / #{$length-md});
+$width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
 
 .the-staff-list-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
@@ -236,7 +236,7 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter}) / #{$length-lg});
 .staff-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 0 auto -#{$margin};
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 80%;
@@ -244,8 +244,7 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter}) / #{$length-lg});
 }
 
 .staff {
-  margin-right: $gutter;
-  margin-bottom: 20px;
+  margin: 0 $margin $margin 0;
   width: $width-sm;
 
   a {
