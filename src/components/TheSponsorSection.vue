@@ -11,7 +11,16 @@
         </p>
 
         <p>
-          最新情報は、Vue Fes Japan の Twitter でご確認ください。
+          最新情報は、
+          <a
+            class="link"
+            href="https://twitter.com/vuefes"
+            target="_blank"
+            rel="noopener"
+          >
+            Vue Fes Japan の Twitter
+          </a>
+          でご確認ください。
         </p>
       </div>
 
@@ -91,6 +100,10 @@ export default class TheSponsorsSection extends Vue {
   background-color: $white;
   padding: 6.17%;
   margin-bottom: 40px;
+
+  a {
+    text-decoration: none;
+  }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 70%;
