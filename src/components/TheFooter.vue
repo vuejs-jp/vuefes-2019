@@ -296,9 +296,14 @@ export default class TheFooter extends Vue {
     font-size: 4vw;
     text-decoration: none;
     margin-bottom: 2vw;
+    transition: 0.2s $easeInOutCubic;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 
