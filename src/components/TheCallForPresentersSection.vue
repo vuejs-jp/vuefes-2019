@@ -43,7 +43,7 @@ export default class TheCallForPresentersSection extends Vue {}
 
 <style lang="scss" scoped>
 .notification {
-  margin-bottom: 40px;
+  margin-bottom: 5vw;
   padding: 6.7%;
   border: $black 1px solid;
 
