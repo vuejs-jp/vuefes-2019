@@ -233,16 +233,16 @@ $form-border-color: #eee;
 }
 
 .form-content {
-  margin-bottom: 38px;
+  margin-bottom: 5vw;
 
   &:last-of-type {
-    margin-bottom: 100px;
+    margin-bottom: 13vw;
   }
 
   label {
     display: block;
     font-size: 4vw;
-    margin-bottom: 20px;
+    margin-bottom: 2.6vw;
 
     .required {
       color: $sangosyu;
@@ -258,7 +258,7 @@ $form-border-color: #eee;
   }
 
   textarea {
-    height: 225px;
+    height: 32.5vw;
 
     &.error {
       background-position: 97% 1.4vw;
@@ -277,7 +277,7 @@ $form-border-color: #eee;
   .has-error {
     color: $sangosyu;
     font-size: 2vw;
-    margin-top: 16px;
+    margin-top: 2vw;
   }
 }
 
@@ -310,6 +310,10 @@ $form-border-color: #eee;
       font-size: 16px;
     }
 
+    textarea {
+      height: 225px;
+    }
+
     textarea.error {
       background-position: calc(100% - 23px) 13px;
     }
@@ -322,6 +326,7 @@ $form-border-color: #eee;
 
     .has-error {
       font-size: 16px;
+      margin-top: 16px;
     }
   }
 }
