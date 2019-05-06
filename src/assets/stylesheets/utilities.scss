@@ -1,7 +1,7 @@
 .link {
   font-size: inherit;
   color: $vue-dark-blue;
-  transition: 0.2s;
+  transition: 0.2s $easeInOutCubic;
 
   &:hover {
     opacity: 0.4;

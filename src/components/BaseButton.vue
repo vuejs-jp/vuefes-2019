@@ -49,7 +49,7 @@ export default class BaseButton extends Vue {
   line-height: 1.2;
   color: $primary-text-color--invert;
   border: 3px solid $primary-color;
-  transition: 0.3s;
+  transition: 0.3s $easeInOutCubic;
 
   &:hover {
     background-color: $white;

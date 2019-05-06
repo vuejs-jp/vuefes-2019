@@ -4,3 +4,6 @@ $layout-breakpoint--is-medium: 980px !default;
 $layout-breakpoint--is-medium-up: 981px !default;
 
 $page-container-max-width: 1180px;
+
+// transition のイージング
+$easeInOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
