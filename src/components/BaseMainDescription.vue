@@ -17,19 +17,24 @@ export default class BaseMainDescription extends Vue {}
 
 <style lang="scss" scoped>
 .base-main-description {
-  margin-bottom: 65px;
+  margin-bottom: 8.4vw;
 
   .heading {
-    margin-bottom: 25px;
     font-size: 5.2vw;
     font-weight: bold;
     line-height: 1;
+    margin-bottom: 3.2vw;
   }
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .base-main-description .heading {
-    font-size: 42px;
+  .base-main-description {
+    margin-bottom: 65px;
+
+    .heading {
+      font-size: 42px;
+      margin-bottom: 25px;
+    }
   }
 }
 </style>
