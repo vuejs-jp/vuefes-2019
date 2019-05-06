@@ -76,16 +76,7 @@ export default class TheSponsorsSection extends Vue {
 
 <style lang="scss" scoped>
 .the-sponsor-section {
-  background: linear-gradient(to bottom, $tohoh, $sangosyu);
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    position: relative;
-    background: linear-gradient(to right bottom, $tohoh, $sangosyu);
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    background: linear-gradient(to right, $tohoh, $sangosyu);
-  }
+  background: linear-gradient(to right bottom, $tohoh, $sangosyu);
 }
 
 .content {

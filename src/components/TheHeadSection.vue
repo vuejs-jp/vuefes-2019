@@ -192,15 +192,7 @@ export default class TheHeadSection extends Vue {
 <style lang="scss" scoped>
 .the-head-section {
   color: $primary-text-color--invert;
-  background: linear-gradient(to bottom, $hiwamoegi, $asagi);
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    background: linear-gradient(to right bottom, $hiwamoegi, $asagi);
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    background: linear-gradient(to right, $hiwamoegi, $asagi);
-  }
+  background: linear-gradient(to right bottom, $hiwamoegi, $asagi);
 }
 
 .main-visual-wrapper {

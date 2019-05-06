@@ -216,16 +216,7 @@ $width-md: calc((100% - #{$length-md - 1} * #{$gutter}) / #{$length-md});
 $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter}) / #{$length-lg});
 
 .the-staff-list-section {
-  background: linear-gradient(to bottom, $asagi, $hiwamoegi);
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    position: relative;
-    background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    background: linear-gradient(to right, $asagi, $hiwamoegi);
-  }
+  background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
 }
 
 .teammates {
