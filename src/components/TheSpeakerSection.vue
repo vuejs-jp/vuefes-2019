@@ -18,7 +18,7 @@
         </div>
 
         <h3 class="name">
-          Evan you
+          Evan You
         </h3>
 
         <div class="social">
