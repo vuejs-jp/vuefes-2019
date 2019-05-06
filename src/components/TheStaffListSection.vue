@@ -8,26 +8,26 @@
       Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
-    <ul class="teammates">
+    <ul class="staffs">
       <li
-        v-for="teammate in teammates"
-        :key="teammate.name"
-        class="teammate"
+        v-for="staff in allStaffs"
+        :key="staff.name"
+        class="staff"
       >
         <a
-          :href="teammate.link"
+          :href="staff.link"
           target="_blank"
           rel="noopener"
         >
           <img
             :srcset="`
-              ${require(`~/assets/images/teammates/${teammate.avatar}`)},
-              ${require(`~/assets/images/teammates/@2x/${teammate.avatar}`)} 2x
+              ${require(`~/assets/images/staffs/${staff.avatar}`)},
+              ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
             `"
-            :src="require(`~/assets/images/teammates/${teammate.avatar}`)"
-            :alt="teammate.name"
+            :src="require(`~/assets/images/staffs/${staff.avatar}`)"
+            :alt="staff.name"
           />
-          @{{ teammate.name }}
+          @{{ staff.name }}
         </a>
       </li>
     </ul>
@@ -37,33 +37,26 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
-interface Teammate {
+
+interface Staff {
   name: string
   link: string
   avatar: string
 }
+
 @Component({
   components: {
     BaseSection
   }
 })
 export default class TheCallForPresentersSection extends Vue {
-  private get teammates(): Array<Teammate> {
-    return [
-      this.leader,
-      ...this.staffs.sort((a, b) => {
-        if (a.name < b.name) return -1
-        if (a.name > b.name) return 1
-        return 0
-      })
-    ]
-  }
-  leader: Teammate = {
+  leader: Staff = {
     name: 'kazu_pon',
     link: 'https://twitter.com/kazu_pon',
     avatar: 'kazu_pon.png'
   }
-  staffs: Teammate[] = [
+
+  staffs: Staff[] = [
     {
       name: '448jp',
       link: 'https://twitter.com/448jp',
@@ -200,6 +193,17 @@ export default class TheCallForPresentersSection extends Vue {
       avatar: 'jiyu33.jpg'
     }
   ]
+
+  private get allStaffs(): Staff[] {
+    return [
+      this.leader,
+      ...this.staffs.sort((a, b) => {
+        if (a.name < b.name) return -1
+        if (a.name > b.name) return 1
+        return 0
+      })
+    ]
+  }
 }
 </script>
 
@@ -219,7 +223,7 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter}) / #{$length-lg});
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
 }
 
-.teammates {
+.staffs {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -229,7 +233,7 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter}) / #{$length-lg});
   }
 }
 
-.teammate {
+.staff {
   margin-right: $gutter;
   margin-bottom: 20px;
   width: $width-sm;
