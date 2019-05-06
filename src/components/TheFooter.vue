@@ -49,6 +49,7 @@
           </h2>
 
           <a
+            class="social-icon"
             href="https://twitter.com/vuefes"
             target="_blank"
             rel="noopener"
@@ -59,6 +60,7 @@
           <br />
 
           <a
+            class="social-icon"
             href="https://www.youtube.com/channel/UC6KPwA1kZJtQYdlh8_2hxCA"
             target="_blank"
             rel="noopener"
@@ -69,6 +71,7 @@
           <br />
 
           <a
+            class="social-icon"
             href="https://github.com/vuejs-jp/home"
             target="_blank"
             rel="noopener"
@@ -311,6 +314,26 @@ export default class TheFooter extends Vue {
     a {
       font-size: 14px;
       margin-bottom: 1em;
+    }
+  }
+}
+
+.social-icon {
+  position: relative;
+  padding-left: 7vw;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 3.5vw;
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    padding-left: 24px;
+
+    svg {
+      left: 12px;
     }
   }
 }
