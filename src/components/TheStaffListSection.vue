@@ -197,10 +197,8 @@ export default class TheCallForPresentersSection extends Vue {
   private get leaderAndStaffs(): Staff[] {
     return [
       this.leader,
-      ...this.staffs.sort((a, b) => {
-        if (a.name < b.name) return -1
-        if (a.name > b.name) return 1
-        return 0
+      ...this.staffs.sort((a: Staff, b: Staff) => {
+        return this.compareStaffNames(a.name, b.name)
       })
     ]
   }
