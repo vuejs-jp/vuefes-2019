@@ -8,9 +8,9 @@
       Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
-    <ul class="staffs">
+    <ul class="staff-list">
       <li
-        v-for="staff in allStaffs"
+        v-for="staff in leaderAndStaffs"
         :key="staff.name"
         class="staff"
       >
@@ -194,7 +194,7 @@ export default class TheCallForPresentersSection extends Vue {
     }
   ]
 
-  private get allStaffs(): Staff[] {
+  private get leaderAndStaffs(): Staff[] {
     return [
       this.leader,
       ...this.staffs.sort((a, b) => {
@@ -210,10 +210,12 @@ export default class TheCallForPresentersSection extends Vue {
 <style scoped lang="scss">
 // ガターの幅
 $gutter: 20px;
+
 // 1列のアイテム数
 $length-sm: 4;
 $length-md: 6;
 $length-lg: 8;
+
 // アイテムの幅 = ( 100% - 1列にあるガター幅の合計px ) / 1列にあるアイテム数
 $width-sm: calc((100% - #{$length-sm - 1} * #{$gutter}) / #{$length-sm});
 $width-md: calc((100% - #{$length-md - 1} * #{$gutter}) / #{$length-md});
@@ -223,7 +225,7 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$gutter}) / #{$length-lg});
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
 }
 
-.staffs {
+.staff-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
