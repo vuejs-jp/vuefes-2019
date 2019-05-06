@@ -114,6 +114,7 @@ export default class TheSpeakersSection extends Vue {
 }
 
 .more {
+  margin-top: 40px;
   font-size: 4vw;
 }
 
@@ -156,7 +157,7 @@ export default class TheSpeakersSection extends Vue {
   }
 
   .more {
-    margin-top: 30px;
+    margin-top: 60px;
     font-size: 18px;
   }
 }
