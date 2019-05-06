@@ -19,7 +19,7 @@
     <div class="date-place">
       <time datetime="2019-10-12">2019.10.12</time>
       <span class="date-place__day">SAT</span>
-      <span>TOC GOTANDA MESSE</span>
+      <span class="date-place__place">TOC GOTANDA MESSE</span>
     </div>
 
     <div class="message">
@@ -217,11 +217,17 @@ export default class TheHeadSection extends Vue {
 
 .date-place {
   color: $primary-text-color--invert;
-  font-size: 4.1vw;
+  font-size: 0;
   margin-bottom: 60px;
+
+  time,
+  &__place {
+    font-size: 4.1vw;
+  }
 
   &__day {
     font-size: 2.3vw;
+    margin: 0 15px 0 5px;
   }
 }
 
@@ -252,7 +258,10 @@ svg.main-visual {
   }
 
   .date-place {
-    font-size: 32px;
+    time,
+    &__place {
+      font-size: 32px;
+    }
 
     &__day {
       font-size: 18px;
