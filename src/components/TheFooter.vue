@@ -308,7 +308,7 @@ export default class TheFooter extends Vue {
 
     .title {
       font-size: 18px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     a {
