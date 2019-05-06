@@ -63,7 +63,7 @@ a.base-button {
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .base-button {
-    padding: 30px 40px;
+    padding: 40px;
     font-size: 24px;
   }
 }
