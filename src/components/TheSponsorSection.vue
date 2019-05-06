@@ -109,6 +109,7 @@ export default class TheSponsorsSection extends Vue {
     width: 70%;
     max-width: calc(#{$page-container-max-width} * 0.7);
     padding: 40px;
+    margin-top: -30px;
     margin-bottom: 60px;
     z-index: 1;
   }
