@@ -47,6 +47,7 @@ export default class BaseSection extends Vue {}
   font-size: 10.41vw;
   font-weight: bold;
   line-height: 1;
+  margin-bottom: 5vw;
 }
 
 .heading-copy {
