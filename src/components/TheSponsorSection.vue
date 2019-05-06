@@ -90,7 +90,7 @@ export default class TheSponsorsSection extends Vue {
 .description {
   background-color: $white;
   padding: 6.17%;
-  margin-bottom: 40px;
+  margin-bottom: 5vw;
 
   a {
     text-decoration: none;
@@ -117,7 +117,7 @@ export default class TheSponsorsSection extends Vue {
 }
 
 .image {
-  margin-bottom: 40px;
+  margin-bottom: 5vw;
 
   img {
     display: block;
