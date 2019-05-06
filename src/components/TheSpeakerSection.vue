@@ -94,6 +94,11 @@ export default class TheSpeakersSection extends Vue {
   max-width: 50px;
   height: 7.5vw;
   max-height: 50px;
+  transition: 0.2s $easeInOutCubic;
+
+  &:hover {
+    opacity: 0.4;
+  }
 }
 
 .social .github {
