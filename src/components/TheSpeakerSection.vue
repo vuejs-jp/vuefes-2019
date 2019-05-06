@@ -84,13 +84,13 @@ export default class TheSpeakersSection extends Vue {
 }
 
 .name {
-  margin-bottom: 4px;
   font-size: 5.21vw;
   line-height: 1.3;
+  margin-bottom: 0.5vw;
 }
 
 .social {
-  margin-bottom: 40px;
+  margin-bottom: 5vw;
 
   img {
     width: 7.5vw;
@@ -114,7 +114,7 @@ export default class TheSpeakersSection extends Vue {
 }
 
 .more {
-  margin-top: 40px;
+  margin-top: 5vw;
   font-size: 4vw;
 }
 
@@ -141,6 +141,7 @@ export default class TheSpeakersSection extends Vue {
 
   .name {
     font-size: 32px;
+    margin-bottom: 4px;
   }
 
   .social {
