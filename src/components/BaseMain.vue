@@ -19,15 +19,15 @@ export default class BaseMain extends Vue {}
 
 <style lang="scss" scoped>
 .base-main {
-  padding: 110px 7.8% 100px;
+  padding: 14vw 7.8% 13vw;
   background-image: url('~assets/images/texture.png');
 }
 
 .heading {
-  margin-bottom: 34px;
   font-size: 10.41vw;
   font-weight: bold;
   line-height: 1;
+  margin-bottom: 4.4vw;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -41,6 +41,7 @@ export default class BaseMain extends Vue {}
 
   .heading {
     font-size: 80px;
+    margin-bottom: 34px;
   }
 }
 
