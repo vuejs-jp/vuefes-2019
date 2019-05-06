@@ -19,6 +19,12 @@ describe('TheStaffListSection', () => {
       ).toBeTruthy()
     })
 
+    test('アンダースコア（_）は無視される', () => {
+      expect(
+        wrapper.vm.compareStaffNames('__syumai', 'inouetakuya') > 0
+      ).toBeTruthy()
+    })
+
     test.todo('英字のほうが数字よりも先にソートされる')
     test.todo('数字のほうが記号よりも先にソートされる')
   })

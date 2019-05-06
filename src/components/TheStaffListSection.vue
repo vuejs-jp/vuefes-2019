@@ -204,8 +204,8 @@ export default class TheCallForPresentersSection extends Vue {
   }
 
   compareStaffNames(a: string, b: string): number {
-    const adjustedA: string = a.toLowerCase()
-    const adjustedB: string = b.toLowerCase()
+    const adjustedA: string = a.toLowerCase().replace(/_/g, '')
+    const adjustedB: string = b.toLowerCase().replace(/_/g, '')
 
     if (adjustedA < adjustedB) return -1
     if (adjustedA > adjustedB) return 1
