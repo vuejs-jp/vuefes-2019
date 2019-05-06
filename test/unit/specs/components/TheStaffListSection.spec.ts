@@ -19,6 +19,7 @@ describe('TheStaffListSection', () => {
       ).toBeTruthy()
     })
 
-    test.todo('英字 / 数字 / 記号の順でソートする')
+    test.todo('英字のほうが数字よりも先にソートされる')
+    test.todo('数字のほうが記号よりも先にソートされる')
   })
 })
