@@ -1,5 +1,6 @@
 import NuxtConfiguration from '@nuxt/config'
 import StylelintPlugin from 'stylelint-webpack-plugin'
+import hooks from './src/hooks'
 
 const config: NuxtConfiguration = {
   mode: 'universal',
@@ -7,6 +8,7 @@ const config: NuxtConfiguration = {
   router: {
     base: '/2019/'
   },
+  hooks: hooks(this),
   head: {
     title: 'vuefes-2019',
     meta: [
