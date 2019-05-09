@@ -308,7 +308,7 @@ export default class PrivacyPage extends Vue {
 
   private head() {
     const url = `https://vuefes.jp/2019${this.path}`
-    const title = 'プライバシーポリシー - Vue Fes Japan 2019'
+    const title = 'プライバシーポリシー | Vue Fes Japan 2019'
     const description = 'Vue Fes Japan 2019 のプライバシーポリシー情報です。'
     return {
       title,
