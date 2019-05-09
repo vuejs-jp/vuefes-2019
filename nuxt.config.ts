@@ -2,6 +2,8 @@ import NuxtConfiguration from '@nuxt/config'
 import StylelintPlugin from 'stylelint-webpack-plugin'
 import hooks from './src/hooks'
 
+const defaultOgImageUrl: string = 'https://vuefes.jp/2019/opengraph.png'
+
 const config: NuxtConfiguration = {
   mode: 'universal',
   srcDir: 'src/',
@@ -14,7 +16,17 @@ const config: NuxtConfiguration = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Vue Fes Japan 2019' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Vue Fes Japan 2019'
+      },
+      { hid: 'og:image', name: 'og:image', content: defaultOgImageUrl },
+      {
+        hid: 'og:image:secure_url',
+        name: 'og:image:secure_url',
+        content: defaultOgImageUrl
+      }
     ],
     link: [
       { rel: 'stylesheet', href: 'https://use.typekit.net/ecl1lua.css' },
