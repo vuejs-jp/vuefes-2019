@@ -57,7 +57,12 @@ const config: NuxtConfiguration = {
     ],
     link: [
       { rel: 'stylesheet', href: 'https://use.typekit.net/ecl1lua.css' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'apple-touch-icon',
+        href: '/apple-touch-icon.png',
+        sizes: '180x180'
+      }
     ]
   },
   loading: { color: '#fff' },
