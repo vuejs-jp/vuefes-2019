@@ -23,8 +23,9 @@ export default class ContactPage extends Vue {
 
   private head() {
     const url = `https://vuefes.jp/2019${this.path}`
-    const title = 'お問い合わせ - Vue Fes Japan 2019'
-    const description = 'Vue Fes Japan 2019 についてのお問い合わせフォームです。'
+    const title = 'お問い合わせ | Vue Fes Japan 2019'
+    const description =
+      'Vue Fes Japan 2019 についてのお問い合わせフォームです。'
     return {
       title,
       meta: [
