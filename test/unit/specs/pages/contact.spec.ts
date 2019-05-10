@@ -8,6 +8,6 @@ describe('ContactPage', () => {
         NuxtLink: RouterLinkStub
       }
     })
-    expect(wrapper.find('.contact').isVisible()).toBeTruthy()
+    expect(wrapper.find('.contact-page').isVisible()).toBeTruthy()
   })
 })

@@ -93,9 +93,10 @@ export default class CodeOfConductPage extends Vue {
 
   private head() {
     const url = `https://vuefes.jp/2019${this.path}`
-    const title = '行動規範 - Vue Fes Japan 2019'
+    const title = '行動規範 | Vue Fes Japan 2019'
     const description =
       'すべての参加者、スピーカー、スポンサーとボランティアは行動規範（ポリシー）に同意していただく必要があります。誰にとっても安全な環境を守るために、ご協力をお願いいたします。'
+
     return {
       title,
       meta: [
