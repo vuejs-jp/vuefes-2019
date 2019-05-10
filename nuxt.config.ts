@@ -6,7 +6,8 @@ const defaultUrl = 'https://vuefes.jp/2019/'
 const defaultTitle = 'Vue Fes Japan 2019'
 const defaultDescription =
   '2019年10月12日（土）に開催される日本最大級の Vue.js カンファレンス。国内外の著名スピーカーによるセッションの他、ユーザー同士が気軽に話し合える場も設ける予定です。ぜひ、一緒に Vue.js を楽しみ、盛り上げていきましょう！'
-const defaultOgImageUrl: string = 'https://vuefes.jp/2019/opengraph.png'
+const defaultOgImageUrl = 'https://vuefes.jp/2019/opengraph.png'
+const applicationName = 'Vue Fes' // 「ホーム画面に追加」したときのアプリケーション名
 
 const config: NuxtConfiguration = {
   mode: 'universal',
@@ -53,6 +54,14 @@ const config: NuxtConfiguration = {
         hid: 'twitter:image',
         name: 'twitter:image',
         content: defaultOgImageUrl
+      },
+      {
+        name: 'application-name',
+        content: applicationName
+      },
+      {
+        name: 'apple-mobile-web-app-title',
+        content: applicationName
       }
     ],
     link: [
@@ -110,6 +119,10 @@ const config: NuxtConfiguration = {
       '~/assets/stylesheets/foundation/variables.scss',
       '~/assets/stylesheets/foundation/colors.scss'
     ]
+  },
+  manifest: {
+    short_name: 'Vue Fes',
+    name: 'Vue Fes'
   }
 }
 
