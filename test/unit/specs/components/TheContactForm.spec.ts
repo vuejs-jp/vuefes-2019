@@ -43,6 +43,7 @@ describe('TheContactForm.Vue', () => {
       wrapper.find('#name').trigger('blur')
       await flushPromises()
 
+      expect(wrapper.vm.errors.any()).toEqual(true)
       expect(error.text()).toBe('名前を正しく入力してください')
     })
 
@@ -64,6 +65,7 @@ describe('TheContactForm.Vue', () => {
       wrapper.find('#email').trigger('blur')
       await flushPromises()
 
+      expect(wrapper.vm.errors.any()).toEqual(true)
       expect(error.text()).toBe('メールアドレスを正しく入力してください')
     })
 
@@ -75,6 +77,7 @@ describe('TheContactForm.Vue', () => {
       wrapper.find('#email').trigger('blur')
       await flushPromises()
 
+      expect(wrapper.vm.errors.any()).toEqual(true)
       expect(error.text()).toBe('メールアドレスを正しく入力してください')
     })
 
@@ -86,6 +89,7 @@ describe('TheContactForm.Vue', () => {
       wrapper.find('#email').trigger('blur')
       await flushPromises()
 
+      expect(wrapper.vm.errors.any()).toEqual(false)
       expect(error.text()).toBe('')
     })
 
@@ -96,6 +100,7 @@ describe('TheContactForm.Vue', () => {
       wrapper.find('#message').trigger('blur')
       await flushPromises()
 
+      expect(wrapper.vm.errors.any()).toEqual(true)
       expect(error.text()).toBe('内容を正しく入力してください')
     })
 
