@@ -99,8 +99,7 @@ describe('TheContactForm.Vue', () => {
       expect(error.text()).toBe('内容を正しく入力してください')
     })
 
-    // TODO: Fix me
-    test.skip('内容が入力されている場合、エラーが表示されない', async () => {
+    test('内容が入力されている場合、エラーが表示されない', async () => {
       const error = wrapper.find('#message-error')
       expect(error.text()).toBe('')
 
@@ -109,10 +108,7 @@ describe('TheContactForm.Vue', () => {
       message.trigger('blur')
       await flushPromises()
 
-      expect(message.element.value).toEqual('Hello from test')
-      // 'The message value is not valid.' が表示される。
-      // テキストエリアに値がセットされていることは上のexpectで確認している。
-      // 実際に動作確認で上記値（'Hello from test'）を入力した場合、エラーは表示されないのでテストのみで発生する事象。
+      expect(wrapper.vm.errors.any()).toEqual(false)
       expect(error.text()).toBe('')
     })
 
@@ -144,7 +140,7 @@ describe('TheContactForm.Vue', () => {
         expect(wrapper.vm.errors.any()).toEqual(true)
       })
 
-      test.skip('フォームをすべて埋めた状態で送信ボタン押下した場合、送信に成功する', async () => {
+      test('フォームをすべて埋めた状態で送信ボタン押下した場合、送信に成功する', async () => {
         wrapper.find('#name').setValue(body.name)
         wrapper.find('#email').setValue(body.email)
         wrapper.find('#organization').setValue(body.organization)
@@ -161,12 +157,11 @@ describe('TheContactForm.Vue', () => {
         wrapper.find('form').trigger('submit.prevent')
         await flushPromises()
 
-        // テキストエリアのテストケースが Fix したら通る想定
         expect(wrapper.vm.errors.any()).toEqual(false)
         expect(wrapper.vm.buttomValue).toBe('送信しました')
       })
 
-      test.skip('送信に失敗した場合、エラーが表示される', async () => {
+      test('送信に失敗した場合、エラーが表示される', async () => {
         wrapper.find('#name').setValue(body.name)
         wrapper.find('#email').setValue(body.email)
         wrapper.find('#organization').setValue(body.organization)
@@ -184,7 +179,6 @@ describe('TheContactForm.Vue', () => {
         wrapper.find('form').trigger('submit.prevent')
         await flushPromises()
 
-        // テキストエリアのテストケースが Fix したら通る想定
         expect(wrapper.vm.errors.any()).toEqual(false)
         expect(wrapper.vm.buttomValue).toBe('送信に失敗しました')
       })
