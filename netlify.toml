@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/2018/*"
+  to = "https://vuefes-2018.netlify.com/2018/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/2019/:splat"
+  status = 301
