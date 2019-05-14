@@ -9,6 +9,7 @@
         class="avatar"
         :srcset="`${avatar}, ${avatar2x} 2x`"
         :src="avatar2x"
+        alt="Evan You"
       />
 
       <div class="speaker-content">
@@ -17,7 +18,7 @@
         </div>
 
         <h3 class="name">
-          Evan you
+          Evan You
         </h3>
 
         <div class="social">
@@ -27,7 +28,7 @@
             target="_blank"
             rel="noopener"
           >
-            <img src="~/assets/images/logo-twitter.svg" />
+            <img src="~/assets/images/logo-twitter.svg" alt="Twitter" />
           </a>
           <a
             class="github"
@@ -35,7 +36,7 @@
             target="_blank"
             rel="noopener"
           >
-            <img src="~/assets/images/icon-github.svg" />
+            <img src="~/assets/images/icon-github.svg" alt="GitHub" />
           </a>
         </div>
 
@@ -83,17 +84,25 @@ export default class TheSpeakersSection extends Vue {
 }
 
 .name {
-  margin-top: 0;
-  margin-bottom: 4px;
   font-size: 5.21vw;
   line-height: 1.3;
+  margin-bottom: 0.5vw;
 }
 
-.social img {
-  width: 7.5vw;
-  max-width: 32px;
-  height: 7.5vw;
-  max-height: 32px;
+.social {
+  margin-bottom: 5vw;
+
+  img {
+    width: 7.5vw;
+    max-width: 50px;
+    height: 7.5vw;
+    max-height: 50px;
+    transition: 0.2s $easeInOutCubic;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
 }
 
 .social .github {
@@ -101,11 +110,11 @@ export default class TheSpeakersSection extends Vue {
 }
 
 .description p {
-  margin: 6vw 0;
   font-size: 3.5vw;
 }
 
 .more {
+  margin-top: 5vw;
   font-size: 4vw;
 }
 
@@ -119,7 +128,7 @@ export default class TheSpeakersSection extends Vue {
 
   .avatar {
     width: calc((2 / 7) * 100%);
-    margin-right: 40px;
+    margin-right: 20px;
   }
 
   .speaker-content {
@@ -132,15 +141,24 @@ export default class TheSpeakersSection extends Vue {
 
   .name {
     font-size: 32px;
+    margin-bottom: 4px;
+  }
+
+  .social {
+    margin-bottom: 20px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   .description p {
-    margin: 30px 0;
     font-size: 16px;
   }
 
   .more {
-    margin-top: 30px;
+    margin-top: 60px;
     font-size: 18px;
   }
 }

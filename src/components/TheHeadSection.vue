@@ -12,37 +12,50 @@
       </svg>
     </div>
 
-    <div class="title">
+    <h1 class="title">
       Vue Fes Japan 2019
-    </div>
+    </h1>
 
     <div class="date-place">
-      <span class="date-place__date">2019.10.12</span>
+      <time datetime="2019-10-12">2019.10.12</time>
       <span class="date-place__day">SAT</span>
       <span class="date-place__place">TOC GOTANDA MESSE</span>
     </div>
 
-    <div class="message-container">
-      <div class="message-content">
-        <p>
-          2018 年は Vue.js にとって飛躍の年でした。
-          エコシステムの成熟、関連ツールのアップデート、コミュニティの拡大と、数多くのポジティブな出来事がありました。
-          また、世界各地でカンファレンスが開催され、Vue.js 日本ユーザーグループでも国内初の大規模カンファレンス
-          <a
-            href="https://vuefes.jp/2018/"
-          >Vue Fes Japan 2018</a> を大盛況で終えることができました。
-        </p>
-        <p>
-          今年はメジャーアップデートとなる Vue.js 3.0 のリリースが予定されており、
-          世界中からますます注目が集まることでしょう。「Vue Fes Japan 2019」では、
-          国内外の著名スピーカーによるセッションの他、ユーザー同士が相互に楽しめるカンファレンスを目指します。
-          ぜひ、一緒に Vue.js を楽しみ、盛り上げましょう！
-        </p>
-        <p class="message-content__author">
-          Vue.js 日本ユーザーグループ 代表 川口 和也
-          <a href="https://github.com/kazupon">@kazupon</a>
-        </p>
-      </div>
+    <div class="message">
+      <p>
+        2018 年は Vue.js にとって飛躍の年でした。
+        エコシステムの成熟、関連ツールのアップデート、コミュニティの拡大と、数多くのポジティブな出来事がありました。
+        また、世界各地でカンファレンスが開催され、Vue.js 日本ユーザーグループでも国内初の大規模カンファレンス
+        <a
+          class="link"
+          href="https://vuefes.jp/2018/"
+          target="_blank"
+          rel="noopener"
+        >
+          Vue Fes Japan 2018
+        </a>
+        を大盛況で終えることができました。
+      </p>
+
+      <p>
+        今年はメジャーアップデートとなる Vue.js 3.0 のリリースが予定されており、
+        世界中からますます注目が集まることでしょう。「Vue Fes Japan 2019」では、
+        国内外の著名スピーカーによるセッションの他、ユーザー同士が相互に楽しめるカンファレンスを目指します。
+        ぜひ、一緒に Vue.js を楽しみ、盛り上げましょう！
+      </p>
+
+      <p class="message__author">
+        Vue.js 日本ユーザーグループ 代表 川口 和也
+        <a 
+          class="link"
+          href="https://github.com/kazupon"
+          target="_blank"
+          rel="noopener"
+        >
+          @kazupon
+        </a>
+      </p>
     </div>
 
     <LinkToTwitter />
@@ -297,41 +310,53 @@ export default class TheHeadSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.base-section.the-head-section {
-  background: linear-gradient(to bottom right, $hiwamoegi, $asagi);
-  padding: 100px 7.8% 60px;
+.the-head-section {
+  color: $primary-text-color--invert;
+  background: linear-gradient(to right bottom, $hiwamoegi, $asagi);
 }
 
 .main-visual-wrapper {
   text-align: center;
-}
-
-.message-content {
-  color: white;
-}
-
-.message-content a {
-  color: white;
-}
-
-.date-place {
-  color: white;
-  font-size: 4.1vw;
-  margin-top: -0.6em;
-}
-
-.date-place__day {
-  font-size: 2.3vw;
-}
-
-.message-content__author {
-  text-align: right;
+  margin: 1vw 0 5vw;
+  line-height: 0;
 }
 
 .title {
   font-size: 8.3vw;
-  font-weight: 700;
-  color: white;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.date-place {
+  color: $primary-text-color--invert;
+  font-size: 0;
+  margin-bottom: 7.8vw;
+
+  time,
+  &__place {
+    font-size: 4.1vw;
+  }
+
+  &__day {
+    font-size: 2.3vw;
+    margin: 0 15px 0 5px;
+  }
+}
+
+.message {
+  margin-bottom: 5vw;
+
+  &__author {
+    text-align: right;
+  }
+
+  .link {
+    color: $primary-text-color--invert;
+  }
+}
+
+circle {
+  fill: $vue-dark-blue;
 }
 
 svg.main-visual {
@@ -339,24 +364,9 @@ svg.main-visual {
   height: auto;
 }
 
-.message-container {
-  margin: 0 auto 60px auto;
-}
-
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .the-head-section {
-    padding: 120px 70px 80px;
-  }
-
-  .message-container {
-    display: flex;
-    align-items: flex-start;
-    margin: 0 auto 60px auto;
-    justify-content: flex-end;
-  }
-
-  .message-content {
-    width: 65%;
+  .main-visual-wrapper {
+    margin: 0 0 40px;
   }
 
   .title {
@@ -364,18 +374,21 @@ svg.main-visual {
   }
 
   .date-place {
-    color: white;
-    font-size: 32px;
-    margin-top: -0.6em;
+    margin-bottom: 60px;
+
+    time,
+    &__place {
+      font-size: 32px;
+    }
+
+    &__day {
+      font-size: 18px;
+    }
   }
 
-  .date-place__day {
-    font-size: 18px;
-  }
-
-  .btn {
-    font-size: 24px;
-    max-width: 60%;
+  .message {
+    width: 65%;
+    margin: 0 0 60px auto;
   }
 }
 </style>

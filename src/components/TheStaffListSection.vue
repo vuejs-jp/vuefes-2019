@@ -8,26 +8,26 @@
       Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
-    <ul class="teammates">
+    <ul class="staff-list">
       <li
-        v-for="teammate in teammates"
-        :key="teammate.name"
-        class="teammate"
+        v-for="staff in leaderAndStaffs"
+        :key="staff.name"
+        class="staff"
       >
         <a
-          :href="teammate.link"
+          :href="staff.link"
           target="_blank"
           rel="noopener"
         >
           <img
             :srcset="`
-              ${require(`~/assets/images/teammates/${teammate.avatar}`)},
-              ${require(`~/assets/images/teammates/@2x/${teammate.avatar}`)} 2x
+              ${require(`~/assets/images/staffs/${staff.avatar}`)},
+              ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
             `"
-            :src="require(`~/assets/images/teammates/${teammate.avatar}`)"
-            :alt="teammate.name"
+            :src="require(`~/assets/images/staffs/${staff.avatar}`)"
+            :alt="staff.name"
           />
-          @{{ teammate.name }}
+          @{{ staff.name }}
         </a>
       </li>
     </ul>
@@ -37,33 +37,26 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
-interface Teammate {
+
+interface Staff {
   name: string
   link: string
   avatar: string
 }
+
 @Component({
   components: {
     BaseSection
   }
 })
 export default class TheCallForPresentersSection extends Vue {
-  private get teammates(): Array<Teammate> {
-    return [
-      this.leader,
-      ...this.staffs.sort((a, b) => {
-        if (a.name < b.name) return -1
-        if (a.name > b.name) return 1
-        return 0
-      })
-    ]
-  }
-  leader: Teammate = {
+  leader: Staff = {
     name: 'kazu_pon',
     link: 'https://twitter.com/kazu_pon',
     avatar: 'kazu_pon.png'
   }
-  staffs: Teammate[] = [
+
+  staffs: Staff[] = [
     {
       name: '448jp',
       link: 'https://twitter.com/448jp',
@@ -188,91 +181,108 @@ export default class TheCallForPresentersSection extends Vue {
       name: 'aytdm251',
       link: 'https://twitter.com/aytdm251',
       avatar: 'aytdm251.jpg'
+    },
+    {
+      name: 'KiaKing85',
+      link: 'https://twitter.com/KiaKing85',
+      avatar: 'KiaKing85.png'
+    },
+    {
+      name: 'jiyu33',
+      link: 'https://twitter.com/jiyu33',
+      avatar: 'jiyu33.jpg'
     }
   ]
+
+  private get leaderAndStaffs(): Staff[] {
+    return [
+      this.leader,
+      ...this.staffs.sort((a: Staff, b: Staff) => {
+        return this.compareStaffNames(a.name, b.name)
+      })
+    ]
+  }
+
+  compareStaffNames(a: string, b: string): number {
+    const adjustedA: string = a.toLowerCase().replace(/_/g, '')
+    const adjustedB: string = b.toLowerCase().replace(/_/g, '')
+
+    if (adjustedA < adjustedB) return -1
+    if (adjustedA > adjustedB) return 1
+
+    return 0
+  }
 }
 </script>
 
 <style scoped lang="scss">
 // ガターの幅
-$gutter-sm: 10px;
-$gutter-md: 15px;
-$gutter-lg: 20px;
+$margin: 20px;
+
 // 1列のアイテム数
 $length-sm: 4;
 $length-md: 6;
 $length-lg: 8;
+
 // アイテムの幅 = ( 100% - 1列にあるガター幅の合計px ) / 1列にあるアイテム数
-$width-sm: calc((100% - #{$length-sm - 1} * #{$gutter-sm}) / #{$length-sm});
-$width-md: calc((100% - #{$length-md - 1} * #{$gutter-md}) / #{$length-md});
-$width-lg: calc((100% - #{$length-lg - 1} * #{$gutter-lg}) / #{$length-lg});
+$width-sm: calc((100% - #{$length-sm - 1} * #{$margin}) / #{$length-sm});
+$width-md: calc((100% - #{$length-md - 1} * #{$margin}) / #{$length-md});
+$width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
 
 .the-staff-list-section {
-  background: linear-gradient(to right bottom, #33a6b8, #84b259);
+  background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
 }
 
-.teammates {
-  max-width: 940px;
-  margin: 0 auto;
+.staff-list {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  margin: 0 auto -#{$margin};
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 80%;
+  }
 }
 
-.teammate {
-  margin-bottom: 10px;
+.staff {
+  margin: 0 $margin $margin 0;
+  width: $width-sm;
 
   a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.3vw;
+    font-size: 1.8vw;
     color: #fff;
     text-decoration: none;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 10px;
+    }
   }
 
   img {
     width: 100%;
   }
-}
 
-@media screen and (max-width: $layout-breakpoint--is-small) {
-  .teammate {
-    width: $width-sm;
-    margin-right: $gutter-sm;
-
+  @media screen and (max-width: $layout-breakpoint--is-small) {
     &:nth-of-type(#{$length-sm}n) {
       margin-right: 0;
     }
   }
-}
 
-@media screen and (min-width: $layout-breakpoint--is-small-up) and (max-width: $layout-breakpoint--is-medium) {
-  .teammate {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) and (max-width: $layout-breakpoint--is-medium) {
     width: $width-md;
-    margin-right: $gutter-md;
 
     &:nth-of-type(#{$length-md}n) {
       margin-right: 0;
     }
-
-    a {
-      font-size: 10px;
-    }
   }
-}
 
-@media screen and (min-width: $layout-breakpoint--is-medium-up) {
-  .teammate {
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     width: $width-lg;
-    margin-right: $gutter-lg;
 
     &:nth-of-type(#{$length-lg}n) {
       margin-right: 0;
-    }
-
-    a {
-      font-size: 10px;
     }
   }
 }

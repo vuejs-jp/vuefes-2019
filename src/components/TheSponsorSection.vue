@@ -11,7 +11,16 @@
         </p>
 
         <p>
-          最新情報は、Vue Fes Japan の Twitter でご確認ください。
+          最新情報は、
+          <a
+            class="link"
+            href="https://twitter.com/vuefes"
+            target="_blank"
+            rel="noopener"
+          >
+            Vue Fes Japan の Twitter
+          </a>
+          でご確認ください。
         </p>
       </div>
 
@@ -22,16 +31,19 @@
       <img
         :srcset="`${imageOne}, ${imageOne2x} 2x`"
         :src="imageOne2x"
+        alt="VueFes Image"
       />
 
       <img
         :srcset="`${imageTwo}, ${imageTwo2x} 2x`"
         :src="imageTwo2x"
+        alt="VueFes Image"
       />
 
       <img
         :srcset="`${imageThree}, ${imageThree2x} 2x`"
         :src="imageThree2x"
+        alt="VueFes Image"
       />
     </div>
 
@@ -64,12 +76,7 @@ export default class TheSponsorsSection extends Vue {
 
 <style lang="scss" scoped>
 .the-sponsor-section {
-  background: linear-gradient(to bottom, $tohoh, $sangosyu);
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    position: relative;
-    background: linear-gradient(to bottom right, $tohoh, $sangosyu);
-  }
+  background: linear-gradient(to right bottom, $tohoh, $sangosyu);
 }
 
 .content {
@@ -83,12 +90,18 @@ export default class TheSponsorsSection extends Vue {
 .description {
   background-color: $white;
   padding: 6.17%;
-  margin-bottom: 40px;
+  margin-bottom: 5vw;
+
+  a {
+    text-decoration: none;
+  }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 70%;
     max-width: calc(#{$page-container-max-width} * 0.7);
     padding: 40px;
+    margin-top: -30px;
+    margin-bottom: 60px;
     z-index: 1;
   }
 }
@@ -104,7 +117,7 @@ export default class TheSponsorsSection extends Vue {
 }
 
 .image {
-  margin-bottom: 40px;
+  margin-bottom: 5vw;
 
   img {
     display: block;

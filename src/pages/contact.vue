@@ -1,16 +1,16 @@
 <template>
   <div class="contact-page">
-    <ContactForm />
+    <TheContactForm />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import ContactForm from '~/components/ContactForm.vue'
+import TheContactForm from '~/components/TheContactForm.vue'
 
 @Component({
   components: {
-    ContactForm
+    TheContactForm
   },
   asyncData({ route }) {
     return {

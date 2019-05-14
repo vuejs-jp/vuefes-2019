@@ -10,7 +10,16 @@
       </p>
 
       <p>
-        最新情報は、Vue Fes Japan の Twitter でご確認ください。
+        最新情報は、
+        <a
+          class="link"
+          href="https://twitter.com/vuefes"
+          target="_blank"
+          rel="noopener"
+        >
+          Vue Fes Japan の Twitter
+        </a>
+        でご確認ください。
       </p>
     </div>
 
@@ -34,16 +43,20 @@ export default class TheCallForPresentersSection extends Vue {}
 
 <style lang="scss" scoped>
 .notification {
-  margin-bottom: 40px;
-  padding: 40px 6.7%;
+  margin-bottom: 5vw;
+  padding: 6.7%;
   border: $black 1px solid;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .notification {
+    width: 80%;
     margin-left: auto;
     margin-bottom: 60px;
-    width: 80%;
     padding: 40px;
   }
 }

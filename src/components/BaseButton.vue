@@ -43,13 +43,13 @@ export default class BaseButton extends Vue {
   align-items: center;
   max-width: 700px;
   margin: 0 auto;
-  padding: 6.17%;
+  padding: 3.9% 6%;
   background-color: $primary-color;
   font-size: 5vw;
   line-height: 1.2;
   color: $primary-text-color--invert;
   border: 3px solid $primary-color;
-  transition: 0.3s;
+  transition: 0.3s $easeInOutCubic;
 
   &:hover {
     background-color: $white;
@@ -63,7 +63,7 @@ a.base-button {
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .base-button {
-    padding: 30px 40px;
+    padding: 40px;
     font-size: 24px;
   }
 }
