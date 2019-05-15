@@ -240,7 +240,7 @@ export default class TheHeadSection extends Vue {
   ]
   patternIndex = 6
   t = 0
-  tMax = 27
+  tMax = 0
   visible = true
   windowMode: WindowMode = 'sm'
 
@@ -250,11 +250,15 @@ export default class TheHeadSection extends Vue {
     this.t = 0
 
     this.width = (grid + gap) * 5 - gap
+    this.tMax = 15
+
     if (mode === 'md') {
       this.width = (grid + gap) * 6 - gap
+      this.tMax = 18
     }
     if (mode === 'lg') {
       this.width = (grid + gap) * 9 - gap
+      this.tMax = 27
     }
   }
 
