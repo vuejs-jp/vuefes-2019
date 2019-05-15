@@ -74,6 +74,7 @@ import HeadTriangle from '~/components/HeadTriangle.vue'
 import HeadCross from '~/components/HeadCross.vue'
 import HeadPhoto from '~/components/HeadPhoto.vue'
 import LinkToTwitter from '~/components/LinkToTwitter.vue'
+
 const Image01 = require('~/assets/images/header/image01.png')
 const Image02 = require('~/assets/images/header/image02.png')
 const Image03 = require('~/assets/images/header/image03.png')
@@ -237,11 +238,12 @@ export default class TheHeadSection extends Vue {
   ]
   patternIndex = 6
   t = 0
+  tMax = 27
   visible = true
   windowMode: WindowMode = 'sm'
 
   adjustSvg(mode: WindowMode) {
-    // SSR時にはSVGの表示を確定することができないため、
+    // SSR 時には SVG の表示を確定することができないため、
     // 初期表示時にちらついてしまう
     this.t = 0
 
@@ -277,7 +279,7 @@ export default class TheHeadSection extends Vue {
     preload(Image06)
 
     setInterval(() => {
-      if (this.loadedImages >= 6) {
+      if (this.loadedImages >= 6 && this.t < this.tMax) {
         this.t++
       }
     }, 90)
