@@ -1,15 +1,17 @@
 <template>
   <BaseSection class="the-head-section">
     <div class="main-visual-wrapper">
-      <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
-        <g transform="translate(-6, -6)">
-          <g v-for="(row, i) in items" :key="i">
-            <g v-for="(col, j) in row" :key="j.key">
-              <component :is="col.type" :item="col" :visible="visible" />
+      <no-ssr>
+        <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
+          <g transform="translate(-6, -6)">
+            <g v-for="(row, i) in items" :key="i">
+              <g v-for="(col, j) in row" :key="j.key">
+                <component :is="col.type" :item="col" :visible="visible" />
+              </g>
             </g>
           </g>
-        </g>
-      </svg>
+        </svg>
+      </no-ssr>
     </div>
 
     <h1 class="title">
