@@ -1,15 +1,17 @@
 <template>
   <BaseSection class="the-head-section">
     <div class="main-visual-wrapper">
-      <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
-        <g transform="translate(-6, -6)">
-          <g v-for="(row, i) in items" :key="i">
-            <g v-for="(col, j) in row" :key="j.key">
-              <component :is="col.type" :item="col" :visible="visible" />
+      <no-ssr>
+        <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
+          <g transform="translate(-6, -6)">
+            <g v-for="(row, i) in items" :key="i">
+              <g v-for="(col, j) in row" :key="j.key">
+                <component :is="col.type" :item="col" :visible="visible" />
+              </g>
             </g>
           </g>
-        </g>
-      </svg>
+        </svg>
+      </no-ssr>
     </div>
 
     <h1 class="title">
@@ -74,6 +76,7 @@ import HeadTriangle from '~/components/HeadTriangle.vue'
 import HeadCross from '~/components/HeadCross.vue'
 import HeadPhoto from '~/components/HeadPhoto.vue'
 import LinkToTwitter from '~/components/LinkToTwitter.vue'
+
 const Image01 = require('~/assets/images/header/image01.png')
 const Image02 = require('~/assets/images/header/image02.png')
 const Image03 = require('~/assets/images/header/image03.png')
@@ -237,20 +240,25 @@ export default class TheHeadSection extends Vue {
   ]
   patternIndex = 6
   t = 0
+  tMax = 0
   visible = true
   windowMode: WindowMode = 'sm'
 
   adjustSvg(mode: WindowMode) {
-    // SSR時にはSVGの表示を確定することができないため、
+    // SSR 時には SVG の表示を確定することができないため、
     // 初期表示時にちらついてしまう
     this.t = 0
 
     this.width = (grid + gap) * 5 - gap
+    this.tMax = 15
+
     if (mode === 'md') {
       this.width = (grid + gap) * 6 - gap
+      this.tMax = 18
     }
     if (mode === 'lg') {
       this.width = (grid + gap) * 9 - gap
+      this.tMax = 27
     }
   }
 
@@ -277,7 +285,7 @@ export default class TheHeadSection extends Vue {
     preload(Image06)
 
     setInterval(() => {
-      if (this.loadedImages >= 6) {
+      if (this.loadedImages >= 6 && this.t < this.tMax) {
         this.t++
       }
     }, 90)
