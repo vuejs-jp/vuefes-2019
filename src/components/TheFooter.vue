@@ -105,6 +105,15 @@
           <br />
 
           <a
+            href="https://note.mu/vuejs_jp"
+            target="_blank"
+            rel="noopener"
+          >
+            Vue.js 日本ユーザーグループ公式ブログ
+          </a>
+          <br />
+
+          <a
             href="https://vuefes.jp/2018/"
             target="_blank"
             rel="noopener"
