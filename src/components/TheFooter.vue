@@ -61,6 +61,17 @@
 
           <a
             class="social-icon"
+            href="https://note.mu/vuejs_jp"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="~/assets/images/icon-note.svg" alt="note" />
+            note
+          </a>
+          <br />
+
+          <a
+            class="social-icon"
             href="https://www.youtube.com/channel/UC6KPwA1kZJtQYdlh8_2hxCA"
             target="_blank"
             rel="noopener"
@@ -101,15 +112,6 @@
             rel="noopener"
           >
             Vue.js 日本ユーザーグループ
-          </a>
-          <br />
-
-          <a
-            href="https://note.mu/vuejs_jp"
-            target="_blank"
-            rel="noopener"
-          >
-            Vue.js 日本ユーザーグループ公式ブログ
           </a>
           <br />
 
@@ -337,17 +339,23 @@ export default class TheFooter extends Vue {
   position: relative;
   padding-left: 7vw;
 
-  svg {
+  svg,
+  img {
     position: absolute;
     top: 50%;
     left: 3.5vw;
     transform: translate(-50%, -50%);
   }
 
+  img {
+    width: 2em;
+  }
+
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     padding-left: 24px;
 
-    svg {
+    svg,
+    img {
       left: 12px;
     }
   }
