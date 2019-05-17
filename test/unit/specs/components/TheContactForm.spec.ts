@@ -104,6 +104,34 @@ describe('TheContactForm.Vue', () => {
       expect(error.text()).toBe('内容を正しく入力してください')
     })
 
+    test('内容が3,000文字の場合、エラーが表示されない', async () => {
+      const error = wrapper.find('#message-error')
+      expect(error.text()).toBe('')
+
+      const message = wrapper.find('#message')
+      const content = 'こんにちは'.repeat(600)
+      message.setValue(content)
+      message.trigger('blur')
+      await flushPromises()
+
+      expect(wrapper.vm.errors.any()).toEqual(false)
+      expect(error.text()).toBe('')
+    })
+
+    test('内容が3,001文字の場合、エラーが表示される', async () => {
+      const error = wrapper.find('#message-error')
+      expect(error.text()).toBe('')
+
+      const message = wrapper.find('#message')
+      const content = 'こんにちは'.repeat(600) + '！'
+      message.setValue(content)
+      message.trigger('blur')
+      await flushPromises()
+
+      expect(wrapper.vm.errors.any()).toEqual(true)
+      expect(error.text()).toBe('内容は 3,000 文字以内で入力してください')
+    })
+
     test('内容が入力されている場合、エラーが表示されない', async () => {
       const error = wrapper.find('#message-error')
       expect(error.text()).toBe('')
