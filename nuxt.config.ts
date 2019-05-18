@@ -1,6 +1,18 @@
+import fs from 'fs'
 import NuxtConfiguration from '@nuxt/config'
 import StylelintPlugin from 'stylelint-webpack-plugin'
 import hooks from './src/hooks'
+
+try {
+  fs.statSync('.env')
+  require('dotenv').config()
+} catch (error) {
+  if (error.code === 'ENOENT') {
+    console.log('.env file NOT FOUND') // eslint-disable-line no-console
+  } else {
+    throw error
+  }
+}
 
 const defaultUrl = 'https://vuefes.jp/2019/'
 const defaultTitle = 'Vue Fes Japan 2019'
