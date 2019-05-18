@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.8.1",
+    "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/pwa": "^3.0.0-beta.12",
     "cross-env": "^5.2.0",
     "dotenv": "^8.0.0",
