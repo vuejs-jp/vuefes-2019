@@ -96,6 +96,12 @@ const config: NuxtConfiguration = {
         component: 'fa'
       }
     ],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: process.env.GA_TRACKING_ID || 'UA-XXXXXXX-X'
+      }
+    ],
     '@nuxtjs/style-resources',
     [
       '@nuxtjs/pwa',
