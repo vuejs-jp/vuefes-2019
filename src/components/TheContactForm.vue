@@ -107,7 +107,7 @@
         <textarea
           id="message"
           v-model="formData.message"
-          v-validate="'required|max:5000'"
+          v-validate="'required|max:3000'"
           :class="{'error': errors.has('message')}"
           data-vv-validate-on="blur"
           name="message"
