@@ -3,7 +3,7 @@
     <TheHeadSection />
     <TheSpeakerSection />
     <TheSponsorSection />
-    <TheSponsorListSection />
+    <TheSponsorListSection :sponsorList="sponsorList"/>
     <TheCallForPresentersSection />
     <TheStaffListSection />
   </div>
@@ -18,6 +18,11 @@ import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 import TheCallForPresentersSection from '~/components/TheCallForPresentersSection.vue'
 import TheStaffListSection from '~/components/TheStaffListSection.vue'
 
+interface Sponsor {
+  id: string
+  name: string
+}
+
 @Component({
   components: {
     TheHeadSection,
@@ -26,7 +31,18 @@ import TheStaffListSection from '~/components/TheStaffListSection.vue'
     TheSponsorListSection,
     TheCallForPresentersSection,
     TheStaffListSection
+  },
+  asyncData() {
+    return {
+      sponsorList: [
+        { id: 'a', name: 'aaa' },
+        { id: 'b', name: 'bbb' },
+        { id: 'c', name: 'ccc' }
+      ]
+    }
   }
 })
-export default class HomePage extends Vue {}
+export default class HomePage extends Vue {
+  sponsorList: Sponsor[] = []
+}
 </script>

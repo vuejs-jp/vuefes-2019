@@ -4,8 +4,18 @@ import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 describe('TheSponsorListSection', () => {
   let wrapper
 
+  const sponsorList = [
+    { id: 'a', name: 'aaa' },
+    { id: 'b', name: 'bbb' },
+    { id: 'c', name: 'ccc' }
+  ]
+
   beforeEach(() => {
-    wrapper = mount(TheSponsorListSection)
+    wrapper = mount(TheSponsorListSection, {
+      propsData: {
+        sponsorList
+      }
+    })
   })
 
   test('レンダリングできる', () => {

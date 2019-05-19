@@ -13,9 +13,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
 
+// TODO: Sponsor 定義が冗長なのでまとめる
 interface Sponsor {
   id: string
   name: string
@@ -27,10 +28,7 @@ interface Sponsor {
   }
 })
 export default class TheSponsorListSection extends Vue {
-  sponsorList: Sponsor[] = [
-    { id: 'a', name: 'aaa' },
-    { id: 'b', name: 'bbb' },
-    { id: 'c', name: 'ccc' }
-  ]
+  @Prop()
+  readonly sponsorList!: Sponsor[]
 }
 </script>
