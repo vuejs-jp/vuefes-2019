@@ -4,9 +4,16 @@
       SPONSOR LIST
     </template>
 
-    <ul v-for="sponsor in sponsorList" :key="sponsor.id">
+    <ul v-for="sponsor in sponsorList" :key="sponsor.sys.id">
       <li class="sponsor">
-        {{ sponsor.name }}
+        <p>{{ sponsor.fields.type }}</p>
+        <p class="name">
+          {{ sponsor.fields.name }}
+        </p>
+        <p>{{ sponsor.fields.url }}</p>
+        <img :src="sponsor.fields.banner.fields.file.url" />
+        <p>{{ sponsor.fields.description }}</p>
+        <p>{{ sponsor.fields.publishedAt }}</p>
       </li>
     </ul>
   </BaseSection>

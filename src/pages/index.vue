@@ -36,13 +36,20 @@ const client = createClient()
     TheStaffListSection
   },
   async asyncData() {
-    const { sponsors } = await client.getEntries({
-      content_type: 'sponsor',
-      order: '-publishedAt'
-    })
+    let response
+
+    try {
+      // FIXME: イイ感じの書き方にする
+      response = await client.getEntries({
+        content_type: 'sponsor'
+        // FIXME: order: '-publishedAt'
+      })
+    } catch (error) {
+      console.error(error)
+    }
 
     return {
-      sponsors
+      sponsors: response.items
     }
   }
 })

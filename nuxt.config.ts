@@ -97,11 +97,10 @@ const config: NuxtConfiguration = {
       }
     ]
   ],
-
-  // FIXME: error TS2322: Type '{ ctfSpaceId: string | undefined; ctfCdaAccessToken: string | undefined; }' is not assignable to type 'NuxtConfigurationEnv'.
   env: {
-    ctfSpaceId: process.env.CTF_SPACE_ID,
-    ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN
+    ctfSpaceId: process.env.CTF_SPACE_ID || 'PLEASE SET CTF_SPACE_ID',
+    ctfCdaAccessToken:
+      process.env.CTF_CDA_ACCESS_TOKEN || 'PLEASE SET CTF_CDA_ACCESS_TOKEN'
   },
   build: {
     extend(config, ctx) {
