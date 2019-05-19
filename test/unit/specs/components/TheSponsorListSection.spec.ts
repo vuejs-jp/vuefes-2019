@@ -6,4 +6,6 @@ describe('TheSponsorListSection', () => {
     const wrapper = mount(TheSponsorListSection)
     expect(wrapper.find('.the-sponsor-list-section').isVisible()).toBeTruthy()
   })
+
+  test.todo('スポンサー情報が表示されている')
 })
