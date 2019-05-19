@@ -5,7 +5,9 @@
     </template>
 
     <ul v-for="sponsor in sponsorList" :key="sponsor.id">
-      <li class="sponsor">{{ sponsor.name }}</li>
+      <li class="sponsor">
+        {{ sponsor.name }}
+      </li>
     </ul>
   </BaseSection>
 </template>
