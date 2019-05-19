@@ -3,7 +3,7 @@
     <TheHeadSection />
     <TheSpeakerSection />
     <TheSponsorSection />
-    <TheSponsorListSection :sponsorList="sponsorList"/>
+    <TheSponsorListSection :sponsor-list="sponsors" />
     <TheCallForPresentersSection />
     <TheStaffListSection />
   </div>
@@ -11,6 +11,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import { createClient } from '~/plugins/contentful.ts'
 import TheHeadSection from '~/components/TheHeadSection.vue'
 import TheSpeakerSection from '~/components/TheSpeakerSection.vue'
 import TheSponsorSection from '~/components/TheSponsorSection.vue'
@@ -23,6 +24,8 @@ interface Sponsor {
   name: string
 }
 
+const client = createClient()
+
 @Component({
   components: {
     TheHeadSection,
@@ -32,13 +35,14 @@ interface Sponsor {
     TheCallForPresentersSection,
     TheStaffListSection
   },
-  asyncData() {
+  async asyncData() {
+    const { sponsors } = await client.getEntries({
+      content_type: 'sponsor',
+      order: '-publishedAt'
+    })
+
     return {
-      sponsorList: [
-        { id: 'a', name: 'aaa' },
-        { id: 'b', name: 'bbb' },
-        { id: 'c', name: 'ccc' }
-      ]
+      sponsors
     }
   }
 })

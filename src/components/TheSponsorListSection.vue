@@ -17,7 +17,7 @@ import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
 
 // TODO: Sponsor 定義が冗長なのでまとめる
-interface Sponsor {
+export interface Sponsor {
   id: string
   name: string
 }

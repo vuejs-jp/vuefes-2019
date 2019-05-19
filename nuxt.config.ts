@@ -2,6 +2,8 @@ import NuxtConfiguration from '@nuxt/config'
 import StylelintPlugin from 'stylelint-webpack-plugin'
 import hooks from './src/hooks'
 
+require('dotenv').config()
+
 const defaultUrl = 'https://vuefes.jp/2019/'
 const defaultTitle = 'Vue Fes Japan 2019'
 const defaultDescription =
@@ -78,6 +80,7 @@ const config: NuxtConfiguration = {
   css: ['~/assets/stylesheets/main.scss'],
   plugins: [{ src: '~/plugins/vee-validate' }],
   modules: [
+    '@nuxtjs/dotenv',
     [
       'nuxt-fontawesome',
       {
@@ -94,6 +97,12 @@ const config: NuxtConfiguration = {
       }
     ]
   ],
+
+  // FIXME: error TS2322: Type '{ ctfSpaceId: string | undefined; ctfCdaAccessToken: string | undefined; }' is not assignable to type 'NuxtConfigurationEnv'.
+  env: {
+    ctfSpaceId: process.env.CTF_SPACE_ID,
+    ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN
+  },
   build: {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
