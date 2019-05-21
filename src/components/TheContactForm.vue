@@ -214,8 +214,12 @@ export default class TheContactForm extends Vue {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: this.encode(body)
       })
-        .then(() => {
-          this.setStatusSuccess()
+        .then(response => {
+          if (response.ok) {
+            return this.setStatusSuccess()
+          }
+
+          throw new Error('Network response was not ok')
         })
         .catch(() => {
           this.setStatusError()
