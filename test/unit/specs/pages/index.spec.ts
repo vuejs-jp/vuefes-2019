@@ -7,7 +7,8 @@ describe('HomePage', () => {
     const wrapper = mount(HomePage, {
       stubs: {
         NuxtLink: RouterLinkStub,
-        Fa: FontAwesomeIcon
+        Fa: FontAwesomeIcon,
+        'no-ssr': '<div></div>'
       }
     })
     expect(wrapper.find('.home-page').isVisible()).toBeTruthy()
