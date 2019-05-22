@@ -120,7 +120,7 @@
       </div>
 
       <BaseButton :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
-        {{ buttomValue }}
+        {{ buttonValue }}
       </BaseButton>
     </form>
   </BaseMain>
@@ -160,7 +160,7 @@ export default class TheContactForm extends Vue {
   @Inject('$validator')
   $validator: any
 
-  get buttomValue() {
+  get buttonValue() {
     const status = this.status
     if (status.hasError) {
       return Messages.Error
@@ -214,8 +214,12 @@ export default class TheContactForm extends Vue {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: this.encode(body)
       })
-        .then(() => {
-          this.setStatusSuccess()
+        .then(response => {
+          if (response.ok) {
+            return this.setStatusSuccess()
+          }
+
+          throw new Error('Network response was not ok')
         })
         .catch(() => {
           this.setStatusError()
