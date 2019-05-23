@@ -2,6 +2,8 @@ import NuxtConfiguration from '@nuxt/config'
 import StylelintPlugin from 'stylelint-webpack-plugin'
 import hooks from './src/hooks'
 
+require('dotenv').config()
+
 const defaultUrl = 'https://vuefes.jp/2019/'
 const defaultTitle = 'Vue Fes Japan 2019'
 const defaultDescription =
@@ -78,10 +80,17 @@ const config: NuxtConfiguration = {
   css: ['~/assets/stylesheets/main.scss'],
   plugins: [{ src: '~/plugins/vee-validate' }],
   modules: [
+    '@nuxtjs/dotenv',
     [
       'nuxt-fontawesome',
       {
         component: 'fa'
+      }
+    ],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: process.env.GA_TRACKING_ID || 'UA-XXXXXXX-X'
       }
     ],
     '@nuxtjs/style-resources',
