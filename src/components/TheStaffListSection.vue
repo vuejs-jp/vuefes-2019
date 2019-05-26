@@ -19,14 +19,17 @@
           target="_blank"
           rel="noopener"
         >
-          <img
-            :srcset="`
+          <div v-lazy-container="{ selector: 'img' }">
+            <img
+              :data-srcset="`
               ${require(`~/assets/images/staffs/${staff.avatar}`)},
               ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
             `"
-            :src="require(`~/assets/images/staffs/${staff.avatar}`)"
-            :alt="staff.name"
-          />
+              :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
+              :data-loading="require('~/assets/images/staffs/placeholder.png')"
+              :alt="staff.name"
+            />
+          </div>
           @{{ staff.name }}
         </a>
       </li>
