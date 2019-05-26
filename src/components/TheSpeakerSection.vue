@@ -4,11 +4,15 @@
       SPEAKERS
     </template>
 
-    <div class="speaker-container">
+    <div
+      v-lazy-container="{ selector: 'img.avatar' }"
+      class="speaker-container"
+    >
       <img
         class="avatar"
-        :srcset="`${avatar}, ${avatar2x} 2x`"
-        :src="avatar2x"
+        :data-srcset="`${avatar}, ${avatar2x} 2x`"
+        :data-src="avatar2x"
+        :data-loading="require('~/assets/images/speakers/placeholder.png')"
         alt="Evan You"
       />
 
