@@ -67,7 +67,6 @@ const config: NuxtConfiguration = {
       }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://use.typekit.net/ecl1lua.css' },
       { rel: 'icon', type: 'image/x-icon', href: '/2019/favicon.ico' },
       {
         rel: 'apple-touch-icon',
@@ -80,6 +79,7 @@ const config: NuxtConfiguration = {
   css: ['~/assets/stylesheets/main.scss'],
   plugins: [
     { src: '~/plugins/vee-validate' },
+    { src: '~/plugins/typekit', ssr: false },
     { src: '~/plugins/vue-lazyload', ssr: false }
   ],
   modules: [
