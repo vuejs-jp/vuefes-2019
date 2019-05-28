@@ -34,21 +34,18 @@
       <img
         :data-srcset="`${imageOne}, ${imageOne2x} 2x`"
         :data-src="imageOne2x"
-        :data-loading="require('~/assets/images/sponsors/placeholder.png')"
         alt="VueFes Image"
       />
 
       <img
         :data-srcset="`${imageTwo}, ${imageTwo2x} 2x`"
         :data-src="imageTwo2x"
-        :data-loading="require('~/assets/images/sponsors/placeholder.png')"
         alt="VueFes Image"
       />
 
       <img
         :data-srcset="`${imageThree}, ${imageThree2x} 2x`"
         :data-src="imageThree2x"
-        :data-loading="require('~/assets/images/sponsors/placeholder.png')"
         alt="VueFes Image"
       />
     </div>

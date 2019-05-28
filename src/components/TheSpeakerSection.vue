@@ -12,7 +12,6 @@
         class="avatar"
         :data-srcset="`${avatar}, ${avatar2x} 2x`"
         :data-src="avatar2x"
-        :data-loading="require('~/assets/images/speakers/placeholder.png')"
         alt="Evan You"
       />
 

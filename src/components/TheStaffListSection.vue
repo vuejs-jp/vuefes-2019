@@ -26,7 +26,6 @@
               ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
             `"
               :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
-              :data-loading="require('~/assets/images/staffs/placeholder.png')"
               :alt="staff.name"
             />
           </div>
