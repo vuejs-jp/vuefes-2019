@@ -67,7 +67,6 @@ const config: NuxtConfiguration = {
       }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://use.typekit.net/ecl1lua.css' },
       { rel: 'icon', type: 'image/x-icon', href: '/2019/favicon.ico' },
       {
         rel: 'apple-touch-icon',
@@ -78,7 +77,10 @@ const config: NuxtConfiguration = {
   },
   loading: { color: '#fff' },
   css: ['~/assets/stylesheets/main.scss'],
-  plugins: [{ src: '~/plugins/vee-validate' }],
+  plugins: [
+    { src: '~/plugins/vee-validate' },
+    { src: '~/plugins/typekit', ssr: false }
+  ],
   modules: [
     '@nuxtjs/dotenv',
     [
