@@ -78,8 +78,9 @@ const config: NuxtConfiguration = {
   loading: { color: '#fff' },
   css: ['~/assets/stylesheets/main.scss'],
   plugins: [
+    { src: '~/plugins/typekit', ssr: false },
     { src: '~/plugins/vee-validate' },
-    { src: '~/plugins/typekit', ssr: false }
+    { src: '~/plugins/vue-lazyload', ssr: false }
   ],
   modules: [
     '@nuxtjs/dotenv',
