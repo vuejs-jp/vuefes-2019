@@ -7,7 +7,8 @@
     <div class="content">
       <div class="description">
         <p>
-          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。募集開始は <span class="start-datetime">2019年6月3日（月）12時</span> を予定しています（このサイトに募集フォームへのリンクを追加します）
+          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。募集開始は <span class="start-datetime">2019年6月3日（月）12時</span> を予定しています。<br />
+          （このサイトに募集フォームへのリンクを追加します。）
         </p>
 
         <p>
