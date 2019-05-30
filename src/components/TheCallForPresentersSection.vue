@@ -6,11 +6,11 @@
 
     <div class="notification">
       <p>
-        Vue Fes Japan 2019 では、スピーカー発表を広く一般から募集します。日本最大級の Vue.js カンファレンスで登壇する絶好の機会です。募集開始は <span class="start-date">2019年6月3日（月）</span>を予定しています。
+        Vue Fes Japan 2019 では、スピーカー発表を広く一般から募集します。日本最大級の Vue.js カンファレンスで登壇する絶好の機会です。募集開始は <span class="start-date">2019年6月3日（月）</span>を予定しています（このサイトに募集フォームへのリンクを追加します）
       </p>
 
       <p>
-        最新情報は、
+        最新情報は
         <a
           class="link"
           href="https://twitter.com/vuefes"
