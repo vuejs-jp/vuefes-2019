@@ -119,7 +119,7 @@
         </div>
       </div>
 
-      <BaseButton :disabled="status.hasSent||status.isProgressive" :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
+      <BaseButton :disabled="status.hasSent||status.inProgress" :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
         {{ buttonValue }}
       </BaseButton>
     </form>
@@ -154,7 +154,7 @@ export default class TheContactForm extends Vue {
     message: ''
   }
   status = {
-    isProgressive: false,
+    inProgress: false,
     hasSent: false,
     hasError: false
   }
@@ -166,7 +166,7 @@ export default class TheContactForm extends Vue {
     const status = this.status
     if (status.hasError) {
       return Messages.Error
-    } else if (status.isProgressive) {
+    } else if (status.inProgress) {
       return Messages.Progress
     } else if (status.hasSent) {
       return Messages.Success
@@ -177,7 +177,7 @@ export default class TheContactForm extends Vue {
 
   setStatusError(): void {
     this.status = {
-      isProgressive: false,
+      inProgress: false,
       hasSent: false,
       hasError: true
     }
@@ -185,7 +185,7 @@ export default class TheContactForm extends Vue {
 
   setStatusSuccess(): void {
     this.status = {
-      isProgressive: false,
+      inProgress: false,
       hasSent: true,
       hasError: false
     }
@@ -193,7 +193,7 @@ export default class TheContactForm extends Vue {
 
   setStatusInProgress(): void {
     this.status = {
-      isProgressive: true,
+      inProgress: true,
       hasSent: false,
       hasError: false
     }
