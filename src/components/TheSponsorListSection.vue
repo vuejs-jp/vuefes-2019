@@ -21,13 +21,8 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
+import { Entry } from 'contentful/index'
 import BaseSection from '~/components/BaseSection.vue'
-
-// TODO: Sponsor 定義が冗長なのでまとめる
-export interface Sponsor {
-  id: string
-  name: string
-}
 
 @Component({
   components: {
@@ -36,6 +31,6 @@ export interface Sponsor {
 })
 export default class TheSponsorListSection extends Vue {
   @Prop()
-  readonly sponsorList!: Sponsor[]
+  readonly sponsorList!: Entry<any>[]
 }
 </script>
