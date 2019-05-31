@@ -10,7 +10,7 @@
           SponsorType: {{ sponsorType }}
         </h3>
 
-        <ul v-for="sponsor in sponsorsByType(sponsorType)" :key="sponsor.sys.id">
+        <ul v-for="sponsor in sortSponsors(sponsorsByType(sponsorType))" :key="sponsor.sys.id">
           <li class="sponsor">
             <p>{{ sponsor.fields.type }}</p>
             <p class="name">
@@ -42,6 +42,15 @@ export default class TheSponsorListSection extends Vue {
 
   @Prop()
   readonly sponsorList!: Entry<any>[]
+
+  sortSponsors(sponsors): Entry<any>[] {
+    return sponsors.sort((a, b) => {
+      if (a.fields.publishedAt < b.fields.publishedAt) return -1
+      if (a.fields.publishedAt > b.fields.publishedAt) return 1
+
+      return 0
+    })
+  }
 
   sponsorsByType(type): Entry<any>[] {
     return this.sponsorList.filter(sponsor => sponsor.fields.type === type)

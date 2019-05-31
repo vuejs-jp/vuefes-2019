@@ -18,7 +18,9 @@ describe('TheSponsorListSection', () => {
   })
 
   test('スポンサー情報が表示されている', () => {
-    expect(wrapper.find('.sponsor .name').text()).toBe('合同会社 esa')
+    expect(wrapper.find('.sponsor .name').text()).toBe(
+      'アン・コンサルティング株式会社'
+    )
   })
 
   describe('sponsorsByType', () => {
