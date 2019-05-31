@@ -1,5 +1,5 @@
 <template>
-  <div class="sponsor-group">
+  <div class="sponsor-group" :class="sponsorType">
     <h3 class="heading">
       {{ sponsorType.toUpperCase() }}
     </h3>
