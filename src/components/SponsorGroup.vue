@@ -6,11 +6,17 @@
 
     <ul v-for="sponsor in sponsorList" :key="sponsor.sys.id">
       <li class="sponsor">
-        <img
-          class="sponsor-image"
-          :src="sponsor.fields.banner.fields.file.url"
-          :alt="sponsor.fields.name"
-        />
+        <a
+          :href="sponsor.fields.url"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            class="sponsor-image"
+            :src="sponsor.fields.banner.fields.file.url"
+            :alt="sponsor.fields.name"
+          />
+        </a>
       </li>
     </ul>
   </div>

@@ -17,12 +17,6 @@ describe('TheSponsorListSection', () => {
     expect(wrapper.find('.the-sponsor-list-section').isVisible()).toBeTruthy()
   })
 
-  test('スポンサー情報が表示されている', () => {
-    expect(wrapper.find('.sponsor .name').text()).toBe(
-      'アン・コンサルティング株式会社'
-    )
-  })
-
   describe('sponsorsByType', () => {
     test('スポンサーの種類によってフィルタリングできる', () => {
       const sponsors = wrapper.vm.sponsorsByType('silver')
