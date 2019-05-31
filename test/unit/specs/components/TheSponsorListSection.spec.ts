@@ -18,8 +18,15 @@ describe('TheSponsorListSection', () => {
   })
 
   test('スポンサー情報が表示されている', () => {
-    expect(wrapper.find('.sponsor .name').text()).toEqual(
-      '株式会社ピースオブケイク'
-    )
+    expect(wrapper.find('.sponsor .name').text()).toBe('合同会社 esa')
+  })
+
+  describe('sponsorsByType', () => {
+    test('スポンサーの種類によってフィルタリングできる', () => {
+      const sponsors = wrapper.vm.sponsorsByType('silver')
+
+      expect(sponsors.length).toBe(1)
+      expect(sponsors[0].fields.type).toBe('silver')
+    })
   })
 })
