@@ -32,7 +32,7 @@ describe('TheContactForm.Vue', () => {
     expect(wrapper.find('#organization').exists()).toBeTruthy()
     expect(wrapper.find('#message').exists()).toBeTruthy()
     expect(wrapper.find('.submit-button').exists()).toBeTruthy()
-    expect(wrapper.vm.buttomValue).toBe('送信する')
+    expect(wrapper.vm.buttonValue).toBe('送信する')
   })
 
   describe('フォーム操作', () => {
@@ -191,7 +191,7 @@ describe('TheContactForm.Vue', () => {
         await flushPromises()
 
         expect(wrapper.vm.errors.any()).toEqual(false)
-        expect(wrapper.vm.buttomValue).toBe('送信しました')
+        expect(wrapper.vm.buttonValue).toBe('送信しました')
       })
 
       test('送信に失敗した場合、エラーが表示される', async () => {
@@ -213,7 +213,7 @@ describe('TheContactForm.Vue', () => {
         await flushPromises()
 
         expect(wrapper.vm.errors.any()).toEqual(false)
-        expect(wrapper.vm.buttomValue).toBe('送信に失敗しました')
+        expect(wrapper.vm.buttonValue).toBe('送信に失敗しました')
       })
     })
   })

@@ -67,7 +67,6 @@ const config: NuxtConfiguration = {
       }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://use.typekit.net/ecl1lua.css' },
       { rel: 'icon', type: 'image/x-icon', href: '/2019/favicon.ico' },
       {
         rel: 'apple-touch-icon',
@@ -78,13 +77,23 @@ const config: NuxtConfiguration = {
   },
   loading: { color: '#fff' },
   css: ['~/assets/stylesheets/main.scss'],
-  plugins: [{ src: '~/plugins/vee-validate' }],
+  plugins: [
+    { src: '~/plugins/typekit', ssr: false },
+    { src: '~/plugins/vee-validate' },
+    { src: '~/plugins/vue-lazyload', ssr: false }
+  ],
   modules: [
     '@nuxtjs/dotenv',
     [
       'nuxt-fontawesome',
       {
         component: 'fa'
+      }
+    ],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: process.env.GA_TRACKING_ID || 'UA-XXXXXXX-X'
       }
     ],
     '@nuxtjs/style-resources',

@@ -7,11 +7,12 @@
     <div class="content">
       <div class="description">
         <p>
-          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。募集開始は、2019 年 5 月下旬を予定しています。
+          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。募集開始は <span class="start-datetime">2019年6月3日（月）12時</span> を予定しています。<br />
+          （このサイトに募集フォームへのリンクを追加します。）
         </p>
 
         <p>
-          最新情報は、
+          最新情報は
           <a
             class="link"
             href="https://twitter.com/vuefes"
@@ -27,22 +28,25 @@
       <LinkToTwitter class="show-on-medium-and-up" />
     </div>
 
-    <div class="image">
+    <div
+      v-lazy-container="{ selector: 'img' }"
+      class="image"
+    >
       <img
-        :srcset="`${imageOne}, ${imageOne2x} 2x`"
-        :src="imageOne2x"
+        :data-srcset="`${imageOne}, ${imageOne2x} 2x`"
+        :data-src="imageOne2x"
         alt="VueFes Image"
       />
 
       <img
-        :srcset="`${imageTwo}, ${imageTwo2x} 2x`"
-        :src="imageTwo2x"
+        :data-srcset="`${imageTwo}, ${imageTwo2x} 2x`"
+        :data-src="imageTwo2x"
         alt="VueFes Image"
       />
 
       <img
-        :srcset="`${imageThree}, ${imageThree2x} 2x`"
-        :src="imageThree2x"
+        :data-srcset="`${imageThree}, ${imageThree2x} 2x`"
+        :data-src="imageThree2x"
         alt="VueFes Image"
       />
     </div>
@@ -104,6 +108,10 @@ export default class TheSponsorsSection extends Vue {
     margin-bottom: 60px;
     z-index: 1;
   }
+}
+
+.start-datetime {
+  text-decoration: underline;
 }
 
 .link-to-twitter {

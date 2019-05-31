@@ -119,8 +119,8 @@
         </div>
       </div>
 
-      <BaseButton :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
-        {{ buttomValue }}
+      <BaseButton :disabled="status.hasSent||status.inProgress" :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
+        {{ buttonValue }}
       </BaseButton>
     </form>
   </BaseMain>
@@ -135,6 +135,7 @@ import BaseMainDescription from '~/components/BaseMainDescription.vue'
 enum Messages {
   Success = '送信しました',
   Error = '送信に失敗しました',
+  Progress = '送信しています...',
   Default = '送信する'
 }
 
@@ -153,6 +154,7 @@ export default class TheContactForm extends Vue {
     message: ''
   }
   status = {
+    inProgress: false,
     hasSent: false,
     hasError: false
   }
@@ -160,10 +162,12 @@ export default class TheContactForm extends Vue {
   @Inject('$validator')
   $validator: any
 
-  get buttomValue() {
+  get buttonValue() {
     const status = this.status
     if (status.hasError) {
       return Messages.Error
+    } else if (status.inProgress) {
+      return Messages.Progress
     } else if (status.hasSent) {
       return Messages.Success
     } else {
@@ -173,6 +177,7 @@ export default class TheContactForm extends Vue {
 
   setStatusError(): void {
     this.status = {
+      inProgress: false,
       hasSent: false,
       hasError: true
     }
@@ -180,7 +185,16 @@ export default class TheContactForm extends Vue {
 
   setStatusSuccess(): void {
     this.status = {
+      inProgress: false,
       hasSent: true,
+      hasError: false
+    }
+  }
+
+  setStatusInProgress(): void {
+    this.status = {
+      inProgress: true,
+      hasSent: false,
       hasError: false
     }
   }
@@ -208,14 +222,19 @@ export default class TheContactForm extends Vue {
       }
 
       const body = this.createRequestBody(target)
+      this.setStatusInProgress()
 
       fetch('/2019/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: this.encode(body)
       })
-        .then(() => {
-          this.setStatusSuccess()
+        .then(response => {
+          if (response.ok) {
+            return this.setStatusSuccess()
+          }
+
+          throw new Error('Network response was not ok')
         })
         .catch(() => {
           this.setStatusError()
