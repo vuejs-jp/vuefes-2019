@@ -2,7 +2,6 @@
   <div class="home-page">
     <TheHeadSection />
     <TheSpeakerSection />
-    <TheSponsorSection />
     <TheSponsorListSection :sponsor-list="sponsors || []" />
     <TheCallForPresentersSection />
     <TheStaffListSection />
@@ -15,7 +14,6 @@ import { Entry } from 'contentful/index'
 import { getSponsors } from '~/plugins/contentful.ts'
 import TheHeadSection from '~/components/TheHeadSection.vue'
 import TheSpeakerSection from '~/components/TheSpeakerSection.vue'
-import TheSponsorSection from '~/components/TheSponsorSection.vue'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 import TheCallForPresentersSection from '~/components/TheCallForPresentersSection.vue'
 import TheStaffListSection from '~/components/TheStaffListSection.vue'
@@ -28,7 +26,6 @@ interface AsyncData {
   components: {
     TheHeadSection,
     TheSpeakerSection,
-    TheSponsorSection,
     TheSponsorListSection,
     TheCallForPresentersSection,
     TheStaffListSection
