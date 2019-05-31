@@ -1,6 +1,7 @@
-import { Entry } from 'contentful/index'
+// import { Entry } from 'contentful/index'
 
-const sponsorList: Entry<any>[] = [
+// FIXME: VueDevTools から持ってきた値が Entry<any>[] に一致しない
+const sponsorList: any[] = [
   {
     sys: {
       space: {
