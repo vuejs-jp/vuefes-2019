@@ -329,7 +329,7 @@ $svg-grid: 120px;
 .main-visual-wrapper {
   text-align: center;
   margin: 1vw 0 5vw;
-  // SVG Parts の 1辺 x 3 + gap x 2
+  // grid の 1辺 x 3 + gap x 2
   height: calc(
     ((100vw - 7.8vw * 2 - #{$svg-gap} * 4) / 5) * 3 + #{$svg-gap} * 2
   );
