@@ -18,10 +18,6 @@ import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 import TheCallForPresentersSection from '~/components/TheCallForPresentersSection.vue'
 import TheStaffListSection from '~/components/TheStaffListSection.vue'
 
-interface AsyncData {
-  sponsors: Entry<any>[]
-}
-
 @Component({
   components: {
     TheHeadSection,
@@ -30,7 +26,7 @@ interface AsyncData {
     TheCallForPresentersSection,
     TheStaffListSection
   },
-  async asyncData(): Promise<AsyncData | void> {
+  async asyncData(): Promise<{ sponsors: Entry<any>[] } | void> {
     try {
       return {
         sponsors: await getSponsors()
