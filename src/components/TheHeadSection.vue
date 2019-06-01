@@ -318,27 +318,18 @@ export default class TheHeadSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$svg-gap: 12px;
-$svg-grid: 120px;
-
 .the-head-section {
-  position: relative;
   color: $primary-text-color--invert;
   background: linear-gradient(to right bottom, $hiwamoegi, $asagi);
 }
 
 .main-visual-wrapper {
-  position: absolute;
-  left: 0;
-  margin: 1vw 7.8%;
   text-align: center;
+  margin: 1vw 0 5vw;
   line-height: 0;
 }
 
 .title {
-  margin-top: calc(
-    ((100% - #{$svg-gap} * 4) / 5) * 3 + (#{$svg-gap} * 2) + 5vw
-  );
   font-size: 8.3vw;
   font-weight: bold;
   line-height: 1;
@@ -384,11 +375,9 @@ svg.main-visual {
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .main-visual-wrapper {
     margin: 0 0 40px;
-    // FIXME: 左右中央寄せしたいが、どうしたものか...
   }
 
   .title {
-    margin-top: calc(#{$svg-grid} * 3 + #{$svg-gap} * 2 + 40px);
     font-size: 64px;
   }
 
