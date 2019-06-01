@@ -329,8 +329,9 @@ $svg-grid: 120px;
 .main-visual-wrapper {
   text-align: center;
   margin: 1vw 0 5vw;
+  // SVG Parts の 1辺 x 3 + gap x 2
   height: calc(
-    (((100vw - 7.8vw * 2) - #{$svg-gap} * 4) / 5) * 3 + (#{$svg-gap} * 2)
+    ((100vw - 7.8vw * 2 - #{$svg-gap} * 4) / 5) * 3 + #{$svg-gap} * 2
   );
   line-height: 0;
 }
@@ -386,14 +387,14 @@ svg.main-visual {
     @media screen and (max-width: 860px) {
       // grid の 1辺が 120px 未満のときの調整
       height: calc(
-        (((100vw - 70px * 2) - #{$svg-gap} * 5) / 6) * 3 + (#{$svg-gap} * 2)
+        ((100vw - 70px * 2 - #{$svg-gap} * 5) / 6) * 3 + #{$svg-gap} * 2
       );
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) and (max-width: 1316px) {
       // grid の 1辺が 120px 未満のときの調整
       height: calc(
-        (((100vw - 70px * 2) - #{$svg-gap} * 8) / 9) * 3 + (#{$svg-gap} * 2)
+        ((100vw - 70px * 2 - #{$svg-gap} * 8) / 9) * 3 + #{$svg-gap} * 2
       );
     }
   }
