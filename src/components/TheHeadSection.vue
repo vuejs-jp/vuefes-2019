@@ -319,6 +319,7 @@ export default class TheHeadSection extends Vue {
 
 <style lang="scss" scoped>
 $svg-gap: 12px;
+$svg-grid: 120px;
 
 .the-head-section {
   position: relative;
@@ -383,9 +384,11 @@ svg.main-visual {
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .main-visual-wrapper {
     margin: 0 0 40px;
+    // FIXME: 左右中央寄せしたいが、どうしたものか...
   }
 
   .title {
+    margin-top: calc(#{$svg-grid} * 3 + #{$svg-gap} * 2 + 40px);
     font-size: 64px;
   }
 
