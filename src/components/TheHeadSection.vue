@@ -382,6 +382,20 @@ svg.main-visual {
   .main-visual-wrapper {
     margin: 0 0 40px;
     height: calc(#{$svg-grid} * 3 + #{$svg-gap} * 2);
+
+    @media screen and (max-width: 860px) {
+      // grid の 1辺が 120px 未満のときの調整
+      height: calc(
+        (((100vw - 70px * 2) - #{$svg-gap} * 5) / 6) * 3 + (#{$svg-gap} * 2)
+      );
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) and (max-width: 1316px) {
+      // grid の 1辺が 120px 未満のときの調整
+      height: calc(
+        (((100vw - 70px * 2) - #{$svg-gap} * 8) / 9) * 3 + (#{$svg-gap} * 2)
+      );
+    }
   }
 
   .title {
