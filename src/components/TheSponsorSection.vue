@@ -15,7 +15,7 @@
         </p>
 
         <p>
-          資料は <a class="link" href="https://docs.google.com/presentation/d/1YSr_QVUUKZmkYMBICE3mIQl2Um9OXfeS2AKgiOHX4Ds/edit#slide=id.g5a71049399_0_0" target="_blank" rel="noopener">こちら</a>
+          資料は <a class="link" href="https://docs.google.com/presentation/d/1YSr_QVUUKZmkYMBICE3mIQl2Um9OXfeS2AKgiOHX4Ds/edit#slide=id.p" target="_blank" rel="noopener">こちら</a>
         </p>
       </div>
 
