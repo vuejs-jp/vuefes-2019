@@ -10,7 +10,7 @@
       </p>
 
       <p>
-        CFP への応募、募集要項のご確認は <a href="https://fortee.jp/vuefes-2019/speaker/proposal/cfp" target="_blank" rel="noopener">こちら</a> からお願いいたします。
+        CFP への応募、募集要項のご確認は <a class="link" href="https://fortee.jp/vuefes-2019/speaker/proposal/cfp" target="_blank" rel="noopener">こちら</a> からお願いいたします。
       </p>
 
       <p>

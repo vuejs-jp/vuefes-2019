@@ -7,15 +7,15 @@
     <div class="content">
       <div class="description">
         <p>
-          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。<a href="https://fortee.jp/vuefes-2019/sponsor/form" target="_blank" rel="noopener">こちらのフォーム</a> よりお申し込みください。応募締め切りは、2019年7月31日（水）です。
+          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。<a class="link" href="https://fortee.jp/vuefes-2019/sponsor/form" target="_blank" rel="noopener">こちらのフォーム</a> よりお申し込みください。応募締め切りは、2019年7月31日（水）です。
         </p>
 
         <p>
-          最新情報は <a href="https://twitter.com/vuefes" target="_blank" rel="noopener">Vue Fes Japan の Twitter</a> もしくは <a href="https://note.mu/vuejs_jp/m/mb35849fee631" target="_blank" rel="noopener">公式 note</a> でご確認ください。
+          最新情報は <a class="link" href="https://twitter.com/vuefes" target="_blank" rel="noopener">Vue Fes Japan の Twitter</a> もしくは <a class="link" href="https://note.mu/vuejs_jp/m/mb35849fee631" target="_blank" rel="noopener">公式 note</a> でご確認ください。
         </p>
 
         <p>
-          資料は <a href="https://docs.google.com/presentation/d/1YSr_QVUUKZmkYMBICE3mIQl2Um9OXfeS2AKgiOHX4Ds/edit#slide=id.g5a71049399_0_0" target="_blank" rel="noopener">こちら</a>
+          資料は <a class="link" href="https://docs.google.com/presentation/d/1YSr_QVUUKZmkYMBICE3mIQl2Um9OXfeS2AKgiOHX4Ds/edit#slide=id.g5a71049399_0_0" target="_blank" rel="noopener">こちら</a>
         </p>
       </div>
 
