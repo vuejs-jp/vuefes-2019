@@ -19,7 +19,7 @@
     </div>
 
     <BaseButton href="https://fortee.jp/vuefes-2019/speaker/proposal/cfp" target="_blank" rel="noopener">
-      CFP への応募、募集要項の確認
+      CFP 申し込みフォーム
     </BaseButton>
   </BaseSection>
 </template>
