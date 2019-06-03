@@ -6,37 +6,33 @@
 
     <div class="notification">
       <p>
-        Vue Fes Japan 2019 では、スピーカー発表を広く一般から募集します。日本最大級の Vue.js カンファレンスで登壇する絶好の機会です。募集開始は <span class="start-date">2019年6月3日（月）</span>を予定しています。<br />
-        （このサイトに募集フォームへのリンクを追加します。）
+        Vue Fes Japan 2019 でのスピーカーの募集を開始いたしました。日本最大級の Vue.js カンファレンスで登壇する絶好の機会ですので、ぜひご検討ください。
       </p>
 
       <p>
-        最新情報は
-        <a
-          class="link"
-          href="https://twitter.com/vuefes"
-          target="_blank"
-          rel="noopener"
-        >
-          Vue Fes Japan の Twitter
-        </a>
-        でご確認ください。
+        CFP への応募、募集要項のご確認は <a class="link" href="https://fortee.jp/vuefes-2019/speaker/proposal/cfp" target="_blank" rel="noopener">こちら</a> からお願いいたします。
+      </p>
+
+      <p>
+        応募期間は 2019年6月3日（月）〜 2019年6月30日（日）23:59 となっております。
       </p>
     </div>
 
-    <LinkToTwitter />
+    <BaseButton href="https://fortee.jp/vuefes-2019/speaker/proposal/cfp" target="_blank" rel="noopener">
+      CFP 申し込みフォーム
+    </BaseButton>
   </BaseSection>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import BaseButton from '~/components/BaseButton.vue'
 import BaseSection from '~/components/BaseSection.vue'
-import LinkToTwitter from '~/components/LinkToTwitter.vue'
 
 @Component({
   components: {
-    BaseSection,
-    LinkToTwitter
+    BaseButton,
+    BaseSection
   }
 })
 export default class TheCallForPresentersSection extends Vue {}
@@ -47,14 +43,6 @@ export default class TheCallForPresentersSection extends Vue {}
   margin-bottom: 5vw;
   padding: 6.7%;
   border: $black 1px solid;
-
-  a {
-    text-decoration: none;
-  }
-}
-
-.start-date {
-  text-decoration: underline;
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
