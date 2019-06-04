@@ -1,12 +1,18 @@
-import { mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
+import VueLazyLoad from 'vue-lazyload'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 import sponsorList from '../../__mocks__/sponsorListMock'
+
+const localVue = createLocalVue()
+
+localVue.use(VueLazyLoad)
 
 describe('TheSponsorListSection', () => {
   let wrapper
 
   beforeEach(() => {
     wrapper = mount(TheSponsorListSection, {
+      localVue,
       propsData: {
         sponsorList
       }

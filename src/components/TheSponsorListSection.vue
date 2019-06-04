@@ -7,25 +7,26 @@
     <div class="content">
       <div class="description">
         <p>
-          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。募集開始は <span class="start-datetime">2019年6月3日（月）12時</span> を予定しています。<br />
-          （このサイトに募集フォームへのリンクを追加します。）
+          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。<a class="link" href="https://fortee.jp/vuefes-2019/sponsor/form" target="_blank" rel="noopener">こちらのフォーム</a> よりお申し込みください。応募締め切りは、2019年7月31日（水）です。
         </p>
 
         <p>
-          最新情報は
-          <a
-            class="link"
-            href="https://twitter.com/vuefes"
-            target="_blank"
-            rel="noopener"
-          >
-            Vue Fes Japan の Twitter
-          </a>
-          でご確認ください。
+          最新情報は <a class="link" href="https://twitter.com/vuefes" target="_blank" rel="noopener">Vue Fes Japan の Twitter</a> もしくは <a class="link" href="https://note.mu/vuejs_jp/m/mb35849fee631" target="_blank" rel="noopener">公式 note</a> でご確認ください。
+        </p>
+
+        <p>
+          資料は <a class="link" href="https://docs.google.com/presentation/d/1YSr_QVUUKZmkYMBICE3mIQl2Um9OXfeS2AKgiOHX4Ds/edit#slide=id.p" target="_blank" rel="noopener">こちら</a>
         </p>
       </div>
 
-      <LinkToTwitter class="show-on-medium-and-up" />
+      <BaseButton
+        class="link-to-sponsor-form show-on-medium-and-up"
+        href="https://fortee.jp/vuefes-2019/sponsor/form"
+        target="_blank"
+        rel="noopener"
+      >
+        スポンサー申し込みフォーム
+      </BaseButton>
     </div>
 
     <div
@@ -51,7 +52,14 @@
       />
     </div>
 
-    <LinkToTwitter class="show-on-small" />
+    <BaseButton
+      class="link-to-sponsor-form show-on-small"
+      href="https://fortee.jp/vuefes-2019/sponsor/form"
+      target="_blank"
+      rel="noopener"
+    >
+      スポンサー申し込みフォーム
+    </BaseButton>
 
     <ul v-for="sponsorType in sponsorTypes" :key="sponsorType">
       <li>
@@ -68,14 +76,14 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
+import BaseButton from '~/components/BaseButton.vue'
 import BaseSection from '~/components/BaseSection.vue'
-import LinkToTwitter from '~/components/LinkToTwitter.vue'
 import SponsorGroup from '~/components/SponsorGroup.vue'
 
 @Component({
   components: {
+    BaseButton,
     BaseSection,
-    LinkToTwitter,
     SponsorGroup
   }
 })
@@ -127,10 +135,6 @@ export default class TheSponsorListSection extends Vue {
   padding: 6.17%;
   margin-bottom: 5vw;
 
-  a {
-    text-decoration: none;
-  }
-
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 70%;
     max-width: calc(#{$page-container-max-width} * 0.7);
@@ -145,7 +149,7 @@ export default class TheSponsorListSection extends Vue {
   text-decoration: underline;
 }
 
-.link-to-twitter {
+.link-to-sponsor-form {
   width: 100%;
   max-width: 100%;
 

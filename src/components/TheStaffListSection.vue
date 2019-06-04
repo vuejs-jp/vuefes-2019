@@ -95,11 +95,6 @@ export default class TheCallForPresentersSection extends Vue {
       avatar: 'shika358.jpg'
     },
     {
-      name: 'potato4d',
-      link: 'https://twitter.com/potato4d',
-      avatar: 'potato4d.jpg'
-    },
-    {
       name: 'positiveflat',
       link: 'https://twitter.com/positiveflat',
       avatar: 'positiveflat.png'
@@ -193,6 +188,11 @@ export default class TheCallForPresentersSection extends Vue {
       name: 'jiyu33',
       link: 'https://twitter.com/jiyu33',
       avatar: 'jiyu33.jpg'
+    },
+    {
+      name: 'show60',
+      link: 'https://twitter.com/show60',
+      avatar: 'show60.png'
     }
   ]
 
