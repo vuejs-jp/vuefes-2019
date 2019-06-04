@@ -188,6 +188,11 @@ export default class TheCallForPresentersSection extends Vue {
       name: 'jiyu33',
       link: 'https://twitter.com/jiyu33',
       avatar: 'jiyu33.jpg'
+    },
+    {
+      name: 'show60',
+      link: 'https://twitter.com/show60',
+      avatar: 'show60.png'
     }
   ]
 
