@@ -1,11 +1,16 @@
-import { mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
+import VueLazyLoad from 'vue-lazyload'
 import TheStaffListSection from '~/components/TheStaffListSection.vue'
+
+const localVue = createLocalVue()
+
+localVue.use(VueLazyLoad)
 
 describe('TheStaffListSection', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = mount(TheStaffListSection)
+    wrapper = mount(TheStaffListSection, { localVue })
   })
 
   test('レンダリングできる', () => {
