@@ -3,7 +3,9 @@
     <div class="footer-container">
       <div class="content-wrapper">
         <div class="logo">
-          <img src="~/assets/images/logo-vuefes-invert.svg" alt="Vue Fes Japan" />
+          <nuxt-link to="/">
+            <img src="~/assets/images/logo-vuefes-invert.svg" alt="Vue Fes Japan" />
+          </nuxt-link>
         </div>
 
         <div class="social">
