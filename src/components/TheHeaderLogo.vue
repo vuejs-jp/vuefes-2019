@@ -1,7 +1,7 @@
 <template>
   <div class="the-header-logo">
     <nuxt-link to="/">
-      <img src="~/assets/images/logo-vuefes.svg" alt="Vue Fes Japan 2019" />
+      <img src="~/assets/images/logo-vuefes.svg" alt="Vue Fes Japan" />
     </nuxt-link>
   </div>
 </template>

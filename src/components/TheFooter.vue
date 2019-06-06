@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="content-wrapper">
         <div class="logo">
-          <img src="~/assets/images/logo-vuefes-invert.svg" alt="VueFes" />
+          <img src="~/assets/images/logo-vuefes-invert.svg" alt="Vue Fes Japan" />
         </div>
 
         <div class="social">
@@ -65,7 +65,7 @@
             target="_blank"
             rel="noopener"
           >
-            <img src="~/assets/images/icon-note.svg" alt="note" />
+            <img src="~/assets/images/icon-note.svg" alt="" />
             note
           </a>
           <br />
