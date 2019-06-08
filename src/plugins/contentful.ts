@@ -10,7 +10,7 @@ export const getSponsors = (): Promise<Entry<any>[]> => {
   return client
     .getEntries({
       content_type: 'sponsor'
-      // FIXME: order: '-publishedAt'
+      // FIXME: order: '-appliedAt'
     })
     .then(response => response.items)
 }

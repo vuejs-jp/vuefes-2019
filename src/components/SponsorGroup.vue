@@ -1,7 +1,7 @@
 <template>
-  <div class="sponsor-group" :class="sponsorType">
+  <div class="sponsor-group" :class="sponsorPlan">
     <h3 class="heading">
-      {{ sponsorType.toUpperCase() }}
+      {{ sponsorPlan.toUpperCase() }}
     </h3>
 
     <ul v-for="sponsor in sponsorList" :key="sponsor.sys.id">
@@ -29,7 +29,7 @@ import { Entry } from 'contentful/index'
 @Component
 export default class SponsorGroup extends Vue {
   @Prop()
-  readonly sponsorType!: string
+  readonly sponsorPlan!: string
 
   @Prop()
   readonly sponsorList!: Entry<any>[]

@@ -61,12 +61,12 @@
       スポンサー申し込みフォーム
     </BaseButton>
 
-    <ul v-for="sponsorType in sponsorTypes" :key="sponsorType">
+    <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan">
       <li>
         <SponsorGroup
-          v-if="sponsorsByType(sponsorType).length > 0"
-          :sponsor-type="sponsorType"
-          :sponsor-list="sortSponsors(sponsorsByType(sponsorType))"
+          v-if="sponsorsByPlan(sponsorPlan).length > 0"
+          :sponsor-plan="sponsorPlan"
+          :sponsor-list="sortSponsors(sponsorsByPlan(sponsorPlan))"
         />
       </li>
     </ul>
@@ -97,22 +97,22 @@ export default class TheSponsorListSection extends Vue {
   private imageThree = require('~/assets/images/sponsors/image3.jpg')
   private imageThree2x = require('~/assets/images/sponsors/image3@2x.jpg')
 
-  sponsorTypes: string[] = ['platinum', 'gold', 'silver', 'bronze']
+  sponsorPlans: string[] = ['platinum', 'gold', 'silver', 'bronze']
 
   @Prop()
   readonly sponsorList!: Entry<any>[]
 
   sortSponsors(sponsors): Entry<any>[] {
     return sponsors.sort((a, b) => {
-      if (a.fields.publishedAt < b.fields.publishedAt) return -1
-      if (a.fields.publishedAt > b.fields.publishedAt) return 1
+      if (a.fields.appliedAt < b.fields.appliedAt) return -1
+      if (a.fields.appliedAt > b.fields.appliedAt) return 1
 
       return 0
     })
   }
 
-  sponsorsByType(type): Entry<any>[] {
-    return this.sponsorList.filter(sponsor => sponsor.fields.type === type)
+  sponsorsByPlan(plan): Entry<any>[] {
+    return this.sponsorList.filter(sponsor => sponsor.fields.plan === plan)
   }
 }
 </script>

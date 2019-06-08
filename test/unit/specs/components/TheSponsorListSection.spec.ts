@@ -23,12 +23,12 @@ describe('TheSponsorListSection', () => {
     expect(wrapper.find('.the-sponsor-list-section').isVisible()).toBeTruthy()
   })
 
-  describe('sponsorsByType', () => {
+  describe('sponsorsByPlan', () => {
     test('スポンサーの種類によってフィルタリングできる', () => {
-      const sponsors = wrapper.vm.sponsorsByType('silver')
+      const sponsors = wrapper.vm.sponsorsByPlan('silver')
 
-      expect(sponsors.length).toBe(1)
-      expect(sponsors[0].fields.type).toBe('silver')
+      expect(sponsors.length).toBe(2)
+      expect(sponsors[0].fields.plan).toBe('silver')
     })
   })
 })

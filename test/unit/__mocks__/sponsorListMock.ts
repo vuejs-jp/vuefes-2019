@@ -1,6 +1,6 @@
 // import { Entry } from 'contentful/index'
 
-// FIXME: VueDevTools から持ってきた値が Entry<any>[] に一致しない
+// FIXME: Vue.js devtools から持ってきた値が Entry<any>[] に一致しない
 const sponsorList: any[] = [
   {
     sys: {
@@ -11,89 +11,10 @@ const sponsorList: any[] = [
           id: 'makqrw5hfm9d'
         }
       },
-      id: '4MobjBuuQiZZSoG817NTjH',
+      id: '4jXC6ZOPyFzpnbeUy2dI83',
       type: 'Entry',
-      createdAt: '2019-05-19T01:42:49.169Z',
-      updatedAt: '2019-05-19T01:43:22.698Z',
-      environment: {
-        sys: {
-          id: 'master',
-          type: 'Link',
-          linkType: 'Environment'
-        }
-      },
-      revision: 2,
-      contentType: {
-        sys: {
-          type: 'Link',
-          linkType: 'ContentType',
-          id: 'sponsor'
-        }
-      },
-      locale: 'en-US'
-    },
-    fields: {
-      type: 'silver',
-      name: '株式会社ピースオブケイク',
-      url: 'https://www.pieceofcake.co.jp/',
-      banner: {
-        sys: {
-          space: {
-            sys: {
-              type: 'Link',
-              linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
-          },
-          id: '5oE0xfAFUQDBvjcgxv4s7m',
-          type: 'Asset',
-          createdAt: '2019-05-19T01:41:20.657Z',
-          updatedAt: '2019-05-19T01:41:20.657Z',
-          environment: {
-            sys: {
-              id: 'master',
-              type: 'Link',
-              linkType: 'Environment'
-            }
-          },
-          revision: 1,
-          locale: 'en-US'
-        },
-        fields: {
-          title: 'note',
-          file: {
-            url:
-              '//images.ctfassets.net/makqrw5hfm9d/5oE0xfAFUQDBvjcgxv4s7m/a14d86104f7cadc1ac4d948cc7ec205d/note.png',
-            details: {
-              size: 1943,
-              image: {
-                width: 225,
-                height: 225
-              }
-            },
-            fileName: 'note.png',
-            contentType: 'image/png'
-          }
-        }
-      },
-      description:
-        '株式会社ピースオブケイクは、デジタルコンテンツの未来を切り拓くために設立されました。\n\nクリエイターのみなさんが、気持ちよくものづくりをして、受け手のみなさんに気持ちよく届ける。\nコンテンツとテクノロジーとデザインを融合させた、新しいプラットフォームをつくります。',
-      publishedAt: '2019-05-21T10:00+09:00'
-    }
-  },
-  {
-    sys: {
-      space: {
-        sys: {
-          type: 'Link',
-          linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
-      },
-      id: '267g2hobCdNcaDAOsbB6go',
-      type: 'Entry',
-      createdAt: '2019-05-19T01:35:11.764Z',
-      updatedAt: '2019-05-19T01:35:11.764Z',
+      createdAt: '2019-06-08T08:17:19.302Z',
+      updatedAt: '2019-06-08T08:17:19.302Z',
       environment: {
         sys: {
           id: 'master',
@@ -112,87 +33,8 @@ const sponsorList: any[] = [
       locale: 'en-US'
     },
     fields: {
-      type: 'gold',
-      name: '合同会社 esa',
-      url: 'https://team.esa.io/',
-      banner: {
-        sys: {
-          space: {
-            sys: {
-              type: 'Link',
-              linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
-          },
-          id: '5HGLyXJQPYKOYSk7aG0DhK',
-          type: 'Asset',
-          createdAt: '2019-05-19T01:34:18.682Z',
-          updatedAt: '2019-05-19T01:34:18.682Z',
-          environment: {
-            sys: {
-              id: 'master',
-              type: 'Link',
-              linkType: 'Environment'
-            }
-          },
-          revision: 1,
-          locale: 'en-US'
-        },
-        fields: {
-          title: 'esa',
-          file: {
-            url:
-              '//images.ctfassets.net/makqrw5hfm9d/5HGLyXJQPYKOYSk7aG0DhK/e666a9f255850fe9cb55dba0cdcb2657/esa.png',
-            details: {
-              size: 3304,
-              image: {
-                width: 225,
-                height: 225
-              }
-            },
-            fileName: 'esa.png',
-            contentType: 'image/png'
-          }
-        }
-      },
-      description:
-        'esaは情報を育てるという視点で作られた自律的なチームのための情報共有サービスです。',
-      publishedAt: '2019-05-20T10:00+09:00'
-    }
-  },
-  {
-    sys: {
-      space: {
-        sys: {
-          type: 'Link',
-          linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
-      },
-      id: '7roYcJn8fueWVlkAPKpCY3',
-      type: 'Entry',
-      createdAt: '2019-05-19T01:31:53.021Z',
-      updatedAt: '2019-05-19T01:31:53.021Z',
-      environment: {
-        sys: {
-          id: 'master',
-          type: 'Link',
-          linkType: 'Environment'
-        }
-      },
-      revision: 1,
-      contentType: {
-        sys: {
-          type: 'Link',
-          linkType: 'ContentType',
-          id: 'sponsor'
-        }
-      },
-      locale: 'en-US'
-    },
-    fields: {
-      type: 'gold',
-      name: 'アン・コンサルティング株式会社',
+      plan: 'silver',
+      name: 'シルバー 1',
       url: 'https://www.anconsulting.jp/',
       banner: {
         sys: {
@@ -203,10 +45,10 @@ const sponsorList: any[] = [
               id: 'makqrw5hfm9d'
             }
           },
-          id: '7w51pGQ6OHdOZvp15i5R4h',
+          id: '5wVbe11K1FVUbHZsLYR8te',
           type: 'Asset',
-          createdAt: '2019-05-19T01:30:16.615Z',
-          updatedAt: '2019-05-19T01:30:16.615Z',
+          createdAt: '2019-06-08T08:08:01.210Z',
+          updatedAt: '2019-06-08T08:08:01.210Z',
           environment: {
             sys: {
               id: 'master',
@@ -218,25 +60,183 @@ const sponsorList: any[] = [
           locale: 'en-US'
         },
         fields: {
-          title: 'anconsulting',
+          title: 'シルバー 1',
           file: {
             url:
-              '//images.ctfassets.net/makqrw5hfm9d/7w51pGQ6OHdOZvp15i5R4h/67a7c9f1113ee6fe24441b883bc4fa6f/anconsulting.png',
+              '//images.ctfassets.net/makqrw5hfm9d/5wVbe11K1FVUbHZsLYR8te/041f5624e01eae96e9e4dd87cd082da6/anconsulting_logo.png',
             details: {
-              size: 3713,
+              size: 67993,
               image: {
-                width: 225,
-                height: 225
+                width: 1753,
+                height: 1240
               }
             },
-            fileName: 'anconsulting.png',
+            fileName: 'anconsulting_logo.png',
             contentType: 'image/png'
           }
         }
       },
-      description:
-        'アン・コンサルティングは、フリーランス IT エンジニア向け案件・求人・仕事「フリエン」を運営しています。\n\n金融業界、IT業界など各業界で経験を積んだ日本の IT 人材マーケットに精通したスペシャリスト集団です。',
-      publishedAt: '2019-05-19T10:40+09:00'
+      pr:
+        'IT エンジニア向けの案件紹介サイト「フリエン」を Nuxt.js でフルリニューアルしています。また、ポートフォリオ共有サービス「Craftors Port」を今年始めにリリースしました。弊社では Nuxt.js を使った開発をしております。',
+      appliedAt: '2019-06-08T17:09+09:00'
+    }
+  },
+  {
+    sys: {
+      space: {
+        sys: {
+          type: 'Link',
+          linkType: 'Space',
+          id: 'makqrw5hfm9d'
+        }
+      },
+      id: '4LQ9bCD4CpvbxzeibrHP57',
+      type: 'Entry',
+      createdAt: '2019-06-08T08:17:19.636Z',
+      updatedAt: '2019-06-08T08:17:19.636Z',
+      environment: {
+        sys: {
+          id: 'master',
+          type: 'Link',
+          linkType: 'Environment'
+        }
+      },
+      revision: 1,
+      contentType: {
+        sys: {
+          type: 'Link',
+          linkType: 'ContentType',
+          id: 'sponsor'
+        }
+      },
+      locale: 'en-US'
+    },
+    fields: {
+      plan: 'silver',
+      name: 'シルバー 2',
+      url: 'https://vuefes.jp/2018/',
+      banner: {
+        sys: {
+          space: {
+            sys: {
+              type: 'Link',
+              linkType: 'Space',
+              id: 'makqrw5hfm9d'
+            }
+          },
+          id: '3FZoyGRsbGWpGCYf1uRAqn',
+          type: 'Asset',
+          createdAt: '2019-06-08T08:08:59.885Z',
+          updatedAt: '2019-06-08T08:08:59.885Z',
+          environment: {
+            sys: {
+              id: 'master',
+              type: 'Link',
+              linkType: 'Environment'
+            }
+          },
+          revision: 1,
+          locale: 'en-US'
+        },
+        fields: {
+          title: 'example-vuefes-2018',
+          file: {
+            url:
+              '//images.ctfassets.net/makqrw5hfm9d/3FZoyGRsbGWpGCYf1uRAqn/2b1998dea76c6408ad769dedcab187fb/vuefes-2018.jpg',
+            details: {
+              size: 350811,
+              image: {
+                width: 1200,
+                height: 630
+              }
+            },
+            fileName: 'vuefes-2018.jpg',
+            contentType: 'image/jpeg'
+          }
+        }
+      },
+      pr:
+        '日本で初めて開催する大規模 Vue.js カンファレンス。国内外の著名スピーカーによるセッションの他、ユーザー同士が気軽に話し合える場も設ける予定です。ぜひ、一緒に Vue.js を楽しみ、盛り上げていきましょう！',
+      appliedAt: '2019-06-08T17:09+09:00'
+    }
+  },
+  {
+    sys: {
+      space: {
+        sys: {
+          type: 'Link',
+          linkType: 'Space',
+          id: 'makqrw5hfm9d'
+        }
+      },
+      id: '4ag7yhMOefpqWZEq5DGyCn',
+      type: 'Entry',
+      createdAt: '2019-06-08T08:15:39.157Z',
+      updatedAt: '2019-06-08T08:15:39.157Z',
+      environment: {
+        sys: {
+          id: 'master',
+          type: 'Link',
+          linkType: 'Environment'
+        }
+      },
+      revision: 1,
+      contentType: {
+        sys: {
+          type: 'Link',
+          linkType: 'ContentType',
+          id: 'sponsor'
+        }
+      },
+      locale: 'en-US'
+    },
+    fields: {
+      plan: 'platinum',
+      name: 'プラチナ 1',
+      url: 'https://vuefes.jp/2019/',
+      banner: {
+        sys: {
+          space: {
+            sys: {
+              type: 'Link',
+              linkType: 'Space',
+              id: 'makqrw5hfm9d'
+            }
+          },
+          id: '4ptyeNdWDxA3Tu31DeQqzm',
+          type: 'Asset',
+          createdAt: '2019-06-08T08:04:18.800Z',
+          updatedAt: '2019-06-08T08:04:18.800Z',
+          environment: {
+            sys: {
+              id: 'master',
+              type: 'Link',
+              linkType: 'Environment'
+            }
+          },
+          revision: 1,
+          locale: 'en-US'
+        },
+        fields: {
+          title: 'example-vuefes-2019',
+          file: {
+            url:
+              '//images.ctfassets.net/makqrw5hfm9d/4ptyeNdWDxA3Tu31DeQqzm/3fd315e0c2781ffab31ef290d5b056b5/opengraph.png',
+            details: {
+              size: 52685,
+              image: {
+                width: 1200,
+                height: 630
+              }
+            },
+            fileName: 'opengraph.png',
+            contentType: 'image/png'
+          }
+        }
+      },
+      pr:
+        '2019年10月12日（土）に開催される日本最大級の Vue.js カンファレンス。国内外の著名スピーカーによるセッションの他、ユーザー同士が気軽に話し合える場も設ける予定です。ぜひ、一緒に Vue.js を楽しみ、盛り上げていきましょう！',
+      appliedAt: '2019-06-08T17:04+09:00'
     }
   }
 ]
