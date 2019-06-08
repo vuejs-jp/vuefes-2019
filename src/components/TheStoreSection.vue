@@ -28,7 +28,7 @@
         />
       </div>
 
-      <div class="supplement">
+      <div class="note">
         ※画像はイメージです。
       </div>
     </div>
@@ -86,7 +86,7 @@ $content-max-width--is-medium-up: 820px;
     }
   }
 
-  .supplement {
+  .note {
     font-size: 88.8%;
   }
 
