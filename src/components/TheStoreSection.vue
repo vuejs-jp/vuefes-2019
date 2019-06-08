@@ -16,19 +16,21 @@
       </p>
     </div>
 
-    <div
-      v-lazy-container="{ selector: 'img' }"
-      class="image"
-    >
-      <img
-        :data-srcset="`${image}, ${image2x} 2x`"
-        :data-src="image2x"
-        alt=""
-      />
-    </div>
+    <div class="image-container">
+      <div
+        v-lazy-container="{ selector: 'img' }"
+        class="image"
+      >
+        <img
+          :data-srcset="`${image}, ${image2x} 2x`"
+          :data-src="image2x"
+          alt=""
+        />
+      </div>
 
-    <div class="supplement">
-      ※画像はイメージです。
+      <div class="supplement">
+        ※画像はイメージです。
+      </div>
     </div>
   </BaseSection>
 </template>
@@ -49,6 +51,8 @@ export default class TheStoreSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+$content-max-width--is-small-up: 668px;
+
 .the-store-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
 }
@@ -56,18 +60,34 @@ export default class TheStoreSection extends Vue {
 .notification {
   padding: 6.7%;
   background-color: $white;
-}
 
-.image {
-  margin: 2vw 0;
-
-  img {
-    display: block;
-    width: 100%;
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    max-width: $content-max-width--is-small-up;
+    padding: 40px;
   }
 }
 
-.supplement {
-  font-size: 88.8%;
+.image-container {
+  .image {
+    margin: 2vw 0;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin: 10px 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .supplement {
+    font-size: 88.8%;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-left: auto;
+    max-width: $content-max-width--is-small-up;
+  }
 }
 </style>
