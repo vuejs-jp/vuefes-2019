@@ -24,7 +24,7 @@
         <img
           :data-srcset="`${image}, ${image2x} 2x`"
           :data-src="image2x"
-          alt=""
+          alt="Vue Fes Store"
         />
       </div>
 
