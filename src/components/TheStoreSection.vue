@@ -52,6 +52,7 @@ export default class TheStoreSection extends Vue {
 
 <style lang="scss" scoped>
 $content-max-width--is-small-up: 668px;
+$content-max-width--is-medium-up: 820px;
 
 .the-store-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
@@ -64,6 +65,10 @@ $content-max-width--is-small-up: 668px;
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     max-width: $content-max-width--is-small-up;
     padding: 40px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    max-width: $content-max-width--is-medium-up;
   }
 }
 
@@ -88,6 +93,10 @@ $content-max-width--is-small-up: 668px;
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-left: auto;
     max-width: $content-max-width--is-small-up;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    max-width: $content-max-width--is-medium-up;
   }
 }
 </style>
