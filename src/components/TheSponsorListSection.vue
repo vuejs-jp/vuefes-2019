@@ -36,19 +36,19 @@
       <img
         :data-srcset="`${imageOne}, ${imageOne2x} 2x`"
         :data-src="imageOne2x"
-        alt="VueFes Image"
+        alt=""
       />
 
       <img
         :data-srcset="`${imageTwo}, ${imageTwo2x} 2x`"
         :data-src="imageTwo2x"
-        alt="VueFes Image"
+        alt=""
       />
 
       <img
         :data-srcset="`${imageThree}, ${imageThree2x} 2x`"
         :data-src="imageThree2x"
-        alt="VueFes Image"
+        alt=""
       />
     </div>
 
