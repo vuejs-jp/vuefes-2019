@@ -4,6 +4,7 @@
     <TheSpeakerSection />
     <TheSponsorSection />
     <TheCallForPresentersSection />
+    <TheStoreSection />
     <TheStaffListSection />
   </div>
 </template>
@@ -13,6 +14,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 import TheHeadSection from '~/components/TheHeadSection.vue'
 import TheSpeakerSection from '~/components/TheSpeakerSection.vue'
 import TheSponsorSection from '~/components/TheSponsorSection.vue'
+import TheStoreSection from '~/components/TheStoreSection.vue'
 import TheCallForPresentersSection from '~/components/TheCallForPresentersSection.vue'
 import TheStaffListSection from '~/components/TheStaffListSection.vue'
 
@@ -21,6 +23,7 @@ import TheStaffListSection from '~/components/TheStaffListSection.vue'
     TheHeadSection,
     TheSpeakerSection,
     TheSponsorSection,
+    TheStoreSection,
     TheCallForPresentersSection,
     TheStaffListSection
   }
