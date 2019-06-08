@@ -217,7 +217,7 @@ export default class TheCallForPresentersSection extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 // ガターの幅
 $margin: 20px;
 
@@ -230,10 +230,6 @@ $length-lg: 8;
 $width-sm: calc((100% - #{$length-sm - 1} * #{$margin}) / #{$length-sm});
 $width-md: calc((100% - #{$length-md - 1} * #{$margin}) / #{$length-md});
 $width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
-
-.the-staff-list-section {
-  background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
-}
 
 .staff-list {
   display: flex;
@@ -254,7 +250,7 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
     flex-direction: column;
     align-items: center;
     font-size: 1.8vw;
-    color: #fff;
+    color: $primary-text-color;
     text-decoration: none;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
