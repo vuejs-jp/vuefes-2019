@@ -2,10 +2,10 @@ import { mount } from '@vue/test-utils'
 import SponsorGroup from '~/components/SponsorGroup.vue'
 
 describe('SponsorGroup', () => {
-  test('sponsorPlan がクラスに含まれる', () => {
+  test('sponsorPlan.plan がクラスに含まれる', () => {
     const wrapper = mount(SponsorGroup, {
       propsData: {
-        sponsorPlan: 'gold',
+        sponsorPlan: { plan: 'gold', name: 'GOLD' },
         sponsorList: []
       }
     })
