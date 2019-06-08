@@ -61,12 +61,12 @@
       スポンサー申し込みフォーム
     </BaseButton>
 
-    <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan">
+    <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
       <li>
         <SponsorGroup
-          v-if="sponsorsByPlan(sponsorPlan).length > 0"
+          v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
           :sponsor-plan="sponsorPlan"
-          :sponsor-list="sortSponsors(sponsorsByPlan(sponsorPlan))"
+          :sponsor-list="sortSponsors(sponsorsByPlan(sponsorPlan.plan))"
         />
       </li>
     </ul>
@@ -97,7 +97,20 @@ export default class TheSponsorListSection extends Vue {
   private imageThree = require('~/assets/images/sponsors/image3.jpg')
   private imageThree2x = require('~/assets/images/sponsors/image3@2x.jpg')
 
-  sponsorPlans: string[] = ['platinum', 'gold', 'silver', 'bronze']
+  sponsorPlans: { plan: string; name: string }[] = [
+    { plan: 'platinum', name: 'PLATINUM' },
+    { plan: 'gold', name: 'GOLD' },
+    { plan: 'silver', name: 'SILVER' },
+    { plan: 'bronze', name: 'BRONZE' },
+    { plan: 'room-ab', name: 'ROOM A/B' },
+    { plan: 'room-c', name: 'ROOM C' },
+    { plan: 'translation', name: '同時通訳' },
+    { plan: 'commercial', name: '幕間 CM' },
+    { plan: 'toast', name: 'カンパイ' },
+    { plan: 'lunch-ab', name: 'LUNCH A/B' },
+    { plan: 'lunch-c', name: 'LUNCH C' },
+    { plan: 'refreshment', name: 'REFRESHMENT' }
+  ]
 
   @Prop()
   readonly sponsorList!: Entry<any>[]
