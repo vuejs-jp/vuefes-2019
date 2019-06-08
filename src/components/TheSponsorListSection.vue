@@ -62,12 +62,32 @@
     </BaseButton>
 
     <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
-      <li>
-        <SponsorGroup
-          v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
-          :sponsor-plan="sponsorPlan"
-          :sponsor-list="sortSponsors(sponsorsByPlan(sponsorPlan.plan))"
-        />
+      <li
+        v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
+        class="sponsor-group"
+        :class="sponsorPlan.plan"
+      >
+        <h3 class="sponsor-plan">
+          {{ sponsorPlan.name }}
+        </h3>
+
+        <ul v-for="sponsor in sortSponsors(sponsorsByPlan(sponsorPlan.plan))" :key="sponsor.sys.id">
+          <li class="sponsor">
+            <a
+              :href="sponsor.fields.url"
+              target="_blank"
+              rel="noopener"
+            >
+              <div v-lazy-container="{ selector: 'img' }">
+                <img
+                  class="sponsor-image"
+                  :data-src="sponsor.fields.banner.fields.file.url"
+                  :alt="sponsor.fields.name"
+                />
+              </div>
+            </a>
+          </li>
+        </ul>
       </li>
     </ul>
   </BaseSection>
@@ -78,13 +98,11 @@ import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
 import BaseButton from '~/components/BaseButton.vue'
 import BaseSection from '~/components/BaseSection.vue'
-import SponsorGroup from '~/components/SponsorGroup.vue'
 
 @Component({
   components: {
     BaseButton,
-    BaseSection,
-    SponsorGroup
+    BaseSection
   }
 })
 export default class TheSponsorListSection extends Vue {

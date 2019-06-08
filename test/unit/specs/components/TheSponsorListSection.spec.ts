@@ -23,8 +23,21 @@ describe('TheSponsorListSection', () => {
     expect(wrapper.find('.the-sponsor-list-section').isVisible()).toBeTruthy()
   })
 
+  describe('.sponsor-group', () => {
+    test('スポンサープランがクラス名に付与される', () => {
+      expect(wrapper.find('.sponsor-group').classes()).toEqual([
+        'sponsor-group',
+        'platinum'
+      ])
+    })
+
+    test('スポンサープランが表示される', () => {
+      expect(wrapper.find('.sponsor-plan').text()).toBe('PLATINUM')
+    })
+  })
+
   describe('sponsorsByPlan', () => {
-    test('スポンサーの種類によってフィルタリングできる', () => {
+    test('スポンサープランによってフィルタリングできる', () => {
       const sponsors = wrapper.vm.sponsorsByPlan('silver')
 
       expect(sponsors.length).toBe(2)
