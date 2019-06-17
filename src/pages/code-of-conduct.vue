@@ -56,7 +56,7 @@
       </p>
     </BaseMainDescription>
 
-    <BaseButton to="/">
+    <BaseButton class="nuxt-link" to="/">
       トップに戻る
     </BaseButton>
   </BaseMain>
