@@ -20,10 +20,12 @@ describe('TheFooter', () => {
   })
 
   test('NuxtLink がルートパス指定になっており、かつ Trailing Slash が入っている', () => {
-    const nuxtLinks: Wrapper<Vue>[] = wrapper.findAll('.menu-list a').wrappers
+    const nuxtLinks: Wrapper<Vue>[] = wrapper.findAll('.nuxt-link').wrappers
 
     for (const nuxtLink of nuxtLinks) {
-      expect(nuxtLink.props().to).toEqual(expect.stringMatching(/^\/[\w-]+\/$/))
+      expect(nuxtLink.props().to).toEqual(
+        expect.stringMatching(/(^\/[\w-]+\/$|\/)/)
+      )
     }
   })
 })

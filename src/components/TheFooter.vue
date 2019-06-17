@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="content-wrapper">
         <div class="logo">
-          <nuxt-link to="/">
+          <nuxt-link class="nuxt-link" to="/">
             <img src="~/assets/images/logo-vuefes-invert.svg" alt="Vue Fes Japan" />
           </nuxt-link>
         </div>
@@ -30,17 +30,17 @@
             メニュー
           </h2>
 
-          <nuxt-link to="/code-of-conduct/">
+          <nuxt-link class="nuxt-link" to="/code-of-conduct/">
             行動規範
           </nuxt-link>
           <br />
 
-          <nuxt-link to="/privacy/">
+          <nuxt-link class="nuxt-link" to="/privacy/">
             プライバシーポリシー
           </nuxt-link>
           <br />
 
-          <nuxt-link to="/contact/">
+          <nuxt-link class="nuxt-link" to="/contact/">
             お問い合わせ
           </nuxt-link>
         </div>
