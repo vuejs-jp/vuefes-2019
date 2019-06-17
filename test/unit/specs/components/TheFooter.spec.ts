@@ -1,9 +1,10 @@
-import { mount, RouterLinkStub } from '@vue/test-utils'
+import Vue from 'vue'
+import { mount, RouterLinkStub, Wrapper } from '@vue/test-utils'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import TheFooter from '~/components/TheFooter.vue'
 
 describe('TheFooter', () => {
-  let wrapper
+  let wrapper: Wrapper<Vue>
 
   beforeEach(() => {
     wrapper = mount(TheFooter, {
@@ -19,8 +20,10 @@ describe('TheFooter', () => {
   })
 
   test('NuxtLink がルートパス指定になっており、かつ Trailing Slash が入っている', () => {
-    for (const link of wrapper.findAll('.menu-list a').wrappers) {
-      expect(link.props().to).toEqual(expect.stringMatching(/^\/[\w-]+\/$/))
+    const nuxtLinks: Wrapper<Vue>[] = wrapper.findAll('.menu-list a').wrappers
+
+    for (const nuxtLink of nuxtLinks) {
+      expect(nuxtLink.props().to).toEqual(expect.stringMatching(/^\/[\w-]+\/$/))
     }
   })
 })
