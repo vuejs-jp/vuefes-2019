@@ -22,7 +22,7 @@ describe('PrivacyPage', () => {
 
     for (const nuxtLink of nuxtLinks) {
       expect(nuxtLink.props().to).toEqual(
-        expect.stringMatching(/(^\/[\w-]+\/$|\/)/)
+        expect.stringMatching(/^\/([\w-]+\/)?$/)
       )
     }
   })
