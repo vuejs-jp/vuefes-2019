@@ -268,8 +268,8 @@
 
       <p>
         開示等のお申出、ご意見、ご質問、苦情のお申出その他個人情報の取扱いに関するお問い合わせは、メールにて
-        <a class="link" href="mailto:privacy@vuefes.jp">
-          privacy@vuefes.jp
+        <a class="link" href="mailto:vuefes+privacy@gmail.com">
+          vuefes+privacy@gmail.com
         </a>
         にお問い合わせください。
       </p>
