@@ -30,17 +30,17 @@
             メニュー
           </h2>
 
-          <nuxt-link to="code-of-conduct">
+          <nuxt-link to="/code-of-conduct/">
             行動規範
           </nuxt-link>
           <br />
 
-          <nuxt-link to="privacy">
+          <nuxt-link to="/privacy/">
             プライバシーポリシー
           </nuxt-link>
           <br />
 
-          <nuxt-link to="contact">
+          <nuxt-link to="/contact/">
             お問い合わせ
           </nuxt-link>
         </div>
