@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import { shallowMount, RouterLinkStub, Wrapper } from '@vue/test-utils'
+import { mount, RouterLinkStub, Wrapper } from '@vue/test-utils'
 import CodeOfConductPage from '~/pages/code-of-conduct.vue'
 
 describe('CodeOfConductPage', () => {
   let wrapper: Wrapper<Vue>
 
   beforeEach(() => {
-    wrapper = shallowMount(CodeOfConductPage, {
+    wrapper = mount(CodeOfConductPage, {
       stubs: {
         NuxtLink: RouterLinkStub
       }

@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import { shallowMount, RouterLinkStub, Wrapper } from '@vue/test-utils'
+import { mount, RouterLinkStub, Wrapper } from '@vue/test-utils'
 import PrivacyPage from '~/pages/privacy.vue'
 
 describe('PrivacyPage', () => {
   let wrapper: Wrapper<Vue>
 
   beforeEach(() => {
-    wrapper = shallowMount(PrivacyPage, {
+    wrapper = mount(PrivacyPage, {
       stubs: {
         NuxtLink: RouterLinkStub
       }
