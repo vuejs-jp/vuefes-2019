@@ -18,12 +18,6 @@ describe('PrivacyPage', () => {
   })
 
   test('NuxtLink がルートパス指定になっており、かつ Trailing Slash が入っている', () => {
-    const nuxtLinks: Wrapper<Vue>[] = wrapper.findAll(RouterLinkStub).wrappers
-
-    for (const nuxtLink of nuxtLinks) {
-      expect(nuxtLink.props().to).toEqual(
-        expect.stringMatching(/^\/([\w-]+\/)?$/)
-      )
-    }
+    expect(wrapper.find(RouterLinkStub).props().to).toBe('/')
   })
 })
