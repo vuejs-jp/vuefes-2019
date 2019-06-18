@@ -290,7 +290,7 @@
       </ul>
     </BaseMainDescription>
 
-    <BaseButton class="nuxt-link" to="/">
+    <BaseButton to="/">
       トップに戻る
     </BaseButton>
   </BaseMain>

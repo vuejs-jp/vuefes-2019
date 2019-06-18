@@ -49,14 +49,14 @@
 
       <p>
         Vue.js 日本ユーザーグループへのお問い合わせは、
-        <nuxt-link class="nuxt-link" to="/contact/">
+        <nuxt-link to="/contact/">
           フォーム
         </nuxt-link>
         よりお願いいたします。また、Vue Fes Japan 会場内でお困りの場合は、お近くのスタッフまでお尋ねください。
       </p>
     </BaseMainDescription>
 
-    <BaseButton class="nuxt-link" to="/">
+    <BaseButton to="/">
       トップに戻る
     </BaseButton>
   </BaseMain>
