@@ -19,14 +19,7 @@
         </p>
       </div>
 
-      <BaseButton
-        class="link-to-sponsor-form show-on-medium-and-up"
-        href="https://fortee.jp/vuefes-2019/sponsor/form"
-        target="_blank"
-        rel="noopener"
-      >
-        スポンサー申し込みフォーム
-      </BaseButton>
+      <LinkToTwitter class="link-to-twitter show-on-medium-and-up" />
     </div>
 
     <div
@@ -52,14 +45,7 @@
       />
     </div>
 
-    <BaseButton
-      class="link-to-sponsor-form show-on-small"
-      href="https://fortee.jp/vuefes-2019/sponsor/form"
-      target="_blank"
-      rel="noopener"
-    >
-      スポンサー申し込みフォーム
-    </BaseButton>
+    <LinkToTwitter class="link-to-twitter show-on-small" />
 
     <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
       <li
@@ -71,8 +57,12 @@
           {{ sponsorPlan.name }}
         </h3>
 
-        <ul v-for="sponsor in sortSponsors(sponsorsByPlan(sponsorPlan.plan))" :key="sponsor.sys.id">
-          <li class="sponsor">
+        <ul>
+          <li
+            v-for="sponsor in sortSponsors(sponsorsByPlan(sponsorPlan.plan))"
+            :key="sponsor.sys.id"
+            class="sponsor"
+          >
             <a
               :href="sponsor.fields.url"
               target="_blank"
@@ -90,6 +80,15 @@
         </ul>
       </li>
     </ul>
+
+    <BaseButton
+      class="link-to-sponsor-form"
+      href="https://fortee.jp/vuefes-2019/sponsor/form"
+      target="_blank"
+      rel="noopener"
+    >
+      スポンサー申し込みフォーム
+    </BaseButton>
   </BaseSection>
 </template>
 
@@ -98,11 +97,13 @@ import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
 import BaseButton from '~/components/BaseButton.vue'
 import BaseSection from '~/components/BaseSection.vue'
+import LinkToTwitter from '~/components/LinkToTwitter.vue'
 
 @Component({
   components: {
     BaseButton,
-    BaseSection
+    BaseSection,
+    LinkToTwitter
   }
 })
 export default class TheSponsorListSection extends Vue {
@@ -149,6 +150,10 @@ export default class TheSponsorListSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+ul {
+  margin: 0; // このコンポーネントでは ul 要素に margin を持たせない
+}
+
 .the-sponsor-list-section {
   background: linear-gradient(to right bottom, $tohoh, $sangosyu);
 }
@@ -180,16 +185,6 @@ export default class TheSponsorListSection extends Vue {
   text-decoration: underline;
 }
 
-.link-to-sponsor-form {
-  width: 100%;
-  max-width: 100%;
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    width: 700px;
-    margin: 0 auto 0 0;
-  }
-}
-
 .image {
   margin-bottom: 5vw;
 
@@ -205,6 +200,67 @@ export default class TheSponsorListSection extends Vue {
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     margin: -125px 5% 0 auto;
+  }
+}
+
+.link-to-twitter {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 10vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 700px;
+    margin: 0 auto 0 0;
+  }
+}
+
+// ここから下は Sponsor 一覧の CSS
+.sponsor-plan {
+  font-size: 5vw;
+  text-align: center;
+  font-weight: bold;
+  margin: calc(10vw - 20px) 0 1vw;
+}
+
+.sponsor-group {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .sponsor {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+
+.sponsor-group.platinum {
+  .sponsor-plan {
+    margin: 5vw 0 1vw;
+  }
+
+  .sponsor {
+    width: 100%;
+    margin-bottom: 5vw;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.link-to-sponsor-form {
+  width: 100%;
+  max-width: 100%;
+  margin: calc(10vw - 20px) auto 0;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 700px;
   }
 }
 </style>
