@@ -235,7 +235,7 @@ ul {
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       justify-content: center;
       width: calc(100% + 20px);
-      margin: -10px 0 -10px -10px;
+      margin: -10px;
     }
   }
 
