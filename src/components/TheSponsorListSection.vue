@@ -220,6 +220,10 @@ ul {
   text-align: center;
   font-weight: bold;
   margin: calc(10vw - 20px) 0 1vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin: 80px 0 20px;
+  }
 }
 
 .sponsor-group {
@@ -227,29 +231,70 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      justify-content: center;
+      width: calc(100% + 20px);
+      margin: -10px 0 -10px -10px;
+    }
   }
 
   img {
+    display: block;
     width: 100%;
   }
 
   .sponsor {
     width: calc(50% - 10px);
     margin-bottom: 20px;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      width: calc((100% / 6) - 20px); // 普通サイズの Sponsor バナーの横幅
+      margin: 10px;
+    }
+  }
+}
+
+.sponsor-group.silver {
+  .sponsor {
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      width: calc(20% - 20px);
+    }
+  }
+}
+
+.sponsor-group.gold {
+  .sponsor {
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      width: calc(25% - 20px);
+    }
   }
 }
 
 .sponsor-group.platinum {
   .sponsor-plan {
     margin: 5vw 0 1vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin: 40px 0 20px;
+    }
   }
 
   .sponsor {
     width: 100%;
     margin-bottom: 5vw;
 
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      width: calc(30% - 20px);
+      margin: 10px;
+    }
+
     &:last-child {
       margin-bottom: 20px;
+
+      @media screen and (min-width: $layout-breakpoint--is-small-up) {
+        margin-bottom: 10px;
+      }
     }
   }
 }
@@ -261,6 +306,7 @@ ul {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 700px;
+    margin: 80px auto 0;
   }
 }
 </style>
