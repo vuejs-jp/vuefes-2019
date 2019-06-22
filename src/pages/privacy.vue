@@ -148,9 +148,9 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <h2>
+      <template slot="heading">
         個人情報の第三者提供
-      </h2>
+      </template>
 
       <p>
         当カンファレンスは、収集した個人情報を個人情報保護法に基づき業務委託先以外の第三者に対して開示又は提供しないものとします。ただし、以下に該当する場合は、この限りではありません。
