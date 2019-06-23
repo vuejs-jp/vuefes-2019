@@ -121,13 +121,11 @@ export default class TheSponsorListSection extends Vue {
     { plan: 'gold', name: 'GOLD' },
     { plan: 'silver', name: 'SILVER' },
     { plan: 'bronze', name: 'BRONZE' },
-    { plan: 'room-ab', name: 'ROOM A/B' },
-    { plan: 'room-c', name: 'ROOM C' },
+    { plan: 'room', name: 'ROOM' },
     { plan: 'translation', name: '同時通訳' },
     { plan: 'commercial', name: '幕間 CM' },
     { plan: 'toast', name: 'カンパイ' },
-    { plan: 'lunch-ab', name: 'LUNCH A/B' },
-    { plan: 'lunch-c', name: 'LUNCH C' },
+    { plan: 'lunch', name: 'LUNCH' },
     { plan: 'refreshment', name: 'REFRESHMENT' }
   ]
 
