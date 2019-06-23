@@ -45,7 +45,7 @@
       />
     </div>
 
-    <LinkToTwitter class="link-to-twitter show-on-small" />
+    <LinkToTwitter class="show-on-small" />
 
     <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
       <li
