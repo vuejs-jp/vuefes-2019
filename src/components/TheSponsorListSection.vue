@@ -246,15 +246,15 @@ ul {
     margin: 10px;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      width: calc((100% / 6) - 20px); // 普通サイズの Sponsor バナーの横幅
+      width: calc((100% / 5) - 20px); // 普通サイズの Sponsor バナーの横幅
     }
   }
 }
 
-.sponsor-group.silver {
+.sponsor-group.bronze {
   .sponsor {
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      width: calc(20% - 20px);
+      width: calc((100% / 6) - 20px);
     }
   }
 }
@@ -262,7 +262,7 @@ ul {
 .sponsor-group.gold {
   .sponsor {
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      width: calc(25% - 20px);
+      width: calc((100% / 4) - 20px);
     }
   }
 }
