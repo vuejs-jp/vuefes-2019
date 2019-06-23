@@ -222,6 +222,7 @@ ul {
   margin: calc(10vw - 20px) 0 1vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 30px;
     margin: 80px 0 20px;
   }
 }
