@@ -8,6 +8,7 @@ const localVue = createLocalVue()
 localVue.use(VueLazyLoad)
 
 describe('HomePage', () => {
+  // FIXME: TypeError: Expected parameter accessToken
   test('レンダリングできる', () => {
     const wrapper = mount(HomePage, {
       localVue,

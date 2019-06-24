@@ -106,6 +106,11 @@ const config: NuxtConfiguration = {
       }
     ]
   ],
+  env: {
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID || 'PLEASE_SET_CTF_SPACE_ID',
+    CTF_CDA_ACCESS_TOKEN:
+      process.env.CTF_CDA_ACCESS_TOKEN || 'PLEASE_SET_CTF_CDA_ACCESS_TOKEN'
+  },
   build: {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
