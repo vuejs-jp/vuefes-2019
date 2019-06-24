@@ -121,6 +121,7 @@ export default class TheSponsorListSection extends Vue {
     { plan: 'gold', name: 'GOLD' },
     { plan: 'silver', name: 'SILVER' },
     { plan: 'bronze', name: 'BRONZE' },
+    { plan: 'special', name: 'SPECIAL' },
     { plan: 'room', name: 'ROOM' },
     { plan: 'translation', name: '同時通訳' },
     { plan: 'commercial', name: '幕間 CM' },
@@ -257,7 +258,8 @@ ul {
   }
 }
 
-.sponsor-group.gold {
+.sponsor-group.gold,
+.sponsor-group.special {
   .sponsor {
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       width: calc((100% / 4) - 20px);
