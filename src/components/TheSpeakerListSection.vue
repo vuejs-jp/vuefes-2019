@@ -5,29 +5,31 @@
     </template>
 
     <div
+      v-for="speaker in speakers"
+      :key="speaker.twitter"
       v-lazy-container="{ selector: 'img.avatar' }"
       class="speaker-container"
     >
       <img
         class="avatar"
-        :data-srcset="`${avatar}, ${avatar2x} 2x`"
-        :data-src="avatar2x"
+        :data-srcset="`${speaker.avatar}, ${speaker.avatar2x} 2x`"
+        :data-src="speaker.avatar2x"
         alt=""
       />
 
       <div class="speaker-content">
         <div class="title">
-          Vue.js クリエーター
+          {{ speaker.title }}
         </div>
 
         <h3 class="name">
-          Evan You
+          {{ speaker.name }}
         </h3>
 
         <div class="social">
           <a
             class="twitter"
-            href="https://twitter.com/youyuxi"
+            :href="`https://twitter.com/${speaker.twitter}`"
             target="_blank"
             rel="noopener"
           >
@@ -35,7 +37,7 @@
           </a>
           <a
             class="github"
-            href="https://github.com/yyx990803"
+            :href="`https://github.com/${speaker.github}`"
             target="_blank"
             rel="noopener"
           >
@@ -44,12 +46,8 @@
         </div>
 
         <div class="description">
-          <p>
-            Evan は開発者、デザイナー、そしてクリエイティブコーダーです。彼は、リアクティブなコンポーネントでモダンな Web インターフェイスを構築するための JavaScript フレームワーク、Vue.js の作者です。
-          </p>
-
-          <p>
-            かつて、GitHub で最もスターを集めたフルスタック JavaScript フレームワークであった Meteor の開発グループでも働いていました。Google Creative Lab で、さまざまな Google プロダクト向けの実験的な UI プロトタイプに、2年間取り組んでいた経験もあります。
+          <p v-for="(paragraph, index) in speaker.paragraphs" :key="index">
+            {{ paragraph }}
           </p>
         </div>
       </div>
@@ -71,8 +69,28 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheSpeakerListSection extends Vue {
-  private avatar = require('~/assets/images/speakers/evan.jpg')
-  private avatar2x = require('~/assets/images/speakers/evan@2x.jpg')
+  speakers: {
+    avatar: string
+    avatar2x: string
+    title: string
+    name: string
+    twitter: string
+    github: string
+    paragraphs: string[]
+  }[] = [
+    {
+      avatar: require('~/assets/images/speakers/evan.jpg'),
+      avatar2x: require('~/assets/images/speakers/evan@2x.jpg'),
+      title: 'Vue.js クリエーター',
+      name: 'Evan You',
+      twitter: 'youyuxi',
+      github: 'yyx990803',
+      paragraphs: [
+        'Evan は開発者、デザイナー、そしてクリエイティブコーダーです。彼は、リアクティブなコンポーネントでモダンな Web インターフェイスを構築するための JavaScript フレームワーク、Vue.js の作者です。',
+        'かつて、GitHub で最もスターを集めたフルスタック JavaScript フレームワークであった Meteor の開発グループでも働いていました。Google Creative Lab で、さまざまな Google プロダクト向けの実験的な UI プロトタイプに、2年間取り組んでいた経験もあります。'
+      ]
+    }
+  ]
 }
 </script>
 
