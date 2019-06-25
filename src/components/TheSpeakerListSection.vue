@@ -106,6 +106,10 @@ export default class TheSpeakerListSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.speaker-container + .speaker-container {
+  margin-top: 10.4vw;
+}
+
 .avatar {
   width: 100%;
 }
@@ -146,7 +150,7 @@ export default class TheSpeakerListSection extends Vue {
 }
 
 .more {
-  margin-top: 5vw;
+  margin-top: 10.4vw;
   font-size: 4vw;
 }
 
