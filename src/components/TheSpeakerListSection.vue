@@ -89,6 +89,17 @@ export default class TheSpeakerListSection extends Vue {
         'Evan は開発者、デザイナー、そしてクリエイティブコーダーです。彼は、リアクティブなコンポーネントでモダンな Web インターフェイスを構築するための JavaScript フレームワーク、Vue.js の作者です。',
         'かつて、GitHub で最もスターを集めたフルスタック JavaScript フレームワークであった Meteor の開発グループでも働いていました。Google Creative Lab で、さまざまな Google プロダクト向けの実験的な UI プロトタイプに、2年間取り組んでいた経験もあります。'
       ]
+    },
+    {
+      avatar: require('~/assets/images/speakers/sebastien.jpg'),
+      avatar2x: require('~/assets/images/speakers/sebastien@2x.jpg'),
+      title: 'Nuxt.js 共同 クリエーター',
+      name: 'Sébastien Chopin',
+      twitter: 'Atinux',
+      github: 'Atinux',
+      paragraphs: [
+        '14歳から Web デベロッパーです。8年ほど前に Node.js を使い始めてからは、JavaScript だけを書いています。ユニバーサルアプリケーションを簡単に作ることができる Nuxt.js を共同で作っています。'
+      ]
     }
   ]
 }
