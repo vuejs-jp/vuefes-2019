@@ -160,6 +160,10 @@ export default class TheSpeakerListSection extends Vue {
     align-items: flex-start;
     margin: 0 auto;
     width: 70%;
+
+    & + & {
+      margin-top: 80px;
+    }
   }
 
   .avatar {
