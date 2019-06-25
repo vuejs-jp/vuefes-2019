@@ -70,7 +70,7 @@ import BaseSection from '~/components/BaseSection.vue'
     BaseSection
   }
 })
-export default class TheSpeakersSection extends Vue {
+export default class TheSpeakerSection extends Vue {
   private avatar = require('~/assets/images/speakers/evan.jpg')
   private avatar2x = require('~/assets/images/speakers/evan@2x.jpg')
 }
