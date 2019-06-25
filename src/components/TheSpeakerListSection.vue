@@ -1,5 +1,5 @@
 <template>
-  <BaseSection class="the-speaker-section">
+  <BaseSection class="the-speaker-list-section">
     <template slot="heading">
       SPEAKERS
     </template>
@@ -70,7 +70,7 @@ import BaseSection from '~/components/BaseSection.vue'
     BaseSection
   }
 })
-export default class TheSpeakerSection extends Vue {
+export default class TheSpeakerListSection extends Vue {
   private avatar = require('~/assets/images/speakers/evan.jpg')
   private avatar2x = require('~/assets/images/speakers/evan@2x.jpg')
 }
