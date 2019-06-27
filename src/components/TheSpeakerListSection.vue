@@ -93,7 +93,7 @@ export default class TheSpeakerListSection extends Vue {
     {
       avatar: require('~/assets/images/speakers/sebastien.jpg'),
       avatar2x: require('~/assets/images/speakers/sebastien@2x.jpg'),
-      title: 'Nuxt.js 共同 クリエーター',
+      title: 'Nuxt.js 共同クリエーター',
       name: 'Sébastien Chopin',
       twitter: 'Atinux',
       github: 'Atinux',
