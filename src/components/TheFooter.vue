@@ -63,7 +63,7 @@
 
           <a
             class="social-icon"
-            href="https://note.mu/vuejs_jp"
+            href="https://note.mu/vuejs_jp/m/mb35849fee631"
             target="_blank"
             rel="noopener"
           >
