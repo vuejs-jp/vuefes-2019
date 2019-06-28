@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <TheHeadSection />
-    <TheSpeakerSection />
+    <TheSpeakerListSection />
     <TheSponsorListSection :sponsor-list="sponsors || []" />
     <TheCallForPresentersSection />
     <TheStoreSection />
@@ -15,7 +15,7 @@ import { Entry } from 'contentful/index'
 import { getSponsors } from '~/plugins/contentful.ts'
 import TheCallForPresentersSection from '~/components/TheCallForPresentersSection.vue'
 import TheHeadSection from '~/components/TheHeadSection.vue'
-import TheSpeakerSection from '~/components/TheSpeakerSection.vue'
+import TheSpeakerListSection from '~/components/TheSpeakerListSection.vue'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 import TheStaffListSection from '~/components/TheStaffListSection.vue'
 import TheStoreSection from '~/components/TheStoreSection.vue'
@@ -24,7 +24,7 @@ import TheStoreSection from '~/components/TheStoreSection.vue'
   components: {
     TheCallForPresentersSection,
     TheHeadSection,
-    TheSpeakerSection,
+    TheSpeakerListSection,
     TheSponsorListSection,
     TheStaffListSection,
     TheStoreSection

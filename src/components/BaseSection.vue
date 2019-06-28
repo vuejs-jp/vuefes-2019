@@ -27,7 +27,7 @@ export default class BaseSection extends Vue {}
 
 <style lang="scss" scoped>
 .section-container {
-  padding: 10vw 7.8%;
+  padding: 10vw 7.8vw;
   background-image: url('~assets/images/texture.png');
 }
 
