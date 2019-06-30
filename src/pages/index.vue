@@ -3,7 +3,6 @@
     <TheHeadSection />
     <TheSpeakerListSection />
     <TheSponsorListSection :sponsor-list="sponsors || []" />
-    <TheCallForPresentersSection />
     <TheStoreSection />
     <TheStaffListSection />
   </div>
@@ -13,7 +12,6 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
 import { getSponsors } from '~/plugins/contentful.ts'
-import TheCallForPresentersSection from '~/components/TheCallForPresentersSection.vue'
 import TheHeadSection from '~/components/TheHeadSection.vue'
 import TheSpeakerListSection from '~/components/TheSpeakerListSection.vue'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
@@ -22,7 +20,6 @@ import TheStoreSection from '~/components/TheStoreSection.vue'
 
 @Component({
   components: {
-    TheCallForPresentersSection,
     TheHeadSection,
     TheSpeakerListSection,
     TheSponsorListSection,
