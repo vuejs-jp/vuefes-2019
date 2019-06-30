@@ -231,7 +231,7 @@ $ticket-item-content-width--is-small-up: 140px;
   width: 100%;
   background-color: $white;
   margin-bottom: 8vw;
-  border: 2px solid $primary-color;
+  border: 1px solid $primary-color;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: calc(50% - 40px);
