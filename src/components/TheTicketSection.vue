@@ -218,6 +218,11 @@ $ticket-item-content-width--is-small-up: 140px;
     width: calc(100% + 40px);
     margin: -20px;
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    width: calc(100% + 20px);
+    margin: -10px;
+  }
 }
 
 .ticket-item {
@@ -232,11 +237,20 @@ $ticket-item-content-width--is-small-up: 140px;
     margin: 20px;
   }
 
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    width: calc(50% - 20px);
+    margin: 10px;
+  }
+
   &:last-child {
     margin-bottom: 0;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      margin-bottom: 10px;
     }
   }
 
@@ -280,6 +294,8 @@ $ticket-item-content-width--is-small-up: 140px;
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 18px;
       line-height: 52px;
+      white-space: nowrap;
+      overflow: hidden;
     }
   }
 
@@ -317,6 +333,10 @@ $ticket-item-content-width--is-small-up: 140px;
     font-size: 16px;
     margin: 40px auto 70px;
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin: 40px auto 80px;
+  }
 }
 
 .ticket-button {
@@ -327,6 +347,10 @@ $ticket-item-content-width--is-small-up: 140px;
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     line-height: 1.2;
     margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin-bottom: 80px;
   }
 }
 
@@ -351,6 +375,10 @@ $ticket-item-content-width--is-small-up: 140px;
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 18px;
       margin-bottom: 2px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      margin-bottom: 5px;
     }
   }
 
