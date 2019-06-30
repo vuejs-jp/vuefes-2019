@@ -51,7 +51,7 @@ interface Staff {
     BaseSection
   }
 })
-export default class TheCallForPresentersSection extends Vue {
+export default class TheStaffListSection extends Vue {
   leader: Staff = {
     name: 'kazu_pon',
     link: 'https://twitter.com/kazu_pon',
