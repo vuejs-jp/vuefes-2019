@@ -348,6 +348,7 @@ $ticket-item-content-width--is-small-up: 140px;
   &:disabled {
     background-color: $gray;
     border: 3px solid $gray;
+    box-shadow: none;
 
     &:hover {
       color: $primary-text-color--invert;
