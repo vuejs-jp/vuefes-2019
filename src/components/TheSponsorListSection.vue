@@ -19,7 +19,14 @@
         </p>
       </div>
 
-      <LinkToTwitter class="link-to-twitter show-on-medium-and-up" />
+      <BaseButton
+        class="link-to-sponsor-form link-to-sponsor-form--head show-on-medium-and-up"
+        href="https://fortee.jp/vuefes-2019/sponsor/form"
+        target="_blank"
+        rel="noopener"
+      >
+        スポンサー申し込みフォーム
+      </BaseButton>
     </div>
 
     <div
@@ -45,7 +52,14 @@
       />
     </div>
 
-    <LinkToTwitter class="show-on-small" />
+    <BaseButton
+      class="link-to-sponsor-form link-to-sponsor-form--head show-on-small"
+      href="https://fortee.jp/vuefes-2019/sponsor/form"
+      target="_blank"
+      rel="noopener"
+    >
+      スポンサー申し込みフォーム
+    </BaseButton>
 
     <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
       <li
@@ -97,13 +111,11 @@ import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
 import BaseButton from '~/components/BaseButton.vue'
 import BaseSection from '~/components/BaseSection.vue'
-import LinkToTwitter from '~/components/LinkToTwitter.vue'
 
 @Component({
   components: {
     BaseButton,
-    BaseSection,
-    LinkToTwitter
+    BaseSection
   }
 })
 export default class TheSponsorListSection extends Vue {
@@ -175,7 +187,7 @@ ul {
     max-width: calc(#{$page-container-max-width} * 0.7);
     padding: 40px;
     margin-top: -30px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     z-index: 1;
   }
 }
@@ -199,17 +211,6 @@ ul {
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     margin: -125px 5% 0 auto;
-  }
-}
-
-.link-to-twitter {
-  width: 100%;
-  max-width: 100%;
-  margin-top: 10vw;
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    width: 700px;
-    margin: 0 auto 0 0;
   }
 }
 
@@ -313,6 +314,17 @@ ul {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 700px;
     margin: 80px auto 0;
+  }
+
+  &--head {
+    width: 100%;
+    max-width: 100%;
+    margin: 5vw 0 10vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      width: 700px;
+      margin: 0;
+    }
   }
 }
 </style>
