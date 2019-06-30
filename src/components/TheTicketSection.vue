@@ -188,8 +188,8 @@ $ticket-item-content-width--is-small-up: 140px;
   background: linear-gradient(
     to right bottom,
     $sangosyu,
-    $sangosyu 20%,
-    $asagi 60%,
+    $sangosyu 30%,
+    $asagi 70%,
     $asagi
   );
 }
