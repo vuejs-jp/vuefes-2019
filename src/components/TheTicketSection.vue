@@ -384,7 +384,7 @@ $ticket-item-content-width--is-small-up: 140px;
     font-weight: bold;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: 18px;
+      font-size: 16px;
       margin-bottom: 2px;
     }
 
@@ -397,7 +397,7 @@ $ticket-item-content-width--is-small-up: 140px;
     font-size: 3.5vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
