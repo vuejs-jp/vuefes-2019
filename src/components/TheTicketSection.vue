@@ -68,7 +68,7 @@
       ※別途クレジットカード決済手数料（0.35%）がかかります。
     </p>
 
-    <BaseButton class="ticket-button">
+    <BaseButton class="ticket-button" disabled>
       発売開始予定
       <br class="show-on-small" />
       7/17（水）12:00〜
@@ -344,6 +344,15 @@ $ticket-item-content-width--is-small-up: 140px;
   width: 100%;
   margin-bottom: 10vw;
   line-height: 1.4;
+
+  &:disabled {
+    background-color: $gray;
+    border: 3px solid $gray;
+
+    &:hover {
+      color: $primary-text-color--invert;
+    }
+  }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     line-height: 1.2;
