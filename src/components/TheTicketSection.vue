@@ -1,7 +1,7 @@
 <template>
   <BaseSection class="the-ticket-section">
     <template slot="heading">
-      TICKETS
+      TICKET
     </template>
 
     <div class="description">
@@ -11,7 +11,7 @@
 
       <p>
         販売媒体として
-        <a href="https://www.universe.com/" target="_blank" rel="noopener">
+        <a href="https://www.universe.com/" target="_blank" rel="noopener" class="link">
           Universe
         </a>
         を利用します。発売開始のタイミングで本 Web サイトにてチケット購入へのリンクが公開されます。購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
@@ -20,12 +20,18 @@
 
     <div class="ticket-list">
       <div class="ticket-item">
-        <h3>一般チケット</h3>
+        <div class="ticket-content">
+          <h3>一般チケット</h3>
 
-        <p>7,000円</p>
+          <p>
+            <span>7,000</span>
+            円
+          </p>
+        </div>
 
         <div
           v-lazy-container="{ selector: 'img' }"
+          class="image"
         >
           <img
             :data-srcset="`${imageOne}, ${imageOne2x} 2x`"
@@ -36,12 +42,18 @@
       </div>
 
       <div class="ticket-item">
-        <h3>一般＋アフターパーティチケット</h3>
+        <div class="ticket-content">
+          <h3>一般＋アフターパーティチケット</h3>
 
-        <p>10,000円</p>
+          <p>
+            <span>10,000</span>
+            円
+          </p>
+        </div>
 
         <div
           v-lazy-container="{ selector: 'img' }"
+          class="image"
         >
           <img
             :data-srcset="`${imageTwo}, ${imageTwo2x} 2x`"
@@ -52,11 +64,11 @@
       </div>
     </div>
 
-    <p>
+    <p class="note">
       ※別途クレジットカード決済手数料（0.35%）がかかります。
     </p>
 
-    <BaseButton>
+    <BaseButton class="ticket-button">
       発売開始予定
       <br />
       7/17（水）12:00〜
@@ -65,67 +77,83 @@
     <div class="faq">
       <h3>FAQ</h3>
 
-      <h4>
-        お支払い方法
-      </h4>
-      <p>
-        各種クレジットカード（Visa、American Express、Discover、MasterCard）と Google Pay、Apple Pay がご利用いただけます。
-      </p>
+      <div class="faq-content">
+        <h4>
+          お支払い方法
+        </h4>
+        <p>
+          各種クレジットカード（Visa、American Express、Discover、MasterCard）と Google Pay、Apple Pay がご利用いただけます。
+        </p>
+      </div>
 
-      <h4>
-        領収書について
-      </h4>
-      <p>
-        チケット購入後に届くメールに添付された PDF を領収書としてご利用ください。
-      </p>
+      <div class="faq-content">
+        <h4>
+          領収書について
+        </h4>
+        <p>
+          チケット購入後に届くメールに添付された PDF を領収書としてご利用ください。
+        </p>
+      </div>
 
-      <h4>
-        キャンセル、返金について
-      </h4>
-      <p>
-        購入者都合によるキャンセルの場合、チケットの返金はできません。ただし、譲渡は購入者の責任において行うことができます。詳細は
-        <a href="https://support.universe.com/hc/ja/articles/360002614651-%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E8%AD%B2%E6%B8%A1%E3%81%99%E3%82%8B" target="_blank" rel="noopener">
-          Universe のヘルプ
-        </a>
-        をご覧ください。譲渡されたチケットの再譲渡は行えません。
-        <br />
-        また、譲渡に関するトラブルについて Vue.js 日本ユーザーグループは一切責任を負わないものとします。あらかじめご了承ください。
-      </p>
+      <div class="faq-content">
+        <h4>
+          キャンセル、返金について
+        </h4>
+        <p>
+          購入者都合によるキャンセルの場合、チケットの返金はできません。ただし、譲渡は購入者の責任において行うことができます。詳細は
+          <a href="https://support.universe.com/hc/ja/articles/360002614651-%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E8%AD%B2%E6%B8%A1%E3%81%99%E3%82%8B" target="_blank" rel="noopener" class="link">
+            Universe のヘルプ
+          </a>
+          をご覧ください。譲渡されたチケットの再譲渡は行えません。
+          <br />
+          また、譲渡に関するトラブルについて Vue.js 日本ユーザーグループは一切責任を負わないものとします。あらかじめご了承ください。
+        </p>
+      </div>
 
-      <h4>
-        タイムテーブルやセッション内容は？
-      </h4>
-      <p>
-        チケットの発売開始までに本 Web サイトにて公開予定です。一部内容についてはチケット発売後に公開になる可能性がありますので、あらかじめご了承ください。
-      </p>
+      <div class="faq-content">
+        <h4>
+          タイムテーブルやセッション内容は？
+        </h4>
+        <p>
+          チケットの発売開始までに本 Web サイトにて公開予定です。一部内容についてはチケット発売後に公開になる可能性がありますので、あらかじめご了承ください。
+        </p>
+      </div>
 
-      <h4>
-        ランチは全員に提供されますか？
-      </h4>
-      <p>
-        はい、会場内でお弁当とお飲み物をご提供します。各会場ではランチを召し上がりながら Lunch スポンサーセッション（10分 x 3本）にご参加いただけます。
-      </p>
+      <div class="faq-content">
+        <h4>
+          ランチは全員に提供されますか？
+        </h4>
+        <p>
+          はい、会場内でお弁当とお飲み物をご提供します。各会場ではランチを召し上がりながら Lunch スポンサーセッション（10分 x 3本）にご参加いただけます。
+        </p>
+      </div>
 
-      <h4>
-        アフターパーティーはどのようなものですか？
-      </h4>
-      <p>
-        全セッション終了後、会場内にて立食形式のお食事、お飲み物（アルコールあり）を召し上がりながらご歓談いただけます。お1人で参加される方でもお楽しみいただけるような工夫を行う予定です。お楽しみに！
-      </p>
+      <div class="faq-content">
+        <h4>
+          アフターパーティーはどのようなものですか？
+        </h4>
+        <p>
+          全セッション終了後、会場内にて立食形式のお食事、お飲み物（アルコールあり）を召し上がりながらご歓談いただけます。お1人で参加される方でもお楽しみいただけるような工夫を行う予定です。お楽しみに！
+        </p>
+      </div>
 
-      <h4>
-        当日の入場について
-      </h4>
-      <p>
-        当日は受付の混雑が予想されます。受付用の QR コードを読み取れるようご準備の上、列へお並びください。QR コードはチケット購入時に届くメールをご確認ください。
-      </p>
+      <div class="faq-content">
+        <h4>
+          当日の入場について
+        </h4>
+        <p>
+          当日は受付の混雑が予想されます。受付用の QR コードを読み取れるようご準備の上、列へお並びください。QR コードはチケット購入時に届くメールをご確認ください。
+        </p>
+      </div>
 
-      <h4>
-        Universe のアカウント作成について
-      </h4>
-      <p>
-        購入時に Universe のアカウントを作成するか選択できますが、作成しなくともチケットの購入は可能です。また、チケット購入後でも購入時に届くメールからアカウントを作成することができます。
-      </p>
+      <div class="faq-content">
+        <h4>
+          Universe のアカウント作成について
+        </h4>
+        <p>
+          購入時に Universe のアカウントを作成するか選択できますが、作成しなくともチケットの購入は可能です。また、チケット購入後でも購入時に届くメールからアカウントを作成することができます。
+        </p>
+      </div>
     </div>
   </BaseSection>
 </template>
@@ -149,3 +177,121 @@ export default class TheTicketSection extends Vue {
   private imageTwo2x = require('~/assets/images/tickets/image2@2x.jpg')
 }
 </script>
+
+<style lang="scss" scoped>
+.the-ticket-section {
+  // background: linear-gradient(to right bottom, $sangosyu, $asagi);
+  background: linear-gradient(
+    292.6deg,
+    rgba($asagi, 0.9),
+    rgba($sangosyu, 0.9)
+  );
+}
+
+.description {
+  background-color: $primary-text-color--invert;
+  padding: 5vw;
+  margin-bottom: 8vw;
+}
+
+.ticket-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ticket-item {
+  position: relative;
+  width: 100%;
+  background-color: $white;
+  margin-bottom: 8vw;
+  border: 2px solid $primary-color;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .image {
+    width: 100%;
+    padding-bottom: 28.5vw;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .ticket-content {
+    position: absolute;
+    left: 6.5vw;
+    bottom: 0;
+    width: calc(100% - (6.5vw * 2));
+    height: 28.5vw;
+    text-align: center;
+  }
+
+  h3 {
+    background-color: $primary-color;
+    color: $white;
+    font-weight: bold;
+    font-size: 4vw;
+    line-height: 11vw;
+    transform: translateY(-50%);
+  }
+
+  p {
+    font-size: 5vw;
+    height: calc(28.5vw - 11vw);
+    transform: translateY(calc((-11vw / 2) / 2));
+
+    span {
+      font-size: 10vw;
+      line-height: 180%;
+      font-weight: bold; // FIXME: 太さをカンプ通りにしたい
+    }
+  }
+}
+
+.note {
+  color: $primary-text-color--invert;
+  text-align: center;
+  font-size: 3.5vw;
+  margin: 10vw auto;
+}
+
+.ticket-button {
+  width: 100%;
+  margin-bottom: 10vw;
+  line-height: 1.4;
+}
+
+.faq {
+  color: $primary-text-color--invert;
+
+  h3 {
+    font-size: 5vw;
+    font-weight: bold;
+    margin-bottom: 3vw;
+  }
+
+  h4 {
+    font-size: 3.5vw;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 3.5vw;
+  }
+
+  &-content {
+    margin-bottom: 5vw;
+  }
+
+  .link {
+    color: $primary-text-color--invert;
+
+    &:hover {
+      color: $primary-text-color;
+    }
+  }
+}
+</style>
