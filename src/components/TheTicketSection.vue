@@ -326,12 +326,12 @@ $ticket-item-content-width--is-small-up: 140px;
 
 .note {
   color: $primary-text-color--invert;
-  text-align: center;
   font-size: 3.5vw;
   margin: 10vw auto;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     font-size: 16px;
+    text-align: center;
     margin: 40px auto 70px;
   }
 
