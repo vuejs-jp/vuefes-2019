@@ -185,11 +185,12 @@ $ticket-item-content-width--is-small: 28.5vw;
 $ticket-item-content-width--is-small-up: 140px;
 
 .the-ticket-section {
-  // background: linear-gradient(to right bottom, $sangosyu, $asagi);
   background: linear-gradient(
-    292.6deg,
-    rgba($asagi, 0.9),
-    rgba($sangosyu, 0.9)
+    to right bottom,
+    $sangosyu,
+    $sangosyu 20%,
+    $asagi 60%,
+    $asagi
   );
 }
 
