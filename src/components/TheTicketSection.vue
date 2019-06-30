@@ -70,7 +70,7 @@
 
     <BaseButton class="ticket-button">
       発売開始予定
-      <br />
+      <br class="show-on-small" />
       7/17（水）12:00〜
     </BaseButton>
 
@@ -179,6 +179,11 @@ export default class TheTicketSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+$content-max-width--is-small-up: 668px;
+$content-max-width--is-medium-up: 820px;
+$ticket-item-content-width--is-small: 28.5vw;
+$ticket-item-content-width--is-small-up: 140px;
+
 .the-ticket-section {
   // background: linear-gradient(to right bottom, $sangosyu, $asagi);
   background: linear-gradient(
@@ -192,11 +197,27 @@ export default class TheTicketSection extends Vue {
   background-color: $primary-text-color--invert;
   padding: 5vw;
   margin-bottom: 8vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    max-width: $content-max-width--is-small-up;
+    padding: 40px;
+    margin: 0 auto 40px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    max-width: $content-max-width--is-medium-up;
+  }
 }
 
 .ticket-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: calc(100% + 40px);
+    margin: -20px;
+  }
 }
 
 .ticket-item {
@@ -206,13 +227,26 @@ export default class TheTicketSection extends Vue {
   margin-bottom: 8vw;
   border: 2px solid $primary-color;
 
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: calc(50% - 40px);
+    margin: 20px;
+  }
+
   &:last-child {
     margin-bottom: 0;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-bottom: 20px;
+    }
   }
 
   .image {
     width: 100%;
-    padding-bottom: 28.5vw;
+    padding-bottom: $ticket-item-content-width--is-small;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      padding-bottom: $ticket-item-content-width--is-small-up;
+    }
 
     img {
       display: block;
@@ -225,8 +259,14 @@ export default class TheTicketSection extends Vue {
     left: 6.5vw;
     bottom: 0;
     width: calc(100% - (6.5vw * 2));
-    height: 28.5vw;
+    height: $ticket-item-content-width--is-small;
     text-align: center;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      left: 25px;
+      width: calc(100% - 50px);
+      height: $ticket-item-content-width--is-small-up;
+    }
   }
 
   h3 {
@@ -236,17 +276,33 @@ export default class TheTicketSection extends Vue {
     font-size: 4vw;
     line-height: 11vw;
     transform: translateY(-50%);
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 18px;
+      line-height: 52px;
+    }
   }
 
   p {
     font-size: 5vw;
-    height: calc(28.5vw - 11vw);
+    height: calc(#{$ticket-item-content-width--is-small} - 11vw);
+    line-height: calc(#{$ticket-item-content-width--is-small} - 11vw);
     transform: translateY(calc((-11vw / 2) / 2));
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 24px;
+      height: calc(#{$ticket-item-content-width--is-small-up} - 52px);
+      line-height: calc(#{$ticket-item-content-width--is-small-up} - 52px);
+      transform: translateY(calc((-52px / 2) / 2));
+    }
 
     span {
       font-size: 10vw;
-      line-height: 180%;
       font-weight: bold; // FIXME: 太さをカンプ通りにしたい
+
+      @media screen and (min-width: $layout-breakpoint--is-small-up) {
+        font-size: 40px;
+      }
     }
   }
 }
@@ -256,12 +312,22 @@ export default class TheTicketSection extends Vue {
   text-align: center;
   font-size: 3.5vw;
   margin: 10vw auto;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 16px;
+    margin: 40px auto 70px;
+  }
 }
 
 .ticket-button {
   width: 100%;
   margin-bottom: 10vw;
   line-height: 1.4;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    line-height: 1.2;
+    margin-bottom: 60px;
+  }
 }
 
 .faq {
@@ -271,19 +337,42 @@ export default class TheTicketSection extends Vue {
     font-size: 5vw;
     font-weight: bold;
     margin-bottom: 3vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
   }
 
   h4 {
     font-size: 3.5vw;
     font-weight: bold;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
   }
 
   p {
     font-size: 3.5vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 18px;
+    }
   }
 
   &-content {
     margin-bottom: 5vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      max-width: $content-max-width--is-small-up;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      max-width: $content-max-width--is-medium-up;
+    }
   }
 
   .link {
