@@ -140,7 +140,8 @@ export default class TheSponsorListSection extends Vue {
     { plan: 'toast', name: 'カンパイ' },
     { plan: 'lunch', name: 'LUNCH' },
     { plan: 'refreshment', name: 'REFRESHMENT' },
-    { plan: 'video', name: 'VIDEO' }
+    { plan: 'video', name: 'VIDEO' },
+    { plan: 'media', name: 'MEDIA' }
   ]
 
   @Prop()
