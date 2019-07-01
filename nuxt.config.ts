@@ -19,6 +19,9 @@ const config: NuxtConfiguration = {
   },
   hooks: hooks(this),
   head: {
+    htmlAttrs: {
+      lang: 'ja'
+    },
     title: defaultTitle,
     meta: [
       { charset: 'utf-8' },
