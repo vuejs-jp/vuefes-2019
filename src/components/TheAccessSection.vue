@@ -82,6 +82,10 @@ export default class TheAccessSection extends Vue {
 #map {
   margin-bottom: 10px;
   height: 439px;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    height: 516px;
+  }
 }
 
 .title {
@@ -89,11 +93,20 @@ export default class TheAccessSection extends Vue {
   font-size: 5vw;
   font-weight: bold;
   line-height: 1.28;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-bottom: 3px;
+    font-size: 30px;
+  }
 }
 
 .description {
   p {
     font-size: 3.5vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 16px;
+    }
   }
 
   a {
