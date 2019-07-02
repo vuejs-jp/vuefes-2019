@@ -1,11 +1,9 @@
 <template>
   <g :transform="transform">
-    <transition-group tag="g" @leave="leave">
-      <polygon v-show="visible" key="1" ref="shape1" :points="keyFrame1[0]" />
-      <polygon v-show="visible" key="2" ref="shape2" :points="keyFrame2[0]" />
-      <polygon v-show="visible" key="3" ref="shape3" :points="keyFrame3[0]" />
-      <polygon v-show="visible" key="4" ref="shape4" :points="keyFrame4[0]" />
-    </transition-group>
+    <polygon key="1" ref="shape1" :points="keyFrame1[0]" />
+    <polygon key="2" ref="shape2" :points="keyFrame2[0]" />
+    <polygon key="3" ref="shape3" :points="keyFrame3[0]" />
+    <polygon key="4" ref="shape4" :points="keyFrame4[0]" />
   </g>
 </template>
 
@@ -33,15 +31,12 @@ export default class HeadCross extends Vue {
     })`
   }
 
-  leave(el, done) {
+  beforeDestroy() {
     TweenMax.to(this.$refs.shape1, partsLeaveTime, {
       attr: {
         points: this.keyFrame1[0]
       },
-      ease: Power2.easeOut,
-      onComplete() {
-        done()
-      }
+      ease: Power2.easeOut
     })
     TweenMax.to(this.$refs.shape2, partsLeaveTime, {
       attr: {

@@ -1,8 +1,6 @@
 <template>
   <g :transform="transform">
-    <transition @leave="leave">
-      <circle v-show="visible" ref="shape" cx="0" cy="0" r="0" />
-    </transition>
+    <circle ref="shape" cx="0" cy="0" r="0" />
   </g>
 </template>
 
@@ -16,8 +14,6 @@ import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 export default class HeadCircle extends Vue {
   @Prop()
   readonly item!: Parts
-  @Prop(Boolean)
-  readonly visible!: boolean
 
   t = 0
   keyFrame = [0, 60]
@@ -26,18 +22,6 @@ export default class HeadCircle extends Vue {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${
       this.item.rotate
     })`
-  }
-
-  leave(el, done) {
-    TweenMax.to(this.$refs.shape, partsLeaveTime, {
-      attr: {
-        r: this.keyFrame[0]
-      },
-      ease: Power2.easeOut,
-      onComplete() {
-        done()
-      }
-    })
   }
 
   created() {
@@ -49,6 +33,15 @@ export default class HeadCircle extends Vue {
         ease: Power2.easeOut
       })
     }, 0)
+  }
+
+  beforeDestroy() {
+    TweenMax.to(this.$refs.shape, partsLeaveTime, {
+      attr: {
+        r: this.keyFrame[0]
+      },
+      ease: Power2.easeOut
+    })
   }
 }
 </script>

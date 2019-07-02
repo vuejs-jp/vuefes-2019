@@ -1,15 +1,12 @@
 <template>
   <g :transform="transform">
-    <transition @leave="leave">
-      <rect
-        v-show="visible"
-        ref="shape"
-        x="0"
-        y="0"
-        width="0"
-        height="0"
-      />
-    </transition>
+    <rect
+      ref="shape"
+      x="0"
+      y="0"
+      width="0"
+      height="0"
+    />
   </g>
 </template>
 
@@ -23,8 +20,6 @@ import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 export default class HeadSquare extends Vue {
   @Prop()
   readonly item!: Parts
-  @Prop(Boolean)
-  readonly visible!: boolean
 
   get transform() {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${
@@ -32,7 +27,7 @@ export default class HeadSquare extends Vue {
     })`
   }
 
-  leave(el, done) {
+  beforeDestroy() {
     TweenMax.to(this.$refs.shape, partsLeaveTime, {
       attr: {
         x: 0,
@@ -40,10 +35,7 @@ export default class HeadSquare extends Vue {
         width: 0,
         height: 0
       },
-      ease: Power2.easeOut,
-      onComplete() {
-        done()
-      }
+      ease: Power2.easeOut
     })
   }
 
