@@ -80,6 +80,33 @@ export default class TheAccessSection extends Vue {
 
 <style lang="scss" scoped>
 #map {
+  margin-bottom: 10px;
   height: 439px;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 5vw;
+  font-weight: bold;
+  line-height: 1.28;
+}
+
+.description {
+  p {
+    font-size: 3.5vw;
+  }
+
+  a {
+    color: $primary-text-color;
+    text-decoration: none;
+  }
+
+  p + p {
+    margin-top: 40px;
+  }
+}
+
+.line {
+  font-weight: bold;
 }
 </style>
