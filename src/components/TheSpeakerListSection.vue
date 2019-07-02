@@ -100,6 +100,17 @@ export default class TheSpeakerListSection extends Vue {
       paragraphs: [
         '14歳から Web デベロッパーです。8年ほど前に Node.js を使い始めてからは、JavaScript だけを書いています。ユニバーサルアプリケーションを簡単に作ることができる Nuxt.js を共同で作っています。'
       ]
+    },
+    {
+      avatar: require('~/assets/images/speakers/alexandre.jpg'),
+      avatar2x: require('~/assets/images/speakers/alexandre@2x.jpg'),
+      title: 'Nuxt.js 共同クリエーター',
+      name: 'Alexandre Chopin',
+      twitter: 'IamNuxt',
+      github: 'alexchopin',
+      paragraphs: [
+        'Web デベロッパーであり、講師であり、スピーカーでもあります。デベロッパーライフに喜びをもたらすため、Nuxt.js の共同クリエーターとしてフルタイムで働いています。'
+      ]
     }
   ]
 }
