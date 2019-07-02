@@ -72,7 +72,7 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheAccessSection extends Vue {
-  private get googleMapsApiKey(): string {
+  private get googleMapsApiKey(): string | undefined {
     return process.env.GOOGLE_MAPS_API_KEY
   }
 }
