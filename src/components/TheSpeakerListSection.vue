@@ -102,8 +102,8 @@ export default class TheSpeakerListSection extends Vue {
       ]
     },
     {
-      avatar: require('~/assets/images/speakers/alexandre.jpg'),
-      avatar2x: require('~/assets/images/speakers/alexandre@2x.jpg'),
+      avatar: require('~/assets/images/speakers/alexandre.png'),
+      avatar2x: require('~/assets/images/speakers/alexandre@2x.png'),
       title: 'Nuxt.js 共同クリエーター',
       name: 'Alexandre Chopin',
       twitter: 'IamNuxt',
