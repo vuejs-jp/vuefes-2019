@@ -4,32 +4,17 @@
       ACCESS
     </template>
 
-    <div id="map" />
-
-    <!-- eslint-disable vue/html-indent -->
-    <script>
-    function initMap() {
-      const latlng = new google.maps.LatLng(35.6230000, 139.717600)
-      const map = new google.maps.Map(document.getElementById('map'), {
-        center: latlng,
-        zoom: 16
-      })
-      const infowindow = new google.maps.InfoWindow({
-        content: 'TOC五反田メッセ',
-        position: latlng
-      })
-      infowindow.open(map)
-    }
-    </script>
-    <!-- eslint-enable vue/html-indent -->
-
-    <script
-      :src="
-        `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`
-      "
-      async
-      defer
-    />
+    <GmapMap
+      id="map"
+      :center="latLng"
+      :zoom="16"
+    >
+      <GmapMarker
+        :position="latLng"
+        :clickable="true"
+        :draggable="true"
+      />
+    </GmapMap>
 
     <h2 class="title">
       会場：TOC五反田メッセ
@@ -72,9 +57,7 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheAccessSection extends Vue {
-  private get googleMapsApiKey(): string | undefined {
-    return process.env.GOOGLE_MAPS_API_KEY
-  }
+  private latLng = { lat: 35.623, lng: 139.7176 }
 }
 </script>
 
