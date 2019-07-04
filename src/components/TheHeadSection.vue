@@ -77,13 +77,6 @@ import HeadCross from '~/components/HeadCross.vue'
 import HeadPhoto from '~/components/HeadPhoto.vue'
 import LinkToTwitter from '~/components/LinkToTwitter.vue'
 
-const Image01 = require('~/assets/images/header/image01.png')
-const Image02 = require('~/assets/images/header/image02.png')
-const Image03 = require('~/assets/images/header/image03.png')
-const Image04 = require('~/assets/images/header/image04.png')
-const Image05 = require('~/assets/images/header/image05.png')
-const Image06 = require('~/assets/images/header/image06.png')
-
 type PartsType =
   | 'head-circle'
   | 'head-horizontal'
@@ -269,8 +262,6 @@ export default class TheHeadSection extends Vue {
     }
   }
 
-  loadedImages = 0
-
   leave(el, done) {
     setTimeout(() => {
       done()
@@ -286,25 +277,8 @@ export default class TheHeadSection extends Vue {
   mounted() {
     this.windowMode = getWindowMode()
     this.adjustSvg(this.windowMode)
-    const self = this
-
-    function preload(Image01) {
-      const img = new Image()
-      img.src = Image01
-      img.onload = () => {
-        self.loadedImages++
-      }
-    }
-
-    preload(Image01)
-    preload(Image02)
-    preload(Image03)
-    preload(Image04)
-    preload(Image05)
-    preload(Image06)
-
     setInterval(() => {
-      if (this.loadedImages >= 6 && this.t < this.tMax) {
+      if (this.t < this.tMax) {
         this.t++
       }
     }, 90)
