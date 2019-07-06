@@ -92,7 +92,6 @@ export default class TheAccessSection extends Vue {
 
   a {
     color: $primary-text-color;
-    text-decoration: none;
   }
 
   p + p {
