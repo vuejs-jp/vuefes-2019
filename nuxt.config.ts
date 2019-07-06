@@ -81,7 +81,6 @@ const config: NuxtConfiguration = {
   loading: { color: '#fff' },
   css: ['~/assets/stylesheets/main.scss'],
   plugins: [
-    { src: '~/plugins/google-maps' },
     { src: '~/plugins/typekit', ssr: false },
     { src: '~/plugins/vee-validate' },
     { src: '~/plugins/vue-lazyload', ssr: false }
@@ -131,8 +130,7 @@ const config: NuxtConfiguration = {
           })
         )
       }
-    },
-    transpile: [/^vue2-google-maps($|\/)/]
+    }
   },
   generate: {
     dir: 'dist/2019'
