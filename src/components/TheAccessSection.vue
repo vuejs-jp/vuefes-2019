@@ -9,11 +9,9 @@
       :center="latLng"
       :zoom="16"
     >
-      <GmapMarker
-        :position="latLng"
-        :clickable="true"
-        :draggable="true"
-      />
+      <GmapInfoWindow :position="latLng">
+        TOC五反田メッセ
+      </GmapInfoWindow>
     </GmapMap>
 
     <h2 class="title">
