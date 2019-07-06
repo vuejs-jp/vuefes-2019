@@ -15,7 +15,6 @@ describe('HomePage', () => {
       stubs: {
         NuxtLink: RouterLinkStub,
         Fa: FontAwesomeIcon,
-        GmapMap: '<div />',
         'no-ssr': '<div></div>'
       }
     })

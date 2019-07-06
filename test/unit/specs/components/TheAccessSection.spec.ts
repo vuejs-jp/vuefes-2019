@@ -3,11 +3,7 @@ import TheAccessSection from '~/components/TheAccessSection.vue'
 
 describe('TheAccessSection', () => {
   test('レンダリングできる', () => {
-    const wrapper = mount(TheAccessSection, {
-      stubs: {
-        GmapMap: '<div />'
-      }
-    })
+    const wrapper = mount(TheAccessSection)
     expect(wrapper.find('.the-access-section').isVisible()).toBeTruthy()
   })
 })
