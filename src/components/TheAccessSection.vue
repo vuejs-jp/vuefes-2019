@@ -14,9 +14,9 @@
       </GmapInfoWindow>
     </GmapMap>
 
-    <h2 class="title">
+    <h3 class="title">
       会場：TOC五反田メッセ
-    </h2>
+    </h3>
 
     <div class="description">
       <p>
