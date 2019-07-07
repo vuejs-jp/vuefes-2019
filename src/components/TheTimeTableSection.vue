@@ -17,3 +17,9 @@ import BaseSection from '~/components/BaseSection.vue'
 })
 export default class TheTimeTableSection extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+.the-time-table-section {
+  background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
+}
+</style>

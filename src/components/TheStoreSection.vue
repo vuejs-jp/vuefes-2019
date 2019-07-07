@@ -54,10 +54,6 @@ export default class TheStoreSection extends Vue {
 $content-max-width--is-small-up: 668px;
 $content-max-width--is-medium-up: 820px;
 
-.the-store-section {
-  background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
-}
-
 .notification {
   padding: 6.7%;
   background-color: $white;
