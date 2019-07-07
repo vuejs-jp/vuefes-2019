@@ -95,6 +95,66 @@
         </div>
       </div>
     </div>
+
+    <div class="event">
+      <div class="time">
+        14:30 - 15:10
+      </div>
+
+      <div class="container">
+        <div class="session-container">
+          <div class="room room--plaid">
+            PLAID ルーム
+          </div>
+
+          <div class="session-content">
+            ランチセッション ランチセッション ランチセッション ランチセッション ランチセッション
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="session-container">
+          <div class="room room--yumemi">
+            YUMEMI ルーム
+          </div>
+
+          <div class="session-content">
+            ランチセッション
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="session-container">
+          <div class="room room--yesod">
+            YESOD ルーム
+          </div>
+
+          <div class="session-content">
+            <div class="half-session">
+              <div class="half-session__time">
+                13:30 - 13:50
+              </div>
+
+              <div class="half-session__content">
+                ハーフセッション
+              </div>
+            </div>
+
+            <div class="half-session">
+              <div class="half-session__time">
+                13:50 - 14:10
+              </div>
+
+              <div class="half-session__content">
+                ハーフセッション
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </BaseSection>
 </template>
 
@@ -195,5 +255,29 @@ $room-width: 24vw;
   margin-left: 4vw;
   text-align: left;
   width: calc(100% - #{$room-width} - 4vw);
+}
+
+.half-session {
+  display: flex;
+  align-items: center;
+
+  &:first-of-type {
+    padding-bottom: 3vw;
+  }
+
+  &:last-of-type {
+    padding-top: 3vw;
+    border-top: 1px solid rgba(52, 73, 94, 0.25);
+  }
+
+  &__time {
+    font-size: 2vw;
+    color: rgba(52, 73, 94, 0.6);
+  }
+
+  &__content {
+    margin-left: 3vw;
+    font-size: 3.6vw;
+  }
 }
 </style>
