@@ -53,6 +53,48 @@
         </div>
       </div>
     </div>
+
+    <div class="event">
+      <div class="time">
+        12:00 - 12:30
+      </div>
+
+      <div class="container">
+        <div class="session-container">
+          <div class="room room--plaid">
+            PLAID ルーム
+          </div>
+
+          <div class="session-content">
+            ランチセッション ランチセッション ランチセッション ランチセッション ランチセッション
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="session-container">
+          <div class="room room--yumemi">
+            YUMEMI ルーム
+          </div>
+
+          <div class="session-content">
+            ランチセッション
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="session-container">
+          <div class="room room--yesod">
+            YESOD ルーム
+          </div>
+
+          <div class="session-content">
+            ランチセッション
+          </div>
+        </div>
+      </div>
+    </div>
   </BaseSection>
 </template>
 
@@ -72,6 +114,8 @@ export default class TheTimeTableSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+$room-width: 24vw;
+
 .the-time-table-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
 }
@@ -119,5 +163,37 @@ export default class TheTimeTableSection extends Vue {
 
 .speaker-name {
   font-size: 5.6vw;
+}
+
+.session-container {
+  display: flex;
+  align-items: center;
+}
+
+.room {
+  padding: 1vw;
+  width: $room-width;
+  min-width: 80px;
+  font-size: 3vw;
+  white-space: nowrap;
+  color: $primary-text-color--invert;
+
+  &--plaid {
+    background-color: $sangosyu;
+  }
+
+  &--yumemi {
+    background-color: $tohoh;
+  }
+
+  &--yesod {
+    background-color: $asagi;
+  }
+}
+
+.session-content {
+  margin-left: 4vw;
+  text-align: left;
+  width: calc(100% - #{$room-width} - 4vw);
 }
 </style>
