@@ -174,10 +174,16 @@ export default class TheTimeTableSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$session__room-width--is-small: 32vw;
-$session__room-width--is-small-up: 152px;
-$session__room-width--is-medium-up: 128px;
-$event__time-width--is-medium-up: 140px;
+$event__content-font-size--is-small: 2.4vw;
+$event__content-font-size--is-small-up: 20px;
+
+$half-session-padding-from-border--is-small: 1.6vw;
+$half-session-padding-from-border--is-small-up: 12px;
+$half-session-padding-from-border--is-medium-up: 10px;
+
+$half-session__content-font-size--is-small: $event__content-font-size--is-small;
+$half-session__content-font-size--is-small-up: 18px;
+$half-session__content-font-size--is-medium-up: 14px;
 
 .the-time-table-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
@@ -191,7 +197,7 @@ $event__time-width--is-medium-up: 140px;
   }
 
   & + & {
-    margin-top: 4vw;
+    margin-top: 3vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-top: 20px;
@@ -214,7 +220,7 @@ $event__time-width--is-medium-up: 140px;
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
       font-size: 20px;
-      flex: 0 0 $event__time-width--is-medium-up;
+      flex: 0 0 140px;
     }
   }
 
@@ -234,13 +240,13 @@ $event__time-width--is-medium-up: 140px;
     padding: 2.8vw 4vw;
     min-height: 10.8vw;
     background-color: rgba(255, 255, 255, 0.85);
-    font-size: 2.8vw;
+    font-size: $event__content-font-size--is-small;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-top: 5px;
       padding: 20px 36px;
       min-height: 80px;
-      font-size: 20px;
+      font-size: $event__content-font-size--is-small-up;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
@@ -274,14 +280,10 @@ $event__time-width--is-medium-up: 140px;
   }
 
   &__title {
-    font-size: 2.8vw;
+    font-size: $event__content-font-size--is-small;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: 20px;
-    }
-
-    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      font-size: 18px;
+      font-size: $event__content-font-size--is-small-up;
     }
   }
 
@@ -306,20 +308,22 @@ $event__time-width--is-medium-up: 140px;
   }
 
   &__room {
-    width: $session__room-width--is-small;
+    flex: 0 0 20vw;
+    min-width: 76px;
     padding: 1vw;
     font-size: 2.2vw;
     white-space: nowrap;
     color: $primary-text-color--invert;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      width: $session__room-width--is-small-up;
+      flex: 0 0 154px;
       padding: 4px;
       font-size: 16px;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      width: $session__room-width--is-medium-up;
+      flex: 0;
+      width: 128px;
     }
 
     &--plaid {
@@ -338,19 +342,22 @@ $event__time-width--is-medium-up: 140px;
   &__content {
     margin-left: 4vw;
     text-align: left;
-    width: calc(100% - #{$session__room-width--is-small} - 4vw);
+    flex: 1;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-left: 32px;
-      width: calc(100% - #{$session__room-width--is-small-up} - 32px);
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      flex: 0;
       display: flex;
       justify-content: center;
       margin-top: 16px;
       margin-left: 0;
-      width: 100%;
+
+      // TODO: これがあるか否かでハーフセッション間の border の長さが異なる。必要かどうか確認する
+      // width: 100%;
+
       font-size: 18px;
 
       &.half-session__container {
@@ -363,25 +370,39 @@ $event__time-width--is-medium-up: 140px;
 .half-session {
   display: flex;
   align-items: center;
+  padding-left: 1vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    padding-left: 12px;
+  }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     justify-content: center;
+    padding-left: 0;
   }
 
   &:first-of-type {
-    padding-bottom: 3vw;
+    padding-bottom: $half-session-padding-from-border--is-small;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      padding-bottom: 10px;
+      padding-bottom: $half-session-padding-from-border--is-small-up;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      padding-bottom: $half-session-padding-from-border--is-medium-up;
     }
   }
 
   &:last-of-type {
-    padding-top: 3vw;
+    padding-top: $half-session-padding-from-border--is-small;
     border-top: 1px solid rgba(52, 73, 94, 0.25);
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      padding-top: 10px;
+      padding-top: $half-session-padding-from-border--is-small-up;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      padding-top: $half-session-padding-from-border--is-medium-up;
     }
   }
 
@@ -401,16 +422,16 @@ $event__time-width--is-medium-up: 140px;
 
   &__content {
     margin-left: 3vw;
-    font-size: 2.8vw;
+    font-size: $half-session__content-font-size--is-small;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-left: 20px;
-      font-size: 18px;
+      font-size: $half-session__content-font-size--is-small-up;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
       margin-left: 12px;
-      font-size: 14px;
+      font-size: $half-session__content-font-size--is-medium-up;
     }
   }
 }
