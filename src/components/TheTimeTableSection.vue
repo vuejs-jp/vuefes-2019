@@ -5,31 +5,31 @@
     </template>
 
     <div class="event">
-      <div class="time">
+      <div class="event__time">
         9:00 - 10:00
       </div>
 
-      <div class="container">
+      <div class="event__body">
         開場・受付
       </div>
     </div>
 
     <div class="event">
-      <div class="time">
+      <div class="event__time">
         10:00 - 10:10
       </div>
 
-      <div class="container">
+      <div class="event__body">
         オープニング
       </div>
     </div>
 
     <div class="event">
-      <div class="time">
+      <div class="event__time">
         10:10 - 11:10
       </div>
 
-      <div class="container">
+      <div class="event__body">
         <div
           v-lazy-container="{ selector: 'img.keynote__avatar' }"
           class="keynote"
@@ -55,101 +55,89 @@
     </div>
 
     <div class="event">
-      <div class="time">
+      <div class="event__time">
         12:00 - 12:30
       </div>
 
-      <div class="container">
-        <div class="session-container">
-          <div class="room room--plaid">
-            PLAID ルーム
-          </div>
+      <div class="event__body session">
+        <div class="session__room session__room--plaid">
+          PLAID ルーム
+        </div>
 
-          <div class="session-content">
-            ランチセッション ランチセッション ランチセッション ランチセッション ランチセッション
-          </div>
+        <div class="session__content">
+          ランチセッション ランチセッション ランチセッション ランチセッション ランチセッション
         </div>
       </div>
 
-      <div class="container">
-        <div class="session-container">
-          <div class="room room--yumemi">
-            YUMEMI ルーム
-          </div>
+      <div class="event__body session">
+        <div class="session__room session__room--yumemi">
+          YUMEMI ルーム
+        </div>
 
-          <div class="session-content">
-            ランチセッション
-          </div>
+        <div class="session__content">
+          ランチセッション
         </div>
       </div>
 
-      <div class="container">
-        <div class="session-container">
-          <div class="room room--yesod">
-            YESOD ルーム
-          </div>
+      <div class="event__body session">
+        <div class="session__room session__room--yesod">
+          YESOD ルーム
+        </div>
 
-          <div class="session-content">
-            ランチセッション
-          </div>
+        <div class="session__content">
+          ランチセッション
         </div>
       </div>
     </div>
 
     <div class="event">
-      <div class="time">
+      <div class="event__time">
         14:30 - 15:10
       </div>
 
-      <div class="container">
-        <div class="session-container">
-          <div class="room room--plaid">
-            PLAID ルーム
-          </div>
+      <div class="event__body session">
+        <div class="session__room session__room--plaid">
+          PLAID ルーム
+        </div>
 
-          <div class="session-content">
-            ランチセッション ランチセッション ランチセッション ランチセッション ランチセッション
-          </div>
+        <div class="session__content">
+          ランチセッション ランチセッション ランチセッション ランチセッション ランチセッション
         </div>
       </div>
 
-      <div class="container">
-        <div class="session-container">
-          <div class="room room--yumemi">
-            YUMEMI ルーム
-          </div>
+      <div class="event__body session">
+        <div class="session__room session__room--yumemi">
+          YUMEMI ルーム
+        </div>
 
-          <div class="session-content">
-            ランチセッション
-          </div>
+        <div class="session__content">
+          ランチセッション
         </div>
       </div>
 
-      <div class="container">
-        <div class="session-container">
-          <div class="room room--yesod">
-            YESOD ルーム
-          </div>
+      <div class="event__body session">
+        <div class="session__room session__room--yesod">
+          YESOD ルーム
+        </div>
 
-          <div class="session-content">
-            <div class="half-session">
-              <div class="half-session__time">
-                13:30 - 13:50
-              </div>
-
-              <div class="half-session__content">
-                ハーフセッション
-              </div>
+        <div class="session__content">
+          <div class="half-session">
+            <div class="half-session__time">
+              13:30 - 13:50
             </div>
 
-            <div class="half-session">
-              <div class="half-session__time">
-                13:50 - 14:10
-              </div>
+            <div class="half-session__content">
+              ハーフセッション
+            </div>
+          </div>
 
-              <div class="half-session__content">
-                ハーフセッション
-              </div>
+          <div class="half-session">
+            <div class="half-session__time">
+              13:50 - 14:10
+            </div>
+
+            <div class="half-session__content">
+              ハーフセッション
             </div>
           </div>
         </div>
@@ -168,13 +156,13 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheTimeTableSection extends Vue {
-  private avatar = require('~/assets/images/speakers/evan.jpg')
-  private avatar2x = require('~/assets/images/speakers/evan@2x.jpg')
+  private keynoteAvatar = require('~/assets/images/speakers/evan.jpg')
+  private keynoteAvatar2x = require('~/assets/images/speakers/evan@2x.jpg')
 }
 </script>
 
 <style lang="scss" scoped>
-$room-width: 32vw;
+$session__room-width: 32vw;
 
 .the-time-table-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
@@ -186,20 +174,20 @@ $room-width: 32vw;
   & + & {
     margin-top: 4vw;
   }
-}
 
-.time {
-  padding: 1vw;
-  background-color: $primary-color;
-  font-size: 3vw;
-  color: $primary-text-color--invert;
-}
+  &__time {
+    padding: 1vw;
+    background-color: $primary-color;
+    font-size: 3vw;
+    color: $primary-text-color--invert;
+  }
 
-.container {
-  margin-top: 1vw;
-  padding: 5vw;
-  background-color: rgba(255, 255, 255, 0.85);
-  font-size: 2.8vw;
+  &__body {
+    margin-top: 1vw;
+    padding: 5vw;
+    background-color: rgba(255, 255, 255, 0.85);
+    font-size: 2.8vw;
+  }
 }
 
 .keynote {
@@ -225,35 +213,35 @@ $room-width: 32vw;
   }
 }
 
-.session-container {
+.session {
   display: flex;
   align-items: center;
-}
 
-.room {
-  padding: 1vw;
-  width: $room-width;
-  font-size: 2.2vw;
-  white-space: nowrap;
-  color: $primary-text-color--invert;
+  &__room {
+    padding: 1vw;
+    width: $session__room-width;
+    font-size: 2.2vw;
+    white-space: nowrap;
+    color: $primary-text-color--invert;
 
-  &--plaid {
-    background-color: $sangosyu;
+    &--plaid {
+      background-color: $sangosyu;
+    }
+
+    &--yumemi {
+      background-color: $tohoh;
+    }
+
+    &--yesod {
+      background-color: $asagi;
+    }
   }
 
-  &--yumemi {
-    background-color: $tohoh;
+  &__content {
+    margin-left: 4vw;
+    text-align: left;
+    width: calc(100vw - #{$session__room-width} - 4vw);
   }
-
-  &--yesod {
-    background-color: $asagi;
-  }
-}
-
-.session-content {
-  margin-left: 4vw;
-  text-align: left;
-  width: calc(100vw - #{$room-width} - 4vw);
 }
 
 .half-session {
