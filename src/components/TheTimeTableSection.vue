@@ -141,6 +141,10 @@
         </div>
       </div>
     </div>
+
+    <div class="note">
+      ※タイムテーブルは変更の可能性があります。
+    </div>
   </BaseSection>
 </template>
 
@@ -327,6 +331,18 @@ $session__room-width--is-small-up: 152px;
       margin-left: 20px;
       font-size: 18px;
     }
+  }
+}
+
+.note {
+  margin-top: 5vw;
+  font-size: 3.5vw;
+  color: $primary-text-color--invert;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
   }
 }
 </style>
