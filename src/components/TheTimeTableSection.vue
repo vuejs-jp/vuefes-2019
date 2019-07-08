@@ -127,7 +127,7 @@
             YESOD ルーム
           </div>
 
-          <div class="session__content">
+          <div class="session__content half-session__container">
             <div class="half-session">
               <div class="half-session__time">
                 13:30 - 13:50
@@ -346,11 +346,16 @@ $event__time-width--is-medium-up: 140px;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      display: flex;
+      justify-content: center;
       margin-top: 16px;
       margin-left: 0;
       width: 100%;
       font-size: 18px;
-      text-align: center;
+
+      &.half-session__container {
+        display: block;
+      }
     }
   }
 }
@@ -358,6 +363,10 @@ $event__time-width--is-medium-up: 140px;
 .half-session {
   display: flex;
   align-items: center;
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    justify-content: center;
+  }
 
   &:first-of-type {
     padding-bottom: 3vw;
