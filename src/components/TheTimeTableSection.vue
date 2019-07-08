@@ -160,7 +160,8 @@ export default class TheTimeTableSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$session__room-width: 32vw;
+$session__room-width--is-small: 32vw;
+$session__room-width--is-small-up: 152px;
 
 .the-time-table-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
@@ -171,6 +172,10 @@ $session__room-width: 32vw;
 
   & + & {
     margin-top: 4vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 20px;
+    }
   }
 
   &__time {
@@ -178,6 +183,10 @@ $session__room-width: 32vw;
     background-color: $primary-color;
     font-size: 3vw;
     color: $primary-text-color--invert;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 24px;
+    }
   }
 
   &__body {
@@ -189,37 +198,70 @@ $session__room-width: 32vw;
     min-height: 10.8vw;
     background-color: rgba(255, 255, 255, 0.85);
     font-size: 2.8vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 5px;
+      padding: 20px 36px;
+      min-height: 80px;
+      font-size: 20px;
+    }
   }
 }
 
 .keynote {
   &__avatar {
     width: 16vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      width: 120px;
+    }
   }
 
   &__content {
     margin-left: 3vw;
     text-align: left;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-left: 16px;
+    }
   }
 
   &__title {
     font-size: 2.8vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 20px;
+    }
   }
 
   &__speaker-name {
     font-size: 4.2vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 32px;
+    }
   }
 }
 
 .session {
   min-height: 16vw;
 
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    min-height: 120px;
+  }
+
   &__room {
+    width: $session__room-width--is-small;
     padding: 1vw;
-    width: $session__room-width;
     font-size: 2.2vw;
     white-space: nowrap;
     color: $primary-text-color--invert;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      width: $session__room-width--is-small-up;
+      padding: 4px;
+      font-size: 16px;
+    }
 
     &--plaid {
       background-color: $sangosyu;
@@ -237,7 +279,12 @@ $session__room-width: 32vw;
   &__content {
     margin-left: 4vw;
     text-align: left;
-    width: calc(100vw - #{$session__room-width} - 4vw);
+    width: calc(100% - #{$session__room-width--is-small} - 4vw);
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-left: 32px;
+      width: calc(100% - #{$session__room-width--is-small-up} - 32px);
+    }
   }
 }
 
@@ -247,22 +294,39 @@ $session__room-width: 32vw;
 
   &:first-of-type {
     padding-bottom: 3vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      padding-bottom: 10px;
+    }
   }
 
   &:last-of-type {
     padding-top: 3vw;
     border-top: 1px solid rgba(52, 73, 94, 0.25);
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      padding-top: 10px;
+    }
   }
 
   &__time {
     font-size: 2vw;
     white-space: nowrap;
     color: rgba(52, 73, 94, 0.6);
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 14px;
+    }
   }
 
   &__content {
     margin-left: 3vw;
     font-size: 2.8vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-left: 20px;
+      font-size: 18px;
+    }
   }
 }
 </style>
