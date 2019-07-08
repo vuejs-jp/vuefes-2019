@@ -1,8 +1,6 @@
 <template>
   <g :transform="transform">
-    <transition @leave="leave">
-      <polygon v-show="visible" ref="shape" :points="keyFrame[0]" />
-    </transition>
+    <polygon ref="shape" :points="keyFrame[0]" />
   </g>
 </template>
 
@@ -16,8 +14,6 @@ import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 export default class HeadTriangle extends Vue {
   @Prop()
   readonly item!: Parts
-  @Prop(Boolean)
-  readonly visible!: boolean
   keyFrame = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
   get transform() {
@@ -26,15 +22,12 @@ export default class HeadTriangle extends Vue {
     })`
   }
 
-  leave(el, done) {
+  beforeDestroy() {
     TweenMax.to(this.$refs.shape, partsLeaveTime, {
       attr: {
         points: this.keyFrame[0]
       },
-      ease: Power2.easeOut,
-      onComplete() {
-        done()
-      }
+      ease: Power2.easeOut
     })
   }
 

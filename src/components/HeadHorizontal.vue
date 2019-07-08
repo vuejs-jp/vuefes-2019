@@ -1,25 +1,21 @@
 <template>
   <g :transform="transform">
-    <transition-group tag="g" @leave="leave">
-      <rect
-        v-show="visible"
-        key="1"
-        ref="shape1"
-        x="-60"
-        y="-60"
-        width="120"
-        height="0"
-      />
-      <rect
-        v-show="visible"
-        key="2"
-        ref="shape2"
-        x="-60"
-        y="60"
-        width="120"
-        height="0"
-      />
-    </transition-group>
+    <rect
+      key="1"
+      ref="shape1"
+      x="-60"
+      y="-60"
+      width="120"
+      height="0"
+    />
+    <rect
+      key="2"
+      ref="shape2"
+      x="-60"
+      y="60"
+      width="120"
+      height="0"
+    />
   </g>
 </template>
 
@@ -33,8 +29,6 @@ import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 export default class HeadHorizontal extends Vue {
   @Prop()
   readonly item!: Parts
-  @Prop(Boolean)
-  readonly visible!: boolean
 
   get transform() {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${
@@ -42,16 +36,13 @@ export default class HeadHorizontal extends Vue {
     })`
   }
 
-  leave(el, done) {
+  beforeDestroy() {
     TweenMax.to(this.$refs.shape1, partsLeaveTime, {
       attr: {
         y: -60,
         height: 0
       },
-      ease: Power2.easeOut,
-      onComplete() {
-        done()
-      }
+      ease: Power2.easeOut
     })
     TweenMax.to(this.$refs.shape2, partsLeaveTime, {
       attr: {
