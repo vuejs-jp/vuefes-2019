@@ -29,26 +29,24 @@
         10:10 - 11:10
       </div>
 
-      <div class="event__body">
-        <div
-          v-lazy-container="{ selector: 'img.keynote__avatar' }"
-          class="keynote"
-        >
-          <img
-            class="keynote__avatar"
-            :data-srcset="`${keynoteAvatar}, ${keynoteAvatar2x} 2x`"
-            :data-src="keynoteAvatar2x"
-            alt=""
-          />
+      <div
+        v-lazy-container="{ selector: 'img.keynote__avatar' }"
+        class="event__body keynote"
+      >
+        <img
+          class="keynote__avatar"
+          :data-srcset="`${keynoteAvatar}, ${keynoteAvatar2x} 2x`"
+          :data-src="keynoteAvatar2x"
+          alt=""
+        />
 
-          <div class="keynote__content">
-            <div class="keynote__title">
-              キーノート
-            </div>
+        <div class="keynote__content">
+          <div class="keynote__title">
+            キーノート
+          </div>
 
-            <div class="keynote__speaker-name">
-              Evan You
-            </div>
+          <div class="keynote__speaker-name">
+            Evan You
           </div>
         </div>
       </div>
@@ -183,18 +181,18 @@ $session__room-width: 32vw;
   }
 
   &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 1vw;
-    padding: 5vw;
+    padding: 2.8vw 4vw;
+    min-height: 10.8vw;
     background-color: rgba(255, 255, 255, 0.85);
     font-size: 2.8vw;
   }
 }
 
 .keynote {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   &__avatar {
     width: 16vw;
   }
@@ -214,8 +212,7 @@ $session__room-width: 32vw;
 }
 
 .session {
-  display: flex;
-  align-items: center;
+  min-height: 16vw;
 
   &__room {
     padding: 1vw;
