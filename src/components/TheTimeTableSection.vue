@@ -174,7 +174,7 @@ export default class TheTimeTableSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$room-width: 24vw;
+$room-width: 32vw;
 
 .the-time-table-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
@@ -191,7 +191,7 @@ $room-width: 24vw;
 .time {
   padding: 1vw;
   background-color: $primary-color;
-  font-size: 5vw;
+  font-size: 3vw;
   color: $primary-text-color--invert;
 }
 
@@ -199,7 +199,7 @@ $room-width: 24vw;
   margin-top: 1vw;
   padding: 5vw;
   background-color: rgba(255, 255, 255, 0.85);
-  font-size: 4vw;
+  font-size: 2.8vw;
 }
 
 .keynote {
@@ -218,11 +218,11 @@ $room-width: 24vw;
 }
 
 .title {
-  font-size: 4vw;
+  font-size: 2.8vw;
 }
 
 .speaker-name {
-  font-size: 5.6vw;
+  font-size: 4.2vw;
 }
 
 .session-container {
@@ -233,8 +233,7 @@ $room-width: 24vw;
 .room {
   padding: 1vw;
   width: $room-width;
-  min-width: 80px;
-  font-size: 3vw;
+  font-size: 2.2vw;
   white-space: nowrap;
   color: $primary-text-color--invert;
 
@@ -254,7 +253,7 @@ $room-width: 24vw;
 .session-content {
   margin-left: 4vw;
   text-align: left;
-  width: calc(100% - #{$room-width} - 4vw);
+  width: calc(100vw - #{$room-width} - 4vw);
 }
 
 .half-session {
@@ -272,12 +271,13 @@ $room-width: 24vw;
 
   &__time {
     font-size: 2vw;
+    white-space: nowrap;
     color: rgba(52, 73, 94, 0.6);
   }
 
   &__content {
     margin-left: 3vw;
-    font-size: 3.6vw;
+    font-size: 2.8vw;
   }
 }
 </style>
