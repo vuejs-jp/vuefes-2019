@@ -4,11 +4,11 @@
       <no-ssr>
         <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
           <g transform="translate(-6, -6)">
-            <g v-for="(row, i) in items" :key="i">
-              <g v-for="(col, j) in row" :key="j.key">
-                <component :is="col.type" :item="col" :visible="visible" />
+            <transition-group tag="g" mode="out-in" @enter="enter" @leave="leave">
+              <g v-for="(item) in itemsFlatten" :key="item.key">
+                <component :is="item.type" :item="item" />
               </g>
-            </g>
+            </transition-group>
           </g>
         </svg>
       </no-ssr>
@@ -77,13 +77,6 @@ import HeadCross from '~/components/HeadCross.vue'
 import HeadPhoto from '~/components/HeadPhoto.vue'
 import LinkToTwitter from '~/components/LinkToTwitter.vue'
 
-const Image01 = require('~/assets/images/header/image01.png')
-const Image02 = require('~/assets/images/header/image02.png')
-const Image03 = require('~/assets/images/header/image03.png')
-const Image04 = require('~/assets/images/header/image04.png')
-const Image05 = require('~/assets/images/header/image05.png')
-const Image06 = require('~/assets/images/header/image06.png')
-
 type PartsType =
   | 'head-circle'
   | 'head-horizontal'
@@ -141,6 +134,13 @@ export default class TheHeadSection extends Vue {
   get viewBox() {
     return `0 0 ${this.width} ${this.height}`
   }
+  get itemsFlatten(): Parts[] {
+    if (!this.visible) {
+      return []
+    }
+    return Array.prototype.concat.apply([], this.items)
+  }
+
   get items(): Parts[][] {
     return this.pattern[this.patternIndex].map((line, row) =>
       Array.from(line)
@@ -238,7 +238,7 @@ export default class TheHeadSection extends Vue {
     ['o⧄⧅3⧄⧅o⧄6', '-⮽1⧅⧄4⧄|⧄', '⧄◣o⧄2⧅⧄◥⮽'],
     ['3⧄4⧅⧄⧅⮽5o', 'o⮽⧄◤2⧄6◥|', '⧅◢⧅1⧅⧅⧄-⧄']
   ]
-  patternIndex = 6
+  patternIndex = 0
   t = 0
   tMax = 0
   visible = true
@@ -262,37 +262,30 @@ export default class TheHeadSection extends Vue {
     }
   }
 
-  loadedImages = 0
+  leave(el, done) {
+    setTimeout(() => {
+      done()
+    }, partsLeaveTime * 1000)
+  }
+
+  enter(el, done) {
+    setTimeout(() => {
+      done()
+    }, partsCreateTime * 1000)
+  }
 
   mounted() {
     this.windowMode = getWindowMode()
     this.adjustSvg(this.windowMode)
-    const self = this
-
-    function preload(Image01) {
-      const img = new Image()
-      img.src = Image01
-      img.onload = () => {
-        self.loadedImages++
-      }
-    }
-
-    preload(Image01)
-    preload(Image02)
-    preload(Image03)
-    preload(Image04)
-    preload(Image05)
-    preload(Image06)
-
     setInterval(() => {
-      if (this.loadedImages >= 6 && this.t < this.tMax) {
+      if (this.t < this.tMax) {
         this.t++
       }
     }, 90)
 
-    // setInterval(() => {
-    //   this.patternIndex = (this.patternIndex + 1) % this.pattern.length
-    // }, 2000)
+    setInterval(() => {
+      this.patternIndex = (this.patternIndex + 1) % this.pattern.length
+    }, 2000)
 
     window.addEventListener('resize', () => {
       if (timer > 0) {

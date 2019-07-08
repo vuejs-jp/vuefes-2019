@@ -1,9 +1,7 @@
 <template>
   <g :transform="transform">
-    <transition-group tag="g" @leave="leave">
-      <polygon v-show="visible" key="0" ref="shape1" :points="keyFrame1[0]" />
-      <polygon v-show="visible" key="1" ref="shape2" :points="keyFrame2[0]" />
-    </transition-group>
+    <polygon key="0" ref="shape1" :points="keyFrame1[0]" />
+    <polygon key="1" ref="shape2" :points="keyFrame2[0]" />
   </g>
 </template>
 
@@ -17,8 +15,6 @@ import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 export default class HeadSlash extends Vue {
   @Prop()
   readonly item!: Parts
-  @Prop(Boolean)
-  readonly visible!: boolean
   keyFrame1 = ['-60 -60 -60 -60 -60 -60', '-60 -60 52 -60 -60 52']
   keyFrame2 = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
@@ -28,15 +24,12 @@ export default class HeadSlash extends Vue {
     })`
   }
 
-  leave(el, done) {
+  beforeDestroy() {
     TweenMax.to(this.$refs.shape1, partsLeaveTime, {
       attr: {
         points: this.keyFrame1[0]
       },
-      ease: Power2.easeOut,
-      onComplete() {
-        done()
-      }
+      ease: Power2.easeOut
     })
     TweenMax.to(this.$refs.shape2, partsLeaveTime, {
       attr: {
