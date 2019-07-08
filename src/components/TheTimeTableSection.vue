@@ -174,7 +174,7 @@ export default class TheTimeTableSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$event__content-font-size--is-small: 2.4vw;
+$event__content-font-size--is-small: 3.5vw;
 $event__content-font-size--is-small-up: 20px;
 
 $half-session-padding-from-border--is-small: 1.6vw;
@@ -182,8 +182,8 @@ $half-session-padding-from-border--is-small-up: 12px;
 $half-session-padding-from-border--is-medium-up: 10px;
 
 $half-session__content-font-size--is-small: $event__content-font-size--is-small;
-$half-session__content-font-size--is-small-up: 18px;
-$half-session__content-font-size--is-medium-up: 14px;
+$half-session__content-font-size--is-small-up: $event__content-font-size--is-small-up;
+$half-session__content-font-size--is-medium-up: 18px;
 
 .the-time-table-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
@@ -288,7 +288,7 @@ $half-session__content-font-size--is-medium-up: 14px;
   }
 
   &__speaker-name {
-    font-size: 4.2vw;
+    font-size: 5.3vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 32px;
@@ -354,10 +354,6 @@ $half-session__content-font-size--is-medium-up: 14px;
       justify-content: center;
       margin-top: 16px;
       margin-left: 0;
-
-      // TODO: これがあるか否かでハーフセッション間の border の長さが異なる。必要かどうか確認する
-      // width: 100%;
-
       font-size: 18px;
 
       &.half-session__container {
@@ -432,6 +428,7 @@ $half-session__content-font-size--is-medium-up: 14px;
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
       margin-left: 12px;
       font-size: $half-session__content-font-size--is-medium-up;
+      letter-spacing: -0.15vw;
     }
   }
 }
