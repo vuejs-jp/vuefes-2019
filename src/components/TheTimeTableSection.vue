@@ -31,22 +31,22 @@
 
       <div class="container">
         <div
-          v-lazy-container="{ selector: 'img.avatar' }"
+          v-lazy-container="{ selector: 'img.keynote__avatar' }"
           class="keynote"
         >
           <img
-            class="avatar"
-            :data-srcset="`${avatar}, ${avatar2x} 2x`"
-            :data-src="avatar2x"
+            class="keynote__avatar"
+            :data-srcset="`${keynoteAvatar}, ${keynoteAvatar2x} 2x`"
+            :data-src="keynoteAvatar2x"
             alt=""
           />
 
-          <div class="keynote-content">
-            <div class="title">
+          <div class="keynote__content">
+            <div class="keynote__title">
               キーノート
             </div>
 
-            <div class="speaker-name">
+            <div class="keynote__speaker-name">
               Evan You
             </div>
           </div>
@@ -206,23 +206,23 @@ $room-width: 32vw;
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.avatar {
-  width: 16vw;
-}
+  &__avatar {
+    width: 16vw;
+  }
 
-.keynote-content {
-  margin-left: 3vw;
-  text-align: left;
-}
+  &__content {
+    margin-left: 3vw;
+    text-align: left;
+  }
 
-.title {
-  font-size: 2.8vw;
-}
+  &__title {
+    font-size: 2.8vw;
+  }
 
-.speaker-name {
-  font-size: 4.2vw;
+  &__speaker-name {
+    font-size: 4.2vw;
+  }
 }
 
 .session-container {
