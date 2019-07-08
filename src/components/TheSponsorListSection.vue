@@ -4,7 +4,7 @@
       SPONSORS
     </template>
 
-    <div class="container">
+    <div class="content">
       <div class="description">
         <p>
           Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。<a class="link" href="https://fortee.jp/vuefes-2019/sponsor/form" target="_blank" rel="noopener">こちらのフォーム</a> よりお申し込みください。応募締め切りは、2019年7月31日（水）です。
@@ -171,7 +171,7 @@ ul {
   background: linear-gradient(to right bottom, $tohoh, $sangosyu);
 }
 
-.container {
+.content {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     position: absolute;
     width: calc(100% - 140px);
