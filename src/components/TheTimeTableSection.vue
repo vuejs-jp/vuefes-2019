@@ -86,7 +86,7 @@
 
         <div class="event__content session">
           <div class="session__room session__room--yesod">
-            イエソド ルーム
+            イエソドルーム
           </div>
 
           <div class="session__content">
@@ -124,7 +124,7 @@
 
         <div class="event__content session">
           <div class="session__room session__room--yesod">
-            イエソド ルーム
+            イエソドルーム
           </div>
 
           <div class="session__content half-session__container">
