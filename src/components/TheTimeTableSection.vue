@@ -587,6 +587,7 @@ $half-session__content-font-size--is-medium-up: 18px;
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     flex-direction: column;
+    justify-content: flex-start;
   }
 
   &__room {
