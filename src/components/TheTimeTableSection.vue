@@ -520,6 +520,10 @@ $half-session__content-font-size--is-medium-up: 18px;
     background-color: rgba(255, 255, 255, 0.85);
     font-size: $event__content-font-size--is-small;
 
+    &:first-child {
+      margin-top: 0;
+    }
+
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-top: 5px;
       padding: 20px 36px;
