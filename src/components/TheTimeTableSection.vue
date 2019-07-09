@@ -496,6 +496,7 @@ $half-session__content-font-size--is-medium-up: 18px;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      padding: 20px 0;
       font-size: 20px;
       flex: 0 0 140px;
     }
