@@ -120,7 +120,7 @@ export default class TheSpeakerListSection extends Vue {
       twitter: 'octref',
       github: 'octref',
       paragraphs: [
-        'Microsoft で Visual Studio Code（VS Code）の開発に携わっています。VS Code の有名な Vue 拡張機能 Vetur の作者でもあります。Vetur という名前は、菅野よう子さんの歌『Von』に由来しています。好きなマンガは『バカボンド』で、時間があれば何度も読んでいます。'
+        'Microsoft で Visual Studio Code（VS Code）の開発に携わっています。VS Code の有名な Vue 拡張機能 Vetur の作者でもあります。Vetur という名前は、菅野よう子さんの歌『Von』に由来しています。好きなマンガは『バガボンド』で、時間があれば何度も読んでいます。'
       ]
     }
   ]
