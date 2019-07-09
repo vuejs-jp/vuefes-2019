@@ -488,7 +488,7 @@ $half-session__content-font-size--is-medium-up: 18px;
   &__time {
     padding: 1vw;
     background-color: $primary-color;
-    font-size: 3vw;
+    font-size: 3.5vw;
     color: $primary-text-color--invert;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
