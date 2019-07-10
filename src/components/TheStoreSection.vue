@@ -14,6 +14,14 @@
         ・Vue.js コアチームによる開発の支援<br />
         ・Vue.js 日本ユーザーグループによるコミュニティ活動の支援
       </p>
+
+      <p>
+        また同時に、Vue.js や JavaScript の技術同人誌を委託販売できる「技術同人誌販売コーナー」も設ける予定です。会場内に立ち読みブースを設置し、気に入った本があれば即購入できます。
+      </p>
+
+      <p>
+        「技術同人誌販売コーナー」についての詳細は、<a class="link" href="https://note.mu/hashrock/n/n50fc189c0c5e" target="_blank" rel="noopener">note の記事</a>をご覧ください。
+      </p>
     </div>
 
     <div class="image-container">
