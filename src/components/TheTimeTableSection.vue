@@ -639,13 +639,12 @@ $half-session__content-font-size--is-medium-up: 18px;
 
 .note {
   margin-top: 5vw;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   color: $primary-text-color--invert;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-top: 20px;
-    text-align: center;
-    font-size: 16px;
+    font-size: 88.8%;
   }
 }
 </style>
