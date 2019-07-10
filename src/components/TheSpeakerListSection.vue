@@ -111,6 +111,17 @@ export default class TheSpeakerListSection extends Vue {
       paragraphs: [
         'Web デベロッパーであり、講師であり、スピーカーでもあります。デベロッパーライフに喜びをもたらすため、Nuxt.js の共同クリエーターとしてフルタイムで働いています。'
       ]
+    },
+    {
+      avatar: require('~/assets/images/speakers/pine.jpg'),
+      avatar2x: require('~/assets/images/speakers/pine@2x.jpg'),
+      title: 'Vetur クリエーター',
+      name: 'Pine Wu',
+      twitter: 'octref',
+      github: 'octref',
+      paragraphs: [
+        'Microsoft で Visual Studio Code（VS Code）の開発に携わっています。VS Code の有名な Vue 拡張機能 Vetur の作者でもあります。Vetur という名前は、菅野よう子さんの歌『Von』に由来しています。好きなマンガは『バガボンド』で、時間があれば何度も読んでいます。'
+      ]
     }
   ]
 }
