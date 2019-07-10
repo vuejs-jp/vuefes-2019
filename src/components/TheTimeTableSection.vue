@@ -6,7 +6,7 @@
 
     <div class="event">
       <div class="event__time">
-        9:00 - 10:00
+        9:30 - 10:30
       </div>
 
       <div class="event__body">
@@ -18,7 +18,7 @@
 
     <div class="event">
       <div class="event__time">
-        10:00 - 10:10
+        10:30 - 10:40
       </div>
 
       <div class="event__body">
@@ -30,7 +30,7 @@
 
     <div class="event">
       <div class="event__time">
-        10:10 - 11:10
+        10:40 - 11:30
       </div>
 
       <div class="event__body">
@@ -60,24 +60,12 @@
 
     <div class="event">
       <div class="event__time">
-        11:10 - 11:40
+        11:30 - 12:00
       </div>
 
       <div class="event__body">
         <div class="event__content">
-          プラチナスポンサーセッション
-        </div>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event__time">
-        11:40 - 12:00
-      </div>
-
-      <div class="event__body">
-        <div class="event__content">
-          ランチ配布
+          Platinum スポンサーセッション
         </div>
       </div>
     </div>
@@ -127,7 +115,7 @@
 
       <div class="event__body">
         <div class="event__content">
-          休憩
+          ランチブレーク
         </div>
       </div>
     </div>
@@ -154,7 +142,7 @@
           </div>
 
           <div class="session__content">
-            ランチセッション
+            セッション
           </div>
         </div>
 
@@ -190,18 +178,6 @@
 
     <div class="event">
       <div class="event__time">
-        14:10 - 14:30
-      </div>
-
-      <div class="event__body">
-        <div class="event__content">
-          休憩
-        </div>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event__time">
         14:30 - 15:10
       </div>
 
@@ -222,7 +198,7 @@
           </div>
 
           <div class="session__content">
-            ランチセッション
+            セッション
           </div>
         </div>
 
@@ -258,18 +234,6 @@
 
     <div class="event">
       <div class="event__time">
-        15:10 - 15:30
-      </div>
-
-      <div class="event__body">
-        <div class="event__content">
-          休憩
-        </div>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event__time">
         15:30 - 16:10
       </div>
 
@@ -290,7 +254,7 @@
           </div>
 
           <div class="session__content">
-            ランチセッション
+            セッション
           </div>
         </div>
 
@@ -326,18 +290,6 @@
 
     <div class="event">
       <div class="event__time">
-        16:10 - 16:30
-      </div>
-
-      <div class="event__body">
-        <div class="event__content">
-          休憩
-        </div>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event__time">
         16:30 - 17:10
       </div>
 
@@ -358,7 +310,7 @@
           </div>
 
           <div class="session__content">
-            ランチセッション
+            セッション
           </div>
         </div>
 
@@ -367,26 +319,8 @@
             イエソドルーム
           </div>
 
-          <div class="session__content half-session__container">
-            <div class="half-session">
-              <div class="half-session__time">
-                16:30 - 16:50
-              </div>
-
-              <div class="half-session__content">
-                ハーフセッション
-              </div>
-            </div>
-
-            <div class="half-session">
-              <div class="half-session__time">
-                16:50 - 17:10
-              </div>
-
-              <div class="half-session__content">
-                ハーフセッション
-              </div>
-            </div>
+          <div class="session__content">
+            セッション
           </div>
         </div>
       </div>
@@ -394,24 +328,12 @@
 
     <div class="event">
       <div class="event__time">
-        17:10 - 17:20
+        17:10 - 18:00
       </div>
 
       <div class="event__body">
         <div class="event__content">
-          クロージング
-        </div>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event__time">
-        17:20 - 17:50
-      </div>
-
-      <div class="event__body">
-        <div class="event__content">
-          アフターパーティー準備
+          会場転換
         </div>
       </div>
     </div>
