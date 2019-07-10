@@ -122,6 +122,18 @@ export default class TheSpeakerListSection extends Vue {
       paragraphs: [
         'Microsoft で Visual Studio Code（VS Code）の開発に携わっています。VS Code の有名な Vue 拡張機能 Vetur の作者でもあります。Vetur という名前は、菅野よう子さんの歌『Von』に由来しています。好きなマンガは『バガボンド』で、時間があれば何度も読んでいます。'
       ]
+    },
+    {
+      avatar: require('~/assets/images/speakers/jen.jpg'),
+      avatar2x: require('~/assets/images/speakers/jen@2x.jpg'),
+      title: 'Vue Vixens の創設者兼 CEO',
+      name: 'Jen Looper',
+      twitter: 'jenlooper',
+      github: 'jlooper',
+      paragraphs: [
+        'Jen Looper は、Microsoft のクラウドデベロッパーアドボケイトリード、Google Developer Expert として Web およびモバイル開発者として 18年以上の経験を持ち、クロスプラットフォームのモバイルアプリケーション制作を専門としています。',
+        'ハードウェアハッキング、モバイルアプリ、Vue.js、機械学習、そして毎日新しいことの発見に情熱を注いでいる多言語多文化主義者です。Vue.js コミュニティの多様性を促進する先駆けである Vue Vixens の創設者兼 CEO です。'
+      ]
     }
   ]
 }
