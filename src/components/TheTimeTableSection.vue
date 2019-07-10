@@ -556,7 +556,7 @@ $half-session__content-font-size--is-medium-up: 18px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 16px;
+      margin-top: 12px;
       margin-left: 0;
       font-size: 18px;
 
