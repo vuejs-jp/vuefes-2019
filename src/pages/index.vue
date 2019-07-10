@@ -3,9 +3,10 @@
     <TheHeadSection />
     <TheSpeakerListSection />
     <TheTicketSection />
-    <TheSponsorListSection :sponsor-list="sponsors || []" />
     <TheAccessSection />
+    <TheTimeTableSection />
     <TheStoreSection />
+    <TheSponsorListSection :sponsor-list="sponsors || []" />
     <TheStaffListSection />
   </div>
 </template>
@@ -18,6 +19,7 @@ import TheAccessSection from '~/components/TheAccessSection.vue'
 import TheHeadSection from '~/components/TheHeadSection.vue'
 import TheSpeakerListSection from '~/components/TheSpeakerListSection.vue'
 import TheTicketSection from '~/components/TheTicketSection.vue'
+import TheTimeTableSection from '~/components/TheTimeTableSection.vue'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 import TheStaffListSection from '~/components/TheStaffListSection.vue'
 import TheStoreSection from '~/components/TheStoreSection.vue'
@@ -28,6 +30,7 @@ import TheStoreSection from '~/components/TheStoreSection.vue'
     TheHeadSection,
     TheSpeakerListSection,
     TheTicketSection,
+    TheTimeTableSection,
     TheSponsorListSection,
     TheStaffListSection,
     TheStoreSection
