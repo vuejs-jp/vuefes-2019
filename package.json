@@ -17,7 +17,7 @@
     "stylelint": "stylelint 'src/**/*.vue' 'src/**/*.scss'",
     "stylelint:fix": "yarn stylelint --fix",
     "test": "jest --verbose",
-    "test:ci": "jest --ci --coverage --no-cache"
+    "test:ci": "jest --ci --coverage --no-cache --maxWorkers=2"
   },
   "husky": {
     "hooks": {
