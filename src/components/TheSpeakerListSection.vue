@@ -138,7 +138,7 @@ export default class TheSpeakerListSection extends Vue {
     {
       avatar: require('~/assets/images/speakers/chris.jpg'),
       avatar2x: require('~/assets/images/speakers/chris@2x.jpg'),
-      title: 'Vue コアチームメンバー',
+      title: 'Vue.js コアチームメンバー',
       name: 'Chris Fritz',
       twitter: 'chrisvfritz',
       github: 'chrisvfritz',
