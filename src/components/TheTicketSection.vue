@@ -68,10 +68,11 @@
       ※別途クレジットカード決済手数料（0.35%）がかかります。
     </p>
 
-    <BaseButton class="ticket-button" disabled>
-      発売開始予定
-      <br class="show-on-small" />
-      7/17（水）12:00〜
+    <BaseButton
+      class="ticket-button"
+      href="https://www.universe.com/events/vue-fes-japan-2019-tickets--YG3SMV"
+    >
+      チケットを購入する
     </BaseButton>
 
     <div class="faq">

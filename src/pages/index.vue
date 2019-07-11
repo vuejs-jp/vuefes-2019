@@ -45,5 +45,11 @@ import TheStoreSection from '~/components/TheStoreSection.vue'
     }
   }
 })
-export default class HomePage extends Vue {}
+export default class HomePage extends Vue {
+  private head() {
+    return {
+      script: [{ src: 'https://www.universe.com/embed2.js' }]
+    }
+  }
+}
 </script>
