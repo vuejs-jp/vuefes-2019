@@ -43,7 +43,7 @@
 
       <div class="ticket-item">
         <div class="ticket-content">
-          <h3>一般＋アフターパーティチケット</h3>
+          <h3>一般＋アフターパーティーチケット</h3>
 
           <p>
             <span>10,000</span>
