@@ -134,6 +134,18 @@ export default class TheSpeakerListSection extends Vue {
         'Microsoft のクラウドデベロッパーアドボケイトリード、Google Developer Expert として Web およびモバイル開発者として 18年以上の経験を持ち、クロスプラットフォームのモバイルアプリケーション制作を専門としています。',
         'ハードウェアハッキング、モバイルアプリ、Vue.js、機械学習、そして毎日新しいことの発見に情熱を注いでいる多言語多文化主義者です。Vue.js コミュニティの多様性を促進する先駆けである Vue Vixens の創設者兼 CEO です。'
       ]
+    },
+    {
+      avatar: require('~/assets/images/speakers/chris.jpg'),
+      avatar2x: require('~/assets/images/speakers/chris@2x.jpg'),
+      title: 'Vue.js コアチームメンバー',
+      name: 'Chris Fritz',
+      twitter: 'chrisvfritz',
+      github: 'chrisvfritz',
+      paragraphs: [
+        'アメリカ合衆国ミシガン州ランシングに住んでおり、オープンソースに取り組みながら世界中の企業における素晴らしい Web フロントエンド構築を手助けしています。',
+        'Vue.js コアチームの一員としての仕事でよく知られており、Web 開発者にとって人生をよりシンプルで楽しいものにするための他のリソースとともに、Vue.js のドキュメント執筆やキュレーションをしています。'
+      ]
     }
   ]
 }
