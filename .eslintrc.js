@@ -22,6 +22,7 @@ module.exports = {
         }
       }
     ],
+    'vue/no-v-html' : 0,
     'no-console': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error'
