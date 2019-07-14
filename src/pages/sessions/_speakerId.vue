@@ -140,6 +140,7 @@ export default class SessionPage extends Vue {}
   width: calc(100% - 5vw);
   margin: calc(40.8vw - 5vw + 10vw) 0 10vw auto;
   padding: 5vw;
+  background-color: $white;
 
   & p {
     font-size: 3vw;
