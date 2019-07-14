@@ -1,6 +1,7 @@
 import NuxtConfiguration from '@nuxt/config'
 import StylelintPlugin from 'stylelint-webpack-plugin'
 import hooks from './src/hooks'
+import * as sessions from './src/store/sessions'
 
 require('dotenv').config()
 
@@ -133,7 +134,10 @@ const config: NuxtConfiguration = {
     }
   },
   generate: {
-    dir: 'dist/2019'
+    dir: 'dist/2019',
+    routes: sessions
+      .state()
+      .sessions.map(session => `/sessions/${session.speakerId}`)
   },
   styleResources: {
     scss: [
