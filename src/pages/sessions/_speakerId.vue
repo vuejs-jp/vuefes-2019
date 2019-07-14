@@ -14,9 +14,11 @@
       </h1>
 
       <div class="session-paragraph">
-        <p v-for="(paragraph, index) in session.paragraphs" :key="index">
-          {{ paragraph }}
-        </p>
+        <p
+          v-for="(paragraph, index) in session.paragraphs"
+          :key="index"
+          v-html="paragraph"
+        />
       </div>
     </div>
 
