@@ -107,9 +107,9 @@ export default class SessionPage extends Vue {
     const title = `${this.session.title}（${
       this.speaker.name
     }） | Vue Fes Japan 2019`
-    const description = `Vue Fes Japan 2019 のセッション情報です。スピーカーは ${
+    const description = `Vue Fes Japan 2019 のセッション情報です。スピーカーの ${
       this.speaker.name
-    } で、「${this.session.title}」というタイトルで発表します。`
+    } が、「${this.session.title}」を発表します。`
     const ogImageUrl = `https://vuefes.jp/2019/session-og-images/${
       this.session.speakerId
     }`
