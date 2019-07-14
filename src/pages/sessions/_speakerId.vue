@@ -276,15 +276,22 @@ export default class SessionPage extends Vue {
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       top: -60px;
-      left: -165px;
-      width: 195px;
-      height: 195px;
+      left: calc(-25% + -2px);
+      width: calc(25% + 20px);
+      height: auto;
+
+      &::after {
+        content: '';
+        padding-bottom: calc(25% + 20px);
+      }
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      left: -240px;
-      width: 280px;
-      height: 280px;
+      width: calc(25% + 40px);
+
+      &::after {
+        padding-bottom: calc(25% + 40px);
+      }
     }
   }
 
