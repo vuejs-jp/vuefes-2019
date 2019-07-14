@@ -49,6 +49,12 @@ export const state = (): State => ({
       paragraphs: ['TBD'],
       ogImage: 'jlooper.jpg'
     },
+    // {
+    //   speakerId: 'ulivz',
+    //   title: 'TBD',
+    //   paragraphs: ['TBD'],
+    //   ogImage: 'ulivz.jpg'
+    // },
     {
       speakerId: 'chrisvfritz',
       title: 'Enterprise Vue: Patterns That Scale',

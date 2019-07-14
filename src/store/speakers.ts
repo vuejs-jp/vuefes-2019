@@ -77,6 +77,16 @@ export const state = (): State => ({
         'ハードウェアハッキング、モバイルアプリ、Vue.js、機械学習、そして毎日新しいことの発見に情熱を注いでいる多言語多文化主義者です。Vue.js コミュニティの多様性を促進する先駆けである Vue Vixens の創設者兼 CEO です。'
       ]
     },
+    // {
+    //   id: 'ulivz',
+    //   avatar: require('~/assets/images/speakers/.jpg'),
+    //   avatar2x: require('~/assets/images/speakers/@2x.jpg'),
+    //   title: '',
+    //   name: 'ULIVZ',
+    //   twitter: '_ulivz',
+    //   github: 'ulivz',
+    //   paragraphs: []
+    // },
     {
       id: 'chrisvfritz',
       avatar: require('~/assets/images/speakers/chrisvfritz.jpg'),
