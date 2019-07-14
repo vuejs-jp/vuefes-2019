@@ -1,4 +1,4 @@
-type Session = {
+export type Session = {
   speakerId: string
   title: string
   paragraphs: string[]

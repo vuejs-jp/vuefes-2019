@@ -1,4 +1,4 @@
-type Speaker = {
+export type Speaker = {
   id: string
   avatar: string
   avatar2x: string
@@ -94,6 +94,9 @@ export const state = (): State => ({
 })
 
 export const getters = {
+  all: (state: State) => (): Speaker[] => {
+    return state.speakers
+  },
   speakerById: (state: State) => (id: string): Speaker => {
     const speaker = state.speakers.find(speaker => speaker.id === id)
     if (speaker) return speaker
