@@ -83,8 +83,8 @@ export default class TheSpeakerListSection extends Vue {
   speakers: Speaker[] = [
     {
       id: 'yyx990803',
-      avatar: require('~/assets/images/speakers/evan.jpg'),
-      avatar2x: require('~/assets/images/speakers/evan@2x.jpg'),
+      avatar: require('~/assets/images/speakers/yyx990803.jpg'),
+      avatar2x: require('~/assets/images/speakers/yyx990803@2x.jpg'),
       title: 'Vue.js クリエーター',
       name: 'Evan You',
       twitter: 'youyuxi',
@@ -96,8 +96,8 @@ export default class TheSpeakerListSection extends Vue {
     },
     {
       id: 'Atinux',
-      avatar: require('~/assets/images/speakers/sebastien.jpg'),
-      avatar2x: require('~/assets/images/speakers/sebastien@2x.jpg'),
+      avatar: require('~/assets/images/speakers/Atinux.jpg'),
+      avatar2x: require('~/assets/images/speakers/Atinux@2x.jpg'),
       title: 'Nuxt.js 共同クリエーター',
       name: 'Sébastien Chopin',
       twitter: 'Atinux',
@@ -108,8 +108,8 @@ export default class TheSpeakerListSection extends Vue {
     },
     {
       id: 'alexchopin',
-      avatar: require('~/assets/images/speakers/alexandre.jpg'),
-      avatar2x: require('~/assets/images/speakers/alexandre@2x.jpg'),
+      avatar: require('~/assets/images/speakers/alexchopin.jpg'),
+      avatar2x: require('~/assets/images/speakers/alexchopin@2x.jpg'),
       title: 'Nuxt.js 共同クリエーター',
       name: 'Alexandre Chopin',
       twitter: 'IamNuxt',
@@ -120,8 +120,8 @@ export default class TheSpeakerListSection extends Vue {
     },
     {
       id: 'octref',
-      avatar: require('~/assets/images/speakers/pine.jpg'),
-      avatar2x: require('~/assets/images/speakers/pine@2x.jpg'),
+      avatar: require('~/assets/images/speakers/octref.jpg'),
+      avatar2x: require('~/assets/images/speakers/octref@2x.jpg'),
       title: 'Vetur クリエーター',
       name: 'Pine Wu',
       twitter: 'octref',
@@ -132,8 +132,8 @@ export default class TheSpeakerListSection extends Vue {
     },
     {
       id: 'jlooper',
-      avatar: require('~/assets/images/speakers/jen.jpg'),
-      avatar2x: require('~/assets/images/speakers/jen@2x.jpg'),
+      avatar: require('~/assets/images/speakers/jlooper.jpg'),
+      avatar2x: require('~/assets/images/speakers/jlooper@2x.jpg'),
       title: 'Vue Vixens 創設者兼 CEO',
       name: 'Jen Looper',
       twitter: 'jenlooper',
@@ -145,8 +145,8 @@ export default class TheSpeakerListSection extends Vue {
     },
     {
       id: 'chrisvfritz',
-      avatar: require('~/assets/images/speakers/chris.jpg'),
-      avatar2x: require('~/assets/images/speakers/chris@2x.jpg'),
+      avatar: require('~/assets/images/speakers/chrisvfritz.jpg'),
+      avatar2x: require('~/assets/images/speakers/chrisvfritz@2x.jpg'),
       title: 'Vue.js コアチームメンバー',
       name: 'Chris Fritz',
       twitter: 'chrisvfritz',
