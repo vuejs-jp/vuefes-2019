@@ -25,31 +25,6 @@
         <h3 class="name">
           {{ speaker.name }}
         </h3>
-
-        <div class="social">
-          <a
-            class="twitter"
-            :href="`https://twitter.com/${speaker.twitter}`"
-            target="_blank"
-            rel="noopener"
-          >
-            <img src="~/assets/images/logo-twitter.svg" alt="Twitter" />
-          </a>
-          <a
-            class="github"
-            :href="`https://github.com/${speaker.github}`"
-            target="_blank"
-            rel="noopener"
-          >
-            <img src="~/assets/images/icon-github.svg" alt="GitHub" />
-          </a>
-        </div>
-
-        <div class="description">
-          <p v-for="(paragraph, index) in speaker.paragraphs" :key="index">
-            {{ paragraph }}
-          </p>
-        </div>
       </div>
     </div>
 
@@ -102,30 +77,6 @@ export default class TheSpeakerListSection extends Vue {
   margin-bottom: 0.5vw;
 }
 
-.social {
-  margin-bottom: 5vw;
-
-  img {
-    width: 7.5vw;
-    max-width: 50px;
-    height: 7.5vw;
-    max-height: 50px;
-    transition: 0.2s $easeInOutCubic;
-
-    &:hover {
-      opacity: 0.4;
-    }
-  }
-}
-
-.social .github {
-  margin-left: 12px;
-}
-
-.description p {
-  font-size: 3.5vw;
-}
-
 .more {
   margin-top: 10.4vw;
   font-size: 4vw;
@@ -159,19 +110,6 @@ export default class TheSpeakerListSection extends Vue {
   .name {
     font-size: 32px;
     margin-bottom: 4px;
-  }
-
-  .social {
-    margin-bottom: 20px;
-
-    img {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  .description p {
-    font-size: 16px;
   }
 
   .more {
