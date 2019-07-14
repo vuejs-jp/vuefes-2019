@@ -14,11 +14,13 @@
       </h1>
 
       <div class="session-paragraph">
+        <!-- eslint-disable vue/no-v-html -->
         <p
           v-for="(paragraph, index) in session.paragraphs"
           :key="index"
           v-html="paragraph"
         />
+        <!-- eslint-enable vue/no-v-html -->
       </div>
     </div>
 
