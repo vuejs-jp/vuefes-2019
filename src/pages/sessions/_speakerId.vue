@@ -198,6 +198,11 @@ export default class SessionPage extends Vue {
 }
 
 .session {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 80%;
+    margin: 0 auto;
+  }
+
   &-time {
     font-size: 2vw;
     color: $primary-text-color--invert;
@@ -217,6 +222,11 @@ export default class SessionPage extends Vue {
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 5vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
   }
 
   &-description {
@@ -232,8 +242,18 @@ export default class SessionPage extends Vue {
   padding: 5vw;
   background-color: $white;
 
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 80%;
+    margin: 140px 0 80px auto;
+    padding: 40px 43px;
+  }
+
   & p {
     font-size: 3vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 18px;
+    }
   }
 
   &-avatar {
@@ -245,10 +265,21 @@ export default class SessionPage extends Vue {
     height: 40.8vw;
     border: 1px solid $primary-color;
     box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      top: -60px;
+      left: -165px;
+      width: 195px;
+      height: 195px;
+    }
   }
 
   &-organisation {
     margin-top: 2vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 0;
+    }
   }
 
   &-name {
@@ -256,11 +287,20 @@ export default class SessionPage extends Vue {
     font-weight: bold;
     line-height: 1;
     margin-bottom: 1vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
   }
 
   &-social {
     margin-top: 2vw;
     font-size: 0;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 20px;
+    }
 
     img {
       width: 7.5vw;
@@ -269,6 +309,12 @@ export default class SessionPage extends Vue {
       max-height: 50px;
       margin-right: 4vw;
       transition: 0.2s $easeInOutCubic;
+
+      @media screen and (min-width: $layout-breakpoint--is-small-up) {
+        width: 32px;
+        height: 32px;
+        margin-right: 20px;
+      }
 
       &:hover {
         opacity: 0.4;
