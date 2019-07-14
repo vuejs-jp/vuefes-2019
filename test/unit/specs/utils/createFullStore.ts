@@ -6,13 +6,11 @@ export default Vuex => {
     modules: {
       sessions: {
         namespaced: true,
-        state: sessions.state,
-        getters: sessions.getters
+        ...sessions
       },
       speakers: {
         namespaced: true,
-        state: speakers.state,
-        getters: speakers.getters
+        ...speakers
       }
     }
   })
