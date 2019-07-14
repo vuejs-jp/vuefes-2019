@@ -35,25 +35,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import { mapGetters } from 'vuex'
+import { Component, Getter, Vue } from 'nuxt-property-decorator'
 import { Speaker } from '~/store/speakers'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
   components: {
     BaseSection
-  },
-  computed: {
-    ...mapGetters('speakers', ['all'])
   }
 })
 export default class TheSpeakerListSection extends Vue {
-  all!: () => Speaker[]
-
-  get speakers() {
-    return this.all()
-  }
+  @Getter('all', { namespace: 'speakers' })
+  speakers!: Speaker[]
 }
 </script>
 

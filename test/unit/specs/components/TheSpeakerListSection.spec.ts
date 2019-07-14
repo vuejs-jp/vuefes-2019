@@ -1,15 +1,22 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
+import Vuex from 'vuex'
 import TheSpeakerListSection from '~/components/TheSpeakerListSection.vue'
+import createFullStore from '../utils/createFullStore'
 
 const localVue = createLocalVue()
 
 localVue.use(VueLazyLoad)
+localVue.use(Vuex)
+
+const store = createFullStore(Vuex)
 
 describe('TheSpeakerListSection', () => {
-  test.skip('レンダリングできる', () => {
-    // FIXME: TypeError: Cannot read property '_modulesNamespaceMap' of undefined
-    const wrapper = mount(TheSpeakerListSection, { localVue })
+  test('レンダリングできる', () => {
+    const wrapper = mount(TheSpeakerListSection, {
+      localVue,
+      store
+    })
     expect(wrapper.find('.the-speaker-list-section').isVisible()).toBeTruthy()
   })
 })
