@@ -10,20 +10,12 @@
       </div>
 
       <h1 class="session-title">
-        次世代のデザインとフロントエンド開発の GUI 化
+        {{ session.title }}
       </h1>
 
-      <div class="session-description">
-        <p>
-          STUDIO はコードを書かずに Web サイトを作れるデザインツールです（もちろん Vue.js 製！）。別の視点から見ると GUI でコードを生成するジェネレーターでもあります。
-        </p>
-
-        <p>
-          これまで静的な Web サイトしか作れなかった STUDIO が、今年に入ってから動的なものを作れるように開発を進めています。このとき重要になってくるのが Vue.js や React など昨今のフロントエンド開発で登場する「Component」の概念の可視化（GUI化）です。また、GUI 化によって Vue.js と React の Component の設計思想の違いが見える形で現れてきました。
-        </p>
-
-        <p>
-          本セッションでは、「Component」の GUI 化を通じて見えてきた知見を中心に、実際にデモをしながら新しいデザインプロセスを提案します。
+      <div class="session-paragraph">
+        <p v-for="(paragraph, index) in session.paragraphs" :key="index">
+          {{ paragraph }}
         </p>
       </div>
     </div>
@@ -32,35 +24,31 @@
       <img
         class="speaker-avatar"
         :srcset="`
-          ${require('~/assets/images/speakers/keimakai1993.jpg')},
-          ${require('~/assets/images/speakers/keimakai1993@2x.jpg')} 2x
+          ${speaker.avatar},
+          ${speaker.avatar2x} 2x
         `"
-        :src="require('~/assets/images/speakers/keimakai1993@2x.jpg')"
+        :src="speaker.avatar2x"
         alt=""
       />
 
-      <p class="speaker-organisation">
-        STUDIO 株式会社
+      <p class="speaker-title">
+        {{ speaker.title }}
       </p>
 
       <h2 class="speaker-name">
-        甲斐 啓真
+        {{ speaker.name }}
       </h2>
 
-      <div class="speaker-description">
-        <p>
-          STUDIO 株式会社 Founder / CPO
-        </p>
-
-        <p>
-          「STUDIO」というコードを書かずに Web サイトを作れるデザインツールを制作中。前職である UI デザイン会社のオハコでエンジニア兼デザイナーとして、Web サイト・アプリケーションを作っていく中でデザインと開発の間のギャップを体感。イラストベースでデザインする最近のデザインプロセスを脱して、実際のコードと同様の CSS（ボックスモデル）ベースでデザインするために 2016年から STUDIO の制作を始めた。
+      <div class="speaker-paragraph">
+        <p v-for="(paragraph, index) in speaker.paragraphs" :key="index">
+          {{ paragraph }}
         </p>
       </div>
 
       <div class="speaker-social">
         <a
           class="twitter"
-          href="https://twitter.com/keimakai1993"
+          :href="`https://twitter.com/${speaker.twitter}`"
           target="_blank"
           rel="noopener"
         >
@@ -69,7 +57,7 @@
 
         <a
           class="github"
-          href="https://github.com/keimakai"
+          :href="`https://github.com/${speaker.github}`"
           target="_blank"
           rel="noopener"
         >
@@ -81,27 +69,6 @@
     <BaseButton to="/">
       トップに戻る
     </BaseButton>
-
-    <div>
-      {{ session.title }}
-    </div>
-
-    <p v-for="(paragraph, index) in session.paragraphs" :key="index">
-      {{ paragraph }}
-    </p>
-
-    <img :src="speaker.avatar" />
-    <img :src="speaker.avatar2x" />
-    <div>
-      {{ speaker.title }}
-      {{ speaker.name }}
-      {{ `https://twitter.com/${speaker.twitter}` }}
-      {{ `https://github.com/${speaker.github}` }}
-    </div>
-
-    <p v-for="(paragraph, index) in speaker.paragraphs" :key="index">
-      {{ paragraph }}
-    </p>
   </BaseMain>
 </template>
 
@@ -229,7 +196,7 @@ export default class SessionPage extends Vue {
     }
   }
 
-  &-description {
+  &-paragraph {
     margin-bottom: 10vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -295,7 +262,7 @@ export default class SessionPage extends Vue {
     }
   }
 
-  &-organisation {
+  &-title {
     margin-top: 2vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
