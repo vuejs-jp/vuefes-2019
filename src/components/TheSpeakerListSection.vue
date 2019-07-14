@@ -5,7 +5,7 @@
     </template>
 
     <div
-      v-for="speaker in speakers"
+      v-for="speaker in speakers()"
       :key="speaker.twitter"
       v-lazy-container="{ selector: 'img.avatar' }"
       class="speaker-container"
@@ -35,25 +35,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import { mapGetters } from 'vuex'
-import { Speaker } from '~/store/speakers'
+import { Component, Getter, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
   components: {
     BaseSection
-  },
-  computed: {
-    ...mapGetters('speakers', ['all'])
   }
 })
 export default class TheSpeakerListSection extends Vue {
-  all!: () => Speaker[]
-
-  get speakers() {
-    return this.all()
-  }
+  @Getter('all', { namespace: 'speakers' })
+  speakers
 }
 </script>
 
