@@ -1,4 +1,5 @@
 declare module '*.vue' {
-  import Vue from 'vue'
+  import Vue, { VueConstructor } from 'vue'
+  export const VueConstructor
   export default Vue
 }
