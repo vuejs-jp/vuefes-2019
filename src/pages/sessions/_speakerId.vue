@@ -78,17 +78,23 @@
 
 <script lang="ts">
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
+import { Context } from '@nuxt/vue-app'
 import { Session } from '~/store/sessions'
 import { Speaker } from '~/store/speakers'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
+
+type AsyncData = {
+  speakerId: string
+  path: string
+}
 
 @Component({
   components: {
     BaseMain,
     BaseButton
   },
-  asyncData({ params, route }) {
+  asyncData({ params, route }: Context): AsyncData {
     return {
       speakerId: params.speakerId,
       path: route.path
