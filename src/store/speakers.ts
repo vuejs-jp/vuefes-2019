@@ -13,6 +13,10 @@ type State = {
   speakers: Speaker[]
 }
 
+type Getters<S> = {
+  [k: string]: (state: S) => unknown
+}
+
 export const state = (): State => ({
   speakers: [
     {
@@ -221,11 +225,11 @@ export const state = (): State => ({
   ]
 })
 
-export const getters = {
-  all: (state: State): Speaker[] => {
+export const getters: Getters<State> = {
+  all: (state): Speaker[] => {
     return state.speakers
   },
-  speakerById: (state: State) => (id: string): Speaker => {
+  speakerById: state => (id: string): Speaker => {
     const speaker = state.speakers.find(speaker => speaker.id === id)
     if (speaker) return speaker
     throw new Error('Speaker Not Found')
