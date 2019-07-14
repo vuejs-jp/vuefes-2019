@@ -94,7 +94,7 @@ export const state = (): State => ({
 })
 
 export const getters = {
-  all: (state: State) => (): Speaker[] => {
+  all: (state: State): Speaker[] => {
     return state.speakers
   },
   speakerById: (state: State) => (id: string): Speaker => {

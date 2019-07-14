@@ -4,7 +4,7 @@ describe('getters', () => {
   describe('all', () => {
     test('Speaker の配列を取得できる', () => {
       const speakers = getters.all(state())
-      expect(speakers()).toEqual(state().speakers)
+      expect(speakers).toEqual(state().speakers)
     })
   })
 

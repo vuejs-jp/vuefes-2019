@@ -5,7 +5,7 @@
     </template>
 
     <div
-      v-for="speaker in speakers()"
+      v-for="speaker in speakers"
       :key="speaker.twitter"
       v-lazy-container="{ selector: 'img.avatar' }"
       class="speaker-container"
@@ -46,7 +46,7 @@ import BaseSection from '~/components/BaseSection.vue'
 })
 export default class TheSpeakerListSection extends Vue {
   @Getter('all', { namespace: 'speakers' })
-  speakers!: () => Speaker[]
+  speakers!: Speaker[]
 }
 </script>
 
