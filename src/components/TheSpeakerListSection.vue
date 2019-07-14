@@ -63,22 +63,26 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import BaseSection from '~/components/BaseSection.vue'
 
+type Speaker = {
+  id: string
+  avatar: string
+  avatar2x: string
+  title: string
+  name: string
+  twitter: string
+  github: string
+  paragraphs: string[]
+}
+
 @Component({
   components: {
     BaseSection
   }
 })
 export default class TheSpeakerListSection extends Vue {
-  speakers: {
-    avatar: string
-    avatar2x: string
-    title: string
-    name: string
-    twitter: string
-    github: string
-    paragraphs: string[]
-  }[] = [
+  speakers: Speaker[] = [
     {
+      id: 'yyx990803',
       avatar: require('~/assets/images/speakers/evan.jpg'),
       avatar2x: require('~/assets/images/speakers/evan@2x.jpg'),
       title: 'Vue.js クリエーター',
@@ -91,6 +95,7 @@ export default class TheSpeakerListSection extends Vue {
       ]
     },
     {
+      id: 'Atinux',
       avatar: require('~/assets/images/speakers/sebastien.jpg'),
       avatar2x: require('~/assets/images/speakers/sebastien@2x.jpg'),
       title: 'Nuxt.js 共同クリエーター',
@@ -102,6 +107,7 @@ export default class TheSpeakerListSection extends Vue {
       ]
     },
     {
+      id: 'alexchopin',
       avatar: require('~/assets/images/speakers/alexandre.jpg'),
       avatar2x: require('~/assets/images/speakers/alexandre@2x.jpg'),
       title: 'Nuxt.js 共同クリエーター',
@@ -113,6 +119,7 @@ export default class TheSpeakerListSection extends Vue {
       ]
     },
     {
+      id: 'octref',
       avatar: require('~/assets/images/speakers/pine.jpg'),
       avatar2x: require('~/assets/images/speakers/pine@2x.jpg'),
       title: 'Vetur クリエーター',
@@ -124,6 +131,7 @@ export default class TheSpeakerListSection extends Vue {
       ]
     },
     {
+      id: 'jlooper',
       avatar: require('~/assets/images/speakers/jen.jpg'),
       avatar2x: require('~/assets/images/speakers/jen@2x.jpg'),
       title: 'Vue Vixens 創設者兼 CEO',
@@ -136,6 +144,7 @@ export default class TheSpeakerListSection extends Vue {
       ]
     },
     {
+      id: 'chrisvfritz',
       avatar: require('~/assets/images/speakers/chris.jpg'),
       avatar2x: require('~/assets/images/speakers/chris@2x.jpg'),
       title: 'Vue.js コアチームメンバー',
