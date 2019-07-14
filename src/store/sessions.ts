@@ -17,7 +17,7 @@ export const state = (): State => ({
       title: 'Keynote',
       time: 50,
       paragraphs: ['Keynote'],
-      ogImage: 'default.png'
+      ogImage: 'yyx990803.jpg'
     },
     {
       speakerId: 'Atinux',
@@ -87,14 +87,14 @@ export const state = (): State => ({
           '&nbsp;&nbsp;&nbsp;&nbsp;- ドメインを持たせたコンポーネントの組み合わせ<br>' +
           '&nbsp;&nbsp;&nbsp;&nbsp;- ロジックをリポジトリパターンで組み直す'
       ],
-      ogImage: 'default.png'
+      ogImage: 'keinuma.jpg'
     },
     // {
     //   speakerId: 'TAKASE Yuma',
     //   title: '4000万人が使うサービスを jQuery から Nuxt.js にまで置き換えていった話',
     //   time: 40,
     //   paragraphs: [],
-    //   ogImage: 'default.png'
+    //   ogImage: 'default.jpg'
     // },
     {
       speakerId: 'keimakai',
@@ -105,7 +105,7 @@ export const state = (): State => ({
         'これまで静的な Web サイトしか作れなかった STUDIO が、今年に入ってから動的なものを作れるように開発を進めています。このとき重要になってくるのが Vue.js や React など昨今のフロントエンド開発で登場する「Component」の概念の可視化（GUI 化）です。また、GUI 化によって Vue.js と React の Component の設計思想の違いが見える形で現れてきました。',
         '本セッションでは、「Component」の GUI 化を通じて見えてきた知見を中心に、実際にデモをしながら新しいデザインプロセスを提案します。'
       ],
-      ogImage: 'default.png'
+      ogImage: 'keimakai.jpg'
     },
     {
       speakerId: 'takefumi-yoshii',
@@ -115,7 +115,7 @@ export const state = (): State => ({
       paragraphs: [
         'Vue.js のみならず、Nuxt.js でコア機能として存在する Vuex。Vue.js アプリケーションに TypeScript を導入するにあたり、Vuex の型定義は誰しもが悩んできた課題です。vuex-module-decorators などによるアプローチもありますが、TypeScript の機能をフル活用すれば、純粋な Vuex であっても、隅々まで TypeScript に最適化することが可能です。これは、既存の Vuex コードを TypeScript 化することはもちろん、デコレーターを利用したくないシーンで役に立つ TIPS です。本セッションでは、TypeScript CompilerAPI による codegen 手法により、型推論が不可能とされていた領域に挑戦します。'
       ],
-      ogImage: 'default.png'
+      ogImage: 'takefumi-yoshii.jpg'
     },
     {
       speakerId: 'ninjinkun',
@@ -126,7 +126,7 @@ export const state = (): State => ({
         'Vue CLI、GraphQL、Vue Router、Vuex、Bulma を用いて、一休.com レストランの管理画面リニューアルプロジェクトを高速に立ち上げ、リリースした知見を紹介します。具体的には以下のトピックについてお話しします。',
         '- なぜ Nuxt.js ではなく Vue CLI なのか <br> - Apollo Server を使いフロントエンドエンジニアがモックを書いて API 開発をリードするスタイル <br> - SPA と MPA の混成'
       ],
-      ogImage: 'default.png'
+      ogImage: 'ninjinkun.jpg'
     },
     {
       speakerId: 'yamanoku',
@@ -138,7 +138,7 @@ export const state = (): State => ({
         '本セッションでは、Vue.js・Nuxt.js の開発においてどうアクセシビリティを担保するのか、UI コンポーネント開発においてどうやって取り組むのか、作ったものがどうアクセシブルであるかをチェックするか、について紹介します。',
         'そして、今こそ「アクセシビリティをやる意味」について一緒に考えましょう。'
       ],
-      ogImage: 'default.png'
+      ogImage: 'yamanoku.jpg'
     },
     {
       speakerId: 'masaakikunsan',
@@ -149,14 +149,14 @@ export const state = (): State => ({
         'また、Vue.js 3.0 で Class API がドロップされる発表があり話題になりましたが、Nuxt.js 公式では Decorator が推奨されており、Nuxt.js がどう対応していくかにも注目が集まっています。',
         '本セッションでは、スピーカーがフリーランスや会社員として携わった多数の Vue.js、Nuxt.js、TypeScript 開発で得た知見を共有します。具体的には、実際に Nuxt.js と TypeScript を現場レベルで使う場合、何に気を付けるべきか、Vuex の話、Storybook でのコンポーネント開発などを紹介します。'
       ],
-      ogImage: 'default.png'
+      ogImage: 'masaakikunsan.jpg'
     },
     // {
     //   speakerId: 'UNO Kouhei',
     //   title: '型がある楽しさとつらさ',
     //   time: 20,
     //   paragraphs: [],
-    //   ogImage: 'default.png'
+    //   ogImage: 'default.jpg'
     // },
     {
       speakerId: 'blackawa',
@@ -168,14 +168,14 @@ export const state = (): State => ({
         'そしてひとたび方針を間違えれば、手を入れるたびに複雑化していく UI コンポーネントができ上がってしまいます。にもかかわらず余白設計の問題について語られる機会はそう多くはありません。',
         '実際に開発と運用を行って得られた「何もない」を作るための余白設計の知見を共有します。'
       ],
-      ogImage: 'default.png'
+      ogImage: 'default.jpg'
     }
     // {
     //   speakerId: 'TEJIMA Takuya',
     //   title: 'とある Nuxt.js 案件の本当にあった怖い話。',
     //   time: 20,
     //   paragraphs: [],
-    //   ogImage: 'default.png'
+    //   ogImage: 'default.jpg'
     // },
   ]
 })
