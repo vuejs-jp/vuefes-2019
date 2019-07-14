@@ -13,8 +13,11 @@ type State = {
   speakers: Speaker[]
 }
 
-type Getters<S> = {
-  [k: string]: (state: S) => unknown
+type Getters<S, G> = { [K in keyof G]: (state: S, getters: G) => G[K] }
+
+interface IGetters {
+  all: Speaker[]
+  speakerById: (id: string) => Speaker
 }
 
 export const state = (): State => ({
@@ -225,13 +228,15 @@ export const state = (): State => ({
   ]
 })
 
-export const getters: Getters<State> = {
-  all: (state): Speaker[] => {
+export const getters: Getters<State, IGetters> = {
+  all(state) {
     return state.speakers
   },
-  speakerById: state => (id: string): Speaker => {
-    const speaker = state.speakers.find(speaker => speaker.id === id)
-    if (speaker) return speaker
-    throw new Error('Speaker Not Found')
+  speakerById(state) {
+    return id => {
+      const speaker = state.speakers.find(speaker => speaker.id === id)
+      if (speaker) return speaker
+      throw new Error('Speaker Not Found')
+    }
   }
 }
