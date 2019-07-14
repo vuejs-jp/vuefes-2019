@@ -12,7 +12,7 @@ localVue.use(Vuex)
 const store = createFullStore(Vuex)
 
 describe('TheSpeakerListSection', () => {
-  test.skip('レンダリングできる', () => {
+  test('レンダリングできる', () => {
     const wrapper = mount(TheSpeakerListSection, {
       localVue,
       store
