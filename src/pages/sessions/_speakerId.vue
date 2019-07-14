@@ -6,7 +6,7 @@
 
     <div class="session">
       <div class="session-time">
-        40min
+        {{ session.time }}min
       </div>
 
       <h1 class="session-title">
