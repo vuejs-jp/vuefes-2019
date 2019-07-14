@@ -75,8 +75,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import { mapGetters } from 'vuex'
+import { Component, Getter, Vue } from 'nuxt-property-decorator'
+import { Session } from '~/store/sessions'
+import { Speaker } from '~/store/speakers'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
@@ -90,17 +91,17 @@ import BaseButton from '~/components/BaseButton.vue'
       speakerId: params.speakerId,
       path: route.path
     }
-  },
-  computed: {
-    ...mapGetters('sessions', ['sessionBySpeakerId']),
-    ...mapGetters('speakers', ['speakerById'])
   }
 })
 export default class SessionPage extends Vue {
   speakerId!: string
   path!: string
-  sessionBySpeakerId!: (speakerId: string) => any // TODO: あとで Session Type を指定する
-  speakerById!: (id: string) => any // TODO: あとで Speaker Type 指定する
+
+  @Getter('sessionBySpeakerId', { namespace: 'sessions' })
+  sessionBySpeakerId!: (speakerId: string) => Session
+
+  @Getter('speakerById', { namespace: 'speakers' })
+  speakerById!: (id: string) => Speaker
 
   head() {
     const url = `https://vuefes.jp/2019${this.path}`
@@ -143,11 +144,11 @@ export default class SessionPage extends Vue {
     }
   }
 
-  get session() {
+  get session(): Session {
     return this.sessionBySpeakerId(this.speakerId)
   }
 
-  get speaker() {
+  get speaker(): Speaker {
     return this.speakerById(this.speakerId)
   }
 }
