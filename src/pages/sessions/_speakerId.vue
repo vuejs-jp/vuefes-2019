@@ -4,31 +4,33 @@
       SESSION
     </h2>
 
-    <div class="session-time">
-      40min
-    </div>
+    <div class="session">
+      <div class="session-time">
+        40min
+      </div>
 
-    <h1 class="title">
-      次世代のデザインとフロントエンド開発の GUI 化
-    </h1>
+      <h1 class="session-title">
+        次世代のデザインとフロントエンド開発の GUI 化
+      </h1>
 
-    <div class="description">
-      <p>
-        STUDIO はコードを書かずに Web サイトを作れるデザインツールです（もちろん Vue.js 製！）。別の視点から見ると GUI でコードを生成するジェネレーターでもあります。
-      </p>
+      <div class="session-description">
+        <p>
+          STUDIO はコードを書かずに Web サイトを作れるデザインツールです（もちろん Vue.js 製！）。別の視点から見ると GUI でコードを生成するジェネレーターでもあります。
+        </p>
 
-      <p>
-        これまで静的な Web サイトしか作れなかった STUDIO が、今年に入ってから動的なものを作れるように開発を進めています。このとき重要になってくるのが Vue.js や React など昨今のフロントエンド開発で登場する「Component」の概念の可視化（GUI化）です。また、GUI 化によって Vue.js と React の Component の設計思想の違いが見える形で現れてきました。
-      </p>
+        <p>
+          これまで静的な Web サイトしか作れなかった STUDIO が、今年に入ってから動的なものを作れるように開発を進めています。このとき重要になってくるのが Vue.js や React など昨今のフロントエンド開発で登場する「Component」の概念の可視化（GUI化）です。また、GUI 化によって Vue.js と React の Component の設計思想の違いが見える形で現れてきました。
+        </p>
 
-      <p>
-        本セッションでは、「Component」の GUI 化を通じて見えてきた知見を中心に、実際にデモをしながら新しいデザインプロセスを提案します。
-      </p>
+        <p>
+          本セッションでは、「Component」の GUI 化を通じて見えてきた知見を中心に、実際にデモをしながら新しいデザインプロセスを提案します。
+        </p>
+      </div>
     </div>
 
     <div class="speaker">
       <img
-        class="speaker__avatar"
+        class="speaker-avatar"
         :srcset="`
           ${require('~/assets/images/speakers/keimakai1993.jpg')},
           ${require('~/assets/images/speakers/keimakai1993@2x.jpg')} 2x
@@ -37,15 +39,15 @@
         alt=""
       />
 
-      <p class="speaker__organisation">
+      <p class="speaker-organisation">
         STUDIO 株式会社
       </p>
 
-      <h2 class="speaker__name">
+      <h2 class="speaker-name">
         甲斐 啓真
       </h2>
 
-      <div class="speaker__description">
+      <div class="speaker-description">
         <p>
           STUDIO 株式会社 Founder / CPO
         </p>
@@ -55,7 +57,7 @@
         </p>
       </div>
 
-      <div class="speaker__social">
+      <div class="speaker-social">
         <a
           class="twitter"
           href="https://twitter.com/keimakai1993"
@@ -186,33 +188,54 @@ export default class SessionPage extends Vue {
 .heading {
   font-size: 10.41vw;
   font-weight: bold;
-  line-height: 1;
-  margin-bottom: 4.4vw;
+  line-height: 1.2;
+  margin-bottom: 5vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     font-size: 80px;
-    margin-bottom: 34px;
+    margin-bottom: 40px;
   }
 }
 
-.session-time {
-  font-size: 2vw;
-  color: $primary-text-color--invert;
-  background-color: $primary-color;
-  width: 10vw;
-  text-align: center;
-  margin-bottom: 2px;
-}
+.session {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 80%;
+    margin: 0 auto;
+  }
 
-.title {
-  font-size: 5vw;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 5vw;
-}
+  &-time {
+    font-size: 2vw;
+    color: $primary-text-color--invert;
+    background-color: $primary-color;
+    width: 10vw;
+    text-align: center;
+    margin-bottom: 2px;
 
-.description {
-  margin-bottom: 10vw;
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 12px;
+      width: 60px;
+    }
+  }
+
+  &-title {
+    font-size: 5vw;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 5vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &-description {
+    margin-bottom: 10vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .speaker {
@@ -223,11 +246,25 @@ export default class SessionPage extends Vue {
   padding: 5vw;
   background-color: $white;
 
-  & p {
-    font-size: 3vw;
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 80%;
+    margin: 140px 0 80px auto;
+    padding: 40px 43px;
   }
 
-  &__avatar {
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    padding: 40px 60px;
+  }
+
+  & p {
+    font-size: 3vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 18px;
+    }
+  }
+
+  &-avatar {
     position: absolute;
     top: calc(-40.8vw - -5vw);
     left: -5vw;
@@ -236,22 +273,55 @@ export default class SessionPage extends Vue {
     height: 40.8vw;
     border: 1px solid $primary-color;
     box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      top: -60px;
+      left: calc(-25% + -2px);
+      width: calc(25% + 20px);
+      height: auto;
+
+      &::after {
+        content: '';
+        padding-bottom: calc(25% + 20px);
+      }
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      width: calc(25% + 40px);
+
+      &::after {
+        padding-bottom: calc(25% + 40px);
+      }
+    }
   }
 
-  &__organisation {
+  &-organisation {
     margin-top: 2vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 0;
+    }
   }
 
-  &__name {
+  &-name {
     font-size: 6vw;
     font-weight: bold;
     line-height: 1;
     margin-bottom: 1vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
   }
 
-  &__social {
+  &-social {
     margin-top: 2vw;
     font-size: 0;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 20px;
+    }
 
     img {
       width: 7.5vw;
@@ -260,6 +330,12 @@ export default class SessionPage extends Vue {
       max-height: 50px;
       margin-right: 4vw;
       transition: 0.2s $easeInOutCubic;
+
+      @media screen and (min-width: $layout-breakpoint--is-small-up) {
+        width: 32px;
+        height: 32px;
+        margin-right: 20px;
+      }
 
       &:hover {
         opacity: 0.4;
