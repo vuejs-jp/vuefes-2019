@@ -231,6 +231,10 @@ export default class SessionPage extends Vue {
 
   &-description {
     margin-bottom: 10vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -246,6 +250,10 @@ export default class SessionPage extends Vue {
     width: 80%;
     margin: 140px 0 80px auto;
     padding: 40px 43px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    padding: 40px 60px;
   }
 
   & p {
@@ -271,6 +279,12 @@ export default class SessionPage extends Vue {
       left: -165px;
       width: 195px;
       height: 195px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      left: -240px;
+      width: 280px;
+      height: 280px;
     }
   }
 
