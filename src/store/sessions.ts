@@ -102,7 +102,7 @@ export const state = (): Sessions.State => ({
     //   title: '4000万人が使うサービスを jQuery から Nuxt.js にまで置き換えていった話',
     //   time: 40,
     //   paragraphs: [],
-    //   ogImage: 'default.jpg'
+    //   ogImage: 'default.png'
     // },
     {
       speakerId: 'keimakai',
@@ -164,7 +164,7 @@ export const state = (): Sessions.State => ({
     //   title: '型がある楽しさとつらさ',
     //   time: 20,
     //   paragraphs: [],
-    //   ogImage: 'default.jpg'
+    //   ogImage: 'default.png'
     // },
     {
       speakerId: 'blackawa',
@@ -176,14 +176,14 @@ export const state = (): Sessions.State => ({
         'そしてひとたび方針を間違えれば、手を入れるたびに複雑化していく UI コンポーネントができ上がってしまいます。にもかかわらず余白設計の問題について語られる機会はそう多くはありません。',
         '実際に開発と運用を行って得られた「何もない」を作るための余白設計の知見を共有します。'
       ],
-      ogImage: 'default.jpg'
+      ogImage: 'default.png'
     }
     // {
     //   speakerId: 'TEJIMA Takuya',
     //   title: 'とある Nuxt.js 案件の本当にあった怖い話。',
     //   time: 20,
     //   paragraphs: [],
-    //   ogImage: 'default.jpg'
+    //   ogImage: 'default.png'
     // },
   ]
 })
