@@ -75,6 +75,7 @@ export default class TheSpeakerListSection extends Vue {
     display: block;
     box-sizing: border-box;
     font-size: 0;
+    transition: box-shadow 0.4s $easeInOutCubic;
 
     &::before,
     &::after {
@@ -94,6 +95,10 @@ export default class TheSpeakerListSection extends Vue {
     &::after {
       bottom: 0;
       right: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
     }
 
     &:hover::before,
