@@ -1,3 +1,5 @@
+import { Getters } from '~/types/store'
+
 export type Session = {
   speakerId: string
   title: string
@@ -6,11 +8,17 @@ export type Session = {
   ogImage: string
 }
 
-type State = {
-  sessions: Session[]
+namespace Sessions {
+  export type State = {
+    sessions: Session[]
+  }
+
+  export type Getters = {
+    sessionBySpeakerId: (speakerId: string) => Session
+  }
 }
 
-export const state = (): State => ({
+export const state = (): Sessions.State => ({
   sessions: [
     {
       speakerId: 'yyx990803',
@@ -160,7 +168,7 @@ export const state = (): State => ({
     // },
     {
       speakerId: 'blackawa',
-      title: '”何もない” を作る、コンポーネント指向な余白設計',
+      title: '“何もない”を作る、コンポーネント指向な余白設計',
       time: 20,
       paragraphs: [
         'Vue.js がそうであるように、限定されたスコープの CSS を使って UI コンポーネントを設計することが世の中の当たり前になってきました。それを用いて UI コンポーネントを実装する時に必ず突き当たる難題のひとつが「余白」です。本セッションでは、UI コンポーネントの開発時に検討すべき余白設計についてお話しします。',
@@ -180,8 +188,8 @@ export const state = (): State => ({
   ]
 })
 
-export const getters = {
-  sessionBySpeakerId: (state: State) => (speakerId: string): Session => {
+export const getters: Getters<Sessions.State, Sessions.Getters> = {
+  sessionBySpeakerId: state => speakerId => {
     const session = state.sessions.find(
       session => session.speakerId === speakerId
     )

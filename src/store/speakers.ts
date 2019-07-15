@@ -1,3 +1,5 @@
+import { Getters } from '~/types/store'
+
 export type Speaker = {
   id: string
   avatar: string
@@ -9,11 +11,18 @@ export type Speaker = {
   paragraphs: string[]
 }
 
-type State = {
-  speakers: Speaker[]
+namespace Speakers {
+  export type State = {
+    speakers: Speaker[]
+  }
+
+  export type Getters = {
+    all: Speaker[]
+    speakerById: (id: string) => Speaker
+  }
 }
 
-export const state = (): State => ({
+export const state = (): Speakers.State => ({
   speakers: [
     {
       id: 'yyx990803',
@@ -221,11 +230,11 @@ export const state = (): State => ({
   ]
 })
 
-export const getters = {
-  all: (state: State): Speaker[] => {
+export const getters: Getters<Speakers.State, Speakers.Getters> = {
+  all: state => {
     return state.speakers
   },
-  speakerById: (state: State) => (id: string): Speaker => {
+  speakerById: state => id => {
     const speaker = state.speakers.find(speaker => speaker.id === id)
     if (speaker) return speaker
     throw new Error('Speaker Not Found')
