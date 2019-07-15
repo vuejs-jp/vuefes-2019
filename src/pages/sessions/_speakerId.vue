@@ -192,7 +192,7 @@ export default class SessionPage extends Vue {
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 12px;
       width: 60px;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
   }
 
