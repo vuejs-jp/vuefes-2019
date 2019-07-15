@@ -11,20 +11,24 @@
         v-lazy-container="{ selector: 'img.avatar' }"
         class="speaker"
       >
-        <img
-          class="avatar"
-          :data-srcset="`${speaker.avatar}, ${speaker.avatar2x} 2x`"
-          :data-src="speaker.avatar2x"
-          alt=""
-        />
+        <nuxt-link class="avatar-link" :to="`/sessions/${speaker.id}`">
+          <img
+            class="avatar"
+            :data-srcset="`${speaker.avatar}, ${speaker.avatar2x} 2x`"
+            :data-src="speaker.avatar2x"
+            alt=""
+          />
+        </nuxt-link>
 
         <div class="title">
           {{ speaker.title }}
         </div>
 
-        <h3 class="name">
-          {{ speaker.name }}
-        </h3>
+        <nuxt-link class="name-link" :to="`/sessions/${speaker.id}`">
+          <h3 class="name">
+            {{ speaker.name }}
+          </h3>
+        </nuxt-link>
       </div>
     </div>
 
@@ -66,15 +70,22 @@ export default class TheSpeakerListSection extends Vue {
     width: calc(20% - 20px);
   }
 
-  .avatar {
-    width: 100%;
+  .avatar-link {
+    display: block;
+    font-size: 0;
+
+    .avatar {
+      width: 100%;
+    }
   }
 
   .title {
     font-size: 3vw;
+    margin-top: 1vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 1.2vw;
+      margin-top: 10px;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
@@ -82,11 +93,23 @@ export default class TheSpeakerListSection extends Vue {
     }
   }
 
-  .name {
+  .name-link {
+    display: inline-block;
     font-size: 5.5vw;
     line-height: 1.3;
     margin-bottom: 3vw;
     white-space: nowrap;
+    color: $primary-text-color;
+    text-decoration: none;
+    transition: 0.2s $easeInOutCubic;
+
+    &:hover {
+      opacity: 0.4;
+    }
+
+    .name {
+      display: inline;
+    }
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 2vw;
