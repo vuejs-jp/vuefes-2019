@@ -155,6 +155,9 @@ export default class TheSpeakerListSection extends Vue {
 
     .name {
       display: inline;
+      font-size: inherit;
+      font-weight: bold;
+      line-height: 1;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
