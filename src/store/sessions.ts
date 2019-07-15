@@ -1,3 +1,5 @@
+import { Getters } from 'vuex'
+
 export type Session = {
   speakerId: string
   title: string
@@ -6,11 +8,17 @@ export type Session = {
   ogImage: string
 }
 
-type State = {
-  sessions: Session[]
+namespace Sessions {
+  export type State = {
+    sessions: Session[]
+  }
+
+  export type Getters = {
+    sessionBySpeakerId: (speakerId: string) => Session
+  }
 }
 
-export const state = (): State => ({
+export const state = (): Sessions.State => ({
   sessions: [
     {
       speakerId: 'yyx990803',
@@ -180,8 +188,8 @@ export const state = (): State => ({
   ]
 })
 
-export const getters = {
-  sessionBySpeakerId: (state: State) => (speakerId: string): Session => {
+export const getters: Getters<Sessions.State, Sessions.Getters> = {
+  sessionBySpeakerId: state => speakerId => {
     const session = state.sessions.find(
       session => session.speakerId === speakerId
     )
