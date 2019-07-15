@@ -11,7 +11,7 @@
         v-lazy-container="{ selector: 'img.avatar' }"
         class="speaker"
       >
-        <nuxt-link class="avatar-link" :to="`/sessions/${speaker.id}`">
+        <nuxt-link class="avatar-link" :to="`/sessions/${speaker.id}/`">
           <img
             class="avatar"
             :data-srcset="`${speaker.avatar}, ${speaker.avatar2x} 2x`"
@@ -24,7 +24,7 @@
           {{ speaker.title }}
         </div>
 
-        <nuxt-link class="name-link" :to="`/sessions/${speaker.id}`">
+        <nuxt-link class="name-link" :to="`/sessions/${speaker.id}/`">
           <h3 class="name">
             {{ speaker.name }}
           </h3>

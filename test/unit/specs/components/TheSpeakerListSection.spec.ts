@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
 import TheSpeakerListSection from '~/components/TheSpeakerListSection.vue'
@@ -12,11 +12,24 @@ localVue.use(Vuex)
 const store = createFullStore(Vuex)
 
 describe('TheSpeakerListSection', () => {
-  test('レンダリングできる', () => {
-    const wrapper = mount(TheSpeakerListSection, {
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = mount(TheSpeakerListSection, {
       localVue,
-      store
+      store,
+      stubs: {
+        NuxtLink: RouterLinkStub
+      }
     })
+  })
+
+  test('レンダリングできる', () => {
     expect(wrapper.find('.the-speaker-list-section').isVisible()).toBeTruthy()
+  })
+
+  test('リンクに Trailing Slash が入っている', () => {
+    expect(wrapper.find('.avatar-link').props().to).toBe('/sessions/yyx990803/')
+    expect(wrapper.find('.name-link').props().to).toBe('/sessions/yyx990803/')
   })
 })
