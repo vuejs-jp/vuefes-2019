@@ -1,3 +1,5 @@
+import { Getters } from 'vuex'
+
 export type Speaker = {
   id: string
   avatar: string
@@ -11,15 +13,6 @@ export type Speaker = {
 
 type State = {
   speakers: Speaker[]
-}
-
-type Getters<S, G, RS = {}, RG = {}> = {
-  [K in keyof G]: (
-    state: S,
-    getters?: G,
-    rootState?: RS,
-    rootGetters?: RG
-  ) => G[K]
 }
 
 interface IGetters {
@@ -236,14 +229,12 @@ export const state = (): State => ({
 })
 
 export const getters: Getters<State, IGetters> = {
-  all(state) {
+  all: state => {
     return state.speakers
   },
-  speakerById(state) {
-    return id => {
-      const speaker = state.speakers.find(speaker => speaker.id === id)
-      if (speaker) return speaker
-      throw new Error('Speaker Not Found')
-    }
+  speakerById: state => id => {
+    const speaker = state.speakers.find(speaker => speaker.id === id)
+    if (speaker) return speaker
+    throw new Error('Speaker Not Found')
   }
 }
