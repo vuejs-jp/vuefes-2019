@@ -216,17 +216,19 @@ export const state = (): Speakers.State => ({
         '株式会社マーク・オンの創業メンバーであり開発者です。SIer で技術者としての基礎を、Web 系企業でビジネスとプロダクトの関係性を学びました。そして今はスタートアップで、顧客に思いを馳せながらコードを書いています。',
         '所属する株式会社マーク・オンは、チームの開発速度を高く保つために Vue.js を採用しました。Vue.js は現在その期待に完全に応えてくれています。'
       ]
+    },
+    {
+      id: 'tejitak',
+      avatar: require('~/assets/images/speakers/tejitak.jpg'),
+      avatar2x: require('~/assets/images/speakers/tejitak@2x.jpg'),
+      title: 'GAOGAO Pte. Ltd.',
+      name: '手島 拓也',
+      twitter: 'tejitak',
+      github: 'tejitak',
+      paragraphs: [
+        '新卒で入社した IBM 研究所にてソフトウェアエンジニアとして検索・テキスト解析プロダクトの開発に従事した後、LINE 株式会社に転職し多くのサービス開発に携わりました。その後、共同創業者兼 CTO として起業、高級志向の民泊サービスを運営・事業売却し、現在はシンガポール本社 GAOGAO Pte. Ltd. の代表として創業し、海外拠点のスタートアップ・スタジオを運営しています。共著に『Vue.js入門』があります。'
+      ]
     }
-    // {
-    //   id: '',
-    //   avatar: require('~/assets/images/speakers/.jpg'),
-    //   avatar2x: require('~/assets/images/speakers/@2x.jpg'),
-    //   title: '',
-    //   name: '手島 拓也',
-    //   twitter: '',
-    //   github: '',
-    //   paragraphs: []
-    // },
   ]
 })
 
