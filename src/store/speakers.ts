@@ -1,4 +1,4 @@
-import { Getters } from 'vuex'
+import { Getters } from '~/types/store'
 
 export type Speaker = {
   id: string

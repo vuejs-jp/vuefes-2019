@@ -1,13 +1,4 @@
-// FIXME: error TS2724: Module '"../../../../../../../..node_modules/vuex/types"' has no exported member 'Getters'. Did you mean 'Getter'?
-// import { Getters } from 'vuex'
-type Getters<S, G, RS = {}, RG = {}> = {
-  [K in keyof G]: (
-    state: S,
-    getters?: G,
-    rootState?: RS,
-    rootGetters?: RG
-  ) => G[K]
-}
+import { Getters } from '~/types/store'
 
 export type Session = {
   speakerId: string
