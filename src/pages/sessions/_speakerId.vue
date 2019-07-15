@@ -187,11 +187,12 @@ export default class SessionPage extends Vue {
     background-color: $primary-color;
     width: 10vw;
     text-align: center;
-    margin-bottom: 2px;
+    margin-bottom: 1.2vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 12px;
       width: 60px;
+      margin-bottom: 8px;
     }
   }
 
