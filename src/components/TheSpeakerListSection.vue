@@ -71,8 +71,49 @@ export default class TheSpeakerListSection extends Vue {
   }
 
   .avatar-link {
+    position: relative;
     display: block;
+    box-sizing: border-box;
     font-size: 0;
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+      content: '';
+      position: absolute;
+      border: 1px solid transparent;
+      width: 0;
+      height: 0;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover::before {
+      border-top-color: $primary-text-color;
+      border-right-color: $primary-text-color;
+      transition: width 0.075s $easeOutExpo, height 0.075s $easeOutExpo 0.075s;
+    }
+
+    &:hover::after {
+      border-bottom-color: $primary-text-color;
+      border-left-color: $primary-text-color;
+      transition: width 0.075s $easeOutExpo 0.15s,
+        height 0.075s $easeOutExpo 0.225s;
+    }
 
     .avatar {
       width: 100%;
