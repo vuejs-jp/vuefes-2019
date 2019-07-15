@@ -11,16 +11,18 @@ export type Speaker = {
   paragraphs: string[]
 }
 
-type State = {
-  speakers: Speaker[]
+namespace Speakers {
+  export type State = {
+    speakers: Speaker[]
+  }
+
+  export type Getters = {
+    all: Speaker[]
+    speakerById: (id: string) => Speaker
+  }
 }
 
-interface IGetters {
-  all: Speaker[]
-  speakerById: (id: string) => Speaker
-}
-
-export const state = (): State => ({
+export const state = (): Speakers.State => ({
   speakers: [
     {
       id: 'yyx990803',
@@ -228,7 +230,7 @@ export const state = (): State => ({
   ]
 })
 
-export const getters: Getters<State, IGetters> = {
+export const getters: Getters<Speakers.State, Speakers.Getters> = {
   all: state => {
     return state.speakers
   },
