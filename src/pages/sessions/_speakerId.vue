@@ -120,7 +120,7 @@ export default class SessionPage extends Vue {
       this.speaker.name
     } が、「${this.session.title}」を発表します。`
     const ogImageUrl = `https://vuefes.jp/2019/session-og-images/${
-      this.session.speakerId
+      this.session.ogImage
     }`
 
     return {
