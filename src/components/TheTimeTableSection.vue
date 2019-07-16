@@ -366,8 +366,8 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheTimeTableSection extends Vue {
-  private keynoteAvatar = require('~/assets/images/speakers/evan.jpg')
-  private keynoteAvatar2x = require('~/assets/images/speakers/evan@2x.jpg')
+  private keynoteAvatar = require('~/assets/images/speakers/yyx990803.jpg')
+  private keynoteAvatar2x = require('~/assets/images/speakers/yyx990803@2x.jpg')
 }
 </script>
 

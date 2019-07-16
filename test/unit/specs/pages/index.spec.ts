@@ -1,17 +1,22 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueLazyLoad from 'vue-lazyload'
+import Vuex from 'vuex'
 import HomePage from '~/pages/index.vue'
+import createFullStore from '../utils/createFullStore'
 
 const localVue = createLocalVue()
 
 localVue.use(VueLazyLoad)
+localVue.use(Vuex)
+
+const store = createFullStore(Vuex)
 
 describe('HomePage', () => {
-  // FIXME: TypeError: Expected parameter accessToken
   test('レンダリングできる', () => {
     const wrapper = mount(HomePage, {
       localVue,
+      store,
       stubs: {
         NuxtLink: RouterLinkStub,
         Fa: FontAwesomeIcon,

@@ -4,52 +4,31 @@
       SPEAKERS
     </template>
 
-    <div
-      v-for="speaker in speakers"
-      :key="speaker.twitter"
-      v-lazy-container="{ selector: 'img.avatar' }"
-      class="speaker-container"
-    >
-      <img
-        class="avatar"
-        :data-srcset="`${speaker.avatar}, ${speaker.avatar2x} 2x`"
-        :data-src="speaker.avatar2x"
-        alt=""
-      />
+    <div class="speaker-container">
+      <div
+        v-for="speaker in speakers"
+        :key="speaker.twitter"
+        v-lazy-container="{ selector: 'img.avatar' }"
+        class="speaker"
+      >
+        <nuxt-link class="avatar-link" :to="`/sessions/${speaker.id}/`">
+          <img
+            class="avatar"
+            :data-srcset="`${speaker.avatar}, ${speaker.avatar2x} 2x`"
+            :data-src="speaker.avatar2x"
+            alt=""
+          />
+        </nuxt-link>
 
-      <div class="speaker-content">
         <div class="title">
           {{ speaker.title }}
         </div>
 
-        <h3 class="name">
-          {{ speaker.name }}
-        </h3>
-
-        <div class="social">
-          <a
-            class="twitter"
-            :href="`https://twitter.com/${speaker.twitter}`"
-            target="_blank"
-            rel="noopener"
-          >
-            <img src="~/assets/images/logo-twitter.svg" alt="Twitter" />
-          </a>
-          <a
-            class="github"
-            :href="`https://github.com/${speaker.github}`"
-            target="_blank"
-            rel="noopener"
-          >
-            <img src="~/assets/images/icon-github.svg" alt="GitHub" />
-          </a>
-        </div>
-
-        <div class="description">
-          <p v-for="(paragraph, index) in speaker.paragraphs" :key="index">
-            {{ paragraph }}
-          </p>
-        </div>
+        <nuxt-link class="name-link" :to="`/sessions/${speaker.id}/`">
+          <h3 class="name">
+            {{ speaker.name }}
+          </h3>
+        </nuxt-link>
       </div>
     </div>
 
@@ -60,7 +39,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Getter, Vue } from 'nuxt-property-decorator'
+import { Speaker } from '~/store/speakers'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
@@ -69,182 +49,134 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheSpeakerListSection extends Vue {
-  speakers: {
-    avatar: string
-    avatar2x: string
-    title: string
-    name: string
-    twitter: string
-    github: string
-    paragraphs: string[]
-  }[] = [
-    {
-      avatar: require('~/assets/images/speakers/evan.jpg'),
-      avatar2x: require('~/assets/images/speakers/evan@2x.jpg'),
-      title: 'Vue.js クリエーター',
-      name: 'Evan You',
-      twitter: 'youyuxi',
-      github: 'yyx990803',
-      paragraphs: [
-        'Evan は開発者、デザイナー、そしてクリエイティブコーダーです。彼は、リアクティブなコンポーネントでモダンな Web インターフェイスを構築するための JavaScript フレームワーク、Vue.js の作者です。',
-        'かつて、GitHub で最もスターを集めたフルスタック JavaScript フレームワークであった Meteor の開発グループでも働いていました。Google Creative Lab で、さまざまな Google プロダクト向けの実験的な UI プロトタイプに、2年間取り組んでいた経験もあります。'
-      ]
-    },
-    {
-      avatar: require('~/assets/images/speakers/sebastien.jpg'),
-      avatar2x: require('~/assets/images/speakers/sebastien@2x.jpg'),
-      title: 'Nuxt.js 共同クリエーター',
-      name: 'Sébastien Chopin',
-      twitter: 'Atinux',
-      github: 'Atinux',
-      paragraphs: [
-        '14歳から Web デベロッパーです。8年ほど前に Node.js を使い始めてからは、JavaScript だけを書いています。ユニバーサルアプリケーションを簡単に作ることができる Nuxt.js を共同で作っています。'
-      ]
-    },
-    {
-      avatar: require('~/assets/images/speakers/alexandre.jpg'),
-      avatar2x: require('~/assets/images/speakers/alexandre@2x.jpg'),
-      title: 'Nuxt.js 共同クリエーター',
-      name: 'Alexandre Chopin',
-      twitter: 'IamNuxt',
-      github: 'alexchopin',
-      paragraphs: [
-        'Web デベロッパーであり、講師であり、スピーカーでもあります。デベロッパーライフに喜びをもたらすため、Nuxt.js の共同クリエーターとしてフルタイムで働いています。'
-      ]
-    },
-    {
-      avatar: require('~/assets/images/speakers/pine.jpg'),
-      avatar2x: require('~/assets/images/speakers/pine@2x.jpg'),
-      title: 'Vetur クリエーター',
-      name: 'Pine Wu',
-      twitter: 'octref',
-      github: 'octref',
-      paragraphs: [
-        'Microsoft で Visual Studio Code（VS Code）の開発に携わっています。VS Code の有名な Vue 拡張機能 Vetur の作者でもあります。Vetur という名前は、菅野よう子さんの歌『Von』に由来しています。好きなマンガは『バガボンド』で、時間があれば何度も読んでいます。'
-      ]
-    },
-    {
-      avatar: require('~/assets/images/speakers/jen.jpg'),
-      avatar2x: require('~/assets/images/speakers/jen@2x.jpg'),
-      title: 'Vue Vixens 創設者兼 CEO',
-      name: 'Jen Looper',
-      twitter: 'jenlooper',
-      github: 'jlooper',
-      paragraphs: [
-        'Microsoft のクラウドデベロッパーアドボケイトリード、Google Developer Expert として Web およびモバイル開発者として 18年以上の経験を持ち、クロスプラットフォームのモバイルアプリケーション制作を専門としています。',
-        'ハードウェアハッキング、モバイルアプリ、Vue.js、機械学習、そして毎日新しいことの発見に情熱を注いでいる多言語多文化主義者です。Vue.js コミュニティの多様性を促進する先駆けである Vue Vixens の創設者兼 CEO です。'
-      ]
-    },
-    {
-      avatar: require('~/assets/images/speakers/chris.jpg'),
-      avatar2x: require('~/assets/images/speakers/chris@2x.jpg'),
-      title: 'Vue.js コアチームメンバー',
-      name: 'Chris Fritz',
-      twitter: 'chrisvfritz',
-      github: 'chrisvfritz',
-      paragraphs: [
-        'アメリカ合衆国ミシガン州ランシングに住んでおり、オープンソースに取り組みながら世界中の企業における素晴らしい Web フロントエンド構築を手助けしています。',
-        'Vue.js コアチームの一員としての仕事でよく知られており、Web 開発者にとって人生をよりシンプルで楽しいものにするための他のリソースとともに、Vue.js のドキュメント執筆やキュレーションをしています。'
-      ]
-    }
-  ]
+  @Getter('all', { namespace: 'speakers' })
+  speakers!: Speaker[]
 }
 </script>
 
 <style lang="scss" scoped>
-.speaker-container + .speaker-container {
-  margin-top: 10.4vw;
+.speaker-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 20px);
+  margin: -10px;
 }
 
-.avatar {
-  width: 100%;
-}
+.speaker {
+  margin: 10px;
+  width: calc(50% - 20px);
 
-.title {
-  font-size: 3vw;
-  line-height: 1.6;
-}
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: calc(20% - 20px);
+  }
 
-.name {
-  font-size: 5.21vw;
-  line-height: 1.3;
-  margin-bottom: 0.5vw;
-}
+  .avatar-link {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    font-size: 0;
+    transition: box-shadow 0.4s $easeInOutCubic;
 
-.social {
-  margin-bottom: 5vw;
+    &::before,
+    &::after {
+      box-sizing: inherit;
+      content: '';
+      position: absolute;
+      border: 1px solid transparent;
+      width: 0;
+      height: 0;
+    }
 
-  img {
-    width: 7.5vw;
-    max-width: 50px;
-    height: 7.5vw;
-    max-height: 50px;
+    &::before {
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    }
+
+    &:hover::before,
+    &:hover::after {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover::before {
+      border-top-color: $primary-text-color;
+      border-right-color: $primary-text-color;
+      transition: width 0.075s $easeOutExpo, height 0.075s $easeOutExpo 0.075s;
+    }
+
+    &:hover::after {
+      border-bottom-color: $primary-text-color;
+      border-left-color: $primary-text-color;
+      transition: width 0.075s $easeOutExpo 0.15s,
+        height 0.075s $easeOutExpo 0.225s;
+    }
+
+    .avatar {
+      width: 100%;
+    }
+  }
+
+  .title {
+    font-size: 3vw;
+    margin-top: 1vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 1.2vw;
+      margin-top: 10px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      font-size: 12px;
+    }
+  }
+
+  .name-link {
+    display: inline-block;
+    font-size: 5.5vw;
+    line-height: 1.3;
+    margin-bottom: 3vw;
+    white-space: nowrap;
+    color: $primary-text-color;
+    text-decoration: none;
     transition: 0.2s $easeInOutCubic;
 
     &:hover {
       opacity: 0.4;
     }
+
+    .name {
+      display: inline;
+      font-size: inherit;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 2vw;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      font-size: 22px;
+    }
   }
-}
-
-.social .github {
-  margin-left: 12px;
-}
-
-.description p {
-  font-size: 3.5vw;
 }
 
 .more {
-  margin-top: 10.4vw;
+  margin-top: 3vw;
   font-size: 4vw;
-}
 
-@media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .speaker-container {
-    display: flex;
-    align-items: flex-start;
-    margin: 0 auto;
-    width: 70%;
-
-    & + & {
-      margin-top: 80px;
-    }
-  }
-
-  .avatar {
-    width: calc((2 / 7) * 100%);
-    margin-right: 20px;
-  }
-
-  .speaker-content {
-    width: calc((5 / 7) * 100%);
-  }
-
-  .title {
-    font-size: 16px;
-  }
-
-  .name {
-    font-size: 32px;
-    margin-bottom: 4px;
-  }
-
-  .social {
-    margin-bottom: 20px;
-
-    img {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  .description p {
-    font-size: 16px;
-  }
-
-  .more {
-    margin-top: 60px;
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 20px;
     font-size: 18px;
   }
 }
