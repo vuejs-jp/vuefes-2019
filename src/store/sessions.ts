@@ -117,8 +117,7 @@ export const state = (): Sessions.State => ({
     },
     {
       speakerId: 'takefumi-yoshii',
-      title:
-        'TypeScript CompilerAPI で挑む Vuex の型推論次世代のデザインとフロントエンド開発の GUI 化',
+      title: 'TypeScript CompilerAPI で挑む Vuex の型推論',
       time: 40,
       paragraphs: [
         'Vue.js のみならず、Nuxt.js でコア機能として存在する Vuex。Vue.js アプリケーションに TypeScript を導入するにあたり、Vuex の型定義は誰しもが悩んできた課題です。vuex-module-decorators などによるアプローチもありますが、TypeScript の機能をフル活用すれば、純粋な Vuex であっても、隅々まで TypeScript に最適化することが可能です。これは、既存の Vuex コードを TypeScript 化することはもちろん、デコレーターを利用したくないシーンで役に立つ TIPS です。本セッションでは、TypeScript CompilerAPI による codegen 手法により、型推論が不可能とされていた領域に挑戦します。'
