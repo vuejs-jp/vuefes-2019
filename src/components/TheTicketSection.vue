@@ -65,7 +65,7 @@
     </div>
 
     <p class="note">
-      ※別途クレジットカード決済手数料（0.35%）がかかります。
+      ※別途クレジットカード決済手数料（3.5%）がかかります。
     </p>
 
     <BaseButton class="ticket-button" disabled>
