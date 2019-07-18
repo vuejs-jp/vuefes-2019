@@ -51,6 +51,7 @@
 
       <div class="speaker-social">
         <a
+          v-if="speaker.twitter"
           class="twitter"
           :href="`https://twitter.com/${speaker.twitter}`"
           target="_blank"

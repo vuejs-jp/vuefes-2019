@@ -6,7 +6,7 @@ export type Speaker = {
   avatar2x: string
   title: string
   name: string
-  twitter: string
+  twitter: string | null
   github: string
   paragraphs: string[]
 }
@@ -128,7 +128,7 @@ export const state = (): Speakers.State => ({
       avatar2x: require('~/assets/images/speakers/retty-y-takase@2x.jpg'),
       title: 'Retty 株式会社',
       name: '高瀬 悠磨',
-      twitter: '',
+      twitter: null,
       github: 'retty-y-takase',
       paragraphs: [
         '2018年から Retty にフロントエンドエンジニアとして参画。Vue を用いた Web アプリケーションの開発・運用を行なっています。2時の父、最近の特技は息子の「俺の必殺技」にカウンターアタックをいれることです。'
@@ -202,7 +202,7 @@ export const state = (): Speakers.State => ({
       avatar2x: require('~/assets/images/speakers/konu96@2x.jpg'),
       title: 'Retty 株式会社',
       name: '宇野 航平',
-      twitter: '',
+      twitter: null,
       github: 'konu96',
       paragraphs: [
         'Retty 新卒 Web エンジニアです。サーバーサイドからフロントエンドまで幅広くやっています。最近では、アーキテクチャ刷新プロジェクトを進めており、Go + Nuxt.js + TypeScript で開発をしています。'
