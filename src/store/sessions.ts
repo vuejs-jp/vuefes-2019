@@ -107,7 +107,7 @@ export const state = (): Sessions.State => ({
         '具体的には、jQuery や gulp/webpack との格闘、Jest 導入、SEO 要件、アーキテクチャ刷新による Nuxt.js の導入から拡充まで、施策との相性やログ機構などです。',
         '時代とともにフロントエンド技術の移り変わりがあるなか、Retty はどのタイミングで jQuery から移行し、どう運用しているのかについて紹介します。'
       ],
-      ogImage: 'default.png'
+      ogImage: 'retty-y-takase.jpg'
     },
     {
       speakerId: 'keimakai',
@@ -172,7 +172,7 @@ export const state = (): Sessions.State => ({
         '型がある安全な世界になった一方で、型のない世界に型を持ち込んだ辛さもあります。また、型定義ファイルが提供されていない外部パッケージの変化に追従していく大変さもあります。',
         '本セッションでは、型のない世界にどのように型を組み込んだか、開発速度、運用コストについてお話しします。具体的には、VueTypes からの移行や API のインタフェース などについて紹介します。'
       ],
-      ogImage: 'default.png'
+      ogImage: 'konu96.jpg'
     },
     {
       speakerId: 'blackawa',
@@ -184,7 +184,7 @@ export const state = (): Sessions.State => ({
         'そしてひとたび方針を間違えれば、手を入れるたびに複雑化していく UI コンポーネントができ上がってしまいます。にもかかわらず余白設計の問題について語られる機会はそう多くはありません。',
         '実際に開発と運用を行って得られた「何もない」を作るための余白設計の知見を共有します。'
       ],
-      ogImage: 'default.png'
+      ogImage: 'blackawa.jpg'
     },
     {
       speakerId: 'tejitak',
@@ -202,7 +202,7 @@ export const state = (): Sessions.State => ({
         'なぜそのようなことが起こってしまったのでしょうか？結果的に、サービスの質の低下に繋がってしまう状況が続き、改善のプロセスを早急に見出していく必要がありました。開発チームの体制の問題もありましたが、現在進行形でコード・設計レベルで改善を行っています。',
         '本セッションでは、本案件を通じて得られた「Nuxt.js バッドプラクティス」の知見と改善方法提案を紹介します。'
       ],
-      ogImage: 'default.png'
+      ogImage: 'tejitak.jpg'
     }
   ]
 })
