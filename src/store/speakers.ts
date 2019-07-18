@@ -122,16 +122,18 @@ export const state = (): Speakers.State => ({
         '何を作るのかを探求し、プロダクトの価値を出すことを大事にしています。ユーザーと共に作れるような開発に挑戦しています。'
       ]
     },
-    // {
-    //   id: '',
-    //   avatar: require('~/assets/images/speakers/.jpg'),
-    //   avatar2x: require('~/assets/images/speakers/@2x.jpg'),
-    //   title: '',
-    //   name: '高瀬 悠磨',
-    //   twitter: '',
-    //   github: '',
-    //   paragraphs: []
-    // },
+    {
+      id: 'retty-y-takase',
+      avatar: require('~/assets/images/speakers/retty-y-takase.jpg'),
+      avatar2x: require('~/assets/images/speakers/retty-y-takase@2x.jpg'),
+      title: 'Retty',
+      name: '高瀬 悠磨',
+      twitter: '',
+      github: 'retty-y-takase',
+      paragraphs: [
+        '2018年から Retty にフロントエンドエンジニアとして参画。Vue を用いた Web アプリケーションの開発・運用を行なっています。2時の父、最近の特技は息子の「俺の必殺技」にカウンターアタックをいれることです。'
+      ]
+    },
     {
       id: 'keimakai',
       avatar: require('~/assets/images/speakers/keimakai.jpg'),
