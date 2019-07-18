@@ -163,13 +163,17 @@ export const state = (): Sessions.State => ({
       ],
       ogImage: 'masaakikunsan.jpg'
     },
-    // {
-    //   speakerId: 'UNO Kouhei',
-    //   title: '型がある楽しさとつらさ',
-    //   time: 20,
-    //   paragraphs: [],
-    //   ogImage: 'default.png'
-    // },
+    {
+      speakerId: 'konu96',
+      title: '型がある楽しさとつらさ',
+      time: 20,
+      paragraphs: [
+        '大規模サービスになると、型に守られた世界でコードを書きたいものです。実名型グルメサービス Retty でも、一部アーキテクチャの刷新時に、フロントエンドに Nuxt.js + TypeScript、サーバーとの通信に GraphQL を導入しました。',
+        '型がある安全な世界になった一方で、型のない世界に型を持ち込んだ辛さもあります。また、型定義ファイルが提供されていない外部パッケージの変化に追従していく大変さもあります。',
+        '本セッションでは、型のない世界にどのように型を組み込んだか、開発速度、運用コストについてお話しします。具体的には、VueTypes からの移行や API のインタフェース などについて紹介します。'
+      ],
+      ogImage: 'default.png'
+    },
     {
       speakerId: 'blackawa',
       title: '“何もない” を作る、コンポーネント指向な余白設計',

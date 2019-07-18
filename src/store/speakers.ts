@@ -126,7 +126,7 @@ export const state = (): Speakers.State => ({
       id: 'retty-y-takase',
       avatar: require('~/assets/images/speakers/retty-y-takase.jpg'),
       avatar2x: require('~/assets/images/speakers/retty-y-takase@2x.jpg'),
-      title: 'Retty',
+      title: 'Retty 株式会社',
       name: '高瀬 悠磨',
       twitter: '',
       github: 'retty-y-takase',
@@ -196,16 +196,18 @@ export const state = (): Speakers.State => ({
         '最近は、フロントでのテストの重要性を感じているので、テストに関心があります。'
       ]
     },
-    // {
-    //   id: '',
-    //   avatar: require('~/assets/images/speakers/.jpg'),
-    //   avatar2x: require('~/assets/images/speakers/@2x.jpg'),
-    //   title: '',
-    //   name: '宇野 航平',
-    //   twitter: '',
-    //   github: '',
-    //   paragraphs: []
-    // },
+    {
+      id: 'konu96',
+      avatar: require('~/assets/images/speakers/konu96.jpg'),
+      avatar2x: require('~/assets/images/speakers/konu96@2x.jpg'),
+      title: 'Retty 株式会社',
+      name: '宇野 航平',
+      twitter: '',
+      github: 'konu96',
+      paragraphs: [
+        'Retty 新卒 Web エンジニアです。サーバーサイドからフロントエンドまで幅広くやっています。最近では、アーキテクチャ刷新プロジェクトを進めており、Go + Nuxt.js + TypeScript で開発をしています。'
+      ]
+    },
     {
       id: 'blackawa',
       avatar: require('~/assets/images/speakers/blackawa.jpg'),
