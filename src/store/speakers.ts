@@ -6,7 +6,7 @@ export type Speaker = {
   avatar2x: string
   title: string
   name: string
-  twitter: string
+  twitter: string | null
   github: string
   paragraphs: string[]
 }
@@ -122,16 +122,18 @@ export const state = (): Speakers.State => ({
         '何を作るのかを探求し、プロダクトの価値を出すことを大事にしています。ユーザーと共に作れるような開発に挑戦しています。'
       ]
     },
-    // {
-    //   id: '',
-    //   avatar: require('~/assets/images/speakers/.jpg'),
-    //   avatar2x: require('~/assets/images/speakers/@2x.jpg'),
-    //   title: '',
-    //   name: '高瀬 悠磨',
-    //   twitter: '',
-    //   github: '',
-    //   paragraphs: []
-    // },
+    {
+      id: 'retty-y-takase',
+      avatar: require('~/assets/images/speakers/retty-y-takase.jpg'),
+      avatar2x: require('~/assets/images/speakers/retty-y-takase@2x.jpg'),
+      title: 'Retty 株式会社',
+      name: '高瀬 悠磨',
+      twitter: null,
+      github: 'retty-y-takase',
+      paragraphs: [
+        '2018年から Retty にフロントエンドエンジニアとして参画。Vue.js を用いた Web アプリケーションの開発・運用を行なっています。2児の父、最近の特技は息子の「俺の必殺技」にカウンターアタックをいれることです。'
+      ]
+    },
     {
       id: 'keimakai',
       avatar: require('~/assets/images/speakers/keimakai.jpg'),
@@ -194,16 +196,18 @@ export const state = (): Speakers.State => ({
         '最近は、フロントでのテストの重要性を感じているので、テストに関心があります。'
       ]
     },
-    // {
-    //   id: '',
-    //   avatar: require('~/assets/images/speakers/.jpg'),
-    //   avatar2x: require('~/assets/images/speakers/@2x.jpg'),
-    //   title: '',
-    //   name: '宇野 航平',
-    //   twitter: '',
-    //   github: '',
-    //   paragraphs: []
-    // },
+    {
+      id: 'konu96',
+      avatar: require('~/assets/images/speakers/konu96.jpg'),
+      avatar2x: require('~/assets/images/speakers/konu96@2x.jpg'),
+      title: 'Retty 株式会社',
+      name: '宇野 航平',
+      twitter: null,
+      github: 'konu96',
+      paragraphs: [
+        'Retty 新卒 Web エンジニアです。サーバーサイドからフロントエンドまで幅広くやっています。最近では、アーキテクチャ刷新プロジェクトを進めており、Go + Nuxt.js + TypeScript で開発をしています。'
+      ]
+    },
     {
       id: 'blackawa',
       avatar: require('~/assets/images/speakers/blackawa.jpg'),

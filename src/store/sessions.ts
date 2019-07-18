@@ -97,13 +97,18 @@ export const state = (): Sessions.State => ({
       ],
       ogImage: 'keinuma.jpg'
     },
-    // {
-    //   speakerId: 'TAKASE Yuma',
-    //   title: '4000万人が使うサービスを jQuery から Nuxt.js にまで置き換えていった話',
-    //   time: 40,
-    //   paragraphs: [],
-    //   ogImage: 'default.png'
-    // },
+    {
+      speakerId: 'retty-y-takase',
+      title:
+        '4000万人が使うサービスを jQuery から Nuxt.js にまで置き換えていった話',
+      time: 40,
+      paragraphs: [
+        'Retty は、月間 4000万人のユニークユーザーを持つ実名型グルメサービスです。9年間運用されてきましたが、当時の JavaScript はフル jQuery で書かれていました。本セッションでは、ここ数年で実施したフロントエンドの改善、サービス運用と並行しながら部分的に Vue.js、Nuxt.js に移行した軌跡をお話しします。',
+        '具体的には、jQuery や gulp/webpack との格闘、Jest 導入、SEO 要件、アーキテクチャ刷新による Nuxt.js の導入から拡充まで、施策との相性やログ機構などです。',
+        '時代とともにフロントエンド技術の移り変わりがあるなか、Retty はどのタイミングで jQuery から移行し、どう運用しているのかについて紹介します。'
+      ],
+      ogImage: 'default.png'
+    },
     {
       speakerId: 'keimakai',
       title: '次世代のデザインとフロントエンド開発の GUI 化',
@@ -158,13 +163,17 @@ export const state = (): Sessions.State => ({
       ],
       ogImage: 'masaakikunsan.jpg'
     },
-    // {
-    //   speakerId: 'UNO Kouhei',
-    //   title: '型がある楽しさとつらさ',
-    //   time: 20,
-    //   paragraphs: [],
-    //   ogImage: 'default.png'
-    // },
+    {
+      speakerId: 'konu96',
+      title: '型がある楽しさとつらさ',
+      time: 20,
+      paragraphs: [
+        '大規模サービスになると、型に守られた世界でコードを書きたいものです。実名型グルメサービス Retty でも、一部アーキテクチャの刷新時に、フロントエンドに Nuxt.js + TypeScript、サーバーとの通信に GraphQL を導入しました。',
+        '型がある安全な世界になった一方で、型のない世界に型を持ち込んだ辛さもあります。また、型定義ファイルが提供されていない外部パッケージの変化に追従していく大変さもあります。',
+        '本セッションでは、型のない世界にどのように型を組み込んだか、開発速度、運用コストについてお話しします。具体的には、VueTypes からの移行や API のインタフェース などについて紹介します。'
+      ],
+      ogImage: 'default.png'
+    },
     {
       speakerId: 'blackawa',
       title: '“何もない” を作る、コンポーネント指向な余白設計',
