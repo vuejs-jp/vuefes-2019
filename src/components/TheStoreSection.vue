@@ -54,6 +54,7 @@ import BaseSection from '~/components/BaseSection.vue'
 })
 export default class TheStoreSection extends Vue {
   private image = require('~/assets/images/store.png')
+
   private image2x = require('~/assets/images/store@2x.png')
 }
 </script>

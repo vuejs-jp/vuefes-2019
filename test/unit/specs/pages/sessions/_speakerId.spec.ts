@@ -1,7 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
-import SessionPage from '~/pages/sessions/_speakerId.vue'
 import createFullStore from '../../utils/createFullStore'
+import SessionPage from '~/pages/sessions/_speakerId.vue'
 
 const localVue = createLocalVue()
 

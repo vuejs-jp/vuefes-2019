@@ -104,6 +104,7 @@ type AsyncData = {
 })
 export default class SessionPage extends Vue {
   speakerId!: string
+
   path!: string
 
   @Getter('sessionBySpeakerId', { namespace: 'sessions' })

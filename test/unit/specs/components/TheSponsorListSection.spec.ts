@@ -1,7 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
-import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 import sponsorList from '../../__mocks__/sponsorListMock'
+import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 
 const localVue = createLocalVue()
 

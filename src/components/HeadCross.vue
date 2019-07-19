@@ -17,12 +17,16 @@ import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 export default class HeadCross extends Vue {
   @Prop()
   readonly item!: Parts
+
   @Prop(Boolean)
   readonly visible!: boolean
 
   keyFrame1 = ['0 -60 0 -60 0 -60', '-52 -60 52 -60 0 -8']
+
   keyFrame2 = ['-60 0 -60 0 -60 0', '-60 -52 -60 52 -8 0']
+
   keyFrame3 = ['0 60 0 60 0 60', '52 60 -52 60 0 8']
+
   keyFrame4 = ['60 0 60 0 60 0', '60 52 60 -52 8 0']
 
   get transform() {
