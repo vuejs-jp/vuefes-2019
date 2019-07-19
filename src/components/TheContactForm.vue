@@ -21,9 +21,10 @@
       <!-- Anti-spam Measures -->
       <div class="hidden">
         <p>
-          <!-- eslint-disable vue/html-closing-bracket-spacing -->
-          <label>Don’t fill this out: <input name="bot-field"/></label>
-          <!-- eslint-enable vue/html-closing-bracket-spacing -->
+          <label>
+            Don’t fill this out:
+            <input name="bot-field" />
+          </label>
         </p>
 
         <input type="hidden" name="form-name" value="contact" />
@@ -31,13 +32,7 @@
 
       <!-- Name -->
       <div class="form-content">
-        <label for="name">
-          お名前
-          <span class="required">
-            （必須）
-          </span>
-        </label>
-
+        <label for="name">お名前<span class="required">（必須）</span></label>
         <input
           id="name"
           v-model.trim="formData.name"
@@ -57,10 +52,7 @@
       <!-- Email -->
       <div class="form-content">
         <label for="email">
-          メールアドレス
-          <span class="required">
-            （必須）
-          </span>
+          メールアドレス<span class="required">（必須）</span>
         </label>
 
         <input
@@ -97,10 +89,7 @@
       <!-- Message -->
       <div class="form-content">
         <label for="message">
-          内容
-          <span class="required">
-            （必須）
-          </span>
+          内容<span class="required">（必須）</span>
         </label>
 
         <textarea
