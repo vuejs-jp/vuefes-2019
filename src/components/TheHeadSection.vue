@@ -134,6 +134,7 @@ export default class TheHeadSection extends Vue {
   get viewBox() {
     return `0 0 ${this.width} ${this.height}`
   }
+
   get itemsFlatten(): Parts[] {
     if (!this.visible) {
       return []
@@ -228,7 +229,9 @@ export default class TheHeadSection extends Vue {
   }
 
   width = 0
+
   height = 384
+
   pattern = [
     ['-⧄|⧅⧄⧅⮽⧄o', 'o⮽⧄◢-⧄⧅◥|', '⧅◣⧅⧄⧅|⧄⧅⧄'],
     ['1⧄|⧅o⧅⮽⧄◥', 'o⮽⧄◢⧄-⧅2|', '◥◣o⧄⧅|⧄⧅⧄'],
@@ -238,10 +241,15 @@ export default class TheHeadSection extends Vue {
     ['o⧄⧅3⧄⧅o⧄6', '-⮽1⧅⧄4⧄|⧄', '⧄◣o⧄2⧅⧄◥⮽'],
     ['3⧄4⧅⧄⧅⮽5o', 'o⮽⧄◤2⧄6◥|', '⧅◢⧅1⧅⧅⧄-⧄']
   ]
+
   patternIndex = 0
+
   t = 0
+
   tMax = 0
+
   visible = true
+
   windowMode: WindowMode = 'sm'
 
   adjustSvg(mode: WindowMode) {

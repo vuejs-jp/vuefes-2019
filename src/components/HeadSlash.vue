@@ -15,7 +15,9 @@ import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 export default class HeadSlash extends Vue {
   @Prop()
   readonly item!: Parts
+
   keyFrame1 = ['-60 -60 -60 -60 -60 -60', '-60 -60 52 -60 -60 52']
+
   keyFrame2 = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
   get transform() {

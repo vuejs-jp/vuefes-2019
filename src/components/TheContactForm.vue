@@ -153,6 +153,7 @@ export default class TheContactForm extends Vue {
     organization: '',
     message: ''
   }
+
   status = {
     inProgress: false,
     hasSent: false,

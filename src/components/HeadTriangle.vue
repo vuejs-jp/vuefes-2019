@@ -14,6 +14,7 @@ import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
 export default class HeadTriangle extends Vue {
   @Prop()
   readonly item!: Parts
+
   keyFrame = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
   get transform() {

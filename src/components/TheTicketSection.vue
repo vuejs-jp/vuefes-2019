@@ -172,9 +172,11 @@ import BaseButton from '~/components/BaseButton.vue'
 })
 export default class TheTicketSection extends Vue {
   private imageOne = require('~/assets/images/tickets/image1.jpg')
+
   private imageOne2x = require('~/assets/images/tickets/image1@2x.jpg')
 
   private imageTwo = require('~/assets/images/tickets/image2.jpg')
+
   private imageTwo2x = require('~/assets/images/tickets/image2@2x.jpg')
 }
 </script>

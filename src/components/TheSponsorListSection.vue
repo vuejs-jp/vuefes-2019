@@ -120,12 +120,15 @@ import BaseSection from '~/components/BaseSection.vue'
 })
 export default class TheSponsorListSection extends Vue {
   private imageOne = require('~/assets/images/sponsors/image1.jpg')
+
   private imageOne2x = require('~/assets/images/sponsors/image1@2x.jpg')
 
   private imageTwo = require('~/assets/images/sponsors/image2.jpg')
+
   private imageTwo2x = require('~/assets/images/sponsors/image2@2x.jpg')
 
   private imageThree = require('~/assets/images/sponsors/image3.jpg')
+
   private imageThree2x = require('~/assets/images/sponsors/image3@2x.jpg')
 
   sponsorPlans: { plan: string; name: string }[] = [

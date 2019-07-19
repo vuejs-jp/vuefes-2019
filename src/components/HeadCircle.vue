@@ -16,6 +16,7 @@ export default class HeadCircle extends Vue {
   readonly item!: Parts
 
   t = 0
+
   keyFrame = [0, 60]
 
   get transform() {

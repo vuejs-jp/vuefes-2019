@@ -1,8 +1,8 @@
 import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
-import TheSpeakerListSection from '~/components/TheSpeakerListSection.vue'
 import createFullStore from '../utils/createFullStore'
+import TheSpeakerListSection from '~/components/TheSpeakerListSection.vue'
 
 const localVue = createLocalVue()
 
