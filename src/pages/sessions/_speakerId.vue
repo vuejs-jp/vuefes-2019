@@ -5,9 +5,9 @@
     </h2>
 
     <div class="session">
-      <div class="session-time">
-        {{ session.time }}min
-      </div>
+      <!-- eslint-disable vue/singleline-html-element-content-newline -->
+      <div class="session-time">{{ session.time }}min</div>
+      <!-- eslint-enable vue/singleline-html-element-content-newline -->
 
       <h1 class="session-title">
         {{ session.title }}
@@ -27,10 +27,12 @@
     <div class="speaker">
       <img
         class="speaker-avatar"
-        :srcset="`
+        :srcset="
+          `
           ${speaker.avatar},
           ${speaker.avatar2x} 2x
-        `"
+        `
+        "
         :src="speaker.avatar2x"
         alt=""
       />
@@ -115,15 +117,9 @@ export default class SessionPage extends Vue {
 
   head() {
     const url = `https://vuefes.jp/2019${this.path}`
-    const title = `${this.session.title}（${
-      this.speaker.name
-    }） | Vue Fes Japan 2019`
-    const description = `Vue Fes Japan 2019 のセッション情報です。スピーカーの ${
-      this.speaker.name
-    } が、「${this.session.title}」を発表します。`
-    const ogImageUrl = `https://vuefes.jp/2019/session-og-images/${
-      this.session.ogImage
-    }`
+    const title = `${this.session.title}（${this.speaker.name}） | Vue Fes Japan 2019`
+    const description = `Vue Fes Japan 2019 のセッション情報です。スピーカーの ${this.speaker.name} が、「${this.session.title}」を発表します。`
+    const ogImageUrl = `https://vuefes.jp/2019/session-og-images/${this.session.ogImage}`
 
     return {
       title,

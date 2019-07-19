@@ -8,18 +8,18 @@
 
     <!-- eslint-disable vue/html-indent -->
     <script type="application/javascript">
-    function initMap() {
-      const latlng = new google.maps.LatLng(35.6230000, 139.717600)
-      const map = new google.maps.Map(document.getElementById('map'), {
-        center: latlng,
-        zoom: 16
-      })
-      const infowindow = new google.maps.InfoWindow({
-        content: 'TOC五反田メッセ',
-        position: latlng
-      })
-      infowindow.open(map)
-    }
+      function initMap() {
+        const latlng = new google.maps.LatLng(35.623, 139.7176)
+        const map = new google.maps.Map(document.getElementById('map'), {
+          center: latlng,
+          zoom: 16
+        })
+        const infowindow = new google.maps.InfoWindow({
+          content: 'TOC五反田メッセ',
+          position: latlng
+        })
+        infowindow.open(map)
+      }
     </script>
     <!-- eslint-enable vue/html-indent -->
 

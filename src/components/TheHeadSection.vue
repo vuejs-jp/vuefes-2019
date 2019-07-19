@@ -2,10 +2,20 @@
   <BaseSection class="the-head-section">
     <div class="main-visual-wrapper">
       <no-ssr>
-        <svg class="main-visual" :viewBox="viewBox" :width="width" :height="height">
+        <svg
+          class="main-visual"
+          :viewBox="viewBox"
+          :width="width"
+          :height="height"
+        >
           <g transform="translate(-6, -6)">
-            <transition-group tag="g" mode="out-in" @enter="enter" @leave="leave">
-              <g v-for="(item) in itemsFlatten" :key="item.key">
+            <transition-group
+              tag="g"
+              mode="out-in"
+              @enter="enter"
+              @leave="leave"
+            >
+              <g v-for="item in itemsFlatten" :key="item.key">
                 <component :is="item.type" :item="item" />
               </g>
             </transition-group>
@@ -28,7 +38,8 @@
       <p>
         2018 年は Vue.js にとって飛躍の年でした。
         エコシステムの成熟、関連ツールのアップデート、コミュニティの拡大と、数多くのポジティブな出来事がありました。
-        また、世界各地でカンファレンスが開催され、Vue.js 日本ユーザーグループでも国内初の大規模カンファレンス
+        また、世界各地でカンファレンスが開催され、Vue.js
+        日本ユーザーグループでも国内初の大規模カンファレンス
         <a
           class="link"
           href="https://vuefes.jp/2018/"
@@ -49,7 +60,7 @@
 
       <p class="message__author">
         Vue.js 日本ユーザーグループ 代表 川口 和也
-        <a 
+        <a
           class="link"
           href="https://github.com/kazupon"
           target="_blank"
@@ -216,11 +227,11 @@ export default class TheHeadSection extends Vue {
                 break
             }
             return {
-              type: type,
+              type,
               x: (gap + grid) / 2 + col * (gap + grid),
               y: (gap + grid) / 2 + row * (gap + grid),
-              rotate: rotate,
-              src: src,
+              rotate,
+              src,
               key: `${row}-${col}-${type}-${rotate}`
             }
           }

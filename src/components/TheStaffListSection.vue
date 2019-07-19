@@ -5,26 +5,21 @@
     </template>
 
     <template slot="heading-copy">
-      Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
+      Vue Fes Japan 2019 は、 Vue.js
+      日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
     <ul class="staff-list">
-      <li
-        v-for="staff in leaderAndStaffs"
-        :key="staff.name"
-        class="staff"
-      >
-        <a
-          :href="staff.link"
-          target="_blank"
-          rel="noopener"
-        >
+      <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
+        <a :href="staff.link" target="_blank" rel="noopener">
           <div v-lazy-container="{ selector: 'img' }">
             <img
-              :data-srcset="`
+              :data-srcset="
+                `
               ${require(`~/assets/images/staffs/${staff.avatar}`)},
               ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
-            `"
+            `
+              "
               :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
               alt=""
             />

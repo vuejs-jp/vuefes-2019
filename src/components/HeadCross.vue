@@ -7,7 +7,6 @@
   </g>
 </template>
 
-
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import { TweenMax, Power2 } from 'gsap'
@@ -30,9 +29,7 @@ export default class HeadCross extends Vue {
   keyFrame4 = ['60 0 60 0 60 0', '60 52 60 -52 8 0']
 
   get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${
-      this.item.rotate
-    })`
+    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
   }
 
   beforeDestroy() {

@@ -6,7 +6,8 @@
 
     <BaseMainDescription>
       <p>
-        Vue.js 日本ユーザーグループへのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者から3営業日以内でお答えさせていただきます。
+        Vue.js
+        日本ユーザーグループへのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者から3営業日以内でお答えさせていただきます。
       </p>
     </BaseMainDescription>
 
@@ -20,14 +21,12 @@
       <!-- Anti-spam Measures -->
       <div class="hidden">
         <p>
-          <label>Don’t fill this out: <input name="bot-field" /></label>
+          <!-- eslint-disable vue/html-closing-bracket-spacing -->
+          <label>Don’t fill this out: <input name="bot-field"/></label>
+          <!-- eslint-enable vue/html-closing-bracket-spacing -->
         </p>
 
-        <input
-          type="hidden"
-          name="form-name"
-          value="contact"
-        />
+        <input type="hidden" name="form-name" value="contact" />
       </div>
 
       <!-- Name -->
@@ -43,7 +42,7 @@
           id="name"
           v-model.trim="formData.name"
           v-validate="'required'"
-          :class="{'error': errors.has('name')}"
+          :class="{ error: errors.has('name') }"
           data-vv-validate-on="blur"
           name="name"
           placeholder="お名前"
@@ -68,7 +67,7 @@
           id="email"
           v-model.trim="formData.email"
           v-validate="'required|email'"
-          :class="{'error': errors.has('email')}"
+          :class="{ error: errors.has('email') }"
           data-vv-validate-on="blur"
           name="email"
           placeholder="メールアドレス"
@@ -108,18 +107,27 @@
           id="message"
           v-model="formData.message"
           v-validate="'required|max:3000'"
-          :class="{'error': errors.has('message')}"
+          :class="{ error: errors.has('message') }"
           data-vv-validate-on="blur"
           name="message"
           placeholder="例：お問い合わせ内容をご記入ください"
         />
 
-        <div v-show="errors.has('message')" id="message-error" class="has-error">
+        <div
+          v-show="errors.has('message')"
+          id="message-error"
+          class="has-error"
+        >
           {{ errors.first('message') }}
         </div>
       </div>
 
-      <BaseButton :disabled="status.hasSent||status.inProgress" :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
+      <BaseButton
+        :disabled="status.hasSent || status.inProgress"
+        :class="{ 'has-sent': status.hasSent }"
+        class="submit-button"
+        type="submit"
+      >
         {{ buttonValue }}
       </BaseButton>
     </form>

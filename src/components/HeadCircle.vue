@@ -4,7 +4,6 @@
   </g>
 </template>
 
-
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 import { TweenMax, Power2 } from 'gsap'
@@ -20,9 +19,7 @@ export default class HeadCircle extends Vue {
   keyFrame = [0, 60]
 
   get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${
-      this.item.rotate
-    })`
+    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
   }
 
   created() {

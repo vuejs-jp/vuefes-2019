@@ -1,24 +1,13 @@
 <template>
   <g :transform="transform">
     <clipPath id="clip-boundary">
-      <rect
-        x="-60"
-        y="-60"
-        width="120"
-        height="120"
-      />
+      <rect x="-60" y="-60" width="120" height="120" />
     </clipPath>
     <clipPath :id="clipId">
-      <circle
-        ref="shape"
-        cx="0"
-        cy="0"
-        r="0"
-        clip-path="url(#clip-boundary)"
-      />
+      <circle ref="shape" cx="0" cy="0" r="0" clip-path="url(#clip-boundary)" />
     </clipPath>
     <image
-      v-show="item.src=='image01.png'"
+      v-show="item.src == 'image01.png'"
       key="1"
       :href="images[0]"
       x="-60"
@@ -28,7 +17,7 @@
       :clip-path="clipPath"
     />
     <image
-      v-show="item.src=='image02.png'"
+      v-show="item.src == 'image02.png'"
       key="2"
       :href="images[1]"
       x="-60"
@@ -38,7 +27,7 @@
       :clip-path="clipPath"
     />
     <image
-      v-show="item.src=='image03.png'"
+      v-show="item.src == 'image03.png'"
       key="3"
       :href="images[2]"
       x="-60"
@@ -48,7 +37,7 @@
       :clip-path="clipPath"
     />
     <image
-      v-show="item.src=='image04.png'"
+      v-show="item.src == 'image04.png'"
       key="4"
       :href="images[3]"
       x="-60"
@@ -58,7 +47,7 @@
       :clip-path="clipPath"
     />
     <image
-      v-show="item.src=='image05.png'"
+      v-show="item.src == 'image05.png'"
       key="5"
       :href="images[4]"
       x="-60"
@@ -68,7 +57,7 @@
       :clip-path="clipPath"
     />
     <image
-      v-show="item.src=='image06.png'"
+      v-show="item.src == 'image06.png'"
       key="6"
       :href="images[5]"
       x="-60"
@@ -79,7 +68,6 @@
     />
   </g>
 </template>
-
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
@@ -107,9 +95,7 @@ export default class HeadPhoto extends Vue {
   }
 
   get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${
-      this.item.rotate
-    })`
+    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
   }
 
   get href() {
