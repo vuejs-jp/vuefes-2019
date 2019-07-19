@@ -6,9 +6,9 @@
 
     <div class="content">
       <div class="description">
+        <!-- prettier-ignore -->
         <p>
-          Vue.js に関わる人々が集まる Vue Fes Japan 2019
-          をよりよいイベントにするため、スポンサーを募集します。
+          Vue.js に関わる人々が集まる Vue Fes Japan 2019 をよりよいイベントにするため、スポンサーを募集します。
           <a
             class="link"
             href="https://fortee.jp/vuefes-2019/sponsor/form"
