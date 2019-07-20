@@ -4,7 +4,10 @@
       <div class="content-wrapper">
         <div class="logo">
           <nuxt-link to="/">
-            <img src="~/assets/images/logo-vuefes-invert.svg" alt="Vue Fes Japan" />
+            <img
+              src="~/assets/images/logo-vuefes-invert.svg"
+              alt="Vue Fes Japan"
+            />
           </nuxt-link>
         </div>
 
@@ -99,11 +102,7 @@
             各種リンク
           </h2>
 
-          <a
-            href="https://jp.vuejs.org/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://jp.vuejs.org/" target="_blank" rel="noopener">
             Vue.js
           </a>
           <br />
@@ -117,11 +116,7 @@
           </a>
           <br />
 
-          <a
-            href="https://vuefes.jp/2018/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://vuefes.jp/2018/" target="_blank" rel="noopener">
             Vue Fes Japan 2018
           </a>
         </div>
@@ -202,9 +197,7 @@ export default class TheFooter extends Vue {
 
   openFacebookForm(): void {
     window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${
-        this.encodedUri
-      }&src=sdkpreparse`,
+      `https://www.facebook.com/sharer/sharer.php?u=${this.encodedUri}&src=sdkpreparse`,
       'share',
       'width=670, height=328'
     )

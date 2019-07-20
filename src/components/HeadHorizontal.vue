@@ -1,24 +1,11 @@
 <template>
   <g :transform="transform">
-    <rect
-      key="1"
-      ref="shape1"
-      x="-60"
-      y="-60"
-      width="120"
-      height="0"
-    />
-    <rect
-      key="2"
-      ref="shape2"
-      x="-60"
-      y="60"
-      width="120"
-      height="0"
-    />
+    <!-- eslint-disable vue/max-attributes-per-line -->
+    <rect key="1" ref="shape1" x="-60" y="-60" width="120" height="0" />
+    <rect key="2" ref="shape2" x="-60" y="60" width="120" height="0" />
+    <!-- eslint-enable vue/max-attributes-per-line -->
   </g>
 </template>
-
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
@@ -31,9 +18,7 @@ export default class HeadHorizontal extends Vue {
   readonly item!: Parts
 
   get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${
-      this.item.rotate
-    })`
+    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
   }
 
   beforeDestroy() {

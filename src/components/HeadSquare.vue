@@ -1,15 +1,8 @@
 <template>
   <g :transform="transform">
-    <rect
-      ref="shape"
-      x="0"
-      y="0"
-      width="0"
-      height="0"
-    />
+    <rect ref="shape" x="0" y="0" width="0" height="0" />
   </g>
 </template>
-
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
@@ -22,9 +15,7 @@ export default class HeadSquare extends Vue {
   readonly item!: Parts
 
   get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${
-      this.item.rotate
-    })`
+    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
   }
 
   beforeDestroy() {

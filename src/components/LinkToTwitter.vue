@@ -1,5 +1,10 @@
 <template>
-  <BaseButton class="link-to-twitter" href="https://twitter.com/vuefes" target="_blank" rel="noopener">
+  <BaseButton
+    class="link-to-twitter"
+    href="https://twitter.com/vuefes"
+    target="_blank"
+    rel="noopener"
+  >
     <img class="icon-twitter" src="~/assets/images/icon-twitter.svg" alt="" />
     <span class="button-text">
       Vue Fes Japan 公式 Twitter で最新情報をチェック

@@ -5,8 +5,9 @@
     </template>
 
     <BaseMainDescription>
+      <!-- prettier-ignore -->
       <p>
-        Vue.js 日本ユーザーグループへのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者から3営業日以内でお答えさせていただきます。
+        Vue.js 日本ユーザーグループへのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者から 3営業日以内でお答えさせていただきます。
       </p>
     </BaseMainDescription>
 
@@ -20,30 +21,23 @@
       <!-- Anti-spam Measures -->
       <div class="hidden">
         <p>
-          <label>Don’t fill this out: <input name="bot-field" /></label>
+          <label>
+            Don’t fill this out:
+            <input name="bot-field" />
+          </label>
         </p>
 
-        <input
-          type="hidden"
-          name="form-name"
-          value="contact"
-        />
+        <input type="hidden" name="form-name" value="contact" />
       </div>
 
       <!-- Name -->
       <div class="form-content">
-        <label for="name">
-          お名前
-          <span class="required">
-            （必須）
-          </span>
-        </label>
-
+        <label for="name">お名前<span class="required">（必須）</span></label>
         <input
           id="name"
           v-model.trim="formData.name"
           v-validate="'required'"
-          :class="{'error': errors.has('name')}"
+          :class="{ error: errors.has('name') }"
           data-vv-validate-on="blur"
           name="name"
           placeholder="お名前"
@@ -58,17 +52,14 @@
       <!-- Email -->
       <div class="form-content">
         <label for="email">
-          メールアドレス
-          <span class="required">
-            （必須）
-          </span>
+          メールアドレス<span class="required">（必須）</span>
         </label>
 
         <input
           id="email"
           v-model.trim="formData.email"
           v-validate="'required|email'"
-          :class="{'error': errors.has('email')}"
+          :class="{ error: errors.has('email') }"
           data-vv-validate-on="blur"
           name="email"
           placeholder="メールアドレス"
@@ -98,28 +89,34 @@
       <!-- Message -->
       <div class="form-content">
         <label for="message">
-          内容
-          <span class="required">
-            （必須）
-          </span>
+          内容<span class="required">（必須）</span>
         </label>
 
         <textarea
           id="message"
           v-model="formData.message"
           v-validate="'required|max:3000'"
-          :class="{'error': errors.has('message')}"
+          :class="{ error: errors.has('message') }"
           data-vv-validate-on="blur"
           name="message"
           placeholder="例：お問い合わせ内容をご記入ください"
         />
 
-        <div v-show="errors.has('message')" id="message-error" class="has-error">
+        <div
+          v-show="errors.has('message')"
+          id="message-error"
+          class="has-error"
+        >
           {{ errors.first('message') }}
         </div>
       </div>
 
-      <BaseButton :disabled="status.hasSent||status.inProgress" :class="{ 'has-sent': status.hasSent }" class="submit-button" type="submit">
+      <BaseButton
+        :disabled="status.hasSent || status.inProgress"
+        :class="{ 'has-sent': status.hasSent }"
+        class="submit-button"
+        type="submit"
+      >
         {{ buttonValue }}
       </BaseButton>
     </form>

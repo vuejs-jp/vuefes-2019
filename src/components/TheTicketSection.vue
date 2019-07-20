@@ -5,13 +5,20 @@
     </template>
 
     <div class="description">
+      <!-- prettier-ignore -->
       <p>
-        2019/7/17（水）12:00 から Vue Fes Japan 2019 のチケットを発売開始します。チケットはアフターパーティーあり/なしの 2 種類で、全席ランチ付きです。
+        2019/7/17（水）12:00 から Vue Fes Japan 2019 のチケットを発売開始します。チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。
       </p>
 
+      <!-- prettier-ignore -->
       <p>
         販売媒体として
-        <a href="https://www.universe.com/" target="_blank" rel="noopener" class="link">
+        <a
+          href="https://www.universe.com/"
+          target="_blank"
+          rel="noopener"
+          class="link"
+        >
           Universe
         </a>
         を利用します。発売開始のタイミングで本 Web サイトにてチケット購入へのリンクが公開されます。購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
@@ -22,17 +29,10 @@
       <div class="ticket-item">
         <div class="ticket-content">
           <h3>一般チケット</h3>
-
-          <p>
-            <span>7,000</span>
-            円
-          </p>
+          <p><span>7,000</span>円</p>
         </div>
 
-        <div
-          v-lazy-container="{ selector: 'img' }"
-          class="image"
-        >
+        <div v-lazy-container="{ selector: 'img' }" class="image">
           <img
             :data-srcset="`${imageOne}, ${imageOne2x} 2x`"
             :data-src="imageOne2x"
@@ -44,17 +44,10 @@
       <div class="ticket-item">
         <div class="ticket-content">
           <h3>一般＋アフターパーティーチケット</h3>
-
-          <p>
-            <span>10,000</span>
-            円
-          </p>
+          <p><span>10,000</span> 円</p>
         </div>
 
-        <div
-          v-lazy-container="{ selector: 'img' }"
-          class="image"
-        >
+        <div v-lazy-container="{ selector: 'img' }" class="image">
           <img
             :data-srcset="`${imageTwo}, ${imageTwo2x} 2x`"
             :data-src="imageTwo2x"
@@ -82,6 +75,7 @@
         <h4>
           お支払い方法
         </h4>
+        <!-- prettier-ignore -->
         <p>
           各種クレジットカード（Visa、American Express、Discover、MasterCard）と Google Pay、Apple Pay がご利用いただけます。
         </p>
@@ -91,6 +85,7 @@
         <h4>
           領収書について
         </h4>
+        <!-- prettier-ignore -->
         <p>
           チケット購入後に届くメールに添付された PDF を領収書としてご利用ください。
         </p>
@@ -100,9 +95,15 @@
         <h4>
           キャンセル、返金について
         </h4>
+        <!-- prettier-ignore -->
         <p>
           購入者都合によるキャンセルの場合、チケットの返金はできません。ただし、譲渡は購入者の責任において行うことができます。詳細は
-          <a href="https://support.universe.com/hc/ja/articles/360002614651-%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E8%AD%B2%E6%B8%A1%E3%81%99%E3%82%8B" target="_blank" rel="noopener" class="link">
+          <a
+            href="https://support.universe.com/hc/ja/articles/360002614651-%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E8%AD%B2%E6%B8%A1%E3%81%99%E3%82%8B"
+            target="_blank"
+            rel="noopener"
+            class="link"
+          >
             Universe のヘルプ
           </a>
           をご覧ください。譲渡されたチケットの再譲渡は行えません。
@@ -115,6 +116,7 @@
         <h4>
           タイムテーブルやセッション内容は？
         </h4>
+        <!-- prettier-ignore -->
         <p>
           チケットの発売開始までに本 Web サイトにて公開予定です。一部内容についてはチケット発売後に公開になる可能性がありますので、あらかじめご了承ください。
         </p>
@@ -124,6 +126,7 @@
         <h4>
           ランチは全員に提供されますか？
         </h4>
+        <!-- prettier-ignore -->
         <p>
           はい、会場内でお弁当とお飲み物をご提供します。各会場ではランチを召し上がりながら Lunch スポンサーセッション（10分 x 3本）にご参加いただけます。
         </p>
@@ -142,6 +145,7 @@
         <h4>
           当日の入場について
         </h4>
+        <!-- prettier-ignore -->
         <p>
           当日は受付の混雑が予想されます。受付用の QR コードを読み取れるようご準備の上、列へお並びください。QR コードはチケット購入時に届くメールをご確認ください。
         </p>
@@ -151,6 +155,7 @@
         <h4>
           Universe のアカウント作成について
         </h4>
+        <!-- prettier-ignore -->
         <p>
           購入時に Universe のアカウントを作成するか選択できますが、作成しなくともチケットの購入は可能です。また、チケット購入後でも購入時に届くメールからアカウントを作成することができます。
         </p>

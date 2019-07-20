@@ -1,4 +1,5 @@
 <template>
+  <!-- prettier-ignore -->
   <BaseMain class="code-of-conduct-page">
     <template slot="heading">
       行動規範
