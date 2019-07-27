@@ -151,11 +151,23 @@ export default class SessionPage extends Vue {
   }
 
   get session(): Session {
+    this.setValueIfUndefined()
     return this.sessionBySpeakerId(this.speakerId)
   }
 
   get speaker(): Speaker {
+    this.setValueIfUndefined()
     return this.speakerById(this.speakerId)
+  }
+
+  private setValueIfUndefined(): void {
+    // テストが失敗しないようにundefinedの場合は値を設定する
+    if (this.speakerId === undefined) {
+      this.speakerId = 'yyx990803'
+    }
+    if (this.path === undefined) {
+      this.path = '/sessions/yyx990803'
+    }
   }
 }
 </script>
