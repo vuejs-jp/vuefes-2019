@@ -95,7 +95,7 @@ export const state = (): Speakers.State => ({
       twitter: '_ulivz',
       github: 'ulivz',
       paragraphs: [
-        '私は VuePress の開発をしております。また Alipay という会社で働いております。「ハチミツとクローバー」のような芸術的な作品が好きです。'
+        '私は VuePress の開発をしております。また Alipay という会社で働いております。『ハチミツとクローバー』のような芸術的な作品が好きです。'
       ]
     },
     {
