@@ -25,7 +25,7 @@ describe('SessionPage', () => {
   test('レンダリングできる', () => {
     const data = wrapper.vm.$options.asyncData({
       params: { speakerId: 'yyx990803' },
-      route: { parh: '/sessions/yyx990803' }
+      route: { path: '/sessions/yyx990803/' }
     })
     wrapper.setData(data)
 

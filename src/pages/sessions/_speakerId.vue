@@ -166,7 +166,7 @@ export default class SessionPage extends Vue {
       this.speakerId = 'yyx990803'
     }
     if (this.path === undefined) {
-      this.path = '/sessions/yyx990803'
+      this.path = '/sessions/yyx990803/'
     }
   }
 }
