@@ -151,12 +151,16 @@ export default class SessionPage extends Vue {
   }
 
   get session(): Session {
-    this.setValueIfUndefined()
+    if (process.env.NODE_ENV === 'test') {
+      this.setValueIfUndefined()
+    }
     return this.sessionBySpeakerId(this.speakerId)
   }
 
   get speaker(): Speaker {
-    this.setValueIfUndefined()
+    if (process.env.NODE_ENV === 'test') {
+      this.setValueIfUndefined()
+    }
     return this.speakerById(this.speakerId)
   }
 
