@@ -20,7 +20,6 @@ describe('SessionPage', () => {
     config.rootDir = resolve(__dirname, '../../../../..')
     nuxt = new Nuxt(config)
     await new Builder(nuxt).build()
-    await nuxt.listen(4000, 'localhost')
   })
 
   afterAll(() => {
