@@ -63,13 +63,13 @@ export const state = (): Sessions.State => ({
       paragraphs: ['TBD'],
       ogImage: 'jlooper.jpg'
     },
-    // {
-    //   speakerId: 'ulivz',
-    //   title: 'TBD',
-    //   time: 40,
-    //   paragraphs: ['TBD'],
-    //   ogImage: 'ulivz.jpg'
-    // },
+    {
+      speakerId: 'ulivz',
+      title: 'TBD',
+      time: 40,
+      paragraphs: ['TBD'],
+      ogImage: 'default.png'
+    },
     {
       speakerId: 'chrisvfritz',
       title: 'Enterprise Vue: Patterns That Scale',
