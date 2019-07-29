@@ -192,6 +192,11 @@ export default class TheStaffListSection extends Vue {
       name: 'umiremix',
       link: 'https://twitter.com/umiremix',
       avatar: 'umiremix.png'
+    },
+    {
+      name: 'nahokomatsui',
+      link: 'https://twitter.com/nahokomatsui',
+      avatar: 'nahokomatsui.jpg'
     }
   ]
 
