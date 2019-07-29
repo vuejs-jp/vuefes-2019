@@ -68,7 +68,7 @@ export const state = (): Sessions.State => ({
       title: 'TBD',
       time: 40,
       paragraphs: ['TBD'],
-      ogImage: 'default.png'
+      ogImage: 'ulivz.jpg'
     },
     {
       speakerId: 'chrisvfritz',
