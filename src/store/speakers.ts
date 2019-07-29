@@ -90,12 +90,13 @@ export const state = (): Speakers.State => ({
       id: 'ulivz',
       avatar: require('~/assets/images/speakers/ulivz.png'),
       avatar2x: require('~/assets/images/speakers/ulivz@2x.png'),
-      title: 'VuePress メンテナ',
+      title: 'VuePress デベロッパー',
       name: 'ULIVZ',
       twitter: '_ulivz',
       github: 'ulivz',
       paragraphs: [
-        '私は VuePress の開発をしております。また Alipay という会社で働いております。『ハチミツとクローバー』のような芸術的な作品が好きです。'
+        'Ant Financial（Alipay）に勤めながら、VuePress の開発をしています。エンジニアリングとプロダクト構築の能力に優れています。',
+        '文章を書くこと（文学）、写真、映画が好きで、『ハチミツとクローバー』のような芸術的な風味を漂わせる作品がお気に入りです。'
       ]
     },
     {
