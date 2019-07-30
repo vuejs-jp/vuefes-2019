@@ -63,13 +63,15 @@ export const state = (): Sessions.State => ({
       paragraphs: ['TBD'],
       ogImage: 'jlooper.jpg'
     },
-    // {
-    //   speakerId: 'ulivz',
-    //   title: 'TBD',
-    //   time: 40,
-    //   paragraphs: ['TBD'],
-    //   ogImage: 'ulivz.jpg'
-    // },
+    {
+      speakerId: 'ulivz',
+      title: 'The Present and Future about VuePress',
+      time: 40,
+      paragraphs: [
+        "With over two million installs, today Vetur is the most popular editor tooling plugin for editing Vue single file components. This talk will starts with an overview of Vetur's features and then dive deep into specific features such as auto completion and type checking in Vue templates. Besides, I'll explain Vetur's role in the overall Vue ecosystem, especially in improving the TypeScript integration. Finally, I'll talk about how Vetur could offer next generation development experience from its unique position."
+      ],
+      ogImage: 'ulivz.jpg'
+    },
     {
       speakerId: 'chrisvfritz',
       title: 'Enterprise Vue: Patterns That Scale',

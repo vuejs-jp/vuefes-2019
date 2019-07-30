@@ -86,16 +86,19 @@ export const state = (): Speakers.State => ({
         'ハードウェアハッキング、モバイルアプリ、Vue.js、機械学習、そして毎日新しいことの発見に情熱を注いでいる多言語多文化主義者です。Vue.js コミュニティの多様性を促進する先駆けである Vue Vixens の創設者兼 CEO です。'
       ]
     },
-    // {
-    //   id: 'ulivz',
-    //   avatar: require('~/assets/images/speakers/.jpg'),
-    //   avatar2x: require('~/assets/images/speakers/@2x.jpg'),
-    //   title: '',
-    //   name: 'ULIVZ',
-    //   twitter: '_ulivz',
-    //   github: 'ulivz',
-    //   paragraphs: []
-    // },
+    {
+      id: 'ulivz',
+      avatar: require('~/assets/images/speakers/ulivz.png'),
+      avatar2x: require('~/assets/images/speakers/ulivz@2x.png'),
+      title: 'VuePress デベロッパー',
+      name: 'ULIVZ',
+      twitter: '_ulivz',
+      github: 'ulivz',
+      paragraphs: [
+        'Ant Financial（Alipay）に勤めながら、VuePress の開発をしています。エンジニアリングとプロダクト構築の能力に優れています。',
+        '文章を書くこと（文学）、写真、映画が好きで、『ハチミツとクローバー』のような芸術的な風味を漂わせる作品がお気に入りです。'
+      ]
+    },
     {
       id: 'chrisvfritz',
       avatar: require('~/assets/images/speakers/chrisvfritz.jpg'),
