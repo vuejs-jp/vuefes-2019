@@ -54,15 +54,6 @@
           </a>
         </p>
       </div>
-
-      <BaseButton
-        class="link-to-sponsor-form link-to-sponsor-form--head show-on-medium-and-up"
-        href="https://fortee.jp/vuefes-2019/sponsor/form"
-        target="_blank"
-        rel="noopener"
-      >
-        スポンサー申し込みフォーム
-      </BaseButton>
     </div>
 
     <div v-lazy-container="{ selector: 'img' }" class="image">
@@ -84,15 +75,6 @@
         alt=""
       />
     </div>
-
-    <BaseButton
-      class="link-to-sponsor-form link-to-sponsor-form--head show-on-small"
-      href="https://fortee.jp/vuefes-2019/sponsor/form"
-      target="_blank"
-      rel="noopener"
-    >
-      スポンサー申し込みフォーム
-    </BaseButton>
 
     <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
       <li
@@ -123,27 +105,16 @@
         </ul>
       </li>
     </ul>
-
-    <BaseButton
-      class="link-to-sponsor-form"
-      href="https://fortee.jp/vuefes-2019/sponsor/form"
-      target="_blank"
-      rel="noopener"
-    >
-      スポンサー申し込みフォーム
-    </BaseButton>
   </BaseSection>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
-import BaseButton from '~/components/BaseButton.vue'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
   components: {
-    BaseButton,
     BaseSection
   }
 })
@@ -336,28 +307,6 @@ ul {
       @media screen and (min-width: $layout-breakpoint--is-small-up) {
         margin-bottom: 10px;
       }
-    }
-  }
-}
-
-.link-to-sponsor-form {
-  width: 100%;
-  max-width: 100%;
-  margin: calc(10vw - 20px) auto 0;
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    width: 700px;
-    margin: 80px auto 0;
-  }
-
-  &--head {
-    width: 100%;
-    max-width: 100%;
-    margin: 5vw 0 10vw;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      width: 700px;
-      margin: 0;
     }
   }
 }
