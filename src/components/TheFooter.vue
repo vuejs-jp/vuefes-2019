@@ -124,7 +124,7 @@
 
       <div class="licence">
         <p>
-          © 2018-2019 Vue.js Japan Users Group some rights reserved.
+          © 2018-2019 Vue.js Japan User Group some rights reserved.
           <br />
           Vue.js artworks by
           <a
