@@ -7,26 +7,17 @@
     <div class="description">
       <!-- prettier-ignore -->
       <p>
-        Vue Fes Japan 2019 のチケットが発売中です。チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。「チケットを購入する」ボタンからご購入ください。
+        Vue Fes Japan 2019 のチケットが発売中です。チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。チケットの購入は「チケットを購入する」ボタンからご購入ください。Apple Pay で決済をご希望の方は、<a href="#" class="link" @click.prevent="openUniverse">こちらのリンク</a>から直接ご購入ください。
       </p>
 
       <!-- prettier-ignore -->
       <p>
-        販売媒体として
-        <a
-          href="https://www.universe.com/"
-          target="_blank"
-          rel="noopener"
-          class="link"
-        >
-          Universe
-        </a>
-        を利用します。購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
+        <b>注意事項：</b>決済方法選択時に JCB のアイコンが表示されますが、<u>JCB カードはご利用いただけません</u>。ご不便をおかけし申し訳ありませんが、Google Pay / Apple Pay での決済や Kyash のようなサービスを利用して購入していただけますと幸いです。
       </p>
 
       <!-- prettier-ignore -->
       <p>
-        現在、購入においていくつか問題が報告されており Universe に調査を依頼しております。ご不便をおかけし申し訳ありませんが、Google Pay、Apple Pay で決済をお考えの方、JCB カードで決済ができない方は別の決済方法をご検討いただけますと幸いです。進展があり次第、Twitter や note 等で案内いたします。
+        購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
       </p>
     </div>
 
@@ -106,7 +97,7 @@
           <a
             href="https://support.universe.com/hc/ja/articles/360002614651-%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E8%AD%B2%E6%B8%A1%E3%81%99%E3%82%8B"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="link"
           >
             Universe のヘルプ
@@ -188,6 +179,12 @@ export default class TheTicketSection extends Vue {
   private imageTwo = require('~/assets/images/tickets/image2.jpg')
 
   private imageTwo2x = require('~/assets/images/tickets/image2@2x.jpg')
+
+  openUniverse() {
+    window.open(
+      'https://www.universe.com/events/vue-fes-japan-2019-tickets--YG3SMV'
+    )
+  }
 }
 </script>
 
