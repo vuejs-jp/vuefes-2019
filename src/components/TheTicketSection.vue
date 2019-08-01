@@ -7,7 +7,7 @@
     <div class="description">
       <!-- prettier-ignore -->
       <p>
-        Vue Fes Japan 2019 のチケットが発売中です。チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。チケットの購入は「チケットを購入する」ボタンからご購入ください。Apple Pay で決済をご希望の方は、<a href="https://note.mu/ryamakuchi/n/n5f9e309222a9" target="_blank" rel="noopener noreferrer" class="link">こちらのリンク</a>をご確認ください。
+        Vue Fes Japan 2019 のチケットが発売中です。チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。チケットの購入は「チケットを購入する」ボタンからご購入ください。Apple Pay で決済をご希望の方は、<a href="#" class="link" @click.prevent="openUniverse">こちらのリンク</a>から直接ご購入ください。
       </p>
 
       <!-- prettier-ignore -->
@@ -179,6 +179,12 @@ export default class TheTicketSection extends Vue {
   private imageTwo = require('~/assets/images/tickets/image2.jpg')
 
   private imageTwo2x = require('~/assets/images/tickets/image2@2x.jpg')
+
+  openUniverse() {
+    window.open(
+      'https://www.universe.com/events/vue-fes-japan-2019-tickets--YG3SMV'
+    )
+  }
 }
 </script>
 
