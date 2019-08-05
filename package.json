@@ -17,7 +17,9 @@
     "stylelint": "stylelint 'src/**/*.vue' 'src/**/*.scss'",
     "stylelint:fix": "yarn stylelint --fix",
     "test": "jest --verbose",
-    "test:ci": "jest --ci --coverage --no-cache --maxWorkers=2"
+    "test:ci": "jest --ci --coverage --no-cache --maxWorkers=2",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "husky": {
     "hooks": {
@@ -39,9 +41,14 @@
     "vue-lazyload": "^1.2.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
     "@nuxt/typescript": "^2.6.1",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/style-resources": "^0.1.2",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/vue": "^5.1.10",
     "@types/jest": "^24.0.11",
     "@typescript-eslint/eslint-plugin": "^1.6.0",
     "@typescript-eslint/parser": "^1.12.0",
@@ -49,6 +56,8 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-standard": ">=12.0.0",
