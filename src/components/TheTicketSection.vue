@@ -12,11 +12,6 @@
 
       <!-- prettier-ignore -->
       <p>
-        <b>注意事項：</b>決済方法選択時に JCB のアイコンが表示されますが、<u>JCB カードはご利用いただけません</u>。ご不便をおかけし申し訳ありませんが、Google Pay / Apple Pay での決済や Kyash のようなサービスを利用して購入していただけますと幸いです。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
         購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
       </p>
     </div>
@@ -73,7 +68,7 @@
         </h4>
         <!-- prettier-ignore -->
         <p>
-          各種クレジットカード（Visa、American Express、Discover、MasterCard）と Google Pay、Apple Pay がご利用いただけます。
+          各種クレジットカード（Visa、American Express、MasterCard）と Google Pay、Apple Pay がご利用いただけます。JCB カードはご利用いただけません。ご不便をおかけし申し訳ありませんが、別の決済方法をご検討いただけますと幸いです。
         </p>
       </div>
 
