@@ -95,7 +95,9 @@ export default class HeadPhoto extends Vue {
   }
 
   get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
+    return `translate(${this.item.x}, ${this.item.y}) rotate(${
+      this.item.rotate
+    })`
   }
 
   get href() {

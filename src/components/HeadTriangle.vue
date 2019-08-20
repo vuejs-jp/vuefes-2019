@@ -17,7 +17,9 @@ export default class HeadTriangle extends Vue {
   keyFrame = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
   get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
+    return `translate(${this.item.x}, ${this.item.y}) rotate(${
+      this.item.rotate
+    })`
   }
 
   beforeDestroy() {
