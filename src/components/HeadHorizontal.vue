@@ -18,9 +18,7 @@ export default class HeadHorizontal extends Vue {
   readonly item!: Parts
 
   get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${
-      this.item.rotate
-    })`
+    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
   }
 
   beforeDestroy() {
