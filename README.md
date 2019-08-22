@@ -26,7 +26,14 @@ yarn dev --open
 
 ```shell
 git commit --no-verify
-``` 
+```
+
+#### コアスタッフの画像サイズ
+
+- 通常版
+  - 155 x 155 px
+- @2x
+  - 310 x 310 px
 
 ## Testing
 
