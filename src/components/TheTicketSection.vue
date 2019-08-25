@@ -14,6 +14,11 @@
       <p>
         購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
       </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        チケットに関するお問い合わせは、<nuxt-link class="link" to="/contact/">お問い合わせページ</nuxt-link>からお願いします。
+      </p>
     </div>
 
     <div class="ticket-list">
