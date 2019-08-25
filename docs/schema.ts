@@ -6,8 +6,8 @@ type Speaker = {
   title: string // 肩書き
   avatar: string // Image の URL
   avatar2x: string // Image の URL
-  twitter: string
-  github: string
+  twitter?: string
+  github?: string
   description: string // Markdown
 
   // Vue Fes Japan 2019 では 1人のスピーカーが複数のセッションを持つことはないが、
@@ -33,7 +33,7 @@ type TimeSection = {
 }
 
 type TimeContainer = {
-  room: Room
+  room?: Room
 
   // 1. まず Array かどうかの判定が必要
   // 2. Array ではなかったら sys.type.sys.id によって TimeContent なのか Session なのかを判定する
