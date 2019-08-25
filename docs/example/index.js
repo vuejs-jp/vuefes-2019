@@ -65,28 +65,30 @@ function displayEntries(contentTypes) {
   console.log(chalk.green('Fetching and displaying Entries ...'))
 
   return Promise.all(
-    contentTypes.map(contentType => {
-      return fetchEntriesForContentType(contentType).then(entries => {
-        console.log(
-          `hese are the first 100 Entries for Content Type ${chalk.cyan(
-            contentType.name
-          )}:\n`
-        )
+    contentTypes
+      .filter(contentType => contentType.name !== 'sponsor')
+      .map(contentType => {
+        return fetchEntriesForContentType(contentType).then(entries => {
+          console.log(
+            `hese are the first 100 Entries for Content Type ${chalk.cyan(
+              contentType.name
+            )}:\n`
+          )
 
-        // Display a table with Entry information
-        const table = new Table({
-          head: ['Id', 'Title']
+          // Display a table with Entry information
+          const table = new Table({
+            head: ['Id', 'Title']
+          })
+          entries.forEach(entry => {
+            table.push([
+              entry.sys.id,
+              entry.fields[contentType.displayField] || '[empty]'
+            ])
+            console.log(entry)
+          })
+          // console.log(table.toString())
         })
-        entries.forEach(entry => {
-          table.push([
-            entry.sys.id,
-            entry.fields[contentType.displayField] || '[empty]'
-          ])
-          console.log(entry)
-        })
-        // console.log(table.toString())
       })
-    })
   )
 }
 
