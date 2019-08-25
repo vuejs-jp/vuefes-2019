@@ -27,12 +27,14 @@ type Session = {
  * タイムテーブル = TimeSection[]
  */
 type TimeSection = {
+  titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
   startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   timeContainers: TimeContainer[]
 }
 
 type TimeContainer = {
+  titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
   room?: Room
 
   // 最初の要素の sys.contentType.sys.id によって
@@ -41,6 +43,7 @@ type TimeContainer = {
 }
 
 type TimeContainerPart = {
+  titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
   startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
 
