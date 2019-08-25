@@ -22,3 +22,36 @@ type Session = {
   ogImage: string // Image の URL
   speakers: Speaker[] // ひとつのセッションに複数のスピーカーが入るものがある（例: Nuxt
 }
+
+/**
+ * タイムテーブル = TimeSection[]
+ */
+type TimeSection = {
+  startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
+  endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
+  timeContainers: TimeContainer[]
+}
+
+type TimeContainer = {
+  room: Room
+
+  // 1. まず Array かどうかの判定が必要
+  // 2. Array ではなかったら sys.type.sys.id によって TimeContent なのか Session なのかを判定する
+  content: TimeContent | Session | TimeContainerPart[]
+}
+
+type TimeContainerPart = {
+  startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
+  endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
+
+  // sys.type.sys.id によって TimeContent なのか Session なのかを判定する
+  content: TimeContent | Session
+}
+
+type TimeContent = {
+  title: string
+}
+
+type Room = {
+  name: string
+}
