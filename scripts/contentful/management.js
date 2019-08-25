@@ -171,6 +171,7 @@ function createSpeakers() {
 }
 
 function createSessions() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const sessions = [
     {
       title: { 'en-US': 'Vue Tooling について語るときに僕の語ること' },
@@ -321,9 +322,31 @@ function createSessions() {
     }
   ]
 
-  sessions.forEach(session => {
-    console.log(session)
-  })
+  const session = {
+    title: { 'en-US': 'Vue Tooling について語るときに僕の語ること' },
+    time: { 'en-US': 40 },
+    description: {
+      'en-US':
+        'With over two million installs, today Vetur is the most popular editor tooling plugin for editing Vue single file components.\n\n' +
+        "This talk will start with an overview of Vetur's capabilities and then dive deep into specific features such as auto completion and type checking in Vue templates.\n\n" +
+        "Besides, I'll explain Vetur's role in the overall Vue ecosystem, especially in improving the TypeScript integration. Finally, I'll talk about how Vetur could offer next generation development experience from its unique position."
+    }
+  }
+
+  client
+    .getSpace(SPACE_ID)
+    .then(space => space.getEnvironment('master'))
+    .then(environment =>
+      environment.createEntry('session', {
+        fields: session
+      })
+    )
+    .then(entry => {
+      console.log(entry)
+    })
+    .catch(error => {
+      console.error(error)
+    })
 }
 
 // createSpeakers()
