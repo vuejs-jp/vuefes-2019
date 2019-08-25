@@ -55,7 +55,7 @@ function displayContentTypes() {
       const fieldNames = contentType.fields.map(field => field.name).sort()
       table.push([contentType.sys.id, contentType.name, fieldNames.join(', ')])
     })
-    console.log(table.toString())
+    // console.log(table.toString())
 
     return contentTypes
   })
