@@ -82,8 +82,9 @@ function displayEntries(contentTypes) {
             entry.sys.id,
             entry.fields[contentType.displayField] || '[empty]'
           ])
+          console.log(entry)
         })
-        console.log(table.toString())
+        // console.log(table.toString())
       })
     })
   )
