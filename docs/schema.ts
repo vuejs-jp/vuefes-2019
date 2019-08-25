@@ -35,7 +35,7 @@ type TimeSection = {
 type TimeContainer = {
   room?: Room
 
-  // 最初の要素の sys.type.sys.id によって
+  // 最初の要素の sys.contentType.sys.id によって
   // TimeContent なのか Session なのか TimeContainerPart なのかを判定する
   contents: TimeContent[] | Session[] | TimeContainerPart[]
 }
@@ -44,7 +44,7 @@ type TimeContainerPart = {
   startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
 
-  // sys.type.sys.id によって TimeContent なのか Session なのかを判定する
+  // sys.contentType.sys.id によって TimeContent なのか Session なのかを判定する
   content: TimeContent | Session
 }
 
