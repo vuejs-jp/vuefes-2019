@@ -21,6 +21,11 @@ type Session = {
   description: string // Markdown
   ogImage: string // Image の URL
   speakers: Speaker[] // ひとつのセッションに複数のスピーカーが入るものがある（例: Nuxt
+
+  // Room が null のときは部屋がないという意味ではなく、
+  // どこか 1つのルームに限定しないという意味。
+  // 2つ以上のルームを合体させた場合など。
+  room?: Room
 }
 
 /**
@@ -35,11 +40,14 @@ type TimeSection = {
 
 type TimeContainer = {
   titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
-  room?: Room
 
   // 最初の要素の sys.contentType.sys.id によって
   // TimeContent なのか Session なのか TimeContainerPart なのかを判定する
   contents: TimeContent[] | Session[] | TimeContainerPart[]
+
+  // Room は TimeContainer 内で共通である
+  // contents 最初の TimeContent、Session の Room
+  // もしくは最初の TimeContainerPart の content の Room が TimeContainer の Room となる
 }
 
 type TimeContainerPart = {
@@ -53,6 +61,11 @@ type TimeContainerPart = {
 
 type TimeContent = {
   title: string
+
+  // Room が null のときは部屋がないという意味ではなく、
+  // どこか 1つのルームに限定しないという意味。
+  // 2つ以上のルームを合体させた場合など。
+  room?: Room
 }
 
 type Room = {
