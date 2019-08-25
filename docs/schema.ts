@@ -35,9 +35,9 @@ type TimeSection = {
 type TimeContainer = {
   room?: Room
 
-  // 1. まず Array かどうかの判定が必要
-  // 2. Array ではなかったら sys.type.sys.id によって TimeContent なのか Session なのかを判定する
-  content: TimeContent | Session | TimeContainerPart[]
+  // 最初の要素の sys.type.sys.id によって
+  // TimeContent なのか Session なのか TimeContainerPart なのかを判定する
+  contents: TimeContent[] | Session[] | TimeContainerPart[]
 }
 
 type TimeContainerPart = {
