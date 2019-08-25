@@ -18,7 +18,7 @@ const client = contentful.createClient({
 
 console.log(chalk.green.bold('\nWelcome to the Contentful JS Boilerplate\n'))
 console.log(
-  'This is a simplified example to demonstrate the usage of the Contentful CDA\n'
+  'This is a simplified debug to demonstrate the usage of the Contentful CDA\n'
 )
 
 // Entry point of the boilerplate, called at the end.

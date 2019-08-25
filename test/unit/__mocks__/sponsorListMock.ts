@@ -139,7 +139,7 @@ const sponsorList: any[] = [
           locale: 'en-US'
         },
         fields: {
-          title: 'example-vuefes-2018',
+          title: 'debug-vuefes-2018',
           file: {
             url:
               '//images.ctfassets.net/makqrw5hfm9d/3FZoyGRsbGWpGCYf1uRAqn/2b1998dea76c6408ad769dedcab187fb/vuefes-2018.jpg',
@@ -218,7 +218,7 @@ const sponsorList: any[] = [
           locale: 'en-US'
         },
         fields: {
-          title: 'example-vuefes-2019',
+          title: 'debug-vuefes-2019',
           file: {
             url:
               '//images.ctfassets.net/makqrw5hfm9d/4ptyeNdWDxA3Tu31DeQqzm/3fd315e0c2781ffab31ef290d5b056b5/opengraph.png',
