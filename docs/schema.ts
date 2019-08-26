@@ -59,6 +59,7 @@ type EventContainerPart = {
   content: Event | Session
 }
 
+// @ts-ignore
 type Event = {
   title: string
 
