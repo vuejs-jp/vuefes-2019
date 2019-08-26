@@ -29,37 +29,37 @@ type Session = {
 }
 
 /**
- * タイムテーブル = TimeSection[]
+ * タイムテーブル = TimeTableSection[]
  */
-type TimeSection = {
+type TimeTableSection = {
   titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
   startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
-  timeContainers: TimeContainer[]
+  EventContainers: EventContainer[]
 }
 
-type TimeContainer = {
+type EventContainer = {
   titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
 
   // 最初の要素の sys.contentType.sys.id によって
-  // TimeContent なのか Session なのか TimeContainerPart なのかを判定する
-  contents: TimeContent[] | Session[] | TimeContainerPart[]
+  // Event なのか Session なのか EventContainerPart なのかを判定する
+  contents: Event[] | Session[] | EventContainerPart[]
 
-  // Room は TimeContainer 内で共通である
-  // contents 最初の TimeContent、Session の Room
-  // もしくは最初の TimeContainerPart の content の Room が TimeContainer の Room となる
+  // Room は EventContainer 内で共通である
+  // contents 最初の Event、Session の Room
+  // もしくは最初の EventContainerPart の content の Room が EventContainer の Room となる
 }
 
-type TimeContainerPart = {
+type EventContainerPart = {
   titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
   startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
 
-  // sys.contentType.sys.id によって TimeContent なのか Session なのかを判定する
-  content: TimeContent | Session
+  // sys.contentType.sys.id によって Event なのか Session なのかを判定する
+  content: Event | Session
 }
 
-type TimeContent = {
+type Event = {
   title: string
 
   // Room が null のときは部屋がないという意味ではなく、
