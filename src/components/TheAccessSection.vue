@@ -86,7 +86,7 @@ export default class TheAccessSection extends Vue {
 
 <style lang="scss" scoped>
 .access-container {
-  margin-bottom: 8vw;
+  margin-bottom: 10vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     display: flex;
