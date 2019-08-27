@@ -17,6 +17,7 @@
 
       <!-- prettier-ignore -->
       <p>
+        <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
         チケットに関するお問い合わせは、<nuxt-link class="link" to="/contact/">お問い合わせページ</nuxt-link>からお願いします。
       </p>
     </div>

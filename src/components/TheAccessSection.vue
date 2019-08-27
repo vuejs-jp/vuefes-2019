@@ -4,75 +4,80 @@
       ACCESS
     </template>
 
-    <div id="map" />
+    <div class="access-container">
+      <div class="image-container">
+        <div v-lazy-container="{ selector: 'img' }" class="image">
+          <img
+            :data-srcset="`${image}, ${image2x} 2x`"
+            :data-src="image2x"
+            alt=""
+          />
+        </div>
+      </div>
 
-    <!-- eslint-disable vue/html-indent -->
-    <script type="application/javascript">
-      function initMap() {
-        const latlng = new google.maps.LatLng(35.623, 139.7176)
-        const map = new google.maps.Map(document.getElementById('map'), {
-          center: latlng,
-          zoom: 16
-        })
-        const infowindow = new google.maps.InfoWindow({
-          content: 'TOC五反田メッセ',
-          position: latlng
-        })
-        infowindow.open(map)
-      }
-    </script>
-    <!-- eslint-enable vue/html-indent -->
+      <div class="access-content">
+        <h3 class="title">
+          会場: TOC五反田メッセ
+        </h3>
 
-    <script
-      type="application/javascript"
-      :src="
-        `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`
-      "
-      async
-      defer
-    />
+        <div class="description">
+          <p>
+            東京都品川区西五反田6-6-19<br />
+            <a
+              href="http://messe.toc.co.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              http://messe.toc.co.jp/
+            </a>
+          </p>
 
-    <h3 class="title">
-      会場：TOC五反田メッセ
-    </h3>
+          <p>
+            <span class="line">JR 山手線、都営地下鉄浅草線でお越しの方</span>
+            <br />
+            五反田駅 西口より徒歩10分
+          </p>
 
-    <div class="description">
-      <p>
-        <a href="http://messe.toc.co.jp/" target="_blank" rel="noopener">
-          http://messe.toc.co.jp/
-        </a>
-        <br />
-        東京都品川区西五反田6-6-19
-      </p>
+          <p>
+            <span class="line">東急池上線でお越しの方</span><br />
+            大崎広小路駅より徒歩9分
+          </p>
 
-      <p>
-        <span class="line">JR山手線、都営地下鉄浅草線でお越しの方</span><br />
-        五反田駅 西口より徒歩10分
-      </p>
-
-      <p>
-        <span class="line">東急池上線でお越しの方</span><br />
-        大崎広小路駅より徒歩9分
-      </p>
-
-      <p>
-        <span class="line">東急目黒線でお越しの方</span><br />
-        不動前駅より徒歩6分
-      </p>
+          <p>
+            <span class="line">東急目黒線でお越しの方</span><br />
+            不動前駅より徒歩6分
+          </p>
+        </div>
+      </div>
     </div>
+
+    <BaseButton
+      class="link-to-google-maps"
+      href="https://www.google.com/maps/place/%EF%BC%B4%EF%BC%AF%EF%BC%A3%E4%BA%94%E5%8F%8D%E7%94%B0%E3%83%A1%E3%83%83%E3%82%BB/@35.624225,139.717565,15z/data=!4m5!3m4!1s0x0:0x4260982603406ccc!8m2!3d35.622995!4d139.7174468?hl=ja"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Google マップで見る
+    </BaseButton>
   </BaseSection>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import BaseButton from '~/components/BaseButton.vue'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
   components: {
+    BaseButton,
     BaseSection
   }
 })
 export default class TheAccessSection extends Vue {
+  private image = require('~/assets/images/access.jpg')
+
+  private image2x = require('~/assets/images/access@2x.jpg')
+
   private get googleMapsApiKey(): string | undefined {
     return process.env.GOOGLE_MAPS_API_KEY
   }
@@ -80,23 +85,46 @@ export default class TheAccessSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-#map {
-  margin-bottom: 10px;
-  height: 439px;
+.access-container {
+  margin-bottom: 10vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    height: 516px;
+    display: flex;
+    margin-bottom: 64px;
+  }
+}
+
+.image-container {
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    flex: 1 1 430px;
+    order: 1;
+    align-self: center;
+    max-width: 480px; // このあたりを超えると .access-content の高さを超えてしまう
+  }
+}
+
+.access-content {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    flex: 1 1 360px;
+    min-width: 360px;
+    margin-right: 32px;
+    padding-left: 32px;
   }
 }
 
 .title {
-  margin-bottom: 10px;
+  margin: 8vw 0 2vw;
   font-size: 5vw;
   font-weight: bold;
   line-height: 1.28;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-bottom: 3px;
+    margin: 0 0 4px;
     font-size: 30px;
   }
 }
@@ -115,7 +143,11 @@ export default class TheAccessSection extends Vue {
   }
 
   p + p {
-    margin-top: 40px;
+    margin-top: 5vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 32px;
+    }
   }
 }
 
