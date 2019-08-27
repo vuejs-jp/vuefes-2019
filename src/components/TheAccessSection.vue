@@ -57,7 +57,7 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      Google Maps で見る
+      Google マップで見る
     </BaseButton>
   </BaseSection>
 </template>
