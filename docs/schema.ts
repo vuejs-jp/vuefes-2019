@@ -59,8 +59,8 @@ type EventContainerPart = {
   content: Event | Session
 }
 
-// @ts-ignore
-type Event = {
+// type Event が既に存在するため interface にした
+interface Event {
   title: string
 
   // Room が null のときは部屋がないという意味ではなく、
