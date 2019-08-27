@@ -102,8 +102,9 @@ export default class TheAccessSection extends Vue {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     flex: 1 1 430px;
-    align-self: center;
     order: 1;
+    align-self: center;
+    max-width: 480px; // このあたりを超えると .access-content の高さを超えてしまう
   }
 }
 
