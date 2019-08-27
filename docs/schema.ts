@@ -30,7 +30,7 @@ type TimeTableSection = {
   titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
   startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
-  EventContainers: EventContainer[]
+  eventContainers: EventContainer[]
 }
 
 type EventContainer = {
