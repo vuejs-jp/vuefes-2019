@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Fail on unset variables and command errors
+set -ue -o pipefail
+
+# Prevent commands misbehaving due to locale differences
+export LC_ALL=C
+
+for file in `git diff --cached --name-status | \
+  awk '$1 ~ /[AM]/ && tolower($2) ~ /\.(jpe?g|png|gif|svg)$/ {print $2}'`
+do
+  echo $file をリサイズします
+  cat $file | ./node_modules/.bin/sharp \
+    resize 310 310 > ${file}.new
+  mv -f ${file}.new $file
+  git add $file
+done
