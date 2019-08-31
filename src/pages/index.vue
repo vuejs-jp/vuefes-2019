@@ -4,7 +4,7 @@
     <TheSpeakerListSection />
     <TheTicketSection />
     <TheAccessSection />
-    <TheTimeTableSection />
+    <TheTimeTableSection :timetables="timeTableSection || []" />
     <TheStoreSection />
     <TheSponsorListSection :sponsor-list="sponsors || []" />
     <TheStaffListSection />
@@ -14,7 +14,7 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
-import { getSponsors } from '~/plugins/contentful.ts'
+import { getSponsors, getTimeTableSection } from '~/plugins/contentful.ts'
 import TheAccessSection from '~/components/TheAccessSection.vue'
 import TheHeadSection from '~/components/TheHeadSection.vue'
 import TheSpeakerListSection from '~/components/TheSpeakerListSection.vue'
@@ -35,10 +35,14 @@ import TheStoreSection from '~/components/TheStoreSection.vue'
     TheStaffListSection,
     TheStoreSection
   },
-  async asyncData(): Promise<{ sponsors: Entry<any>[] } | void> {
+  async asyncData(): Promise<{
+    sponsors: Entry<any>[]
+    timeTableSection: Entry<any>[]
+  } | void> {
     try {
       return {
-        sponsors: await getSponsors()
+        sponsors: await getSponsors(),
+        timeTableSection: await getTimeTableSection()
       }
     } catch (error) {
       console.error(error)

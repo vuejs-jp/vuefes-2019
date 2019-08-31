@@ -14,3 +14,11 @@ export const getSponsors = (): Promise<Entry<any>[]> => {
     })
     .then(response => response.items)
 }
+
+export const getTimeTableSection = (): Promise<Entry<any>[]> => {
+  return client
+    .getEntries({
+      content_type: 'timeTableSection'
+    })
+    .then(response => response.items)
+}

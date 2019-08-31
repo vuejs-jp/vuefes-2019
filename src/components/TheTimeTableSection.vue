@@ -4,6 +4,8 @@
       TIME TABLE
     </template>
 
+    {{ timetables }}
+
     <div class="event">
       <div class="event__time">
         9:30 - 10:30
@@ -357,7 +359,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
+import { Entry } from 'contentful/index'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
@@ -369,6 +372,9 @@ export default class TheTimeTableSection extends Vue {
   private keynoteAvatar = require('~/assets/images/speakers/yyx990803.jpg')
 
   private keynoteAvatar2x = require('~/assets/images/speakers/yyx990803@2x.jpg')
+
+  @Prop()
+  readonly timetables!: Entry<any>[]
 }
 </script>
 
