@@ -7,7 +7,7 @@
     <div class="description">
       <!-- prettier-ignore -->
       <p>
-        Vue Fes Japan 2019 のチケットが発売中です。チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。チケットの購入は「チケットを購入する」ボタンからご購入ください。Apple Pay で決済をご希望の方は、<a href="#" class="link" @click.prevent="openUniverse">こちらのリンク</a>から直接ご購入ください。
+        Vue Fes Japan 2019 のチケットが発売中です。チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。チケットの購入は「チケットを購入する」ボタンからご購入ください。Apple Pay で決済をご希望の方は、<a href="#" class="link" @click.prevent="openUniverse">こちらのリンク</a>から直接ご購入ください。また、Universe の決済方法でチケットを購入できない方向けに別途購入窓口を開設しています。詳細は <a href="https://note.mu/ryamakuchi/n/n7a07b20d811d" target="_blank" rel="noopener noreferrer" class="link">note</a> をご覧ください。
       </p>
 
       <!-- prettier-ignore -->
@@ -135,6 +135,26 @@
         </h4>
         <p>
           全セッション終了後、会場内にて立食形式のお食事、お飲み物（アルコールあり）を召し上がりながらご歓談いただけます。お1人で参加される方でもお楽しみいただけるような工夫を行う予定です。お楽しみに！
+        </p>
+      </div>
+
+      <div class="faq-content">
+        <h4>
+          チケットはいつまで買えますか？
+        </h4>
+        <!-- prettier-ignore -->
+        <p>
+          2019/9/17（火）当日いっぱいまで購入することができます。
+        </p>
+      </div>
+
+      <div class="faq-content">
+        <h4>
+          チケットを購入ましたが、メールが届きません
+        </h4>
+        <!-- prettier-ignore -->
+        <p>
+          迷惑メールとして扱われている可能性があります。迷惑メールに振り分けられていないかご確認ください。それでも届いていない場合、迷惑メールの対策のため受信できていない可能性があります。「universe.com」を受信できるように設定のうえ、お問い合わせください。
         </p>
       </div>
 
