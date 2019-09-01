@@ -15,18 +15,11 @@ import BaseButton from '~/components/BaseButton.vue'
   components: {
     BaseMain,
     BaseButton
-  },
-  asyncData({ route }) {
-    return {
-      path: route.path
-    }
   }
 })
 export default class SponsorsPage extends Vue {
-  path!: string
-
   private head() {
-    const url = `https://vuefes.jp/2019${this.path}`
+    const url = `https://vuefes.jp/2019/sponsors`
     const title = 'スポンサー一覧 | Vue Fes Japan 2019'
     const description = 'Vue Fes Japan 2019 のスポンサー情報です。'
     return {
