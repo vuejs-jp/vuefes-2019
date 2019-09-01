@@ -28,12 +28,17 @@ yarn dev --open
 git commit --no-verify
 ```
 
-#### コアスタッフの画像サイズ
+#### コアスタッフの画像のリサイズ
 
-- 通常版
-  - 155 x 155 px
-- @2x
-  - 310 x 310 px
+画像ファイルを追加または変更した場合には、コミット時に [sharp](https://github.com/lovell/sharp) により自動でリサイズされます。
+
+リサイズには、gawk を使っているためインストールが必要です。
+
+Mac で Homebrew を使っている場合は、以下のコマンドでインストールできます。
+
+```shell
+brew install gawk
+```
 
 ## Testing
 
