@@ -4,10 +4,16 @@
       SPONSORS
     </template>
     スポンサー詳細ページ
+
+    <pre>
+      {{ sponsors }}
+    </pre>
   </BaseMain>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import { Entry } from 'contentful/index'
+import { getSponsors } from '~/plugins/contentful.ts'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
@@ -15,6 +21,15 @@ import BaseButton from '~/components/BaseButton.vue'
   components: {
     BaseMain,
     BaseButton
+  },
+  async asyncData(): Promise<{ sponsors: Entry<any>[] } | void> {
+    try {
+      return {
+        sponsors: await getSponsors()
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
 })
 export default class SponsorsPage extends Vue {
