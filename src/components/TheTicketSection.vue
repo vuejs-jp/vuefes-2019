@@ -23,7 +23,7 @@
       <!-- prettier-ignore -->
       <p>
         <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-        チケットに関するお問い合わせは、<nuxt-link class="link" to="/contact/">お問い合わせページ</nuxt-link>からお願いします。
+        チケットに関するお問い合わせは、Vue Fes Japan 2019の<nuxt-link class="link" to="/contact/">お問い合わせフォーム</nuxt-link>よりお問い合わせください。
       </p>
     </div>
 
@@ -149,17 +149,17 @@
         </h4>
         <!-- prettier-ignore -->
         <p>
-          2019/9/17（火）当日いっぱいまで購入することができます。
+          2019/9/17（火）23:59まで購入できます。
         </p>
       </div>
 
       <div class="faq-content">
         <h4>
-          チケットを購入ましたが、メールが届きません
+          チケットを購入しましたが、メールが届きません
         </h4>
         <!-- prettier-ignore -->
         <p>
-          迷惑メールとして扱われている可能性があります。迷惑メールに振り分けられていないかご確認ください。それでも届いていない場合、迷惑メールの対策のため受信できていない可能性があります。「universe.com」を受信できるように設定のうえ、お問い合わせください。
+          迷惑メールとして扱われている可能性があります。迷惑メールに振り分けられていないかご確認ください。それでも届いていない場合、迷惑メールの対策のため受信できていない可能性があります。「universe.com」を受信できるように設定のうえ、Vue Fes Japan 2019の<nuxt-link class="link" to="/contact/">お問い合わせフォーム</nuxt-link>よりお問い合わせください。
         </p>
       </div>
 
