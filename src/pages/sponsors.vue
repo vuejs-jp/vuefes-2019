@@ -3,7 +3,12 @@
     <template slot="heading">
       SPONSORS
     </template>
-    スポンサー詳細ページ
+
+    <ul class="nav">
+      <li v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
+        {{ sponsorPlan.name }}
+      </li>
+    </ul>
 
     <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
       <li
@@ -21,7 +26,11 @@
           class="sponsor"
         >
           <li>
-            <a :href="sponsor.fields.url" target="_blank" rel="noopener">
+            <a
+              :href="sponsor.fields.url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div v-lazy-container="{ selector: 'img' }">
                 <img
                   class="sponsor-image"
@@ -32,14 +41,35 @@
             </a>
           </li>
 
-          <li>{{ sponsor.fields.name }}</li>
+          <li>
+            <h4 class="sponsor-name">
+              {{ sponsor.fields.name }}
+            </h4>
+          </li>
 
-          <li>{{ sponsor.fields.url }}</li>
+          <li>
+            <a
+              :href="sponsor.fields.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sponsor-url link"
+            >
+              {{ sponsor.fields.url }}
+            </a>
+          </li>
 
-          <li>{{ sponsor.fields.pr }}</li>
+          <li>
+            <p class="sponsor-pr">
+              {{ sponsor.fields.pr }}
+            </p>
+          </li>
         </ul>
       </li>
     </ul>
+
+    <BaseButton to="/">
+      トップに戻る
+    </BaseButton>
   </BaseMain>
 </template>
 <script lang="ts">
@@ -116,3 +146,67 @@ export default class SponsorsPage extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+ul,
+li {
+  margin: 0; // このコンポーネントでは ul 要素に margin を持たせない
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: calc(100% + 20px);
+  margin: -10px;
+
+  li {
+    width: calc(50% - 20px);
+    margin: 10px;
+    text-align: center;
+    line-height: 2.4em;
+    font-size: 3vw;
+    border: 1px solid $vue-dark-blue;
+    background-color: $white;
+  }
+}
+
+.sponsor-group {
+  padding-bottom: 2vw;
+}
+
+.sponsor-plan {
+  margin-top: 6vw;
+  font-size: 5.2vw;
+  font-weight: bold;
+}
+
+.sponsor {
+  margin-top: 4vw;
+
+  &-image {
+    display: block;
+    width: 100%;
+    border: 1px solid $vue-dark-blue;
+  }
+
+  &-name {
+    margin-top: 2vw;
+    font-size: 3.5vw;
+    font-weight: bold;
+  }
+
+  &-url {
+    font-size: 2vw;
+  }
+
+  &-pr {
+    margin-top: 2vw;
+    font-size: 2.5vw;
+  }
+}
+
+.base-button {
+  margin-top: 13vw;
+}
+</style>
