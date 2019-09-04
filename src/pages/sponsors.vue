@@ -169,20 +169,52 @@ li {
     border: 1px solid $vue-dark-blue;
     background-color: $white;
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    li {
+      font-size: 24px;
+      line-height: 56px;
+    }
+  }
 }
 
 .sponsor-group {
   padding-bottom: 2vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 20px);
+    margin: 0 -10px;
+    padding-bottom: 16px;
+  }
 }
 
 .sponsor-plan {
   margin-top: 6vw;
   font-size: 5.2vw;
   font-weight: bold;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin: 48px 10px 0;
+    font-size: 42px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .platinum .sponsor {
+    width: calc((100% / 2) - 20px);
+  }
 }
 
 .sponsor {
   margin-top: 4vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: calc((100% / 3) - 20px);
+    margin: 30px 10px 0;
+  }
 
   &-image {
     display: block;
@@ -194,19 +226,40 @@ li {
     margin-top: 2vw;
     font-size: 3.5vw;
     font-weight: bold;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 20px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
   }
 
   &-url {
     font-size: 2vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+    }
   }
 
   &-pr {
     margin-top: 2vw;
     font-size: 2.5vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 20px;
+      font-size: 18px;
+    }
   }
 }
 
 .base-button {
   margin-top: 13vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 84px;
+  }
 }
 </style>
