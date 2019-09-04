@@ -1,6 +1,6 @@
 <template>
   <BaseSection class="the-staff-list-section">
-    <template slot="heading">
+    <template v-slot:heading>
       TEAM
     </template>
 
