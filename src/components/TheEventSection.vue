@@ -1,7 +1,7 @@
 <template>
-  <BaseSection class="the-store-section">
+  <BaseSection class="the-event-section">
     <template v-slot:heading>
-      Vue Fes Store
+      EVENTS
     </template>
 
     <div class="notification">
