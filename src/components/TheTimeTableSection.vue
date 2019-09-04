@@ -640,7 +640,7 @@ $half-session__content-font-size--is-medium-up: 18px;
 
 .note {
   margin-top: 5vw;
-  font-size: 2.5vw;
+  font-size: 2vw;
   color: $primary-text-color--invert;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {

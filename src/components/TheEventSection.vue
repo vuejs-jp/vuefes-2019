@@ -15,8 +15,8 @@
       ※画像はすべてイメージです。
     </div>
 
-    <ul>
-      <li v-for="(event, index) in events" :key="index">
+    <ul class="event-list">
+      <li v-for="(event, index) in events" :key="index" class="event">
         <div v-lazy-container="{ selector: 'img' }" class="event-image">
           <img
             :data-srcset="`${event.image}, ${event.image2x} 2x`"
@@ -31,33 +31,46 @@
 
         <!-- eslint-disable vue/no-v-html -->
         <!-- eslint-disable vue/html-self-closing -->
-        <p v-html="event.description"></p>
+        <p class="event-description" v-html="event.description"></p>
         <!-- eslint-enable vue/html-self-closing -->
         <!-- eslint-enable vue/no-v-html -->
       </li>
     </ul>
 
-    <div v-lazy-container="{ selector: 'img' }" class="event-other-images">
-      <img
-        :data-srcset="`${informationTable}, ${informationTable} 2x`"
-        :data-src="informationTable2x"
-        alt=""
-      />
-      <img :data-srcset="`${party}, ${party} 2x`" :data-src="party2x" alt="" />
+    <div class="event-other-images">
+      <div
+        v-lazy-container="{ selector: 'img' }"
+        class="information-table-image"
+      >
+        <img
+          :data-srcset="`${informationTable}, ${informationTable} 2x`"
+          :data-src="informationTable2x"
+          alt=""
+        />
+      </div>
+
+      <div v-lazy-container="{ selector: 'img' }" class="party-image">
+        <img
+          class="party"
+          :data-srcset="`${party}, ${party} 2x`"
+          :data-src="party2x"
+          alt=""
+        />
+      </div>
     </div>
 
-    <h3>
+    <h3 class="store-title">
       Vue Fes Store
     </h3>
 
     <!-- prettier-ignore -->
-    <p>
+    <p class="store-description">
       会場限定の Vue Fes Japan グッズをお買い求めいただける Vue Fes Store が登場します。<br />
       当日しか手に入らないレアアイテムをお見逃しなく！
     </p>
 
-    <ul>
-      <li v-for="(item, index) in items" :key="index">
+    <ul class="item-list">
+      <li v-for="(item, index) in items" :key="index" class="item">
         <div v-lazy-container="{ selector: 'img' }" class="item-image">
           <img
             :data-srcset="`${item.image}, ${item.image2x} 2x`"
@@ -66,19 +79,39 @@
           />
         </div>
 
-        <h4>
-          {{ item.name }}
-        </h4>
+        <div class="item-content">
+          <h4 class="item-name">
+            {{ item.name }}
+          </h4>
 
-        <p>￥{{ item.price }}</p>
+          <p class="item-price">
+            <span class="price-unit">¥</span>{{ item.price }}
+          </p>
 
-        <!-- eslint-disable vue/no-v-html -->
-        <!-- eslint-disable vue/html-self-closing -->
-        <p v-html="item.description"></p>
-        <!-- eslint-enable vue/html-self-closing -->
-        <!-- eslint-enable vue/no-v-html -->
+          <!-- eslint-disable vue/no-v-html -->
+          <!-- eslint-disable vue/html-self-closing -->
+          <p class="item-description" v-html="item.description"></p>
+          <!-- eslint-enable vue/html-self-closing -->
+          <!-- eslint-enable vue/no-v-html -->
+        </div>
       </li>
     </ul>
+
+    <div class="donation">
+      <p>
+        グッズ販売における利益は以下に分割して全額寄付される予定です。
+      </p>
+
+      <ul>
+        <li>
+          Vue.js コアチームによる開発の支援
+        </li>
+
+        <li>
+          Vue.js 日本ユーザーグループによるコミュニティ活動の支援
+        </li>
+      </ul>
+    </div>
   </BaseSection>
 </template>
 
@@ -248,31 +281,123 @@ $content-max-width--is-medium-up: 820px;
   }
 }
 
-.image-container {
-  .image {
-    margin: 2vw 0;
+.note {
+  margin-top: 2vw;
+  font-size: 2vw;
+}
 
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      margin: 10px 0;
-    }
+.event-list {
+  margin-top: 5.2vw;
 
-    img {
-      display: block;
-      width: 100%;
-    }
+  .event + .event {
+    margin-top: 8vw;
+  }
+}
+
+.event-image {
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.event-title {
+  margin-top: 2vw;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+.event-description {
+  font-size: 4vw;
+}
+
+.event-other-images {
+  margin-top: 10vw;
+  display: flex;
+  width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.information-table-image {
+  flex: 1 1 450px;
+}
+
+.party-image {
+  margin-left: 2vw;
+  flex: 1 1 186px;
+}
+
+.store-title {
+  margin-top: 9vw;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+.store-description {
+  font-size: 4vw;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+
+  & + & {
+    margin-top: 6.38vw;
+  }
+}
+
+.item-image {
+  flex: 1 1 314px;
+
+  img {
+    display: block;
+    width: 100%;
+    background-color: $white;
+  }
+}
+
+.item-content {
+  margin-left: 3vw;
+  flex: 1 1 312px;
+}
+
+.item-name {
+  font-size: 4vw;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.item-price {
+  font-size: 4vw;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.price-unit {
+  margin-right: 0.5vw;
+}
+
+.item-description {
+  margin-top: 1vw;
+  font-size: 3vw;
+  line-height: 1.25;
+}
+
+.donation {
+  margin-top: 12vw;
+
+  ul {
+    list-style-position: inside;
   }
 
-  .note {
-    font-size: 88.8%;
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-left: auto;
-    max-width: $content-max-width--is-small-up;
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    max-width: $content-max-width--is-medium-up;
+  li {
+    list-style-type: disc;
+    font-size: 4vw;
+    line-height: 1.8;
   }
 }
 </style>
