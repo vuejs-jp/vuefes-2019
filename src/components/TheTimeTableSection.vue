@@ -1,6 +1,6 @@
 <template>
   <BaseSection class="the-time-table-section">
-    <template slot="heading">
+    <template v-slot:heading>
       TIME TABLE
     </template>
 

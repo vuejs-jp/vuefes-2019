@@ -1,6 +1,6 @@
 <template>
   <BaseSection class="the-speaker-list-section">
-    <template slot="heading">
+    <template v-slot:heading>
       SPEAKERS
     </template>
 

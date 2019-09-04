@@ -1,6 +1,6 @@
 <template>
   <BaseSection class="the-access-section">
-    <template slot="heading">
+    <template v-slot:heading>
       ACCESS
     </template>
 

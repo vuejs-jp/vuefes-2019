@@ -1,6 +1,6 @@
 <template>
   <BaseSection class="the-ticket-section">
-    <template slot="heading">
+    <template v-slot:heading>
       TICKET
     </template>
 

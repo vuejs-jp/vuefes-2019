@@ -1,6 +1,6 @@
 <template>
   <BaseMain class="the-contact-form">
-    <template slot="heading">
+    <template v-slot:heading>
       お問い合わせ
     </template>
 
