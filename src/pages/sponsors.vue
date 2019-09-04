@@ -154,20 +154,22 @@ li {
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: calc(100% + 20px);
-  margin: -10px;
+  @media screen and (max-width: $layout-breakpoint--is-large) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: calc(100% + 20px);
+    margin: -10px;
 
-  li {
-    width: calc(50% - 20px);
-    margin: 10px;
-    text-align: center;
-    line-height: 2.4em;
-    font-size: 3vw;
-    border: 1px solid $vue-dark-blue;
-    background-color: $white;
+    li {
+      width: calc(50% - 20px);
+      margin: 10px;
+      text-align: center;
+      line-height: 2.4em;
+      font-size: 3vw;
+      border: 1px solid $vue-dark-blue;
+      background-color: $white;
+    }
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -175,6 +177,10 @@ li {
       font-size: 24px;
       line-height: 56px;
     }
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    //
   }
 }
 
@@ -208,12 +214,22 @@ li {
   }
 }
 
+@media screen and (min-width: $layout-breakpoint--is-medium-up) {
+  .platinum .sponsor {
+    width: calc((100% / 3) - 20px);
+  }
+}
+
 .sponsor {
   margin-top: 4vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: calc((100% / 3) - 20px);
     margin: 30px 10px 0;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    width: calc((100% / 4) - 20px);
   }
 
   &-image {
@@ -260,6 +276,10 @@ li {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-top: 84px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin-top: 104px;
   }
 }
 </style>
