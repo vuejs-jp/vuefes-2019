@@ -12,18 +12,33 @@
 
       <!-- prettier-ignore -->
       <p>
-        販売媒体として <a href="https://www.universe.com/" target="_blank" rel="noopener" class="link">Universe</a> を利用します。購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
+        販売媒体として
+        <a href="https://www.universe.com/" target="_blank" rel="noopener" class="link">
+          Universe
+        </a>
+        を利用します。購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
       </p>
 
       <!-- prettier-ignore -->
       <p>
-        Apple Pay で決済をご希望の方は、<a href="#" class="link" @click.prevent="openUniverse">こちらのリンク</a>から直接ご購入ください。また、Universe の決済方法でチケットを購入できない方向けに別途購入窓口を開設しています。詳細は <a href="https://note.mu/ryamakuchi/n/n7a07b20d811d" target="_blank" rel="noopener noreferrer" class="link">note</a> をご覧ください。
+        Apple Pay で決済をご希望の方は
+        <a href="#" class="link" @click.prevent="openUniverse">
+          こちらのリンク
+        </a>
+        から直接ご購入ください。また、Universe の決済方法でチケットを購入できない方向けに別途購入窓口を開設しています。詳細は
+        <a href="https://note.mu/ryamakuchi/n/n7a07b20d811d" target="_blank" rel="noopener noreferrer" class="link">
+          note
+        </a>
+        をご覧ください。
       </p>
 
       <!-- prettier-ignore -->
       <p>
-        <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-        チケットに関するお問い合わせは、Vue Fes Japan 2019の<nuxt-link class="link" to="/contact/">お問い合わせフォーム</nuxt-link>よりお問い合わせください。
+        チケットに関するお問い合わせは、Vue Fes Japan 2019 の
+        <nuxt-link class="link" to="/contact/">
+          お問い合わせフォーム
+        </nuxt-link>
+        よりお問い合わせください。
       </p>
     </div>
 
@@ -159,7 +174,11 @@
         </h4>
         <!-- prettier-ignore -->
         <p>
-          迷惑メールとして扱われている可能性があります。迷惑メールに振り分けられていないかご確認ください。それでも届いていない場合、迷惑メールの対策のため受信できていない可能性があります。「universe.com」を受信できるように設定のうえ、Vue Fes Japan 2019の<nuxt-link class="link" to="/contact/">お問い合わせフォーム</nuxt-link>よりお問い合わせください。
+          迷惑メールとして扱われている可能性があります。迷惑メールに振り分けられていないかご確認ください。それでも届いていない場合、迷惑メールの対策のため受信できていない可能性があります。「universe.com」を受信できるように設定のうえ、Vue Fes Japan 2019 の
+          <nuxt-link class="link" to="/contact/">
+            お問い合わせフォーム
+          </nuxt-link>
+          よりお問い合わせください。
         </p>
       </div>
 
