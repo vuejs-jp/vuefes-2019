@@ -1,13 +1,19 @@
+import { mount, createLocalVue, RouterLinkStub, Wrapper } from '@vue/test-utils'
 import Vue from 'vue'
-import { mount, RouterLinkStub, Wrapper } from '@vue/test-utils'
+import VueLazyLoad from 'vue-lazyload'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import TheFooter from '~/components/TheFooter.vue'
+
+const localVue = createLocalVue()
+
+localVue.use(VueLazyLoad)
 
 describe('TheFooter', () => {
   let wrapper: Wrapper<Vue>
 
   beforeEach(() => {
     wrapper = mount(TheFooter, {
+      localVue,
       stubs: {
         NuxtLink: RouterLinkStub,
         Fa: FontAwesomeIcon

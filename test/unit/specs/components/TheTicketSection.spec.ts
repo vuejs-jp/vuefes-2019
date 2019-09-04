@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import TheTicketSection from '~/components/TheTicketSection.vue'
 
@@ -8,7 +8,13 @@ localVue.use(VueLazyLoad)
 
 describe('TheTicketSection', () => {
   test('レンダリングできる', () => {
-    const wrapper = mount(TheTicketSection, { localVue })
+    const wrapper = mount(TheTicketSection, {
+      localVue,
+      stubs: {
+        NuxtLink: RouterLinkStub
+      }
+    })
+
     expect(wrapper.find('.the-ticket-section').isVisible()).toBeTruthy()
   })
 })

@@ -1,7 +1,7 @@
 <template>
   <!-- prettier-ignore -->
   <BaseMain class="code-of-conduct-page">
-    <template slot="heading">
+    <template v-slot:heading>
       行動規範
     </template>
 
@@ -12,7 +12,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         差別、ハラスメント行為の禁止
       </template>
 
@@ -30,7 +30,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         いやな思いをしてしまったら
       </template>
 
@@ -44,7 +44,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         何かお困りですか？
       </template>
 

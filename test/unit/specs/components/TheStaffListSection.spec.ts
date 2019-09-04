@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import TheStaffListSection from '~/components/TheStaffListSection.vue'
 
@@ -10,7 +10,12 @@ describe('TheStaffListSection', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = mount(TheStaffListSection, { localVue })
+    wrapper = mount(TheStaffListSection, {
+      localVue,
+      stubs: {
+        NuxtLink: RouterLinkStub
+      }
+    })
   })
 
   test('レンダリングできる', () => {
