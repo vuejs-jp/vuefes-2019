@@ -312,6 +312,7 @@ $content-max-width--is-medium-up: 820px;
 
 .event {
   $event-gutter--is-small-up: 12.6%;
+  $event-gutter--is-medium-up: 140px;
 
   @media screen and (max-width: $layout-breakpoint--is-small) {
     & + & {
@@ -330,6 +331,18 @@ $content-max-width--is-medium-up: 820px;
       margin-top: 40px;
     }
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    width: calc((100% - #{$event-gutter--is-medium-up}) / 2);
+
+    &:nth-of-type(2n) {
+      margin-left: $event-gutter--is-medium-up;
+    }
+
+    &:nth-of-type(n + 3) {
+      margin-top: 80px;
+    }
+  }
 }
 
 .event-image {
@@ -345,7 +358,13 @@ $content-max-width--is-medium-up: 820px;
   font-weight: bold;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 14px;
     font-size: 2.5vw; // 1行に収まるように vw 指定
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin-top: 20px;
+    font-size: 30px;
   }
 }
 
@@ -460,6 +479,10 @@ $content-max-width--is-medium-up: 820px;
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-top: 6px;
     margin-left: 0;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin-top: 10px;
   }
 }
 
