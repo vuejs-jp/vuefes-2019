@@ -89,7 +89,7 @@
           </h4>
 
           <p class="item-price">
-            <span class="price-unit">¥</span>{{ item.price }}
+            <span class="price-unit">¥</span>{{ item.price.toLocaleString() }}
           </p>
 
           <!-- eslint-disable vue/no-v-html -->
@@ -268,8 +268,6 @@ export default class TheStoreSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$content-max-width--is-medium-up: 820px;
-
 .notification-container {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     display: flex;
@@ -280,14 +278,16 @@ $content-max-width--is-medium-up: 820px;
 .notification {
   padding: 6.7%;
   background-color: $white;
+  border: 1px solid $vue-dark-blue;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    max-width: 582px;
-    padding: 40px;
+    max-width: 60vw;
+    padding: 4vw;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    max-width: $content-max-width--is-medium-up;
+    max-width: 820px;
+    padding: 40px;
   }
 }
 
@@ -296,7 +296,11 @@ $content-max-width--is-medium-up: 820px;
   font-size: 2vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-left: 16px;
+    margin-left: 1.5vw;
+    font-size: 1.5vw; // できるだけ 1行に収まるように vw 指定
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     font-size: 14px;
   }
 }
@@ -305,15 +309,13 @@ $content-max-width--is-medium-up: 820px;
   margin-top: 5.2vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
   }
 }
 
 .event {
-  $event-gutter--is-small-up: 12.6%;
-  $event-gutter--is-medium-up: 140px;
-
   @media screen and (max-width: $layout-breakpoint--is-small) {
     & + & {
       margin-top: 8vw;
@@ -321,26 +323,29 @@ $content-max-width--is-medium-up: 820px;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    $event-gutter--is-small-up: 12.6%;
+    $event-gutter--is-medium-up: 140px;
+
     width: calc((100% - #{$event-gutter--is-small-up}) / 2);
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      width: calc((100% - #{$event-gutter--is-medium-up}) / 2);
+    }
 
     &:nth-of-type(2n) {
       margin-left: $event-gutter--is-small-up;
+
+      @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+        margin-left: $event-gutter--is-medium-up;
+      }
     }
 
     &:nth-of-type(n + 3) {
       margin-top: 40px;
-    }
-  }
 
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    width: calc((100% - #{$event-gutter--is-medium-up}) / 2);
-
-    &:nth-of-type(2n) {
-      margin-left: $event-gutter--is-medium-up;
-    }
-
-    &:nth-of-type(n + 3) {
-      margin-top: 80px;
+      @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+        margin-top: 80px;
+      }
     }
   }
 }
@@ -414,6 +419,10 @@ $content-max-width--is-medium-up: 820px;
     flex: 1 1 196px;
     font-size: 3vw; // 1行に収まるように vw 指定
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 30px;
+  }
 }
 
 .store-description {
@@ -445,15 +454,24 @@ $content-max-width--is-medium-up: 820px;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    $item-gutter--is-small-up: 20px;
+    $item-gutter--is-small-up: 2vw;
+    $item-gutter--is-medium-up: 20px;
 
     display: block;
     width: calc((100% - #{$item-gutter--is-small-up} * 3) / 4);
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      width: calc((100% - #{$item-gutter--is-medium-up} * 3) / 4);
+    }
 
     &:nth-of-type(4n),
     &:nth-of-type(4n-1),
     &:nth-of-type(4n-2) {
       margin-left: $item-gutter--is-small-up;
+
+      @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+        margin-left: $item-gutter--is-medium-up;
+      }
     }
 
     &:nth-of-type(n + 5) {
@@ -493,8 +511,12 @@ $content-max-width--is-medium-up: 820px;
   line-height: 1.25;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    font-size: 18px;
+    font-size: 1.8vw; // できるだけ 1行に収まるように vw 指定
     line-height: 1.4;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    font-size: 18px;
   }
 }
 
@@ -512,8 +534,13 @@ $content-max-width--is-medium-up: 820px;
   line-height: 1.25;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    font-size: 16px;
+    margin-top: 4px;
+    font-size: 1.6vw; // .item-name に合わせて vw 指定
     line-height: 1.5;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    font-size: 16px;
   }
 }
 
