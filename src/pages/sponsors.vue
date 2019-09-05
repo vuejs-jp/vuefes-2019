@@ -33,13 +33,11 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div v-lazy-container="{ selector: 'img' }">
-                <img
-                  class="sponsor-image"
-                  :data-src="sponsor.fields.banner.fields.file.url"
-                  :alt="sponsor.fields.name"
-                />
-              </div>
+              <img
+                class="sponsor-image"
+                :src="sponsor.fields.banner.fields.file.url"
+                :alt="sponsor.fields.name"
+              />
             </a>
           </li>
 
