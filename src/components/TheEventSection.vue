@@ -420,7 +420,8 @@ export default class TheStoreSection extends Vue {
     font-size: 3vw; // 1行に収まるように vw 指定
   }
 
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    max-width: 184px;
     font-size: 30px;
   }
 }
@@ -432,6 +433,10 @@ export default class TheStoreSection extends Vue {
     margin-left: 18px;
     flex: 1 1 626px;
     font-size: 18px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin-left: 56px;
   }
 }
 
