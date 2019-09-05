@@ -149,29 +149,29 @@ export default class TheStoreSection extends Vue {
       title: 'リフレッシュメントスペース',
       description:
         '喉が渇いたらお茶やコーヒーはいかがですか？小腹を満たすお菓子もご用意しています。もちろん無料です。休憩できる椅子は譲り合ってご利用ください。',
-      image: require('~/assets/images/events/refreshment.jpg'),
-      image2x: require('~/assets/images/events/refreshment@2x.jpg')
+      image: require('~/assets/images/event/refreshment.jpg'),
+      image2x: require('~/assets/images/event/refreshment@2x.jpg')
     },
     {
       title: 'スポンサーブースシールラリー',
       description:
         '工夫を凝らした展示が楽しめるスポンサーブースが今年も登場。ブースで配られるシールを集めると、特製小物ケース（写真右下）をプレゼントします。数量限定のためお早めに！',
-      image: require('~/assets/images/events/sponsor-booths.jpg'),
-      image2x: require('~/assets/images/events/sponsor-booths@2x.jpg')
+      image: require('~/assets/images/event/sponsor-booths.jpg'),
+      image2x: require('~/assets/images/event/sponsor-booths@2x.jpg')
     },
     {
       title: '技術同人誌販売スペース',
       description:
         'Vue.js や JavaScript に関する技術同人誌を立ち読みし、気に入った本があれば実際に購入できます。あなたの知らない良書が見つかるチャンスかもしれません。',
-      image: require('~/assets/images/events/presents.jpg'),
-      image2x: require('~/assets/images/events/presents@2x.jpg')
+      image: require('~/assets/images/event/presents.jpg'),
+      image2x: require('~/assets/images/event/presents@2x.jpg')
     },
     {
       title: 'タトゥースペース',
       description:
         '顔や手に Vue Fes Japan 特製タトゥーシールを貼り付けて、フェス気分を盛り上げましょう。Vue.js や Nuxt.js のロゴマークをその場ですぐに付けられます。',
-      image: require('~/assets/images/events/tattoo.jpg'),
-      image2x: require('~/assets/images/events/tattoo@2x.jpg')
+      image: require('~/assets/images/event/tattoo.jpg'),
+      image2x: require('~/assets/images/event/tattoo@2x.jpg')
     }
   ]
 
@@ -184,8 +184,8 @@ export default class TheStoreSection extends Vue {
         '<br/>' +
         'カラー: ネイビー<br />' +
         'サイズ: S / M / L / XL',
-      image: require('~/assets/images/events/t-shirt.png'),
-      image2x: require('~/assets/images/events/t-shirt@2x.png')
+      image: require('~/assets/images/event/t-shirt.png'),
+      image2x: require('~/assets/images/event/t-shirt@2x.png')
     },
     {
       name: 'パーカー',
@@ -195,8 +195,8 @@ export default class TheStoreSection extends Vue {
         '<br />' +
         'カラー: ミックスグレー<br />' +
         'サイズ: S / M / L / XL',
-      image: require('~/assets/images/events/parka.png'),
-      image2x: require('~/assets/images/events/parka@2x.png')
+      image: require('~/assets/images/event/parka.png'),
+      image2x: require('~/assets/images/event/parka@2x.png')
     },
     {
       name: 'ステンレスマグカップ',
@@ -206,8 +206,8 @@ export default class TheStoreSection extends Vue {
         '<br />' +
         'カラー: シルバー<br />' +
         '容量: 300ml',
-      image: require('~/assets/images/events/mug.png'),
-      image2x: require('~/assets/images/events/mug@2x.png')
+      image: require('~/assets/images/event/mug.png'),
+      image2x: require('~/assets/images/event/mug@2x.png')
     },
     {
       name: 'ステンレスタンブラー',
@@ -217,8 +217,8 @@ export default class TheStoreSection extends Vue {
         '<br />' +
         'カラー: シルバー<br />' +
         '容量: 450ml',
-      image: require('~/assets/images/events/tumbler.png'),
-      image2x: require('~/assets/images/events/tumbler@2x.png')
+      image: require('~/assets/images/event/tumbler.png'),
+      image2x: require('~/assets/images/event/tumbler@2x.png')
     },
     {
       name: 'Vue.js クッション',
@@ -227,8 +227,8 @@ export default class TheStoreSection extends Vue {
         '珍しい三角形のクッションです。もちもちとした触感がクセになります。<br />' +
         '<br />' +
         'サイズ: 30cm以下（予定）',
-      image: require('~/assets/images/events/cushion.png'),
-      image2x: require('~/assets/images/events/cushion@2x.png')
+      image: require('~/assets/images/event/cushion.png'),
+      image2x: require('~/assets/images/event/cushion@2x.png')
     },
     {
       name: '缶バッジ 4個セット',
@@ -237,8 +237,8 @@ export default class TheStoreSection extends Vue {
         '人気のロゴが入った缶バッジセットです。Vue.jsのみ円形と三角形の2種類が付属します。<br />' +
         '<br />' +
         'サイズ: 44mm（円形）、70mm（三角形）',
-      image: require('~/assets/images/events/badges.png'),
-      image2x: require('~/assets/images/events/badges@2x.png')
+      image: require('~/assets/images/event/badges.png'),
+      image2x: require('~/assets/images/event/badges@2x.png')
     },
     {
       name: 'マルチクリーナー',
@@ -247,23 +247,23 @@ export default class TheStoreSection extends Vue {
         'メガネ、スマートフォンなどマルチな用途で使えるクリーナーです。印刷面、裏面のどちらでも拭けます。<br />' +
         '<br />' +
         'サイズ: 15 x 15cm',
-      image: require('~/assets/images/events/cleaner.png'),
-      image2x: require('~/assets/images/events/cleaner@2x.png')
+      image: require('~/assets/images/event/cleaner.png'),
+      image2x: require('~/assets/images/event/cleaner@2x.png')
     },
     {
       name: 'ステッカー',
       price: 200,
       description:
         'テックカンファレンスの定番、ステッカーです。キートップに貼れるサイズのキーボードステッカーも付属。',
-      image: require('~/assets/images/events/stickers.png'),
-      image2x: require('~/assets/images/events/stickers@2x.png')
+      image: require('~/assets/images/event/stickers.png'),
+      image2x: require('~/assets/images/event/stickers@2x.png')
     }
   ]
 
-  private informationTable = require('~/assets/images/events/information-table.jpg')
-  private informationTable2x = require('~/assets/images/events/information-table@2x.jpg')
-  private party = require('~/assets/images/events/party.jpg')
-  private party2x = require('~/assets/images/events/party@2x.jpg')
+  private informationTable = require('~/assets/images/event/information-table.jpg')
+  private informationTable2x = require('~/assets/images/event/information-table@2x.jpg')
+  private party = require('~/assets/images/event/party.jpg')
+  private party2x = require('~/assets/images/event/party@2x.jpg')
 }
 </script>
 
