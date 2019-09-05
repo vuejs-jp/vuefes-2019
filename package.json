@@ -21,7 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && ./bin/resize-image && ./bin/imagemin"
+      "pre-commit": "yarn lint && ./bin/resize-images && ./bin/imagemin"
     }
   },
   "dependencies": {
