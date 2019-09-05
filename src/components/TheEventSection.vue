@@ -4,15 +4,17 @@
       EVENTS
     </template>
 
-    <div class="notification">
-      <!-- prettier-ignore -->
-      <p>
-        今年の Vue Fes Japan には、より Vue.js を楽しんでいただくための企画を多数ご用意しています。セッションの合間にぜひお立ち寄りください。
-      </p>
-    </div>
+    <div class="notification-container">
+      <div class="notification">
+        <!-- prettier-ignore -->
+        <p>
+          今年の Vue Fes Japan には、より Vue.js を楽しんでいただくための企画を多数ご用意しています。セッションの合間にぜひお立ち寄りください。
+        </p>
+      </div>
 
-    <div class="note">
-      ※画像はすべてイメージです。
+      <div class="note">
+        ※画像はすべてイメージです。
+      </div>
     </div>
 
     <ul class="event-list">
@@ -59,15 +61,17 @@
       </div>
     </div>
 
-    <h3 class="store-title">
-      Vue Fes Store
-    </h3>
+    <div class="store">
+      <h3 class="store-title">
+        Vue Fes Store
+      </h3>
 
-    <!-- prettier-ignore -->
-    <p class="store-description">
-      会場限定の Vue Fes Japan グッズをお買い求めいただける Vue Fes Store が登場します。<br />
-      当日しか手に入らないレアアイテムをお見逃しなく！
-    </p>
+      <!-- prettier-ignore -->
+      <p class="store-description">
+        会場限定の Vue Fes Japan グッズをお買い求めいただける Vue Fes Store が登場します。<br />
+        当日しか手に入らないレアアイテムをお見逃しなく！
+      </p>
+    </div>
 
     <ul class="item-list">
       <li v-for="(item, index) in items" :key="index" class="item">
@@ -264,15 +268,21 @@ export default class TheStoreSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$content-max-width--is-small-up: 668px;
 $content-max-width--is-medium-up: 820px;
+
+.notification-container {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    display: flex;
+    align-items: flex-end;
+  }
+}
 
 .notification {
   padding: 6.7%;
   background-color: $white;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    max-width: $content-max-width--is-small-up;
+    max-width: 582px;
     padding: 40px;
   }
 
@@ -284,13 +294,41 @@ $content-max-width--is-medium-up: 820px;
 .note {
   margin-top: 2vw;
   font-size: 2vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-left: 16px;
+    font-size: 14px;
+  }
 }
 
 .event-list {
   margin-top: 5.2vw;
 
-  .event + .event {
-    margin-top: 8vw;
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.event {
+  $event-gutter--is-small-up: 12.6%;
+
+  @media screen and (max-width: $layout-breakpoint--is-small) {
+    & + & {
+      margin-top: 8vw;
+    }
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: calc((100% - #{$event-gutter--is-small-up}) / 2);
+
+    &:nth-of-type(2n) {
+      margin-left: $event-gutter--is-small-up;
+    }
+
+    &:nth-of-type(n + 3) {
+      margin-top: 40px;
+    }
   }
 }
 
@@ -305,10 +343,18 @@ $content-max-width--is-medium-up: 820px;
   margin-top: 2vw;
   font-size: 4vw;
   font-weight: bold;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 2.5vw; // 1行に収まるように vw 指定
+  }
 }
 
 .event-description {
   font-size: 4vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 18px;
+  }
 }
 
 .event-other-images {
@@ -323,30 +369,77 @@ $content-max-width--is-medium-up: 820px;
 }
 
 .information-table-image {
-  flex: 1 1 450px;
+  flex: 1 1 820px;
 }
 
 .party-image {
   margin-left: 2vw;
-  flex: 1 1 186px;
+  flex: 1 1 340px;
+}
+
+.store {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 .store-title {
   margin-top: 9vw;
   font-size: 4vw;
   font-weight: bold;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 0;
+    flex: 1 1 196px;
+    font-size: 3vw; // 1行に収まるように vw 指定
+  }
 }
 
 .store-description {
   font-size: 4vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-left: 18px;
+    flex: 1 1 626px;
+    font-size: 18px;
+  }
+}
+
+.item-list {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .item {
   display: flex;
   width: 100%;
 
-  & + & {
-    margin-top: 6.38vw;
+  @media screen and (max-width: $layout-breakpoint--is-small) {
+    & + & {
+      margin-top: 6.38vw;
+    }
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    $item-gutter--is-small-up: 20px;
+
+    display: block;
+    width: calc((100% - #{$item-gutter--is-small-up} * 3) / 4);
+
+    &:nth-of-type(4n),
+    &:nth-of-type(4n-1),
+    &:nth-of-type(4n-2) {
+      margin-left: $item-gutter--is-small-up;
+    }
+
+    &:nth-of-type(n + 5) {
+      margin-top: 40px;
+    }
   }
 }
 
@@ -363,32 +456,50 @@ $content-max-width--is-medium-up: 820px;
 .item-content {
   margin-left: 3vw;
   flex: 1 1 312px;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 6px;
+    margin-left: 0;
+  }
 }
 
-.item-name {
-  font-size: 4vw;
-  font-weight: bold;
-  line-height: 1.25;
-}
-
+.item-name,
 .item-price {
   font-size: 4vw;
   font-weight: bold;
   line-height: 1.25;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 18px;
+    line-height: 1.4;
+  }
 }
 
 .price-unit {
   margin-right: 0.5vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-right: 1px;
+  }
 }
 
 .item-description {
   margin-top: 1vw;
   font-size: 3vw;
   line-height: 1.25;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
 .donation {
   margin-top: 12vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 80px;
+  }
 
   ul {
     list-style-position: inside;
@@ -398,6 +509,10 @@ $content-max-width--is-medium-up: 820px;
     list-style-type: disc;
     font-size: 4vw;
     line-height: 1.8;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 18px;
+    }
   }
 }
 </style>
