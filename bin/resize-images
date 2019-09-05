@@ -6,6 +6,7 @@ set -ue -o pipefail
 # Prevent commands misbehaving due to locale differences
 export LC_ALL=C
 
+# FIXME: \w+ の正規表現がawk(nawk)では使えないので、gawkにしている (awkにできるならawkにしたい)
 for file in `git diff --cached --name-status | \
   gawk '$1 ~ /[AM]/ && tolower($2) ~ /src\/assets\/images\/staffs\/\w+\.(jpe?g|png|gif|svg)$/ {print $2}'`
 do
@@ -16,6 +17,7 @@ do
   git add $file
 done
 
+# FIXME: \w+ の正規表現がawk(nawk)では使えないので、gawkにしている (awkにできるならawkにしたい)
 for file in `git diff --cached --name-status | \
   gawk '$1 ~ /[AM]/ && tolower($2) ~ /src\/assets\/images\/staffs\/@2x\/\w+\.(jpe?g|png|gif|svg)$/ {print $2}'`
 do
