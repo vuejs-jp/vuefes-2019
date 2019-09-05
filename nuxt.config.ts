@@ -84,7 +84,8 @@ const config: NuxtConfiguration = {
   plugins: [
     { src: '~/plugins/typekit', ssr: false },
     { src: '~/plugins/vee-validate' },
-    { src: '~/plugins/vue-lazyload', ssr: false }
+    { src: '~/plugins/vue-lazyload', ssr: false },
+    { src: '~/plugins/sponsor-anchor', ssr: false }
   ],
   modules: [
     '@nuxtjs/dotenv',

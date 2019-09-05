@@ -206,12 +206,14 @@ li {
 }
 
 .sponsor-plan {
-  margin-top: 6vw;
+  margin-top: 3vw;
+  padding-top: 3vw;
   font-size: 5.2vw;
   font-weight: bold;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin: 48px 10px 0;
+    margin: -20px 10px 0;
+    padding-top: 68px;
     font-size: 42px;
     width: 100%;
   }
