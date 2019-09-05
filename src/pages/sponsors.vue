@@ -6,7 +6,9 @@
 
     <ul class="nav">
       <li v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
-        {{ sponsorPlan.name }}
+        <nuxt-link :to="`#${sponsorPlan.plan}`" class="link">
+          {{ sponsorPlan.name }}
+        </nuxt-link>
       </li>
     </ul>
 
@@ -16,7 +18,7 @@
         class="sponsor-group"
         :class="sponsorPlan.plan"
       >
-        <h3 class="sponsor-plan">
+        <h3 :id="sponsorPlan.plan" class="sponsor-plan">
           {{ sponsorPlan.name }}
         </h3>
 
@@ -164,16 +166,23 @@ li {
     li {
       width: calc(50% - 20px);
       margin: 10px;
-      text-align: center;
-      line-height: 2.4em;
-      font-size: 3vw;
       border: 1px solid $vue-dark-blue;
       background-color: $white;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      line-height: 2.4em;
+      font-size: 3vw;
+      color: $primary-text-color;
+      width: 100%;
     }
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    li {
+    a {
       font-size: 24px;
       line-height: 56px;
     }
