@@ -32,14 +32,6 @@ git commit --no-verify
 
 画像ファイルを追加または変更した場合には、コミット時に [sharp](https://github.com/lovell/sharp) により自動でリサイズされます。
 
-リサイズには、gawk を使っているためインストールが必要です。
-
-Mac で Homebrew を使っている場合は、以下のコマンドでインストールできます。
-
-```shell
-brew install gawk
-```
-
 ## Testing
 
 ```shell
