@@ -236,29 +236,12 @@ export default class TheStaffListSection extends Vue {
   }
 }
 
-// ガターの幅
-$margin: 20px;
-
-// 1列のアイテム数
-$length-sm: 4;
-$length-md: 6;
-$length-lg: 8;
-
-// アイテムの幅 = ( 100% - 1列にあるガター幅の合計px ) / 1列にあるアイテム数
-$width-sm: calc((100% - #{$length-sm - 1} * #{$margin}) / #{$length-sm});
-$width-md: calc((100% - #{$length-md - 1} * #{$margin}) / #{$length-md});
-$width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
-
 .staff-list {
-  margin-bottom: -#{$margin};
   display: flex;
   flex-wrap: wrap;
 }
 
 .staff {
-  margin: 0 $margin $margin 0;
-  width: $width-sm;
-
   a {
     display: flex;
     flex-direction: column;
@@ -273,28 +256,48 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
   }
 
   img {
+    display: block;
     width: 100%;
   }
 
   @media screen and (max-width: $layout-breakpoint--is-small) {
-    &:nth-of-type(#{$length-sm}n) {
-      margin-right: 0;
+    $staff-gutter--is-small: 3.5vw;
+
+    width: calc((100% - #{$staff-gutter--is-small} * 3) / 4);
+
+    &:nth-of-type(4n),
+    &:nth-of-type(4n - 1),
+    &:nth-of-type(4n - 2) {
+      margin-left: $staff-gutter--is-small;
+    }
+
+    &:nth-of-type(n + 5) {
+      margin-top: $staff-gutter--is-small;
     }
   }
 
-  @media screen and (min-width: $layout-breakpoint--is-small-up) and (max-width: $layout-breakpoint--is-medium) {
-    width: $width-md;
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    $staff-gutter--is-small-up: 14px;
+    $staff-gutter--is-medium-up: 20px;
 
-    &:nth-of-type(#{$length-md}n) {
-      margin-right: 0;
+    width: calc((100% - #{$staff-gutter--is-small-up} * 7) / 8);
+    margin-left: $staff-gutter--is-small-up;
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      width: calc((100% - #{$staff-gutter--is-medium-up} * 7) / 8);
+      margin-left: $staff-gutter--is-medium-up;
     }
-  }
 
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    width: $width-lg;
+    &:nth-of-type(8n + 1) {
+      margin-left: 0;
+    }
 
-    &:nth-of-type(#{$length-lg}n) {
-      margin-right: 0;
+    &:nth-of-type(n + 9) {
+      margin-top: $staff-gutter--is-small-up;
+
+      @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+        margin-top: $staff-gutter--is-medium-up;
+      }
     }
   }
 }
