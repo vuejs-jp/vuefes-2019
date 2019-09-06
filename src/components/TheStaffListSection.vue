@@ -38,7 +38,7 @@
 
     <ul class="volunteer-list">
       <li
-        v-for="(volunteer, index) in volunteers"
+        v-for="(volunteer, index) in sortedVolunteers"
         :key="index"
         class="volunteer"
       >
@@ -312,6 +312,13 @@ export default class TheStaffListSection extends Vue {
         return this.compareStaffNames(a.name, b.name)
       })
     ]
+  }
+
+  private get sortedVolunteers(): Volunteer[] {
+    return this.volunteers.sort((a: Volunteer, b: Volunteer) => {
+      if (a.name < b.name) return -1
+      return 0
+    })
   }
 
   compareStaffNames(a: string, b: string): number {
