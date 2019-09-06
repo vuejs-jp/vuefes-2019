@@ -205,7 +205,7 @@ li {
     justify-content: center;
     align-items: flex-end;
     height: 100vh;
-    margin: -260px 0 260px;
+    margin: -260px 0 0;
     padding-right: 60px;
     transform: translateX($nav-width);
 
@@ -246,7 +246,7 @@ li {
   position: relative;
 
   @media screen and (min-width: $layout-breakpoint--is-large-up) {
-    top: -100vh;
+    top: calc(-100vh + 260px);
   }
 }
 
