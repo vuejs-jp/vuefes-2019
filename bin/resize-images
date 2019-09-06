@@ -7,7 +7,7 @@ set -ue -o pipefail
 export LC_ALL=C
 
 for file in `git diff --cached --name-status | \
-  awk '$1 ~ /[AM]/ && tolower($2) ~ /src\/assets\/images\/staffs\/[^\/@2x\/].+\.(jpe?g|png|gif|svg)$/ {print $2}'`
+  awk '$1 ~ /[AM]/ && tolower($2) ~ /src\/assets\/images\/staffs\/(?!@2x\/).+\.(jpe?g|png|gif|svg)$/ {print $2}'`
 do
   echo コアスタッフの $file をリサイズします
   cat $file | ./node_modules/.bin/sharp \
