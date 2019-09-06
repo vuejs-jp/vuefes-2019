@@ -333,23 +333,37 @@ export default class TheStaffListSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.sub-heading {
+  margin-bottom: 2.5vw;
+  font-size: 5vw;
+  font-weight: bold;
+}
+
 // ガターの幅
-$margin: 20px;
+$staff-margin: 20px;
 
 // 1列のアイテム数
-$length-sm: 4;
-$length-md: 6;
+$staff-length-sm: 4;
+$staff-length-md: 6;
 $length-lg: 8;
 
-// アイテムの幅 = ( 100% - 1列にあるガター幅の合計px ) / 1列にあるアイテム数
-$width-sm: calc((100% - #{$length-sm - 1} * #{$margin}) / #{$length-sm});
-$width-md: calc((100% - #{$length-md - 1} * #{$margin}) / #{$length-md});
-$width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
+// アイテムの幅 = ( 100% - 1列にあるガター幅の合計 px ) / 1列にあるアイテム数
+$staff-width-sm: calc(
+  (100% - #{$staff-length-sm - 1} * #{$staff-margin}) / #{$staff-length-sm}
+);
+
+$staff-width-md: calc(
+  (100% - #{$staff-length-md - 1} * #{$staff-margin}) / #{$staff-length-md}
+);
+
+$staff-width-lg: calc(
+  (100% - #{$length-lg - 1} * #{$staff-margin}) / #{$length-lg}
+);
 
 .staff-list {
+  margin: 0 auto 10vw;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto -#{$margin};
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 80%;
@@ -357,8 +371,8 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
 }
 
 .staff {
-  margin: 0 $margin $margin 0;
-  width: $width-sm;
+  margin: 0 $staff-margin $staff-margin 0;
+  width: $staff-width-sm;
 
   a {
     display: flex;
@@ -378,25 +392,52 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
   }
 
   @media screen and (max-width: $layout-breakpoint--is-small) {
-    &:nth-of-type(#{$length-sm}n) {
+    &:nth-of-type(#{$staff-length-sm}n) {
       margin-right: 0;
     }
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) and (max-width: $layout-breakpoint--is-medium) {
-    width: $width-md;
+    width: $staff-width-md;
 
-    &:nth-of-type(#{$length-md}n) {
+    &:nth-of-type(#{$staff-length-md}n) {
       margin-right: 0;
     }
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    width: $width-lg;
+    width: $staff-width-lg;
 
     &:nth-of-type(#{$length-lg}n) {
       margin-right: 0;
     }
+  }
+}
+
+.volunteer-list {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.volunteer {
+  $gutter--is-small: 3vw;
+
+  width: calc((100% - #{$gutter--is-small} * 7) / 8);
+  margin-left: $gutter--is-small;
+
+  &:nth-of-type(8n + 1) {
+    margin-left: 0;
+  }
+
+  &:nth-of-type(n + 9) {
+    margin-top: 3vw;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
   }
 }
 </style>
