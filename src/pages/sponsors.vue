@@ -242,6 +242,26 @@ li {
         }
       }
     }
+
+    .nuxt-link-active {
+      color: $primary-text-color;
+      font-weight: bold;
+
+      &::after {
+        width: 24px;
+        height: 24px;
+        margin-left: 2px;
+        background-color: $vue-dark-blue;
+        transform: translate(4px, 4px);
+      }
+
+      &:hover {
+        &::after {
+          background-color: $vue-dark-blue;
+          border: none;
+        }
+      }
+    }
   }
 }
 
