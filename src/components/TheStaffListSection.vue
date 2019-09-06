@@ -6,27 +6,29 @@
 
     <!-- prettier-ignore -->
     <template slot="heading-copy">
-      Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
+      Vue Fes Japan 2019 は、Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
-    <ul class="staff-list">
-      <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
-        <a :href="staff.link" target="_blank" rel="noopener">
-          <div v-lazy-container="{ selector: 'img' }">
-            <!-- prettier-ignore-attribute -->
-            <img
-              :data-srcset="`
+    <div class="staff-list-container">
+      <ul class="staff-list">
+        <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
+          <a :href="staff.link" target="_blank" rel="noopener">
+            <div v-lazy-container="{ selector: 'img' }">
+              <!-- prettier-ignore-attribute -->
+              <img
+                :data-srcset="`
               ${require(`~/assets/images/staffs/${staff.avatar}`)},
               ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
             `"
-              :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
-              alt=""
-            />
-          </div>
-          @{{ staff.name }}
-        </a>
-      </li>
-    </ul>
+                :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
+                alt=""
+              />
+            </div>
+            @{{ staff.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
   </BaseSection>
 </template>
 
@@ -227,6 +229,13 @@ export default class TheStaffListSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.staff-list-container {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
 // ガターの幅
 $margin: 20px;
 
@@ -241,13 +250,9 @@ $width-md: calc((100% - #{$length-md - 1} * #{$margin}) / #{$length-md});
 $width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
 
 .staff-list {
+  margin-bottom: -#{$margin};
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto -#{$margin};
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    width: 80%;
-  }
 }
 
 .staff {
