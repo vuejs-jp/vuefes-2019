@@ -9,6 +9,10 @@
       Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
+    <h3 class="sub-heading">
+      CORE STAFF
+    </h3>
+
     <ul class="staff-list">
       <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
         <a :href="staff.link" target="_blank" rel="noopener">
@@ -27,6 +31,30 @@
         </a>
       </li>
     </ul>
+
+    <h3 class="sub-heading">
+      VOLUNTEER
+    </h3>
+
+    <ul class="volunteer-list">
+      <li
+        v-for="(volunteer, index) in volunteers"
+        :key="index"
+        class="volunteer"
+      >
+        <div v-lazy-container="{ selector: 'img' }">
+          <!-- prettier-ignore-attribute -->
+          <img
+            :data-srcset="`
+              ${require(`~/assets/images/volunteers/${volunteer.avatar}`)},
+              ${require(`~/assets/images/volunteers/@2x/${volunteer.avatar}`)} 2x
+            `"
+            :data-src="require(`~/assets/images/volunteers/${volunteer.avatar}`)"
+            :alt="volunteer.name"
+          />
+        </div>
+      </li>
+    </ul>
   </BaseSection>
 </template>
 
@@ -40,19 +68,24 @@ interface Staff {
   avatar: string
 }
 
+interface Volunteer {
+  name: string
+  avatar: string
+}
+
 @Component({
   components: {
     BaseSection
   }
 })
 export default class TheStaffListSection extends Vue {
-  leader: Staff = {
+  private leader: Staff = {
     name: 'kazu_pon',
     link: 'https://twitter.com/kazu_pon',
     avatar: 'kazu_pon.png'
   }
 
-  staffs: Staff[] = [
+  private staffs: Staff[] = [
     {
       name: '448jp',
       link: 'https://twitter.com/448jp',
@@ -205,6 +238,73 @@ export default class TheStaffListSection extends Vue {
     }
   ]
 
+  private volunteers: Volunteer[] = [
+    {
+      name: 'example-1',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-2',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-3',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-4',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-5',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-6',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-7',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-8',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-9',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-10',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-11',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-12',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-13',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-14',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-15',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-16',
+      avatar: 'example.png'
+    }
+  ]
+
   private get leaderAndStaffs(): Staff[] {
     return [
       this.leader,
@@ -219,7 +319,6 @@ export default class TheStaffListSection extends Vue {
     const adjustedB: string = b.toLowerCase().replace(/_/g, '')
 
     if (adjustedA < adjustedB) return -1
-    if (adjustedA > adjustedB) return 1
 
     return 0
   }
