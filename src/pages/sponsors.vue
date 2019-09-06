@@ -12,7 +12,11 @@
       </li>
     </ul>
 
-    <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
+    <ul
+      v-for="sponsorPlan in sponsorPlans"
+      :key="sponsorPlan.plan"
+      class="sponsor-list"
+    >
       <li
         v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
         class="sponsor-group"
@@ -148,9 +152,11 @@ export default class SponsorsPage extends Vue {
 </script>
 
 <style lang="scss" scoped>
+$nav-width: calc((100vw - 1180px) / 2);
+
 ul,
 li {
-  margin: 0; // このコンポーネントでは ul 要素に margin を持たせない
+  margin: 0; // このコンポーネントでは ul, li 要素に margin を持たせない
 }
 
 .nav {
@@ -186,8 +192,57 @@ li {
     }
   }
 
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    //
+  @media screen and (min-width: $layout-breakpoint--is-large-up) {
+    position: sticky;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    margin: -260px 0 260px;
+    padding-right: 60px;
+    transform: translateX($nav-width);
+
+    li {
+      text-align: right;
+    }
+
+    a {
+      display: block;
+      width: calc(#{$nav-width} - 60px);
+      color: transparent;
+      line-height: 80px;
+      opacity: 1;
+      text-decoration: none;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-left: 10px;
+        background-color: $gray;
+      }
+
+      &:hover {
+        color: $primary-text-color;
+
+        &::after {
+          background-color: $white;
+          border: 2px solid $vue-dark-blue;
+        }
+      }
+    }
+  }
+}
+
+.sponsor-list {
+  position: relative;
+
+  @media screen and (min-width: $layout-breakpoint--is-large-up) {
+    top: -100vh;
   }
 }
 
@@ -289,6 +344,10 @@ li {
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     margin-top: 104px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-large-up) {
+    margin-top: calc(-100vh + 104px);
   }
 }
 </style>
