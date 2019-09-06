@@ -317,6 +317,8 @@ export default class TheStaffListSection extends Vue {
   private get sortedVolunteers(): Volunteer[] {
     return this.volunteers.sort((a: Volunteer, b: Volunteer) => {
       if (a.name < b.name) return -1
+      if (a.name > b.name) return 1
+
       return 0
     })
   }
@@ -326,6 +328,7 @@ export default class TheStaffListSection extends Vue {
     const adjustedB: string = b.toLowerCase().replace(/_/g, '')
 
     if (adjustedA < adjustedB) return -1
+    if (adjustedA > adjustedB) return 1
 
     return 0
   }
