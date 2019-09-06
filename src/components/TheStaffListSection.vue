@@ -9,52 +9,54 @@
       Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
-    <h3 class="sub-heading">
-      CORE STAFF
-    </h3>
+    <div class="staff-list-container">
+      <h3 class="sub-heading">
+        CORE STAFF
+      </h3>
 
-    <ul class="staff-list">
-      <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
-        <a :href="staff.link" target="_blank" rel="noopener">
+      <ul class="staff-list">
+        <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
+          <a :href="staff.link" target="_blank" rel="noopener">
+            <div v-lazy-container="{ selector: 'img' }">
+              <!-- prettier-ignore-attribute -->
+              <img
+                :data-srcset="`
+              ${require(`~/assets/images/staffs/${staff.avatar}`)},
+              ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
+            `"
+                :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
+                alt=""
+              />
+            </div>
+            @{{ staff.name }}
+          </a>
+        </li>
+      </ul>
+
+      <h3 class="sub-heading">
+        VOLUNTEER
+      </h3>
+
+      <ul class="volunteer-list">
+        <li
+          v-for="(volunteer, index) in sortedVolunteers"
+          :key="index"
+          class="volunteer"
+        >
           <div v-lazy-container="{ selector: 'img' }">
             <!-- prettier-ignore-attribute -->
             <img
               :data-srcset="`
-              ${require(`~/assets/images/staffs/${staff.avatar}`)},
-              ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
-            `"
-              :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
-              alt=""
-            />
-          </div>
-          @{{ staff.name }}
-        </a>
-      </li>
-    </ul>
-
-    <h3 class="sub-heading">
-      VOLUNTEER
-    </h3>
-
-    <ul class="volunteer-list">
-      <li
-        v-for="(volunteer, index) in sortedVolunteers"
-        :key="index"
-        class="volunteer"
-      >
-        <div v-lazy-container="{ selector: 'img' }">
-          <!-- prettier-ignore-attribute -->
-          <img
-            :data-srcset="`
               ${require(`~/assets/images/volunteers/${volunteer.avatar}`)},
               ${require(`~/assets/images/volunteers/@2x/${volunteer.avatar}`)} 2x
             `"
-            :data-src="require(`~/assets/images/volunteers/${volunteer.avatar}`)"
-            :alt="volunteer.name"
-          />
-        </div>
-      </li>
-    </ul>
+              :data-src="require(`~/assets/images/volunteers/${volunteer.avatar}`)"
+              :alt="volunteer.name"
+            />
+          </div>
+        </li>
+      </ul>
+    </div>
   </BaseSection>
 </template>
 
@@ -302,6 +304,135 @@ export default class TheStaffListSection extends Vue {
     {
       name: 'example-16',
       avatar: 'example.png'
+    },
+    {
+      name: 'example-1',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-2',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-3',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-4',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-5',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-6',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-7',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-8',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-9',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-10',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-11',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-12',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-13',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-14',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-15',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-16',
+      avatar: 'example.png'
+    },
+
+    {
+      name: 'example-1',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-2',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-3',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-4',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-5',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-6',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-7',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-8',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-9',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-10',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-11',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-12',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-13',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-14',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-15',
+      avatar: 'example.png'
+    },
+    {
+      name: 'example-16',
+      avatar: 'example.png'
     }
   ]
 
@@ -336,10 +467,22 @@ export default class TheStaffListSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.staff-list-container {
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+}
+
 .sub-heading {
   margin-bottom: 2.5vw;
   font-size: 5vw;
   font-weight: bold;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
 }
 
 // ガターの幅
@@ -364,12 +507,12 @@ $staff-width-lg: calc(
 );
 
 .staff-list {
-  margin: 0 auto 10vw;
+  margin-bottom: 10vw;
   display: flex;
   flex-wrap: wrap;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    width: 80%;
+    margin-bottom: 36px;
   }
 }
 
@@ -424,23 +567,40 @@ $staff-width-lg: calc(
 }
 
 .volunteer {
-  $gutter--is-small: 3vw;
-
-  width: calc((100% - #{$gutter--is-small} * 7) / 8);
-  margin-left: $gutter--is-small;
-
-  &:nth-of-type(8n + 1) {
-    margin-left: 0;
-  }
-
-  &:nth-of-type(n + 9) {
-    margin-top: 3vw;
-  }
-
   img {
     display: block;
     width: 100%;
     border-radius: 50%;
+  }
+
+  @media screen and (max-width: $layout-breakpoint--is-small) {
+    $gutter--is-small: 3vw;
+
+    width: calc((100% - #{$gutter--is-small} * 7) / 8);
+    margin-left: $gutter--is-small;
+
+    &:nth-of-type(8n + 1) {
+      margin-left: 0;
+    }
+
+    &:nth-of-type(n + 9) {
+      margin-top: $gutter--is-small;
+    }
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    $gutter--is-small-up: 14px;
+
+    width: calc((100% - #{$gutter--is-small-up} * 15) / 16);
+    margin-left: $gutter--is-small-up;
+
+    &:nth-of-type(16n + 1) {
+      margin-left: 0;
+    }
+
+    &:nth-of-type(n + 17) {
+      margin-top: $gutter--is-small-up;
+    }
   }
 }
 </style>
