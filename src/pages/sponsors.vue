@@ -6,7 +6,11 @@
 
     <ul class="nav">
       <li v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
-        <nuxt-link :to="`#${sponsorPlan.plan}`" class="link">
+        <nuxt-link
+          v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
+          :to="`#${sponsorPlan.plan}`"
+          class="link"
+        >
           {{ sponsorPlan.name }}
         </nuxt-link>
       </li>
