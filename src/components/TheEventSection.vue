@@ -192,8 +192,8 @@ export default class TheStoreSection extends Vue {
     }
   ]
 
-  private caseImage: string = require('~/assets/images/event/case.jpg')
-  private caseImage2X: string = require('~/assets/images/event/case@2x.jpg')
+  private caseImage = require('~/assets/images/event/case.jpg')
+  private caseImage2x = require('~/assets/images/event/case@2x.jpg')
 
   private products: Product[] = [
     {
