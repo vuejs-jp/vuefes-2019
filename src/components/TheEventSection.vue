@@ -73,28 +73,29 @@
       </p>
     </div>
 
-    <ul class="item-list">
-      <li v-for="(item, index) in items" :key="index" class="item">
-        <div v-lazy-container="{ selector: 'img' }" class="item-image">
+    <ul class="product-list">
+      <li v-for="(product, index) in products" :key="index" class="product">
+        <div v-lazy-container="{ selector: 'img' }" class="product-image">
           <img
-            :data-srcset="`${item.image}, ${item.image2x} 2x`"
-            :data-src="item.image2x"
+            :data-srcset="`${product.image}, ${product.image2x} 2x`"
+            :data-src="product.image2x"
             alt=""
           />
         </div>
 
-        <div class="item-content">
-          <h4 class="item-name">
-            {{ item.name }}
+        <div class="product-content">
+          <h4 class="product-name">
+            {{ product.name }}
           </h4>
 
-          <p class="item-price">
-            <span class="price-unit">¥</span>{{ item.price.toLocaleString() }}
+          <!-- prettier-ignore -->
+          <p class="product-price">
+            <span class="price-unit">¥</span>{{ product.price.toLocaleString() }}
           </p>
 
           <!-- eslint-disable vue/no-v-html -->
           <!-- eslint-disable vue/html-self-closing -->
-          <p class="item-description" v-html="item.description"></p>
+          <p class="product-description" v-html="product.description"></p>
           <!-- eslint-enable vue/html-self-closing -->
           <!-- eslint-enable vue/no-v-html -->
         </div>
@@ -130,7 +131,7 @@ interface Event {
   image2x: string
 }
 
-interface Item {
+interface Product {
   name: string
   price: number
   description: string
@@ -175,12 +176,12 @@ export default class TheStoreSection extends Vue {
     }
   ]
 
-  private items: Item[] = [
+  private products: Product[] = [
     {
       name: 'Tシャツ',
       price: 2000,
       description:
-        'Vue Fes Japan 2019のメインビジュアルをあしらった Tシャツです。洗濯で伸び縮みしにくい生地を使用しています。<br />' +
+        'Vue Fes Japan 2019 のメインビジュアルをあしらった Tシャツです。洗濯で伸び縮みしにくい生地を使用しています。<br />' +
         '<br/>' +
         'カラー: ネイビー<br />' +
         'サイズ: S / M / L / XL',
@@ -234,7 +235,7 @@ export default class TheStoreSection extends Vue {
       name: '缶バッジ 4個セット',
       price: 500,
       description:
-        '人気のロゴが入った缶バッジセットです。Vue.js のみ円形と三角形の2種類が付属します。<br />' +
+        '人気のロゴが入った缶バッジセットです。Vue.js のみ円形と三角形の 2種類が付属します。<br />' +
         '<br />' +
         'サイズ: 44mm（円形）、70mm（三角形）',
       image: require('~/assets/images/event/badges.png'),
@@ -441,7 +442,7 @@ export default class TheStoreSection extends Vue {
   }
 }
 
-.item-list {
+.product-list {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-top: 40px;
     display: flex;
@@ -449,7 +450,7 @@ export default class TheStoreSection extends Vue {
   }
 }
 
-.item {
+.product {
   display: flex;
   width: 100%;
 
@@ -460,23 +461,23 @@ export default class TheStoreSection extends Vue {
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    $item-gutter--is-small-up: 2vw;
-    $item-gutter--is-medium-up: 20px;
+    $product-gutter--is-small-up: 2vw;
+    $product-gutter--is-medium-up: 20px;
 
     display: block;
-    width: calc((100% - #{$item-gutter--is-small-up} * 3) / 4);
+    width: calc((100% - #{$product-gutter--is-small-up} * 3) / 4);
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      width: calc((100% - #{$item-gutter--is-medium-up} * 3) / 4);
+      width: calc((100% - #{$product-gutter--is-medium-up} * 3) / 4);
     }
 
     &:nth-of-type(4n),
     &:nth-of-type(4n-1),
     &:nth-of-type(4n-2) {
-      margin-left: $item-gutter--is-small-up;
+      margin-left: $product-gutter--is-small-up;
 
       @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-        margin-left: $item-gutter--is-medium-up;
+        margin-left: $product-gutter--is-medium-up;
       }
     }
 
@@ -486,7 +487,7 @@ export default class TheStoreSection extends Vue {
   }
 }
 
-.item-image {
+.product-image {
   flex: 1 1 314px;
 
   img {
@@ -496,7 +497,7 @@ export default class TheStoreSection extends Vue {
   }
 }
 
-.item-content {
+.product-content {
   margin-left: 3vw;
   flex: 1 1 312px;
 
@@ -510,8 +511,8 @@ export default class TheStoreSection extends Vue {
   }
 }
 
-.item-name,
-.item-price {
+.product-name,
+.product-price {
   font-size: 4vw;
   font-weight: bold;
   line-height: 1.25;
@@ -534,14 +535,14 @@ export default class TheStoreSection extends Vue {
   }
 }
 
-.item-description {
+.product-description {
   margin-top: 1vw;
   font-size: 3vw;
   line-height: 1.25;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-top: 4px;
-    font-size: 1.6vw; // .item-name に合わせて vw 指定
+    font-size: 1.6vw; // .product-name に合わせて vw 指定
     line-height: 1.5;
   }
 
