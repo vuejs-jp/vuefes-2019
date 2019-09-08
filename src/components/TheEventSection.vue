@@ -344,7 +344,7 @@ export default class TheStoreSection extends Vue {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     $event-gutter--is-small-up: 12.6%;
-    $event-gutter--is-medium-up: 140px;
+    $event-gutter--is-medium-up: 11.8%;
 
     width: calc((100% - #{$event-gutter--is-small-up}) / 2);
 
