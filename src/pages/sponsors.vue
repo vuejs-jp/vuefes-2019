@@ -7,8 +7,8 @@
     <ul class="nav">
       <li
         v-for="sponsorPlan in sponsorPlans"
-        :key="sponsorPlan.plan"
         v-show="sponsorsByPlan(sponsorPlan.plan).length > 0"
+        :key="sponsorPlan.plan"
       >
         <nuxt-link
           v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
@@ -37,8 +37,8 @@
 
         <ul
           v-for="sponsor in sortSponsors(sponsorsByPlan(sponsorPlan.plan))"
-          :key="sponsor.sys.id"
           :id="`${sponsor.fields.name}`"
+          :key="sponsor.sys.id"
           class="sponsor"
         >
           <li>
