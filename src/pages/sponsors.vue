@@ -34,6 +34,7 @@
         <ul
           v-for="sponsor in sortSponsors(sponsorsByPlan(sponsorPlan.plan))"
           :key="sponsor.sys.id"
+          :id="`${sponsor.fields.name}`"
           class="sponsor"
         >
           <li>
@@ -350,11 +351,11 @@ li {
 }
 
 .sponsor {
-  margin-top: 4vw;
+  padding-top: 4vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: calc((100% / 3) - 20px);
-    margin: 30px 10px 0;
+    padding: 30px 10px 0;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {

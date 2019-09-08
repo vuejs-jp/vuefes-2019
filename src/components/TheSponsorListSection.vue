@@ -20,7 +20,7 @@
             :key="sponsor.sys.id"
             class="sponsor"
           >
-            <a :href="sponsor.fields.url" target="_blank" rel="noopener">
+            <nuxt-link :to="`/sponsors#${sponsor.fields.name}`">
               <div v-lazy-container="{ selector: 'img' }">
                 <img
                   class="sponsor-image"
@@ -28,7 +28,7 @@
                   :alt="sponsor.fields.name"
                 />
               </div>
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </li>
