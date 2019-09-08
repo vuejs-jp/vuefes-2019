@@ -10,6 +10,7 @@
           v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
           :to="`#${sponsorPlan.plan}`"
           class="link"
+          :class="{ active: activePlans.includes(sponsorPlan.plan) }"
         >
           {{ sponsorPlan.name }}
         </nuxt-link>
@@ -103,6 +104,21 @@ import BaseButton from '~/components/BaseButton.vue'
   }
 })
 export default class SponsorsPage extends Vue {
+  mounted(): void {
+    const options = {
+      root: null,
+      rootMargin: '-10% 0px -10% 0px',
+      threshold: 0
+    }
+    const observer = new IntersectionObserver(this.callback, options)
+    const elements = document.querySelectorAll('.sponsor-group')
+    elements.forEach(element => {
+      observer.observe(element)
+    })
+  }
+
+  activePlans = []
+
   sponsorPlans: { plan: string; name: string }[] = [
     { plan: 'platinum', name: 'PLATINUM' },
     { plan: 'gold', name: 'GOLD' },
@@ -118,6 +134,27 @@ export default class SponsorsPage extends Vue {
     { plan: 'video', name: 'VIDEO' },
     { plan: 'media', name: 'MEDIA' }
   ]
+
+  callback(entries) {
+    const changes: { plan: string; view: boolean }[] = []
+
+    entries.forEach(entry => {
+      changes.push({
+        plan: entry.target.childNodes[0].id,
+        view: entry.isIntersecting
+      })
+    })
+
+    changes.forEach(change => {
+      if (change.view === true) {
+        this.$data.activePlans.push(change.plan)
+      } else {
+        this.$data.activePlans = this.$data.activePlans.filter(
+          plan => plan !== change.plan
+        )
+      }
+    })
+  }
 
   sortSponsors(sponsors): Entry<any>[] {
     return sponsors.sort((a, b) => {
@@ -243,7 +280,8 @@ li {
       }
     }
 
-    .nuxt-link-active {
+    .nuxt-link-active,
+    .active {
       color: $primary-text-color;
       font-weight: bold;
 
