@@ -359,7 +359,8 @@ li {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: calc((100% / 3) - 20px);
-    padding: 30px 10px 0;
+    padding-top: 30px;
+    margin: 0 10px;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
