@@ -105,7 +105,7 @@ import BaseButton from '~/components/BaseButton.vue'
 })
 export default class SponsorsPage extends Vue {
   mounted(): void {
-    const options = {
+    const options: { root: null; rootMargin: string; threshold: number } = {
       root: null,
       rootMargin: '-10% 0px -10% 0px',
       threshold: 0
@@ -117,7 +117,7 @@ export default class SponsorsPage extends Vue {
     })
   }
 
-  activePlans = []
+  activePlans: string[] = []
 
   sponsorPlans: { plan: string; name: string }[] = [
     { plan: 'platinum', name: 'PLATINUM' },
