@@ -25,6 +25,17 @@
             :data-src="event.image2x"
             alt=""
           />
+
+          <div
+            v-if="event.title === 'スポンサーブースシールラリー'"
+            class="case-image-container"
+          >
+            <img
+              :data-srcset="`${caseImage}, ${caseImage2x} 2x`"
+              :data-src="caseImage2x"
+              alt=""
+            />
+          </div>
         </div>
 
         <h3 class="event-title">
@@ -175,6 +186,9 @@ export default class TheStoreSection extends Vue {
       image2x: require('~/assets/images/event/tattoo@2x.jpg')
     }
   ]
+
+  private caseImage: string = require('~/assets/images/event/case.jpg')
+  private caseImage2X: string = require('~/assets/images/event/case@2x.jpg')
 
   private products: Product[] = [
     {
@@ -352,6 +366,8 @@ export default class TheStoreSection extends Vue {
 }
 
 .event-image {
+  position: relative; // .case-image-container 表示のため
+
   img {
     display: block;
     width: 100%;
@@ -391,6 +407,13 @@ export default class TheStoreSection extends Vue {
     display: block;
     width: 100%;
   }
+}
+
+.case-image-container {
+  position: absolute;
+  right: 3.84%;
+  bottom: 3.84%;
+  width: 32%;
 }
 
 .information-table-image {
