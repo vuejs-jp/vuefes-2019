@@ -234,7 +234,7 @@ export default class TheStoreSection extends Vue {
       name: '缶バッジ 4個セット',
       price: 500,
       description:
-        '人気のロゴが入った缶バッジセットです。Vue.jsのみ円形と三角形の2種類が付属します。<br />' +
+        '人気のロゴが入った缶バッジセットです。Vue.js のみ円形と三角形の2種類が付属します。<br />' +
         '<br />' +
         'サイズ: 44mm（円形）、70mm（三角形）',
       image: require('~/assets/images/event/badges.png'),
