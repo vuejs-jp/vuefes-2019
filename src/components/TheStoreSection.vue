@@ -1,6 +1,6 @@
 <template>
   <BaseSection class="the-store-section">
-    <template slot="heading">
+    <template v-slot:heading>
       Vue Fes Store
     </template>
 

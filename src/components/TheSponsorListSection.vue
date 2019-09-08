@@ -1,6 +1,6 @@
 <template>
   <BaseSection class="the-sponsor-list-section">
-    <template slot="heading">
+    <template v-slot:heading>
       SPONSORS
     </template>
 

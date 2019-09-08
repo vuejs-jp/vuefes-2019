@@ -1,24 +1,44 @@
 <template>
   <BaseSection class="the-ticket-section">
-    <template slot="heading">
+    <template v-slot:heading>
       TICKET
     </template>
 
     <div class="description">
       <!-- prettier-ignore -->
       <p>
-        Vue Fes Japan 2019 のチケットが発売中です。チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。チケットの購入は「チケットを購入する」ボタンからご購入ください。Apple Pay で決済をご希望の方は、<a href="#" class="link" @click.prevent="openUniverse">こちらのリンク</a>から直接ご購入ください。
+        Vue Fes Japan 2019 のチケットが発売中です。チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。チケットの購入は「チケットを購入する」ボタンからご購入ください。
       </p>
 
       <!-- prettier-ignore -->
       <p>
-        購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
+        販売媒体として
+        <a href="https://www.universe.com/" target="_blank" rel="noopener" class="link">
+          Universe
+        </a>
+        を利用します。購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
       </p>
 
       <!-- prettier-ignore -->
       <p>
-        <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-        チケットに関するお問い合わせは、<nuxt-link class="link" to="/contact/">お問い合わせページ</nuxt-link>からお願いします。
+        Apple Pay で決済をご希望の方は
+        <a href="#" class="link" @click.prevent="openUniverse">
+          こちらのリンク
+        </a>
+        から直接ご購入ください。また、Universe の決済方法でチケットを購入できない方向けに別途購入窓口を開設しています。詳細は
+        <a href="https://note.mu/ryamakuchi/n/n7a07b20d811d" target="_blank" rel="noopener noreferrer" class="link">
+          note
+        </a>
+        をご覧ください。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        チケットに関するお問い合わせは、Vue Fes Japan 2019 の
+        <nuxt-link class="link" to="/contact/">
+          お問い合わせフォーム
+        </nuxt-link>
+        よりお問い合わせください。
       </p>
     </div>
 
@@ -140,6 +160,30 @@
 
       <div class="faq-content">
         <h4>
+          チケットはいつまで買えますか？
+        </h4>
+        <!-- prettier-ignore -->
+        <p>
+          2019/9/17（火）23:59まで購入できます。
+        </p>
+      </div>
+
+      <div class="faq-content">
+        <h4>
+          チケットを購入しましたが、メールが届きません
+        </h4>
+        <!-- prettier-ignore -->
+        <p>
+          迷惑メールとして扱われている可能性があります。迷惑メールに振り分けられていないかご確認ください。それでも届いていない場合、迷惑メールの対策のため受信できていない可能性があります。「universe.com」を受信できるように設定のうえ、Vue Fes Japan 2019 の
+          <nuxt-link class="link" to="/contact/">
+            お問い合わせフォーム
+          </nuxt-link>
+          よりお問い合わせください。
+        </p>
+      </div>
+
+      <div class="faq-content">
+        <h4>
           当日の入場について
         </h4>
         <!-- prettier-ignore -->
@@ -173,13 +217,13 @@ import BaseButton from '~/components/BaseButton.vue'
   }
 })
 export default class TheTicketSection extends Vue {
-  private imageOne = require('~/assets/images/tickets/image1.jpg')
+  private imageOne = require('~/assets/images/ticket/image1.jpg')
 
-  private imageOne2x = require('~/assets/images/tickets/image1@2x.jpg')
+  private imageOne2x = require('~/assets/images/ticket/image1@2x.jpg')
 
-  private imageTwo = require('~/assets/images/tickets/image2.jpg')
+  private imageTwo = require('~/assets/images/ticket/image2.jpg')
 
-  private imageTwo2x = require('~/assets/images/tickets/image2@2x.jpg')
+  private imageTwo2x = require('~/assets/images/ticket/image2@2x.jpg')
 
   openUniverse() {
     window.open(

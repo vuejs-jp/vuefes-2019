@@ -1,6 +1,6 @@
 <template>
   <BaseMain class="privacy-page">
-    <template slot="heading">
+    <template v-slot:heading>
       プライバシーポリシー
     </template>
 
@@ -16,7 +16,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報の定義
       </template>
 
@@ -26,7 +26,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報の収集
       </template>
 
@@ -74,7 +74,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報の利用目的
       </template>
 
@@ -110,7 +110,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報利用目的の変更
       </template>
 
@@ -120,7 +120,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報の利用期限
       </template>
 
@@ -130,7 +130,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報の安全管理
       </template>
 
@@ -141,7 +141,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報の委託
       </template>
       <p>
@@ -150,7 +150,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報の第三者提供
       </template>
 
@@ -178,7 +178,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報等の最新性、正確性の維持
       </template>
 
@@ -188,7 +188,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         個人情報の照会、訂正、削除等
       </template>
 
@@ -198,7 +198,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         Cookie または類似技術の利用と目的
       </template>
 
@@ -210,7 +210,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         使用する Third Party Cookie
       </template>
 
@@ -257,7 +257,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         Cookie の削除又は無効化
       </template>
 
@@ -283,7 +283,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         継続的改善
       </template>
 
@@ -293,7 +293,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         お問い合わせ
       </template>
 
@@ -307,7 +307,7 @@
     </BaseMainDescription>
 
     <BaseMainDescription>
-      <template slot="heading">
+      <template v-slot:heading>
         附則
       </template>
 

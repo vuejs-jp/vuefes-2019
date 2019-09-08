@@ -1,32 +1,34 @@
 <template>
   <BaseSection class="the-staff-list-section">
-    <template slot="heading">
+    <template v-slot:heading>
       TEAM
     </template>
 
     <!-- prettier-ignore -->
     <template slot="heading-copy">
-      Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
+      Vue Fes Japan 2019 は、Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
-    <ul class="staff-list">
-      <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
-        <a :href="staff.link" target="_blank" rel="noopener">
-          <div v-lazy-container="{ selector: 'img' }">
-            <!-- prettier-ignore-attribute -->
-            <img
-              :data-srcset="`
+    <div class="staff-list-container">
+      <ul class="staff-list">
+        <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
+          <a :href="staff.link" target="_blank" rel="noopener">
+            <div v-lazy-container="{ selector: 'img' }">
+              <!-- prettier-ignore-attribute -->
+              <img
+                :data-srcset="`
               ${require(`~/assets/images/staffs/${staff.avatar}`)},
               ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
             `"
-              :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
-              alt=""
-            />
-          </div>
-          @{{ staff.name }}
-        </a>
-      </li>
-    </ul>
+                :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
+                alt=""
+              />
+            </div>
+            @{{ staff.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
   </BaseSection>
 </template>
 
@@ -179,11 +181,6 @@ export default class TheStaffListSection extends Vue {
       avatar: 'KiaKing85.png'
     },
     {
-      name: 'jiyu33',
-      link: 'https://twitter.com/jiyu33',
-      avatar: 'jiyu33.jpg'
-    },
-    {
       name: 'show60',
       link: 'https://twitter.com/show60',
       avatar: 'show60.png'
@@ -227,33 +224,19 @@ export default class TheStaffListSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-// ガターの幅
-$margin: 20px;
-
-// 1列のアイテム数
-$length-sm: 4;
-$length-md: 6;
-$length-lg: 8;
-
-// アイテムの幅 = ( 100% - 1列にあるガター幅の合計px ) / 1列にあるアイテム数
-$width-sm: calc((100% - #{$length-sm - 1} * #{$margin}) / #{$length-sm});
-$width-md: calc((100% - #{$length-md - 1} * #{$margin}) / #{$length-md});
-$width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
-
-.staff-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto -#{$margin};
-
+.staff-list-container {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin: 0 auto;
     width: 80%;
   }
 }
 
-.staff {
-  margin: 0 $margin $margin 0;
-  width: $width-sm;
+.staff-list {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.staff {
   a {
     display: flex;
     flex-direction: column;
@@ -268,28 +251,48 @@ $width-lg: calc((100% - #{$length-lg - 1} * #{$margin}) / #{$length-lg});
   }
 
   img {
+    display: block;
     width: 100%;
   }
 
   @media screen and (max-width: $layout-breakpoint--is-small) {
-    &:nth-of-type(#{$length-sm}n) {
-      margin-right: 0;
+    $staff-gutter--is-small: 3.5vw;
+
+    width: calc((100% - #{$staff-gutter--is-small} * 3) / 4);
+
+    &:nth-of-type(4n),
+    &:nth-of-type(4n - 1),
+    &:nth-of-type(4n - 2) {
+      margin-left: $staff-gutter--is-small;
+    }
+
+    &:nth-of-type(n + 5) {
+      margin-top: $staff-gutter--is-small;
     }
   }
 
-  @media screen and (min-width: $layout-breakpoint--is-small-up) and (max-width: $layout-breakpoint--is-medium) {
-    width: $width-md;
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    $staff-gutter--is-small-up: 14px;
+    $staff-gutter--is-medium-up: 20px;
 
-    &:nth-of-type(#{$length-md}n) {
-      margin-right: 0;
+    width: calc((100% - #{$staff-gutter--is-small-up} * 7) / 8);
+    margin-left: $staff-gutter--is-small-up;
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      width: calc((100% - #{$staff-gutter--is-medium-up} * 7) / 8);
+      margin-left: $staff-gutter--is-medium-up;
     }
-  }
 
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    width: $width-lg;
+    &:nth-of-type(8n + 1) {
+      margin-left: 0;
+    }
 
-    &:nth-of-type(#{$length-lg}n) {
-      margin-right: 0;
+    &:nth-of-type(n + 9) {
+      margin-top: $staff-gutter--is-small-up;
+
+      @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+        margin-top: $staff-gutter--is-medium-up;
+      }
     }
   }
 }
