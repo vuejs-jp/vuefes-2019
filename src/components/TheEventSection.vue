@@ -413,6 +413,7 @@ export default class TheStoreSection extends Vue {
   margin-top: 9vw;
   font-size: 4vw;
   font-weight: bold;
+  line-height: 1;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-top: 0;
