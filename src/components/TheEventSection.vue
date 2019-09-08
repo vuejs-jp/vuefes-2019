@@ -202,8 +202,8 @@ export default class TheStoreSection extends Vue {
       description:
         'Vue Fes Japan 2019 のメインビジュアルをあしらった Tシャツです。洗濯で伸び縮みしにくい生地を使用しています。<br />' +
         '<br/>' +
-        'カラー: ネイビー<br />' +
-        'サイズ: S / M / L / XL',
+        'カラー：ネイビー<br />' +
+        'サイズ：S / M / L / XL',
       image: require('~/assets/images/event/t-shirt.png'),
       image2x: require('~/assets/images/event/t-shirt@2x.png')
     },
@@ -213,8 +213,8 @@ export default class TheStoreSection extends Vue {
       description:
         'ポケット付きのフルジップパーカー。肌触りが良いパイル裏地のスウェット生地を使用しています。<br />' +
         '<br />' +
-        'カラー: ミックスグレー<br />' +
-        'サイズ: S / M / L / XL',
+        'カラー：ミックスグレー<br />' +
+        'サイズ：S / M / L / XL',
       image: require('~/assets/images/event/parka.png'),
       image2x: require('~/assets/images/event/parka@2x.png')
     },
@@ -224,8 +224,8 @@ export default class TheStoreSection extends Vue {
       description:
         'レーザー彫刻を施したステンレスマグカップ。オフィスやアウトドアでも活躍が期待できます。<br />' +
         '<br />' +
-        'カラー: シルバー<br />' +
-        '容量: 300ml',
+        'カラー：シルバー<br />' +
+        '容量：300ml',
       image: require('~/assets/images/event/mug.png'),
       image2x: require('~/assets/images/event/mug@2x.png')
     },
@@ -235,8 +235,8 @@ export default class TheStoreSection extends Vue {
       description:
         'レーザー彫刻を施したステンレスタンブラー。真空二重構造で氷を入れてもほとんど結露しません。<br />' +
         '<br />' +
-        'カラー: シルバー<br />' +
-        '容量: 450ml',
+        'カラー：シルバー<br />' +
+        '容量：450ml',
       image: require('~/assets/images/event/tumbler.png'),
       image2x: require('~/assets/images/event/tumbler@2x.png')
     },
@@ -246,7 +246,7 @@ export default class TheStoreSection extends Vue {
       description:
         '珍しい三角形のクッションです。もちもちとした触感がクセになります。<br />' +
         '<br />' +
-        'サイズ: 30cm以下（予定）',
+        'サイズ：30cm以下（予定）',
       image: require('~/assets/images/event/cushion.png'),
       image2x: require('~/assets/images/event/cushion@2x.png')
     },
@@ -256,7 +256,7 @@ export default class TheStoreSection extends Vue {
       description:
         '人気のロゴが入った缶バッジセットです。Vue.js のみ円形と三角形の 2種類が付属します。<br />' +
         '<br />' +
-        'サイズ: 44mm（円形）、70mm（三角形）',
+        'サイズ：44mm（円形）、70mm（三角形）',
       image: require('~/assets/images/event/badges.png'),
       image2x: require('~/assets/images/event/badges@2x.png')
     },
@@ -266,7 +266,7 @@ export default class TheStoreSection extends Vue {
       description:
         'メガネ、スマートフォンなどマルチな用途で使えるクリーナーです。印刷面、裏面のどちらでも拭けます。<br />' +
         '<br />' +
-        'サイズ: 15 x 15cm',
+        'サイズ：15 x 15cm',
       image: require('~/assets/images/event/cleaner.png'),
       image2x: require('~/assets/images/event/cleaner@2x.png')
     },

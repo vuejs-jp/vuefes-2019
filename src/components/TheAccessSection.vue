@@ -17,7 +17,7 @@
 
       <div class="access-content">
         <h3 class="title">
-          会場: TOC五反田メッセ
+          会場：TOC五反田メッセ
         </h3>
 
         <div class="description">
