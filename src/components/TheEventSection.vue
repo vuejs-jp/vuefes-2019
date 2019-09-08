@@ -209,7 +209,7 @@ export default class TheStoreSection extends Vue {
     },
     {
       name: 'パーカー',
-      price: 4000,
+      price: 4500,
       description:
         'ポケット付きのフルジップパーカー。肌触りが良いパイル裏地のスウェット生地を使用しています。<br />' +
         '<br />' +
