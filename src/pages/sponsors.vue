@@ -250,7 +250,6 @@ li {
     justify-content: center;
     align-items: flex-end;
     height: 100vh;
-    margin: -#{$head-margin} 0 0;
     padding-right: 68px;
     transform: translateX($nav-width);
 
