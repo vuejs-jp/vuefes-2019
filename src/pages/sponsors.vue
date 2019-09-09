@@ -251,7 +251,7 @@ li {
     align-items: flex-end;
     height: 100vh;
     margin: -#{$head-margin} 0 0;
-    padding-right: 60px;
+    padding-right: 68px;
     transform: translateX($nav-width);
 
     li {
@@ -259,20 +259,26 @@ li {
     }
 
     a {
+      position: relative;
       display: block;
-      width: calc(#{$nav-width} - 60px);
+      width: calc(#{$nav-width} - 68px);
       color: transparent;
-      line-height: 80px;
+      font-size: 16px;
+      line-height: 16px;
+      padding-right: 32px;
+      margin: 16px 0;
       opacity: 1;
       text-decoration: none;
 
       &::after {
         content: '';
-        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 0;
         width: 16px;
         height: 16px;
-        margin-left: 10px;
         background-color: $gray;
+        transform: translateY(-50%);
       }
 
       &:hover {
@@ -293,9 +299,8 @@ li {
       &::after {
         width: 24px;
         height: 24px;
-        margin-left: 2px;
         background-color: $vue-dark-blue;
-        transform: translate(4px, 4px);
+        transform: translate(4px, -50%);
       }
 
       &:hover {
