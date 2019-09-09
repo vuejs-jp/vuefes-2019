@@ -81,7 +81,7 @@
       </li>
     </ul>
 
-    <BaseButton class="back-to-top" to="/">
+    <BaseButton to="/">
       トップに戻る
     </BaseButton>
   </BaseMain>
@@ -413,19 +413,19 @@ li {
   }
 }
 
-.back-to-top {
-  margin-top: 13vw;
+.base-button {
+  margin-top: 13vw !important;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-top: 84px;
+    margin-top: 84px !important;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    margin-top: 104px;
+    margin-top: 104px !important;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-large-up) {
-    margin-top: calc(-100vh + 104px);
+    margin-top: calc(-100vh + 104px) !important;
   }
 }
 </style>
