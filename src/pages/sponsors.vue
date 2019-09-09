@@ -379,9 +379,10 @@ li {
   }
 
   &-name {
-    margin-top: 2vw;
+    margin-top: 2.6vw;
     font-size: 3.5vw;
     font-weight: bold;
+    line-height: 1;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-top: 20px;
@@ -391,10 +392,11 @@ li {
   }
 
   &-url {
+    display: inline-block;
+    margin-top: 1.3vw;
     font-size: 2vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      display: block;
       margin-top: 10px;
       font-size: 14px;
     }
