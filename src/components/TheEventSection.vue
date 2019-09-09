@@ -38,12 +38,7 @@
           </div>
         </div>
 
-        <h3
-          class="event-title"
-          :class="{
-            'adjust-letter-spacing': event.title !== '技術同人誌販売スペース'
-          }"
-        >
+        <h3 class="event-title">
           {{ event.title }}
         </h3>
 
@@ -383,10 +378,7 @@ export default class TheStoreSection extends Vue {
   margin-top: 2vw;
   font-size: 4vw;
   font-weight: bold;
-
-  &.adjust-letter-spacing {
-    letter-spacing: -0.08em;
-  }
+  letter-spacing: -0.1em;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-top: 14px;
