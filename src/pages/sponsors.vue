@@ -394,7 +394,7 @@ li {
   &-url {
     display: inline-block;
     margin-top: 1.3vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-top: 10px;
@@ -404,7 +404,7 @@ li {
 
   &-pr {
     margin-top: 2vw;
-    font-size: 2.5vw;
+    font-size: 3vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-top: 20px;
