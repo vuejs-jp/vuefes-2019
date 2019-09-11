@@ -24,7 +24,7 @@
     <ul
       v-for="sponsorPlan in sponsorPlans"
       :key="sponsorPlan.plan"
-      class="sponsor-list"
+      class="sponsor-group-list"
     >
       <li
         v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
