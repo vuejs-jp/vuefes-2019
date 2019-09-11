@@ -338,21 +338,15 @@ export default class TheStoreSection extends Vue {
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    $event-gutter--is-small-up: 12.6%;
-    $event-gutter--is-medium-up: 11.8%;
+    // prettier-ignore
+    $event-gutter--is-small-up: calc(
+      #{$layout-column-width--is-small-up} * 2 + #{$layout-gutter-width--is-small-up} * 3
+    );
 
     width: calc((100% - #{$event-gutter--is-small-up}) / 2);
 
-    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      width: calc((100% - #{$event-gutter--is-medium-up}) / 2);
-    }
-
     &:nth-of-type(2n) {
       margin-left: $event-gutter--is-small-up;
-
-      @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-        margin-left: $event-gutter--is-medium-up;
-      }
     }
 
     &:nth-of-type(n + 3) {
