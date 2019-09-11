@@ -155,7 +155,7 @@ interface Product {
     BaseSection
   }
 })
-export default class TheStoreSection extends Vue {
+export default class TheEventSection extends Vue {
   private events: Event[] = [
     {
       title: 'リフレッシュメントスペース',
