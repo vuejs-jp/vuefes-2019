@@ -6,7 +6,7 @@
 
     <!-- prettier-ignore -->
     <template slot="heading-copy">
-      Vue Fes Japan 2019 は、 Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
+      Vue Fes Japan 2019 は、Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 
     <div class="staff-list-container">
@@ -21,9 +21,9 @@
               <!-- prettier-ignore-attribute -->
               <img
                 :data-srcset="`
-              ${require(`~/assets/images/staffs/${staff.avatar}`)},
-              ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
-            `"
+                  ${require(`~/assets/images/staffs/${staff.avatar}`)},
+                  ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
+                `"
                 :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
                 alt=""
               />
@@ -47,9 +47,9 @@
             <!-- prettier-ignore-attribute -->
             <img
               :data-srcset="`
-              ${require(`~/assets/images/volunteers/${volunteer.avatar}`)},
-              ${require(`~/assets/images/volunteers/@2x/${volunteer.avatar}`)} 2x
-            `"
+                ${require(`~/assets/images/volunteers/${volunteer.avatar}`)},
+                ${require(`~/assets/images/volunteers/@2x/${volunteer.avatar}`)} 2x
+              `"
               :data-src="require(`~/assets/images/volunteers/${volunteer.avatar}`)"
               :alt="volunteer.name"
             />
@@ -212,11 +212,6 @@ export default class TheStaffListSection extends Vue {
       name: 'KiaKing85',
       link: 'https://twitter.com/KiaKing85',
       avatar: 'KiaKing85.png'
-    },
-    {
-      name: 'jiyu33',
-      link: 'https://twitter.com/jiyu33',
-      avatar: 'jiyu33.jpg'
     },
     {
       name: 'show60',
@@ -470,7 +465,7 @@ export default class TheStaffListSection extends Vue {
 .staff-list-container {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin: 0 auto;
-    max-width: 80%;
+    width: 80%;
   }
 }
 
@@ -485,27 +480,6 @@ export default class TheStaffListSection extends Vue {
   }
 }
 
-// ガターの幅
-$staff-margin: 20px;
-
-// 1列のアイテム数
-$staff-length-sm: 4;
-$staff-length-md: 6;
-$length-lg: 8;
-
-// アイテムの幅 = ( 100% - 1列にあるガター幅の合計 px ) / 1列にあるアイテム数
-$staff-width-sm: calc(
-  (100% - #{$staff-length-sm - 1} * #{$staff-margin}) / #{$staff-length-sm}
-);
-
-$staff-width-md: calc(
-  (100% - #{$staff-length-md - 1} * #{$staff-margin}) / #{$staff-length-md}
-);
-
-$staff-width-lg: calc(
-  (100% - #{$length-lg - 1} * #{$staff-margin}) / #{$length-lg}
-);
-
 .staff-list {
   margin-bottom: 10vw;
   display: flex;
@@ -517,9 +491,6 @@ $staff-width-lg: calc(
 }
 
 .staff {
-  margin: 0 $staff-margin $staff-margin 0;
-  width: $staff-width-sm;
-
   a {
     display: flex;
     flex-direction: column;
@@ -534,28 +505,48 @@ $staff-width-lg: calc(
   }
 
   img {
+    display: block;
     width: 100%;
   }
 
   @media screen and (max-width: $layout-breakpoint--is-small) {
-    &:nth-of-type(#{$staff-length-sm}n) {
-      margin-right: 0;
+    $staff-gutter--is-small: 3.5vw;
+
+    width: calc((100% - #{$staff-gutter--is-small} * 3) / 4);
+
+    &:nth-of-type(4n),
+    &:nth-of-type(4n - 1),
+    &:nth-of-type(4n - 2) {
+      margin-left: $staff-gutter--is-small;
+    }
+
+    &:nth-of-type(n + 5) {
+      margin-top: $staff-gutter--is-small;
     }
   }
 
-  @media screen and (min-width: $layout-breakpoint--is-small-up) and (max-width: $layout-breakpoint--is-medium) {
-    width: $staff-width-md;
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    $staff-gutter--is-small-up: 14px;
+    $staff-gutter--is-medium-up: 20px;
 
-    &:nth-of-type(#{$staff-length-md}n) {
-      margin-right: 0;
+    width: calc((100% - #{$staff-gutter--is-small-up} * 7) / 8);
+    margin-left: $staff-gutter--is-small-up;
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      width: calc((100% - #{$staff-gutter--is-medium-up} * 7) / 8);
+      margin-left: $staff-gutter--is-medium-up;
     }
-  }
 
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    width: $staff-width-lg;
+    &:nth-of-type(8n + 1) {
+      margin-left: 0;
+    }
 
-    &:nth-of-type(#{$length-lg}n) {
-      margin-right: 0;
+    &:nth-of-type(n + 9) {
+      margin-top: $staff-gutter--is-small-up;
+
+      @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+        margin-top: $staff-gutter--is-medium-up;
+      }
     }
   }
 }
