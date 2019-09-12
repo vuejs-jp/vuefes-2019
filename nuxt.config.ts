@@ -82,9 +82,9 @@ const config: NuxtConfiguration = {
   loading: { color: '#fff' },
   css: ['~/assets/stylesheets/main.scss'],
   plugins: [
-    { src: '~/plugins/typekit', ssr: false },
+    { src: '~/plugins/typekit', mode: 'client' },
     { src: '~/plugins/vee-validate' },
-    { src: '~/plugins/vue-lazyload', ssr: false },
+    { src: '~/plugins/vue-lazyload', mode: 'client' },
     { src: '~/plugins/sponsor-anchor', mode: 'client' }
   ],
   modules: [
