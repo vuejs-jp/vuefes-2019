@@ -20,11 +20,7 @@
     <ul class="event-list">
       <li v-for="(event, index) in events" :key="index" class="event">
         <div v-lazy-container="{ selector: 'img' }" class="event-image">
-          <img
-            :data-srcset="`${event.image}, ${event.image2x} 2x`"
-            :data-src="event.image2x"
-            alt=""
-          />
+          <img :data-src="event.image" alt="" />
 
           <div
             v-if="event.title === 'スポンサーブースシールラリー'"
@@ -139,7 +135,9 @@ interface Event {
   title: string
   description: string
   image: string
-  image2x: string
+
+  // シャギーが目立ったため、オリジナルサイズの画像を利用。そのため image2x を用意していない
+  // https://github.com/kazupon/vuefes-2019/pull/171#issuecomment-530706539
 }
 
 interface Product {
@@ -161,29 +159,25 @@ export default class TheEventSection extends Vue {
       title: 'リフレッシュメントスペース',
       description:
         '喉が渇いたらお茶やコーヒーはいかがですか？小腹を満たすお菓子もご用意しています。もちろん無料です。休憩できる椅子は譲り合ってご利用ください。',
-      image: require('~/assets/images/event/refreshment.jpg'),
-      image2x: require('~/assets/images/event/refreshment@2x.jpg')
+      image: require('~/assets/images/event/refreshment.jpg')
     },
     {
       title: 'スポンサーブースシールラリー',
       description:
         '工夫を凝らした展示が楽しめるスポンサーブースが今年も登場。ブースで配られるシールを集めると、特製小物ケース（写真右下）をプレゼントします。数量限定のためお早めに！',
-      image: require('~/assets/images/event/sponsor-booths.jpg'),
-      image2x: require('~/assets/images/event/sponsor-booths@2x.jpg')
+      image: require('~/assets/images/event/sponsor-booths.jpg')
     },
     {
       title: '技術同人誌販売スペース',
       description:
         'Vue.js や JavaScript に関する技術同人誌を立ち読みし、気に入った本があれば実際に購入できます。あなたの知らない良書が見つかるチャンスかもしれません。',
-      image: require('~/assets/images/event/presents.jpg'),
-      image2x: require('~/assets/images/event/presents@2x.jpg')
+      image: require('~/assets/images/event/presents.jpg')
     },
     {
       title: 'タトゥースペース',
       description:
         '顔や手に Vue Fes Japan 特製タトゥーシールを貼り付けて、フェス気分を盛り上げましょう。Vue.js や Nuxt.js のロゴマークをその場ですぐに付けられます。',
-      image: require('~/assets/images/event/tattoo.jpg'),
-      image2x: require('~/assets/images/event/tattoo@2x.jpg')
+      image: require('~/assets/images/event/tattoo.jpg')
     }
   ]
 
