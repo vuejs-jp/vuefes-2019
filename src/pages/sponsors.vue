@@ -312,7 +312,7 @@ li {
   }
 }
 
-.sponsor-list {
+.sponsor-group-list {
   position: relative;
 
   @media screen and (min-width: $layout-breakpoint--is-large-up) {
