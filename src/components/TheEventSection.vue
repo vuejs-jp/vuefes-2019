@@ -19,16 +19,16 @@
 
     <ul class="event-list">
       <li v-for="(event, index) in events" :key="index" class="event">
-        <div v-lazy-container="{ selector: 'img' }" class="event-image">
-          <img :data-src="event.image" alt="" />
+        <div class="event-image">
+          <img :src="event.image" alt="" />
 
           <div
             v-if="event.title === 'スポンサーブースシールラリー'"
             class="case-image-container"
           >
             <img
-              :data-srcset="`${caseImage}, ${caseImage2x} 2x`"
-              :data-src="caseImage2x"
+              :srcset="`${caseImage}, ${caseImage2x} 2x`"
+              :src="caseImage2x"
               alt=""
             />
           </div>
