@@ -10,6 +10,7 @@ for file in `git diff --cached --name-status | \
   awk '$1 ~ /[AM]/ && tolower($2) ~ /\.(jpe?g|png|gif|svg)$/ {print $2}'`
 do
   echo $file を最適化します
+
   cat $file | ./node_modules/.bin/imagemin \
     --plugin=mozjpeg \
     --plugin=gifsicle \
@@ -17,5 +18,6 @@ do
     --plugin=optipng \
     --plugin=svgo > ${file}.new
   mv -f ${file}.new $file
+
   git add $file
 done
