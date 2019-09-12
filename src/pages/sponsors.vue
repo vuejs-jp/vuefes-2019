@@ -14,7 +14,6 @@
           v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
           :to="`#${sponsorPlan.plan}`"
           class="link"
-          :class="{ active: activePlans.includes(sponsorPlan.plan) }"
         >
           {{ sponsorPlan.name }}
         </nuxt-link>
@@ -109,21 +108,6 @@ import BaseButton from '~/components/BaseButton.vue'
   }
 })
 export default class SponsorsPage extends Vue {
-  mounted(): void {
-    const options: { root: null; rootMargin: string; threshold: number } = {
-      root: null,
-      rootMargin: '-10% 0px -10% 0px',
-      threshold: 0
-    }
-    const observer = new IntersectionObserver(this.callback, options)
-    const elements = document.querySelectorAll('.sponsor-group')
-    elements.forEach(element => {
-      observer.observe(element)
-    })
-  }
-
-  activePlans: string[] = []
-
   sponsorPlans: { plan: string; name: string }[] = [
     { plan: 'platinum', name: 'PLATINUM' },
     { plan: 'gold', name: 'GOLD' },
@@ -139,27 +123,6 @@ export default class SponsorsPage extends Vue {
     { plan: 'video', name: 'VIDEO' },
     { plan: 'media', name: 'MEDIA' }
   ]
-
-  callback(entries) {
-    const changes: { plan: string; view: boolean }[] = []
-
-    entries.forEach(entry => {
-      changes.push({
-        plan: entry.target.childNodes[0].id,
-        view: entry.isIntersecting
-      })
-    })
-
-    changes.forEach(change => {
-      if (change.view === true) {
-        this.$data.activePlans.push(change.plan)
-      } else {
-        this.$data.activePlans = this.$data.activePlans.filter(
-          plan => plan !== change.plan
-        )
-      }
-    })
-  }
 
   sortSponsors(sponsors): Entry<any>[] {
     return sponsors.sort((a, b) => {
@@ -198,8 +161,6 @@ export default class SponsorsPage extends Vue {
 </script>
 
 <style lang="scss" scoped>
-// ウィンドウサイズ - main-content.max-width / 半分の幅
-$nav-width: calc((100vw - 1180px) / 2);
 // base-main.padding-top + heading.height + heading.margin-bottom
 $head-margin: calc(130px + 80px + 34px);
 
@@ -209,29 +170,27 @@ li {
 }
 
 .index {
-  @media screen and (max-width: $layout-breakpoint--is-large) {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: calc(100% + 20px);
-    margin: -10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: calc(100% + 20px);
+  margin: -10px;
 
-    li {
-      width: calc(50% - 20px);
-      margin: 10px;
-      border: 1px solid $vue-dark-blue;
-      background-color: $white;
-    }
+  li {
+    width: calc(50% - 20px);
+    margin: 10px;
+    border: 1px solid $vue-dark-blue;
+    background-color: $white;
+  }
 
-    a {
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      line-height: 2.4em;
-      font-size: 3vw;
-      color: $primary-text-color;
-      width: 100%;
-    }
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 2.4em;
+    font-size: 3vw;
+    color: $primary-text-color;
+    width: 100%;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -240,84 +199,10 @@ li {
       line-height: 56px;
     }
   }
-
-  @media screen and (min-width: $layout-breakpoint--is-large-up) {
-    position: sticky;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    height: 100vh;
-    padding-right: 68px;
-    transform: translateX($nav-width);
-
-    li {
-      text-align: right;
-    }
-
-    a {
-      position: relative;
-      display: block;
-      width: calc(#{$nav-width} - 68px);
-      color: transparent;
-      font-size: 16px;
-      line-height: 16px;
-      padding-right: 32px;
-      margin: 16px 0;
-      opacity: 1;
-      text-decoration: none;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 0;
-        width: 16px;
-        height: 16px;
-        background-color: $gray;
-        transform: translateY(-50%);
-      }
-
-      &:hover {
-        color: $primary-text-color;
-
-        &::after {
-          background-color: $white;
-          border: 2px solid $vue-dark-blue;
-        }
-      }
-    }
-
-    .nuxt-link-active,
-    .active {
-      color: $primary-text-color;
-      font-weight: bold;
-
-      &::after {
-        width: 24px;
-        height: 24px;
-        background-color: $vue-dark-blue;
-        transform: translate(4px, -50%);
-      }
-
-      &:hover {
-        &::after {
-          background-color: $vue-dark-blue;
-          border: none;
-        }
-      }
-    }
-  }
 }
 
 .sponsor-group-list {
   position: relative;
-
-  @media screen and (min-width: $layout-breakpoint--is-large-up) {
-    top: -100vh;
-  }
 }
 
 .sponsor-group {
@@ -421,10 +306,6 @@ li {
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     margin-top: 104px !important;
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-large-up) {
-    margin-top: calc(-100vh + 104px) !important;
   }
 }
 </style>
