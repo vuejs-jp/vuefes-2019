@@ -17,14 +17,14 @@ const imageminPngquant = require('imagemin-pngquant')
     {
       // 最適化した画像の出力先
       // NOTE: 例えば品質に応じてディレクトリ名を変えるなどしてください
-      destination: 'tmp/dist/imagemin/event/50',
+      destination: 'tmp/dist/imagemin/event/90',
 
       plugins: [
         imageminMozjpeg({
           // 0 〜 100 の数字を入れる
           // 数字が大きいほど品質が高い
           // ソースを読んでもデフォルト値が分からなかった :sweat_smile:
-          quality: 50 // NOTE: JPEG 画像の品質調整はココで行います
+          quality: 90 // NOTE: JPEG 画像の品質調整はココで行います
         }),
         imageminPngquant({
           // [min, max] で いずれも 0 〜 1 の数字を入れる
