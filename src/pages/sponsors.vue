@@ -4,7 +4,7 @@
       SPONSORS
     </template>
 
-    <ul class="nav">
+    <ul class="index">
       <li
         v-for="sponsorPlan in sponsorPlans"
         v-show="sponsorsByPlan(sponsorPlan.plan).length > 0"
@@ -208,7 +208,7 @@ li {
   margin: 0; // このコンポーネントでは ul, li 要素に margin を持たせない
 }
 
-.nav {
+.index {
   @media screen and (max-width: $layout-breakpoint--is-large) {
     display: flex;
     justify-content: space-between;
