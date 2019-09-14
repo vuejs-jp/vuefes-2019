@@ -12,7 +12,7 @@
       >
         <nuxt-link
           v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
-          :to="`#${sponsorPlan.plan}`"
+          :to="`/sponsors/#${sponsorPlan.plan}`"
           class="link"
         >
           {{ sponsorPlan.name }}
@@ -36,7 +36,7 @@
 
         <ul
           v-for="sponsor in sortSponsors(sponsorsByPlan(sponsorPlan.plan))"
-          :id="`${sponsor.fields.name}`"
+          :id="`sponsor_${sponsor.sys.id}`"
           :key="sponsor.sys.id"
           class="sponsor"
         >

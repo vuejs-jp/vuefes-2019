@@ -20,7 +20,7 @@
             :key="sponsor.sys.id"
             class="sponsor"
           >
-            <nuxt-link :to="`/sponsors/#${sponsor.sys.id}`">
+            <nuxt-link :to="`/sponsors/#sponsor_${sponsor.sys.id}`">
               <div v-lazy-container="{ selector: 'img' }">
                 <img
                   class="sponsor-image"
