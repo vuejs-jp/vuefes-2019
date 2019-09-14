@@ -67,8 +67,8 @@ function displayEntries(contentTypes) {
   return Promise.all(
     contentTypes
 
-      // ココをいじるとで出力したい contentType を調整できます
-      .filter(contentType => contentType.name === 'timeSection')
+      // NOTE: ココをいじるとで出力したい contentType を調整できます
+      .filter(contentType => contentType.name === 'timeTableSection')
 
       .map(contentType => {
         return fetchEntriesForContentType(contentType).then(entries => {
@@ -88,9 +88,9 @@ function displayEntries(contentTypes) {
               entry.fields[contentType.displayField] || '[empty]'
             ])
             console.log(entry)
-            console.log(
-              `entry.sys.contentType.sys.id: ${entry.sys.contentType.sys.id}`
-            )
+            // console.log(
+            //   `entry.sys.contentType.sys.id: ${entry.sys.contentType.sys.id}`
+            // )
           })
           // console.log(table.toString())
         })
