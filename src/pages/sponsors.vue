@@ -174,11 +174,11 @@ li {
   justify-content: space-between;
   flex-wrap: wrap;
   width: calc(100% + 20px);
-  margin: -10px;
+  margin: -6px -10px;
 
   li {
     width: calc(50% - 20px);
-    margin: 10px;
+    margin: 6px 10px;
     border: 1px solid $vue-dark-blue;
     background-color: $white;
   }
@@ -194,6 +194,12 @@ li {
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin: -10px;
+
+    li {
+      margin: 10px;
+    }
+
     a {
       font-size: 24px;
       line-height: 56px;
@@ -201,33 +207,29 @@ li {
   }
 }
 
-.sponsor-group-list {
-  position: relative;
-}
-
 .sponsor-group {
-  padding-bottom: 2vw;
-
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     display: flex;
     flex-wrap: wrap;
     width: calc(100% + 20px);
     margin: 0 -10px;
-    padding-bottom: 16px;
   }
 }
 
 .sponsor-plan {
-  margin-top: 3vw;
-  padding-top: 3vw;
+  margin-top: 6vw;
   font-size: 5.2vw;
   font-weight: bold;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin: -20px 10px 0;
-    padding-top: 68px;
+    margin: 48px 10px 0;
     font-size: 42px;
+    line-height: 1.2;
     width: 100%;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin-top: 64px;
   }
 }
 
@@ -244,12 +246,11 @@ li {
 }
 
 .sponsor {
-  padding-top: 4vw;
+  margin-top: 4vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: calc((100% / 3) - 20px);
-    padding-top: 30px;
-    margin: 0 10px;
+    margin: 30px 10px 0;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
@@ -301,11 +302,11 @@ li {
   margin-top: 13vw !important;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-top: 84px !important;
+    margin-top: 100px !important;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    margin-top: 104px !important;
+    margin-top: 120px !important;
   }
 }
 </style>
