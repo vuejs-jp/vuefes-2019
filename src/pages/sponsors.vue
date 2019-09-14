@@ -161,9 +161,6 @@ export default class SponsorsPage extends Vue {
 </script>
 
 <style lang="scss" scoped>
-// base-main.padding-top + heading.height + heading.margin-bottom
-$head-margin: calc(130px + 80px + 34px);
-
 ul,
 li {
   margin: 0; // このコンポーネントでは ul, li 要素に margin を持たせない
