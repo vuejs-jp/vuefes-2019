@@ -1,5 +1,6 @@
-import { Getters, Mutations } from '~/types/store'
+import { Getters, Mutations, Actions } from '~/types/store'
 import { TimeTableSection } from '~/types/timeTableSection'
+import { getTimeTableSections } from '~/plugins/contentful'
 
 namespace TimeTableSections {
   export type State = {
@@ -12,6 +13,10 @@ namespace TimeTableSections {
 
   export type Mutations = {
     setTimeTableSections: TimeTableSection[]
+  }
+
+  export type Actions = {
+    fetchTimeTableSections: void
   }
 }
 
@@ -34,5 +39,17 @@ export const mutations: Mutations<
 > = {
   setTimeTableSections(state, payload) {
     state.timeTableSections = payload
+  }
+}
+
+export const actions: Actions<
+  TimeTableSections.State,
+  TimeTableSections.Actions,
+  TimeTableSections.Getters,
+  TimeTableSections.Mutations
+> = {
+  async fetchTimeTableSections({ commit }) {
+    const timeTableSections: TimeTableSection[] = await getTimeTableSections()
+    commit('setTimeTableSections', timeTableSections)
   }
 }

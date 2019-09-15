@@ -30,7 +30,9 @@ export const getSessions = (): Promise<Entry<any>[]> => {
     .then(response => response.items)
 }
 
-export const getTimeTableSections = (): Promise<Entry<any>[]> => {
+// 実際には戻り値は Promise<TimeTableSection[]> だが、型エラーが発生する
+// error: Type 'Promise<TimeTableSection[] | Entry<unknown>[]>' is not assignable to type 'Promise<TimeTableSection[]
+export const getTimeTableSections = (): Promise<any[]> => {
   return clientWithoutResolveLinks
     .getEntries({
       content_type: 'timeTableSection'
