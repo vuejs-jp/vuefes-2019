@@ -11,7 +11,7 @@
       <!-- <li>eventContainers: {{ eventContainers }}</li> -->
       <!-- <li>eventContainerParts: {{ eventContainerParts }}</li> -->
       <!-- <li>rooms: {{ rooms }}</li> -->
-      <li>sessions: {{ sessions }}</li>
+      <!-- <li>sessions: {{ sessions }}</li> -->
       <!-- <li>speakers: {{ speakers }}</li> -->
       <!-- <li>sponsors: {{ sponsors }}</li> -->
       <li>timeTableSections: {{ timeTableSections }}</li>

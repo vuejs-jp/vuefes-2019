@@ -36,159 +36,23 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '6jAYqkLZ8EPj1dYIQ0Lshf',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:35:52.981Z',
-            updatedAt: '2019-08-27T09:35:52.981Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '9-pl',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '7j5mFetuuGDHaCWH0Cu6m6'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '4MMzyRoKhtw4BlxWnCHbW9'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '6jAYqkLZ8EPj1dYIQ0Lshf'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '3m0gGobaUsEGBKgZsCG9qO',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:36:29.641Z',
-            updatedAt: '2019-08-27T09:36:29.641Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '9-yu',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '3K6keW1beLVB89hcLrOR0n'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '6DXe9VnLT91YWE9UkVgkep'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '3m0gGobaUsEGBKgZsCG9qO'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '1fdk0b9Nqwcsabq7Xo1pMK',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:38:16.878Z',
-            updatedAt: '2019-08-27T09:38:16.878Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '9-ye',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '3exyRi0Sda9qVxw82uioIv'
-                }
-              },
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '1Mv0tnaQWTzCnTd7xUzYcw'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '1rnDVEsknx6MhhPgMAS9Gj'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '1fdk0b9Nqwcsabq7Xo1pMK'
           }
         }
       ]
@@ -231,159 +95,23 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '5XJnxcznPvA7zvK581CIAr',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:32:28.070Z',
-            updatedAt: '2019-08-27T09:32:28.070Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '8−pl',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '7lCuNn3wby0o7hooQ7gbQf'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '4MMzyRoKhtw4BlxWnCHbW9'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '5XJnxcznPvA7zvK581CIAr'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '4ftljEYI00LA6EoQ12qSDG',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:33:03.414Z',
-            updatedAt: '2019-08-27T09:33:03.414Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '8-yu',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: 'K56RNDgglthD48chr9Glr'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '6DXe9VnLT91YWE9UkVgkep'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '4ftljEYI00LA6EoQ12qSDG'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '3tiHW5xSg7x10Q1HRMOlXK',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:34:35.263Z',
-            updatedAt: '2019-08-27T09:34:35.263Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '8-ye',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '4AQWbjUvuR9U650MSc1HII'
-                }
-              },
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '7TF1MSAsD8f7XgQKEHzhR'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '1rnDVEsknx6MhhPgMAS9Gj'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '3tiHW5xSg7x10Q1HRMOlXK'
           }
         }
       ]
@@ -426,152 +154,23 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '4in2dqjrZtO2tViqJOM4Ah',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:23:00.386Z',
-            updatedAt: '2019-08-27T09:23:00.386Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '5-pl',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '5Yrbh3E4UPWjOmK4KlHEOm'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '4MMzyRoKhtw4BlxWnCHbW9'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '4in2dqjrZtO2tViqJOM4Ah'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '6WnFrEfL5CPrBc9yd66Qai',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:23:28.411Z',
-            updatedAt: '2019-08-27T09:23:28.411Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '5-yu',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '5Yrbh3E4UPWjOmK4KlHEOm'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '6DXe9VnLT91YWE9UkVgkep'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '6WnFrEfL5CPrBc9yd66Qai'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '2AQ7yn9RVekHung6F4sWVo',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:23:50.989Z',
-            updatedAt: '2019-08-27T09:23:50.989Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '5-ye',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '5Yrbh3E4UPWjOmK4KlHEOm'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '1rnDVEsknx6MhhPgMAS9Gj'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '2AQ7yn9RVekHung6F4sWVo'
           }
         }
       ]
@@ -614,152 +213,23 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '2fJZQ6hM75MWx6gUZN8tXU',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:35:25.490Z',
-            updatedAt: '2019-08-27T09:35:25.490Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '10-pl',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '7j5mFetuuGDHaCWH0Cu6m6'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '4MMzyRoKhtw4BlxWnCHbW9'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '2fJZQ6hM75MWx6gUZN8tXU'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '4qV55oqaEFjQDU25hYhzo1',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:37:27.208Z',
-            updatedAt: '2019-08-27T09:37:27.208Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '10-yu',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '5zLpsJ3NSvAw34HQvLngMv'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '6DXe9VnLT91YWE9UkVgkep'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '4qV55oqaEFjQDU25hYhzo1'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '4hTwfDWjU9YH04meCRWt9q',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:38:26.916Z',
-            updatedAt: '2019-08-27T09:38:26.916Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '10-ye',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: 'h7DsizAR78p4g69rogvpK'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '1rnDVEsknx6MhhPgMAS9Gj'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '4hTwfDWjU9YH04meCRWt9q'
           }
         }
       ]
@@ -802,45 +272,9 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '4dVw3jRVdvgkCF9UvXjlXk',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:24:04.016Z',
-            updatedAt: '2019-08-27T09:24:04.016Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '11',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '7HH2CbTRcGkUYp9OF1LIVu'
-                }
-              }
-            ]
+            type: 'Link',
+            linkType: 'Entry',
+            id: '4dVw3jRVdvgkCF9UvXjlXk'
           }
         }
       ]
@@ -883,166 +317,23 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '5hUuLkUm8Lj1CYxxMFgcXQ',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:28:18.775Z',
-            updatedAt: '2019-08-27T09:28:18.775Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '7-pl',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '6o9an6K6nq1xemJ84oIfXq'
-                }
-              },
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '52xcLDNWOkF7s46q93hGQs'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '4MMzyRoKhtw4BlxWnCHbW9'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '5hUuLkUm8Lj1CYxxMFgcXQ'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '1qkp3KPJ6kMGuwyPRwY0z3',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:28:58.464Z',
-            updatedAt: '2019-08-27T09:28:58.464Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '7-yu',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '4dgpT8P4uu8CkedDki92NS'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '6DXe9VnLT91YWE9UkVgkep'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '1qkp3KPJ6kMGuwyPRwY0z3'
           }
         },
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '6PY6mHPXXKLHAzMDmrR0gL',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:30:58.385Z',
-            updatedAt: '2019-08-27T09:30:58.385Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '7-ye',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '2nMiFiFiZbnBYxCFeY72Wd'
-                }
-              },
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '1kwdWOiQ783ICAnfh7vNWN'
-                }
-              }
-            ],
-            room: {
-              sys: {
-                type: 'Link',
-                linkType: 'Entry',
-                id: '1rnDVEsknx6MhhPgMAS9Gj'
-              }
-            }
+            type: 'Link',
+            linkType: 'Entry',
+            id: '6PY6mHPXXKLHAzMDmrR0gL'
           }
         }
       ]
@@ -1085,45 +376,9 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '7sgOIbC53nRd6D3vEK661n',
-            type: 'Entry',
-            createdAt: '2019-08-27T08:45:06.354Z',
-            updatedAt: '2019-08-27T08:45:06.354Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '1',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '7bCVuySpTUioz7SqJYpq7s'
-                }
-              }
-            ]
+            type: 'Link',
+            linkType: 'Entry',
+            id: '7sgOIbC53nRd6D3vEK661n'
           }
         }
       ]
@@ -1166,45 +421,9 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '2lhriLMBIque0ckJTdNLH4',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:25:49.835Z',
-            updatedAt: '2019-08-27T09:25:49.835Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '6',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '2mZLXwFpA8bupnU7gAj20o'
-                }
-              }
-            ]
+            type: 'Link',
+            linkType: 'Entry',
+            id: '2lhriLMBIque0ckJTdNLH4'
           }
         }
       ]
@@ -1247,45 +466,9 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '2POtjBsibEQHjF1XHAfml0',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:21:38.796Z',
-            updatedAt: '2019-08-27T09:21:38.796Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '4',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '53hyjF5S3JKkoEZJUxao31'
-                }
-              }
-            ]
+            type: 'Link',
+            linkType: 'Entry',
+            id: '2POtjBsibEQHjF1XHAfml0'
           }
         }
       ]
@@ -1328,45 +511,9 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: '3TITMuPHrDVoX7PCN1YDpT',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:21:59.341Z',
-            updatedAt: '2019-08-27T09:21:59.341Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '12',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '6hXLd0yVmRgqt0dp6VjS7z'
-                }
-              }
-            ]
+            type: 'Link',
+            linkType: 'Entry',
+            id: '3TITMuPHrDVoX7PCN1YDpT'
           }
         }
       ]
@@ -1409,45 +556,9 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: 'fYX56QW9IRf1BlkWR5CAY',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:20:39.561Z',
-            updatedAt: '2019-08-27T09:20:39.561Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '3',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '7xvdef2fny01iVD0ra03Iz'
-                }
-              }
-            ]
+            type: 'Link',
+            linkType: 'Entry',
+            id: 'fYX56QW9IRf1BlkWR5CAY'
           }
         }
       ]
@@ -1490,45 +601,9 @@ const timeTableSections = [
       eventContainers: [
         {
           sys: {
-            space: {
-              sys: {
-                type: 'Link',
-                linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
-            },
-            id: 'EQg24z6gBkNEqvil1DJ1B',
-            type: 'Entry',
-            createdAt: '2019-08-27T09:19:11.505Z',
-            updatedAt: '2019-08-27T09:19:11.505Z',
-            environment: {
-              sys: {
-                id: 'master',
-                type: 'Link',
-                linkType: 'Environment'
-              }
-            },
-            revision: 1,
-            contentType: {
-              sys: {
-                type: 'Link',
-                linkType: 'ContentType',
-                id: 'eventContainer'
-              }
-            },
-            locale: 'en-US'
-          },
-          fields: {
-            titleForContentful: '2',
-            contents: [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '78mXcgUFFR10z27UgsyLpI'
-                }
-              }
-            ]
+            type: 'Link',
+            linkType: 'Entry',
+            id: 'EQg24z6gBkNEqvil1DJ1B'
           }
         }
       ]
