@@ -1,13 +1,21 @@
 import { ContentfulClientApi, Entry } from 'contentful/index'
 
 const contentful = require('contentful')
-const client: ContentfulClientApi = contentful.createClient({
+
+const clientWithResolveLinks: ContentfulClientApi = contentful.createClient({
   space: process.env.CTF_SPACE_ID,
-  accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+  accessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+  resolveLinks: true
+})
+
+const clientWithoutResolveLinks: ContentfulClientApi = contentful.createClient({
+  space: process.env.CTF_SPACE_ID,
+  accessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+  resolveLinks: false
 })
 
 export const getSpeakers = (): Promise<Entry<any>[]> => {
-  return client
+  return clientWithoutResolveLinks
     .getEntries({
       content_type: 'speaker'
     })
@@ -15,7 +23,7 @@ export const getSpeakers = (): Promise<Entry<any>[]> => {
 }
 
 export const getSessions = (): Promise<Entry<any>[]> => {
-  return client
+  return clientWithoutResolveLinks
     .getEntries({
       content_type: 'session'
     })
@@ -23,7 +31,7 @@ export const getSessions = (): Promise<Entry<any>[]> => {
 }
 
 export const getTimeTableSections = (): Promise<Entry<any>[]> => {
-  return client
+  return clientWithoutResolveLinks
     .getEntries({
       content_type: 'timeTableSection'
     })
@@ -31,7 +39,7 @@ export const getTimeTableSections = (): Promise<Entry<any>[]> => {
 }
 
 export const getEventContainers = (): Promise<Entry<any>[]> => {
-  return client
+  return clientWithoutResolveLinks
     .getEntries({
       content_type: 'eventContainer'
     })
@@ -39,7 +47,7 @@ export const getEventContainers = (): Promise<Entry<any>[]> => {
 }
 
 export const getEventContainerParts = (): Promise<Entry<any>[]> => {
-  return client
+  return clientWithoutResolveLinks
     .getEntries({
       content_type: 'eventContainerPart'
     })
@@ -47,7 +55,7 @@ export const getEventContainerParts = (): Promise<Entry<any>[]> => {
 }
 
 export const getRooms = (): Promise<Entry<any>[]> => {
-  return client
+  return clientWithoutResolveLinks
     .getEntries({
       content_type: 'room'
     })
@@ -55,7 +63,7 @@ export const getRooms = (): Promise<Entry<any>[]> => {
 }
 
 export const getEvents = (): Promise<Entry<any>[]> => {
-  return client
+  return clientWithoutResolveLinks
     .getEntries({
       content_type: 'event'
     })
@@ -63,7 +71,7 @@ export const getEvents = (): Promise<Entry<any>[]> => {
 }
 
 export const getSponsors = (): Promise<Entry<any>[]> => {
-  return client
+  return clientWithResolveLinks
     .getEntries({
       content_type: 'sponsor'
       // FIXME: order: '-appliedAt'
