@@ -8,12 +8,12 @@
 
     <ul>
       <!-- <li>events: {{ events }}</li> -->
-      <li>eventContainers: {{ eventContainers }}</li>
-      <li>eventContainerParts: {{ eventContainerParts }}</li>
+      <!-- <li>eventContainers: {{ eventContainers }}</li> -->
+      <!-- <li>eventContainerParts: {{ eventContainerParts }}</li> -->
       <!-- <li>rooms: {{ rooms }}</li> -->
       <!-- <li>sessions: {{ sessions }}</li> FIXME: Converting circular structure to JSON -->
-      <!-- <li>speakers: {{ speakers }}</li> FIXME: Converting circular structure to JSON -->
-      <li>sponsors: {{ sponsors }}</li>
+      <li>speakers: {{ speakers }}</li>
+      <!-- <li>sponsors: {{ sponsors }}</li> -->
       <li>timeTableSections: {{ timeTableSections }}</li>
     </ul>
 
