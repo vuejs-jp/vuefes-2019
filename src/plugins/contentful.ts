@@ -6,6 +6,14 @@ const client: ContentfulClientApi = contentful.createClient({
   accessToken: process.env.CTF_CDA_ACCESS_TOKEN
 })
 
+export const getEvents = (): Promise<Entry<any>[]> => {
+  return client
+    .getEntries({
+      content_type: 'event'
+    })
+    .then(response => response.items)
+}
+
 export const getSponsors = (): Promise<Entry<any>[]> => {
   return client
     .getEntries({

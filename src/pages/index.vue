@@ -5,6 +5,7 @@
     <TheTicketSection />
     <TheAccessSection />
     <TheTimeTableSection />
+    events: {{ events }}
     <TheEventSection />
     <TheSponsorListSection :sponsor-list="sponsors || []" />
     <TheStaffListSection />
@@ -14,7 +15,7 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
-import { getSponsors } from '~/plugins/contentful.ts'
+import { getEvents, getSponsors } from '~/plugins/contentful.ts'
 import TheAccessSection from '~/components/TheAccessSection.vue'
 import TheEventSection from '~/components/TheEventSection.vue'
 import TheHeadSection from '~/components/TheHeadSection.vue'
@@ -35,10 +36,14 @@ import TheStaffListSection from '~/components/TheStaffListSection.vue'
     TheSponsorListSection,
     TheStaffListSection
   },
-  async asyncData(): Promise<{ sponsors: Entry<any>[] } | void> {
+  async asyncData(): Promise<{
+    events: Entry<any>[]
+    sponsors: Entry<any>[]
+  } | void> {
     try {
       return {
-        sponsors: await getSponsors()
+        sponsors: await getSponsors(),
+        events: await getEvents()
       }
     } catch (error) {
       console.error(error)
