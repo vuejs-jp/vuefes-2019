@@ -1,4 +1,6 @@
-const rooms: any[] = [
+import { Room } from '~/types/room'
+
+const rooms: Room[] = [
   {
     sys: {
       space: {
