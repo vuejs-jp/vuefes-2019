@@ -1,4 +1,6 @@
-const timeTableSections = [
+import { TimeTableSection } from '~/types/timeTableSection'
+
+const timeTableSections: TimeTableSection[] = [
   {
     sys: {
       space: {

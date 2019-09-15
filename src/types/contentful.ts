@@ -5,7 +5,7 @@ export type Sys = {
   createdAt: string
   updatedAt: string
   environment: Object
-  revision: 1
+  revision: number
   contentType: {
     sys: {
       type: 'Link'
@@ -14,4 +14,12 @@ export type Sys = {
     }
   }
   locale: 'en-US'
+}
+
+export type EntryLink = {
+  sys: {
+    type: 'Link'
+    linkType: 'Entry'
+    id: string
+  }
 }
