@@ -5,7 +5,18 @@
     <TheTicketSection />
     <TheAccessSection />
     <TheTimeTableSection />
-    events: {{ events }}
+
+    <ul>
+      <li>events: {{ events }}</li>
+      <li>eventContainers: {{ eventContainers }}</li>
+      <li>eventContainerParts: {{ eventContainerParts }}</li>
+      <li>rooms: {{ rooms }}</li>
+      <li>sessions: {{ sessions }}</li>
+      <li>speakers: {{ speakers }}</li>
+      <li>sponsors: {{ sponsors }}</li>
+      <li>timeTableSections: {{ timeTableSections }}</li>
+    </ul>
+
     <TheEventSection />
     <TheSponsorListSection :sponsor-list="sponsors || []" />
     <TheStaffListSection />
@@ -15,7 +26,16 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
-import { getEvents, getSponsors } from '~/plugins/contentful.ts'
+import {
+  getEventContainerParts,
+  getEventContainers,
+  getEvents,
+  getRooms,
+  getSessions,
+  getSpeakers,
+  getSponsors,
+  getTimeTableSections
+} from '~/plugins/contentful.ts'
 import TheAccessSection from '~/components/TheAccessSection.vue'
 import TheEventSection from '~/components/TheEventSection.vue'
 import TheHeadSection from '~/components/TheHeadSection.vue'
@@ -38,12 +58,24 @@ import TheStaffListSection from '~/components/TheStaffListSection.vue'
   },
   async asyncData(): Promise<{
     events: Entry<any>[]
+    eventContainers: Entry<any>[]
+    eventContainerParts: Entry<any>[]
+    rooms: Entry<any>[]
+    sessions: Entry<any>[]
+    speakers: Entry<any>[]
     sponsors: Entry<any>[]
+    timeTableSections: Entry<any>[]
   } | void> {
     try {
       return {
+        events: await getEvents(),
+        eventContainers: await getEventContainers(),
+        eventContainerParts: await getEventContainerParts(),
+        rooms: await getRooms(),
+        sessions: await getSessions(),
+        speakers: await getSpeakers(),
         sponsors: await getSponsors(),
-        events: await getEvents()
+        timeTableSections: await getTimeTableSections()
       }
     } catch (error) {
       console.error(error)
