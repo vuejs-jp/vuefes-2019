@@ -39,7 +39,7 @@ export const getTimeTableSections = (): Promise<Entry<any>[]> => {
 }
 
 export const getEventContainers = (): Promise<Entry<any>[]> => {
-  return clientWithoutResolveLinks
+  return clientWithResolveLinks
     .getEntries({
       content_type: 'eventContainer'
     })
@@ -47,7 +47,7 @@ export const getEventContainers = (): Promise<Entry<any>[]> => {
 }
 
 export const getEventContainerParts = (): Promise<Entry<any>[]> => {
-  return clientWithoutResolveLinks
+  return clientWithResolveLinks
     .getEntries({
       content_type: 'eventContainerPart'
     })
