@@ -6,3 +6,7 @@ export type Getters<S, G, RS = {}, RG = {}> = {
     rootGetters?: RG
   ) => G[K]
 }
+
+export type Mutations<S, M> = {
+  [K in keyof M]: (state: S, payload: M[K]) => void
+}

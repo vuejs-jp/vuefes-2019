@@ -1,4 +1,4 @@
-import { Getters } from '~/types/store'
+import { Getters, Mutations } from '~/types/store'
 import { TimeTableSection } from '~/types/timeTableSection'
 
 namespace TimeTableSections {
@@ -8,6 +8,10 @@ namespace TimeTableSections {
 
   export type Getters = {
     all: TimeTableSection[]
+  }
+
+  export type Mutations = {
+    setTimeTableSections: TimeTableSection[]
   }
 }
 
@@ -21,5 +25,14 @@ export const getters: Getters<
 > = {
   all: state => {
     return state.timeTableSections
+  }
+}
+
+export const mutations: Mutations<
+  TimeTableSections.State,
+  TimeTableSections.Mutations
+> = {
+  setTimeTableSections(state, payload) {
+    state.timeTableSections = payload
   }
 }
