@@ -1,4 +1,6 @@
-const eventContainerParts = [
+import { EventContainerPart } from '~/store/eventContainerParts'
+
+const eventContainerParts: EventContainerPart[] = [
   {
     sys: {
       space: {

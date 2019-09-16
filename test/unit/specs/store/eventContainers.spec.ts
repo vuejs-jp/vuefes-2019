@@ -20,7 +20,7 @@ describe('eventContainers module', () => {
         state.eventContainers = eventContainers
       })
 
-      test('id が一致する eventContainers を取得できる', () => {
+      test('id が一致する EventContainer を取得できる', () => {
         const id: string = eventContainers[0].sys.id
         expect(getters.find(state)(id)).toEqual(eventContainers[0])
       })
