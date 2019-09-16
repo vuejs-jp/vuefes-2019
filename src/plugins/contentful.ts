@@ -35,7 +35,8 @@ export const getSessions = (): Promise<any[]> => {
 export const getTimeTableSections = (): Promise<any[]> => {
   return clientWithoutResolveLinks
     .getEntries({
-      content_type: 'timeTableSection'
+      content_type: 'timeTableSection',
+      order: 'fields.startAt'
     })
     .then(response => response.items)
 }

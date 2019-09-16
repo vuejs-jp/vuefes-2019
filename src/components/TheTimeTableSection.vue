@@ -4,6 +4,84 @@
       TIME TABLE
     </template>
 
+    <ul>
+      <li
+        v-for="timeTableSection in timeTableSections"
+        :key="timeTableSection.sys.id"
+        class="event"
+      >
+        <!-- prettier-ignore -->
+        <div class="event__time">
+          {{ timeTableSection.fields.startAt | toTime }} - {{ timeTableSection.fields.endAt | toTime }}
+        </div>
+
+        <div class="event__body">
+          <!-- EventContainer -->
+          <!-- prettier-ignore -->
+          <div
+            v-for="eventContainer in timeTableSection.fields.eventContainers"
+            :key="eventContainer.sys.id"
+            class="event__content"
+            :class="{
+              session: timeTableSection.fields.eventContainers.length > 1
+            }"
+          >
+            <!-- Room -->
+            <div
+              v-if="eventContainerById(eventContainer.sys.id).fields.room"
+              class="session__room"
+              :class="{
+                'session__room--plaid': eventContainerById(eventContainer.sys.id).fields.room.sys.id === '4MMzyRoKhtw4BlxWnCHbW9',
+                'session__room--yumemi': eventContainerById(eventContainer.sys.id).fields.room.sys.id === '6DXe9VnLT91YWE9UkVgkep',
+                'session__room--yesod': eventContainerById(eventContainer.sys.id).fields.room.sys.id === '1rnDVEsknx6MhhPgMAS9Gj'
+              }"
+            >
+              {{ eventContainerById(eventContainer.sys.id).fields.room.fields.name }}
+            </div>
+
+            <template v-if="eventContainerById(eventContainer.sys.id).fields.contents[0].sys.contentType.sys.id === 'eventContainerPart'">
+              <!-- eventContainerPart -->
+              <div
+                v-for="eventContainerPart in eventContainerById(eventContainer.sys.id).fields.contents"
+                :key="eventContainerPart.sys.id"
+              >
+                <!-- Session -->
+                <template v-if="eventContainerPartById(eventContainerPart.sys.id).fields.content.sys.contentType.sys.id === 'session'">
+                  {{ eventContainerPartById(eventContainerPart.sys.id).fields.content.fields.title }}<br />
+                  sessionId: {{ eventContainerPartById(eventContainerPart.sys.id).fields.content.sys.id }}<br />
+                  speakerId: {{ eventContainerPartById(eventContainerPart.sys.id).fields.content.fields.speakers[0].sys.id }}
+                </template>
+
+                <!-- Event -->
+                <template v-else>
+                  {{ eventContainerPartById(eventContainerPart.sys.id).fields.content.fields.title }}
+                </template>
+              </div>
+            </template>
+
+            <template v-else>
+              <div
+                v-for="content in eventContainerById(eventContainer.sys.id).fields.contents"
+                :key="content.sys.id"
+              >
+                <!-- Session -->
+                <template v-if="content.sys.contentType.sys.id === 'session'">
+                  {{ content.fields.title }}<br />
+                  sessionId: {{ content.sys.id }}<br />
+                  speakerId: {{ content.fields.speakers[0].sys.id }}
+                </template>
+
+                <!-- Event -->
+                <template v-else>
+                  {{ content.fields.title }}
+                </template>
+              </div>
+            </template>
+          </div>
+        </div>
+      </li>
+    </ul>
+
     <div class="event">
       <div class="event__time">
         9:30 - 10:30
@@ -357,18 +435,35 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Getter, Vue } from 'nuxt-property-decorator'
+import dayjs from 'dayjs'
+import { TimeTableSection } from '~/types/timeTableSection'
+import { EventContainer } from '~/store/eventContainers'
+import { EventContainerPart } from '~/store/eventContainerParts'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
   components: {
     BaseSection
+  },
+  filters: {
+    toTime(dateTime) {
+      return dayjs(dateTime).format('HH:mm')
+    }
   }
 })
 export default class TheTimeTableSection extends Vue {
   private keynoteAvatar = require('~/assets/images/speakers/yyx990803.jpg')
-
   private keynoteAvatar2x = require('~/assets/images/speakers/yyx990803@2x.jpg')
+
+  @Getter('all', { namespace: 'timeTableSections' })
+  private timeTableSections!: TimeTableSection[]
+
+  @Getter('find', { namespace: 'eventContainers' })
+  private eventContainerById!: (id: string) => EventContainer
+
+  @Getter('find', { namespace: 'eventContainerParts' })
+  private eventContainerPartById!: (id: string) => EventContainerPart
 }
 </script>
 

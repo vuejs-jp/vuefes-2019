@@ -31,6 +31,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.12",
     "contentful": "^7.6.0",
     "cross-env": "^5.2.0",
+    "dayjs": "^1.8.16",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.8.1",
     "nuxt-fontawesome": "^0.4.0",
