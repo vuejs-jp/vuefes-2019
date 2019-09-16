@@ -1,6 +1,5 @@
-import { EntrySys } from '~/types/contentful'
-import Event from '~/types/event'
-import { Session } from '~/store/sessions'
+import { EntrySys, EntryLink } from '~/types/contentful'
+import Session from '~/types/session'
 
 export default interface EventContainerPart {
   sys: EntrySys
@@ -8,6 +7,6 @@ export default interface EventContainerPart {
     titleForContentful: string
     startAt: string
     endAt: string
-    content: Session | Event
+    content: Session | Event | EntryLink
   }
 }

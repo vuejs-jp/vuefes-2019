@@ -40,42 +40,30 @@
             </div>
 
             <template v-if="eventContainerById(eventContainer.sys.id).fields.contents[0].sys.contentType.sys.id === 'eventContainerPart'">
-              <!-- eventContainerPart -->
-              <div
-                v-for="eventContainerPart in eventContainerById(eventContainer.sys.id).fields.contents"
-                :key="eventContainerPart.sys.id"
-              >
-                <!-- Session -->
-                <template v-if="eventContainerPartById(eventContainerPart.sys.id).fields.content.sys.contentType.sys.id === 'session'">
-                  {{ eventContainerPartById(eventContainerPart.sys.id).fields.content.fields.title }}<br />
-                  sessionId: {{ eventContainerPartById(eventContainerPart.sys.id).fields.content.sys.id }}<br />
-                  speakerId: {{ eventContainerPartById(eventContainerPart.sys.id).fields.content.fields.speakers[0].sys.id }}
-                </template>
+              <div class="session__content half-session__container">
+                <!-- eventContainerPart -->
+                <div
+                  v-for="eventContainerPart in eventContainerById(eventContainer.sys.id).fields.contents"
+                  :key="eventContainerPart.sys.id"
+                  class="half-session"
+                >
+                  <div class="half-session__time">
+                    {{ eventContainerPartById(eventContainerPart.sys.id).fields.startAt | toTime }} - {{ eventContainerPartById(eventContainerPart.sys.id).fields.endAt | toTime }}
+                  </div>
 
-                <!-- Event -->
-                <template v-else>
-                  {{ eventContainerPartById(eventContainerPart.sys.id).fields.content.fields.title }}
-                </template>
+                  <div class="half-session__content">
+                    <EventContent :event-content="eventContainerPartById(eventContainerPart.sys.id).fields.content" />
+                  </div>
+                </div>
               </div>
             </template>
 
             <template v-else>
-              <div
+              <EventContent
                 v-for="content in eventContainerById(eventContainer.sys.id).fields.contents"
                 :key="content.sys.id"
-              >
-                <!-- Session -->
-                <template v-if="content.sys.contentType.sys.id === 'session'">
-                  {{ content.fields.title }}<br />
-                  sessionId: {{ content.sys.id }}<br />
-                  speakerId: {{ content.fields.speakers[0].sys.id }}
-                </template>
-
-                <!-- Event -->
-                <template v-else>
-                  {{ content.fields.title }}
-                </template>
-              </div>
+                :event-content="content"
+              />
             </template>
           </div>
         </div>
@@ -441,10 +429,12 @@ import TimeTableSection from '~/types/timeTableSection'
 import EventContainer from '~/types/eventContainer'
 import EventContainerPart from '~/types/eventContainerPart'
 import BaseSection from '~/components/BaseSection.vue'
+import EventContent from '~/components/TheTimeTableSection/EventContent.vue'
 
 @Component({
   components: {
-    BaseSection
+    BaseSection,
+    EventContent
   },
   filters: {
     toTime(dateTime) {

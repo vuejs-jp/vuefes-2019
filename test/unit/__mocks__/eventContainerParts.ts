@@ -1,4 +1,4 @@
-import { EventContainerPart } from '~/store/eventContainerParts'
+import EventContainerPart from '~/types/eventContainerPart'
 
 const eventContainerParts: EventContainerPart[] = [
   {

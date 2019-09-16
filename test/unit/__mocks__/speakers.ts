@@ -1,4 +1,4 @@
-import { Speaker } from '~/store/speakers'
+import Speaker from '~/types/speaker'
 
 const speakers: Speaker[] = [
   {

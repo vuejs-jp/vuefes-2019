@@ -1,4 +1,4 @@
-import { EventContainer } from '~/store/eventContainers'
+import EventContainer from '~/types/eventContainer'
 
 const eventContainers: EventContainer[] = [
   {

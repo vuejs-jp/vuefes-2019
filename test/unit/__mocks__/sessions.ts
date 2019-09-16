@@ -1,4 +1,4 @@
-import { Session } from '~/store/sessions'
+import Session from '~/types/session'
 
 const sessions: Session[] = [
   {
