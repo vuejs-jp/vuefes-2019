@@ -1,7 +1,7 @@
-import { Sys } from '~/types/contentful'
+import { EntrySys } from '~/types/contentful'
 
 export type Event = {
-  sys: Sys
+  sys: EntrySys
   fields: {
     title: string
   }

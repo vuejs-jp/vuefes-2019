@@ -1,9 +1,9 @@
 import { Getters, Mutations, Actions } from '~/types/store'
-import { Sys, EntryLink, AssetLink } from '~/types/contentful'
+import { EntrySys, EntryLink, AssetLink } from '~/types/contentful'
 import { getSpeakers } from '~/plugins/contentful'
 
 export type Speaker = {
-  sys: Sys
+  sys: EntrySys
   fields: {
     name: string
     title: string

@@ -1,4 +1,6 @@
-const eventContainers: any[] = [
+import { EventContainer } from '~/store/eventContainers'
+
+const eventContainers: EventContainer[] = [
   {
     sys: {
       space: {

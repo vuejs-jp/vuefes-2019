@@ -1,14 +1,14 @@
 import { Getters, Mutations, Actions } from '~/types/store'
-import { Sys, EntryLink, AssetLink } from '~/types/contentful'
+import { EntrySys, Asset, EntryLink, AssetLink } from '~/types/contentful'
 import { getSessions } from '~/plugins/contentful'
 
 export type Session = {
-  sys: Sys
+  sys: EntrySys
   fields: {
     title: string
     time: number
     description: string
-    ogImage: AssetLink
+    ogImage: Asset | AssetLink
     speakers: EntryLink[]
   }
 }

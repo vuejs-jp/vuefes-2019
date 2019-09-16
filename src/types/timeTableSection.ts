@@ -1,7 +1,7 @@
-import { Sys, EntryLink } from '~/types/contentful'
+import { EntrySys, EntryLink } from '~/types/contentful'
 
 export type TimeTableSection = {
-  sys: Sys
+  sys: EntrySys
   fields: {
     titleForContentful: string
     startAt: string

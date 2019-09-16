@@ -1,7 +1,7 @@
-import { Sys } from '~/types/contentful'
+import { EntrySys } from '~/types/contentful'
 
 export type Room = {
-  sys: Sys
+  sys: EntrySys
   fields: {
     name: string
   }
