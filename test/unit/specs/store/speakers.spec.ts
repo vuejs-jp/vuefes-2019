@@ -15,13 +15,20 @@ describe('speakers module', () => {
   })
 
   describe('getters', () => {
-    describe('all', () => {
-      beforeEach(() => {
-        state.speakers = speakers
-      })
+    beforeEach(() => {
+      state.speakers = speakers
+    })
 
+    describe('all', () => {
       test('すべての speakers を取得できる', () => {
         expect(getters.all(state)).toEqual(speakers)
+      })
+    })
+
+    describe('find', () => {
+      test('id が一致する Speaker を取得できる', () => {
+        const id: string = speakers[0].sys.id
+        expect(getters.find(state)(id)).toEqual(speakers[0])
       })
     })
   })

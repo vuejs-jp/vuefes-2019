@@ -9,6 +9,7 @@ namespace Speakers {
 
   export type Getters = {
     all: Speaker[]
+    find: (id: string) => Speaker | undefined
   }
 
   export type Mutations = {
@@ -27,6 +28,9 @@ export const state = (): Speakers.State => ({
 export const getters: Getters<Speakers.State, Speakers.Getters> = {
   all: state => {
     return state.speakers
+  },
+  find: state => id => {
+    return state.speakers.find(speaker => speaker.sys.id === id)
   }
 }
 
