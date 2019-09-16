@@ -1,6 +1,6 @@
 import { Getters } from '~/types/store'
 
-export type Speaker = {
+export type LocalSpeaker = {
   id: string
   avatar: string
   avatar2x: string
@@ -11,18 +11,18 @@ export type Speaker = {
   paragraphs: string[]
 }
 
-namespace Speakers {
+namespace LocalSpeakers {
   export type State = {
-    speakers: Speaker[]
+    speakers: LocalSpeaker[]
   }
 
   export type Getters = {
-    all: Speaker[]
-    speakerById: (id: string) => Speaker
+    all: LocalSpeaker[]
+    speakerById: (id: string) => LocalSpeaker
   }
 }
 
-export const state = (): Speakers.State => ({
+export const state = (): LocalSpeakers.State => ({
   speakers: [
     {
       id: 'yyx990803',
@@ -239,7 +239,7 @@ export const state = (): Speakers.State => ({
   ]
 })
 
-export const getters: Getters<Speakers.State, Speakers.Getters> = {
+export const getters: Getters<LocalSpeakers.State, LocalSpeakers.Getters> = {
   all: state => {
     return state.speakers
   },

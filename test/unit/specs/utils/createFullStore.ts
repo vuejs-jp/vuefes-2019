@@ -1,16 +1,16 @@
-import * as sessions from '~/store/sessions'
-import * as speakers from '~/store/speakers'
+import * as localSessions from '~/store/localSessions'
+import * as localSpeakers from '~/store/localSpeakers'
 
 export default Vuex => {
   return new Vuex.Store({
     modules: {
-      sessions: {
+      localSessions: {
         namespaced: true,
-        ...sessions
+        ...localSessions
       },
-      speakers: {
+      localSpeakers: {
         namespaced: true,
-        ...speakers
+        ...localSpeakers
       }
     }
   })

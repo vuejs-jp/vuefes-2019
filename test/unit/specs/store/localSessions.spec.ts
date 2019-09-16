@@ -1,8 +1,8 @@
-import { state, getters } from '~/store/sessions'
+import { state, getters } from '~/store/localSessions'
 
 describe('getters', () => {
   describe('sessionBySpeakerId', () => {
-    test('Session を speakerId をもとに取得できる', () => {
+    test('LocalSession を speakerId をもとに取得できる', () => {
       const session = getters.sessionBySpeakerId(state())('yyx990803')
       expect(session.speakerId).toBe('yyx990803')
     })

@@ -40,7 +40,7 @@
 
 <script lang="ts">
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import { Speaker } from '~/store/speakers'
+import { LocalSpeaker } from '~/store/localSpeakers'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
@@ -49,8 +49,8 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheSpeakerListSection extends Vue {
-  @Getter('all', { namespace: 'speakers' })
-  speakers!: Speaker[]
+  @Getter('all', { namespace: 'localSpeakers' })
+  speakers!: LocalSpeaker[]
 }
 </script>
 
