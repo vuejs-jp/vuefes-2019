@@ -28,7 +28,7 @@ describe('timeTableSections module', () => {
 
   describe('mutations', () => {
     describe('setTimeTableSections', () => {
-      test('TimeTableSections をセットできる', () => {
+      test('timeTableSections をセットできる', () => {
         mutations.setTimeTableSections(state, timeTableSections)
         expect(state.timeTableSections).toEqual(timeTableSections)
       })

@@ -1,4 +1,6 @@
-const speakers = [
+import { Speaker } from '~/store/speakers'
+
+const speakers: Speaker[] = [
   {
     sys: {
       space: {

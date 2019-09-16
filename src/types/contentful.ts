@@ -23,3 +23,11 @@ export type EntryLink = {
     id: string
   }
 }
+
+export type AssetLink = {
+  sys: {
+    type: 'Link'
+    linkType: 'Asset'
+    id: string
+  }
+}
