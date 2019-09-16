@@ -82,8 +82,8 @@
 <script lang="ts">
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/vue-app'
-import { Session } from '~/store/sessions'
-import { Speaker } from '~/store/speakers'
+import { LocalSession } from '~/store/localSessions'
+import { LocalSpeaker } from '~/store/localSpeakers'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
@@ -109,11 +109,11 @@ export default class SessionPage extends Vue {
 
   path!: string
 
-  @Getter('sessionBySpeakerId', { namespace: 'sessions' })
-  sessionBySpeakerId!: (speakerId: string) => Session
+  @Getter('sessionBySpeakerId', { namespace: 'localSessions' })
+  sessionBySpeakerId!: (speakerId: string) => LocalSession
 
-  @Getter('speakerById', { namespace: 'speakers' })
-  speakerById!: (id: string) => Speaker
+  @Getter('speakerById', { namespace: 'localSpeakers' })
+  speakerById!: (id: string) => LocalSpeaker
 
   head() {
     const url = `https://vuefes.jp/2019${this.path}`
@@ -150,14 +150,14 @@ export default class SessionPage extends Vue {
     }
   }
 
-  get session(): Session {
+  get session(): LocalSession {
     if (process.env.NODE_ENV === 'test') {
       this.setValueIfUndefined()
     }
     return this.sessionBySpeakerId(this.speakerId)
   }
 
-  get speaker(): Speaker {
+  get speaker(): LocalSpeaker {
     if (process.env.NODE_ENV === 'test') {
       this.setValueIfUndefined()
     }
@@ -165,7 +165,7 @@ export default class SessionPage extends Vue {
   }
 
   private setValueIfUndefined(): void {
-    // テストが失敗しないようにundefinedの場合は値を設定する
+    // テストが失敗しないように undefined の場合は値を設定する
     if (this.speakerId === undefined) {
       this.speakerId = 'yyx990803'
     }

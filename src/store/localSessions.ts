@@ -1,6 +1,6 @@
 import { Getters } from '~/types/store'
 
-export type Session = {
+export type LocalSession = {
   speakerId: string
   title: string
   time: number
@@ -8,17 +8,17 @@ export type Session = {
   ogImage: string
 }
 
-namespace Sessions {
+namespace LocalSessions {
   export type State = {
-    sessions: Session[]
+    sessions: LocalSession[]
   }
 
   export type Getters = {
-    sessionBySpeakerId: (speakerId: string) => Session
+    sessionBySpeakerId: (speakerId: string) => LocalSession
   }
 }
 
-export const state = (): Sessions.State => ({
+export const state = (): LocalSessions.State => ({
   sessions: [
     {
       speakerId: 'yyx990803',
@@ -207,7 +207,7 @@ export const state = (): Sessions.State => ({
   ]
 })
 
-export const getters: Getters<Sessions.State, Sessions.Getters> = {
+export const getters: Getters<LocalSessions.State, LocalSessions.Getters> = {
   sessionBySpeakerId: state => speakerId => {
     const session = state.sessions.find(
       session => session.speakerId === speakerId
