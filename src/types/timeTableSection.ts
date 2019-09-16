@@ -1,6 +1,6 @@
 import { EntrySys, EntryLink } from '~/types/contentful'
 
-export type TimeTableSection = {
+export default interface TimeTableSection {
   sys: EntrySys
   fields: {
     titleForContentful: string

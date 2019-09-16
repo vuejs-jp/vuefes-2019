@@ -1,6 +1,6 @@
 import { Getters, Mutations, Actions } from '~/types/store'
 import { EntrySys } from '~/types/contentful'
-import { Event } from '~/types/event'
+import Event from '~/types/event'
 import { Session } from '~/store/sessions'
 import { getEventContainerParts } from '~/plugins/contentful'
 

@@ -1,4 +1,4 @@
-import { TimeTableSection } from '~/types/timeTableSection'
+import TimeTableSection from '~/types/timeTableSection'
 
 const timeTableSections: TimeTableSection[] = [
   {

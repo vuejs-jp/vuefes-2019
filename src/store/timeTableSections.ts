@@ -1,5 +1,5 @@
 import { Getters, Mutations, Actions } from '~/types/store'
-import { TimeTableSection } from '~/types/timeTableSection'
+import TimeTableSection from '~/types/timeTableSection'
 import { getTimeTableSections } from '~/plugins/contentful'
 
 namespace TimeTableSections {

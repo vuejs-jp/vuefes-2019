@@ -1,6 +1,6 @@
 import { Getters, Mutations, Actions } from '~/types/store'
 import { EntrySys } from '~/types/contentful'
-import { Room } from '~/types/room'
+import Room from '~/types/room'
 import { getEventContainers } from '~/plugins/contentful'
 
 export type EventContainer = {

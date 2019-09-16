@@ -1,6 +1,6 @@
 import { EntrySys } from '~/types/contentful'
 
-export type Event = {
+export default interface Event {
   sys: EntrySys
   fields: {
     title: string
