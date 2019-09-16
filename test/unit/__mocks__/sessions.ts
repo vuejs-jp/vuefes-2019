@@ -1,4 +1,6 @@
-const sessions = [
+import { Session } from '~/store/sessions'
+
+const sessions: Session[] = [
   {
     sys: {
       space: {
