@@ -438,8 +438,8 @@
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
 import dayjs from 'dayjs'
 import TimeTableSection from '~/types/timeTableSection'
-import { EventContainer } from '~/store/eventContainers'
-import { EventContainerPart } from '~/store/eventContainerParts'
+import EventContainer from '~/types/eventContainer'
+import EventContainerPart from '~/types/eventContainerPart'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({

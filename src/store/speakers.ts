@@ -1,20 +1,6 @@
 import { Getters, Mutations, Actions } from '~/types/store'
-import { EntrySys, EntryLink, AssetLink } from '~/types/contentful'
+import Speaker from '~/types/speaker'
 import { getSpeakers } from '~/plugins/contentful'
-
-export type Speaker = {
-  sys: EntrySys
-  fields: {
-    name: string
-    title: string
-    avatar: AssetLink
-    avatar2x: AssetLink
-    twitter: string | null
-    github: string
-    description: string
-    sessions: EntryLink[]
-  }
-}
 
 namespace Speakers {
   export type State = {

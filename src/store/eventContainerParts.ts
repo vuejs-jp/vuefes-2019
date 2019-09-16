@@ -1,18 +1,6 @@
 import { Getters, Mutations, Actions } from '~/types/store'
-import { EntrySys } from '~/types/contentful'
-import Event from '~/types/event'
-import { Session } from '~/store/sessions'
+import EventContainerPart from '~/types/eventContainerPart'
 import { getEventContainerParts } from '~/plugins/contentful'
-
-export type EventContainerPart = {
-  sys: EntrySys
-  fields: {
-    titleForContentful: string
-    startAt: string
-    endAt: string
-    content: Session | Event
-  }
-}
 
 namespace EventContainerParts {
   export type State = {

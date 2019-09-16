@@ -1,16 +1,6 @@
 import { Getters, Mutations, Actions } from '~/types/store'
-import { EntrySys } from '~/types/contentful'
-import Room from '~/types/room'
+import EventContainer from '~/types/eventContainer'
 import { getEventContainers } from '~/plugins/contentful'
-
-export type EventContainer = {
-  sys: EntrySys
-  fields: {
-    titleForContentful: string
-    contents: Object[] // TODO: 型が揃ったら (Session | Event | EventContainerPart)[] に更新する
-    room?: Room
-  }
-}
 
 namespace EventContainers {
   export type State = {
