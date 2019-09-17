@@ -45,11 +45,5 @@ import TheStaffListSection from '~/components/TheStaffListSection.vue'
     }
   }
 })
-export default class HomePage extends Vue {
-  private head() {
-    return {
-      script: [{ src: 'https://www.universe.com/embed2.js' }]
-    }
-  }
-}
+export default class HomePage extends Vue {}
 </script>
