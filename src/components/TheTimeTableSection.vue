@@ -26,18 +26,10 @@
               session: timeTableSection.fields.eventContainers.length > 1
             }"
           >
-            <!-- Room -->
-            <div
+            <Room
               v-if="eventContainerById(eventContainer.sys.id).fields.room"
-              class="session__room"
-              :class="{
-                'session__room--plaid': eventContainerById(eventContainer.sys.id).fields.room.sys.id === '4MMzyRoKhtw4BlxWnCHbW9',
-                'session__room--yumemi': eventContainerById(eventContainer.sys.id).fields.room.sys.id === '6DXe9VnLT91YWE9UkVgkep',
-                'session__room--yesod': eventContainerById(eventContainer.sys.id).fields.room.sys.id === '1rnDVEsknx6MhhPgMAS9Gj'
-              }"
-            >
-              {{ eventContainerById(eventContainer.sys.id).fields.room.fields.name }}
-            </div>
+              :room="eventContainerById(eventContainer.sys.id).fields.room"
+            />
 
             <template v-if="eventContainerById(eventContainer.sys.id).fields.contents[0].sys.contentType.sys.id === 'eventContainerPart'">
               <div class="session__content half-session__container">
@@ -430,11 +422,13 @@ import EventContainer from '~/types/eventContainer'
 import EventContainerPart from '~/types/eventContainerPart'
 import BaseSection from '~/components/BaseSection.vue'
 import EventContent from '~/components/TheTimeTableSection/EventContent.vue'
+import Room from '~/components/TheTimeTableSection/Room.vue'
 
 @Component({
   components: {
     BaseSection,
-    EventContent
+    EventContent,
+    Room
   },
   filters: {
     toTime(dateTime) {
