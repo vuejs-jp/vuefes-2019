@@ -44,7 +44,7 @@
                   </div>
 
                   <div class="half-session__content">
-                    <EventContent :event-content="eventContainerPartById(eventContainerPart.sys.id).fields.content" />
+                    <EventContent :content="eventContainerPartById(eventContainerPart.sys.id).fields.content" />
                   </div>
                 </div>
               </div>
@@ -54,7 +54,7 @@
               <EventContent
                 v-for="content in eventContainerById(eventContainer.sys.id).fields.contents"
                 :key="content.sys.id"
-                :event-content="content"
+                :content="content"
               />
             </template>
           </div>
