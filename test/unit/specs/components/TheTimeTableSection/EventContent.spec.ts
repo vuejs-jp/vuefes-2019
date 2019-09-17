@@ -12,7 +12,7 @@ localVue.use(Vuex)
 
 const store = createFullStore(Vuex)
 
-const buildEventContent = content => {
+const mountEventContent = content => {
   return mount(EventContent, {
     localVue,
     store,
@@ -30,7 +30,7 @@ describe('EventContent', () => {
 
   describe('content がキーノートのとき', () => {
     beforeEach(() => {
-      wrapper = buildEventContent(keynote)
+      wrapper = mountEventContent(keynote)
     })
 
     test('Keynote を表示できる', () => {
@@ -40,7 +40,7 @@ describe('EventContent', () => {
 
   describe('content が Session のとき', () => {
     beforeEach(() => {
-      wrapper = buildEventContent(sessions[0])
+      wrapper = mountEventContent(sessions[0])
     })
 
     test('Session を表示できる', () => {
@@ -50,7 +50,7 @@ describe('EventContent', () => {
 
   describe('content が Event のとき', () => {
     beforeEach(() => {
-      wrapper = buildEventContent(events[0])
+      wrapper = mountEventContent(events[0])
     })
 
     test('Event を表示できる', () => {

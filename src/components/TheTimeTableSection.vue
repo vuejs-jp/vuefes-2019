@@ -26,37 +26,7 @@
               session: timeTableSection.fields.eventContainers.length > 1
             }"
           >
-            <Room
-              v-if="eventContainerById(eventContainer.sys.id).fields.room"
-              :room="eventContainerById(eventContainer.sys.id).fields.room"
-            />
-
-            <template v-if="eventContainerById(eventContainer.sys.id).fields.contents[0].sys.contentType.sys.id === 'eventContainerPart'">
-              <div class="session__content half-session__container">
-                <!-- eventContainerPart -->
-                <div
-                  v-for="eventContainerPart in eventContainerById(eventContainer.sys.id).fields.contents"
-                  :key="eventContainerPart.sys.id"
-                  class="half-session"
-                >
-                  <div class="half-session__time">
-                    {{ eventContainerPartById(eventContainerPart.sys.id).fields.startAt | toTime }} - {{ eventContainerPartById(eventContainerPart.sys.id).fields.endAt | toTime }}
-                  </div>
-
-                  <div class="half-session__content">
-                    <EventContent :content="eventContainerPartById(eventContainerPart.sys.id).fields.content" />
-                  </div>
-                </div>
-              </div>
-            </template>
-
-            <template v-else>
-              <EventContent
-                v-for="content in eventContainerById(eventContainer.sys.id).fields.contents"
-                :key="content.sys.id"
-                :content="content"
-              />
-            </template>
+            <EventContainer :event-container="eventContainerById(eventContainer.sys.id)" />
           </div>
         </div>
       </li>
@@ -418,17 +388,14 @@
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
 import dayjs from 'dayjs'
 import TimeTableSection from '~/types/timeTableSection'
-import EventContainer from '~/types/eventContainer'
-import EventContainerPart from '~/types/eventContainerPart'
+import EventContainerType from '~/types/eventContainer'
 import BaseSection from '~/components/BaseSection.vue'
-import EventContent from '~/components/TheTimeTableSection/EventContent.vue'
-import Room from '~/components/TheTimeTableSection/Room.vue'
+import EventContainer from '~/components/TheTimeTableSection/EventContainer.vue'
 
 @Component({
   components: {
     BaseSection,
-    EventContent,
-    Room
+    EventContainer
   },
   filters: {
     toTime(dateTime) {
@@ -444,10 +411,7 @@ export default class TheTimeTableSection extends Vue {
   private timeTableSections!: TimeTableSection[]
 
   @Getter('find', { namespace: 'eventContainers' })
-  private eventContainerById!: (id: string) => EventContainer
-
-  @Getter('find', { namespace: 'eventContainerParts' })
-  private eventContainerPartById!: (id: string) => EventContainerPart
+  private eventContainerById!: (id: string) => EventContainerType
 }
 </script>
 
