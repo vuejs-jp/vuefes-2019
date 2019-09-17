@@ -21,19 +21,6 @@
 
       <!-- prettier-ignore -->
       <p>
-        Apple Pay で決済をご希望の方は
-        <a href="#" class="link" @click.prevent="openUniverse">
-          こちらのリンク
-        </a>
-        から直接ご購入ください。また、Universe の決済方法でチケットを購入できない方向けに別途購入窓口を開設しています。詳細は
-        <a href="https://note.mu/ryamakuchi/n/n7a07b20d811d" target="_blank" rel="noopener noreferrer" class="link">
-          note
-        </a>
-        をご覧ください。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
         チケットに関するお問い合わせは、Vue Fes Japan 2019 の
         <nuxt-link class="link" to="/contact/">
           お問い合わせフォーム
@@ -78,11 +65,8 @@
       ※別途クレジットカード決済手数料（3.5%）がかかります。
     </p>
 
-    <BaseButton
-      class="ticket-button"
-      href="https://www.universe.com/events/vue-fes-japan-2019-tickets--YG3SMV"
-    >
-      チケットを購入する
+    <BaseButton class="ticket-button" disabled>
+      チケット販売は終了しました
     </BaseButton>
 
     <div class="faq">
