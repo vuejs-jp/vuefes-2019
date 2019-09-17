@@ -1,4 +1,4 @@
-export type EntrySys = {
+export interface EntrySys {
   space: Object
   id: string
   type: 'Entry'
@@ -16,7 +16,7 @@ export type EntrySys = {
   locale: 'en-US'
 }
 
-export type EntryLink = {
+export interface EntryLink {
   sys: {
     type: 'Link'
     linkType: 'Entry'
@@ -24,7 +24,7 @@ export type EntryLink = {
   }
 }
 
-export type AssetSys = {
+export interface AssetSys {
   space: Object
   id: string
   type: 'Asset'
@@ -35,7 +35,7 @@ export type AssetSys = {
   locale: 'en-US'
 }
 
-export type Asset = {
+export interface Asset {
   sys: AssetSys
   fields: {
     title: string
@@ -54,7 +54,7 @@ export type Asset = {
   }
 }
 
-export type AssetLink = {
+export interface AssetLink {
   sys: {
     type: 'Link'
     linkType: 'Asset'
