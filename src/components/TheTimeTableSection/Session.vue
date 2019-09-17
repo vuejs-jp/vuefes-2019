@@ -1,6 +1,6 @@
 <template>
   <div class="session">
-    <nuxt-link class="link-to-session" :to="`/sessions/${session.sys.id}`">
+    <nuxt-link class="link-to-session" :to="`/sessions/${sessionIdAlias}/`">
       {{ session.fields.title }}
     </nuxt-link>
 
@@ -26,5 +26,10 @@ export default class Session extends Vue {
 
   @Getter('find', { namespace: 'speakers' })
   private speakerById!: (id: string) => Speaker
+
+  get sessionIdAlias(): string {
+    const primarySpeaker = this.session.fields.speakers[0]
+    return this.speakerById(primarySpeaker.sys.id).fields.github
+  }
 }
 </script>

@@ -39,4 +39,10 @@ describe('Session', () => {
 
     expect(wrapper.find('.speaker-name').text()).toContain(speaker.fields.name)
   })
+
+  describe('sessionIdAlias', () => {
+    test('Speaker の github アカウント名を取得できる', () => {
+      expect(wrapper.vm.sessionIdAlias).toBe('Atinux')
+    })
+  })
 })
