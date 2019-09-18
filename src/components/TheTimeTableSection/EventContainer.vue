@@ -116,7 +116,7 @@ export default class EventContainer extends Vue {
 
 <style lang="scss" scoped>
 $event-container-min-height--is-small: 10.4vw;
-$event-container-min-height--is-small-up: 90px;
+$event-container-min-height--is-small-up: 84px;
 
 .event-container {
   position: relative;
@@ -219,6 +219,14 @@ $event-container-min-height--is-small-up: 90px;
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     display: block;
+  }
+}
+
+.event-content + .event-content {
+  margin-top: 1.6vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 8px;
   }
 }
 

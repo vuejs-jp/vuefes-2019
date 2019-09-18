@@ -84,7 +84,7 @@ export default class TheTimeTableSection extends Vue {
     margin-top: 3vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      margin-top: 32px;
+      margin-top: 24px;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
