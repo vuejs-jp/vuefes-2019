@@ -1,4 +1,5 @@
 import speakersData from '../../../fixtures/contentful/speakers'
+import timeTableSectionsData from '../../../fixtures/contentful/timeTableSections'
 import eventContainersData from '../../../fixtures/contentful/eventContainers'
 import eventContainerPartsData from '../../../fixtures/contentful/eventContainerParts'
 import * as localSessions from '~/store/localSessions'
@@ -38,7 +39,12 @@ export default Vuex => {
     }
   })
 
+  // nuxtServerInit と同様のことを行う
   store.commit('speakers/setSpeakers', speakersData)
+  store.commit(
+    'timeTableSections/fetchTimeTableSections',
+    timeTableSectionsData
+  )
   store.commit('eventContainers/setEventContainers', eventContainersData)
   store.commit(
     'eventContainerParts/setEventContainerParts',
