@@ -5,6 +5,20 @@
     </template>
 
     <ul>
+      <li class="time-table-section show-on-large">
+        <div class="time-table-section__time" />
+        <div class="time-table-section__body">
+          <div class="event-container room room--is-plaid">
+            PLAID ルーム
+          </div>
+          <div class="event-container room room--is-yumemi">
+            YUMEMI ルーム
+          </div>
+          <div class="event-container room room--is-yesod">
+            イエソドルーム
+          </div>
+        </div>
+      </li>
       <li
         v-for="timeTableSection in timeTableSections"
         :key="timeTableSection.sys.id"
@@ -110,5 +124,38 @@ export default class TheTimeTableSection extends Vue {
 
 .event-container {
   width: 100%;
+
+  & + & {
+    margin-top: 1vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 5px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      margin-top: 0;
+      margin-left: 4px;
+    }
+  }
+}
+
+.room {
+  padding: 16px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: $primary-text-color--invert;
+
+  &--is-plaid {
+    background-color: $sangosyu;
+  }
+
+  &--is-yumemi {
+    background-color: $tohoh;
+  }
+
+  &--is-yesod {
+    background-color: $asagi;
+  }
 }
 </style>

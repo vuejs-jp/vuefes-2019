@@ -95,19 +95,6 @@ $event-container-min-height--is-small-up: 90px;
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     min-height: $event-container-min-height--is-small-up;
   }
-
-  & + & {
-    margin-top: 1vw;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      margin-top: 5px;
-    }
-
-    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      margin-top: 0;
-      margin-left: 4px;
-    }
-  }
 }
 
 .content {
