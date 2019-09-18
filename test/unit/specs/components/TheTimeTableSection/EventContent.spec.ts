@@ -1,4 +1,5 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
+import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
 import createFullStore from '../../utils/createFullStore'
 import keynote from '../../../../fixtures/contentful/keynote'
@@ -8,6 +9,7 @@ import EventContent from '~/components/TheTimeTableSection/EventContent.vue'
 
 const localVue = createLocalVue()
 
+localVue.use(VueLazyLoad)
 localVue.use(Vuex)
 
 const store = createFullStore(Vuex)

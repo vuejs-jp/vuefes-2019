@@ -13,7 +13,7 @@ const sessions: Session[] = [
       id: '52xcLDNWOkF7s46q93hGQs',
       type: 'Entry',
       createdAt: '2019-08-25T11:07:40.630Z',
-      updatedAt: '2019-08-25T11:07:40.630Z',
+      updatedAt: '2019-09-18T13:31:06.303Z',
       environment: {
         sys: {
           id: 'master',
@@ -21,7 +21,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -51,7 +51,8 @@ const sessions: Session[] = [
             id: '4XnF0Cp1piQFkVEjUnCrci'
           }
         }
-      ]
+      ],
+      hasTranslation: true
     }
   },
   {
@@ -66,7 +67,7 @@ const sessions: Session[] = [
       id: '4dgpT8P4uu8CkedDki92NS',
       type: 'Entry',
       createdAt: '2019-08-27T08:59:12.170Z',
-      updatedAt: '2019-08-27T08:59:12.170Z',
+      updatedAt: '2019-09-18T13:31:06.082Z',
       environment: {
         sys: {
           id: 'master',
@@ -74,7 +75,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -104,7 +105,8 @@ const sessions: Session[] = [
             id: '1wgsyNSXRjVrKe2NgZzmw3'
           }
         }
-      ]
+      ],
+      hasTranslation: false
     }
   },
   {
@@ -119,7 +121,7 @@ const sessions: Session[] = [
       id: '6o9an6K6nq1xemJ84oIfXq',
       type: 'Entry',
       createdAt: '2019-08-25T11:10:54.039Z',
-      updatedAt: '2019-08-25T11:10:54.039Z',
+      updatedAt: '2019-09-18T13:27:11.027Z',
       environment: {
         sys: {
           id: 'master',
@@ -127,7 +129,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -157,7 +159,62 @@ const sessions: Session[] = [
             id: '2wJP0k4TL8blmOvUsiOswb'
           }
         }
-      ]
+      ],
+      hasTranslation: true
+    }
+  },
+  {
+    sys: {
+      space: {
+        sys: {
+          type: 'Link',
+          linkType: 'Space',
+          id: 'makqrw5hfm9d'
+        }
+      },
+      id: '7lCuNn3wby0o7hooQ7gbQf',
+      type: 'Entry',
+      createdAt: '2019-08-27T09:05:49.382Z',
+      updatedAt: '2019-09-18T13:31:08.135Z',
+      environment: {
+        sys: {
+          id: 'master',
+          type: 'Link',
+          linkType: 'Environment'
+        }
+      },
+      revision: 2,
+      contentType: {
+        sys: {
+          type: 'Link',
+          linkType: 'ContentType',
+          id: 'session'
+        }
+      },
+      locale: 'en-US'
+    },
+    fields: {
+      title: 'Enterprise Vue: Patterns That Scale',
+      time: 40,
+      description:
+        "Thinking about or currently using Vue in a very large application, potentially also with a large, diverse team? Or are you integrating Vue into a legacy app or complex architecture? Eager to learn how to avoid common mistakes, as well as battle-tested patterns to help you build an application you won't dread maintaining? As an enterprise consultant, member of the Vue team, and trained educator, Chris will share the most important lessons he's learned in his work.",
+      ogImage: {
+        sys: {
+          type: 'Link',
+          linkType: 'Asset',
+          id: '5emFxpCHjWlov8fBlzWBmM'
+        }
+      },
+      speakers: [
+        {
+          sys: {
+            type: 'Link',
+            linkType: 'Entry',
+            id: '582L635Brdsa2epHP9HSMA'
+          }
+        }
+      ],
+      hasTranslation: true
     }
   },
   {
@@ -172,7 +229,7 @@ const sessions: Session[] = [
       id: 'K56RNDgglthD48chr9Glr',
       type: 'Entry',
       createdAt: '2019-08-27T09:08:10.167Z',
-      updatedAt: '2019-08-27T09:08:10.167Z',
+      updatedAt: '2019-09-18T13:31:05.182Z',
       environment: {
         sys: {
           id: 'master',
@@ -180,7 +237,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -211,60 +268,8 @@ const sessions: Session[] = [
             id: '6JTRK0izrgCKgJg1ZeiG5a'
           }
         }
-      ]
-    }
-  },
-  {
-    sys: {
-      space: {
-        sys: {
-          type: 'Link',
-          linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
-      },
-      id: '7lCuNn3wby0o7hooQ7gbQf',
-      type: 'Entry',
-      createdAt: '2019-08-27T09:05:49.382Z',
-      updatedAt: '2019-08-27T09:05:49.382Z',
-      environment: {
-        sys: {
-          id: 'master',
-          type: 'Link',
-          linkType: 'Environment'
-        }
-      },
-      revision: 1,
-      contentType: {
-        sys: {
-          type: 'Link',
-          linkType: 'ContentType',
-          id: 'session'
-        }
-      },
-      locale: 'en-US'
-    },
-    fields: {
-      title: 'Enterprise Vue: Patterns That Scale',
-      time: 40,
-      description:
-        "Thinking about or currently using Vue in a very large application, potentially also with a large, diverse team? Or are you integrating Vue into a legacy app or complex architecture? Eager to learn how to avoid common mistakes, as well as battle-tested patterns to help you build an application you won't dread maintaining? As an enterprise consultant, member of the Vue team, and trained educator, Chris will share the most important lessons he's learned in his work.",
-      ogImage: {
-        sys: {
-          type: 'Link',
-          linkType: 'Asset',
-          id: '5emFxpCHjWlov8fBlzWBmM'
-        }
-      },
-      speakers: [
-        {
-          sys: {
-            type: 'Link',
-            linkType: 'Entry',
-            id: '582L635Brdsa2epHP9HSMA'
-          }
-        }
-      ]
+      ],
+      hasTranslation: false
     }
   },
   {
@@ -279,7 +284,7 @@ const sessions: Session[] = [
       id: '7j5mFetuuGDHaCWH0Cu6m6',
       type: 'Entry',
       createdAt: '2019-08-27T09:03:16.706Z',
-      updatedAt: '2019-08-27T09:03:16.706Z',
+      updatedAt: '2019-09-18T13:31:05.692Z',
       environment: {
         sys: {
           id: 'master',
@@ -287,7 +292,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -316,7 +321,8 @@ const sessions: Session[] = [
             id: '7LpjHMzGGnnFKt5DkMB3ik'
           }
         }
-      ]
+      ],
+      hasTranslation: true
     }
   },
   {
@@ -331,7 +337,7 @@ const sessions: Session[] = [
       id: 'h7DsizAR78p4g69rogvpK',
       type: 'Entry',
       createdAt: '2019-08-27T08:55:04.255Z',
-      updatedAt: '2019-08-27T08:55:04.255Z',
+      updatedAt: '2019-09-18T13:31:05.606Z',
       environment: {
         sys: {
           id: 'master',
@@ -339,7 +345,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -369,7 +375,8 @@ const sessions: Session[] = [
             id: 'mku1WUPzuF9y5jPNgWNT7'
           }
         }
-      ]
+      ],
+      hasTranslation: false
     }
   },
   {
@@ -384,7 +391,7 @@ const sessions: Session[] = [
       id: '6nPCnZejnlgdGmVulnMDEl',
       type: 'Entry',
       createdAt: '2019-08-27T09:14:07.985Z',
-      updatedAt: '2019-08-27T09:14:07.985Z',
+      updatedAt: '2019-09-18T13:34:33.778Z',
       environment: {
         sys: {
           id: 'master',
@@ -392,7 +399,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 3,
       contentType: {
         sys: {
           type: 'Link',
@@ -403,9 +410,10 @@ const sessions: Session[] = [
       locale: 'en-US'
     },
     fields: {
-      title: 'TBD',
+      title: 'WineUp: Machine Learning, Mobile Apps, Wine, Cheese, and You',
       time: 40,
-      description: 'TBD',
+      description:
+        "Any developer who has tried to enhance a mobile app has been tempted by the siren song of machine learning. Who can resist making your app smarter, more responsive, more customized to a user's needs? There are a lot of really great cognitive services that promise to enhance your app with pretrained models, and sometimes those work really well. But most of the time, you need something much more custom, just as special as your app. In this talk, I'll walk you through the decision-making process on the ways to introduce machine learning into your mobile app. I'll demonstrate how to scaffold a native mobile app built with Vue, and then how to combine database calls, cognitive services, and a custom-trained TensorFlow lite model to build the ultimate gourmet app: WineUp, and app that helps lovers of wine and cheese to make the perfect flavor pairings. Come to the vineyard with me and taste the beautiful combination of wine, cheese, Vue.js, mobile apps, and machine learning!",
       ogImage: {
         sys: {
           type: 'Link',
@@ -421,7 +429,8 @@ const sessions: Session[] = [
             id: '2s74eGvySj6AmTfE67VluB'
           }
         }
-      ]
+      ],
+      hasTranslation: true
     }
   },
   {
@@ -436,7 +445,7 @@ const sessions: Session[] = [
       id: '3K6keW1beLVB89hcLrOR0n',
       type: 'Entry',
       createdAt: '2019-08-27T09:04:39.351Z',
-      updatedAt: '2019-08-27T09:04:39.351Z',
+      updatedAt: '2019-09-18T13:31:05.209Z',
       environment: {
         sys: {
           id: 'master',
@@ -444,7 +453,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -474,7 +483,8 @@ const sessions: Session[] = [
             id: '4Dq8ThsiSdm7JPA4zVMQAo'
           }
         }
-      ]
+      ],
+      hasTranslation: false
     }
   },
   {
@@ -489,7 +499,7 @@ const sessions: Session[] = [
       id: '64z2YruYMw1ZKQAZS7ojjm',
       type: 'Entry',
       createdAt: '2019-08-27T08:57:36.638Z',
-      updatedAt: '2019-08-27T08:57:36.638Z',
+      updatedAt: '2019-09-18T13:31:05.016Z',
       environment: {
         sys: {
           id: 'master',
@@ -497,7 +507,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -527,7 +537,8 @@ const sessions: Session[] = [
             id: '6DeU68XA3PYjmXlu2RiIEI'
           }
         }
-      ]
+      ],
+      hasTranslation: false
     }
   },
   {
@@ -542,7 +553,7 @@ const sessions: Session[] = [
       id: '7fozsC9JQwpxPyxkYyARVJ',
       type: 'Entry',
       createdAt: '2019-08-27T09:09:31.500Z',
-      updatedAt: '2019-08-27T09:09:31.500Z',
+      updatedAt: '2019-09-18T13:31:05.877Z',
       environment: {
         sys: {
           id: 'master',
@@ -550,7 +561,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -580,7 +591,8 @@ const sessions: Session[] = [
             id: '6nXanQ9BH9YVSCEr44FcrD'
           }
         }
-      ]
+      ],
+      hasTranslation: false
     }
   },
   {
@@ -595,7 +607,7 @@ const sessions: Session[] = [
       id: '5zLpsJ3NSvAw34HQvLngMv',
       type: 'Entry',
       createdAt: '2019-08-27T08:39:19.500Z',
-      updatedAt: '2019-08-27T08:39:19.500Z',
+      updatedAt: '2019-09-18T13:31:05.652Z',
       environment: {
         sys: {
           id: 'master',
@@ -603,7 +615,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -633,7 +645,8 @@ const sessions: Session[] = [
             id: '1sySFRq9oK4mfSefnrR0Xq'
           }
         }
-      ]
+      ],
+      hasTranslation: false
     }
   },
   {
@@ -648,7 +661,7 @@ const sessions: Session[] = [
       id: '7aUz315q5gRNDDsC9ZPsiR',
       type: 'Entry',
       createdAt: '2019-08-27T08:56:02.555Z',
-      updatedAt: '2019-08-27T08:56:02.555Z',
+      updatedAt: '2019-09-18T13:31:05.491Z',
       environment: {
         sys: {
           id: 'master',
@@ -656,7 +669,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -687,7 +700,8 @@ const sessions: Session[] = [
             id: '4w4LHXhuKJn3BoWBQfcZx7'
           }
         }
-      ]
+      ],
+      hasTranslation: false
     }
   },
   {
@@ -702,7 +716,7 @@ const sessions: Session[] = [
       id: '5SIsttQswXSNTCN2Oi2MZS',
       type: 'Entry',
       createdAt: '2019-08-27T08:52:59.541Z',
-      updatedAt: '2019-08-27T08:52:59.541Z',
+      updatedAt: '2019-09-18T13:31:05.160Z',
       environment: {
         sys: {
           id: 'master',
@@ -710,7 +724,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -740,7 +754,61 @@ const sessions: Session[] = [
             id: '4lNqSfqiA9P0NVNyhWWaPD'
           }
         }
-      ]
+      ],
+      hasTranslation: false
+    }
+  },
+  {
+    sys: {
+      space: {
+        sys: {
+          type: 'Link',
+          linkType: 'Space',
+          id: 'makqrw5hfm9d'
+        }
+      },
+      id: '7xvdef2fny01iVD0ra03Iz',
+      type: 'Entry',
+      createdAt: '2019-08-25T11:00:38.634Z',
+      updatedAt: '2019-09-18T13:39:30.715Z',
+      environment: {
+        sys: {
+          id: 'master',
+          type: 'Link',
+          linkType: 'Environment'
+        }
+      },
+      revision: 4,
+      contentType: {
+        sys: {
+          type: 'Link',
+          linkType: 'ContentType',
+          id: 'session'
+        }
+      },
+      locale: 'en-US'
+    },
+    fields: {
+      title: 'Keynote',
+      time: 50,
+      description: 'Keynote',
+      ogImage: {
+        sys: {
+          type: 'Link',
+          linkType: 'Asset',
+          id: '5MWxt8IHkH1VpMdh6HgFa6'
+        }
+      },
+      speakers: [
+        {
+          sys: {
+            type: 'Link',
+            linkType: 'Entry',
+            id: '7aHzCP1a1rYpR6KbWENRmB'
+          }
+        }
+      ],
+      hasTranslation: true
     }
   },
   {
@@ -755,7 +823,7 @@ const sessions: Session[] = [
       id: '6p8bcCeCJsMgW2QMJIq14I',
       type: 'Entry',
       createdAt: '2019-08-27T09:10:21.572Z',
-      updatedAt: '2019-08-27T09:10:21.572Z',
+      updatedAt: '2019-09-18T13:31:07.476Z',
       environment: {
         sys: {
           id: 'master',
@@ -763,7 +831,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -793,59 +861,8 @@ const sessions: Session[] = [
             id: 'kAJ3wEURjDaABWU3xDW6x'
           }
         }
-      ]
-    }
-  },
-  {
-    sys: {
-      space: {
-        sys: {
-          type: 'Link',
-          linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
-      },
-      id: '7xvdef2fny01iVD0ra03Iz',
-      type: 'Entry',
-      createdAt: '2019-08-25T11:00:38.634Z',
-      updatedAt: '2019-08-25T16:24:26.199Z',
-      environment: {
-        sys: {
-          id: 'master',
-          type: 'Link',
-          linkType: 'Environment'
-        }
-      },
-      revision: 3,
-      contentType: {
-        sys: {
-          type: 'Link',
-          linkType: 'ContentType',
-          id: 'session'
-        }
-      },
-      locale: 'en-US'
-    },
-    fields: {
-      title: 'Keynote',
-      time: 50,
-      description: 'Keynote',
-      ogImage: {
-        sys: {
-          type: 'Link',
-          linkType: 'Asset',
-          id: '5MWxt8IHkH1VpMdh6HgFa6'
-        }
-      },
-      speakers: [
-        {
-          sys: {
-            type: 'Link',
-            linkType: 'Entry',
-            id: '7aHzCP1a1rYpR6KbWENRmB'
-          }
-        }
-      ]
+      ],
+      hasTranslation: false
     }
   },
   {
@@ -860,7 +877,7 @@ const sessions: Session[] = [
       id: '7yeyEFR9IxHjnS6vg5AKpW',
       type: 'Entry',
       createdAt: '2019-08-27T09:06:57.888Z',
-      updatedAt: '2019-08-27T09:06:57.888Z',
+      updatedAt: '2019-09-18T13:31:05.390Z',
       environment: {
         sys: {
           id: 'master',
@@ -868,7 +885,7 @@ const sessions: Session[] = [
           linkType: 'Environment'
         }
       },
-      revision: 1,
+      revision: 2,
       contentType: {
         sys: {
           type: 'Link',
@@ -898,7 +915,8 @@ const sessions: Session[] = [
             id: '7myQ6DFjZOrkIVOolyJiJN'
           }
         }
-      ]
+      ],
+      hasTranslation: false
     }
   }
 ]

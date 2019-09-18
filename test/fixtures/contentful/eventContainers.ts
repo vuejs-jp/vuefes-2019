@@ -46,7 +46,7 @@ const eventContainers: EventContainer[] = [
             id: '7xvdef2fny01iVD0ra03Iz',
             type: 'Entry',
             createdAt: '2019-08-25T11:00:38.634Z',
-            updatedAt: '2019-08-25T16:24:26.199Z',
+            updatedAt: '2019-09-18T13:39:30.715Z',
             environment: {
               sys: {
                 id: 'master',
@@ -54,7 +54,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 3,
+            revision: 4,
             contentType: {
               sys: {
                 type: 'Link',
@@ -116,7 +116,8 @@ const eventContainers: EventContainer[] = [
                   id: '7aHzCP1a1rYpR6KbWENRmB'
                 }
               }
-            ]
+            ],
+            hasTranslation: true
           }
         }
       ]
@@ -272,7 +273,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'イエソドルーム' }
+        fields: {
+          name: 'イエソドルーム'
+        }
       }
     }
   },
@@ -321,7 +324,7 @@ const eventContainers: EventContainer[] = [
             id: '4dgpT8P4uu8CkedDki92NS',
             type: 'Entry',
             createdAt: '2019-08-27T08:59:12.170Z',
-            updatedAt: '2019-08-27T08:59:12.170Z',
+            updatedAt: '2019-09-18T13:31:06.082Z',
             environment: {
               sys: {
                 id: 'master',
@@ -329,7 +332,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -343,7 +346,7 @@ const eventContainers: EventContainer[] = [
             title: 'アンチパターンから学ぶ Atomic Design with Vue.js',
             time: 40,
             description:
-              '誰かに教わったデザインフレームワークやプラクティスをそのまま現場に適応しようとして、うまくいかなかった経験はないでしょうか。これはフロントエンド開発に限らずアジャイル開発やインフラ設計など普遍的な問題です。\n\n本セッションでは、Vue.js と Atomic Design をフレーム通りにそのまま導入、実践をしてどう失敗したのかと、そこから得られた学びを発表します。さらに Atomic Design を発展させて、プロダクトやチーム、Vue.js に適応させた例を共有します。\n\nTL;DR\n\n- 思考を停止して Atomic Design を導入した結果の発表\n - ロジックの集中、コンポーネントの量産\n- 導入するときは現場との差分（Vue.js、チーム、プロダクトの性質 etc..）を考えて追加する\n- 視座をプロダクトのレベルまで高めて、設計判断をする\n- 改めて Vue.js と Atomic Design ベースでコンポーネント開発を実践した時に考えたこと\n - ドメインを持たせたコンポーネントの組み合わせ\n - ロジックをリポジトリパターンで組み直す',
+              '誰かに教わったデザインフレームワークやプラクティスをそのまま現場に適応しようとして、うまくいかなかった経験はないでしょうか。これはフロントエンド開発に限らずアジャイル開発やインフラ設計など普遍的な問題です。\n\n本セッションでは、Vue.js と Atomic Design をフレーム通りにそのまま導入、実践をしてどう失敗したのかと、そこから得られた学びを発表します。さらに Atomic Design を発展させて、プロダクトやチーム、Vue.js に適応させた例を共有します。\n\nTL;DR\n\n- 思考を停止して Atomic Design を導入した結果の発表\n    - ロジックの集中、コンポーネントの量産\n- 導入するときは現場との差分（Vue.js、チーム、プロダクトの性質 etc..）を考えて追加する\n- 視座をプロダクトのレベルまで高めて、設計判断をする\n- 改めて Vue.js と Atomic Design ベースでコンポーネント開発を実践した時に考えたこと\n    - ドメインを持たせたコンポーネントの組み合わせ\n    - ロジックをリポジトリパターンで組み直す',
             ogImage: {
               sys: {
                 space: {
@@ -392,7 +395,8 @@ const eventContainers: EventContainer[] = [
                   id: '1wgsyNSXRjVrKe2NgZzmw3'
                 }
               }
-            ]
+            ],
+            hasTranslation: false
           }
         }
       ],
@@ -426,7 +430,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'YUMEMI ルーム' }
+        fields: {
+          name: 'YUMEMI ルーム'
+        }
       }
     }
   },
@@ -493,7 +499,9 @@ const eventContainers: EventContainer[] = [
             },
             locale: 'en-US'
           },
-          fields: { title: 'ランチセッション' }
+          fields: {
+            title: 'ランチセッション'
+          }
         }
       ],
       room: {
@@ -526,7 +534,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'PLAID ルーム' }
+        fields: {
+          name: 'PLAID ルーム'
+        }
       }
     }
   },
@@ -680,7 +690,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'イエソドルーム' }
+        fields: {
+          name: 'イエソドルーム'
+        }
       }
     }
   },
@@ -729,7 +741,7 @@ const eventContainers: EventContainer[] = [
             id: 'K56RNDgglthD48chr9Glr',
             type: 'Entry',
             createdAt: '2019-08-27T09:08:10.167Z',
-            updatedAt: '2019-08-27T09:08:10.167Z',
+            updatedAt: '2019-09-18T13:31:05.182Z',
             environment: {
               sys: {
                 id: 'master',
@@ -737,7 +749,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -801,7 +813,8 @@ const eventContainers: EventContainer[] = [
                   id: '6JTRK0izrgCKgJg1ZeiG5a'
                 }
               }
-            ]
+            ],
+            hasTranslation: false
           }
         }
       ],
@@ -835,7 +848,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'YUMEMI ルーム' }
+        fields: {
+          name: 'YUMEMI ルーム'
+        }
       }
     }
   },
@@ -884,7 +899,7 @@ const eventContainers: EventContainer[] = [
             id: '7lCuNn3wby0o7hooQ7gbQf',
             type: 'Entry',
             createdAt: '2019-08-27T09:05:49.382Z',
-            updatedAt: '2019-08-27T09:05:49.382Z',
+            updatedAt: '2019-09-18T13:31:08.135Z',
             environment: {
               sys: {
                 id: 'master',
@@ -892,7 +907,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -955,7 +970,8 @@ const eventContainers: EventContainer[] = [
                   id: '582L635Brdsa2epHP9HSMA'
                 }
               }
-            ]
+            ],
+            hasTranslation: true
           }
         }
       ],
@@ -989,7 +1005,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'PLAID ルーム' }
+        fields: {
+          name: 'PLAID ルーム'
+        }
       }
     }
   },
@@ -1056,7 +1074,9 @@ const eventContainers: EventContainer[] = [
             },
             locale: 'en-US'
           },
-          fields: { title: 'オープニング' }
+          fields: {
+            title: 'オープニング'
+          }
         }
       ]
     }
@@ -1106,7 +1126,7 @@ const eventContainers: EventContainer[] = [
             id: '6hXLd0yVmRgqt0dp6VjS7z',
             type: 'Entry',
             createdAt: '2019-08-27T09:21:50.993Z',
-            updatedAt: '2019-08-27T09:21:50.993Z',
+            updatedAt: '2019-09-18T05:35:33.372Z',
             environment: {
               sys: {
                 id: 'master',
@@ -1114,7 +1134,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -1124,7 +1144,9 @@ const eventContainers: EventContainer[] = [
             },
             locale: 'en-US'
           },
-          fields: { title: 'アフターパーティ' }
+          fields: {
+            title: 'アフターパーティー'
+          }
         }
       ]
     }
@@ -1174,7 +1196,7 @@ const eventContainers: EventContainer[] = [
             id: '3K6keW1beLVB89hcLrOR0n',
             type: 'Entry',
             createdAt: '2019-08-27T09:04:39.351Z',
-            updatedAt: '2019-08-27T09:04:39.351Z',
+            updatedAt: '2019-09-18T13:31:05.209Z',
             environment: {
               sys: {
                 id: 'master',
@@ -1182,7 +1204,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -1245,7 +1267,8 @@ const eventContainers: EventContainer[] = [
                   id: '4Dq8ThsiSdm7JPA4zVMQAo'
                 }
               }
-            ]
+            ],
+            hasTranslation: false
           }
         }
       ],
@@ -1279,7 +1302,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'YUMEMI ルーム' }
+        fields: {
+          name: 'YUMEMI ルーム'
+        }
       }
     }
   },
@@ -1346,7 +1371,9 @@ const eventContainers: EventContainer[] = [
             },
             locale: 'en-US'
           },
-          fields: { title: 'ランチブレーク' }
+          fields: {
+            title: 'ランチブレーク'
+          }
         }
       ]
     }
@@ -1414,7 +1441,9 @@ const eventContainers: EventContainer[] = [
             },
             locale: 'en-US'
           },
-          fields: { title: 'ランチセッション' }
+          fields: {
+            title: 'ランチセッション'
+          }
         }
       ],
       room: {
@@ -1447,7 +1476,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'イエソドルーム' }
+        fields: {
+          name: 'イエソドルーム'
+        }
       }
     }
   },
@@ -1514,7 +1545,9 @@ const eventContainers: EventContainer[] = [
             },
             locale: 'en-US'
           },
-          fields: { title: 'ランチセッション' }
+          fields: {
+            title: 'ランチセッション'
+          }
         }
       ],
       room: {
@@ -1547,7 +1580,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'YUMEMI ルーム' }
+        fields: {
+          name: 'YUMEMI ルーム'
+        }
       }
     }
   },
@@ -1614,7 +1649,9 @@ const eventContainers: EventContainer[] = [
             },
             locale: 'en-US'
           },
-          fields: { title: '開場・受付' }
+          fields: {
+            title: '開場・受付'
+          }
         }
       ]
     }
@@ -1664,7 +1701,7 @@ const eventContainers: EventContainer[] = [
             id: 'h7DsizAR78p4g69rogvpK',
             type: 'Entry',
             createdAt: '2019-08-27T08:55:04.255Z',
-            updatedAt: '2019-08-27T08:55:04.255Z',
+            updatedAt: '2019-09-18T13:31:05.606Z',
             environment: {
               sys: {
                 id: 'master',
@@ -1672,7 +1709,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -1735,7 +1772,8 @@ const eventContainers: EventContainer[] = [
                   id: 'mku1WUPzuF9y5jPNgWNT7'
                 }
               }
-            ]
+            ],
+            hasTranslation: false
           }
         }
       ],
@@ -1769,7 +1807,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'イエソドルーム' }
+        fields: {
+          name: 'イエソドルーム'
+        }
       }
     }
   },
@@ -1818,7 +1858,7 @@ const eventContainers: EventContainer[] = [
             id: '6o9an6K6nq1xemJ84oIfXq',
             type: 'Entry',
             createdAt: '2019-08-25T11:10:54.039Z',
-            updatedAt: '2019-08-25T11:10:54.039Z',
+            updatedAt: '2019-09-18T13:27:11.027Z',
             environment: {
               sys: {
                 id: 'master',
@@ -1826,7 +1866,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -1889,7 +1929,8 @@ const eventContainers: EventContainer[] = [
                   id: '2wJP0k4TL8blmOvUsiOswb'
                 }
               }
-            ]
+            ],
+            hasTranslation: true
           }
         },
         {
@@ -1904,7 +1945,7 @@ const eventContainers: EventContainer[] = [
             id: '52xcLDNWOkF7s46q93hGQs',
             type: 'Entry',
             createdAt: '2019-08-25T11:07:40.630Z',
-            updatedAt: '2019-08-25T11:07:40.630Z',
+            updatedAt: '2019-09-18T13:31:06.303Z',
             environment: {
               sys: {
                 id: 'master',
@@ -1912,7 +1953,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -1975,7 +2016,8 @@ const eventContainers: EventContainer[] = [
                   id: '4XnF0Cp1piQFkVEjUnCrci'
                 }
               }
-            ]
+            ],
+            hasTranslation: true
           }
         }
       ],
@@ -2009,7 +2051,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'PLAID ルーム' }
+        fields: {
+          name: 'PLAID ルーム'
+        }
       }
     }
   },
@@ -2058,7 +2102,7 @@ const eventContainers: EventContainer[] = [
             id: '7j5mFetuuGDHaCWH0Cu6m6',
             type: 'Entry',
             createdAt: '2019-08-27T09:03:16.706Z',
-            updatedAt: '2019-08-27T09:03:16.706Z',
+            updatedAt: '2019-09-18T13:31:05.692Z',
             environment: {
               sys: {
                 id: 'master',
@@ -2066,7 +2110,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -2128,7 +2172,8 @@ const eventContainers: EventContainer[] = [
                   id: '7LpjHMzGGnnFKt5DkMB3ik'
                 }
               }
-            ]
+            ],
+            hasTranslation: true
           }
         }
       ],
@@ -2162,7 +2207,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'PLAID ルーム' }
+        fields: {
+          name: 'PLAID ルーム'
+        }
       }
     }
   },
@@ -2211,7 +2258,7 @@ const eventContainers: EventContainer[] = [
             id: '7j5mFetuuGDHaCWH0Cu6m6',
             type: 'Entry',
             createdAt: '2019-08-27T09:03:16.706Z',
-            updatedAt: '2019-08-27T09:03:16.706Z',
+            updatedAt: '2019-09-18T13:31:05.692Z',
             environment: {
               sys: {
                 id: 'master',
@@ -2219,7 +2266,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -2281,7 +2328,8 @@ const eventContainers: EventContainer[] = [
                   id: '7LpjHMzGGnnFKt5DkMB3ik'
                 }
               }
-            ]
+            ],
+            hasTranslation: true
           }
         }
       ],
@@ -2315,7 +2363,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'PLAID ルーム' }
+        fields: {
+          name: 'PLAID ルーム'
+        }
       }
     }
   },
@@ -2469,7 +2519,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'イエソドルーム' }
+        fields: {
+          name: 'イエソドルーム'
+        }
       }
     }
   },
@@ -2536,7 +2588,9 @@ const eventContainers: EventContainer[] = [
             },
             locale: 'en-US'
           },
-          fields: { title: '会場転換' }
+          fields: {
+            title: '会場転換'
+          }
         }
       ]
     }
@@ -2604,7 +2658,9 @@ const eventContainers: EventContainer[] = [
             },
             locale: 'en-US'
           },
-          fields: { title: 'Platinum スポンサーセッション' }
+          fields: {
+            title: 'Platinum スポンサーセッション'
+          }
         }
       ]
     }
@@ -2654,7 +2710,7 @@ const eventContainers: EventContainer[] = [
             id: '5zLpsJ3NSvAw34HQvLngMv',
             type: 'Entry',
             createdAt: '2019-08-27T08:39:19.500Z',
-            updatedAt: '2019-08-27T08:39:19.500Z',
+            updatedAt: '2019-09-18T13:31:05.652Z',
             environment: {
               sys: {
                 id: 'master',
@@ -2662,7 +2718,7 @@ const eventContainers: EventContainer[] = [
                 linkType: 'Environment'
               }
             },
-            revision: 1,
+            revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
@@ -2725,7 +2781,8 @@ const eventContainers: EventContainer[] = [
                   id: '1sySFRq9oK4mfSefnrR0Xq'
                 }
               }
-            ]
+            ],
+            hasTranslation: false
           }
         }
       ],
@@ -2759,7 +2816,9 @@ const eventContainers: EventContainer[] = [
           },
           locale: 'en-US'
         },
-        fields: { name: 'YUMEMI ルーム' }
+        fields: {
+          name: 'YUMEMI ルーム'
+        }
       }
     }
   }

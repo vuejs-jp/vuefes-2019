@@ -41,10 +41,7 @@ export default Vuex => {
 
   // nuxtServerInit と同様のことを行う
   store.commit('speakers/setSpeakers', speakersData)
-  store.commit(
-    'timeTableSections/fetchTimeTableSections',
-    timeTableSectionsData
-  )
+  store.commit('timeTableSections/setTimeTableSections', timeTableSectionsData)
   store.commit('eventContainers/setEventContainers', eventContainersData)
   store.commit(
     'eventContainerParts/setEventContainerParts',

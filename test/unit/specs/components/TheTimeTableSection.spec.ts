@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
 import createFullStore from '../utils/createFullStore'
@@ -13,7 +13,13 @@ const store = createFullStore(Vuex)
 
 describe('TheTimeTableSection', () => {
   test('レンダリングできる', () => {
-    const wrapper = mount(TheTimeTableSection, { localVue, store })
+    const wrapper = mount(TheTimeTableSection, {
+      localVue,
+      store,
+      stubs: {
+        NuxtLink: RouterLinkStub
+      }
+    })
     expect(wrapper.find('.the-time-table-section').isVisible()).toBeTruthy()
   })
 })

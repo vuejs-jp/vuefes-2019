@@ -47,7 +47,7 @@ const eventContainerParts: EventContainerPart[] = [
           id: '6p8bcCeCJsMgW2QMJIq14I',
           type: 'Entry',
           createdAt: '2019-08-27T09:10:21.572Z',
-          updatedAt: '2019-08-27T09:10:21.572Z',
+          updatedAt: '2019-09-18T13:31:07.476Z',
           environment: {
             sys: {
               id: 'master',
@@ -55,7 +55,7 @@ const eventContainerParts: EventContainerPart[] = [
               linkType: 'Environment'
             }
           },
-          revision: 1,
+          revision: 2,
           contentType: {
             sys: {
               type: 'Link',
@@ -118,7 +118,8 @@ const eventContainerParts: EventContainerPart[] = [
                 id: 'kAJ3wEURjDaABWU3xDW6x'
               }
             }
-          ]
+          ],
+          hasTranslation: false
         }
       }
     }
@@ -169,7 +170,7 @@ const eventContainerParts: EventContainerPart[] = [
           id: '64z2YruYMw1ZKQAZS7ojjm',
           type: 'Entry',
           createdAt: '2019-08-27T08:57:36.638Z',
-          updatedAt: '2019-08-27T08:57:36.638Z',
+          updatedAt: '2019-09-18T13:31:05.016Z',
           environment: {
             sys: {
               id: 'master',
@@ -177,7 +178,7 @@ const eventContainerParts: EventContainerPart[] = [
               linkType: 'Environment'
             }
           },
-          revision: 1,
+          revision: 2,
           contentType: {
             sys: {
               type: 'Link',
@@ -240,7 +241,8 @@ const eventContainerParts: EventContainerPart[] = [
                 id: '6DeU68XA3PYjmXlu2RiIEI'
               }
             }
-          ]
+          ],
+          hasTranslation: false
         }
       }
     }
@@ -291,7 +293,7 @@ const eventContainerParts: EventContainerPart[] = [
           id: '5SIsttQswXSNTCN2Oi2MZS',
           type: 'Entry',
           createdAt: '2019-08-27T08:52:59.541Z',
-          updatedAt: '2019-08-27T08:52:59.541Z',
+          updatedAt: '2019-09-18T13:31:05.160Z',
           environment: {
             sys: {
               id: 'master',
@@ -299,7 +301,7 @@ const eventContainerParts: EventContainerPart[] = [
               linkType: 'Environment'
             }
           },
-          revision: 1,
+          revision: 2,
           contentType: {
             sys: {
               type: 'Link',
@@ -362,7 +364,8 @@ const eventContainerParts: EventContainerPart[] = [
                 id: '4lNqSfqiA9P0NVNyhWWaPD'
               }
             }
-          ]
+          ],
+          hasTranslation: false
         }
       }
     }
@@ -413,7 +416,7 @@ const eventContainerParts: EventContainerPart[] = [
           id: '7aUz315q5gRNDDsC9ZPsiR',
           type: 'Entry',
           createdAt: '2019-08-27T08:56:02.555Z',
-          updatedAt: '2019-08-27T08:56:02.555Z',
+          updatedAt: '2019-09-18T13:31:05.491Z',
           environment: {
             sys: {
               id: 'master',
@@ -421,7 +424,7 @@ const eventContainerParts: EventContainerPart[] = [
               linkType: 'Environment'
             }
           },
-          revision: 1,
+          revision: 2,
           contentType: {
             sys: {
               type: 'Link',
@@ -485,7 +488,8 @@ const eventContainerParts: EventContainerPart[] = [
                 id: '4w4LHXhuKJn3BoWBQfcZx7'
               }
             }
-          ]
+          ],
+          hasTranslation: false
         }
       }
     }
@@ -536,7 +540,7 @@ const eventContainerParts: EventContainerPart[] = [
           id: '7fozsC9JQwpxPyxkYyARVJ',
           type: 'Entry',
           createdAt: '2019-08-27T09:09:31.500Z',
-          updatedAt: '2019-08-27T09:09:31.500Z',
+          updatedAt: '2019-09-18T13:31:05.877Z',
           environment: {
             sys: {
               id: 'master',
@@ -544,7 +548,7 @@ const eventContainerParts: EventContainerPart[] = [
               linkType: 'Environment'
             }
           },
-          revision: 1,
+          revision: 2,
           contentType: {
             sys: {
               type: 'Link',
@@ -607,7 +611,8 @@ const eventContainerParts: EventContainerPart[] = [
                 id: '6nXanQ9BH9YVSCEr44FcrD'
               }
             }
-          ]
+          ],
+          hasTranslation: false
         }
       }
     }
@@ -658,7 +663,7 @@ const eventContainerParts: EventContainerPart[] = [
           id: '7yeyEFR9IxHjnS6vg5AKpW',
           type: 'Entry',
           createdAt: '2019-08-27T09:06:57.888Z',
-          updatedAt: '2019-08-27T09:06:57.888Z',
+          updatedAt: '2019-09-18T13:31:05.390Z',
           environment: {
             sys: {
               id: 'master',
@@ -666,7 +671,7 @@ const eventContainerParts: EventContainerPart[] = [
               linkType: 'Environment'
             }
           },
-          revision: 1,
+          revision: 2,
           contentType: {
             sys: {
               type: 'Link',
@@ -729,7 +734,8 @@ const eventContainerParts: EventContainerPart[] = [
                 id: '7myQ6DFjZOrkIVOolyJiJN'
               }
             }
-          ]
+          ],
+          hasTranslation: false
         }
       }
     }

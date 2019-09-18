@@ -5,8 +5,9 @@ export default interface Session {
   fields: {
     title: string
     time: number
-    description: string
-    ogImage: Asset | AssetLink
-    speakers: EntryLink[]
+    description: string // Markdown
+    ogImage: Asset | AssetLink // Image の URL は Asset に含まれる
+    speakers: EntryLink[] // ひとつのセッションに複数のスピーカーが入るものがある（例: Nuxt
+    hasTranslation: boolean // 同時通訳の有無
   }
 }

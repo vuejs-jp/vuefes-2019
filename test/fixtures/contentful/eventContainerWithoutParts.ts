@@ -45,7 +45,7 @@ const eventContainerWithoutParts: EventContainer = {
           id: '7xvdef2fny01iVD0ra03Iz',
           type: 'Entry',
           createdAt: '2019-08-25T11:00:38.634Z',
-          updatedAt: '2019-08-25T16:24:26.199Z',
+          updatedAt: '2019-09-18T13:39:30.715Z',
           environment: {
             sys: {
               id: 'master',
@@ -53,7 +53,7 @@ const eventContainerWithoutParts: EventContainer = {
               linkType: 'Environment'
             }
           },
-          revision: 3,
+          revision: 4,
           contentType: {
             sys: {
               type: 'Link',
@@ -115,7 +115,8 @@ const eventContainerWithoutParts: EventContainer = {
                 id: '7aHzCP1a1rYpR6KbWENRmB'
               }
             }
-          ]
+          ],
+          hasTranslation: true
         }
       }
     ]

@@ -150,7 +150,9 @@ const eventContainerWithParts: EventContainer = {
         },
         locale: 'en-US'
       },
-      fields: { name: 'イエソドルーム' }
+      fields: {
+        name: 'イエソドルーム'
+      }
     }
   }
 }
