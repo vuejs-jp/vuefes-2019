@@ -42,18 +42,34 @@ export default class Keynote extends Vue {
 
 .avatar {
   width: 16vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 120px;
+  }
 }
 
 .content {
   margin-left: 3vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-left: 18px;
+  }
 }
 
 .title {
   font-size: 2.6vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 20px;
+  }
 }
 
 .speaker-name {
   font-size: 3.6vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 28px;
+  }
 }
 
 .link-to-session {

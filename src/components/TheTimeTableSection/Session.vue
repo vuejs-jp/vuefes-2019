@@ -37,6 +37,10 @@ export default class Session extends Vue {
 <style lang="scss" scoped>
 .session {
   font-size: 2.6vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 20px;
+  }
 }
 
 .link-to-session {
@@ -46,5 +50,9 @@ export default class Session extends Vue {
 
 .speaker-name {
   margin-left: 1vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-left: 8px;
+  }
 }
 </style>

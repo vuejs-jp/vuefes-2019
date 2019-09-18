@@ -433,7 +433,7 @@ $half-session__content-font-size--is-medium-up: 18px;
     margin-top: 3vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      margin-top: 20px;
+      margin-top: 32px;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
@@ -449,7 +449,8 @@ $half-session__content-font-size--is-medium-up: 18px;
     color: $primary-text-color--invert;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: 24px;
+      padding: 12px;
+      font-size: 18px;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
@@ -460,11 +461,11 @@ $half-session__content-font-size--is-medium-up: 18px;
   }
 
   &__body {
-    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      display: flex;
-      margin-left: 5px;
-      flex: 1 1 auto;
-    }
+    // @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    //   display: flex;
+    //   margin-left: 5px;
+    //   flex: 1 1 auto;
+    // }
   }
 
   &__content {

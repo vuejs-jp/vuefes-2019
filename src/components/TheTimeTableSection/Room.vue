@@ -30,6 +30,12 @@ export default class Room extends Vue {
   white-space: nowrap;
   color: $primary-text-color--invert;
 
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    width: 124px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
   &--is-plaid {
     background-color: $sangosyu;
   }

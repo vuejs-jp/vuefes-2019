@@ -85,12 +85,18 @@ export default class EventContainer extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$event-container-min-height: 10.4vw;
+$event-container-min-height--is-small: 10.4vw;
+$event-container-min-height--is-small-up: 92px;
 
 .event-container {
   margin-top: 1vw;
-  min-height: $event-container-min-height;
+  min-height: $event-container-min-height--is-small;
   background-color: rgba(255, 255, 255, 0.85);
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 5px;
+    min-height: $event-container-min-height--is-small-up;
+  }
 
   &:first-child {
     margin-top: 0;
@@ -101,8 +107,13 @@ $event-container-min-height: 10.4vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: $event-container-min-height;
+  min-height: $event-container-min-height--is-small;
   padding: 2.6vw 3.4vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    min-height: $event-container-min-height--is-small-up;
+    padding: 16px 28px;
+  }
 }
 
 .event-container--has-room {
@@ -110,6 +121,10 @@ $event-container-min-height: 10.4vw;
     display: block;
     min-height: 0;
     padding-top: 2vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      padding-top: 12px;
+    }
   }
 }
 
@@ -124,15 +139,28 @@ $event-container-min-height: 10.4vw;
     margin-top: 2.7vw;
     padding-top: 1.5vw;
     border-top: 1px solid rgba(52, 73, 94, 0.25);
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 20px;
+      padding-top: 8px;
+    }
   }
 
   &__time {
     font-size: 1.8vw;
     color: rgba(52, 73, 94, 0.6);
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 16px;
+    }
   }
 
   &__content {
     margin-top: 0.5vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 2px;
+    }
   }
 }
 </style>
