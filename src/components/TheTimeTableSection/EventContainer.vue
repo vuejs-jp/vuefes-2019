@@ -12,7 +12,12 @@
       :room="eventContainer.fields.room"
     />
 
-    <div v-if="hasTranslation && !hasKeynote" class="translation">
+    <!-- prettier-ignore -->
+    <div
+      v-if="hasTranslation"
+      class="translation"
+      :class="{ 'translation--is-keynote': hasKeynote }"
+    >
       <img src="~/assets/images/icon-translation.svg" alt="" />
       <span class="translation-text">同時通訳あり</span>
     </div>
@@ -82,15 +87,15 @@ export default class EventContainer extends Vue {
     )
   }
 
-  get hasSessions() {
-    return this.eventContainer.fields.contents.every(
-      content => content.sys.contentType.sys.id === 'session'
+  get hasKeynote() {
+    return this.eventContainer.fields.contents.some(
+      content => content.sys.id === '7xvdef2fny01iVD0ra03Iz'
     )
   }
 
-  get hasEvents() {
+  get hasSessions() {
     return this.eventContainer.fields.contents.every(
-      content => content.sys.contentType.sys.id === 'event'
+      content => content.sys.contentType.sys.id === 'session'
     )
   }
 
@@ -101,9 +106,9 @@ export default class EventContainer extends Vue {
     )
   }
 
-  get hasKeynote() {
-    return this.eventContainer.fields.contents.some(
-      content => content.sys.id === '7xvdef2fny01iVD0ra03Iz'
+  get hasEvents() {
+    return this.eventContainer.fields.contents.every(
+      content => content.sys.contentType.sys.id === 'event'
     )
   }
 }
@@ -251,6 +256,16 @@ $event-container-min-height--is-small-up: 90px;
       margin-left: 6px;
       font-size: 16px;
     }
+  }
+}
+
+.translation.translation--is-keynote {
+  position: absolute;
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    $room-height: 4px;
+
+    top: calc(15px - #{$room-height});
   }
 }
 </style>
