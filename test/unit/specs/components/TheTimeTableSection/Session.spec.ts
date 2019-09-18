@@ -1,7 +1,7 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import createFullStore from '../../utils/createFullStore'
-import sessions from '../../../__mocks__/sessions'
+import sessions from '../../../../fixtures/contentful/sessions'
 
 // @ts-ignore error TS2307: Cannot find module
 import Session from '~/components/TheTimeTableSection/Session.vue'

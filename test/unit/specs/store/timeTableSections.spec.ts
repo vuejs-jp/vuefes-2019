@@ -1,4 +1,4 @@
-import timeTableSections from '../../__mocks__/timeTableSections'
+import timeTableSections from '../../../fixtures/contentful/timeTableSections'
 import * as contentful from '~/plugins/contentful'
 import {
   state as initialState,

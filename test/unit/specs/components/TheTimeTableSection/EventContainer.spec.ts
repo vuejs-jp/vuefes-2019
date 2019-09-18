@@ -1,8 +1,8 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import createFullStore from '../../utils/createFullStore'
-import eventContainerWithParts from '../../../__mocks__/eventContainerWithParts'
-import eventContainerWithoutParts from '../../../__mocks__/eventContainerWithoutParts'
+import eventContainerWithParts from '../../../../fixtures/contentful/eventContainerWithParts'
+import eventContainerWithoutParts from '../../../../fixtures/contentful/eventContainerWithoutParts'
 import EventContainer from '~/components/TheTimeTableSection/EventContainer.vue'
 
 const localVue = createLocalVue()

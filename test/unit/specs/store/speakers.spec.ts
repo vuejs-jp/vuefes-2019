@@ -1,4 +1,4 @@
-import speakers from '../../__mocks__/speakers'
+import speakers from '../../../fixtures/contentful/speakers'
 import * as contentful from '~/plugins/contentful'
 import {
   state as initialState,

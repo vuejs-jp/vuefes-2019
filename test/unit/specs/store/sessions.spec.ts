@@ -1,4 +1,4 @@
-import sessions from '../../__mocks__/sessions'
+import sessions from '../../../fixtures/contentful/sessions'
 import * as contentful from '~/plugins/contentful'
 import {
   state as initialState,
