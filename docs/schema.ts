@@ -21,6 +21,7 @@ type Session = {
   description: string // Markdown
   ogImage: string // Image の URL
   speakers: Speaker[] // ひとつのセッションに複数のスピーカーが入るものがある（例: Nuxt
+  hasTranslation: boolean // 同時通訳の有無
 }
 
 /**
