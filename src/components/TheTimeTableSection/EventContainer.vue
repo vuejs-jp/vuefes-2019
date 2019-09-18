@@ -3,6 +3,7 @@
     class="event-container"
     :class="{
       'event-container--has-room': eventContainer.fields.room,
+      'event-container--has-sessions': hasSessions && !hasKeynote,
       'event-container--has-events': hasEvents
     }"
   >
@@ -10,6 +11,11 @@
       v-if="eventContainer.fields.room"
       :room="eventContainer.fields.room"
     />
+
+    <div v-if="hasTranslation && !hasKeynote" class="translation">
+      <img src="~/assets/images/icon-translation.svg" alt="" />
+      <span class="translation-text">同時通訳あり</span>
+    </div>
 
     <div class="content">
       <div
@@ -76,9 +82,28 @@ export default class EventContainer extends Vue {
     )
   }
 
+  get hasSessions() {
+    return this.eventContainer.fields.contents.every(
+      content => content.sys.contentType.sys.id === 'session'
+    )
+  }
+
   get hasEvents() {
     return this.eventContainer.fields.contents.every(
       content => content.sys.contentType.sys.id === 'event'
+    )
+  }
+
+  get hasTranslation() {
+    return this.eventContainer.fields.contents.some(
+      // @ts-ignore
+      content => content.fields.hasTranslation === true
+    )
+  }
+
+  get hasKeynote() {
+    return this.eventContainer.fields.contents.some(
+      content => content.sys.id === '7xvdef2fny01iVD0ra03Iz'
     )
   }
 }
@@ -89,6 +114,7 @@ $event-container-min-height--is-small: 10.4vw;
 $event-container-min-height--is-small-up: 90px;
 
 .event-container {
+  position: relative;
   min-height: $event-container-min-height--is-small;
   background-color: rgba(255, 255, 255, 0.85);
 
@@ -126,6 +152,14 @@ $event-container-min-height--is-small-up: 90px;
       justify-content: center;
       align-items: center;
       height: 100%;
+    }
+  }
+}
+
+.event-container--has-room.event-container--has-sessions {
+  .content {
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      min-height: 160px; // 同時通訳ありの表示と被ってしまうことを回避する
     }
   }
 }
@@ -170,6 +204,52 @@ $event-container-min-height--is-small-up: 90px;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-top: 2px;
+    }
+  }
+}
+
+.room {
+  display: inline-block;
+  vertical-align: top;
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    display: block;
+  }
+}
+
+.translation {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5vw 0.8vw;
+  vertical-align: top;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    padding: 8px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    padding: 0;
+  }
+
+  img {
+    width: 2.6vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      width: 20px;
+    }
+  }
+
+  .translation-text {
+    margin-left: 1vw;
+    font-size: 2vw;
+    font-weight: bold;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-left: 6px;
+      font-size: 16px;
     }
   }
 }
