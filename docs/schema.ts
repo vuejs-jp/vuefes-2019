@@ -56,7 +56,6 @@ interface EventContainerPart {
   content: Event | Session
 }
 
-// type Event が既に存在するため interface にした
 interface Event {
   title: string
 }
