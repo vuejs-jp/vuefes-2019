@@ -86,20 +86,27 @@ export default class EventContainer extends Vue {
 
 <style lang="scss" scoped>
 $event-container-min-height--is-small: 10.4vw;
-$event-container-min-height--is-small-up: 92px;
+$event-container-min-height--is-small-up: 90px;
 
 .event-container {
-  margin-top: 1vw;
   min-height: $event-container-min-height--is-small;
   background-color: rgba(255, 255, 255, 0.85);
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-top: 5px;
     min-height: $event-container-min-height--is-small-up;
   }
 
-  &:first-child {
-    margin-top: 0;
+  & + & {
+    margin-top: 1vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 5px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      margin-top: 0;
+      margin-left: 4px;
+    }
   }
 }
 
@@ -125,12 +132,24 @@ $event-container-min-height--is-small-up: 92px;
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       padding-top: 12px;
     }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
   }
 }
 
 .event-container--has-room.event-container--has-events {
   .content {
     padding-top: 0;
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      padding: 16px 28px;
+    }
   }
 }
 
@@ -152,6 +171,10 @@ $event-container-min-height--is-small-up: 92px;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 16px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      text-align: center;
     }
   }
 

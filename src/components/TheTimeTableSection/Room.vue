@@ -36,6 +36,13 @@ export default class Room extends Vue {
     font-size: 14px;
   }
 
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    width: 100%;
+    height: 4px;
+    padding: 0;
+    font-size: 0;
+  }
+
   &--is-plaid {
     background-color: $sangosyu;
   }

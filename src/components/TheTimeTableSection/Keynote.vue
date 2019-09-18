@@ -46,6 +46,10 @@ export default class Keynote extends Vue {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 120px;
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    width: 140px;
+  }
 }
 
 .content {

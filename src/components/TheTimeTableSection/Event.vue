@@ -23,5 +23,9 @@ export default class Event extends Vue {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     font-size: 18px;
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: 20px;
+  }
 }
 </style>

@@ -20,6 +20,7 @@
             v-for="eventContainer in timeTableSection.fields.eventContainers"
             :key="eventContainer.sys.id"
             :event-container="eventContainerById(eventContainer.sys.id)"
+            class="event-container"
           />
         </div>
       </li>
@@ -454,18 +455,20 @@ $half-session__content-font-size--is-medium-up: 18px;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      padding: 20px 0;
-      font-size: 20px;
-      flex: 0 0 140px;
+      padding: 24px 0;
+      font-size: 24px;
+
+      // prettier-ignore
+      flex: 0 0 calc(#{$layout-column-width--is-small-up} * 4 + #{$layout-gutter-width--is-small-up} * 3);
     }
   }
 
   &__body {
-    // @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    //   display: flex;
-    //   margin-left: 5px;
-    //   flex: 1 1 auto;
-    // }
+    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+      display: flex;
+      margin-left: 4px;
+      flex: 1 1 auto;
+    }
   }
 
   &__content {
@@ -499,6 +502,10 @@ $half-session__content-font-size--is-medium-up: 18px;
       }
     }
   }
+}
+
+.event-container {
+  width: 100%;
 }
 
 .keynote {
