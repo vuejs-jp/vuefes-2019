@@ -1,7 +1,7 @@
 /**
  * このファイルは Contentful API スキーマ検討のためのものです。master にはマージしません
  */
-type Speaker = {
+interface Speaker {
   name: string
   title: string // 肩書き
   avatar: string // Image の URL
@@ -15,7 +15,7 @@ type Speaker = {
   sessions: Session[]
 }
 
-type Session = {
+interface Session {
   title: string
   time: number
   description: string // Markdown
@@ -27,14 +27,14 @@ type Session = {
 /**
  * タイムテーブル = TimeTableSection[]
  */
-type TimeTableSection = {
+interface TimeTableSection {
   titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
   startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   eventContainers: EventContainer[]
 }
 
-type EventContainer = {
+interface EventContainer {
   titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
 
   // Room が null のときは部屋がないという意味ではなく、
@@ -47,7 +47,7 @@ type EventContainer = {
   contents: Event[] | Session[] | EventContainerPart[]
 }
 
-type EventContainerPart = {
+interface EventContainerPart {
   titleForContentful: string // Contentful での操作時にどうしても識別するタイトルが必要であるため
   startAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
   endAt: Date // タイムゾーン情報を持つ。例: '2019-10-12T09:30:00+09:00'
@@ -61,6 +61,6 @@ interface Event {
   title: string
 }
 
-type Room = {
+interface Room {
   name: string
 }
