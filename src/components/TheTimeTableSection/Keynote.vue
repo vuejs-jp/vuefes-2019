@@ -1,20 +1,24 @@
 <template>
   <div v-lazy-container="{ selector: 'img' }" class="keynote">
-    <img
-      class="avatar"
-      :data-srcset="`${keynoteAvatar}, ${keynoteAvatar2x} 2x`"
-      :data-src="keynoteAvatar2x"
-      alt=""
-    />
+    <nuxt-link class="link-to-session" to="/sessions/yyx990803/">
+      <img
+        class="avatar"
+        :data-srcset="`${keynoteAvatar}, ${keynoteAvatar2x} 2x`"
+        :data-src="keynoteAvatar2x"
+        alt=""
+      />
+    </nuxt-link>
 
     <div class="content">
-      <div class="title">
-        キーノート
-      </div>
+      <nuxt-link class="link-to-session" to="/sessions/yyx990803/">
+        <div class="title">
+          キーノート
+        </div>
 
-      <div class="speaker-name">
-        Evan You
-      </div>
+        <div class="speaker-name">
+          Evan You
+        </div>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -50,5 +54,10 @@ export default class Keynote extends Vue {
 
 .speaker-name {
   font-size: 3.6vw;
+}
+
+.link-to-session {
+  text-decoration: none;
+  color: $primary-text-color;
 }
 </style>
