@@ -14,3 +14,10 @@ export default class Event extends Vue {
   readonly event!: EventType
 }
 </script>
+
+<style lang="scss" scoped>
+.event {
+  text-align: center;
+  font-size: 2.4vw;
+}
+</style>

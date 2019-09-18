@@ -23,23 +23,12 @@ export default class Room extends Vue {
 
 <style lang="scss" scoped>
 .room {
-  flex: 0 0 20vw;
-  min-width: 76px;
-  padding: 1vw;
-  font-size: 2.2vw;
+  width: 16vw;
+  padding: 0.6vw;
+  text-align: center;
+  font-size: 1.8vw;
   white-space: nowrap;
   color: $primary-text-color--invert;
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    flex: 0 0 154px;
-    padding: 4px;
-    font-size: 16px;
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    flex: 0;
-    width: 128px;
-  }
 
   &--is-plaid {
     background-color: $sangosyu;

@@ -33,3 +33,18 @@ export default class Session extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.session {
+  font-size: 2.6vw;
+}
+
+.link-to-session {
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.speaker-name {
+  margin-left: 1vw;
+}
+</style>

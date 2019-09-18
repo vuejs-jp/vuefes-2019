@@ -8,63 +8,56 @@
       <li
         v-for="timeTableSection in timeTableSections"
         :key="timeTableSection.sys.id"
-        class="event"
+        class="time-table-section"
       >
         <!-- prettier-ignore -->
-        <div class="event__time">
+        <div class="time-table-section__time">
           {{ timeTableSection.fields.startAt | toTime }} - {{ timeTableSection.fields.endAt | toTime }}
         </div>
 
-        <div class="event__body">
-          <!-- EventContainer -->
-          <!-- prettier-ignore -->
-          <div
+        <div class="time-table-section__body">
+          <EventContainer
             v-for="eventContainer in timeTableSection.fields.eventContainers"
             :key="eventContainer.sys.id"
-            class="event__content"
-            :class="{
-              session: timeTableSection.fields.eventContainers.length > 1
-            }"
-          >
-            <EventContainer :event-container="eventContainerById(eventContainer.sys.id)" />
-          </div>
+            :event-container="eventContainerById(eventContainer.sys.id)"
+          />
         </div>
       </li>
     </ul>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         9:30 - 10:30
       </div>
 
-      <div class="event__body">
-        <div class="event__content">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content">
           開場・受付
         </div>
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         10:30 - 10:40
       </div>
 
-      <div class="event__body">
-        <div class="event__content">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content">
           オープニング
         </div>
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         10:40 - 11:30
       </div>
 
-      <div class="event__body">
+      <div class="time-table-section__body">
         <div
           v-lazy-container="{ selector: 'img.keynote__avatar' }"
-          class="event__content keynote"
+          class="time-table-section__content keynote"
         >
           <img
             class="keynote__avatar"
@@ -86,25 +79,25 @@
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         11:30 - 12:00
       </div>
 
-      <div class="event__body">
-        <div class="event__content">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content">
           Platinum スポンサーセッション
         </div>
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         12:00 - 12:30
       </div>
 
-      <div class="event__body">
-        <div class="event__content session">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--plaid">
             PLAID ルーム
           </div>
@@ -114,7 +107,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yumemi">
             YUMEMI ルーム
           </div>
@@ -124,7 +117,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yesod">
             イエソドルーム
           </div>
@@ -136,25 +129,25 @@
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         12:30 - 13:30
       </div>
 
-      <div class="event__body">
-        <div class="event__content">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content">
           ランチブレーク
         </div>
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         13:30 - 14:10
       </div>
 
-      <div class="event__body">
-        <div class="event__content session">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--plaid">
             PLAID ルーム
           </div>
@@ -164,7 +157,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yumemi">
             YUMEMI ルーム
           </div>
@@ -174,7 +167,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yesod">
             イエソドルーム
           </div>
@@ -204,13 +197,13 @@
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         14:30 - 15:10
       </div>
 
-      <div class="event__body">
-        <div class="event__content session">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--plaid">
             PLAID ルーム
           </div>
@@ -220,7 +213,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yumemi">
             YUMEMI ルーム
           </div>
@@ -230,7 +223,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yesod">
             イエソドルーム
           </div>
@@ -260,13 +253,13 @@
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         15:30 - 16:10
       </div>
 
-      <div class="event__body">
-        <div class="event__content session">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--plaid">
             PLAID ルーム
           </div>
@@ -276,7 +269,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yumemi">
             YUMEMI ルーム
           </div>
@@ -286,7 +279,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yesod">
             イエソドルーム
           </div>
@@ -316,13 +309,13 @@
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         16:30 - 17:10
       </div>
 
-      <div class="event__body">
-        <div class="event__content session">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--plaid">
             PLAID ルーム
           </div>
@@ -332,7 +325,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yumemi">
             YUMEMI ルーム
           </div>
@@ -342,7 +335,7 @@
           </div>
         </div>
 
-        <div class="event__content session">
+        <div class="time-table-section__content session">
           <div class="session__room session__room--yesod">
             イエソドルーム
           </div>
@@ -354,25 +347,25 @@
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         17:10 - 18:00
       </div>
 
-      <div class="event__body">
-        <div class="event__content">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content">
           会場転換
         </div>
       </div>
     </div>
 
-    <div class="event">
-      <div class="event__time">
+    <div class="time-table-section">
+      <div class="time-table-section__time">
         18:00 - 19:30
       </div>
 
-      <div class="event__body">
-        <div class="event__content">
+      <div class="time-table-section__body">
+        <div class="time-table-section__content">
           アフターパーティー
         </div>
       </div>
@@ -416,24 +409,22 @@ export default class TheTimeTableSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$event__content-font-size--is-small: 3.5vw;
-$event__content-font-size--is-small-up: 20px;
+$time-table-section__content-font-size--is-small: 2.4vw;
+$time-table-section__content-font-size--is-small-up: 20px;
 
 $half-session-padding-from-border--is-small: 1.6vw;
 $half-session-padding-from-border--is-small-up: 12px;
 $half-session-padding-from-border--is-medium-up: 10px;
 
-$half-session__content-font-size--is-small: $event__content-font-size--is-small;
-$half-session__content-font-size--is-small-up: $event__content-font-size--is-small-up;
+$half-session__content-font-size--is-small: $time-table-section__content-font-size--is-small;
+$half-session__content-font-size--is-small-up: $time-table-section__content-font-size--is-small-up;
 $half-session__content-font-size--is-medium-up: 18px;
 
 .the-time-table-section {
   background: linear-gradient(to right bottom, $asagi, $hiwamoegi);
 }
 
-.event {
-  text-align: center;
-
+.time-table-section {
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
     display: flex;
   }
@@ -451,9 +442,10 @@ $half-session__content-font-size--is-medium-up: 18px;
   }
 
   &__time {
+    text-align: center;
     padding: 1vw;
     background-color: $primary-color;
-    font-size: 3.5vw;
+    font-size: 2.4vw;
     color: $primary-text-color--invert;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
@@ -483,7 +475,7 @@ $half-session__content-font-size--is-medium-up: 18px;
     padding: 2.8vw 4vw;
     min-height: 10.8vw;
     background-color: rgba(255, 255, 255, 0.85);
-    font-size: $event__content-font-size--is-small;
+    font-size: $time-table-section__content-font-size--is-small;
 
     &:first-child {
       margin-top: 0;
@@ -493,7 +485,7 @@ $half-session__content-font-size--is-medium-up: 18px;
       margin-top: 5px;
       padding: 20px 36px;
       min-height: 80px;
-      font-size: $event__content-font-size--is-small-up;
+      font-size: $time-table-section__content-font-size--is-small-up;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
@@ -527,10 +519,10 @@ $half-session__content-font-size--is-medium-up: 18px;
   }
 
   &__title {
-    font-size: $event__content-font-size--is-small;
+    font-size: $time-table-section__content-font-size--is-small;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: $event__content-font-size--is-small-up;
+      font-size: $time-table-section__content-font-size--is-small-up;
     }
   }
 
