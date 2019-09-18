@@ -23,12 +23,20 @@ export default class Room extends Vue {
 
 <style lang="scss" scoped>
 .room {
-  width: 16vw;
+  width: 24vw; // iPhone SE でルーム名が途中で切れないよう調整
   padding: 0.6vw;
   text-align: center;
   font-size: 1.8vw;
   white-space: nowrap;
   color: $primary-text-color--invert;
+
+  @media screen and (min-width: 375px) {
+    width: 21vw; // iPhone X でルーム名が途中で切れないよう調整
+  }
+
+  @media screen and (min-width: 425px) {
+    width: 18vw; // Mobile L 425px でルーム名が途中で切れないよう調整
+  }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: 124px;
