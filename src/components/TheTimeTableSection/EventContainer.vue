@@ -12,7 +12,6 @@
       :room="eventContainer.fields.room"
     />
 
-    <!-- prettier-ignore -->
     <div
       v-if="hasTranslation"
       class="translation"
