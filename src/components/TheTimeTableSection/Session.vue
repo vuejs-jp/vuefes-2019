@@ -4,13 +4,13 @@
       {{ session.fields.title }}
     </nuxt-link>
 
-    <span
+    <div
       v-for="speaker in session.fields.speakers"
       :key="speaker.sys.id"
       class="speaker-name"
     >
       {{ speakerById(speaker.sys.id).fields.name }}
-    </span>
+    </div>
   </div>
 </template>
 
@@ -44,15 +44,16 @@ export default class Session extends Vue {
 }
 
 .link-to-session {
+  display: block;
   font-weight: bold;
   color: $primary-color;
 }
 
 .speaker-name {
-  margin-left: 1vw;
+  margin-top: 0.3vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-left: 8px;
+    margin-top: 4px;
   }
 }
 </style>

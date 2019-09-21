@@ -167,7 +167,8 @@ $event-container-min-height--is-small-up: 84px;
 .event-container--has-room.event-container--has-sessions {
   .content {
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      min-height: 160px; // 同時通訳ありの表示と被ってしまうことを回避する
+      align-items: flex-start;
+      min-height: 210px; // 同時通訳ありの表示と被ってしまうことを回避する
     }
   }
 }
