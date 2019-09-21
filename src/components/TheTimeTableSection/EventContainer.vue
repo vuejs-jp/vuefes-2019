@@ -202,10 +202,6 @@ $event-container-min-height--is-small-up: 84px;
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 16px;
     }
-
-    @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      text-align: center;
-    }
   }
 
   &__content {
