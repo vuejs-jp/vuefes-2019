@@ -1,6 +1,7 @@
 <template>
   <div class="event">
     {{ event.fields.title }}
+    <span v-if="isCommunitySession" class="note-mark">※</span>
   </div>
 </template>
 
@@ -12,6 +13,10 @@ import EventType from '~/types/event'
 export default class Event extends Vue {
   @Prop()
   readonly event!: EventType
+
+  get isCommunitySession(): boolean {
+    return this.event.sys.id === '7HH2CbTRcGkUYp9OF1LIVu'
+  }
 }
 </script>
 
@@ -27,5 +32,10 @@ export default class Event extends Vue {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     font-size: 20px;
   }
+}
+
+.note-mark {
+  vertical-align: top;
+  font-size: 70%;
 }
 </style>

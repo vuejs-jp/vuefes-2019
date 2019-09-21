@@ -7,7 +7,6 @@ import eventContainerWithoutParts from '../../../../fixtures/contentful/eventCon
 import eventContainerWithSessionHavingTranslation from '../../../../fixtures/contentful/eventContainerWithSessionHavingTranslation'
 import eventContainerWithSessionNotHavingTranslation from '../../../../fixtures/contentful/eventContainerWithSessionNotHavingTranslation'
 import eventContainerWithEventClosed from '../../../../fixtures/contentful/eventContainerWithEventClosed'
-
 import EventContainer from '~/components/TheTimeTableSection/EventContainer.vue'
 
 const localVue = createLocalVue()
@@ -70,7 +69,7 @@ describe('EventContainer', () => {
           )
         })
 
-        test('true を返す', () => {
+        test('truthy を返す', () => {
           expect(wrapper.vm.hasTranslation).toBeTruthy()
         })
       })
@@ -82,7 +81,7 @@ describe('EventContainer', () => {
           )
         })
 
-        test('false を返す', () => {
+        test('falsy を返す', () => {
           expect(wrapper.vm.hasTranslation).toBeFalsy()
         })
       })
@@ -93,7 +92,7 @@ describe('EventContainer', () => {
         wrapper = mountEventContainer(eventContainerWithEventClosed)
       })
 
-      test('false を返す', () => {
+      test('falsy を返す', () => {
         expect(wrapper.vm.hasTranslation).toBeFalsy()
       })
     })

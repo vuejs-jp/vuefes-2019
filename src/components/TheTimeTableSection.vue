@@ -39,6 +39,11 @@
         </div>
       </li>
     </ul>
+
+    <div class="note">
+      ※アフターパーティーへの会場転換時間を確保するためのスペシャルセッションです。<br />
+      アフターパーティー付きチケットの方のみご入場いただけます。
+    </div>
   </BaseSection>
 </template>
 
@@ -156,6 +161,17 @@ export default class TheTimeTableSection extends Vue {
 
   &--is-yesod {
     background-color: $asagi;
+  }
+}
+
+.note {
+  margin-top: 4vw;
+  font-size: 2vw;
+  color: $primary-text-color--invert;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 20px;
+    font-size: 88.8%;
   }
 }
 </style>
