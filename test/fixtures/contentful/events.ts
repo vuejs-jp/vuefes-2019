@@ -223,7 +223,7 @@ const events: Event[] = [
       },
       locale: 'en-US'
     },
-    fields: { title: 'アフターパーティ' }
+    fields: { title: 'アフターパーティー' }
   }
 ]
 
