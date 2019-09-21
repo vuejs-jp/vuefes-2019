@@ -61,6 +61,7 @@ import dayjs from 'dayjs'
 import EventContainerType from '~/types/eventContainer'
 import EventContainerPart from '~/types/eventContainerPart'
 import EventContent from '~/components/TheTimeTableSection/EventContent.vue'
+import Session from '~/types/session'
 import Room from '~/components/TheTimeTableSection/Room.vue'
 
 @Component({
@@ -100,9 +101,12 @@ export default class EventContainer extends Vue {
   }
 
   get hasTranslation() {
+    const isSession = (content): content is Session => {
+      return content.sys.contentType.sys.id === 'session'
+    }
+
     return this.eventContainer.fields.contents.some(
-      // @ts-ignore
-      content => content.fields.hasTranslation === true
+      content => isSession(content) && content.fields.hasTranslation === true
     )
   }
 

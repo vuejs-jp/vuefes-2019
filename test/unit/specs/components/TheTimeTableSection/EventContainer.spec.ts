@@ -4,6 +4,10 @@ import Vuex from 'vuex'
 import createFullStore from '../../utils/createFullStore'
 import eventContainerWithParts from '../../../../fixtures/contentful/eventContainerWithParts'
 import eventContainerWithoutParts from '../../../../fixtures/contentful/eventContainerWithoutParts'
+import eventContainerWithSessionHavingTranslation from '../../../../fixtures/contentful/eventContainerWithSessionHavingTranslation'
+import eventContainerWithSessionNotHavingTranslation from '../../../../fixtures/contentful/eventContainerWithSessionNotHavingTranslation'
+import eventContainerWithEventClosed from '../../../../fixtures/contentful/eventContainerWithEventClosed'
+
 import EventContainer from '~/components/TheTimeTableSection/EventContainer.vue'
 
 const localVue = createLocalVue()
@@ -54,6 +58,44 @@ describe('EventContainer', () => {
 
     test('EventContent を表示できる', () => {
       expect(wrapper.find('.event-content').isVisible()).toBeTruthy()
+    })
+  })
+
+  describe('hasTranslation', () => {
+    describe('contents が Session を持っているとき', () => {
+      describe('Session が hasTranslation: true のとき', () => {
+        beforeEach(() => {
+          wrapper = mountEventContainer(
+            eventContainerWithSessionHavingTranslation
+          )
+        })
+
+        test('true を返す', () => {
+          expect(wrapper.vm.hasTranslation).toBeTruthy()
+        })
+      })
+
+      describe('Session が hasTranslation: false のとき', () => {
+        beforeEach(() => {
+          wrapper = mountEventContainer(
+            eventContainerWithSessionNotHavingTranslation
+          )
+        })
+
+        test('false を返す', () => {
+          expect(wrapper.vm.hasTranslation).toBeFalsy()
+        })
+      })
+    })
+
+    describe('contents が Session を持っていないとき', () => {
+      beforeEach(() => {
+        wrapper = mountEventContainer(eventContainerWithEventClosed)
+      })
+
+      test('false を返す', () => {
+        expect(wrapper.vm.hasTranslation).toBeFalsy()
+      })
     })
   })
 })
