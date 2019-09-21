@@ -34,7 +34,9 @@ import TheStaffListSection from '~/components/TheStaffListSection.vue'
     TheSponsorListSection,
     TheStaffListSection
   },
-  async asyncData(): Promise<{ sponsors: any[] } | void> {
+  async asyncData(): Promise<{
+    sponsors: any[]
+  } | void> {
     try {
       return {
         sponsors: await getSponsors()
