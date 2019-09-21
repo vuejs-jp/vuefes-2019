@@ -139,7 +139,7 @@ function getWindowMode(): WindowMode {
   }
 })
 export default class TheHeadSection extends Vue {
-  get viewBox() {
+  get viewBox(): string {
     return `0 0 ${this.width} ${this.height}`
   }
 

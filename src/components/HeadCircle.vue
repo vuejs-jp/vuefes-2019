@@ -20,7 +20,7 @@ export default class HeadCircle extends Vue {
 
   private keyFrame = [0, 60]
 
-  get transform() {
+  get transform(): string {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
   }
 

@@ -70,7 +70,7 @@ import Room from '~/components/TheTimeTableSection/Room.vue'
     Room
   },
   filters: {
-    toTime(dateTime) {
+    toTime(dateTime: string): string {
       return dayjs(dateTime).format('HH:mm')
     }
   }
@@ -82,25 +82,25 @@ export default class EventContainer extends Vue {
   @Getter('find', { namespace: 'eventContainerParts' })
   private eventContainerPartById!: (id: string) => EventContainerPart
 
-  get hasEventContainerParts() {
+  get hasEventContainerParts(): boolean {
     return this.eventContainer.fields.contents.every(
       content => content.sys.contentType.sys.id === 'eventContainerPart'
     )
   }
 
-  get hasKeynote() {
+  get hasKeynote(): boolean {
     return this.eventContainer.fields.contents.some(
       content => content.sys.id === '7xvdef2fny01iVD0ra03Iz'
     )
   }
 
-  get hasSessions() {
+  get hasSessions(): boolean {
     return this.eventContainer.fields.contents.every(
       content => content.sys.contentType.sys.id === 'session'
     )
   }
 
-  get hasTranslation() {
+  get hasTranslation(): boolean {
     const isSession = (content): content is Session => {
       return content.sys.contentType.sys.id === 'session'
     }
@@ -110,7 +110,7 @@ export default class EventContainer extends Vue {
     )
   }
 
-  get hasEvents() {
+  get hasEvents(): boolean {
     return this.eventContainer.fields.contents.every(
       content => content.sys.contentType.sys.id === 'event'
     )

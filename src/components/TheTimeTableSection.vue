@@ -61,7 +61,7 @@ import EventContainer from '~/components/TheTimeTableSection/EventContainer.vue'
     EventContainer
   },
   filters: {
-    toTime(dateTime) {
+    toTime(dateTime: string): string {
       return dayjs(dateTime).format('HH:mm')
     }
   }
