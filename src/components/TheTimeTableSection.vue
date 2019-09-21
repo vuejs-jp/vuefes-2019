@@ -40,9 +40,10 @@
       </li>
     </ul>
 
+    <!-- prettier-ignore -->
     <div class="note">
-      ※アフターパーティーへの会場転換時間を確保するためのスペシャルセッションです。<br />
-      アフターパーティー付きチケットの方のみご入場いただけます。
+      <p>※アフターパーティーへの会場転換時間を確保するための特別セッションです。日本各地の Vue.js コミュニティ紹介、スピーカーへのグループインタビューなどをお送りします（内容は予告なく変更の可能性があります）。入場はアフターパーティー付きチケットの方のみに限らせていただきますので、あらかじめご了承ください。</p>
+      <p>また、別途休憩しながらお待ちいただけるスペースもご用意する予定です。</p>
     </div>
   </BaseSection>
 </template>
@@ -166,12 +167,19 @@ export default class TheTimeTableSection extends Vue {
 
 .note {
   margin-top: 4vw;
-  font-size: 2vw;
-  color: $primary-text-color--invert;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-top: 20px;
-    font-size: 88.8%;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: 2vw;
+    color: $primary-text-color--invert;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 88.8%;
+    }
   }
 }
 </style>
