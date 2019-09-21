@@ -188,6 +188,11 @@ $event-container-min-height--is-small-up: 84px;
   .content {
     padding-top: 0;
 
+    // コミュニティセッションが改行されたときに、
+    // .event に text-align: center を使うよりも見映えが良い
+    display: flex;
+    justify-content: center;
+
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
       padding: 16px 28px;
     }
