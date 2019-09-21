@@ -1,6 +1,6 @@
 import EventContainer from '~/types/eventContainer'
 
-const eventContainerWithSessionNotHavingTranslation: EventContainer = {
+const eventContainerWithEventsClosed: EventContainer = {
   sys: {
     space: {
       sys: {
@@ -101,4 +101,4 @@ const eventContainerWithSessionNotHavingTranslation: EventContainer = {
   }
 }
 
-export default eventContainerWithSessionNotHavingTranslation
+export default eventContainerWithEventsClosed

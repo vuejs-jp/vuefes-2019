@@ -6,7 +6,7 @@ import eventContainerWithParts from '../../../../fixtures/contentful/eventContai
 import eventContainerWithoutParts from '../../../../fixtures/contentful/eventContainerWithoutParts'
 import eventContainerWithSessionHavingTranslation from '../../../../fixtures/contentful/eventContainerWithSessionHavingTranslation'
 import eventContainerWithSessionNotHavingTranslation from '../../../../fixtures/contentful/eventContainerWithSessionNotHavingTranslation'
-import eventContainerWithEventClosed from '../../../../fixtures/contentful/eventContainerWithEventClosed'
+import eventContainerWithEventsClosed from '../../../../fixtures/contentful/eventContainerWithEventsClosed'
 import EventContainer from '~/components/TheTimeTableSection/EventContainer.vue'
 
 const localVue = createLocalVue()
@@ -89,11 +89,23 @@ describe('EventContainer', () => {
 
     describe('contents が Session を持っていないとき', () => {
       beforeEach(() => {
-        wrapper = mountEventContainer(eventContainerWithEventClosed)
+        wrapper = mountEventContainer(eventContainerWithEventsClosed)
       })
 
       test('falsy を返す', () => {
         expect(wrapper.vm.hasTranslation).toBeFalsy()
+      })
+    })
+  })
+
+  describe('hasEventsClosed', () => {
+    describe('クローズ Event を持っているとき', () => {
+      beforeEach(() => {
+        wrapper = mountEventContainer(eventContainerWithEventsClosed)
+      })
+
+      test('truthy を返す', () => {
+        expect(wrapper.vm.hasEventsClosed).toBeTruthy()
       })
     })
   })

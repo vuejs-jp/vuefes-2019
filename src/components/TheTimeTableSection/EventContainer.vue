@@ -4,7 +4,8 @@
     :class="{
       'event-container--has-room': eventContainer.fields.room,
       'event-container--has-sessions': hasSessions && !hasKeynote,
-      'event-container--has-events': hasEvents
+      'event-container--has-events': hasEvents,
+      'event-container--has-events-closed': hasEventsClosed
     }"
   >
     <Room
@@ -114,6 +115,12 @@ export default class EventContainer extends Vue {
       content => content.sys.contentType.sys.id === 'event'
     )
   }
+
+  get hasEventsClosed(): boolean {
+    return this.eventContainer.fields.contents.every(
+      content => content.sys.id === '5NPCujTlHiEd7KcRmGp3hS'
+    )
+  }
 }
 </script>
 
@@ -128,6 +135,10 @@ $event-container-min-height--is-small-up: 84px;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     min-height: $event-container-min-height--is-small-up;
+  }
+
+  &.event-container--has-events-closed {
+    background-color: rgba(255, 255, 255, 0.5);
   }
 }
 
