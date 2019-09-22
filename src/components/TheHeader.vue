@@ -15,7 +15,7 @@ export default class TheHeader extends Vue {}
 
 <style lang="scss" scoped>
 .the-header {
-  position: absolute;
+  position: fixed;
   top: 3vw;
   left: 7.8%;
   z-index: 100;
@@ -25,7 +25,6 @@ export default class TheHeader extends Vue {}
   }
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    position: fixed;
     top: 30px;
     left: 30px;
 
