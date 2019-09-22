@@ -10,32 +10,34 @@
           <span class="hamburger hamburger-middle" />
           <span class="hamburger hamburger-bottom" />
         </div>
-        <nav v-show="isOpen" class="menu-contents">
-          <ul>
-            <!-- TODO: 各要素のページ内リンクをつける -->
-            <li>
-              <a href="#">TICKET</a>
-            </li>
-            <li>
-              <a href="#">TIME TABLE</a>
-            </li>
-            <li>
-              <a href="#">SPEAKERS</a>
-            </li>
-            <li>
-              <a href="#">EVENTS</a>
-            </li>
-            <li>
-              <a href="#">ACCESS</a>
-            </li>
-            <li>
-              <a href="#">SPONSERS</a>
-            </li>
-            <li>
-              <a href="#">TEAM</a>
-            </li>
-          </ul>
-        </nav>
+        <transition name="fadeInDown">
+          <nav v-show="isOpen" class="menu-contents">
+            <ul>
+              <!-- TODO: 各要素のページ内リンクをつける -->
+              <li>
+                <a href="#">TICKET</a>
+              </li>
+              <li>
+                <a href="#">TIME TABLE</a>
+              </li>
+              <li>
+                <a href="#">SPEAKERS</a>
+              </li>
+              <li>
+                <a href="#">EVENTS</a>
+              </li>
+              <li>
+                <a href="#">ACCESS</a>
+              </li>
+              <li>
+                <a href="#">SPONSERS</a>
+              </li>
+              <li>
+                <a href="#">TEAM</a>
+              </li>
+            </ul>
+          </nav>
+        </transition>
       </div>
     </div>
   </div>
@@ -85,6 +87,17 @@ a {
 
 a:hover {
   text-decoration-line: underline;
+}
+
+.fadeInDown-enter-active,
+.fadeInDown-leave-active {
+  transition: 0.5s;
+}
+
+.fadeInDown-enter,
+.fadeInDown-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
 }
 
 .logo {
