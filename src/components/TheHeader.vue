@@ -1,43 +1,46 @@
 <template>
   <div class="the-header">
-    <nuxt-link to="/" class="logo">
-      <img src="~/assets/images/logo-vuefes.svg" alt="Vue Fes Japan" />
-    </nuxt-link>
-    <div class="navigation-container">
-      <div class="togglable-menu">
-        <div :class="{ 'is-open': isOpen }" @click="openMenu">
-          <span class="hamburger hamburger-top" />
-          <span class="hamburger hamburger-middle" />
-          <span class="hamburger hamburger-bottom" />
+    <div class="sentinal" />
+    <div class="header-container">
+      <nuxt-link to="/" class="logo">
+        <img src="~/assets/images/logo-vuefes.svg" alt="Vue Fes Japan" />
+      </nuxt-link>
+      <div class="navigation-container">
+        <div class="togglable-menu">
+          <div :class="{ 'is-open': isOpen }" @click="openMenu">
+            <span class="hamburger hamburger-top" />
+            <span class="hamburger hamburger-middle" />
+            <span class="hamburger hamburger-bottom" />
+          </div>
+          <transition name="fadeInDown">
+            <nav v-show="isOpen" class="menu-contents">
+              <ul>
+                <!-- TODO: 各要素のページ内リンクをつける -->
+                <li>
+                  <a href="#">TICKET</a>
+                </li>
+                <li>
+                  <a href="#">TIME TABLE</a>
+                </li>
+                <li>
+                  <a href="#">SPEAKERS</a>
+                </li>
+                <li>
+                  <a href="#">EVENTS</a>
+                </li>
+                <li>
+                  <a href="#">ACCESS</a>
+                </li>
+                <li>
+                  <a href="#">SPONSERS</a>
+                </li>
+                <li>
+                  <a href="#">TEAM</a>
+                </li>
+              </ul>
+            </nav>
+          </transition>
         </div>
-        <transition name="fadeInDown">
-          <nav v-show="isOpen" class="menu-contents">
-            <ul>
-              <!-- TODO: 各要素のページ内リンクをつける -->
-              <li>
-                <a href="#">TICKET</a>
-              </li>
-              <li>
-                <a href="#">TIME TABLE</a>
-              </li>
-              <li>
-                <a href="#">SPEAKERS</a>
-              </li>
-              <li>
-                <a href="#">EVENTS</a>
-              </li>
-              <li>
-                <a href="#">ACCESS</a>
-              </li>
-              <li>
-                <a href="#">SPONSERS</a>
-              </li>
-              <li>
-                <a href="#">TEAM</a>
-              </li>
-            </ul>
-          </nav>
-        </transition>
       </div>
     </div>
   </div>
@@ -50,6 +53,25 @@ import { Component, Vue } from 'nuxt-property-decorator'
 export default class TheHeader extends Vue {
   isOpen = false
 
+  mounted() {
+    const headerContainerElement = document.querySelector('.header-container')
+    if (!headerContainerElement) return
+
+    const sentinalElement = document.querySelector('.sentinal')
+    if (!sentinalElement) return
+
+    const checkScrolled = entries => {
+      if (!entries[0].isIntersecting) {
+        headerContainerElement.classList.add('scrolled')
+      } else {
+        headerContainerElement.classList.remove('scrolled')
+      }
+    }
+
+    const observer = new IntersectionObserver(checkScrolled)
+    observer.observe(sentinalElement)
+  }
+
   openMenu() {
     this.isOpen = !this.isOpen
   }
@@ -57,11 +79,10 @@ export default class TheHeader extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.the-header {
+.header-container {
   position: fixed;
+  padding: 30px 60px;
   width: 100%;
-  top: 3vw;
-  left: 7.8%;
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -89,6 +110,10 @@ a:hover {
   text-decoration-line: underline;
 }
 
+.scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
 .fadeInDown-enter-active,
 .fadeInDown-leave-active {
   transition: 0.5s;
@@ -106,7 +131,7 @@ a:hover {
 
 .togglable-menu {
   position: absolute;
-  right: 7.8%;
+  right: 0;
   width: 100px;
 }
 
