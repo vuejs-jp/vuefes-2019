@@ -1,5 +1,5 @@
 <template>
-  <div class="the-header-logo">
+  <div class="the-header">
     <nuxt-link to="/">
       <img src="~/assets/images/logo-vuefes.svg" alt="Vue Fes Japan" />
     </nuxt-link>
@@ -10,11 +10,11 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
-export default class TheHeaderLogo extends Vue {}
+export default class TheHeader extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.the-header-logo {
+.the-header {
   position: absolute;
   top: 3vw;
   left: 7.8%;
