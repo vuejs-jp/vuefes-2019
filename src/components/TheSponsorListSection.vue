@@ -19,7 +19,7 @@
 
         <ul>
           <li
-            v-for="sponsor in sortSponsors(sponsorsByPlan(sponsorPlan.plan))"
+            v-for="sponsor in sponsorsByPlan(sponsorPlan.plan)"
             :key="sponsor.sys.id"
             class="sponsor"
           >
@@ -50,9 +50,6 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheSponsorListSection extends Vue {
-  @Getter('sortSponsors', { namespace: 'sponsors' })
-  private sortSponsors!: (sponsors: SponsorList[]) => SponsorList[]
-
   @Getter('sponsorsByPlan', { namespace: 'sponsors' })
   private sponsorsByPlan!: (plan: string) => SponsorList[]
 }

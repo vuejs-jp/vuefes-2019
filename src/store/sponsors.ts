@@ -9,7 +9,6 @@ namespace Sponsors {
   }
 
   export type Getters = {
-    sortSponsors: (sponsors: SponsorList[]) => SponsorList[]
     sponsorsByPlan: (plan: string) => SponsorList[]
   }
 
@@ -42,14 +41,6 @@ export const state = (): Sponsors.State => ({
 })
 
 export const getters: Getters<Sponsors.State, Sponsors.Getters> = {
-  sortSponsors: () => (sponsors: SponsorList[]) => {
-    return sponsors.sort((a, b) => {
-      if (a.fields.appliedAt < b.fields.appliedAt) return -1
-      if (a.fields.appliedAt > b.fields.appliedAt) return 1
-
-      return 0
-    })
-  },
   sponsorsByPlan: (state: Sponsors.State) => (plan: string) => {
     return state.sponsors.filter(sponsor => sponsor.fields.plan === plan)
   }

@@ -76,8 +76,8 @@ export const getEvents = (): Promise<any[]> => {
 export const getSponsors = (): Promise<any[]> => {
   return clientWithResolveLinks
     .getEntries({
-      content_type: 'sponsor'
-      // FIXME: order: '-appliedAt'
+      content_type: 'sponsor',
+      order: 'fields.appliedAt'
     })
     .then(response => response.items)
 }

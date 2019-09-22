@@ -35,7 +35,7 @@
         </h3>
 
         <ul
-          v-for="sponsor in sortSponsors(sponsorsByPlan(sponsorPlan.plan))"
+          v-for="sponsor in sponsorsByPlan(sponsorPlan.plan)"
           :id="`sponsor_${sponsor.sys.id}`"
           :key="sponsor.sys.id"
           class="sponsor"
@@ -99,9 +99,6 @@ import BaseButton from '~/components/BaseButton.vue'
   }
 })
 export default class SponsorsPage extends Vue {
-  @Getter('sortSponsors', { namespace: 'sponsors' })
-  private sortSponsors!: (sponsors: SponsorList[]) => SponsorList[]
-
   @Getter('sponsorsByPlan', { namespace: 'sponsors' })
   private sponsorsByPlan!: (plan: string) => SponsorList[]
 
