@@ -4,7 +4,8 @@ export const actions = {
       dispatch('speakers/fetchSpeakers'),
       dispatch('timeTableSections/fetchTimeTableSections'),
       dispatch('eventContainers/fetchEventContainers'),
-      dispatch('eventContainerParts/fetchEventContainerParts')
+      dispatch('eventContainerParts/fetchEventContainerParts'),
+      dispatch('sponsors/fetchSponsors')
     ]).catch(error => console.error(error))
   }
 }

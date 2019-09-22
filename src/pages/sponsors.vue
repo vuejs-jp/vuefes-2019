@@ -6,7 +6,7 @@
 
     <ul class="index">
       <li
-        v-for="sponsorPlan in sponsorPlans"
+        v-for="sponsorPlan in $store.state.sponsors.sponsorPlans"
         v-show="sponsorsByPlan(sponsorPlan.plan).length > 0"
         :key="sponsorPlan.plan"
       >
@@ -21,7 +21,7 @@
     </ul>
 
     <ul
-      v-for="sponsorPlan in sponsorPlans"
+      v-for="sponsorPlan in $store.state.sponsors.sponsorPlans"
       :key="sponsorPlan.plan"
       class="sponsor-group-list"
     >
@@ -87,9 +87,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import { Entry } from 'contentful/index'
-import { getSponsors } from '~/plugins/contentful.ts'
+import { Component, Getter, Vue } from 'nuxt-property-decorator'
+import SponsorList from '~/types/sponsors'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
@@ -97,46 +96,14 @@ import BaseButton from '~/components/BaseButton.vue'
   components: {
     BaseMain,
     BaseButton
-  },
-  async asyncData(): Promise<{ sponsors: Entry<any>[] } | void> {
-    try {
-      return {
-        sponsors: await getSponsors()
-      }
-    } catch (error) {
-      console.error(error)
-    }
   }
 })
 export default class SponsorsPage extends Vue {
-  sponsorPlans: { plan: string; name: string }[] = [
-    { plan: 'platinum', name: 'PLATINUM' },
-    { plan: 'gold', name: 'GOLD' },
-    { plan: 'silver', name: 'SILVER' },
-    { plan: 'bronze', name: 'BRONZE' },
-    { plan: 'special', name: 'SPECIAL' },
-    { plan: 'room', name: 'ROOM' },
-    { plan: 'translation', name: '同時通訳' },
-    { plan: 'commercial', name: '幕間 CM' },
-    { plan: 'toast', name: 'カンパイ' },
-    { plan: 'lunch', name: 'LUNCH' },
-    { plan: 'refreshment', name: 'REFRESHMENT' },
-    { plan: 'video', name: 'VIDEO' },
-    { plan: 'media', name: 'MEDIA' }
-  ]
+  @Getter('sortSponsors', { namespace: 'sponsors' })
+  private sortSponsors!: (sponsors: SponsorList[]) => SponsorList[]
 
-  sortSponsors(sponsors): Entry<any>[] {
-    return sponsors.sort((a, b) => {
-      if (a.fields.appliedAt < b.fields.appliedAt) return -1
-      if (a.fields.appliedAt > b.fields.appliedAt) return 1
-
-      return 0
-    })
-  }
-
-  sponsorsByPlan(plan): Entry<any>[] {
-    return this.$data.sponsors.filter(sponsor => sponsor.fields.plan === plan)
-  }
+  @Getter('sponsorsByPlan', { namespace: 'sponsors' })
+  private sponsorsByPlan!: (plan: string) => SponsorList[]
 
   private head() {
     const url = 'https://vuefes.jp/2019/sponsors/'
