@@ -6,14 +6,13 @@
     <TheAccessSection />
     <TheTimeTableSection />
     <TheEventSection />
-    <TheSponsorListSection :sponsor-list="sponsors || []" />
+    <TheSponsorListSection />
     <TheStaffListSection />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import { getSponsors } from '~/plugins/contentful.ts'
 import TheAccessSection from '~/components/TheAccessSection.vue'
 import TheEventSection from '~/components/TheEventSection.vue'
 import TheHeadSection from '~/components/TheHeadSection.vue'
@@ -33,17 +32,6 @@ import TheStaffListSection from '~/components/TheStaffListSection.vue'
     TheTimeTableSection,
     TheSponsorListSection,
     TheStaffListSection
-  },
-  async asyncData(): Promise<{
-    sponsors: any[]
-  } | void> {
-    try {
-      return {
-        sponsors: await getSponsors()
-      }
-    } catch (error) {
-      console.error(error)
-    }
   }
 })
 export default class HomePage extends Vue {}

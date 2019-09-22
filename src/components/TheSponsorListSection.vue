@@ -4,7 +4,10 @@
       SPONSORS
     </template>
 
-    <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
+    <ul
+      v-for="sponsorPlan in $store.state.sponsors.sponsorPlans"
+      :key="sponsorPlan.plan"
+    >
       <li
         v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
         class="sponsor-group"
@@ -37,7 +40,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator'
+import { Component, Getter, Vue } from 'nuxt-property-decorator'
+import SponsorList from '~/types/sponsors'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
@@ -46,37 +50,11 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheSponsorListSection extends Vue {
-  sponsorPlans: { plan: string; name: string }[] = [
-    { plan: 'platinum', name: 'PLATINUM' },
-    { plan: 'gold', name: 'GOLD' },
-    { plan: 'silver', name: 'SILVER' },
-    { plan: 'bronze', name: 'BRONZE' },
-    { plan: 'special', name: 'SPECIAL' },
-    { plan: 'room', name: 'ROOM' },
-    { plan: 'translation', name: '同時通訳' },
-    { plan: 'commercial', name: '幕間 CM' },
-    { plan: 'toast', name: 'カンパイ' },
-    { plan: 'lunch', name: 'LUNCH' },
-    { plan: 'refreshment', name: 'REFRESHMENT' },
-    { plan: 'video', name: 'VIDEO' },
-    { plan: 'media', name: 'MEDIA' }
-  ]
+  @Getter('sortSponsors', { namespace: 'sponsors' })
+  private sortSponsors!: (sponsors: SponsorList[]) => SponsorList[]
 
-  @Prop()
-  readonly sponsorList!: any[]
-
-  sortSponsors(sponsors): any[] {
-    return sponsors.sort((a, b) => {
-      if (a.fields.appliedAt < b.fields.appliedAt) return -1
-      if (a.fields.appliedAt > b.fields.appliedAt) return 1
-
-      return 0
-    })
-  }
-
-  sponsorsByPlan(plan): any[] {
-    return this.sponsorList.filter(sponsor => sponsor.fields.plan === plan)
-  }
+  @Getter('sponsorsByPlan', { namespace: 'sponsors' })
+  private sponsorsByPlan!: (plan: string) => SponsorList[]
 }
 </script>
 
