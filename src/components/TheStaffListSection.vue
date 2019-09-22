@@ -593,5 +593,20 @@ export default class TheStaffListSection extends Vue {
       margin-top: $gutter--is-small-up;
     }
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    $gutter--is-medium-up: 20px;
+
+    width: calc((100% - #{$gutter--is-medium-up} * 15) / 16);
+    margin-left: $gutter--is-medium-up;
+
+    &:nth-of-type(16n + 1) {
+      margin-left: 0;
+    }
+
+    &:nth-of-type(n + 17) {
+      margin-top: $gutter--is-medium-up;
+    }
+  }
 }
 </style>
