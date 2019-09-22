@@ -1,5 +1,5 @@
 <template>
-  <BaseSection class="the-speaker-list-section">
+  <BaseSection id="the-speaker-list-section" class="the-speaker-list-section">
     <template v-slot:heading>
       SPEAKERS
     </template>

@@ -1,5 +1,5 @@
 <template>
-  <BaseSection class="the-time-table-section">
+  <BaseSection id="the-time-table-section" class="the-time-table-section">
     <template v-slot:heading>
       TIME TABLE
     </template>

@@ -1,5 +1,5 @@
 <template>
-  <BaseSection class="the-event-section">
+  <BaseSection id="the-event-section" class="the-event-section">
     <template v-slot:heading>
       EVENTS
     </template>

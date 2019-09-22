@@ -1,5 +1,5 @@
 <template>
-  <BaseSection class="the-staff-list-section">
+  <BaseSection id="the-staff-list-section" class="the-staff-list-section">
     <template v-slot:heading>
       TEAM
     </template>

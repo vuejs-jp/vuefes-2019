@@ -15,27 +15,26 @@
           <transition name="fadeInDown">
             <nav v-show="isOpen" class="menu-contents">
               <ul>
-                <!-- TODO: 各要素のページ内リンクをつける -->
                 <li>
-                  <a href="#">TICKET</a>
+                  <a href="#the-ticket-section">TICKET</a>
                 </li>
                 <li>
-                  <a href="#">TIME TABLE</a>
+                  <a href="#the-time-table-section">TIME TABLE</a>
                 </li>
                 <li>
-                  <a href="#">SPEAKERS</a>
+                  <a href="#the-speaker-list-section">SPEAKERS</a>
                 </li>
                 <li>
-                  <a href="#">EVENTS</a>
+                  <a href="#the-event-section">EVENTS</a>
                 </li>
                 <li>
-                  <a href="#">ACCESS</a>
+                  <a href="#the-access-section">ACCESS</a>
                 </li>
                 <li>
-                  <a href="#">SPONSERS</a>
+                  <a href="#the-sponsor-list-section">SPONSERS</a>
                 </li>
                 <li>
-                  <a href="#">TEAM</a>
+                  <a href="#the-staff-list-section">TEAM</a>
                 </li>
               </ul>
             </nav>
