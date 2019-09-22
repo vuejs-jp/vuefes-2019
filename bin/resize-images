@@ -6,7 +6,7 @@ set -ue -o pipefail
 # Prevent commands misbehaving due to locale differences
 export LC_ALL=C
 
-# FIXME: \w+ の正規表現がawk(nawk)では使えないので、gawkにしている (awkにできるならawkにしたい)
+# FIXME: 以下、\w+ の正規表現が awk（nawk）では使えないので、gawk にしている（awk にできるなら awk にしたい）
 for file in `git diff --cached --name-status | \
   gawk '$1 ~ /[AM]/ && tolower($2) ~ /src\/assets\/images\/staffs\/\w+\.(jpe?g|png|gif|svg)$/ {print $2}'`
 do
@@ -17,13 +17,32 @@ do
   git add $file
 done
 
-# FIXME: \w+ の正規表現がawk(nawk)では使えないので、gawkにしている (awkにできるならawkにしたい)
 for file in `git diff --cached --name-status | \
   gawk '$1 ~ /[AM]/ && tolower($2) ~ /src\/assets\/images\/staffs\/@2x\/\w+\.(jpe?g|png|gif|svg)$/ {print $2}'`
 do
-  echo コアスタッフ@2xの $file をリサイズします
+  echo コアスタッフ @2x の $file をリサイズします
   cat $file | ./node_modules/.bin/sharp \
     resize 310 310 > ${file}.new
+  mv -f ${file}.new $file
+  git add $file
+done
+
+for file in `git diff --cached --name-status | \
+  gawk '$1 ~ /[AM]/ && tolower($2) ~ /src\/assets\/images\/volunteers\/\w+\.(jpe?g|png|gif|svg)$/ {print $2}'`
+do
+  echo ボランティアスタッフの $file をリサイズします
+  cat $file | ./node_modules/.bin/sharp \
+    resize 60 60 > ${file}.new
+  mv -f ${file}.new $file
+  git add $file
+done
+
+for file in `git diff --cached --name-status | \
+  gawk '$1 ~ /[AM]/ && tolower($2) ~ /src\/assets\/images\/volunteers\/@2x\/\w+\.(jpe?g|png|gif|svg)$/ {print $2}'`
+do
+  echo ボランティアスタッフ @2x の $file をリサイズします
+  cat $file | ./node_modules/.bin/sharp \
+    resize 120 120 > ${file}.new
   mv -f ${file}.new $file
   git add $file
 done
