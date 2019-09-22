@@ -52,6 +52,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 @Component
 export default class TheHeader extends Vue {
   isOpen = false
+  rootElement?: HTMLElement
 
   mounted() {
     const headerContainerElement = document.querySelector('.header-container')
@@ -70,10 +71,17 @@ export default class TheHeader extends Vue {
 
     const observer = new IntersectionObserver(checkScrolled)
     observer.observe(sentinalElement)
+
+    this.rootElement = document.documentElement
   }
 
   openMenu() {
     this.isOpen = !this.isOpen
+
+    if (!this.rootElement) return
+
+    const overflow = this.isOpen ? 'hidden' : 'auto'
+    this.rootElement.style.overflow = overflow
   }
 }
 </script>
