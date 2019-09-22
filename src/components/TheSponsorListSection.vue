@@ -38,7 +38,6 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
-import { Entry } from 'contentful/index'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
@@ -64,9 +63,9 @@ export default class TheSponsorListSection extends Vue {
   ]
 
   @Prop()
-  readonly sponsorList!: Entry<any>[]
+  readonly sponsorList!: any[]
 
-  sortSponsors(sponsors): Entry<any>[] {
+  sortSponsors(sponsors): any[] {
     return sponsors.sort((a, b) => {
       if (a.fields.appliedAt < b.fields.appliedAt) return -1
       if (a.fields.appliedAt > b.fields.appliedAt) return 1
@@ -75,7 +74,7 @@ export default class TheSponsorListSection extends Vue {
     })
   }
 
-  sponsorsByPlan(plan): Entry<any>[] {
+  sponsorsByPlan(plan): any[] {
     return this.sponsorList.filter(sponsor => sponsor.fields.plan === plan)
   }
 }

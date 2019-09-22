@@ -5,6 +5,18 @@ $layout-breakpoint--is-medium-up: 981px !default;
 $layout-breakpoint--is-large: 1920px !default;
 $layout-breakpoint--is-large-up: 1921px !default;
 
+$layout-column-length--is-small: 4;
+$layout-gutter-width--is-small: 20px;
+$layout-column-width--is-small: calc(
+  (100% - #{$layout-gutter-width--is-small} * (#{$layout-column-length--is-small} - 1)) / #{$layout-column-length--is-small}
+);
+
+$layout-column-length--is-small-up: 20;
+$layout-gutter-width--is-small-up: 20px;
+$layout-column-width--is-small-up: calc(
+  (100% - #{$layout-gutter-width--is-small-up} * (#{$layout-column-length--is-small-up} - 1)) / #{$layout-column-length--is-small-up}
+);
+
 $page-container-max-width: 1180px;
 
 // transition のイージング
