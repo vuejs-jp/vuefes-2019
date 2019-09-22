@@ -57,9 +57,12 @@ export default class TheHeader extends Vue {
 <style lang="scss" scoped>
 .the-header {
   position: fixed;
+  width: 100%;
   top: 3vw;
   left: 7.8%;
   z-index: 100;
+  display: flex;
+  justify-content: space-between;
 
   img {
     height: 5vw;
@@ -73,6 +76,12 @@ export default class TheHeader extends Vue {
       height: 40px;
     }
   }
+}
+
+.togglable-menu {
+  position: absolute;
+  right: 7.8%;
+  width: 100px;
 }
 
 .hamburger {
