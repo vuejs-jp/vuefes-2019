@@ -19,7 +19,7 @@ export default class HeadSlash extends Vue {
 
   keyFrame2 = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
-  get transform() {
+  get transform(): string {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
   }
 

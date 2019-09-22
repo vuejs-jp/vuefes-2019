@@ -160,7 +160,7 @@ export default class TheContactForm extends Vue {
   @Inject('$validator')
   $validator: any
 
-  get buttonValue() {
+  get buttonValue(): string {
     const status = this.status
     if (status.hasError) {
       return Messages.Error

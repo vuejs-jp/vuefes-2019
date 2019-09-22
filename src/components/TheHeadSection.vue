@@ -104,6 +104,7 @@ export interface Parts {
   src: string
   key: string
 }
+
 export const partsLeaveTime = 0.2
 export const partsCreateTime = 0.6
 
@@ -138,7 +139,7 @@ function getWindowMode(): WindowMode {
   }
 })
 export default class TheHeadSection extends Vue {
-  get viewBox() {
+  get viewBox(): string {
     return `0 0 ${this.width} ${this.height}`
   }
 
@@ -235,11 +236,10 @@ export default class TheHeadSection extends Vue {
     )
   }
 
-  width = 0
+  private width = 0
+  private height = 384
 
-  height = 384
-
-  pattern = [
+  private pattern = [
     ['-⧄|⧅⧄⧅⮽⧄o', 'o⮽⧄◢-⧄⧅◥|', '⧅◣⧅⧄⧅|⧄⧅⧄'],
     ['1⧄|⧅o⧅⮽⧄◥', 'o⮽⧄◢⧄-⧅2|', '◥◣o⧄⧅|⧄⧅⧄'],
     ['1⧄|3◤⧅o⧄◥', '-⮽■◣⧄4⧅2|', '⧅⧅o⧄⧅◤⧄■⧄'],
@@ -249,15 +249,11 @@ export default class TheHeadSection extends Vue {
     ['3⧄4⧅⧄⧅⮽5o', 'o⮽⧄◤2⧄6◥|', '⧅◢⧅1⧅⧅⧄-⧄']
   ]
 
-  patternIndex = 0
-
-  t = 0
-
-  tMax = 0
-
-  visible = true
-
-  windowMode: WindowMode = 'sm'
+  private patternIndex = 0
+  private t = 0
+  private tMax = 0
+  private visible = true
+  private windowMode: WindowMode = 'sm'
 
   adjustSvg(mode: WindowMode) {
     // SSR 時には SVG の表示を確定することができないため、

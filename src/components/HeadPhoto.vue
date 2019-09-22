@@ -90,27 +90,27 @@ export default class HeadPhoto extends Vue {
 
   keyFrame = [0, 60 * (2 ^ 0.5)]
 
-  get images() {
+  get images(): string[] {
     return [Image01, Image02, Image03, Image04, Image05, Image06]
   }
 
-  get transform() {
+  get transform(): string {
     return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
   }
 
-  get href() {
+  get href(): string {
     return `~/assets/images/header/${this.item.src}`
   }
 
-  get clipId() {
+  get clipId(): string {
     return `photo-clip${this.item.key}`
   }
 
-  get clipPath() {
+  get clipPath(): string {
     return `url(#${this.clipId})`
   }
 
-  beforeDestroy() {
+  beforeDestroy(): void {
     TweenMax.to(this.$refs.shape, partsLeaveTime, {
       attr: {
         r: this.keyFrame[0]
@@ -119,7 +119,7 @@ export default class HeadPhoto extends Vue {
     })
   }
 
-  created() {
+  created(): void {
     setTimeout(() => {
       TweenMax.to(this.$refs.shape, partsCreateTime, {
         attr: {

@@ -13,7 +13,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import { Entry } from 'contentful/index'
 import { getSponsors } from '~/plugins/contentful.ts'
 import TheAccessSection from '~/components/TheAccessSection.vue'
 import TheEventSection from '~/components/TheEventSection.vue'
@@ -35,7 +34,9 @@ import TheStaffListSection from '~/components/TheStaffListSection.vue'
     TheSponsorListSection,
     TheStaffListSection
   },
-  async asyncData(): Promise<{ sponsors: Entry<any>[] } | void> {
+  async asyncData(): Promise<{
+    sponsors: any[]
+  } | void> {
     try {
       return {
         sponsors: await getSponsors()
