@@ -1,16 +1,16 @@
 <template>
   <div class="the-header">
-    <nuxt-link to="/">
+    <nuxt-link to="/" class="logo">
       <img src="~/assets/images/logo-vuefes.svg" alt="Vue Fes Japan" />
     </nuxt-link>
     <div class="navigation-container">
       <div class="togglable-menu">
-        <div @click="openMenu">
+        <div :class="{ 'is-open': isOpen }" @click="openMenu">
           <span class="hamburger hamburger-top" />
           <span class="hamburger hamburger-middle" />
           <span class="hamburger hamburger-bottom" />
         </div>
-        <nav v-show="isOpen">
+        <nav v-show="isOpen" class="menu-contents">
           <ul>
             <!-- TODO: 各要素のページ内リンクをつける -->
             <li>
@@ -78,6 +78,19 @@ export default class TheHeader extends Vue {
   }
 }
 
+a {
+  color: $vue-dark-blue;
+  text-decoration-line: none;
+}
+
+a:hover {
+  text-decoration-line: underline;
+}
+
+.logo {
+  z-index: 1;
+}
+
 .togglable-menu {
   position: absolute;
   right: 7.8%;
@@ -92,6 +105,7 @@ export default class TheHeader extends Vue {
   width: 42px;
   background: #34495e;
   cursor: pointer;
+  z-index: 1;
 
   &-top {
     top: 0;
@@ -103,6 +117,39 @@ export default class TheHeader extends Vue {
 
   &-bottom {
     top: 30px;
+  }
+}
+
+.is-open .hamburger {
+  &-top {
+    transform: translateY(15px) rotate(-45deg);
+  }
+
+  &-middle {
+    display: none;
+  }
+
+  &-bottom {
+    transform: translateY(-15px) rotate(45deg);
+  }
+}
+
+.menu-contents {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.85);
+
+  ul {
+    margin: 100px 7.25vw 0;
+  }
+
+  li {
+    padding-bottom: 5vw;
+    font-size: 32px;
   }
 }
 </style>
