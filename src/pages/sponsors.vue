@@ -85,6 +85,7 @@
     </BaseButton>
   </BaseMain>
 </template>
+
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import { Entry } from 'contentful/index'
