@@ -7,7 +7,7 @@
       </nuxt-link>
       <div class="navigation-container">
         <div class="togglable-menu">
-          <div :class="{ 'is-open': isOpen }" @click="openMenu">
+          <div :class="{ 'is-open': isOpen }" @click="toggleMenu">
             <span class="hamburger hamburger-top" />
             <span class="hamburger hamburger-middle" />
             <span class="hamburger hamburger-bottom" />
@@ -74,7 +74,7 @@ export default class TheHeader extends Vue {
     this.rootElement = document.documentElement
   }
 
-  openMenu() {
+  toggleMenu() {
     this.isOpen = !this.isOpen
 
     if (!this.rootElement) return
