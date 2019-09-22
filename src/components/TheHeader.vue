@@ -1,7 +1,7 @@
 <template>
   <div class="the-header">
     <div class="sentinal" />
-    <div class="header-container">
+    <div class="header-container" :class="{ scrolled: isScrolled }">
       <nuxt-link to="/" class="logo">
         <img src="~/assets/images/logo-vuefes.svg" alt="Vue Fes Japan" />
       </nuxt-link>
@@ -64,6 +64,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
 export default class TheHeader extends Vue {
+  isScrolled = false
   isOpen = false
   rootElement?: HTMLElement
 
@@ -75,11 +76,8 @@ export default class TheHeader extends Vue {
     if (!sentinalElement) return
 
     const checkScrolled = entries => {
-      if (!entries[0].isIntersecting) {
-        headerContainerElement.classList.add('scrolled')
-      } else {
-        headerContainerElement.classList.remove('scrolled')
-      }
+      const sentinal = entries[0]
+      this.isScrolled = !sentinal.isIntersecting
     }
 
     const observer = new IntersectionObserver(checkScrolled)
