@@ -19,9 +19,6 @@ describe('TheSponsorListSection', () => {
     wrapper = mount(TheSponsorListSection, {
       localVue,
       store,
-      propsData: {
-        sponsorList
-      },
       stubs: {
         NuxtLink: RouterLinkStub
       }

@@ -22,6 +22,7 @@ describe('sponsors module', () => {
 
       test('plan と一致するスポンサー情報のみ取得できる', () => {
         expect(
+          // 'platinum' と一致するスポンサーが取得できる
           getters.sponsorsByPlan(state.sponsors)(state.sponsorPlans[0].plan)
         ).toEqual(sponsorList[2])
       })
@@ -47,6 +48,7 @@ describe('sponsors module', () => {
       test('sponsorList を取得してセットする', async () => {
         const commit = jest.fn()
 
+        // Context の型を備えたモックを準備するのが大変でコストに見合わないため @ts-ignore
         // @ts-ignore error TS2345: Argument of type '{ commit: Mock<any, any>; }' is not assignable to parameter of type 'Context<State, Actions, Getters, Mutations, {}, {}>'.
         // Type '{ commit: Mock<any, any>; }' is missing the following properties from type 'Context<State, Actions, Getters, Mutations, {}, {}>': dispatch, state, getters, rootState, rootGettersts
         await actions.fetchSponsors({ commit })
