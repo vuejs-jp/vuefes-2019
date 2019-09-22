@@ -16,25 +16,39 @@
             <nav v-show="isOpen" class="menu-contents">
               <ul>
                 <li>
-                  <a href="#the-ticket-section">TICKET</a>
+                  <a href="#the-ticket-section" @click="toggleMenu">
+                    TICKET
+                  </a>
                 </li>
                 <li>
-                  <a href="#the-time-table-section">TIME TABLE</a>
+                  <a href="#the-time-table-section" @click="toggleMenu">
+                    TIME TABLE
+                  </a>
                 </li>
                 <li>
-                  <a href="#the-speaker-list-section">SPEAKERS</a>
+                  <a href="#the-speaker-list-section" @click="toggleMenu">
+                    SPEAKERS
+                  </a>
                 </li>
                 <li>
-                  <a href="#the-event-section">EVENTS</a>
+                  <a href="#the-event-section" @click="toggleMenu">
+                    EVENTS
+                  </a>
                 </li>
                 <li>
-                  <a href="#the-access-section">ACCESS</a>
+                  <a href="#the-access-section" @click="toggleMenu">
+                    ACCESS
+                  </a>
                 </li>
                 <li>
-                  <a href="#the-sponsor-list-section">SPONSERS</a>
+                  <a href="#the-sponsor-list-section" @click="toggleMenu">
+                    SPONSERS
+                  </a>
                 </li>
                 <li>
-                  <a href="#the-staff-list-section">TEAM</a>
+                  <a href="#the-staff-list-section" @click="toggleMenu">
+                    TEAM
+                  </a>
                 </li>
               </ul>
             </nav>
