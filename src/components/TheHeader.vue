@@ -107,7 +107,7 @@ a {
 }
 
 a:hover {
-  text-decoration-line: underline;
+  opacity: 0.4;
 }
 
 .scrolled {
