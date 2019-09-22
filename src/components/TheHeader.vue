@@ -2,7 +2,7 @@
   <div class="the-header">
     <div class="sentinal" />
     <div class="header-container" :class="{ scrolled: isScrolled }">
-      <nuxt-link to="/" class="logo">
+      <nuxt-link to="/" class="logo" @click.native="closeMenu">
         <img src="~/assets/images/logo-vuefes.svg" alt="Vue Fes Japan" />
       </nuxt-link>
       <div class="navigation-container">
@@ -10,50 +10,50 @@
           <div
             v-show="!isOpen"
             :class="{ 'is-open': isOpen }"
-            @click="toggleMenu"
+            @click="openMenu"
           >
             <span class="hamburger hamburger-top" />
             <span class="hamburger hamburger-middle" />
             <span class="hamburger hamburger-bottom" />
           </div>
-          <span v-show="isOpen" class="close-menu" @click="toggleMenu">
+          <span v-show="isOpen" class="close-menu" @click="closeMenu">
             CLOSE
           </span>
           <transition name="fadeInDown">
             <nav v-show="isOpen" class="menu-contents">
               <ul>
                 <li>
-                  <a href="#the-ticket-section" @click="toggleMenu">
+                  <a href="#the-ticket-section" @click="closeMenu">
                     TICKET
                   </a>
                 </li>
                 <li>
-                  <a href="#the-time-table-section" @click="toggleMenu">
+                  <a href="#the-time-table-section" @click="closeMenu">
                     TIME TABLE
                   </a>
                 </li>
                 <li>
-                  <a href="#the-speaker-list-section" @click="toggleMenu">
+                  <a href="#the-speaker-list-section" @click="closeMenu">
                     SPEAKERS
                   </a>
                 </li>
                 <li>
-                  <a href="#the-event-section" @click="toggleMenu">
+                  <a href="#the-event-section" @click="closeMenu">
                     EVENTS
                   </a>
                 </li>
                 <li>
-                  <a href="#the-access-section" @click="toggleMenu">
+                  <a href="#the-access-section" @click="closeMenu">
                     ACCESS
                   </a>
                 </li>
                 <li>
-                  <a href="#the-sponsor-list-section" @click="toggleMenu">
+                  <a href="#the-sponsor-list-section" @click="closeMenu">
                     SPONSERS
                   </a>
                 </li>
                 <li>
-                  <a href="#the-staff-list-section" @click="toggleMenu">
+                  <a href="#the-staff-list-section" @click="closeMenu">
                     TEAM
                   </a>
                 </li>
@@ -93,13 +93,18 @@ export default class TheHeader extends Vue {
     this.rootElement = document.documentElement
   }
 
-  toggleMenu() {
-    this.isOpen = !this.isOpen
+  openMenu() {
+    this.isOpen = true
 
     if (!this.rootElement) return
+    this.rootElement.style.overflow = 'hidden'
+  }
 
-    const overflow = this.isOpen ? 'hidden' : 'auto'
-    this.rootElement.style.overflow = overflow
+  closeMenu() {
+    this.isOpen = false
+
+    if (!this.rootElement) return
+    this.rootElement.style.overflow = 'auto'
   }
 }
 </script>
