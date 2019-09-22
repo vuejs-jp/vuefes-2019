@@ -36,7 +36,7 @@ export default class Session extends Vue {
 
 <style lang="scss" scoped>
 .session {
-  font-size: 2.6vw;
+  font-size: 3.3vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     font-size: 20px;
