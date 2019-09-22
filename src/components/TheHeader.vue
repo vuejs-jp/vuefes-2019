@@ -7,11 +7,18 @@
       </nuxt-link>
       <div class="navigation-container">
         <div class="togglable-menu">
-          <div :class="{ 'is-open': isOpen }" @click="toggleMenu">
+          <div
+            v-show="!isOpen"
+            :class="{ 'is-open': isOpen }"
+            @click="toggleMenu"
+          >
             <span class="hamburger hamburger-top" />
             <span class="hamburger hamburger-middle" />
             <span class="hamburger hamburger-bottom" />
           </div>
+          <span v-show="isOpen" class="close-menu" @click="toggleMenu">
+            CLOSE
+          </span>
           <transition name="fadeInDown">
             <nav v-show="isOpen" class="menu-contents">
               <ul>
@@ -125,10 +132,6 @@ a {
   text-decoration-line: none;
 }
 
-a:hover {
-  opacity: 0.4;
-}
-
 .scrolled {
   background-color: rgba(255, 255, 255, 0.85);
 }
@@ -154,6 +157,14 @@ a:hover {
   width: 100px;
 }
 
+.close-menu {
+  position: absolute;
+  color: $vue-dark-blue;
+  font-size: 22px;
+  z-index: 1;
+  cursor: pointer;
+}
+
 .hamburger {
   position: absolute;
   display: inline-block;
@@ -177,20 +188,6 @@ a:hover {
   }
 }
 
-.is-open .hamburger {
-  &-top {
-    transform: translateY(15px) rotate(-45deg);
-  }
-
-  &-middle {
-    display: none;
-  }
-
-  &-bottom {
-    transform: translateY(-15px) rotate(45deg);
-  }
-}
-
 .menu-contents {
   position: fixed;
   top: 0;
@@ -201,12 +198,23 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.85);
 
   ul {
-    margin: 100px 7.25vw 0;
+    margin: 160px auto;
   }
 
   li {
-    padding-bottom: 5vw;
-    font-size: 32px;
+    display: block;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  a {
+    padding: 30px 200px;
+    font-size: 36px;
+  }
+
+  a:hover {
+    background-color: $vue-dark-blue;
+    color: $white;
   }
 }
 </style>
