@@ -1,11 +1,16 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
+import Vuex from 'vuex'
+import createFullStore from '../utils/createFullStore'
 import sponsorList from '../../../fixtures/contentful/sponsors'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 
 const localVue = createLocalVue()
 
 localVue.use(VueLazyLoad)
+localVue.use(Vuex)
+
+const store = createFullStore(Vuex)
 
 describe('TheSponsorListSection', () => {
   let wrapper
@@ -13,6 +18,7 @@ describe('TheSponsorListSection', () => {
   beforeEach(() => {
     wrapper = mount(TheSponsorListSection, {
       localVue,
+      store,
       propsData: {
         sponsorList
       },
@@ -39,12 +45,16 @@ describe('TheSponsorListSection', () => {
     })
   })
 
-  describe('sponsorsByPlan', () => {
-    test('スポンサープランによってフィルタリングできる', () => {
-      const sponsors = wrapper.vm.sponsorsByPlan('silver')
+  describe('.sponsor', () => {
+    test('スポンサーが表示される', () => {
+      expect(wrapper.find('.sponsor').isVisible()).toBeTruthy()
+    })
 
-      expect(sponsors.length).toBe(2)
-      expect(sponsors[0].fields.plan).toBe('silver')
+    test('リンクがスポンサー一覧ページのアンカーになっている', () => {
+      expect(wrapper.find(RouterLinkStub).props().to).toBe(
+        // プラチナスポンサーのデータが sponsorList[2] に格納されている
+        `/sponsors/#sponsor_${sponsorList[2].sys.id}`
+      )
     })
   })
 })
