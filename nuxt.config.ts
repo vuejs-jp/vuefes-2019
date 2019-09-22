@@ -16,7 +16,15 @@ const config: NuxtConfiguration = {
   mode: 'universal',
   srcDir: 'src/',
   router: {
-    base: '/2019/'
+    base: '/2019/',
+    // FIXME: v2.9.0から設定方法が変わるので、バージョンアップ後に直す
+    // https://ja.nuxtjs.org/api/configuration-router#scrollbehavior
+    scrollBehavior(to) {
+      if (to.hash) {
+        return { selector: to.hash }
+      }
+      return { x: 0, y: 0 }
+    }
   },
   hooks: hooks(this),
   head: {
