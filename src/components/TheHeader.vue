@@ -265,7 +265,7 @@ img {
     font-size: 20px;
   }
 
-  li {
+  li:not(:last-child) {
     margin-right: 1.2vw;
   }
 
@@ -332,6 +332,14 @@ img {
 
   .togglable-menu {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .menu-contents {
+    li:not(:last-child) {
+      margin-right: 3.15vw;
+    }
   }
 }
 </style>
