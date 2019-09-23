@@ -6,14 +6,19 @@ const localVue = createLocalVue()
 
 localVue.use(VueLazyLoad)
 
+let wrapper
+
 describe('TheHeader', () => {
-  test('トップページへのリンクをレンダリングできる', () => {
-    const wrapper = mount(TheHeader, {
+  beforeEach(() => {
+    wrapper = mount(TheHeader, {
       localVue,
       stubs: {
         NuxtLink: RouterLinkStub
       }
     })
+  })
+
+  test('トップページへのリンクをレンダリングできる', () => {
     expect(wrapper.find('a').props().to).toEqual('/')
   })
 })
