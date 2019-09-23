@@ -208,7 +208,6 @@ img {
 .hamburger {
   position: absolute;
   display: inline-block;
-  content: '';
   height: 4px;
   width: 5.4vw;
   background: #34495e;
