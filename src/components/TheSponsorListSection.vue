@@ -57,7 +57,7 @@ export default class TheSponsorListSection extends Vue {
 
 <style lang="scss" scoped>
 ul {
-  margin: 0; // このコンポーネントでは ul 要素に margin を持たせない
+  margin: 0;
 }
 
 .the-sponsor-list-section {

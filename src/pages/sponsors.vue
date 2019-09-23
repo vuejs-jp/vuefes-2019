@@ -128,7 +128,7 @@ export default class SponsorsPage extends Vue {
 <style lang="scss" scoped>
 ul,
 li {
-  margin: 0; // このコンポーネントでは ul, li 要素に margin を持たせない
+  margin: 0;
 }
 
 .index {
