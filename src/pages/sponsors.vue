@@ -126,6 +126,8 @@ export default class SponsorsPage extends Vue {
 </script>
 
 <style lang="scss" scoped>
+$header-logo: -100px;
+
 ul,
 li {
   margin: 0; // このコンポーネントでは ul, li 要素に margin を持たせない
@@ -184,14 +186,16 @@ li {
   font-weight: bold;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin: 48px 10px 0;
+    margin: calc(#{$header-logo} + 48px) 10px 0;
+    padding-top: -$header-logo;
+    z-index: -1;
     font-size: 42px;
     line-height: 1.2;
     width: 100%;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    margin-top: 64px;
+    margin-top: calc(#{$header-logo} + 64px);
   }
 }
 
@@ -212,7 +216,8 @@ li {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     width: calc((100% / 3) - 20px);
-    margin: 30px 10px 0;
+    margin: calc(#{$header-logo} + 30px) 10px 0;
+    padding-top: -$header-logo;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
@@ -220,9 +225,11 @@ li {
   }
 
   &-image {
+    position: relative;
     display: block;
     width: 100%;
     border: 1px solid $vue-dark-blue;
+    z-index: 1;
   }
 
   &-name {
@@ -244,8 +251,10 @@ li {
     font-size: 2.5vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      position: relative;
       margin-top: 10px;
       font-size: 14px;
+      z-index: 1;
     }
   }
 
