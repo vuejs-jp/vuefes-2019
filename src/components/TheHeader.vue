@@ -275,8 +275,43 @@ img {
 }
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .header-container {
+    padding: 30px 60px;
+  }
+
   img {
     height: 40px;
+  }
+
+  .close-menu {
+    font-size: 22px;
+  }
+
+  .togglable-menu {
+    width: 100px;
+  }
+
+  .hamburger {
+    width: 42px;
+
+    &-middle {
+      top: 15px;
+    }
+
+    &-bottom {
+      top: 30px;
+    }
+  }
+
+  .togglable-menu-contents {
+    ul {
+      margin: 160px auto;
+      font-size: 36px;
+    }
+
+    a {
+      padding: 30px 200px;
+    }
   }
 }
 
