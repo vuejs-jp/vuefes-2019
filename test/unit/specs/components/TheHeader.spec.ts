@@ -7,6 +7,15 @@ const localVue = createLocalVue()
 localVue.use(VueLazyLoad)
 
 let wrapper
+const navigationLinks = [
+  '#the-ticket-section',
+  '#the-time-table-section',
+  '#the-speaker-list-section',
+  '#the-event-section',
+  '#the-access-section',
+  '#the-sponsor-list-section',
+  '#the-staff-list-section'
+]
 
 describe('TheHeader', () => {
   beforeEach(() => {
@@ -20,5 +29,15 @@ describe('TheHeader', () => {
 
   test('トップページへのリンクをレンダリングできる', () => {
     expect(wrapper.find('a').props().to).toEqual('/')
+  })
+
+  describe('ナビゲーションメニューのリンク', () => {
+    test('直接表示している場合に、必要なリンクが含まれている', () => {
+      const aTagWrappers = wrapper.findAll('.menu-contents a').wrappers
+
+      navigationLinks.forEach((link, linkIndex) => {
+        expect(aTagWrappers[linkIndex].attributes('href')).toContain(link)
+      })
+    })
   })
 })
