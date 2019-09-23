@@ -27,6 +27,14 @@ describe('SponsorsPage', () => {
     expect(wrapper.find('.sponsors-page').isVisible()).toBeTruthy()
   })
 
+  describe('.index', () => {
+    test('index にプランのアンカーがついている', () => {
+      expect(wrapper.find('.index .link').props().to).toBe(
+        '/sponsors/#platinum'
+      )
+    })
+  })
+
   describe('.sponsor-group-list', () => {
     test('スポンサープランがクラス名に付与される', () => {
       expect(wrapper.find('.sponsor-group').classes()).toEqual([
