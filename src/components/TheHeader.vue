@@ -136,16 +136,30 @@ export default class TheHeader extends Vue {
   openMenu() {
     this.isOpen = true
 
+    // Disable scroll on PC
     if (!this.rootElement) return
     this.rootElement.style.overflow = 'hidden'
+
+    // Disable scroll on mobile
+    this.rootElement.addEventListener('touchmove', disableScrollHandler, {
+      passive: false
+    })
   }
 
   closeMenu() {
     this.isOpen = false
 
+    // Reset disabling scroll on PC
     if (!this.rootElement) return
     this.rootElement.style.overflow = 'auto'
+
+    // Reset disabling scroll on mobile
+    this.rootElement.removeEventListener('touchmove', disableScrollHandler)
   }
+}
+
+function disableScrollHandler(e) {
+  e.preventDefault()
 }
 </script>
 
