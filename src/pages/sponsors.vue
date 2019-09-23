@@ -268,14 +268,14 @@ li {
 }
 
 .base-button {
-  margin-top: 13vw !important;
+  margin-top: 13vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-top: 100px !important;
+    margin-top: 100px;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    margin-top: 120px !important;
+    margin-top: 120px;
   }
 }
 </style>
