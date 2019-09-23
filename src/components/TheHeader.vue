@@ -117,24 +117,15 @@ export default class TheHeader extends Vue {
   z-index: 100;
   display: flex;
   justify-content: space-between;
-
-  img {
-    height: 5vw;
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    top: 30px;
-    left: 30px;
-
-    img {
-      height: 40px;
-    }
-  }
 }
 
 a {
   color: $vue-dark-blue;
   text-decoration-line: none;
+}
+
+img {
+  height: 5vw;
 }
 
 .scrolled {
@@ -220,6 +211,12 @@ a {
   a:hover {
     background-color: $vue-dark-blue;
     color: $white;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint--is-small-up) {
+  img {
+    height: 40px;
   }
 }
 </style>
