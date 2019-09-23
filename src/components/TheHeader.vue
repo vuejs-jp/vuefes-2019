@@ -210,7 +210,7 @@ img {
   display: inline-block;
   height: 4px;
   width: 5.4vw;
-  background: #34495e;
+  background: $vue-dark-blue;
   cursor: pointer;
   z-index: 1;
 
