@@ -20,7 +20,7 @@
             CLOSE
           </span>
           <transition name="fadeInDown">
-            <nav v-show="isOpen" class="menu-contents">
+            <nav v-show="isOpen" class="togglable-menu-contents">
               <ul>
                 <li>
                   <a href="#the-ticket-section" @click="closeMenu">
@@ -61,6 +61,46 @@
             </nav>
           </transition>
         </div>
+
+        <nav class="menu-contents">
+          <ul>
+            <li>
+              <a href="#the-ticket-section" @click="closeMenu">
+                TICKET
+              </a>
+            </li>
+            <li>
+              <a href="#the-time-table-section" @click="closeMenu">
+                TIME TABLE
+              </a>
+            </li>
+            <li>
+              <a href="#the-speaker-list-section" @click="closeMenu">
+                SPEAKERS
+              </a>
+            </li>
+            <li>
+              <a href="#the-event-section" @click="closeMenu">
+                EVENTS
+              </a>
+            </li>
+            <li>
+              <a href="#the-access-section" @click="closeMenu">
+                ACCESS
+              </a>
+            </li>
+            <li>
+              <a href="#the-sponsor-list-section" @click="closeMenu">
+                SPONSERS
+              </a>
+            </li>
+            <li>
+              <a href="#the-staff-list-section" @click="closeMenu">
+                TEAM
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
@@ -184,7 +224,7 @@ img {
   }
 }
 
-.menu-contents {
+.togglable-menu-contents {
   position: fixed;
   top: 0;
   left: 0;
@@ -217,6 +257,26 @@ img {
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   img {
     height: 40px;
+  }
+}
+
+@media screen and (max-width: $layout-breakpoint--is-medium) {
+  .menu-contents {
+    display: none;
+  }
+
+  .togglable-menu {
+    display: initial;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint--is-medium-up) {
+  .menu-contents {
+    display: initial;
+  }
+
+  .togglable-menu {
+    display: none;
   }
 }
 </style>
