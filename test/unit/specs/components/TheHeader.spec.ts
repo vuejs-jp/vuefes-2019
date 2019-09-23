@@ -32,6 +32,15 @@ describe('TheHeader', () => {
   })
 
   describe('ナビゲーションメニューのリンク', () => {
+    test('メニューボタンを押した場合に、必要なリンクが含まれている', () => {
+      const aTagWrappers = wrapper.findAll('.togglable-menu-contents a')
+        .wrappers
+
+      navigationLinks.forEach((link, linkIndex) => {
+        expect(aTagWrappers[linkIndex].attributes('href')).toContain(link)
+      })
+    })
+
     test('直接表示している場合に、必要なリンクが含まれている', () => {
       const aTagWrappers = wrapper.findAll('.menu-contents a').wrappers
 
