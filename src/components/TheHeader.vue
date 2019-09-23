@@ -152,7 +152,7 @@ export default class TheHeader extends Vue {
 <style lang="scss" scoped>
 .header-container {
   position: fixed;
-  padding: 30px 60px;
+  padding: 4vw 7.8vw;
   width: 100%;
   z-index: 100;
   display: flex;
@@ -194,13 +194,13 @@ img {
 .togglable-menu {
   position: absolute;
   right: 0;
-  width: 100px;
+  width: 13vw;
 }
 
 .close-menu {
   position: absolute;
   color: $vue-dark-blue;
-  font-size: 22px;
+  font-size: 2.9vw;
   z-index: 1;
   cursor: pointer;
 }
@@ -210,7 +210,7 @@ img {
   display: inline-block;
   content: '';
   height: 4px;
-  width: 42px;
+  width: 5.4vw;
   background: #34495e;
   cursor: pointer;
   z-index: 1;
@@ -220,11 +220,11 @@ img {
   }
 
   &-middle {
-    top: 15px;
+    top: 2vw;
   }
 
   &-bottom {
-    top: 30px;
+    top: 4vw;
   }
 }
 
@@ -238,7 +238,8 @@ img {
   background-color: rgba(255, 255, 255, 0.85);
 
   ul {
-    margin: 160px auto;
+    margin: 22% auto;
+    font-size: 4.7vw;
   }
 
   li {
@@ -248,8 +249,7 @@ img {
   }
 
   a {
-    padding: 30px 200px;
-    font-size: 36px;
+    padding: 30px 26%;
   }
 
   a:hover {
