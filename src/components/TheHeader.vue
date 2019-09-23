@@ -185,6 +185,10 @@ img {
 
 .logo {
   z-index: 1;
+
+  &:hover {
+    opacity: 0.4;
+  }
 }
 
 .togglable-menu {
@@ -251,6 +255,22 @@ img {
   a:hover {
     background-color: $vue-dark-blue;
     color: $white;
+  }
+}
+
+.menu-contents {
+  ul {
+    display: flex;
+    margin: 8px 0;
+    font-size: 20px;
+  }
+
+  li {
+    margin-right: 1.2vw;
+  }
+
+  a:hover {
+    opacity: 0.4;
   }
 }
 
