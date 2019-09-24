@@ -180,6 +180,7 @@ a {
 }
 
 img {
+  display: block;
   height: 5vw;
 }
 
