@@ -525,12 +525,12 @@ export default class TheStaffListSection extends Vue {
 }
 
 .staff-list {
-  margin-bottom: 10vw;
+  margin: 0 0 10vw;
   display: flex;
   flex-wrap: wrap;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-bottom: 80px;
+    margin: 0 0 80px;
   }
 }
 
