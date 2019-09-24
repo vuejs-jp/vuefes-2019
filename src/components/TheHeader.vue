@@ -49,7 +49,7 @@
                 </li>
                 <li>
                   <a href="#the-sponsor-list-section" @click="closeMenu">
-                    SPONSERS
+                    SPONSORS
                   </a>
                 </li>
                 <li>
@@ -91,7 +91,7 @@
             </li>
             <li>
               <a href="#the-sponsor-list-section" @click="closeMenu">
-                SPONSERS
+                SPONSORS
               </a>
             </li>
             <li>
