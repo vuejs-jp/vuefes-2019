@@ -171,6 +171,7 @@ function disableScrollHandler(e) {
   z-index: 100;
   display: flex;
   justify-content: space-between;
+  transition: background-color 0.4s $easeInOutCubic;
 }
 
 a {
