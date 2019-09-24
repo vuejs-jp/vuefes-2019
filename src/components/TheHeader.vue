@@ -9,6 +9,7 @@
         <div class="togglable-menu">
           <div
             v-show="!isOpen"
+            class="menu-button"
             :class="{ 'is-open': isOpen }"
             @click="openMenu"
           >
@@ -211,6 +212,11 @@ img {
   position: absolute;
   right: 0;
   width: 13vw;
+}
+
+.menu-button {
+  height: 6vw;
+  cursor: pointer;
 }
 
 .close-menu {
