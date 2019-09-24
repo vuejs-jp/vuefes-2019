@@ -514,6 +514,7 @@ export default class TheStaffListSection extends Vue {
 
 .sub-heading {
   margin-bottom: 2.5vw;
+  line-height: 1;
   font-size: 5vw;
   font-weight: bold;
 
