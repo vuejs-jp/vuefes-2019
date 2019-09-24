@@ -23,8 +23,8 @@
             <nav v-show="isOpen" class="togglable-menu-contents">
               <ul>
                 <li>
-                  <a href="#the-ticket-section" @click="closeMenu">
-                    TICKET
+                  <a href="#the-speaker-list-section" @click="closeMenu">
+                    SPEAKERS
                   </a>
                 </li>
                 <li>
@@ -33,13 +33,13 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#the-speaker-list-section" @click="closeMenu">
-                    SPEAKERS
+                  <a href="#the-event-section" @click="closeMenu">
+                    EVENTS
                   </a>
                 </li>
                 <li>
-                  <a href="#the-event-section" @click="closeMenu">
-                    EVENTS
+                  <a href="#the-ticket-section" @click="closeMenu">
+                    TICKET
                   </a>
                 </li>
                 <li>
@@ -65,8 +65,8 @@
         <nav class="menu-contents">
           <ul>
             <li>
-              <a href="#the-ticket-section" @click="closeMenu">
-                TICKET
+              <a href="#the-speaker-list-section" @click="closeMenu">
+                SPEAKERS
               </a>
             </li>
             <li>
@@ -75,13 +75,13 @@
               </a>
             </li>
             <li>
-              <a href="#the-speaker-list-section" @click="closeMenu">
-                SPEAKERS
+              <a href="#the-event-section" @click="closeMenu">
+                EVENTS
               </a>
             </li>
             <li>
-              <a href="#the-event-section" @click="closeMenu">
-                EVENTS
+              <a href="#the-ticket-section" @click="closeMenu">
+                TICKET
               </a>
             </li>
             <li>
