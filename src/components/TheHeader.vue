@@ -190,7 +190,7 @@ img {
 
 .fadeInDown-enter-active,
 .fadeInDown-leave-active {
-  transition: 0.5s;
+  transition: 0.5s $easeInOutCubic;
 }
 
 .fadeInDown-enter,
