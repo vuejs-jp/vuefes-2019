@@ -10,6 +10,10 @@
     </template>
 
     <div class="staff-list-container">
+      <h3 class="sub-heading">
+        CORE STAFF
+      </h3>
+
       <ul class="staff-list">
         <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
           <a :href="staff.link" target="_blank" rel="noopener">
@@ -17,15 +21,39 @@
               <!-- prettier-ignore-attribute -->
               <img
                 :data-srcset="`
-              ${require(`~/assets/images/staffs/${staff.avatar}`)},
-              ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
-            `"
+                  ${require(`~/assets/images/staffs/${staff.avatar}`)},
+                  ${require(`~/assets/images/staffs/@2x/${staff.avatar}`)} 2x
+                `"
                 :data-src="require(`~/assets/images/staffs/${staff.avatar}`)"
                 alt=""
               />
             </div>
             @{{ staff.name }}
           </a>
+        </li>
+      </ul>
+
+      <h3 class="sub-heading">
+        VOLUNTEER
+      </h3>
+
+      <ul class="volunteer-list">
+        <li
+          v-for="(volunteer, index) in sortedVolunteers"
+          :key="index"
+          class="volunteer"
+        >
+          <div v-lazy-container="{ selector: 'img' }">
+            <!-- prettier-ignore-attribute -->
+            <img
+              :data-srcset="`
+                ${require(`~/assets/images/volunteers/${volunteer.avatar}`)},
+                ${require(`~/assets/images/volunteers/@2x/${volunteer.avatar}`)} 2x
+              `"
+              :data-src="require(`~/assets/images/volunteers/${volunteer.avatar}`)"
+              :alt="volunteer.name"
+            />
+          </div>
         </li>
       </ul>
     </div>
@@ -42,19 +70,24 @@ interface Staff {
   avatar: string
 }
 
+interface Volunteer {
+  name: string
+  avatar: string
+}
+
 @Component({
   components: {
     BaseSection
   }
 })
 export default class TheStaffListSection extends Vue {
-  leader: Staff = {
+  private leader: Staff = {
     name: 'kazu_pon',
     link: 'https://twitter.com/kazu_pon',
     avatar: 'kazu_pon.png'
   }
 
-  staffs: Staff[] = [
+  private staffs: Staff[] = [
     {
       name: '448jp',
       link: 'https://twitter.com/448jp',
@@ -202,6 +235,245 @@ export default class TheStaffListSection extends Vue {
     }
   ]
 
+  private volunteers: Volunteer[] = [
+    {
+      name: 'Hisashi Matsui',
+      avatar: 'volunteer-1.jpg'
+    },
+    {
+      name: 'Naoko',
+      avatar: 'volunteer-2.jpg'
+    },
+    {
+      name: 'Ryuji',
+      avatar: 'volunteer-3.jpg'
+    },
+    {
+      name: 'しばみつえ',
+      avatar: 'volunteer-4.jpg'
+    },
+    {
+      name: 'yohei.fujii',
+      avatar: 'volunteer-5.jpg'
+    },
+    {
+      name: 'is_ryo',
+      avatar: 'volunteer-6.jpg'
+    },
+    {
+      name: 'watasan',
+      avatar: 'volunteer-7.jpg'
+    },
+    {
+      name: 'kotake_satoshi',
+      avatar: 'volunteer-9.jpg'
+    },
+    {
+      name: 'happylifetaka',
+      avatar: 'volunteer-10.jpg'
+    },
+    {
+      name: 'keisuke_kudo',
+      avatar: 'volunteer-11.jpg'
+    },
+    {
+      name: 'massy7124',
+      avatar: 'volunteer-12.jpg'
+    },
+    {
+      name: 'plum',
+      avatar: 'volunteer-13.jpg'
+    },
+    {
+      name: '阿部圭史',
+      avatar: 'volunteer-14.jpg'
+    },
+    {
+      name: 'yuta tanaka',
+      avatar: 'volunteer-15.jpg'
+    },
+    {
+      name: 'lilycoco',
+      avatar: 'volunteer-16.jpg'
+    },
+    {
+      name: 'nasum',
+      avatar: 'volunteer-17.jpg'
+    },
+    {
+      name: 'ayano',
+      avatar: 'volunteer-19.jpg'
+    },
+    {
+      name: 'cyanpon',
+      avatar: 'volunteer-21.jpg'
+    },
+    {
+      name: 'sawayama',
+      avatar: 'volunteer-22.jpg'
+    },
+    {
+      name: 'motohirock',
+      avatar: 'volunteer-23.jpg'
+    },
+    {
+      name: 'kuno',
+      avatar: 'volunteer-24.jpg'
+    },
+    {
+      name: 'chan_kaku',
+      avatar: 'volunteer-25.jpg'
+    },
+    {
+      name: 'yutaki',
+      avatar: 'volunteer-26.jpg'
+    },
+    {
+      name: 'kohei',
+      avatar: 'volunteer-27.jpg'
+    },
+    {
+      name: 'kowwwwji',
+      avatar: 'volunteer-28.jpg'
+    },
+    {
+      name: 'niba1122',
+      avatar: 'volunteer-31.jpg'
+    },
+    {
+      name: 'c-cho',
+      avatar: 'volunteer-32.jpg'
+    },
+    {
+      name: 'odan',
+      avatar: 'volunteer-33.jpg'
+    },
+    {
+      name: 'aoisa',
+      avatar: 'volunteer-34.jpg'
+    },
+    {
+      name: 'm_k',
+      avatar: 'volunteer-35.jpg'
+    },
+    {
+      name: 'hiropanda_desu',
+      avatar: 'volunteer-36.jpg'
+    },
+    {
+      name: 'ryota.suzuki22',
+      avatar: 'volunteer-37.jpg'
+    },
+    {
+      name: 'Yasshieeee',
+      avatar: 'volunteer-38.jpg'
+    },
+    {
+      name: 'がっちゃん',
+      avatar: 'volunteer-40.jpg'
+    },
+    {
+      name: 'paichi81',
+      avatar: 'volunteer-41.jpg'
+    },
+    {
+      name: 'nappan23',
+      avatar: 'volunteer-42.jpg'
+    },
+    {
+      name: 'kahirokunn',
+      avatar: 'volunteer-43.jpg'
+    },
+    {
+      name: 'kazoo',
+      avatar: 'volunteer-44.jpg'
+    },
+    {
+      name: 'yuki',
+      avatar: 'volunteer-45.jpg'
+    },
+    {
+      name: 'nancy',
+      avatar: 'volunteer-46.jpg'
+    },
+    {
+      name: 'Makoto Koizumi',
+      avatar: 'volunteer-47.jpg'
+    },
+    {
+      name: 'naotaro0123',
+      avatar: 'volunteer-48.jpg'
+    },
+    {
+      name: 'きり丸',
+      avatar: 'volunteer-50.jpg'
+    },
+    {
+      name: 'mori',
+      avatar: 'volunteer-51.jpg'
+    },
+    {
+      name: 'atsu',
+      avatar: 'volunteer-52.jpg'
+    },
+    {
+      name: 'kosa3',
+      avatar: 'volunteer-53.jpg'
+    },
+    {
+      name: 'たっしー',
+      avatar: 'volunteer-54.jpg'
+    },
+    {
+      name: 'tetsuya',
+      avatar: 'volunteer-55.jpg'
+    },
+    {
+      name: 'tomoyuki_onodera',
+      avatar: 'volunteer-56.jpg'
+    },
+    {
+      name: 'KAKAMU',
+      avatar: 'volunteer-57.jpg'
+    },
+    {
+      name: 'Ricky',
+      avatar: 'volunteer-58.jpg'
+    },
+    {
+      name: 'Nakata Kazuhiro',
+      avatar: 'volunteer-59.jpg'
+    },
+    {
+      name: 'Taihei Ohkawa',
+      avatar: 'volunteer-60.jpg'
+    },
+    {
+      name: 'kokky',
+      avatar: 'volunteer-61.jpg'
+    },
+    {
+      name: 'Hitoshi',
+      avatar: 'volunteer-62.jpg'
+    },
+    {
+      name: 'wakame',
+      avatar: 'volunteer-63.jpg'
+    },
+    {
+      name: 'kimura',
+      avatar: 'volunteer-64.jpg'
+    },
+    {
+      name: 'i-nishimura',
+      avatar: 'volunteer-65.jpg'
+    },
+    {
+      name: 'wataru katsuki',
+      avatar: 'volunteer-66.jpg'
+    }
+  ]
+
   private get leaderAndStaffs(): Staff[] {
     return [
       this.leader,
@@ -209,6 +481,15 @@ export default class TheStaffListSection extends Vue {
         return this.compareStaffNames(a.name, b.name)
       })
     ]
+  }
+
+  private get sortedVolunteers(): Volunteer[] {
+    return this.volunteers.sort((a: Volunteer, b: Volunteer) => {
+      if (a.name < b.name) return -1
+      if (a.name > b.name) return 1
+
+      return 0
+    })
   }
 
   compareStaffNames(a: string, b: string): number {
@@ -231,9 +512,26 @@ export default class TheStaffListSection extends Vue {
   }
 }
 
+.sub-heading {
+  margin-bottom: 2.5vw;
+  line-height: 1;
+  font-size: 5vw;
+  font-weight: bold;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+}
+
 .staff-list {
+  margin: 0 0 10vw;
   display: flex;
   flex-wrap: wrap;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin: 0 0 80px;
+  }
 }
 
 .staff {
@@ -293,6 +591,65 @@ export default class TheStaffListSection extends Vue {
       @media screen and (min-width: $layout-breakpoint--is-medium-up) {
         margin-top: $staff-gutter--is-medium-up;
       }
+    }
+  }
+}
+
+.volunteer-list {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.volunteer {
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  @media screen and (max-width: $layout-breakpoint--is-small) {
+    $gutter--is-small: 3vw;
+
+    width: calc((100% - #{$gutter--is-small} * 7) / 8);
+    margin-left: $gutter--is-small;
+
+    &:nth-of-type(8n + 1) {
+      margin-left: 0;
+    }
+
+    &:nth-of-type(n + 9) {
+      margin-top: $gutter--is-small;
+    }
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    $gutter--is-small-up: 14px;
+
+    width: calc((100% - #{$gutter--is-small-up} * 15) / 16);
+    margin-left: $gutter--is-small-up;
+
+    &:nth-of-type(16n + 1) {
+      margin-left: 0;
+    }
+
+    &:nth-of-type(n + 17) {
+      margin-top: $gutter--is-small-up;
+    }
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    $gutter--is-medium-up: 20px;
+
+    width: calc((100% - #{$gutter--is-medium-up} * 15) / 16);
+    margin-left: $gutter--is-medium-up;
+
+    &:nth-of-type(16n + 1) {
+      margin-left: 0;
+    }
+
+    &:nth-of-type(n + 17) {
+      margin-top: $gutter--is-medium-up;
     }
   }
 }
