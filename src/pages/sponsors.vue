@@ -72,7 +72,7 @@
           </li>
 
           <li>
-            <p v-if="sponsorPlan.plan !== 'bronze'" class="sponsor-pr">
+            <p class="sponsor-pr">
               {{ sponsor.fields.pr }}
             </p>
           </li>
