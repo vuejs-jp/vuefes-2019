@@ -24,39 +24,57 @@
             <nav v-show="isOpen" class="togglable-menu-contents">
               <ul>
                 <li>
-                  <a href="#the-speaker-list-section" @click="closeMenu">
+                  <nuxt-link
+                    to="/#the-speaker-list-section"
+                    @click.native="closeMenu"
+                  >
                     SPEAKERS
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="#the-time-table-section" @click="closeMenu">
+                  <nuxt-link
+                    to="/#the-time-table-section"
+                    @click.native="closeMenu"
+                  >
                     TIME TABLE
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="#the-event-section" @click="closeMenu">
+                  <nuxt-link to="/#the-event-section" @click.native="closeMenu">
                     EVENTS
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="#the-ticket-section" @click="closeMenu">
+                  <nuxt-link
+                    to="/#the-ticket-section"
+                    @click.native="closeMenu"
+                  >
                     TICKET
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="#the-access-section" @click="closeMenu">
+                  <nuxt-link
+                    to="/#the-access-section"
+                    @click.native="closeMenu"
+                  >
                     ACCESS
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="#the-sponsor-list-section" @click="closeMenu">
+                  <nuxt-link
+                    to="/#the-sponsor-list-section"
+                    @click.native="closeMenu"
+                  >
                     SPONSORS
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li>
-                  <a href="#the-staff-list-section" @click="closeMenu">
+                  <nuxt-link
+                    to="/#the-staff-list-section"
+                    @click.native="closeMenu"
+                  >
                     TEAM
-                  </a>
+                  </nuxt-link>
                 </li>
               </ul>
             </nav>
@@ -66,39 +84,51 @@
         <nav class="menu-contents">
           <ul>
             <li>
-              <a href="#the-speaker-list-section" @click="closeMenu">
+              <nuxt-link
+                to="/#the-speaker-list-section"
+                @click.native="closeMenu"
+              >
                 SPEAKERS
-              </a>
+              </nuxt-link>
             </li>
             <li>
-              <a href="#the-time-table-section" @click="closeMenu">
+              <nuxt-link
+                to="/#the-time-table-section"
+                @click.native="closeMenu"
+              >
                 TIME TABLE
-              </a>
+              </nuxt-link>
             </li>
             <li>
-              <a href="#the-event-section" @click="closeMenu">
+              <nuxt-link to="/#the-event-section" @click.native="closeMenu">
                 EVENTS
-              </a>
+              </nuxt-link>
             </li>
             <li>
-              <a href="#the-ticket-section" @click="closeMenu">
+              <nuxt-link to="/#the-ticket-section" @click.native="closeMenu">
                 TICKET
-              </a>
+              </nuxt-link>
             </li>
             <li>
-              <a href="#the-access-section" @click="closeMenu">
+              <nuxt-link to="/#the-access-section" @click.native="closeMenu">
                 ACCESS
-              </a>
+              </nuxt-link>
             </li>
             <li>
-              <a href="#the-sponsor-list-section" @click="closeMenu">
+              <nuxt-link
+                to="/#the-sponsor-list-section"
+                @click.native="closeMenu"
+              >
                 SPONSORS
-              </a>
+              </nuxt-link>
             </li>
             <li>
-              <a href="#the-staff-list-section" @click="closeMenu">
+              <nuxt-link
+                to="/#the-staff-list-section"
+                @click.native="closeMenu"
+              >
                 TEAM
-              </a>
+              </nuxt-link>
             </li>
           </ul>
         </nav>

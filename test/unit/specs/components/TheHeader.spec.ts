@@ -8,13 +8,13 @@ localVue.use(VueLazyLoad)
 
 let wrapper
 const navigationLinks = [
-  '#the-speaker-list-section',
-  '#the-time-table-section',
-  '#the-event-section',
-  '#the-ticket-section',
-  '#the-access-section',
-  '#the-sponsor-list-section',
-  '#the-staff-list-section'
+  '/#the-speaker-list-section',
+  '/#the-time-table-section',
+  '/#the-event-section',
+  '/#the-ticket-section',
+  '/#the-access-section',
+  '/#the-sponsor-list-section',
+  '/#the-staff-list-section'
 ]
 
 describe('TheHeader', () => {
@@ -37,7 +37,7 @@ describe('TheHeader', () => {
         .wrappers
 
       navigationLinks.forEach((link, linkIndex) => {
-        expect(aTagWrappers[linkIndex].attributes('href')).toEqual(link)
+        expect(aTagWrappers[linkIndex].props().to).toEqual(link)
       })
     })
 
@@ -45,7 +45,7 @@ describe('TheHeader', () => {
       const aTagWrappers = wrapper.findAll('.menu-contents a').wrappers
 
       navigationLinks.forEach((link, linkIndex) => {
-        expect(aTagWrappers[linkIndex].attributes('href')).toEqual(link)
+        expect(aTagWrappers[linkIndex].props().to).toEqual(link)
       })
     })
   })
