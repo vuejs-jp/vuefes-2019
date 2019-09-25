@@ -16,15 +16,7 @@ const config: NuxtConfiguration = {
   mode: 'universal',
   srcDir: 'src/',
   router: {
-    base: '/2019/',
-    // FIXME: v2.9.0から設定方法が変わるので、バージョンアップ後に直す
-    // https://ja.nuxtjs.org/api/configuration-router#scrollbehavior
-    scrollBehavior(to) {
-      if (to.hash) {
-        return { selector: to.hash }
-      }
-      return { x: 0, y: 0 }
-    }
+    base: '/2019/'
   },
   hooks: hooks(this),
   head: {
@@ -92,7 +84,8 @@ const config: NuxtConfiguration = {
   plugins: [
     { src: '~/plugins/typekit', ssr: false },
     { src: '~/plugins/vee-validate' },
-    { src: '~/plugins/vue-lazyload', ssr: false }
+    { src: '~/plugins/vue-lazyload', ssr: false },
+    { src: '~/plugins/scroll-anchor-links', mode: 'client' }
   ],
   modules: [
     '@nuxtjs/dotenv',
