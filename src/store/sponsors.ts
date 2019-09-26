@@ -1,15 +1,16 @@
 import { Getters, Mutations, Actions } from '~/types/store'
-import SponsorList from '~/types/sponsors'
+import { SponsorList, SponsorPlans } from '~/types/sponsors'
 import { getSponsors } from '~/plugins/contentful'
 
 namespace Sponsors {
   export type State = {
     sponsors: SponsorList[]
-    sponsorPlans: { plan: string; name: string }[]
+    sponsorPlans: SponsorPlans[]
   }
 
   export type Getters = {
     sponsorsByPlan: (plan: string) => SponsorList[]
+    existSponsorPlans: SponsorPlans[]
   }
 
   export type Mutations = {
@@ -41,13 +42,20 @@ export const state = (): Sponsors.State => ({
 })
 
 export const getters: Getters<Sponsors.State, Sponsors.Getters> = {
-  sponsorsByPlan: (state: Sponsors.State) => (plan: string) => {
+  sponsorsByPlan: state => plan => {
     return state.sponsors.filter(sponsor => sponsor.fields.plan === plan)
+  },
+  existSponsorPlans: (state, getters) => {
+    return state.sponsorPlans.filter(
+      // @ts-ignore TS2532: Object is possibly 'undefined'
+      // FIXME: getters?: Stores.Getters と定義していて、getters は引数として使わない場合があるので、これで正しいのでは？
+      sponsorPlan => getters.sponsorsByPlan(sponsorPlan.plan).length > 0
+    )
   }
 }
 
 export const mutations: Mutations<Sponsors.State, Sponsors.Mutations> = {
-  setSponsors(state: Sponsors.State, payload: SponsorList[]) {
+  setSponsors(state, payload) {
     state.sponsors = payload
   }
 }

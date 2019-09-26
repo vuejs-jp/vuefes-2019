@@ -5,31 +5,19 @@
     </template>
 
     <ul class="index">
-      <li
-        v-for="sponsorPlan in $store.state.sponsors.sponsorPlans"
-        v-show="sponsorsByPlan(sponsorPlan.plan).length > 0"
-        :key="sponsorPlan.plan"
-      >
-        <nuxt-link
-          v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
-          :to="`/sponsors/#${sponsorPlan.plan}`"
-          class="link"
-        >
+      <li v-for="sponsorPlan in existSponsorPlans" :key="sponsorPlan.plan">
+        <nuxt-link :to="`/sponsors/#${sponsorPlan.plan}`" class="link">
           {{ sponsorPlan.name }}
         </nuxt-link>
       </li>
     </ul>
 
     <ul
-      v-for="sponsorPlan in $store.state.sponsors.sponsorPlans"
+      v-for="sponsorPlan in existSponsorPlans"
       :key="sponsorPlan.plan"
       class="sponsor-group-list"
     >
-      <li
-        v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
-        class="sponsor-group"
-        :class="sponsorPlan.plan"
-      >
+      <li class="sponsor-group" :class="sponsorPlan.plan">
         <h3 :id="sponsorPlan.plan" class="sponsor-plan">
           {{ sponsorPlan.name }}
         </h3>
@@ -88,7 +76,7 @@
 
 <script lang="ts">
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import SponsorList from '~/types/sponsors'
+import { SponsorList, SponsorPlans } from '~/types/sponsors'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
@@ -101,6 +89,9 @@ import BaseButton from '~/components/BaseButton.vue'
 export default class SponsorsPage extends Vue {
   @Getter('sponsorsByPlan', { namespace: 'sponsors' })
   private sponsorsByPlan!: (plan: string) => SponsorList[]
+
+  @Getter('existSponsorPlans', { namespace: 'sponsors' })
+  private existSponsorPlans!: SponsorPlans[]
 
   private head() {
     const url = 'https://vuefes.jp/2019/sponsors/'

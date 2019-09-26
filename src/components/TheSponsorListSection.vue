@@ -4,15 +4,8 @@
       SPONSORS
     </template>
 
-    <ul
-      v-for="sponsorPlan in $store.state.sponsors.sponsorPlans"
-      :key="sponsorPlan.plan"
-    >
-      <li
-        v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
-        class="sponsor-group"
-        :class="sponsorPlan.plan"
-      >
+    <ul v-for="sponsorPlan in existSponsorPlans" :key="sponsorPlan.plan">
+      <li class="sponsor-group" :class="sponsorPlan.plan">
         <h3 class="sponsor-plan">
           {{ sponsorPlan.name }}
         </h3>
@@ -41,7 +34,7 @@
 
 <script lang="ts">
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import SponsorList from '~/types/sponsors'
+import { SponsorList, SponsorPlans } from '~/types/sponsors'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
@@ -52,6 +45,9 @@ import BaseSection from '~/components/BaseSection.vue'
 export default class TheSponsorListSection extends Vue {
   @Getter('sponsorsByPlan', { namespace: 'sponsors' })
   private sponsorsByPlan!: (plan: string) => SponsorList[]
+
+  @Getter('existSponsorPlans', { namespace: 'sponsors' })
+  private existSponsorPlans!: SponsorPlans[]
 }
 </script>
 
