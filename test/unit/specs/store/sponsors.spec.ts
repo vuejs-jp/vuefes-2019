@@ -22,9 +22,9 @@ describe('sponsors module', () => {
       })
 
       test('plan と一致するスポンサー情報のみ取得できる', () => {
-        const platinumSponsor: SponsorPlan = sponsorList[2]
-        expect(getters.sponsorsByPlan(state)('platinum')[0]).toEqual(
-          platinumSponsor
+        const platinumSponsors: SponsorPlan[] = [sponsorList[2]]
+        expect(getters.sponsorsByPlan(state)('platinum')).toEqual(
+          platinumSponsors
         )
       })
     })
