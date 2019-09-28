@@ -35,18 +35,13 @@ describe('sponsors module', () => {
       })
 
       test('スポンサーを持っている sponsorPlan の一覧を取得できる', () => {
-        const sponsorsByPlanStub = {
-          sponsorsByPlan: (plan: string) => {
-            return state.sponsors.filter(
-              sponsor => sponsor.fields.plan === plan
-            )
-          }
-        }
         expect(
           // Getters の型を備えたスタブを準備するのが大変でコストに見合わないため @ts-ignore
           // @ts-ignore error TS2339: Argument of type '{ sponsorsByPlan: (plan: string) => any; }' is not assignable to parameter of type 'Getters'.
           // Property 'sponsorPlansHavingSponsors' is missing in type '{ sponsorsByPlan: (plan: string) => any; }' but required in type 'Getters'.
-          getters.sponsorPlansHavingSponsors(state, sponsorsByPlanStub)
+          getters.sponsorPlansHavingSponsors(state, {
+            sponsorsByPlan: getters.sponsorsByPlan(state)
+          })
         ).toEqual([
           { name: 'PLATINUM', plan: 'platinum' },
           { name: 'SILVER', plan: 'silver' }
