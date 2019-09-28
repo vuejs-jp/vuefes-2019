@@ -250,8 +250,8 @@ img {
 
 .togglable-menu {
   position: absolute;
-  right: 0;
-  width: 13vw;
+  right: 8vw;
+  width: 5.4vw;
 }
 
 .menu-button {
@@ -349,7 +349,7 @@ img {
   }
 
   .togglable-menu {
-    width: 100px;
+    width: 42px;
   }
 
   .hamburger {
