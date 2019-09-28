@@ -2,7 +2,7 @@ import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
 import createFullStore from '../utils/createFullStore'
-import sponsorList from '../../../fixtures/contentful/sponsors'
+import sponsorList from '../../../fixtures/contentful/sponsorList'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 
 const localVue = createLocalVue()

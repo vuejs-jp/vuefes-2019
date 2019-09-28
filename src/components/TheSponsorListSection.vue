@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import SponsorList from '~/types/sponsors'
+import Sponsor from '~/types/sponsor'
 import SponsorPlan from '~/types/sponsorPlan'
 import BaseSection from '~/components/BaseSection.vue'
 
@@ -48,7 +48,7 @@ import BaseSection from '~/components/BaseSection.vue'
 })
 export default class TheSponsorListSection extends Vue {
   @Getter('sponsorsByPlan', { namespace: 'sponsors' })
-  private sponsorsByPlan!: (plan: string) => SponsorList[]
+  private sponsorsByPlan!: (plan: string) => Sponsor[]
 
   @Getter('sponsorPlansHavingSponsors', { namespace: 'sponsors' })
   private sponsorPlansHavingSponsors!: SponsorPlan[]

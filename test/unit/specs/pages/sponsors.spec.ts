@@ -1,6 +1,6 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
-import sponsorList from '../../../fixtures/contentful/sponsors'
+import sponsorList from '../../../fixtures/contentful/sponsorList'
 import createFullStore from '../utils/createFullStore'
 import SponsorsPage from '~/pages/sponsors.vue'
 

@@ -1,6 +1,6 @@
-import sponsorList from '../../../fixtures/contentful/sponsors'
+import sponsorList from '../../../fixtures/contentful/sponsorList'
 import * as contentful from '~/plugins/contentful'
-import SponsorPlan from '~/types/sponsorPlan'
+import Sponsor from '~/types/sponsor'
 import {
   state as initialState,
   getters,
@@ -22,7 +22,7 @@ describe('sponsors module', () => {
       })
 
       test('plan と一致するスポンサー情報のみ取得できる', () => {
-        const platinumSponsors: SponsorPlan[] = [sponsorList[2]]
+        const platinumSponsors: Sponsor[] = [sponsorList[2]]
         expect(getters.sponsorsByPlan(state)('platinum')).toEqual(
           platinumSponsors
         )

@@ -1,21 +1,21 @@
 import { Getters, Mutations, Actions } from '~/types/store'
-import SponsorList from '~/types/sponsors'
+import Sponsor from '~/types/sponsor'
 import SponsorPlan from '~/types/sponsorPlan'
 import { getSponsors } from '~/plugins/contentful'
 
 namespace Sponsors {
   export type State = {
-    sponsors: SponsorList[]
+    sponsors: Sponsor[]
     sponsorPlans: SponsorPlan[]
   }
 
   export type Getters = {
-    sponsorsByPlan: (plan: string) => SponsorList[]
+    sponsorsByPlan: (plan: string) => Sponsor[]
     sponsorPlansHavingSponsors: SponsorPlan[]
   }
 
   export type Mutations = {
-    setSponsors: SponsorList[]
+    setSponsors: Sponsor[]
   }
 
   export type Actions = {
@@ -68,7 +68,7 @@ export const actions: Actions<
   Sponsors.Mutations
 > = {
   async fetchSponsors({ commit }) {
-    const sponsors: SponsorList[] = await getSponsors()
+    const sponsors: Sponsor[] = await getSponsors()
     commit('setSponsors', sponsors)
   }
 }
