@@ -5,7 +5,7 @@
     </template>
 
     <ul
-      v-for="sponsorPlan in sponsorPlansToHaveSponsor"
+      v-for="sponsorPlan in sponsorPlansHavingSponsors"
       :key="sponsorPlan.plan"
     >
       <li class="sponsor-group" :class="sponsorPlan.plan">
@@ -49,8 +49,8 @@ export default class TheSponsorListSection extends Vue {
   @Getter('sponsorsByPlan', { namespace: 'sponsors' })
   private sponsorsByPlan!: (plan: string) => SponsorList[]
 
-  @Getter('sponsorPlansToHaveSponsor', { namespace: 'sponsors' })
-  private sponsorPlansToHaveSponsor!: SponsorPlans[]
+  @Getter('sponsorPlansHavingSponsors', { namespace: 'sponsors' })
+  private sponsorPlansHavingSponsors!: SponsorPlans[]
 }
 </script>
 

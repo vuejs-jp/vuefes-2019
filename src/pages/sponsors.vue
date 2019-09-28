@@ -6,7 +6,7 @@
 
     <ul class="index">
       <li
-        v-for="sponsorPlan in sponsorPlansToHaveSponsor"
+        v-for="sponsorPlan in sponsorPlansHavingSponsors"
         :key="sponsorPlan.plan"
       >
         <nuxt-link :to="`/sponsors/#${sponsorPlan.plan}`" class="link">
@@ -16,7 +16,7 @@
     </ul>
 
     <ul
-      v-for="sponsorPlan in sponsorPlansToHaveSponsor"
+      v-for="sponsorPlan in sponsorPlansHavingSponsors"
       :key="sponsorPlan.plan"
       class="sponsor-group-list"
     >
@@ -93,8 +93,8 @@ export default class SponsorsPage extends Vue {
   @Getter('sponsorsByPlan', { namespace: 'sponsors' })
   private sponsorsByPlan!: (plan: string) => SponsorList[]
 
-  @Getter('sponsorPlansToHaveSponsor', { namespace: 'sponsors' })
-  private sponsorPlansToHaveSponsor!: SponsorPlans[]
+  @Getter('sponsorPlansHavingSponsors', { namespace: 'sponsors' })
+  private sponsorPlansHavingSponsors!: SponsorPlans[]
 
   private head() {
     const url = 'https://vuefes.jp/2019/sponsors/'

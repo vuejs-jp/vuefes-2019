@@ -10,7 +10,7 @@ namespace Sponsors {
 
   export type Getters = {
     sponsorsByPlan: (plan: string) => SponsorList[]
-    sponsorPlansToHaveSponsor: SponsorPlans[]
+    sponsorPlansHavingSponsors: SponsorPlans[]
   }
 
   export type Mutations = {
@@ -45,7 +45,7 @@ export const getters: Getters<Sponsors.State, Sponsors.Getters> = {
   sponsorsByPlan: state => plan => {
     return state.sponsors.filter(sponsor => sponsor.fields.plan === plan)
   },
-  sponsorPlansToHaveSponsor: (state, getters) => {
+  sponsorPlansHavingSponsors: (state, getters) => {
     return state.sponsorPlans.filter(
       // @ts-ignore TS2532: Object is possibly 'undefined'
       // FIXME: getters?: Stores.Getters と定義していて、getters は引数として使わない場合があるので、これで正しいのでは？
