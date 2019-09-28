@@ -29,9 +29,9 @@ describe('SponsorsPage', () => {
 
   describe('.index', () => {
     test('index にプランのアンカーがついている', () => {
-      expect(wrapper.find('.index .link').props().to).toBe(
-        '/sponsors/#platinum'
-      )
+      const indexLinkWrapper = wrapper.find('.index .link')
+      expect(indexLinkWrapper.text()).toBe('PLATINUM')
+      expect(indexLinkWrapper.props().to).toBe('/sponsors/#platinum')
     })
   })
 
