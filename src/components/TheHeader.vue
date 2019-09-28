@@ -250,6 +250,7 @@ img {
 
 .togglable-menu {
   position: absolute;
+  top: 4.5vw;
   right: 8vw;
   width: 5.4vw;
 }
@@ -261,6 +262,7 @@ img {
 
 .close-menu {
   position: absolute;
+  top: 0.5vw;
   color: $vue-dark-blue;
   font-size: 2.9vw;
   z-index: 1;
