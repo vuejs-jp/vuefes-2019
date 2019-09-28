@@ -45,21 +45,28 @@ describe('SponsorsPage', () => {
 
     test('スポンサープランの詳細が表示される', () => {
       const platinumSponsor = sponsorList[2]
-      expect(wrapper.find('.sponsor-plan').text()).toBe('PLATINUM')
-      expect(wrapper.find('.sponsor').attributes().id).toBe(
+      const platinumSponsorWrapper = wrapper.find('.platinum')
+      expect(platinumSponsorWrapper.find('.sponsor-plan').text()).toBe(
+        'PLATINUM'
+      )
+      expect(platinumSponsorWrapper.find('.sponsor').attributes().id).toBe(
         `sponsor_${platinumSponsor.sys.id}`
       )
-      expect(wrapper.find('.sponsor > li > a').attributes().href).toBe(
-        platinumSponsor.fields.url
-      )
-      expect(wrapper.find('.sponsor-image').isVisible()).toBeTruthy()
-      expect(wrapper.find('.sponsor-name').text()).toBe(
+      expect(
+        platinumSponsorWrapper.find('.sponsor > li > a').attributes().href
+      ).toBe(platinumSponsor.fields.url)
+      expect(
+        platinumSponsorWrapper.find('.sponsor-image').isVisible()
+      ).toBeTruthy()
+      expect(platinumSponsorWrapper.find('.sponsor-name').text()).toBe(
         platinumSponsor.fields.name
       )
-      expect(wrapper.find('.sponsor-url').text()).toBe(
+      expect(platinumSponsorWrapper.find('.sponsor-url').text()).toBe(
         platinumSponsor.fields.url
       )
-      expect(wrapper.find('.sponsor-pr').text()).toBe(platinumSponsor.fields.pr)
+      expect(platinumSponsorWrapper.find('.sponsor-pr').text()).toBe(
+        platinumSponsor.fields.pr
+      )
     })
   })
 })
