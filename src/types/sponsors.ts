@@ -1,6 +1,6 @@
 import { EntrySys, Asset } from '~/types/contentful'
 
-export interface SponsorList {
+export default interface Sponsor {
   sys: EntrySys
   fields: {
     plan: string
