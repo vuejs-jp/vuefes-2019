@@ -314,11 +314,6 @@ img {
   a {
     padding: 30px 26%;
   }
-
-  a:hover {
-    background-color: $vue-dark-blue;
-    color: $white;
-  }
 }
 
 .menu-contents {
