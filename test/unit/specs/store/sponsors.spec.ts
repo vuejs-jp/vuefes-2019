@@ -33,7 +33,7 @@ describe('sponsors module', () => {
         state.sponsors = sponsorList
       })
 
-      test('スポンサーを持っている sponsorPlans を取得できる', () => {
+      test('スポンサーを持っている sponsorPlan の一覧を取得できる', () => {
         const sponsorsByPlanStub = {
           sponsorsByPlan: (plan: string) => {
             return state.sponsors.filter(
