@@ -44,21 +44,22 @@ describe('SponsorsPage', () => {
     })
 
     test('スポンサープランの詳細が表示される', () => {
+      const platinumSponsor = sponsorList[2]
       expect(wrapper.find('.sponsor-plan').text()).toBe('PLATINUM')
       expect(wrapper.find('.sponsor').attributes().id).toBe(
-        `sponsor_${sponsorList[2].sys.id}`
+        `sponsor_${platinumSponsor.sys.id}`
       )
       expect(wrapper.find('.sponsor > li > a').attributes().href).toBe(
-        sponsorList[2].fields.url
+        platinumSponsor.fields.url
       )
       expect(wrapper.find('.sponsor-image').isVisible()).toBeTruthy()
       expect(wrapper.find('.sponsor-name').text()).toBe(
-        sponsorList[2].fields.name
+        platinumSponsor.fields.name
       )
       expect(wrapper.find('.sponsor-url').text()).toBe(
-        sponsorList[2].fields.url
+        platinumSponsor.fields.url
       )
-      expect(wrapper.find('.sponsor-pr').text()).toBe(sponsorList[2].fields.pr)
+      expect(wrapper.find('.sponsor-pr').text()).toBe(platinumSponsor.fields.pr)
     })
   })
 })

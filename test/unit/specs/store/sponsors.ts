@@ -21,10 +21,10 @@ describe('sponsors module', () => {
       })
 
       test('plan と一致するスポンサー情報のみ取得できる', () => {
-        expect(
-          // 'platinum' と一致するスポンサーが取得できる
-          getters.sponsorsByPlan(state.sponsors)(state.sponsorPlans[0].plan)
-        ).toEqual(sponsorList[2])
+        const platinumSponsor: string = sponsorList[2]
+        expect(getters.sponsorsByPlan(state.sponsors)('platinum')).toEqual(
+          platinumSponsor
+        )
       })
     })
   })
