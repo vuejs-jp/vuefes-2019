@@ -1,16 +1,17 @@
 import { Getters, Mutations, Actions } from '~/types/store'
-import { SponsorList, SponsorPlans } from '~/types/sponsors'
+import SponsorList from '~/types/sponsors'
+import SponsorPlan from '~/types/sponsorPlan'
 import { getSponsors } from '~/plugins/contentful'
 
 namespace Sponsors {
   export type State = {
     sponsors: SponsorList[]
-    sponsorPlans: SponsorPlans[]
+    sponsorPlans: SponsorPlan[]
   }
 
   export type Getters = {
     sponsorsByPlan: (plan: string) => SponsorList[]
-    sponsorPlansHavingSponsors: SponsorPlans[]
+    sponsorPlansHavingSponsors: SponsorPlan[]
   }
 
   export type Mutations = {

@@ -11,8 +11,3 @@ export default interface Sponsor {
     appliedAt: string
   }
 }
-
-export interface SponsorPlans {
-  plan: string
-  name: string
-}

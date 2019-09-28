@@ -79,7 +79,8 @@
 
 <script lang="ts">
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import { SponsorList, SponsorPlans } from '~/types/sponsors'
+import SponsorList from '~/types/sponsors'
+import SponsorPlan from '~/types/sponsorPlan'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
@@ -94,7 +95,7 @@ export default class SponsorsPage extends Vue {
   private sponsorsByPlan!: (plan: string) => SponsorList[]
 
   @Getter('sponsorPlansHavingSponsors', { namespace: 'sponsors' })
-  private sponsorPlansHavingSponsors!: SponsorPlans[]
+  private sponsorPlansHavingSponsors!: SponsorPlan[]
 
   private head() {
     const url = 'https://vuefes.jp/2019/sponsors/'
