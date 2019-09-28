@@ -23,7 +23,7 @@
           <transition name="fadeInDown">
             <nav v-show="isOpen" class="togglable-menu-contents">
               <ul>
-                <li>
+                <li class="link-1">
                   <nuxt-link
                     to="/#the-speaker-list-section"
                     @click.native="closeMenu"
@@ -31,7 +31,7 @@
                     SPEAKERS
                   </nuxt-link>
                 </li>
-                <li>
+                <li class="link-2">
                   <nuxt-link
                     to="/#the-time-table-section"
                     @click.native="closeMenu"
@@ -39,12 +39,12 @@
                     TIME TABLE
                   </nuxt-link>
                 </li>
-                <li>
+                <li class="link-3">
                   <nuxt-link to="/#the-event-section" @click.native="closeMenu">
                     EVENTS
                   </nuxt-link>
                 </li>
-                <li>
+                <li class="link-4">
                   <nuxt-link
                     to="/#the-ticket-section"
                     @click.native="closeMenu"
@@ -52,7 +52,7 @@
                     TICKET
                   </nuxt-link>
                 </li>
-                <li>
+                <li class="link-5">
                   <nuxt-link
                     to="/#the-access-section"
                     @click.native="closeMenu"
@@ -60,7 +60,7 @@
                     ACCESS
                   </nuxt-link>
                 </li>
-                <li>
+                <li class="link-6">
                   <nuxt-link
                     to="/#the-sponsor-list-section"
                     @click.native="closeMenu"
@@ -68,7 +68,7 @@
                     SPONSORS
                   </nuxt-link>
                 </li>
-                <li>
+                <li class="link-7">
                   <nuxt-link
                     to="/#the-staff-list-section"
                     @click.native="closeMenu"
@@ -219,15 +219,25 @@ img {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
-.fadeInDown-enter-active,
-.fadeInDown-leave-active {
-  transition: 0.5s $easeInOutCubic;
-}
+@for $i from 1 through 7 {
+  .fadeInDown-enter-active {
+    transition: 0.5s $easeInOutCubic;
 
-.fadeInDown-enter,
-.fadeInDown-leave-to {
-  transform: translateY(-10px);
-  opacity: 0;
+    .link-#{$i} {
+      transition: 0.3s $easeInOutCubic;
+      transition-property: opacity, transform;
+      transition-delay: #{50ms * $i};
+    }
+  }
+
+  .fadeInDown-enter {
+    opacity: 0;
+
+    .link-#{$i} {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
 }
 
 .logo {
