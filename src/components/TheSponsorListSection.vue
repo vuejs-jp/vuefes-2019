@@ -4,7 +4,10 @@
       SPONSORS
     </template>
 
-    <ul v-for="sponsorPlan in existSponsorPlans" :key="sponsorPlan.plan">
+    <ul
+      v-for="sponsorPlan in sponsorPlansToHaveSponsor"
+      :key="sponsorPlan.plan"
+    >
       <li class="sponsor-group" :class="sponsorPlan.plan">
         <h3 class="sponsor-plan">
           {{ sponsorPlan.name }}
@@ -46,8 +49,8 @@ export default class TheSponsorListSection extends Vue {
   @Getter('sponsorsByPlan', { namespace: 'sponsors' })
   private sponsorsByPlan!: (plan: string) => SponsorList[]
 
-  @Getter('existSponsorPlans', { namespace: 'sponsors' })
-  private existSponsorPlans!: SponsorPlans[]
+  @Getter('sponsorPlansToHaveSponsor', { namespace: 'sponsors' })
+  private sponsorPlansToHaveSponsor!: SponsorPlans[]
 }
 </script>
 
