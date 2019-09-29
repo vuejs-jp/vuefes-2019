@@ -164,6 +164,22 @@ li {
   }
 }
 
+.sponsor-group-list:last-of-type {
+  // NOTE: .base-button に margin-top を設定した場合に
+  //   development 環境では意図したとおりに余白が設定できるが
+  //   production 環境では margin 0 auto に上書きされてしまう
+
+  margin-bottom: 13vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin-bottom: 120px;
+  }
+}
+
 .sponsor-group {
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     display: flex;
@@ -259,18 +275,6 @@ li {
       margin-top: 20px;
       font-size: 18px;
     }
-  }
-}
-
-.base-button {
-  margin-top: 13vw;
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-top: 100px;
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    margin-top: 120px;
   }
 }
 </style>
