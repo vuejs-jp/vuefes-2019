@@ -1,5 +1,5 @@
 <template>
-  <BaseSection class="the-access-section">
+  <BaseSection id="the-access-section" class="the-access-section">
     <template v-slot:heading>
       ACCESS
     </template>

@@ -1,5 +1,5 @@
 <template>
-  <BaseSection class="the-ticket-section">
+  <BaseSection id="the-ticket-section" class="the-ticket-section">
     <template v-slot:heading>
       TICKET
     </template>

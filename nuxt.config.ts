@@ -85,7 +85,7 @@ const config: NuxtConfiguration = {
     { src: '~/plugins/typekit', mode: 'client' },
     { src: '~/plugins/vee-validate' },
     { src: '~/plugins/vue-lazyload', mode: 'client' },
-    { src: '~/plugins/sponsor-anchor', mode: 'client' }
+    { src: '~/plugins/scroll-anchor-links', mode: 'client' }
   ],
   modules: [
     '@nuxtjs/dotenv',

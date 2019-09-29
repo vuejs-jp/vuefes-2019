@@ -1,5 +1,5 @@
 <template>
-  <BaseSection class="the-sponsor-list-section">
+  <BaseSection id="the-sponsor-list-section" class="the-sponsor-list-section">
     <template v-slot:heading>
       SPONSORS
     </template>

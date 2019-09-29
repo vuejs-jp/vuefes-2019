@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheHeaderLogo />
+    <TheHeader />
     <nuxt />
     <TheFooter />
   </div>
@@ -8,12 +8,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import TheHeaderLogo from '~/components/TheHeaderLogo.vue'
+import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
 
 @Component({
   components: {
-    TheHeaderLogo,
+    TheHeader,
     TheFooter
   }
 })

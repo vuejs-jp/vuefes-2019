@@ -1,6 +1,6 @@
 export default async ({ app }) => {
   await app.router.afterEach(to => {
-    if (to.hash && to.name === 'sponsors') {
+    if (to.hash) {
       const element = document.querySelector(to.hash) // 飛び先を取得
 
       if (element) {
