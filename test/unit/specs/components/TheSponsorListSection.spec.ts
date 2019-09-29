@@ -49,10 +49,12 @@ describe('TheSponsorListSection', () => {
 
     test('リンクがスポンサー一覧ページのアンカーになっている', () => {
       const platinumSponsorSysId: string = sponsorList[2].sys.id
-      const platinumSponsorWrapper = wrapper.find('.platinum')
-      expect(platinumSponsorWrapper.find(RouterLinkStub).props().to).toBe(
-        `/sponsors/#sponsor_${platinumSponsorSysId}`
-      )
+      expect(
+        wrapper
+          .find('.platinum')
+          .find(RouterLinkStub)
+          .props().to
+      ).toBe(`/sponsors/#sponsor_${platinumSponsorSysId}`)
     })
   })
 })
