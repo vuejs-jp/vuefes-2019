@@ -251,7 +251,7 @@ img {
 
 .togglable-menu {
   position: absolute;
-  right: 8vw;
+  right: 7.8vw;
   top: 0;
   bottom: 0;
   margin: auto;
