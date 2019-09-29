@@ -255,7 +255,7 @@ img {
   top: 0;
   bottom: 0;
   margin: auto;
-  height: 4.6vw;
+  height: 4.4vw;
   width: 5.4vw;
 }
 
@@ -269,7 +269,7 @@ img {
   top: 0;
   bottom: 0;
   margin: auto;
-  height: 4.6vw;
+  height: 4.4vw;
   color: $vue-dark-blue;
   font-size: 2.9vw;
   z-index: 1;
