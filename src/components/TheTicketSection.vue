@@ -7,16 +7,12 @@
     <div class="description">
       <!-- prettier-ignore -->
       <p>
-        チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。
+        チケットの販売は 9/17 を持ちまして終了しました。
       </p>
 
       <!-- prettier-ignore -->
       <p>
-        販売媒体として
-        <a href="https://www.universe.com/" target="_blank" rel="noopener" class="link">
-          Universe
-        </a>
-        を利用します。購入時に届くメールに QR コードが記載されていますので、そちらをチケットとして当日ご持参ください。
+        チケットはアフターパーティーあり/なしの 2種類で、全席ランチ付きです。購入時に送られたメール内の QR コードを当日受付でご提示ください。
       </p>
 
       <!-- prettier-ignore -->
@@ -62,25 +58,11 @@
     </div>
 
     <p class="note">
-      ※別途クレジットカード決済手数料（3.5%）がかかります。
+      ※別途、決済プラットフォーム利用手数料（3.5%）がかかります。
     </p>
-
-    <BaseButton class="ticket-button" disabled>
-      チケット販売は終了しました
-    </BaseButton>
 
     <div class="faq">
       <h3>FAQ</h3>
-
-      <div class="faq-content">
-        <h4>
-          お支払い方法
-        </h4>
-        <!-- prettier-ignore -->
-        <p>
-          各種クレジットカード（Visa、American Express、MasterCard）と Google Pay、Apple Pay がご利用いただけます。JCB カードはご利用いただけません。ご不便をおかけし申し訳ありませんが、別の決済方法をご検討いただけますと幸いです。
-        </p>
-      </div>
 
       <div class="faq-content">
         <h4>
@@ -115,16 +97,6 @@
 
       <div class="faq-content">
         <h4>
-          タイムテーブルやセッション内容は？
-        </h4>
-        <!-- prettier-ignore -->
-        <p>
-          チケットの発売開始までに本 Web サイトにて公開予定です。一部内容についてはチケット発売後に公開になる可能性がありますので、あらかじめご了承ください。
-        </p>
-      </div>
-
-      <div class="faq-content">
-        <h4>
           ランチは全員に提供されますか？
         </h4>
         <!-- prettier-ignore -->
@@ -139,16 +111,6 @@
         </h4>
         <p>
           全セッション終了後、会場内にて立食形式のお食事、お飲み物（アルコールあり）を召し上がりながらご歓談いただけます。お1人で参加される方でもお楽しみいただけるような工夫を行う予定です。お楽しみに！
-        </p>
-      </div>
-
-      <div class="faq-content">
-        <h4>
-          チケットはいつまで買えますか？
-        </h4>
-        <!-- prettier-ignore -->
-        <p>
-          2019/9/17（火）23:59まで購入できます。
         </p>
       </div>
 
@@ -371,11 +333,11 @@ $ticket-item-content-width--is-small-up: 140px;
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     font-size: 16px;
     text-align: center;
-    margin: 20px auto 70px;
+    margin: 20px auto 40px;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    margin: 20px auto 80px;
+    margin: 20px auto 40px;
   }
 }
 
