@@ -2,7 +2,7 @@ import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
 import createFullStore from '../utils/createFullStore'
-import sponsorList from '../../../fixtures/contentful/sponsorList'
+import sponsors from '../../../fixtures/contentful/sponsors'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 
 const localVue = createLocalVue()
@@ -48,7 +48,7 @@ describe('TheSponsorListSection', () => {
     })
 
     test('リンクがスポンサー一覧ページのアンカーになっている', () => {
-      const platinumSponsorSysId: string = sponsorList[2].sys.id
+      const platinumSponsorSysId: string = sponsors[2].sys.id
       expect(
         wrapper
           .find('.platinum')

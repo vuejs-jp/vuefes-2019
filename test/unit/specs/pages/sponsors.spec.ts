@@ -1,6 +1,6 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
-import sponsorList from '../../../fixtures/contentful/sponsorList'
+import sponsors from '../../../fixtures/contentful/sponsors'
 import createFullStore from '../utils/createFullStore'
 import SponsorsPage from '~/pages/sponsors.vue'
 
@@ -44,7 +44,7 @@ describe('SponsorsPage', () => {
     })
 
     test('スポンサープランの詳細が表示される', () => {
-      const platinumSponsor = sponsorList[2]
+      const platinumSponsor = sponsors[2]
       const platinumSponsorWrapper = wrapper.find('.platinum')
       expect(platinumSponsorWrapper.find('.sponsor-plan').text()).toBe(
         'PLATINUM'

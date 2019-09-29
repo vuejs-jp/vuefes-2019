@@ -1,4 +1,4 @@
-import sponsorList from '../../../fixtures/contentful/sponsorList'
+import sponsors from '../../../fixtures/contentful/sponsors'
 import * as contentful from '~/plugins/contentful'
 import Sponsor from '~/types/sponsor'
 import {
@@ -18,11 +18,11 @@ describe('sponsors module', () => {
   describe('getters', () => {
     describe('sponsorsByPlan', () => {
       beforeEach(() => {
-        state.sponsors = sponsorList
+        state.sponsors = sponsors
       })
 
       test('plan と一致するスポンサー情報のみ取得できる', () => {
-        const platinumSponsors: Sponsor[] = [sponsorList[2]]
+        const platinumSponsors: Sponsor[] = [sponsors[2]]
         expect(getters.sponsorsByPlan(state)('platinum')).toEqual(
           platinumSponsors
         )
@@ -31,7 +31,7 @@ describe('sponsors module', () => {
 
     describe('sponsorPlansHavingSponsors', () => {
       beforeEach(() => {
-        state.sponsors = sponsorList
+        state.sponsors = sponsors
       })
 
       test('スポンサーを持っている sponsorPlan の一覧を取得できる', () => {
@@ -53,8 +53,8 @@ describe('sponsors module', () => {
   describe('mutations', () => {
     describe('setSponsors', () => {
       test('SponsorList をセットできる', () => {
-        mutations.setSponsors(state, sponsorList)
-        expect(state.sponsors).toEqual(sponsorList)
+        mutations.setSponsors(state, sponsors)
+        expect(state.sponsors).toEqual(sponsors)
       })
     })
   })
@@ -63,7 +63,7 @@ describe('sponsors module', () => {
     describe('fetchSponsors', () => {
       beforeEach(() => {
         // @ts-ignore error TS2540: Cannot assign to 'getSponsors' because it is a read-only property.
-        contentful.getSponsors = jest.fn().mockResolvedValue(sponsorList)
+        contentful.getSponsors = jest.fn().mockResolvedValue(sponsors)
       })
 
       test('sponsorList を取得してセットする', async () => {
@@ -74,7 +74,7 @@ describe('sponsors module', () => {
         // Type '{ commit: Mock<any, any>; }' is missing the following properties from type 'Context<State, Actions, Getters, Mutations, {}, {}>': dispatch, state, getters, rootState, rootGettersts
         await actions.fetchSponsors({ commit })
 
-        expect(commit).toHaveBeenCalledWith('setSponsors', sponsorList)
+        expect(commit).toHaveBeenCalledWith('setSponsors', sponsors)
       })
     })
   })
