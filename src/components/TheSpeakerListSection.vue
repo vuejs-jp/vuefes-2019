@@ -31,10 +31,6 @@
         </nuxt-link>
       </div>
     </div>
-
-    <div class="more">
-      他スピーカーは決定次第、更新予定です。
-    </div>
   </BaseSection>
 </template>
 
@@ -168,16 +164,6 @@ export default class TheSpeakerListSection extends Vue {
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
       font-size: 22px;
     }
-  }
-}
-
-.more {
-  margin-top: 3vw;
-  font-size: 4vw;
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-top: 20px;
-    font-size: 18px;
   }
 }
 </style>
