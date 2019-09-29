@@ -4,23 +4,22 @@
       SPONSORS
     </template>
 
-    <ul v-for="sponsorPlan in sponsorPlans" :key="sponsorPlan.plan">
-      <li
-        v-if="sponsorsByPlan(sponsorPlan.plan).length > 0"
-        class="sponsor-group"
-        :class="sponsorPlan.plan"
-      >
+    <ul
+      v-for="sponsorPlan in sponsorPlansHavingSponsors"
+      :key="sponsorPlan.plan"
+    >
+      <li class="sponsor-group" :class="sponsorPlan.plan">
         <h3 class="sponsor-plan">
           {{ sponsorPlan.name }}
         </h3>
 
         <ul>
           <li
-            v-for="sponsor in sortSponsors(sponsorsByPlan(sponsorPlan.plan))"
+            v-for="sponsor in sponsorsByPlan(sponsorPlan.plan)"
             :key="sponsor.sys.id"
             class="sponsor"
           >
-            <a :href="sponsor.fields.url" target="_blank" rel="noopener">
+            <nuxt-link :to="`/sponsors/#sponsor_${sponsor.sys.id}`">
               <div v-lazy-container="{ selector: 'img' }">
                 <img
                   class="sponsor-image"
@@ -28,7 +27,7 @@
                   :alt="sponsor.fields.name"
                 />
               </div>
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </li>
@@ -37,7 +36,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator'
+import { Component, Getter, Vue } from 'nuxt-property-decorator'
+import Sponsor from '~/types/sponsor'
+import SponsorPlan from '~/types/sponsorPlan'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
@@ -46,43 +47,17 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheSponsorListSection extends Vue {
-  sponsorPlans: { plan: string; name: string }[] = [
-    { plan: 'platinum', name: 'PLATINUM' },
-    { plan: 'gold', name: 'GOLD' },
-    { plan: 'silver', name: 'SILVER' },
-    { plan: 'bronze', name: 'BRONZE' },
-    { plan: 'special', name: 'SPECIAL' },
-    { plan: 'room', name: 'ROOM' },
-    { plan: 'translation', name: '同時通訳' },
-    { plan: 'commercial', name: '幕間 CM' },
-    { plan: 'toast', name: 'カンパイ' },
-    { plan: 'lunch', name: 'LUNCH' },
-    { plan: 'refreshment', name: 'REFRESHMENT' },
-    { plan: 'video', name: 'VIDEO' },
-    { plan: 'media', name: 'MEDIA' }
-  ]
+  @Getter('sponsorsByPlan', { namespace: 'sponsors' })
+  private sponsorsByPlan!: (plan: string) => Sponsor[]
 
-  @Prop()
-  readonly sponsorList!: any[]
-
-  sortSponsors(sponsors): any[] {
-    return sponsors.sort((a, b) => {
-      if (a.fields.appliedAt < b.fields.appliedAt) return -1
-      if (a.fields.appliedAt > b.fields.appliedAt) return 1
-
-      return 0
-    })
-  }
-
-  sponsorsByPlan(plan): any[] {
-    return this.sponsorList.filter(sponsor => sponsor.fields.plan === plan)
-  }
+  @Getter('sponsorPlansHavingSponsors', { namespace: 'sponsors' })
+  private sponsorPlansHavingSponsors!: SponsorPlan[]
 }
 </script>
 
 <style lang="scss" scoped>
 ul {
-  margin: 0; // このコンポーネントでは ul 要素に margin を持たせない
+  margin: 0;
 }
 
 .the-sponsor-list-section {

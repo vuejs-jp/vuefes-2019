@@ -5,7 +5,7 @@
     </template>
 
     <!-- prettier-ignore -->
-    <template slot="heading-copy">
+    <template v-slot:heading-copy>
       Vue Fes Japan 2019 は、Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
     </template>
 

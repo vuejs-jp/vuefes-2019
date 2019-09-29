@@ -1,7 +1,7 @@
 // import { Entry } from 'contentful/index'
 
 // FIXME: Vue.js devtools から持ってきた値が Entry<any>[] に一致しない
-const sponsorList: any[] = [
+const sponsors: any[] = [
   {
     sys: {
       space: {
@@ -241,4 +241,4 @@ const sponsorList: any[] = [
   }
 ]
 
-export default sponsorList
+export default sponsors
