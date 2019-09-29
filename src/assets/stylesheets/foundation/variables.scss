@@ -17,6 +17,10 @@ $layout-column-width--is-small-up: calc(
 
 $page-container-max-width: 1180px;
 
+// md サイズ以上のときのヘッダーの高さ
+// FIXME: アンカーがあるページ（sponsors など）で使っているため、ヘッダーの高さを変える場合はこの変数を調整する
+$header-logo-height: 100px;
+
 // transition のイージング
 $easeInOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 

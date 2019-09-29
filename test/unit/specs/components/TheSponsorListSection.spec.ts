@@ -1,11 +1,16 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
-import sponsorList from '../../__mocks__/sponsorListMock'
+import Vuex from 'vuex'
+import createFullStore from '../utils/createFullStore'
+import sponsors from '../../../fixtures/contentful/sponsors'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 
 const localVue = createLocalVue()
 
 localVue.use(VueLazyLoad)
+localVue.use(Vuex)
+
+const store = createFullStore(Vuex)
 
 describe('TheSponsorListSection', () => {
   let wrapper
@@ -13,8 +18,9 @@ describe('TheSponsorListSection', () => {
   beforeEach(() => {
     wrapper = mount(TheSponsorListSection, {
       localVue,
-      propsData: {
-        sponsorList
+      store,
+      stubs: {
+        NuxtLink: RouterLinkStub
       }
     })
   })
@@ -36,12 +42,19 @@ describe('TheSponsorListSection', () => {
     })
   })
 
-  describe('sponsorsByPlan', () => {
-    test('スポンサープランによってフィルタリングできる', () => {
-      const sponsors = wrapper.vm.sponsorsByPlan('silver')
+  describe('.sponsor', () => {
+    test('スポンサーが表示される', () => {
+      expect(wrapper.find('.sponsor').isVisible()).toBeTruthy()
+    })
 
-      expect(sponsors.length).toBe(2)
-      expect(sponsors[0].fields.plan).toBe('silver')
+    test('リンクがスポンサー一覧ページのアンカーになっている', () => {
+      const platinumSponsorSysId: string = sponsors[2].sys.id
+      expect(
+        wrapper
+          .find('.platinum')
+          .find(RouterLinkStub)
+          .props().to
+      ).toBe(`/sponsors/#sponsor_${platinumSponsorSysId}`)
     })
   })
 })
