@@ -272,7 +272,7 @@ img {
 .hamburger {
   position: absolute;
   display: inline-block;
-  height: 4px;
+  height: 2px;
   width: 5.4vw;
   background: $vue-dark-blue;
   cursor: pointer;
