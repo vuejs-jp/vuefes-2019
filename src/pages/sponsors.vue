@@ -1,6 +1,6 @@
 <template>
   <BaseMain class="sponsors-page">
-    <template slot="heading">
+    <template v-slot:heading>
       SPONSORS
     </template>
 
