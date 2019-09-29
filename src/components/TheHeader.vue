@@ -208,6 +208,7 @@ function disableScrollHandler(e) {
 a {
   color: $vue-dark-blue;
   text-decoration-line: none;
+  transition: 0.2s $easeInOutCubic;
 }
 
 img {
