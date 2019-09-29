@@ -251,13 +251,16 @@ img {
 
 .togglable-menu {
   position: absolute;
-  top: 4.5vw;
   right: 8vw;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 4.6vw;
   width: 5.4vw;
 }
 
 .menu-button {
-  height: 6vw;
+  height: 100%;
   cursor: pointer;
 }
 
