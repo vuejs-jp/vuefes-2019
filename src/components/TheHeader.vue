@@ -266,7 +266,10 @@ img {
 
 .close-menu {
   position: absolute;
-  top: 0.5vw;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 4.6vw;
   color: $vue-dark-blue;
   font-size: 2.9vw;
   z-index: 1;
