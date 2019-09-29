@@ -7,7 +7,7 @@
     <div class="description">
       <!-- prettier-ignore -->
       <p>
-        チケットの販売は9/17を持ちまして終了しました。
+        チケットの販売は 9/17 を持ちまして終了しました。
       </p>
 
       <!-- prettier-ignore -->
