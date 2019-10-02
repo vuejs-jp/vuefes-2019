@@ -26,31 +26,40 @@
         />
       </div>
 
-      <h3 class="mobile-app-title">
-        公式モバイルアプリ
-      </h3>
+      <div class="mobile-app-content">
+        <h3 class="mobile-app-title">
+          公式モバイルアプリ
+        </h3>
 
-      <p class="mobile-app-description">
-        タイムテーブルやセッション情報をすばやく確認できるモバイルアプリをぜひお使いください。気になるセッションをまとめて、自分専用のタイムテーブルを作る機能もあります。
-      </p>
+        <p class="mobile-app-description">
+          タイムテーブルやセッション情報をすばやく確認できるモバイルアプリをぜひお使いください。気になるセッションをまとめて、自分専用のタイムテーブルを作る機能もあります。
+        </p>
+      </div>
 
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://apps.apple.com/jp/app/vue-fes-japan-2019%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1479972980?mt=8"
-        style="display: inline-block; overflow: hidden; background: url(https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2019-09-24&kind=iossoftware&bubble=ios_apps) no-repeat; width: 135px; height: 40px;"
-      />
+      <div class="mobile-app-badge">
+        <a
+          class="app-store"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://apps.apple.com/jp/app/vue-fes-japan-2019%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1479972980?mt=8"
+        >
+          <img
+            src="https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2019-09-24&kind=iossoftware&bubble=ios_apps"
+          />
+        </a>
 
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://play.google.com/store/apps/details?id=jp.vue.fes2019&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-      >
-        <img
-          alt="Google Play で手に入れよう"
-          src="https://play.google.com/intl/ja/badges/images/generic/ja_badge_web_generic.png"
-        />
-      </a>
+        <a
+          class="google-play"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://play.google.com/store/apps/details?id=jp.vue.fes2019&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+        >
+          <img
+            alt="Google Play で手に入れよう"
+            src="https://play.google.com/intl/ja/badges/images/generic/ja_badge_web_generic.png"
+          />
+        </a>
+      </div>
     </div>
 
     <ul class="event-list">
@@ -352,8 +361,48 @@ export default class TheEventSection extends Vue {
   }
 }
 
+.mobile-app {
+  margin-top: 5vw;
+
+  &-image {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &-content {
+    margin-top: 4.6vw;
+  }
+
+  &-title {
+    font-weight: bold;
+  }
+
+  &-badge {
+    margin-top: 5vw;
+    display: flex;
+    align-items: center;
+
+    a {
+      display: inline-block;
+    }
+
+    img {
+      display: block;
+      height: 12vw;
+    }
+  }
+}
+
+.google-play img {
+  // Google Play の画像は画像自体に余白がついているため CSS で微調整している
+  height: 17.9vw;
+  margin: -3vw 0 -3vw 0.6vw;
+}
+
 .event-list {
-  margin-top: 5.2vw;
+  margin-top: 8.5vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin-top: 40px;
