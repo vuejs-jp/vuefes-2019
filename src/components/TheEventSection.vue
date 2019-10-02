@@ -97,7 +97,7 @@
         class="information-table-image"
       >
         <img
-          :data-srcset="`${informationTable}, ${informationTable} 2x`"
+          :data-srcset="`${informationTable}, ${informationTable2x} 2x`"
           :data-src="informationTable2x"
           alt=""
         />
@@ -106,7 +106,7 @@
       <div v-lazy-container="{ selector: 'img' }" class="party-image">
         <img
           class="party"
-          :data-srcset="`${party}, ${party} 2x`"
+          :data-srcset="`${party}, ${party2x} 2x`"
           :data-src="party2x"
           alt=""
         />
