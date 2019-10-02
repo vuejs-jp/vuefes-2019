@@ -17,6 +17,42 @@
       </div>
     </div>
 
+    <div class="mobile-app">
+      <div v-lazy-container="{ selector: 'img' }" class="mobile-app-image">
+        <img
+          :data-srcset="`${mobileApp}, ${mobileApp2x} 2x`"
+          :data-src="mobileApp2x"
+          alt=""
+        />
+      </div>
+
+      <h3 class="mobile-app-title">
+        公式モバイルアプリ
+      </h3>
+
+      <p class="mobile-app-description">
+        タイムテーブルやセッション情報をすばやく確認できるモバイルアプリをぜひお使いください。気になるセッションをまとめて、自分専用のタイムテーブルを作る機能もあります。
+      </p>
+
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://apps.apple.com/jp/app/vue-fes-japan-2019%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1479972980?mt=8"
+        style="display: inline-block; overflow: hidden; background: url(https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2019-09-24&kind=iossoftware&bubble=ios_apps) no-repeat; width: 135px; height: 40px;"
+      />
+
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://play.google.com/store/apps/details?id=jp.vue.fes2019&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+      >
+        <img
+          alt="Google Play で手に入れよう"
+          src="https://play.google.com/intl/ja/badges/images/generic/ja_badge_web_generic.png"
+        />
+      </a>
+    </div>
+
     <ul class="event-list">
       <li v-for="(event, index) in events" :key="index" class="event">
         <div v-lazy-container="{ selector: 'img' }" class="event-image">
@@ -269,6 +305,8 @@ export default class TheEventSection extends Vue {
     }
   ]
 
+  private mobileApp = require('~/assets/images/event/mobile-app.png')
+  private mobileApp2x = require('~/assets/images/event/mobile-app@2x.png')
   private informationTable = require('~/assets/images/event/information-table.jpg')
   private informationTable2x = require('~/assets/images/event/information-table@2x.jpg')
   private party = require('~/assets/images/event/party.jpg')
