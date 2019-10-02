@@ -364,6 +364,10 @@ export default class TheEventSection extends Vue {
 .mobile-app {
   margin-top: 5vw;
 
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 48px;
+  }
+
   &-image {
     img {
       display: block;
@@ -373,16 +377,28 @@ export default class TheEventSection extends Vue {
 
   &-content {
     margin-top: 4.6vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 42px;
+    }
   }
 
   &-title {
     font-weight: bold;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 30px;
+    }
   }
 
   &-badge {
     margin-top: 5vw;
     display: flex;
     align-items: center;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 35px;
+    }
 
     a {
       display: inline-block;
@@ -391,6 +407,10 @@ export default class TheEventSection extends Vue {
     img {
       display: block;
       height: 12vw;
+
+      @media screen and (min-width: $layout-breakpoint--is-small-up) {
+        height: 75px;
+      }
     }
   }
 }
@@ -399,13 +419,18 @@ export default class TheEventSection extends Vue {
   // Google Play の画像は画像自体に余白がついているため CSS で微調整している
   height: 17.9vw;
   margin: -3vw 0 -3vw 0.6vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    height: 110px;
+    margin: −20px 0;
+  }
 }
 
 .event-list {
   margin-top: 8.5vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-top: 40px;
+    margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
   }
