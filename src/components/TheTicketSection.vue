@@ -29,7 +29,7 @@
       <div class="ticket-item">
         <div class="ticket-content">
           <h3>一般チケット</h3>
-          <p><span>7,000</span>円</p>
+          <p><span>7,000</span> 円</p>
         </div>
 
         <div v-lazy-container="{ selector: 'img' }" class="image">
