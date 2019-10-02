@@ -361,6 +361,9 @@ export default class TheEventSection extends Vue {
   }
 }
 
+// small-up 以上 1300px 未満ではバッジが被ってしまうためブレークポイントを 1300px 以上にしている
+$layout-breakpoint--is-1300px: 1300px;
+
 .mobile-app {
   margin-top: 5vw;
 
@@ -390,8 +393,7 @@ export default class TheEventSection extends Vue {
       margin-top: 40px;
     }
 
-    @media screen and (min-width: 1300px) {
-      // md サイズ以上 1300px 以下ではバッジが被ってしまうためブレークポイントを 1300px 以上にしている
+    @media screen and (min-width: $layout-breakpoint--is-1300px) {
       display: inline-block;
       width: 50%;
     }
@@ -414,8 +416,7 @@ export default class TheEventSection extends Vue {
       margin-top: 35px;
     }
 
-    @media screen and (min-width: 1300px) {
-      // md サイズ以上 1300px 以下ではバッジが被ってしまうためブレークポイントを 1300px 以上にしている
+    @media screen and (min-width: $layout-breakpoint--is-1300px) {
       justify-content: flex-end;
       width: 50%;
       transform: translateX(18px);
@@ -443,10 +444,6 @@ export default class TheEventSection extends Vue {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     height: 111px;
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    transform: translateY(2px);
   }
 }
 
