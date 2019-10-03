@@ -17,6 +17,51 @@
       </div>
     </div>
 
+    <div class="mobile-app">
+      <div v-lazy-container="{ selector: 'img' }" class="mobile-app-image">
+        <img
+          :data-srcset="`${mobileApp}, ${mobileApp2x} 2x`"
+          :data-src="mobileApp2x"
+          alt=""
+        />
+      </div>
+
+      <div class="mobile-app-content">
+        <h3 class="mobile-app-title">
+          公式モバイルアプリ
+        </h3>
+
+        <p class="mobile-app-description">
+          タイムテーブルやセッション情報をすばやく確認できるモバイルアプリをぜひお使いください。気になるセッションをまとめて、自分専用のタイムテーブルを作る機能もあります。
+        </p>
+      </div>
+
+      <div class="mobile-app-badge">
+        <a
+          class="app-store"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://apps.apple.com/jp/app/vue-fes-japan-2019%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1479972980?mt=8"
+        >
+          <img
+            src="https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2019-09-24&kind=iossoftware&bubble=ios_apps"
+          />
+        </a>
+
+        <a
+          class="google-play"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://play.google.com/store/apps/details?id=jp.vue.fes2019&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+        >
+          <img
+            alt="Google Play で手に入れよう"
+            src="https://play.google.com/intl/ja/badges/images/generic/ja_badge_web_generic.png"
+          />
+        </a>
+      </div>
+    </div>
+
     <ul class="event-list">
       <li v-for="(event, index) in events" :key="index" class="event">
         <div v-lazy-container="{ selector: 'img' }" class="event-image">
@@ -52,7 +97,7 @@
         class="information-table-image"
       >
         <img
-          :data-srcset="`${informationTable}, ${informationTable} 2x`"
+          :data-srcset="`${informationTable}, ${informationTable2x} 2x`"
           :data-src="informationTable2x"
           alt=""
         />
@@ -61,7 +106,7 @@
       <div v-lazy-container="{ selector: 'img' }" class="party-image">
         <img
           class="party"
-          :data-srcset="`${party}, ${party} 2x`"
+          :data-srcset="`${party}, ${party2x} 2x`"
           :data-src="party2x"
           alt=""
         />
@@ -269,6 +314,8 @@ export default class TheEventSection extends Vue {
     }
   ]
 
+  private mobileApp = require('~/assets/images/event/mobile-app.png')
+  private mobileApp2x = require('~/assets/images/event/mobile-app@2x.png')
   private informationTable = require('~/assets/images/event/information-table.jpg')
   private informationTable2x = require('~/assets/images/event/information-table@2x.jpg')
   private party = require('~/assets/images/event/party.jpg')
@@ -314,11 +361,97 @@ export default class TheEventSection extends Vue {
   }
 }
 
-.event-list {
-  margin-top: 5.2vw;
+// small-up 以上 1300px 未満ではバッジが被ってしまうためブレークポイントを 1300px 以上にしている
+$layout-breakpoint--is-1300px: 1300px;
+
+.mobile-app {
+  margin-top: 5vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    margin-top: 40px;
+    margin-top: 48px;
+  }
+
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    margin-top: 64px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-image {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &-content {
+    margin-top: 4.6vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 40px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-1300px) {
+      display: inline-block;
+      width: 50%;
+    }
+  }
+
+  &-title {
+    font-weight: bold;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 30px;
+    }
+  }
+
+  &-badge {
+    margin-top: 5vw;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 35px;
+    }
+
+    @media screen and (min-width: $layout-breakpoint--is-1300px) {
+      justify-content: flex-end;
+      width: 50%;
+      transform: translateX(18px);
+    }
+
+    a {
+      display: inline-block;
+    }
+
+    img {
+      display: block;
+      height: 12vw;
+
+      @media screen and (min-width: $layout-breakpoint--is-small-up) {
+        height: 75px;
+      }
+    }
+  }
+}
+
+.google-play img {
+  // Google Play の画像は画像自体に余白がついているため CSS で微調整している
+  height: 17.9vw;
+  margin: -3vw 0 -3vw 0.6vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    height: 111px;
+  }
+}
+
+.event-list {
+  margin-top: 8.5vw;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
   }
