@@ -68,7 +68,7 @@ function displayEntries(contentTypes) {
     contentTypes
 
       // NOTE: ココをいじるとで出力したい contentType を調整できます
-      .filter(contentType => contentType.name === 'timeTableSection')
+      .filter(contentType => contentType.name === 'sponsor')
 
       .map(contentType => {
         return fetchEntriesForContentType(contentType).then(entries => {
@@ -87,7 +87,7 @@ function displayEntries(contentTypes) {
               entry.sys.id,
               entry.fields[contentType.displayField] || '[empty]'
             ])
-            console.log(entry)
+            console.log(`https:${entry.fields.banner.fields.file.url}`)
             // console.log(
             //   `entry.sys.contentType.sys.id: ${entry.sys.contentType.sys.id}`
             // )
