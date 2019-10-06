@@ -2,9 +2,11 @@
 
 require('dotenv').config()
 
+const fs = require('fs')
 const contentful = require('contentful')
 const chalk = require('chalk')
 const Table = require('cli-table2')
+const axios = require('axios')
 
 const SPACE_ID = process.env.CTF_SPACE_ID
 const ACCESS_TOKEN = process.env.CTF_CDA_ACCESS_TOKEN
@@ -61,6 +63,16 @@ function displayContentTypes() {
   })
 }
 
+const downloadImage = async (imageUrl, fileName) => {
+  const response = await axios.get(imageUrl, { responseType: 'arraybuffer' })
+  fs.writeFileSync(
+    `./tmp/sponsor-banners/${fileName}`,
+    // eslint-disable-next-line new-cap
+    new Buffer.from(response.data),
+    'binary'
+  )
+}
+
 function displayEntries(contentTypes) {
   console.log(chalk.green('Fetching and displaying Entries ...'))
 
@@ -87,7 +99,20 @@ function displayEntries(contentTypes) {
               entry.sys.id,
               entry.fields[contentType.displayField] || '[empty]'
             ])
-            console.log(`https:${entry.fields.banner.fields.file.url}`)
+
+            const fileName = [
+              entry.fields.plan,
+              entry.fields.name,
+              entry.fields.banner.fields.file.fileName
+            ].join('-')
+
+            const imageUrl = `https:${entry.fields.banner.fields.file.url}`
+
+            console.log(fileName)
+            console.log(imageUrl)
+
+            downloadImage(imageUrl, fileName)
+
             // console.log(
             //   `entry.sys.contentType.sys.id: ${entry.sys.contentType.sys.id}`
             // )
