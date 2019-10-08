@@ -401,22 +401,16 @@ $svg-grid: 120px;
   }
 
   h3 {
-    margin-bottom: 5vw;
     font-size: 5vw;
     font-weight: bold;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      margin-bottom: 20px;
       font-size: 30px;
     }
   }
 
-  p + p {
-    margin-top: 5vw;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      margin-top: 20px;
-    }
+  p {
+    margin-top: 2em;
   }
 }
 
