@@ -36,16 +36,21 @@
 
     <div class="notification">
       <h3>
-        開催決行のお知らせ
+        Vue Fes Japan 2019 開催決定のお知らせ
       </h3>
 
+      <!-- prettier-ignore -->
       <p>
-        台風の影響により開催が危ぶまれておりましたが、気象状況ならびに交通機関の運行状況などにより開催可能と判断いたしました。
+        台風の影響により開催が危ぶまれておりましたが（<a href="https://note.mu/448jp/n/n36cbb8d2e91f" target="_blank" rel="noopener noreferrer">リンク</a>）気象状況ならびに交通機関の運行状況などにより開催可能と判断いたしました。
       </p>
 
       <!-- prettier-ignore -->
       <p>
-        つきましては Vue Fes Japan 2019 を予定どおり開催いたします！ぜひ皆様、気を付けてお越しください。運営一同心よりお待ちしております。
+        したがいまして Vue Fes Japan 2019 を予定どおり開催いたします！最新の情報については <a href="https://twitter.com/vuefes" target="_blank" rel="noopener noreferrer">公式 Twitter</a> でアナウンスいたしますので、引き続きよろしくお願いします。
+      </p>
+
+      <p>
+        ぜひ皆様、気を付けてお越しください。スタッフ一同、心よりお待ちしております。
       </p>
     </div>
 
