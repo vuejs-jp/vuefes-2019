@@ -45,7 +45,7 @@
 
       <!-- prettier-ignore -->
       <p>
-        つきましては Vue Fes Japan 2019 を予定どおり開催いたします！ぜひ皆様 気を付けてお越しください。運営一同心よりお待ちしております。
+        つきましては Vue Fes Japan 2019 を予定どおり開催いたします！ぜひ皆様、気を付けてお越しください。運営一同心よりお待ちしております。
       </p>
     </div>
 
@@ -339,6 +339,8 @@ export default class TheHeadSection extends Vue {
 <style lang="scss" scoped>
 $svg-gap: 12px;
 $svg-grid: 120px;
+$content-max-width--is-small-up: 668px;
+$content-max-width--is-medium-up: 820px;
 
 .the-head-section {
   color: $primary-text-color--invert;
@@ -383,14 +385,29 @@ $svg-grid: 120px;
   padding: 5vw;
   margin-bottom: 8vw;
 
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    max-width: $content-max-width--is-small-up;
+    padding: 40px;
+    margin: 0 auto 40px;
+  }
+
   h3 {
     margin-bottom: 5vw;
     font-size: 5vw;
     font-weight: bold;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
   }
 
   p + p {
     margin-top: 5vw;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      margin-top: 20px;
+    }
   }
 }
 
