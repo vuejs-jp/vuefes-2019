@@ -391,6 +391,10 @@ $content-max-width--is-medium-up: 820px;
     margin: 0 auto 40px;
   }
 
+  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
+    max-width: $content-max-width--is-medium-up;
+  }
+
   h3 {
     margin-bottom: 5vw;
     font-size: 5vw;
