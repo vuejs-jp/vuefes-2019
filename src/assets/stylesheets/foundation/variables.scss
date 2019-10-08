@@ -15,6 +15,9 @@ $layout-column-width--is-small-up: calc(
   (100% - #{$layout-gutter-width--is-small-up} * (#{$layout-column-length--is-small-up} - 1)) / #{$layout-column-length--is-small-up}
 );
 
+// .section-container の padding を差し引いたもの
+$content-min-width--is-small-up: calc(#{$layout-breakpoint--is-small-up} - 70px * 2);
+
 $page-container-max-width: 1180px;
 
 // md サイズ以上のときのヘッダーの高さ

@@ -34,7 +34,7 @@
       <span class="date-place__place">TOC GOTANDA MESSE</span>
     </div>
 
-    <div class="description">
+    <div class="notification">
       <h3>
         開催決行のお知らせ
       </h3>
@@ -339,8 +339,6 @@ export default class TheHeadSection extends Vue {
 <style lang="scss" scoped>
 $svg-gap: 12px;
 $svg-grid: 120px;
-$content-max-width--is-small-up: 668px;
-$content-max-width--is-medium-up: 820px;
 
 .the-head-section {
   color: $primary-text-color--invert;
@@ -379,20 +377,22 @@ $content-max-width--is-medium-up: 820px;
   }
 }
 
-.description {
+.notification {
   color: $primary-text-color;
   background-color: $white;
   padding: 5vw;
   margin-bottom: 8vw;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    max-width: $content-max-width--is-small-up;
-    padding: 40px;
     margin: 0 auto 40px;
-  }
-
-  @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    max-width: $content-max-width--is-medium-up;
+    padding: calc(
+      #{$layout-column-width--is-small-up} + #{$layout-gutter-width--is-small-up}
+    );
+    // prettier-ignore
+    width: calc(
+      #{$layout-column-width--is-small-up} * 16 + #{$layout-gutter-width--is-small-up} * 15
+    );
+    min-width: $content-min-width--is-small-up;
   }
 
   h3 {
