@@ -196,7 +196,7 @@ $ticket-item-content-width--is-small-up: 140px;
 }
 
 .description {
-  background-color: $primary-text-color--invert;
+  background-color: $white;
   padding: 5vw;
   margin-bottom: 8vw;
 

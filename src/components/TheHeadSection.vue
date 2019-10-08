@@ -34,6 +34,21 @@
       <span class="date-place__place">TOC GOTANDA MESSE</span>
     </div>
 
+    <div class="description">
+      <h3>
+        開催決行のお知らせ
+      </h3>
+
+      <p>
+        台風の影響により開催が危ぶまれておりましたが、気象状況ならびに交通機関の運行状況などにより開催可能と判断いたしました。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        つきましては Vue Fes Japan 2019 を予定どおり開催いたします！ぜひ皆様 気を付けてお越しください。運営一同心よりお待ちしております。
+      </p>
+    </div>
+
     <div class="message">
       <!-- prettier-ignore -->
       <p>
@@ -359,6 +374,23 @@ $svg-grid: 120px;
   &__day {
     font-size: 2.3vw;
     margin: 0 15px 0 5px;
+  }
+}
+
+.description {
+  color: $primary-text-color;
+  background-color: $white;
+  padding: 5vw;
+  margin-bottom: 8vw;
+
+  h3 {
+    margin-bottom: 5vw;
+    font-size: 5vw;
+    font-weight: bold;
+  }
+
+  p + p {
+    margin-top: 5vw;
   }
 }
 
