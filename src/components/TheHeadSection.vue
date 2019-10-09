@@ -41,7 +41,7 @@
 
       <!-- prettier-ignore -->
       <p>
-        台風の影響により開催が危ぶまれておりましたが（<a href="https://note.mu/448jp/n/n36cbb8d2e91f" target="_blank" rel="noopener noreferrer">リンク</a>）気象状況ならびに交通機関の運行状況などにより開催可能と判断いたしました。
+        <a href="https://note.mu/448jp/n/n36cbb8d2e91f" target="_blank" rel="noopener noreferrer">台風の影響により開催が危ぶまれておりました</a>が、気象状況ならびに交通機関の運行状況などにより開催可能と判断いたしました。
       </p>
 
       <!-- prettier-ignore -->
