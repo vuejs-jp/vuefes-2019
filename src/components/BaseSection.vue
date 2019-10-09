@@ -57,7 +57,7 @@ export default class BaseSection extends Vue {}
 
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   .section-container {
-    padding: 120px 70px;
+    padding: 120px $section-container-horizontal-padding--is-small-up;
   }
 
   .heading-wrapper {
