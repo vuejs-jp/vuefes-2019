@@ -46,7 +46,7 @@
 
       <!-- prettier-ignore -->
       <p>
-        したがいまして Vue Fes Japan 2019 を予定どおり開催いたします！最新の情報については <a href="https://twitter.com/vuefes" target="_blank" rel="noopener noreferrer">公式 Twitter</a> でアナウンスいたしますので、引き続きよろしくお願いします。
+        したがいまして Vue Fes Japan 2019 を予定どおり開催いたします！最新の情報については <a href="https://twitter.com/vuefes" target="_blank" rel="noopener noreferrer">公式 Twitter</a> でアナウンスいたしますので、引き続きよろしくお願いいたします。
       </p>
 
       <p>
