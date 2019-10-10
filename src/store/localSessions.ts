@@ -70,7 +70,9 @@ export const state = (): LocalSessions.State => ({
       speakerId: 'ulivz',
       title: 'The Present and Future about VuePress',
       time: 40,
-      paragraphs: ['TBD'],
+      paragraphs: [
+        "VuePress is a Vue-powered static website generator, it has gone through two milestones in the past, the 1st is its birth, Vue SFC, one of the core designs in Vue.js, is cleverly combined with Markdown. The 2nd, is the release of 1.x, the powerful plugin system enables VuePress to have infinite possibilities. so. what is the next stop of VuePress? ULIVZ, the maintainer of VuePress, will share with you the future of VuePress in the light of the current situation of VuePress. At the same time, the speech will be interspersed with some of the author's design concepts and thinkings of open source, even if you have not used VuePress, you also hope to be able to harvest some useful information."
+      ],
       ogImage: 'ulivz.jpg'
     },
     {
