@@ -69,7 +69,7 @@
 
       <!-- prettier-ignore -->
       <p>
-        チケット代金の返金方法やスケジュールについては、決定次第、本 Web サイトおよび <a href="https://twitter.com/vuefes" target="_blank" rel="noopener noreferrer">公式 Twitter</a> でお知らせいたします。また、興行中止保険が適用となった場合、保険の規約上、Vue.js 日本ユーザーグループとして Vue Fes Japan 2019 の代替イベントを企画・開催することが禁止されております。こちらも合わせてお知らせさせていただきます。
+        チケット代金の返金方法やスケジュールについては、決定次第、本 Web サイトおよび <a href="https://twitter.com/vuefes" target="_blank" rel="noopener noreferrer">公式 Twitter</a> でお知らせいたします。また、興行中止保険が適用となった場合、保険の規約上、Vue.js 日本ユーザーグループとして Vue Fes Japan 2019 の代替イベントを企画・開催することが禁止されております。こちらも併せてお知らせさせていただきます。
       </p>
 
       <p>
