@@ -337,13 +337,17 @@ export default class TheEventSection extends Vue {
   border: 1px solid $vue-dark-blue;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    max-width: 60vw;
-    padding: 4vw;
+    padding: calc(
+      #{$layout-column-width--is-small-up} + #{$layout-gutter-width--is-small-up}
+    );
+    // prettier-ignore
+    width: calc(
+      #{$layout-column-width--is-small-up} * 14 + #{$layout-gutter-width--is-small-up} * 13
+    );
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    max-width: 820px;
-    padding: 40px;
+    padding: $layout-column-width--is-small-up;
   }
 }
 

@@ -34,36 +34,51 @@
       <span class="date-place__place">TOC GOTANDA MESSE</span>
     </div>
 
-    <div class="message">
+    <div class="notification">
+      <h3>
+        Vue Fes Japan 2019 開催中止のお知らせ
+      </h3>
+
       <!-- prettier-ignore -->
       <p>
-        2018 年は Vue.js にとって飛躍の年でした。エコシステムの成熟、関連ツールのアップデート、コミュニティの拡大と、数多くのポジティブな出来事がありました。また、世界各地でカンファレンスが開催され、Vue.js 日本ユーザーグループでも国内初の大規模カンファレンス
-        <a
-          class="link"
-          href="https://vuefes.jp/2018/"
-          target="_blank"
-          rel="noopener"
-        >
-          Vue Fes Japan 2018
-        </a>
-        を大盛況で終えることができました。
+        2019年10月12日（土）TOC 五反田メッセにて開催を予定しておりました「Vue Fes Japan 2019」は、台風19号の接近に伴い、参加者、スポンサー、スピーカー、スタッフ、すべての人の安全を最優先に考慮し、また JR 東日本の他、主要交通機関が計画運休を発表したことを受け、開催中止を決定しました。
+      </p>
+
+      <p>
+        開催を楽しみにお待ちいただいた皆様には多大なご迷惑をおかけしますことを、心より深くお詫び申し上げます。また中止の決定が開催前日となってしまったことにより、特に遠方からお越しいただく予定だった皆様には多大なご負担をおかけしましたことを重ねてお詫び申し上げます。
       </p>
 
       <!-- prettier-ignore -->
       <p>
-        今年はメジャーアップデートとなる Vue.js 3.0 のリリースが予定されており、世界中からますます注目が集まることでしょう。「Vue Fes Japan 2019」では、国内外の著名スピーカーによるセッションの他、ユーザー同士が相互に楽しめるカンファレンスを目指します。ぜひ、一緒に Vue.js を楽しみ、盛り上げましょう！
+        ここで、今回の中止決定の経緯について改めてご説明させていただきます。主催者である我々 Vue.js 日本ユーザーグループは有志による非営利のコミュニティであり、今回のような大規模カンファレンスを開催するための費用は、スポンサー様による協賛金と、ご参加いただく皆様によるチケット売上のみに依存しております。
       </p>
 
-      <p class="message__author">
-        Vue.js 日本ユーザーグループ 代表 川口 和也
-        <a
-          class="link"
-          href="https://github.com/kazupon"
-          target="_blank"
-          rel="noopener"
-        >
-          @kazupon
-        </a>
+      <!-- prettier-ignore -->
+      <p>
+        そこで万が一の開催中止に備えて、Vue Fes Japan 2019 では <a href="https://note.mu/448jp/n/n36cbb8d2e91f" target="_blank" rel="noopener noreferrer">先日の発表</a> のとおり興行中止保険に加入しています。具体的には、開催当日に開催地より半径 100km 以内に開催に影響を与える自然現象（今回の場合は台風にあたります）がある場合、または開催地への交通機関が運休などで機能しなくなった場合、この 2つの条件のいずれかを満たした場合に一部費用を補償する契約内容です。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        同契約では、最終的に費用が補償されるかどうかの判断は開催当日になされることになります。つまり、計画運休の発表や台風の予想進路が確定的であっても、仮に当日に運休が取り消しになり交通機関が通常通り運行され、台風が開催に影響を与えないと判断された場合は、補償が行われない可能性があります。我々 Vue.js 日本ユーザーグループには、補償が行われなかった場合に多額の金銭的損失を補填できるだけの余力は残念ながらありません。このリスクを最小限に抑えるためには、開催中止のタイミングを当日早朝、または前日夜にすることが最善と考え先日の発表に至りました。
+      </p>
+
+      <p>
+        しかし連日連夜スタッフ内でも協議を重ねた結果、金銭面などのリスクよりも、最終的にはすべての人の安全が何よりも最優先に確保されるべきと考え、当初の予定よりも早く開催中止を決定することになりました。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        チケット代金の返金方法やスケジュールについては、決定次第、本 Web サイトおよび <a href="https://twitter.com/vuefes" target="_blank" rel="noopener noreferrer">公式 Twitter</a> でお知らせいたします。また、興行中止保険が適用となった場合、保険の規約上、Vue.js 日本ユーザーグループとして Vue Fes Japan 2019 の代替イベントを企画・開催することが禁止されております。こちらも併せてお知らせさせていただきます。
+      </p>
+
+      <p>
+        改めて、開催を楽しみにしてくださった皆様に多大なご迷惑、ご心配をおかけしましたことを心より深くお詫び申し上げます。何卒、ご理解いただけますようよろしくお願い申し上げます。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        2019年10月11日 Vue.js 日本ユーザーグループ 代表 川口 和也
       </p>
     </div>
 
@@ -362,15 +377,35 @@ $svg-grid: 120px;
   }
 }
 
-.message {
-  margin-bottom: 5vw;
+.notification {
+  color: $primary-text-color;
+  background-color: $white;
+  padding: 5vw;
+  margin-bottom: 8vw;
 
-  &__author {
-    text-align: right;
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    margin: 0 auto 60px;
+    padding: calc(
+      #{$layout-column-width--is-small-up} + #{$layout-gutter-width--is-small-up}
+    );
+    // prettier-ignore
+    width: calc(
+      #{$layout-column-width--is-small-up} * 16 + #{$layout-gutter-width--is-small-up} * 15
+    );
+    min-width: $content-min-width--is-small-up;
   }
 
-  .link {
-    color: $primary-text-color--invert;
+  h3 {
+    font-size: 5vw;
+    font-weight: bold;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 30px;
+    }
+  }
+
+  p {
+    margin-top: 2em;
   }
 }
 
@@ -418,11 +453,6 @@ svg.main-visual {
     &__day {
       font-size: 18px;
     }
-  }
-
-  .message {
-    width: 65%;
-    margin: 0 0 60px auto;
   }
 }
 </style>

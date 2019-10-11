@@ -4,7 +4,7 @@
       TICKET
     </template>
 
-    <div class="description">
+    <div class="notification">
       <!-- prettier-ignore -->
       <p>
         チケットの販売は 9/17 を持ちまして終了しました。追加販売や当日販売はありません。また、チケットをお持ちでない方は当日来場してもご入場いただけません。お問い合わせいただいても対応できかねますので、あらかじめご了承ください。
@@ -180,8 +180,11 @@ export default class TheTicketSection extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$content-max-width--is-small-up: 668px;
-$content-max-width--is-medium-up: 820px;
+// prettier-ignore
+$content-width--is-small-up: calc(
+  #{$layout-column-width--is-small-up} * 16 + #{$layout-gutter-width--is-small-up} * 15
+);
+$content-width--is-medium-up: $content-width--is-small-up;
 $ticket-item-content-width--is-small: 28.5vw;
 $ticket-item-content-width--is-small-up: 140px;
 
@@ -195,19 +198,22 @@ $ticket-item-content-width--is-small-up: 140px;
   );
 }
 
-.description {
-  background-color: $primary-text-color--invert;
-  padding: 5vw;
+.notification {
   margin-bottom: 8vw;
+  padding: 5vw;
+  background-color: $white;
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    max-width: $content-max-width--is-small-up;
-    padding: 40px;
     margin: 0 auto 40px;
+    padding: calc(
+      #{$layout-column-width--is-small-up} + #{$layout-gutter-width--is-small-up}
+    );
+    width: $content-width--is-small-up;
+    min-width: $content-min-width--is-small-up;
   }
 
   @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-    max-width: $content-max-width--is-medium-up;
+    padding: $layout-column-width--is-small-up;
   }
 }
 
@@ -410,12 +416,13 @@ $ticket-item-content-width--is-small-up: 140px;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      max-width: $content-max-width--is-small-up;
       margin-top: 20px;
+      width: $content-width--is-small-up;
+      min-width: $content-min-width--is-small-up;
     }
 
     @media screen and (min-width: $layout-breakpoint--is-medium-up) {
-      max-width: $content-max-width--is-medium-up;
+      width: $content-width--is-medium-up;
     }
   }
 

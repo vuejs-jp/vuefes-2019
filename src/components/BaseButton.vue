@@ -41,7 +41,6 @@ export default class BaseButton extends Vue {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 700px;
   margin: 0 auto;
   padding: 3.9% 6%;
   background-color: $primary-color;
@@ -56,16 +55,19 @@ export default class BaseButton extends Vue {
     background-color: $white;
     color: $primary-text-color;
   }
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    padding: 40px;
+    // prettier-ignore
+    width: calc(
+      #{$layout-column-width--is-small-up} * 16 + #{$layout-gutter-width--is-small-up} * 15
+    );
+    min-width: $content-min-width--is-small-up;
+    font-size: 24px;
+  }
 }
 
 a.base-button {
   text-decoration: none;
-}
-
-@media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .base-button {
-    padding: 40px;
-    font-size: 24px;
-  }
 }
 </style>
