@@ -19,11 +19,7 @@
 
     <div class="mobile-app">
       <div v-lazy-container="{ selector: 'img' }" class="mobile-app-image">
-        <img
-          :data-srcset="`${mobileApp}, ${mobileApp2x} 2x`"
-          :data-src="mobileApp2x"
-          alt=""
-        />
+        <img :data-src="mobileApp" alt="" />
       </div>
 
       <div class="mobile-app-content">
@@ -315,7 +311,6 @@ export default class TheEventSection extends Vue {
   ]
 
   private mobileApp = require('~/assets/images/event/mobile-app.png')
-  private mobileApp2x = require('~/assets/images/event/mobile-app@2x.png')
   private informationTable = require('~/assets/images/event/information-table.jpg')
   private informationTable2x = require('~/assets/images/event/information-table@2x.jpg')
   private party = require('~/assets/images/event/party.jpg')
