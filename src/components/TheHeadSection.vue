@@ -36,6 +36,22 @@
 
     <div class="notification">
       <h3>
+        チケット返金について追加のお知らせ
+      </h3>
+
+      <!-- prettier-ignore -->
+      <p>
+        2019/11/13 現在、販売元である Universe 側のトラブルにより、一部の方々に対して返金が完了していないことが判明いたしました。これまでの経緯は <a href="https://note.mu/ryamakuchi/n/ncdd3950d7580" target="_blank" rel="noopener noreferrer">note の記事</a> にまとめています。お待たせして申し訳ございませんが、現在対応中とのことです。返金されるまで今しばらくお待ちくださいますようお願い申し上げます。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        2019年11月16日 Vue.js 日本ユーザーグループ 代表 川口 和也
+      </p>
+    </div>
+
+    <div class="notification">
+      <h3>
         Vue Fes Japan 2019 チケット返金のお知らせ
       </h3>
 
