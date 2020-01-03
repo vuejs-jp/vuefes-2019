@@ -41,12 +41,8 @@ describe('speakers module', () => {
     })
 
     describe('updateSpeaker', () => {
-      let newSpeaker
-
-      beforeEach(() => {
-        newSpeaker = cloneDeep(speakers[0])
-        newSpeaker.fields.name = 'New Speaker'
-      })
+      const newSpeaker = cloneDeep(speakers[0])
+      newSpeaker.fields.name = 'New Speaker'
 
       test('speaker を更新（置換）できる', () => {
         mutations.updateSpeaker(state, newSpeaker)
@@ -56,6 +52,19 @@ describe('speakers module', () => {
   })
 
   describe('actions', () => {
+    const mockedGetters = { all: speakers }
+    const dispatch = jest.fn()
+
+    describe('initialize', () => {
+      test('スピーカー情報及びアセットを取得する', async () => {
+        // @ts-ignore error TS2739: Type 'Mock<any, any>' is missing the following properties from type 'Getters': all, find
+        await actions.initialize({ getters: mockedGetters, dispatch })
+
+        expect(dispatch).toHaveBeenNthCalledWith(1, 'fetchSpeakers')
+        expect(dispatch).toHaveBeenNthCalledWith(2, 'fetchAsset', speakers[0])
+      })
+    })
+
     describe('fetchSpeakers', () => {
       const commit = jest.fn()
 

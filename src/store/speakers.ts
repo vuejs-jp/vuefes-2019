@@ -19,6 +19,7 @@ namespace Speakers {
   }
 
   export type Actions = {
+    initialize: undefined
     fetchSpeakers: undefined
     fetchAsset: Speaker
   }
@@ -55,6 +56,13 @@ export const actions: Actions<
   Speakers.Getters,
   Speakers.Mutations
 > = {
+  async initialize({ getters, dispatch }) {
+    await dispatch('fetchSpeakers')
+    await Promise.all(
+      getters.all.map(speaker => dispatch('fetchAsset', speaker))
+    )
+  },
+
   async fetchSpeakers({ commit }) {
     const speakers: Speaker[] = await getSpeakers()
     commit('setSpeakers', speakers)
@@ -64,7 +72,10 @@ export const actions: Actions<
     const newSpeaker = cloneDeep(speaker)
 
     const [newAvatar, newAvatar2x] = await Promise.all([
+      // @ts-ignore error TS2532: Object is possibly 'undefined'
       getAsset(speaker.fields.avatar.sys.id),
+
+      // @ts-ignore error TS2532: Object is possibly 'undefined'
       getAsset(speaker.fields.avatar.sys.id)
     ])
 
