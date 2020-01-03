@@ -7,26 +7,34 @@
     <div class="speaker-container">
       <div
         v-for="speaker in speakers"
-        :key="speaker.twitter"
+        :key="speaker.sys.id"
         v-lazy-container="{ selector: 'img.avatar' }"
         class="speaker"
       >
-        <nuxt-link class="avatar-link" :to="`/sessions/${speaker.id}/`">
+        <nuxt-link
+          class="avatar-link"
+          :to="`/sessions/${speaker.fields.github}/`"
+        >
           <img
             class="avatar"
-            :data-srcset="`${speaker.avatar}, ${speaker.avatar2x} 2x`"
-            :data-src="speaker.avatar2x"
+            :data-srcset="
+              `${speaker.fields.avatar.fields.file.url}, ${speaker.fields.avatar2x.fields.file.url} 2x`
+            "
+            :data-src="speaker.fields.avatar2x.fields.file.url"
             alt=""
           />
         </nuxt-link>
 
         <div class="title">
-          {{ speaker.title }}
+          {{ speaker.fields.title }}
         </div>
 
-        <nuxt-link class="name-link" :to="`/sessions/${speaker.id}/`">
+        <nuxt-link
+          class="name-link"
+          :to="`/sessions/${speaker.fields.github}/`"
+        >
           <h3 class="name">
-            {{ speaker.name }}
+            {{ speaker.fields.name }}
           </h3>
         </nuxt-link>
       </div>
@@ -36,7 +44,7 @@
 
 <script lang="ts">
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import { LocalSpeaker } from '~/store/localSpeakers'
+import Speaker from '~/types/speaker'
 import BaseSection from '~/components/BaseSection.vue'
 
 @Component({
@@ -45,8 +53,8 @@ import BaseSection from '~/components/BaseSection.vue'
   }
 })
 export default class TheSpeakerListSection extends Vue {
-  @Getter('all', { namespace: 'localSpeakers' })
-  speakers!: LocalSpeaker[]
+  @Getter('all', { namespace: 'speakers' })
+  speakers!: Speaker[]
 }
 </script>
 
