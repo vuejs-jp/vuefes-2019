@@ -1,4 +1,4 @@
-import sponsors from '../../../fixtures/contentful/sponsors'
+import sponsors from 'test/fixtures/contentful/sponsors'
 import * as contentful from '~/plugins/contentful'
 import Sponsor from '~/types/sponsor'
 import {

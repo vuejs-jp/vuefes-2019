@@ -2,7 +2,7 @@ import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
-import createFullStore from '../utils/createFullStore'
+import createFullStore from 'test/unit/specs/utils/createFullStore'
 import HomePage from '~/pages/index.vue'
 
 const localVue = createLocalVue()
