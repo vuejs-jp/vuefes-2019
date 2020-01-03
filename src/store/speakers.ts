@@ -14,6 +14,7 @@ namespace Speakers {
 
   export type Mutations = {
     setSpeakers: Speaker[]
+    updateSpeaker: Speaker
   }
 
   export type Actions = {
@@ -35,8 +36,14 @@ export const getters: Getters<Speakers.State, Speakers.Getters> = {
 }
 
 export const mutations: Mutations<Speakers.State, Speakers.Mutations> = {
-  setSpeakers(state, payload) {
-    state.speakers = payload
+  setSpeakers(state, speakers) {
+    state.speakers = speakers
+  },
+
+  updateSpeaker(state, newSpeaker) {
+    state.speakers = state.speakers.map(speaker =>
+      speaker.sys.id === newSpeaker.sys.id ? newSpeaker : speaker
+    )
   }
 }
 

@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash.clonedeep'
 import speakers from '../../../fixtures/contentful/speakers'
 import * as contentful from '~/plugins/contentful'
 import {
@@ -12,13 +13,10 @@ describe('speakers module', () => {
 
   beforeEach(() => {
     state = initialState()
+    state.speakers = speakers
   })
 
   describe('getters', () => {
-    beforeEach(() => {
-      state.speakers = speakers
-    })
-
     describe('all', () => {
       test('すべての speakers を取得できる', () => {
         expect(getters.all(state)).toEqual(speakers)
@@ -38,6 +36,20 @@ describe('speakers module', () => {
       test('speakers をセットできる', () => {
         mutations.setSpeakers(state, speakers)
         expect(state.speakers).toEqual(speakers)
+      })
+    })
+
+    describe('updateSpeaker', () => {
+      let newSpeaker
+
+      beforeEach(() => {
+        newSpeaker = cloneDeep(speakers[0])
+        newSpeaker.fields.name = 'New Speaker'
+      })
+
+      test('speaker を更新（置換）できる', () => {
+        mutations.updateSpeaker(state, newSpeaker)
+        expect(state.speakers).toContain(newSpeaker)
       })
     })
   })
