@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash.clonedeep'
 import speakers from '../../../fixtures/contentful/speakers'
+import asset from '../../../fixtures/contentful/asset'
 import * as contentful from '~/plugins/contentful'
 import {
   state as initialState,
@@ -56,19 +57,39 @@ describe('speakers module', () => {
 
   describe('actions', () => {
     describe('fetchSpeakers', () => {
+      const commit = jest.fn()
+
       beforeEach(() => {
         // @ts-ignore error TS2540: Cannot assign to 'getSpeakers' because it is a read-only property.
         contentful.getSpeakers = jest.fn().mockResolvedValue(speakers)
       })
 
       test('speakers を取得してセットする', async () => {
-        const commit = jest.fn()
-
         // @ts-ignore error TS2345: Argument of type '{ commit: Mock<any, any>; }' is not assignable to parameter of type 'Context<State, Actions, Getters, Mutations, {}, {}>'.
         // Type '{ commit: Mock<any, any>; }' is missing the following properties from type 'Context<State, Actions, Getters, Mutations, {}, {}>': dispatch, state, getters, rootState, rootGetters
         await actions.fetchSpeakers({ commit })
 
         expect(commit).toHaveBeenCalledWith('setSpeakers', speakers)
+      })
+    })
+
+    describe('fetchAsset', () => {
+      const commit = jest.fn()
+      const newSpeaker = cloneDeep(speakers[0])
+      newSpeaker.fields.avatar = asset
+      newSpeaker.fields.avatar2x = asset
+
+      beforeEach(() => {
+        // @ts-ignore error TS2540: Cannot assign to 'getAsset' because it is a read-only property.
+        contentful.getAsset = jest.fn().mockResolvedValue(asset)
+      })
+
+      test('アセットを取得して Speaker を更新する', async () => {
+        // @ts-ignore error TS2345: Argument of type '{ commit: Mock<any, any>; }' is not assignable to parameter of type 'Context<State, Actions, Getters, Mutations, {}, {}>'.
+        // Type '{ commit: Mock<any, any>; }' is missing the following properties from type 'Context<State, Actions, Getters, Mutations, {}, {}>': dispatch, state, getters, rootState, rootGetters
+        await actions.fetchAsset({ commit }, speakers[0])
+
+        expect(commit).toHaveBeenCalledWith('updateSpeaker', newSpeaker)
       })
     })
   })

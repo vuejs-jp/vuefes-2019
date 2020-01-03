@@ -1,6 +1,7 @@
+import cloneDeep from 'lodash.clonedeep'
 import { Getters, Mutations, Actions } from '~/types/store'
 import Speaker from '~/types/speaker'
-import { getSpeakers } from '~/plugins/contentful'
+import { getAsset, getSpeakers } from '~/plugins/contentful'
 
 namespace Speakers {
   export type State = {
@@ -18,7 +19,8 @@ namespace Speakers {
   }
 
   export type Actions = {
-    fetchSpeakers: void
+    fetchSpeakers: undefined
+    fetchAsset: Speaker
   }
 }
 
@@ -56,5 +58,19 @@ export const actions: Actions<
   async fetchSpeakers({ commit }) {
     const speakers: Speaker[] = await getSpeakers()
     commit('setSpeakers', speakers)
+  },
+
+  async fetchAsset({ commit }, speaker) {
+    const newSpeaker = cloneDeep(speaker)
+
+    const [newAvatar, newAvatar2x] = await Promise.all([
+      getAsset(speaker.fields.avatar.sys.id),
+      getAsset(speaker.fields.avatar.sys.id)
+    ])
+
+    newSpeaker.fields.avatar = newAvatar
+    newSpeaker.fields.avatar2x = newAvatar2x
+
+    commit('updateSpeaker', newSpeaker)
   }
 }

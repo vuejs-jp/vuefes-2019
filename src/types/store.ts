@@ -24,5 +24,5 @@ type Context<S, A, G, M, RS, RG> = {
 }
 
 export type Actions<S, A, G = {}, M = {}, RS = {}, RG = {}> = {
-  [K in keyof A]: (context: Context<S, A, G, M, RS, RG>, payload?: A[K]) => any
+  [K in keyof A]: (context: Context<S, A, G, M, RS, RG>, payload: A[K]) => any
 }

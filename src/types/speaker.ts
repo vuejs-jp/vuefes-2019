@@ -1,12 +1,12 @@
-import { EntrySys, EntryLink, AssetLink } from '~/types/contentful'
+import { EntrySys, EntryLink, Asset, AssetLink } from '~/types/contentful'
 
 export default interface Speaker {
   sys: EntrySys
   fields: {
     name: string
     title: string // 肩書き
-    avatar: AssetLink
-    avatar2x: AssetLink
+    avatar: Asset | AssetLink // Contentful から初回取得時には AssetLink で、その後 Asset に置き換えられる
+    avatar2x: Asset | AssetLink // Contentful から初回取得時には AssetLink で、その後 Asset に置き換えられる
     twitter: string | null
     github: string
     description: string // Markdown
