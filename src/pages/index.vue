@@ -1,6 +1,9 @@
 <template>
   <div class="home-page">
     <TheHeadSection />
+
+    {{ asset }}
+
     <TheSpeakerListSection />
     <TheTicketSection />
     <TheAccessSection />
@@ -21,6 +24,7 @@ import TheTicketSection from '~/components/TheTicketSection.vue'
 import TheTimeTableSection from '~/components/TheTimeTableSection.vue'
 import TheSponsorListSection from '~/components/TheSponsorListSection.vue'
 import TheStaffListSection from '~/components/TheStaffListSection.vue'
+import { getAsset } from '~/plugins/contentful'
 
 @Component({
   components: {
@@ -32,6 +36,11 @@ import TheStaffListSection from '~/components/TheStaffListSection.vue'
     TheTimeTableSection,
     TheSponsorListSection,
     TheStaffListSection
+  },
+  async asyncData() {
+    return {
+      asset: await getAsset('1Bqb7VVTxdnL3zZIh8FNJD')
+    }
   }
 })
 export default class HomePage extends Vue {}
