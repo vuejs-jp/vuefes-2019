@@ -48,7 +48,7 @@ export const getters: Getters<Sponsors.State, Sponsors.Getters> = {
   },
   sponsorPlansHavingSponsors: (state, getters) => {
     return state.sponsorPlans.filter(
-      // @ts-ignore TS2532: Object is possibly 'undefined'
+      // @ts-ignore error TS2532: Object is possibly 'undefined'
       // FIXME: getters?: Stores.Getters と定義していて、getters は引数として使わない場合があるので、これで正しいのでは？
       sponsorPlan => getters.sponsorsByPlan(sponsorPlan.plan).length > 0
     )

@@ -1,4 +1,4 @@
-import { ContentfulClientApi } from 'contentful/index'
+import { ContentfulClientApi, Asset } from 'contentful/index'
 
 const contentful = require('contentful')
 
@@ -80,4 +80,8 @@ export const getSponsors = (): Promise<any[]> => {
       order: 'fields.appliedAt'
     })
     .then(response => response.items)
+}
+
+export const getAsset = (id: string): Promise<Asset> => {
+  return clientWithoutResolveLinks.getAsset(id)
 }

@@ -29,7 +29,7 @@ describe('TheSpeakerListSection', () => {
   })
 
   test('リンクに Trailing Slash が入っている', () => {
-    expect(wrapper.find('.avatar-link').props().to).toBe('/sessions/yyx990803/')
-    expect(wrapper.find('.name-link').props().to).toBe('/sessions/yyx990803/')
+    expect(wrapper.find('.avatar-link').props().to).toBe('/sessions/jlooper/')
+    expect(wrapper.find('.name-link').props().to).toBe('/sessions/jlooper/')
   })
 })
