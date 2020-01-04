@@ -1,4 +1,4 @@
-import eventContainers from '../../../fixtures/contentful/eventContainers'
+import eventContainers from 'test/fixtures/contentful/eventContainers'
 import * as contentful from '~/plugins/contentful'
 import {
   state as initialState,

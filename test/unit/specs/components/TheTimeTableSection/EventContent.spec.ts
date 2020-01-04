@@ -1,10 +1,10 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
-import createFullStore from '../../utils/createFullStore'
-import keynote from '../../../../fixtures/contentful/keynote'
-import sessions from '../../../../fixtures/contentful/sessions'
-import events from '../../../../fixtures/contentful/events'
+import createFullStore from 'test/unit/specs/utils/createFullStore'
+import keynote from 'test/fixtures/contentful/keynote'
+import sessions from 'test/fixtures/contentful/sessions'
+import events from 'test/fixtures/contentful/events'
 import EventContent from '~/components/TheTimeTableSection/EventContent.vue'
 
 const localVue = createLocalVue()

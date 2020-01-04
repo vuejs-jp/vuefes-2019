@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash.clonedeep'
-import speakers from '../../../fixtures/contentful/speakers'
-import asset from '../../../fixtures/contentful/asset'
+import speakers from 'test/fixtures/contentful/speakers'
+import asset from 'test/fixtures/contentful/asset'
 import * as contentful from '~/plugins/contentful'
 import {
   state as initialState,

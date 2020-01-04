@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import rooms from '../../../../fixtures/contentful/rooms'
+import rooms from 'test/fixtures/contentful/rooms'
 import Room from '~/components/TheTimeTableSection/Room.vue'
 
 describe('Room', () => {
