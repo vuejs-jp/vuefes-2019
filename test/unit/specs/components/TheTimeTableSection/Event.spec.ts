@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import events from '../../../../fixtures/contentful/events'
+import events from 'test/fixtures/contentful/events'
 import Event from '~/components/TheTimeTableSection/Event.vue'
 
 describe('Event', () => {

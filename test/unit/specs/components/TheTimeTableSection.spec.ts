@@ -1,7 +1,7 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
-import createFullStore from '../utils/createFullStore'
+import createFullStore from 'test/unit/specs/utils/createFullStore'
 import TheTimeTableSection from '~/components/TheTimeTableSection.vue'
 
 const localVue = createLocalVue()

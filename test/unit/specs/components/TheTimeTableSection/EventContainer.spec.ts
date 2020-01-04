@@ -1,12 +1,12 @@
 import { mount, RouterLinkStub, createLocalVue } from '@vue/test-utils'
 import VueLazyLoad from 'vue-lazyload'
 import Vuex from 'vuex'
-import createFullStore from '../../utils/createFullStore'
-import eventContainerWithParts from '../../../../fixtures/contentful/eventContainerWithParts'
-import eventContainerWithoutParts from '../../../../fixtures/contentful/eventContainerWithoutParts'
-import eventContainerWithSessionHavingTranslation from '../../../../fixtures/contentful/eventContainerWithSessionHavingTranslation'
-import eventContainerWithSessionNotHavingTranslation from '../../../../fixtures/contentful/eventContainerWithSessionNotHavingTranslation'
-import eventContainerWithEventsClosed from '../../../../fixtures/contentful/eventContainerWithEventsClosed'
+import createFullStore from 'test/unit/specs/utils/createFullStore'
+import eventContainerWithParts from 'test/fixtures/contentful/eventContainerWithParts'
+import eventContainerWithoutParts from 'test/fixtures/contentful/eventContainerWithoutParts'
+import eventContainerWithSessionHavingTranslation from 'test/fixtures/contentful/eventContainerWithSessionHavingTranslation'
+import eventContainerWithSessionNotHavingTranslation from 'test/fixtures/contentful/eventContainerWithSessionNotHavingTranslation'
+import eventContainerWithEventsClosed from 'test/fixtures/contentful/eventContainerWithEventsClosed'
 import EventContainer from '~/components/TheTimeTableSection/EventContainer.vue'
 
 const localVue = createLocalVue()

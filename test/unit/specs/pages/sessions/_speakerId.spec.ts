@@ -1,6 +1,6 @@
 import { mount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import Vuex from 'vuex'
-import createFullStore from '../../utils/createFullStore'
+import createFullStore from 'test/unit/specs/utils/createFullStore'
 import SessionPage from '~/pages/sessions/_speakerId.vue'
 
 const localVue = createLocalVue()
