@@ -76,7 +76,7 @@ export const actions: Actions<
       getAsset(speaker.fields.avatar.sys.id),
 
       // @ts-ignore error TS2532: Object is possibly 'undefined'
-      getAsset(speaker.fields.avatar.sys.id)
+      getAsset(speaker.fields.avatar2x.sys.id)
     ])
 
     newSpeaker.fields.avatar = newAvatar
