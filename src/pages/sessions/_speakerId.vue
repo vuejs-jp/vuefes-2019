@@ -88,7 +88,7 @@ import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
 type AsyncData = {
-  speakerId: string
+  speakerId: string // スピーカーの GitHub アカウント
   path: string
 }
 
@@ -106,7 +106,6 @@ type AsyncData = {
 })
 export default class SessionPage extends Vue {
   speakerId!: string
-
   path!: string
 
   @Getter('sessionBySpeakerId', { namespace: 'localSessions' })
