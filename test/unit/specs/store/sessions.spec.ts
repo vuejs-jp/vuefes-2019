@@ -12,16 +12,21 @@ describe('sessions module', () => {
 
   beforeEach(() => {
     state = initialState()
+    state.sessions = sessions
   })
 
   describe('getters', () => {
     describe('all', () => {
-      beforeEach(() => {
-        state.sessions = sessions
-      })
-
       test('すべての sessions を取得できる', () => {
         expect(getters.all(state)).toEqual(sessions)
+      })
+    })
+
+    describe('find', () => {
+      const id: string = sessions[0].sys.id
+
+      test('id が一致する Session を取得できる', () => {
+        expect(getters.find(state)(id)).toEqual(sessions[0])
       })
     })
   })

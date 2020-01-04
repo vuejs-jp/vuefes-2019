@@ -9,6 +9,7 @@ namespace Sessions {
 
   export type Getters = {
     all: Session[]
+    find: (id: string) => Session | undefined
   }
 
   export type Mutations = {
@@ -27,6 +28,9 @@ export const state = (): Sessions.State => ({
 export const getters: Getters<Sessions.State, Sessions.Getters> = {
   all: state => {
     return state.sessions
+  },
+  find: state => id => {
+    return state.sessions.find(session => session.sys.id === id)
   }
 }
 
