@@ -1,5 +1,9 @@
 import Speaker from '~/types/speaker'
 
+// Contentful から取得した JSON を保存している。スピーカーが増えたら要更新
+// - test の fixture として利用
+// - nuxt.config の generate.routes にも利用
+
 const speakers: Speaker[] = [
   {
     sys: {

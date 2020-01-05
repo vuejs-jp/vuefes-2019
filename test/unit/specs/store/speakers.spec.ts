@@ -25,9 +25,18 @@ describe('speakers module', () => {
     })
 
     describe('find', () => {
+      const id: string = speakers[0].sys.id
+
       test('id が一致する Speaker を取得できる', () => {
-        const id: string = speakers[0].sys.id
         expect(getters.find(state)(id)).toEqual(speakers[0])
+      })
+    })
+
+    describe('findByGithub', () => {
+      const github: string = speakers[0].fields.github
+
+      test('GitHub アカウントが一致する Speaker を取得できる', () => {
+        expect(getters.findByGithub(state)(github)).toEqual(speakers[0])
       })
     })
   })

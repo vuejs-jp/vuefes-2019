@@ -11,6 +11,7 @@ namespace Speakers {
   export type Getters = {
     all: Speaker[]
     find: (id: string) => Speaker | undefined
+    findByGithub: (github: string) => Speaker | undefined
   }
 
   export type Mutations = {
@@ -35,6 +36,9 @@ export const getters: Getters<Speakers.State, Speakers.Getters> = {
   },
   find: state => id => {
     return state.speakers.find(speaker => speaker.sys.id === id)
+  },
+  findByGithub: state => github => {
+    return state.speakers.find(speaker => speaker.fields.github === github)
   }
 }
 
