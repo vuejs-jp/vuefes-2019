@@ -6,8 +6,6 @@ import eventContainersData from 'test/fixtures/contentful/eventContainers'
 import eventContainerPartsData from 'test/fixtures/contentful/eventContainerParts'
 import sponsorsData from 'test/fixtures/contentful/sponsors'
 import assetData from 'test/fixtures/contentful/asset'
-import * as localSessions from '~/store/localSessions'
-import * as localSpeakers from '~/store/localSpeakers'
 import * as speakers from '~/store/speakers'
 import * as sessions from '~/store/sessions'
 import * as timeTableSections from '~/store/timeTableSections'
@@ -29,14 +27,6 @@ const sessionsDataWithAssets = cloneDeep(sessionsData).map(session => {
 export default Vuex => {
   const store = new Vuex.Store({
     modules: {
-      localSessions: {
-        namespaced: true,
-        ...localSessions
-      },
-      localSpeakers: {
-        namespaced: true,
-        ...localSpeakers
-      },
       speakers: {
         namespaced: true,
         ...speakers

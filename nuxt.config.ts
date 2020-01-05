@@ -1,7 +1,7 @@
 import NuxtConfiguration from '@nuxt/config'
 import StylelintPlugin from 'stylelint-webpack-plugin'
 import hooks from './src/hooks'
-import * as localSessions from './src/store/localSessions'
+import speakers from './test/fixtures/contentful/speakers'
 
 require('dotenv').config()
 
@@ -136,9 +136,7 @@ const config: NuxtConfiguration = {
   },
   generate: {
     dir: 'dist/2019',
-    routes: localSessions
-      .state()
-      .sessions.map(session => `/sessions/${session.speakerId}`)
+    routes: speakers.map(speaker => `/sessions/${speaker.fields.github}`)
   },
   styleResources: {
     scss: [
