@@ -1,6 +1,6 @@
 # Vue Fes Japan 2019
 
-[![CircleCI](https://circleci.com/gh/kazupon/vuefes-2019.svg?style=svg&circle-token=2e5a81f10b558c9aa99c38a2acc9bc862b20c860)](https://circleci.com/gh/kazupon/vuefes-2019)
+[![CircleCI](https://circleci.com/gh/vuejs-jp/vuefes-2019.svg?style=svg&circle-token=2e5a81f10b558c9aa99c38a2acc9bc862b20c860)](https://circleci.com/gh/vuejs-jp/vuefes-2019)
 
 このリポジトリは Vue Fes Japan 2019 の Web サイトのソースコードです。
 
