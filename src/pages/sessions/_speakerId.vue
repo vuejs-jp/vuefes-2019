@@ -6,21 +6,16 @@
 
     <div class="session">
       <!-- eslint-disable vue/singleline-html-element-content-newline -->
-      <div class="session-time">{{ session.time }}min</div>
+      <div class="session-time">{{ session.fields.time }}min</div>
       <!-- eslint-enable vue/singleline-html-element-content-newline -->
 
       <h1 class="session-title">
-        {{ session.title }}
+        {{ session.fields.title }}
       </h1>
 
       <div class="session-paragraph">
-        <!-- eslint-disable vue/no-v-html -->
-        <p
-          v-for="(paragraph, index) in session.paragraphs"
-          :key="index"
-          v-html="paragraph"
-        />
-        <!-- eslint-enable vue/no-v-html -->
+        <!-- TODO: Markdown をパースして HTML に変換する -->
+        <p>{{ session.fields.description }}</p>
       </div>
     </div>
 
@@ -29,33 +24,32 @@
         class="speaker-avatar"
         :srcset="
           `
-          ${speaker.avatar},
-          ${speaker.avatar2x} 2x
+          ${speaker.fields.avatar.fields.file.url},
+          ${speaker.fields.avatar2x.fields.file.url} 2x
         `
         "
-        :src="speaker.avatar2x"
+        :src="speaker.fields.avatar2x.fields.file.url"
         alt=""
       />
 
       <p class="speaker-title">
-        {{ speaker.title }}
+        {{ speaker.fields.title }}
       </p>
 
       <h2 class="speaker-name">
-        {{ speaker.name }}
+        {{ speaker.fields.name }}
       </h2>
 
       <div class="speaker-paragraph">
-        <p v-for="(paragraph, index) in speaker.paragraphs" :key="index">
-          {{ paragraph }}
-        </p>
+        <!-- TODO: Markdown をパースして HTML に変換する -->
+        <p>{{ speaker.fields.description }}</p>
       </div>
 
       <div class="speaker-social">
         <a
-          v-if="speaker.twitter"
+          v-if="speaker.fields.twitter"
           class="twitter"
-          :href="`https://twitter.com/${speaker.twitter}`"
+          :href="`https://twitter.com/${speaker.fields.twitter}`"
           target="_blank"
           rel="noopener"
         >
@@ -64,7 +58,7 @@
 
         <a
           class="github"
-          :href="`https://github.com/${speaker.github}`"
+          :href="`https://github.com/${speaker.fields.github}`"
           target="_blank"
           rel="noopener"
         >
@@ -82,8 +76,8 @@
 <script lang="ts">
 import { Component, Getter, Vue } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/vue-app'
-import { LocalSession } from '~/store/localSessions'
-import { LocalSpeaker } from '~/store/localSpeakers'
+import Speaker from '~/types/speaker'
+import Session from '~/types/session'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
 
@@ -108,17 +102,20 @@ export default class SessionPage extends Vue {
   speakerId!: string
   path!: string
 
-  @Getter('sessionBySpeakerId', { namespace: 'localSessions' })
-  sessionBySpeakerId!: (speakerId: string) => LocalSession
+  @Getter('find', { namespace: 'sessions' })
+  sessionById!: (id: string) => Session
 
-  @Getter('speakerById', { namespace: 'localSpeakers' })
-  speakerById!: (id: string) => LocalSpeaker
+  @Getter('findByGithub', { namespace: 'speakers' })
+  speakerByGithub!: (github: string) => Speaker
 
   head() {
     const url = `https://vuefes.jp/2019${this.path}`
-    const title = `${this.session.title}（${this.speaker.name}） | Vue Fes Japan 2019`
-    const description = `Vue Fes Japan 2019 のセッション情報です。スピーカーの ${this.speaker.name} が、「${this.session.title}」を発表します。`
-    const ogImageUrl = `https://vuefes.jp/2019/session-og-images/${this.session.ogImage}`
+    const title = `${this.session.fields.title}（${this.speaker.fields.name}） | Vue Fes Japan 2019`
+    const description = `Vue Fes Japan 2019 のセッション情報です。スピーカーの ${this.speaker.fields.name} が、「${this.session.fields.title}」を発表します。`
+
+    // @ts-ignore Property 'fields' does not exist on type 'Asset | AssetLink'.
+    // nuxtServerInit によって既に ogImage に Asset をセットした後なので、必ず fields が存在する
+    const ogImageUrl = `https://vuefes.jp/2019/session-og-images/${this.session.fields.ogImage.fields.file.url}`
 
     return {
       title,
@@ -149,18 +146,18 @@ export default class SessionPage extends Vue {
     }
   }
 
-  get session(): LocalSession {
+  get session(): Session {
     if (process.env.NODE_ENV === 'test') {
       this.setValueIfUndefined()
     }
-    return this.sessionBySpeakerId(this.speakerId)
+    return this.sessionById(this.speaker.fields.sessions[0].sys.id)
   }
 
-  get speaker(): LocalSpeaker {
+  get speaker(): Speaker {
     if (process.env.NODE_ENV === 'test') {
       this.setValueIfUndefined()
     }
-    return this.speakerById(this.speakerId)
+    return this.speakerByGithub(this.speakerId)
   }
 
   private setValueIfUndefined(): void {
