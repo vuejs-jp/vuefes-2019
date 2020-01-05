@@ -340,3 +340,31 @@ export default class SessionPage extends Vue {
   }
 }
 </style>
+
+<style lang="scss">
+@import '~/assets/stylesheets/foundation/typography.scss';
+
+.session-page {
+  .session-description,
+  .speaker-description {
+    font-size: $font-size-default;
+    line-height: 1.8;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: $font-size-default--is-small-up;
+    }
+
+    ul {
+      list-style-position: inside;
+
+      li {
+        list-style-type: disc;
+      }
+
+      ul {
+        padding-left: 2em;
+      }
+    }
+  }
+}
+</style>
