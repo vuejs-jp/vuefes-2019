@@ -1,6 +1,7 @@
+import cloneDeep from 'lodash.clonedeep'
 import { Getters, Mutations, Actions } from '~/types/store'
 import Session from '~/types/session'
-import { getSessions } from '~/plugins/contentful'
+import { getAsset, getSessions } from '~/plugins/contentful'
 
 namespace Sessions {
   export type State = {
@@ -19,6 +20,7 @@ namespace Sessions {
 
   export type Actions = {
     fetchSessions: void
+    fetchAsset: Speaker
   }
 }
 
@@ -56,5 +58,11 @@ export const actions: Actions<
   async fetchSessions({ commit }) {
     const sessions: Session[] = await getSessions()
     commit('setSessions', sessions)
+  },
+
+  async fetchAsset({ commit }, session) {
+    const newSession = cloneDeep(session)
+    newSession.fields.ogImage = await getAsset(session.fields.ogImage.sys.id)
+    commit('updateSession', newSession)
   }
 }

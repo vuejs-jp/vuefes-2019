@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash.clonedeep'
 import sessions from 'test/fixtures/contentful/sessions'
+import asset from 'test/fixtures/contentful/asset'
 import * as contentful from '~/plugins/contentful'
 import {
   state as initialState,
@@ -66,6 +67,25 @@ describe('sessions module', () => {
         await actions.fetchSessions({ commit })
 
         expect(commit).toHaveBeenCalledWith('setSessions', sessions)
+      })
+    })
+
+    describe('fetchAsset', () => {
+      const commit = jest.fn()
+      const newSession = cloneDeep(sessions[0])
+      newSession.fields.ogImage = asset
+
+      beforeEach(() => {
+        // @ts-ignore error TS2540: Cannot assign to 'getAsset' because it is a read-only property.
+        contentful.getAsset = jest.fn().mockResolvedValue(asset)
+      })
+
+      test('アセットを取得して Session を更新する', async () => {
+        // @ts-ignore error TS2345: Argument of type '{ commit: Mock<any, any>; }' is not assignable to parameter of type 'Context<State, Actions, Getters, Mutations, {}, {}>'.
+        // Type '{ commit: Mock<any, any>; }' is missing the following properties from type 'Context<State, Actions, Getters, Mutations, {}, {}>': dispatch, state, getters, rootState, rootGetters
+        await actions.fetchAsset({ commit }, sessions[0])
+
+        expect(commit).toHaveBeenCalledWith('updateSession', newSession)
       })
     })
   })
