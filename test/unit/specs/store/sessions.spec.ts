@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash.clonedeep'
 import sessions from 'test/fixtures/contentful/sessions'
 import * as contentful from '~/plugins/contentful'
 import {
@@ -36,6 +37,16 @@ describe('sessions module', () => {
       test('sessions をセットできる', () => {
         mutations.setSessions(state, sessions)
         expect(state.sessions).toEqual(sessions)
+      })
+    })
+
+    describe('updateSession', () => {
+      const newSession = cloneDeep(sessions[0])
+      newSession.fields.title = 'New Session'
+
+      test('session を更新（置換）できる', () => {
+        mutations.updateSession(state, newSession)
+        expect(state.sessions).toContain(newSession)
       })
     })
   })

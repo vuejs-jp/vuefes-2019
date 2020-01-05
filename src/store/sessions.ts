@@ -14,6 +14,7 @@ namespace Sessions {
 
   export type Mutations = {
     setSessions: Session[]
+    updateSession: Session
   }
 
   export type Actions = {
@@ -37,6 +38,12 @@ export const getters: Getters<Sessions.State, Sessions.Getters> = {
 export const mutations: Mutations<Sessions.State, Sessions.Mutations> = {
   setSessions(state, payload) {
     state.sessions = payload
+  },
+
+  updateSession(state, newSession) {
+    state.sessions = state.sessions.map(session =>
+      session.sys.id === newSession.sys.id ? newSession : session
+    )
   }
 }
 
