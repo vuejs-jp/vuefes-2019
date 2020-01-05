@@ -33,6 +33,7 @@
     "cross-env": "^5.2.0",
     "dayjs": "^1.8.16",
     "lodash.clonedeep": "^4.5.0",
+    "marked": "^0.8.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.8.1",
     "nuxt-fontawesome": "^0.4.0",

@@ -13,10 +13,9 @@
         {{ session.fields.title }}
       </h1>
 
-      <div class="session-paragraph">
-        <!-- TODO: Markdown をパースして HTML に変換する -->
-        <p>{{ session.fields.description }}</p>
-      </div>
+      <!-- eslint-disable vue/no-v-html -->
+      <div class="session-description" v-html="sessionDescriptionHtml" />
+      <!-- eslint-enable vue/no-v-html -->
     </div>
 
     <div class="speaker">
@@ -40,10 +39,9 @@
         {{ speaker.fields.name }}
       </h2>
 
-      <div class="speaker-paragraph">
-        <!-- TODO: Markdown をパースして HTML に変換する -->
-        <p>{{ speaker.fields.description }}</p>
-      </div>
+      <!-- eslint-disable vue/no-v-html -->
+      <div class="speaker-description" v-html="speakerDescriptionHtml" />
+      <!-- eslint-enable vue/no-v-html -->
 
       <div class="speaker-social">
         <a
@@ -80,6 +78,7 @@ import Speaker from '~/types/speaker'
 import Session from '~/types/session'
 import BaseMain from '~/components/BaseMain.vue'
 import BaseButton from '~/components/BaseButton.vue'
+import marked from '~/plugins/marked'
 
 type AsyncData = {
   speakerId: string // スピーカーの GitHub アカウント
@@ -160,6 +159,14 @@ export default class SessionPage extends Vue {
     return this.speakerByGithub(this.speakerId)
   }
 
+  get sessionDescriptionHtml(): string {
+    return marked(this.session.fields.description)
+  }
+
+  get speakerDescriptionHtml(): string {
+    return marked(this.speaker.fields.description)
+  }
+
   private setValueIfUndefined(): void {
     // テストが失敗しないように undefined の場合は値を設定する
     if (this.speakerId === undefined) {
@@ -218,7 +225,7 @@ export default class SessionPage extends Vue {
     }
   }
 
-  &-paragraph {
+  &-description {
     margin-bottom: 10vw;
 
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
