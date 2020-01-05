@@ -19,8 +19,9 @@ namespace Sessions {
   }
 
   export type Actions = {
+    initialize: undefined
     fetchSessions: void
-    fetchAsset: Speaker
+    fetchAsset: Session
   }
 }
 
@@ -55,6 +56,13 @@ export const actions: Actions<
   Sessions.Getters,
   Sessions.Mutations
 > = {
+  async initialize({ getters, dispatch }) {
+    await dispatch('fetchSessions')
+    await Promise.all(
+      getters.all.map(session => dispatch('fetchAsset', session))
+    )
+  },
+
   async fetchSessions({ commit }) {
     const sessions: Session[] = await getSessions()
     commit('setSessions', sessions)
@@ -62,7 +70,10 @@ export const actions: Actions<
 
   async fetchAsset({ commit }, session) {
     const newSession = cloneDeep(session)
+
+    // @ts-ignore error TS2532: Object is possibly 'undefined'
     newSession.fields.ogImage = await getAsset(session.fields.ogImage.sys.id)
+
     commit('updateSession', newSession)
   }
 }

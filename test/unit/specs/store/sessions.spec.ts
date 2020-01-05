@@ -53,6 +53,19 @@ describe('sessions module', () => {
   })
 
   describe('actions', () => {
+    const mockedGetters = { all: sessions }
+    const dispatch = jest.fn()
+
+    describe('initialize', () => {
+      test('スピーカー情報及びアセットを取得する', async () => {
+        // @ts-ignore error TS2739: Type 'Mock<any, any>' is missing the following properties from type 'Getters': all, find
+        await actions.initialize({ getters: mockedGetters, dispatch })
+
+        expect(dispatch).toHaveBeenNthCalledWith(1, 'fetchSessions')
+        expect(dispatch).toHaveBeenNthCalledWith(2, 'fetchAsset', sessions[0])
+      })
+    })
+
     describe('fetchSessions', () => {
       beforeEach(() => {
         // @ts-ignore error TS2540: Cannot assign to 'getSessions' because it is a read-only property.
