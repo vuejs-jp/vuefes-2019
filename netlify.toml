@@ -4,6 +4,12 @@
   status = 200
 
 [[redirects]]
-  from = "/*"
-  to = "/2019/:splat"
+  from = "/"
+  to = "/2020/"
   status = 301
+
+[[redirects]]
+  from = "/2020/*"
+  to = "https://vuefes-2020.netlify.com/:splat"
+  status = 200
+
