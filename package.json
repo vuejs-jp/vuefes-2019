@@ -67,7 +67,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "fetch-mock": "^7.3.3",
     "flush-promises": "^1.0.2",
-    "gsap": "^2.1.2",
+    "gsap": "^3.6.0",
     "husky": "^3.0.1",
     "imagemin-cli": "^5.0.0",
     "imagemin-gifsicle": "^6.0.1",
