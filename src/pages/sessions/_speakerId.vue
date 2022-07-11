@@ -114,7 +114,7 @@ export default class SessionPage extends Vue {
 
     // @ts-ignore Property 'fields' does not exist on type 'Asset | AssetLink'.
     // nuxtServerInit によって既に ogImage に Asset をセットした後なので、必ず fields が存在する
-    const ogImageUrl = `https://vuefes.jp/2019/session-og-images/${this.session.fields.ogImage.fields.file.url}`
+    const ogImageUrl = `https://vuefes.jp/2019/session-og-images/${this.speakerId}.jpg`
 
     return {
       title,
