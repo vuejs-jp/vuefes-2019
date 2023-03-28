@@ -19,6 +19,11 @@
   status = 200
 
 [[redirects]]
+  from = "/2023/*"
+  to = "https://vuefes-2023.netlify.app/2023/:splat"
+  status = 200
+
+[[redirects]]
   from = "/*"
-  to = "/2022/:splat"
+  to = "/2023/:splat"
   status = 301
