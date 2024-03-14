@@ -1,29 +1,34 @@
 [[redirects]]
-  from = "/2018/*"
-  to = "https://vuefes-2018.netlify.com/2018/:splat"
-  status = 200
+from = "/2018/*"
+to = "https://vuefes-2018.netlify.com/2018/:splat"
+status = 200
 
 [[redirects]]
-  from = "/2019/*"
-  to = "https://vuefes-2019.netlify.com/2019/:splat"
-  status = 200
+from = "/2019/*"
+to = "https://vuefes-2019.netlify.com/2019/:splat"
+status = 200
 
 [[redirects]]
-  from = "/2020/*"
-  to = "https://vuefes-2020.netlify.app/2020/:splat"
-  status = 200
+from = "/2020/*"
+to = "https://vuefes-2020.netlify.app/2020/:splat"
+status = 200
 
 [[redirects]]
-  from = "/2022/*"
-  to = "https://vuefes-2022.netlify.app/2022/:splat"
-  status = 200
+from = "/2022/*"
+to = "https://vuefes-2022.netlify.app/2022/:splat"
+status = 200
 
 [[redirects]]
-  from = "/2023/*"
-  to = "https://vuefes-2023.netlify.app/2023/:splat"
-  status = 200
+from = "/2023/*"
+to = "https://vuefes-2023.netlify.app/2023/:splat"
+status = 200
 
 [[redirects]]
-  from = "/*"
-  to = "/2023/:splat"
-  status = 301
+from = "/2024/*"
+to = "https://vuefes-2024.netlify.app/2024/:splat"
+status = 200
+
+[[redirects]]
+from = "/*"
+to = "/2024/:splat"
+status = 301
