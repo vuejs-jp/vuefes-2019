@@ -35,5 +35,5 @@ status = 200
 
 [[redirects]]
 from = "/*"
-to = "/2024/:splat"
+to = "/2025/:splat"
 status = 301
