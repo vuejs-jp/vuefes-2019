@@ -1,3 +1,4 @@
+https://vuefes-2019.netlify.com/* https://vuefes.jp/:splat 301!
 /2018/* https://vuefes-2018.netlify.com/2018/:splat 200!
 /2019/* https://vuefes-2019.netlify.com/2019/:splat 200!
 /2020/* https://vuefes-2020.netlify.app/2020/:splat 200!
