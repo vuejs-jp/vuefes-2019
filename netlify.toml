@@ -1,3 +1,8 @@
+[build]
+  # `cp ./_redirects ./dist/_redirects` to add redirects
+  command = "yarn generate && cp ./_redirects ./dist/_redirects"
+  publish = "dist/"
+
 # [[redirects]]
 # from = "/2018/*"
 # to = "https://vuefes-2018.netlify.com/2018/:splat"
