@@ -32,8 +32,3 @@ status = 200
 from = "/2025/*"
 to = "https://vuefes-2025.netlify.app/2025/:splat"
 status = 200
-
-[[redirects]]
-from = "/*"
-to = "/2025/:splat"
-status = 301
