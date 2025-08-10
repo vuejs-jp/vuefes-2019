@@ -2,6 +2,13 @@ export default async (request: Request) => {
   const url = new URL(request.url);
   const path = url.pathname;
 
+  // Skip processing for past years (let netlify.toml redirects handle them)
+  const pastYears = ['/2018/', '/2019/', '/2020/', '/2022/', '/2023/', '/2024/'];
+  if (pastYears.some(year => path.startsWith(year))) {
+    // Let the request pass through to be handled by netlify.toml redirects
+    return;
+  }
+
   // Handle /2025/* paths - proxy to external site
   if (path.startsWith('/2025/')) {
     const targetUrl = `https://vuefes-2025.netlify.app${path}${url.search}`;
