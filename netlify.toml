@@ -1,7 +1,6 @@
 [[edge_functions]]
-  path = "/*"
+  path = "/2025/*"
   function = "redirect-2025"
-  excludedPath = ["/2018/*", "/2019/*", "/2020/*", "/2022/*", "/2023/*", "/2024/*"]
 
 [[redirects]]
 from = "/2018/*"
@@ -33,3 +32,7 @@ from = "/2024/*"
 to = "https://vuefes-2024.netlify.app/2024/:splat"
 status = 200
 
+[[redirects]]
+from = "/*"
+to = "/2025/:splat"
+status = 301
