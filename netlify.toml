@@ -1,3 +1,8 @@
+[build.environment]
+  # Netlify's bundled npm for Node 10.15.3 is too old for the installed extension.
+  # Pin a newer npm so extension dependency resolution succeeds during builds.
+  NPM_VERSION = "6.14.18"
+
 [[redirects]]
 from = "/2018/*"
 to = "https://vuefes-2018.netlify.app/2018/:splat"
