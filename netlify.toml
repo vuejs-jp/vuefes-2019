@@ -1,6 +1,6 @@
 [build.environment]
   # Keep Netlify on a newer Node 10 patch so the extension installer gets a modern npm.
-  NODE_VERSION = "10.24.1"
+  NODE_VERSION = "18"
   NPM_VERSION = "6.14.18"
 
 [[redirects]]
