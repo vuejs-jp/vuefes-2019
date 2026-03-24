@@ -2,7 +2,7 @@
   <div class="the-header">
     <div class="sentinal" />
     <div class="header-container" :class="{ scrolled: isScrolled }">
-      <nuxt-link to="/" class="logo" @click.native="closeMenu">
+      <nuxt-link to="/" class="logo" @click="closeMenu">
         <img src="~/assets/images/logo-vuefes.svg" alt="Vue Fes Japan" />
       </nuxt-link>
       <div class="navigation-container">
@@ -24,55 +24,37 @@
             <nav v-show="isOpen" class="togglable-menu-contents">
               <ul>
                 <li class="link-1">
-                  <nuxt-link
-                    to="/#the-speaker-list-section"
-                    @click.native="closeMenu"
-                  >
+                  <nuxt-link to="/#the-speaker-list-section" @click="closeMenu">
                     SPEAKERS
                   </nuxt-link>
                 </li>
                 <li class="link-2">
-                  <nuxt-link
-                    to="/#the-time-table-section"
-                    @click.native="closeMenu"
-                  >
+                  <nuxt-link to="/#the-time-table-section" @click="closeMenu">
                     TIME TABLE
                   </nuxt-link>
                 </li>
                 <li class="link-3">
-                  <nuxt-link to="/#the-event-section" @click.native="closeMenu">
+                  <nuxt-link to="/#the-event-section" @click="closeMenu">
                     EVENTS
                   </nuxt-link>
                 </li>
                 <li class="link-4">
-                  <nuxt-link
-                    to="/#the-ticket-section"
-                    @click.native="closeMenu"
-                  >
+                  <nuxt-link to="/#the-ticket-section" @click="closeMenu">
                     TICKET
                   </nuxt-link>
                 </li>
                 <li class="link-5">
-                  <nuxt-link
-                    to="/#the-access-section"
-                    @click.native="closeMenu"
-                  >
+                  <nuxt-link to="/#the-access-section" @click="closeMenu">
                     ACCESS
                   </nuxt-link>
                 </li>
                 <li class="link-6">
-                  <nuxt-link
-                    to="/#the-sponsor-list-section"
-                    @click.native="closeMenu"
-                  >
+                  <nuxt-link to="/#the-sponsor-list-section" @click="closeMenu">
                     SPONSORS
                   </nuxt-link>
                 </li>
                 <li class="link-7">
-                  <nuxt-link
-                    to="/#the-staff-list-section"
-                    @click.native="closeMenu"
-                  >
+                  <nuxt-link to="/#the-staff-list-section" @click="closeMenu">
                     TEAM
                   </nuxt-link>
                 </li>
@@ -84,49 +66,37 @@
         <nav class="menu-contents">
           <ul>
             <li>
-              <nuxt-link
-                to="/#the-speaker-list-section"
-                @click.native="closeMenu"
-              >
+              <nuxt-link to="/#the-speaker-list-section" @click="closeMenu">
                 SPEAKERS
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link
-                to="/#the-time-table-section"
-                @click.native="closeMenu"
-              >
+              <nuxt-link to="/#the-time-table-section" @click="closeMenu">
                 TIME TABLE
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/#the-event-section" @click.native="closeMenu">
+              <nuxt-link to="/#the-event-section" @click="closeMenu">
                 EVENTS
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/#the-ticket-section" @click.native="closeMenu">
+              <nuxt-link to="/#the-ticket-section" @click="closeMenu">
                 TICKET
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/#the-access-section" @click.native="closeMenu">
+              <nuxt-link to="/#the-access-section" @click="closeMenu">
                 ACCESS
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link
-                to="/#the-sponsor-list-section"
-                @click.native="closeMenu"
-              >
+              <nuxt-link to="/#the-sponsor-list-section" @click="closeMenu">
                 SPONSORS
               </nuxt-link>
             </li>
             <li>
-              <nuxt-link
-                to="/#the-staff-list-section"
-                @click.native="closeMenu"
-              >
+              <nuxt-link to="/#the-staff-list-section" @click="closeMenu">
                 TEAM
               </nuxt-link>
             </li>
@@ -137,60 +107,64 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+<script setup lang="ts">
+const isScrolled = ref(false)
+const isOpen = ref(false)
+const rootElement = ref<HTMLElement>()
+let observer: IntersectionObserver | undefined
 
-@Component
-export default class TheHeader extends Vue {
-  isScrolled = false
-  isOpen = false
-  rootElement?: HTMLElement
-
-  mounted() {
-    const headerContainerElement = document.querySelector('.header-container')
-    if (!headerContainerElement) return
-
-    const sentinalElement = document.querySelector('.sentinal')
-    if (!sentinalElement) return
-
-    const checkScrolled = entries => {
-      const sentinal = entries[0]
-      this.isScrolled = !sentinal.isIntersecting
-    }
-
-    const observer = new IntersectionObserver(checkScrolled)
-    observer.observe(sentinalElement)
-
-    this.rootElement = document.documentElement
-  }
-
-  openMenu() {
-    this.isOpen = true
-
-    // Disable scroll on PC
-    if (!this.rootElement) return
-    this.rootElement.style.overflow = 'hidden'
-
-    // Disable scroll on mobile
-    this.rootElement.addEventListener('touchmove', disableScrollHandler, {
-      passive: false
-    })
-  }
-
-  closeMenu() {
-    this.isOpen = false
-
-    // Reset disabling scroll on PC
-    if (!this.rootElement) return
-    this.rootElement.style.overflow = 'auto'
-
-    // Reset disabling scroll on mobile
-    this.rootElement.removeEventListener('touchmove', disableScrollHandler)
-  }
+function disableScrollHandler(e: TouchEvent) {
+  e.preventDefault()
 }
 
-function disableScrollHandler(e) {
-  e.preventDefault()
+onMounted(() => {
+  const sentinalElement = document.querySelector('.sentinal')
+
+  if (!sentinalElement) {
+    return
+  }
+
+  observer = new IntersectionObserver((entries) => {
+    const sentinal = entries[0]
+
+    if (!sentinal) {
+      return
+    }
+
+    isScrolled.value = !sentinal.isIntersecting
+  })
+  observer.observe(sentinalElement)
+
+  rootElement.value = document.documentElement
+})
+
+onBeforeUnmount(() => {
+  observer?.disconnect()
+  closeMenu()
+})
+
+function openMenu() {
+  isOpen.value = true
+
+  if (!rootElement.value) {
+    return
+  }
+
+  rootElement.value.style.overflow = 'hidden'
+  rootElement.value.addEventListener('touchmove', disableScrollHandler, {
+    passive: false,
+  })
+}
+
+function closeMenu() {
+  isOpen.value = false
+
+  if (!rootElement.value) {
+    return
+  }
+
+  rootElement.value.style.overflow = 'auto'
+  rootElement.value.removeEventListener('touchmove', disableScrollHandler)
 }
 </script>
 

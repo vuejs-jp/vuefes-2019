@@ -69,67 +69,60 @@
   </g>
 </template>
 
-<script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
-import { TweenMax, Power2 } from 'gsap'
-import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
+<script setup lang="ts">
+import { gsap, Power2 } from 'gsap'
+import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
+import image01 from '~/assets/images/header/image01.png?url'
+import image02 from '~/assets/images/header/image02.png?url'
+import image03 from '~/assets/images/header/image03.png?url'
+import image04 from '~/assets/images/header/image04.png?url'
+import image05 from '~/assets/images/header/image05.png?url'
+import image06 from '~/assets/images/header/image06.png?url'
 
-/* eslint-disable import/no-webpack-loader-syntax */
-const Image01 = require('!url-loader!~/assets/images/header/image01.png')
-const Image02 = require('!url-loader!~/assets/images/header/image02.png')
-const Image03 = require('!url-loader!~/assets/images/header/image03.png')
-const Image04 = require('!url-loader!~/assets/images/header/image04.png')
-const Image05 = require('!url-loader!~/assets/images/header/image05.png')
-const Image06 = require('!url-loader!~/assets/images/header/image06.png')
-/* eslint-enable import/no-webpack-loader-syntax */
+const props = defineProps<{
+  item: Parts
+}>()
 
-@Component
-export default class HeadPhoto extends Vue {
-  @Prop()
-  readonly item!: Parts
+const shape = ref<SVGCircleElement | null>(null)
+const keyFrame = [0, 60 * (2 ^ 0.5)]
+const images = [image01, image02, image03, image04, image05, image06]
 
-  keyFrame = [0, 60 * (2 ^ 0.5)]
+const transform = computed(
+  () =>
+    `translate(${props.item.x}, ${props.item.y}) rotate(${props.item.rotate})`,
+)
+const clipId = computed(() => `photo-clip${props.item.key}`)
+const clipPath = computed(() => `url(#${clipId.value})`)
 
-  get images(): string[] {
-    return [Image01, Image02, Image03, Image04, Image05, Image06]
-  }
+onMounted(() => {
+  window.setTimeout(() => {
+    if (!shape.value) {
+      return
+    }
 
-  get transform(): string {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
-  }
-
-  get href(): string {
-    return `~/assets/images/header/${this.item.src}`
-  }
-
-  get clipId(): string {
-    return `photo-clip${this.item.key}`
-  }
-
-  get clipPath(): string {
-    return `url(#${this.clipId})`
-  }
-
-  beforeDestroy(): void {
-    TweenMax.to(this.$refs.shape, partsLeaveTime, {
+    gsap.to(shape.value, {
+      duration: partsCreateTime,
       attr: {
-        r: this.keyFrame[0]
+        r: keyFrame[1],
       },
-      ease: Power2.easeOut
+      ease: Power2.easeOut,
     })
+  }, 0)
+})
+
+onBeforeUnmount(() => {
+  if (!shape.value) {
+    return
   }
 
-  created(): void {
-    setTimeout(() => {
-      TweenMax.to(this.$refs.shape, partsCreateTime, {
-        attr: {
-          r: this.keyFrame[1]
-        },
-        ease: Power2.easeOut
-      })
-    }, 0)
-  }
-}
+  gsap.to(shape.value, {
+    duration: partsLeaveTime,
+    attr: {
+      r: keyFrame[0],
+    },
+    ease: Power2.easeOut,
+  })
+})
 </script>
 
 <style lang="scss" scoped>

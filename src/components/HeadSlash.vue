@@ -5,56 +5,59 @@
   </g>
 </template>
 
-<script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
-import { TweenMax, Power2 } from 'gsap'
-import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
+<script setup lang="ts">
+import { gsap, Power2 } from 'gsap'
+import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
 
-@Component
-export default class HeadSlash extends Vue {
-  @Prop()
-  readonly item!: Parts
+const props = defineProps<{
+  item: Parts
+}>()
 
-  keyFrame1 = ['-60 -60 -60 -60 -60 -60', '-60 -60 52 -60 -60 52']
+const shape1 = ref<SVGPolygonElement | null>(null)
+const shape2 = ref<SVGPolygonElement | null>(null)
+const keyFrame1 = ['-60 -60 -60 -60 -60 -60', '-60 -60 52 -60 -60 52']
+const keyFrame2 = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
 
-  keyFrame2 = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
+const transform = computed(
+  () =>
+    `translate(${props.item.x}, ${props.item.y}) rotate(${props.item.rotate})`,
+)
 
-  get transform(): string {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
-  }
-
-  beforeDestroy() {
-    TweenMax.to(this.$refs.shape1, partsLeaveTime, {
-      attr: {
-        points: this.keyFrame1[0]
-      },
-      ease: Power2.easeOut
-    })
-    TweenMax.to(this.$refs.shape2, partsLeaveTime, {
-      attr: {
-        points: this.keyFrame2[0]
-      },
-      ease: Power2.easeOut
-    })
-  }
-
-  created() {
-    setTimeout(() => {
-      TweenMax.to(this.$refs.shape1, partsCreateTime, {
-        attr: {
-          points: this.keyFrame1[1]
-        },
-        ease: Power2.easeOut
+onMounted(() => {
+  window.setTimeout(() => {
+    if (shape1.value) {
+      gsap.to(shape1.value, {
+        duration: partsCreateTime,
+        attr: { points: keyFrame1[1] },
+        ease: Power2.easeOut,
       })
-      TweenMax.to(this.$refs.shape2, partsCreateTime, {
-        attr: {
-          points: this.keyFrame2[1]
-        },
-        ease: Power2.easeOut
+    }
+    if (shape2.value) {
+      gsap.to(shape2.value, {
+        duration: partsCreateTime,
+        attr: { points: keyFrame2[1] },
+        ease: Power2.easeOut,
       })
-    }, 0)
+    }
+  }, 0)
+})
+
+onBeforeUnmount(() => {
+  if (shape1.value) {
+    gsap.to(shape1.value, {
+      duration: partsLeaveTime,
+      attr: { points: keyFrame1[0] },
+      ease: Power2.easeOut,
+    })
   }
-}
+  if (shape2.value) {
+    gsap.to(shape2.value, {
+      duration: partsLeaveTime,
+      attr: { points: keyFrame2[0] },
+      ease: Power2.easeOut,
+    })
+  }
+})
 </script>
 
 <style lang="scss" scoped>

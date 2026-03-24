@@ -6,33 +6,29 @@
       </template>
 
       <template v-else>
-        <Session :session="content" />
+        <Session :session="asSession(content)" />
       </template>
     </template>
 
     <template v-else-if="content.sys.contentType.sys.id === 'event'">
-      <Event :event="content" />
+      <Event :event="asEvent(content)" />
     </template>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator'
-import SessionType from '~/types/session'
-import EventType from '~/types/event'
-import Keynote from '~/components/TheTimeTableSection/Keynote.vue'
-import Session from '~/components/TheTimeTableSection/Session.vue'
-import Event from '~/components/TheTimeTableSection/Event.vue'
+<script setup lang="ts">
+import type EventType from '~/types/event'
+import type SessionType from '~/types/session'
 
-@Component({
-  components: {
-    Keynote,
-    Session,
-    Event
-  }
-})
-export default class EventContent extends Vue {
-  @Prop()
-  readonly content!: SessionType | EventType
+defineProps<{
+  content: SessionType | EventType
+}>()
+
+function asSession(content: SessionType | EventType): SessionType {
+  return content as SessionType
+}
+
+function asEvent(content: SessionType | EventType): EventType {
+  return content as EventType
 }
 </script>

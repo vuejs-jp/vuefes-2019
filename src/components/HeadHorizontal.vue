@@ -7,55 +7,70 @@
   </g>
 </template>
 
-<script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
-import { TweenMax, Power2 } from 'gsap'
-import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
+<script setup lang="ts">
+import { gsap, Power2 } from 'gsap'
+import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
 
-@Component
-export default class HeadHorizontal extends Vue {
-  @Prop()
-  readonly item!: Parts
+const props = defineProps<{
+  item: Parts
+}>()
 
-  get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
-  }
+const shape1 = ref<SVGRectElement | null>(null)
+const shape2 = ref<SVGRectElement | null>(null)
 
-  beforeDestroy() {
-    TweenMax.to(this.$refs.shape1, partsLeaveTime, {
-      attr: {
-        y: -60,
-        height: 0
-      },
-      ease: Power2.easeOut
-    })
-    TweenMax.to(this.$refs.shape2, partsLeaveTime, {
-      attr: {
-        y: 60,
-        height: 0
-      },
-      ease: Power2.easeOut
-    })
-  }
+const transform = computed(
+  () =>
+    `translate(${props.item.x}, ${props.item.y}) rotate(${props.item.rotate})`,
+)
 
-  created() {
-    setTimeout(() => {
-      TweenMax.to(this.$refs.shape1, partsCreateTime, {
+onMounted(() => {
+  window.setTimeout(() => {
+    if (shape1.value) {
+      gsap.to(shape1.value, {
+        duration: partsCreateTime,
         attr: {
-          height: 54
+          height: 54,
         },
-        ease: Power2.easeOut
+        ease: Power2.easeOut,
       })
-      TweenMax.to(this.$refs.shape2, partsCreateTime, {
+    }
+
+    if (shape2.value) {
+      gsap.to(shape2.value, {
+        duration: partsCreateTime,
         attr: {
           y: 6,
-          height: 54
+          height: 54,
         },
-        ease: Power2.easeOut
+        ease: Power2.easeOut,
       })
-    }, 0)
+    }
+  }, 0)
+})
+
+onBeforeUnmount(() => {
+  if (shape1.value) {
+    gsap.to(shape1.value, {
+      duration: partsLeaveTime,
+      attr: {
+        y: -60,
+        height: 0,
+      },
+      ease: Power2.easeOut,
+    })
   }
-}
+
+  if (shape2.value) {
+    gsap.to(shape2.value, {
+      duration: partsLeaveTime,
+      attr: {
+        y: 60,
+        height: 0,
+      },
+      ease: Power2.easeOut,
+    })
+  }
+})
 </script>
 
 <style lang="scss" scoped>

@@ -7,8 +7,8 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7TF1MSAsD8f7XgQKEHzhR',
       type: 'Entry',
@@ -18,18 +18,18 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainerPart'
-        }
+          id: 'eventContainerPart',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '8-ye-2',
@@ -41,8 +41,8 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '6p8bcCeCJsMgW2QMJIq14I',
           type: 'Entry',
@@ -52,18 +52,18 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 2,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'session'
-            }
+              id: 'session',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           title: 'Nuxt.js + TypeScript で 01 開発',
@@ -76,8 +76,8 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   type: 'Link',
                   linkType: 'Space',
-                  id: 'makqrw5hfm9d'
-                }
+                  id: 'makqrw5hfm9d',
+                },
               },
               id: '4q5tyG2Ux3GBxnGixnGiQ7',
               type: 'Asset',
@@ -87,42 +87,41 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   id: 'master',
                   type: 'Link',
-                  linkType: 'Environment'
-                }
+                  linkType: 'Environment',
+                },
               },
               revision: 1,
-              locale: 'en-US'
+              locale: 'en-US',
             },
             fields: {
               title: 'masaakikunsan',
               file: {
-                url:
-                  '//images.ctfassets.net/makqrw5hfm9d/4q5tyG2Ux3GBxnGixnGiQ7/d76a6cb4a41750ee95457601d7b88b2b/masaakikunsan.jpg',
+                url: '//images.ctfassets.net/makqrw5hfm9d/4q5tyG2Ux3GBxnGixnGiQ7/d76a6cb4a41750ee95457601d7b88b2b/masaakikunsan.jpg',
                 details: {
                   size: 42914,
                   image: {
                     width: 1200,
-                    height: 630
-                  }
+                    height: 630,
+                  },
                 },
                 fileName: 'masaakikunsan.jpg',
-                contentType: 'image/jpeg'
-              }
-            }
+                contentType: 'image/jpeg',
+              },
+            },
           },
           speakers: [
             {
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: 'kAJ3wEURjDaABWU3xDW6x'
-              }
-            }
+                id: 'kAJ3wEURjDaABWU3xDW6x',
+              },
+            },
           ],
-          hasTranslation: false
-        }
-      }
-    }
+          hasTranslation: false,
+        },
+      },
+    },
   },
   {
     sys: {
@@ -130,8 +129,8 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '3exyRi0Sda9qVxw82uioIv',
       type: 'Entry',
@@ -141,18 +140,18 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainerPart'
-        }
+          id: 'eventContainerPart',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '9-ye-1',
@@ -164,8 +163,8 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '64z2YruYMw1ZKQAZS7ojjm',
           type: 'Entry',
@@ -175,18 +174,18 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 2,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'session'
-            }
+              id: 'session',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           title: 'とある Nuxt.js 案件の本当にあった怖い話。',
@@ -199,8 +198,8 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   type: 'Link',
                   linkType: 'Space',
-                  id: 'makqrw5hfm9d'
-                }
+                  id: 'makqrw5hfm9d',
+                },
               },
               id: '3qVLT9iOYCCw4DoePYisCk',
               type: 'Asset',
@@ -210,42 +209,41 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   id: 'master',
                   type: 'Link',
-                  linkType: 'Environment'
-                }
+                  linkType: 'Environment',
+                },
               },
               revision: 1,
-              locale: 'en-US'
+              locale: 'en-US',
             },
             fields: {
               title: 'tejitak',
               file: {
-                url:
-                  '//images.ctfassets.net/makqrw5hfm9d/3qVLT9iOYCCw4DoePYisCk/9a7e5a68b54addb5a902946ddf3a7fcc/tejitak.jpg',
+                url: '//images.ctfassets.net/makqrw5hfm9d/3qVLT9iOYCCw4DoePYisCk/9a7e5a68b54addb5a902946ddf3a7fcc/tejitak.jpg',
                 details: {
                   size: 41723,
                   image: {
                     width: 1200,
-                    height: 630
-                  }
+                    height: 630,
+                  },
                 },
                 fileName: 'tejitak.jpg',
-                contentType: 'image/jpeg'
-              }
-            }
+                contentType: 'image/jpeg',
+              },
+            },
           },
           speakers: [
             {
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '6DeU68XA3PYjmXlu2RiIEI'
-              }
-            }
+                id: '6DeU68XA3PYjmXlu2RiIEI',
+              },
+            },
           ],
-          hasTranslation: false
-        }
-      }
-    }
+          hasTranslation: false,
+        },
+      },
+    },
   },
   {
     sys: {
@@ -253,8 +251,8 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4AQWbjUvuR9U650MSc1HII',
       type: 'Entry',
@@ -264,18 +262,18 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainerPart'
-        }
+          id: 'eventContainerPart',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '8-ye-1',
@@ -287,8 +285,8 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '5SIsttQswXSNTCN2Oi2MZS',
           type: 'Entry',
@@ -298,18 +296,18 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 2,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'session'
-            }
+              id: 'session',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           title: 'Vue.js meets Web Accessibility',
@@ -322,8 +320,8 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   type: 'Link',
                   linkType: 'Space',
-                  id: 'makqrw5hfm9d'
-                }
+                  id: 'makqrw5hfm9d',
+                },
               },
               id: 'ZeTyl9OBGpR96UkFzbF9s',
               type: 'Asset',
@@ -333,42 +331,41 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   id: 'master',
                   type: 'Link',
-                  linkType: 'Environment'
-                }
+                  linkType: 'Environment',
+                },
               },
               revision: 1,
-              locale: 'en-US'
+              locale: 'en-US',
             },
             fields: {
               title: 'yamanoku',
               file: {
-                url:
-                  '//images.ctfassets.net/makqrw5hfm9d/ZeTyl9OBGpR96UkFzbF9s/645930ddcb6cc30a20aceb462f1089bc/yamanoku.jpg',
+                url: '//images.ctfassets.net/makqrw5hfm9d/ZeTyl9OBGpR96UkFzbF9s/645930ddcb6cc30a20aceb462f1089bc/yamanoku.jpg',
                 details: {
                   size: 36220,
                   image: {
                     width: 1200,
-                    height: 630
-                  }
+                    height: 630,
+                  },
                 },
                 fileName: 'yamanoku.jpg',
-                contentType: 'image/jpeg'
-              }
-            }
+                contentType: 'image/jpeg',
+              },
+            },
           },
           speakers: [
             {
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '4lNqSfqiA9P0NVNyhWWaPD'
-              }
-            }
+                id: '4lNqSfqiA9P0NVNyhWWaPD',
+              },
+            },
           ],
-          hasTranslation: false
-        }
-      }
-    }
+          hasTranslation: false,
+        },
+      },
+    },
   },
   {
     sys: {
@@ -376,8 +373,8 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '1kwdWOiQ783ICAnfh7vNWN',
       type: 'Entry',
@@ -387,18 +384,18 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainerPart'
-        }
+          id: 'eventContainerPart',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '7-ye-2',
@@ -410,8 +407,8 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '7aUz315q5gRNDDsC9ZPsiR',
           type: 'Entry',
@@ -421,18 +418,18 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 2,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'session'
-            }
+              id: 'session',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           title:
@@ -446,8 +443,8 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   type: 'Link',
                   linkType: 'Space',
-                  id: 'makqrw5hfm9d'
-                }
+                  id: 'makqrw5hfm9d',
+                },
               },
               id: '2UJd8BHuVvIAlBjvZdgtE7',
               type: 'Asset',
@@ -457,42 +454,41 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   id: 'master',
                   type: 'Link',
-                  linkType: 'Environment'
-                }
+                  linkType: 'Environment',
+                },
               },
               revision: 1,
-              locale: 'en-US'
+              locale: 'en-US',
             },
             fields: {
               title: 'ninjinkun',
               file: {
-                url:
-                  '//images.ctfassets.net/makqrw5hfm9d/2UJd8BHuVvIAlBjvZdgtE7/e836b22a527887a6d31499d76fe2e725/ninjinkun.jpg',
+                url: '//images.ctfassets.net/makqrw5hfm9d/2UJd8BHuVvIAlBjvZdgtE7/e836b22a527887a6d31499d76fe2e725/ninjinkun.jpg',
                 details: {
                   size: 39335,
                   image: {
                     width: 1200,
-                    height: 630
-                  }
+                    height: 630,
+                  },
                 },
                 fileName: 'ninjinkun.jpg',
-                contentType: 'image/jpeg'
-              }
-            }
+                contentType: 'image/jpeg',
+              },
+            },
           },
           speakers: [
             {
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '4w4LHXhuKJn3BoWBQfcZx7'
-              }
-            }
+                id: '4w4LHXhuKJn3BoWBQfcZx7',
+              },
+            },
           ],
-          hasTranslation: false
-        }
-      }
-    }
+          hasTranslation: false,
+        },
+      },
+    },
   },
   {
     sys: {
@@ -500,8 +496,8 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2nMiFiFiZbnBYxCFeY72Wd',
       type: 'Entry',
@@ -511,18 +507,18 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainerPart'
-        }
+          id: 'eventContainerPart',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '7-ye-1',
@@ -534,8 +530,8 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '7fozsC9JQwpxPyxkYyARVJ',
           type: 'Entry',
@@ -545,18 +541,18 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 2,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'session'
-            }
+              id: 'session',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           title: '“何もない” を作る、コンポーネント指向な余白設計',
@@ -569,8 +565,8 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   type: 'Link',
                   linkType: 'Space',
-                  id: 'makqrw5hfm9d'
-                }
+                  id: 'makqrw5hfm9d',
+                },
               },
               id: '4quZvlDAxfs8MeLZPKn7wE',
               type: 'Asset',
@@ -580,42 +576,41 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   id: 'master',
                   type: 'Link',
-                  linkType: 'Environment'
-                }
+                  linkType: 'Environment',
+                },
               },
               revision: 1,
-              locale: 'en-US'
+              locale: 'en-US',
             },
             fields: {
               title: 'blackawa',
               file: {
-                url:
-                  '//images.ctfassets.net/makqrw5hfm9d/4quZvlDAxfs8MeLZPKn7wE/4aef5a47b4e0500dbe507f4a4e167b22/blackawa.jpg',
+                url: '//images.ctfassets.net/makqrw5hfm9d/4quZvlDAxfs8MeLZPKn7wE/4aef5a47b4e0500dbe507f4a4e167b22/blackawa.jpg',
                 details: {
                   size: 39220,
                   image: {
                     width: 1200,
-                    height: 630
-                  }
+                    height: 630,
+                  },
                 },
                 fileName: 'blackawa.jpg',
-                contentType: 'image/jpeg'
-              }
-            }
+                contentType: 'image/jpeg',
+              },
+            },
           },
           speakers: [
             {
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '6nXanQ9BH9YVSCEr44FcrD'
-              }
-            }
+                id: '6nXanQ9BH9YVSCEr44FcrD',
+              },
+            },
           ],
-          hasTranslation: false
-        }
-      }
-    }
+          hasTranslation: false,
+        },
+      },
+    },
   },
   {
     sys: {
@@ -623,8 +618,8 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '1Mv0tnaQWTzCnTd7xUzYcw',
       type: 'Entry',
@@ -634,18 +629,18 @@ const eventContainerParts: EventContainerPart[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainerPart'
-        }
+          id: 'eventContainerPart',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '9-ye-2',
@@ -657,8 +652,8 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '7yeyEFR9IxHjnS6vg5AKpW',
           type: 'Entry',
@@ -668,18 +663,18 @@ const eventContainerParts: EventContainerPart[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 2,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'session'
-            }
+              id: 'session',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           title: '型がある楽しさとつらさ',
@@ -692,8 +687,8 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   type: 'Link',
                   linkType: 'Space',
-                  id: 'makqrw5hfm9d'
-                }
+                  id: 'makqrw5hfm9d',
+                },
               },
               id: '5hYDhUrORuxNhzwrAVNIph',
               type: 'Asset',
@@ -703,43 +698,42 @@ const eventContainerParts: EventContainerPart[] = [
                 sys: {
                   id: 'master',
                   type: 'Link',
-                  linkType: 'Environment'
-                }
+                  linkType: 'Environment',
+                },
               },
               revision: 1,
-              locale: 'en-US'
+              locale: 'en-US',
             },
             fields: {
               title: 'konu96',
               file: {
-                url:
-                  '//images.ctfassets.net/makqrw5hfm9d/5hYDhUrORuxNhzwrAVNIph/03be9cbb306e7adc9660220970d2fc77/konu96.jpg',
+                url: '//images.ctfassets.net/makqrw5hfm9d/5hYDhUrORuxNhzwrAVNIph/03be9cbb306e7adc9660220970d2fc77/konu96.jpg',
                 details: {
                   size: 38037,
                   image: {
                     width: 1200,
-                    height: 630
-                  }
+                    height: 630,
+                  },
                 },
                 fileName: 'konu96.jpg',
-                contentType: 'image/jpeg'
-              }
-            }
+                contentType: 'image/jpeg',
+              },
+            },
           },
           speakers: [
             {
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '7myQ6DFjZOrkIVOolyJiJN'
-              }
-            }
+                id: '7myQ6DFjZOrkIVOolyJiJN',
+              },
+            },
           ],
-          hasTranslation: false
-        }
-      }
-    }
-  }
+          hasTranslation: false,
+        },
+      },
+    },
+  },
 ]
 
 export default eventContainerParts

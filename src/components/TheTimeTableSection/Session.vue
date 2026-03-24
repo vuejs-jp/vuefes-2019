@@ -14,23 +14,28 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Getter, Vue } from 'nuxt-property-decorator'
-import SessionType from '~/types/session'
-import Speaker from '~/types/speaker'
+<script setup lang="ts">
+import type SessionType from '~/types/session'
 
-@Component
-export default class Session extends Vue {
-  @Prop()
-  readonly session!: SessionType
+const props = defineProps<{
+  session: SessionType
+}>()
 
-  @Getter('find', { namespace: 'speakers' })
-  private speakerById!: (id: string) => Speaker
+const { findSpeakerById } = useSiteData()
 
-  get sessionIdAlias(): string {
-    const primarySpeaker = this.session.fields.speakers[0]
-    return this.speakerById(primarySpeaker.sys.id).fields.github
+const sessionIdAlias = computed(() => {
+  const primarySpeaker = props.session.fields.speakers[0]
+  return findSpeakerById(primarySpeaker.sys.id)?.fields.github || 'yyx990803'
+})
+
+function speakerById(id: string) {
+  const speaker = findSpeakerById(id)
+
+  if (!speaker) {
+    throw new Error(`Unknown speaker: ${id}`)
   }
+
+  return speaker
 }
 </script>
 

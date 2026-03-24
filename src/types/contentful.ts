@@ -1,10 +1,10 @@
 export interface EntrySys {
-  space: Object
+  space: object
   id: string
   type: 'Entry'
   createdAt: string
   updatedAt: string
-  environment: Object
+  environment: object
   revision: number
   contentType: {
     sys: {
@@ -25,12 +25,12 @@ export interface EntryLink {
 }
 
 export interface AssetSys {
-  space: Object
+  space: object
   id: string
   type: 'Asset'
   createdAt: string
   updatedAt: string
-  environment: Object
+  environment: object
   revision: number
   locale: 'en-US'
 }

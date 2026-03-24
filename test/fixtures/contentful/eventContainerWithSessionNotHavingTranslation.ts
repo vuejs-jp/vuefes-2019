@@ -6,8 +6,8 @@ const eventContainerWithSessionNotHavingTranslation: EventContainer = {
       sys: {
         type: 'Link',
         linkType: 'Space',
-        id: 'makqrw5hfm9d'
-      }
+        id: 'makqrw5hfm9d',
+      },
     },
     id: '1qkp3KPJ6kMGuwyPRwY0z3',
     type: 'Entry',
@@ -17,18 +17,18 @@ const eventContainerWithSessionNotHavingTranslation: EventContainer = {
       sys: {
         id: 'master',
         type: 'Link',
-        linkType: 'Environment'
-      }
+        linkType: 'Environment',
+      },
     },
     revision: 1,
     contentType: {
       sys: {
         type: 'Link',
         linkType: 'ContentType',
-        id: 'eventContainer'
-      }
+        id: 'eventContainer',
+      },
     },
-    locale: 'en-US'
+    locale: 'en-US',
   },
   fields: {
     titleForContentful: '7-yu',
@@ -39,8 +39,8 @@ const eventContainerWithSessionNotHavingTranslation: EventContainer = {
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '4dgpT8P4uu8CkedDki92NS',
           type: 'Entry',
@@ -50,18 +50,18 @@ const eventContainerWithSessionNotHavingTranslation: EventContainer = {
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 2,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'session'
-            }
+              id: 'session',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           title: 'アンチパターンから学ぶ Atomic Design with Vue.js',
@@ -74,8 +74,8 @@ const eventContainerWithSessionNotHavingTranslation: EventContainer = {
                 sys: {
                   type: 'Link',
                   linkType: 'Space',
-                  id: 'makqrw5hfm9d'
-                }
+                  id: 'makqrw5hfm9d',
+                },
               },
               id: '7wa7E8tM1TJCFNSXgf5ai',
               type: 'Asset',
@@ -85,41 +85,40 @@ const eventContainerWithSessionNotHavingTranslation: EventContainer = {
                 sys: {
                   id: 'master',
                   type: 'Link',
-                  linkType: 'Environment'
-                }
+                  linkType: 'Environment',
+                },
               },
               revision: 1,
-              locale: 'en-US'
+              locale: 'en-US',
             },
             fields: {
               title: 'keinuma',
               file: {
-                url:
-                  '//images.ctfassets.net/makqrw5hfm9d/7wa7E8tM1TJCFNSXgf5ai/a721c3f3f9f30f4b93f54c06f47c801f/keinuma.jpg',
+                url: '//images.ctfassets.net/makqrw5hfm9d/7wa7E8tM1TJCFNSXgf5ai/a721c3f3f9f30f4b93f54c06f47c801f/keinuma.jpg',
                 details: {
                   size: 40773,
                   image: {
                     width: 1200,
-                    height: 630
-                  }
+                    height: 630,
+                  },
                 },
                 fileName: 'keinuma.jpg',
-                contentType: 'image/jpeg'
-              }
-            }
+                contentType: 'image/jpeg',
+              },
+            },
           },
           speakers: [
             {
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '1wgsyNSXRjVrKe2NgZzmw3'
-              }
-            }
+                id: '1wgsyNSXRjVrKe2NgZzmw3',
+              },
+            },
           ],
-          hasTranslation: false
-        }
-      }
+          hasTranslation: false,
+        },
+      },
     ],
     room: {
       sys: {
@@ -127,8 +126,8 @@ const eventContainerWithSessionNotHavingTranslation: EventContainer = {
           sys: {
             type: 'Link',
             linkType: 'Space',
-            id: 'makqrw5hfm9d'
-          }
+            id: 'makqrw5hfm9d',
+          },
         },
         id: '6DXe9VnLT91YWE9UkVgkep',
         type: 'Entry',
@@ -138,22 +137,22 @@ const eventContainerWithSessionNotHavingTranslation: EventContainer = {
           sys: {
             id: 'master',
             type: 'Link',
-            linkType: 'Environment'
-          }
+            linkType: 'Environment',
+          },
         },
         revision: 1,
         contentType: {
           sys: {
             type: 'Link',
             linkType: 'ContentType',
-            id: 'room'
-          }
+            id: 'room',
+          },
         },
-        locale: 'en-US'
+        locale: 'en-US',
       },
-      fields: { name: 'YUMEMI ルーム' }
-    }
-  }
+      fields: { name: 'YUMEMI ルーム' },
+    },
+  },
 }
 
 export default eventContainerWithSessionNotHavingTranslation

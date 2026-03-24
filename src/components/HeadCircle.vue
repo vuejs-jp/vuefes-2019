@@ -4,46 +4,50 @@
   </g>
 </template>
 
-<script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
-import { TweenMax, Power2 } from 'gsap'
-import {
-  Parts,
-  partsCreateTime,
-  partsLeaveTime
-} from '~/components/TheHeadSection.vue'
+<script setup lang="ts">
+import { gsap, Power2 } from 'gsap'
+import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
 
-@Component
-export default class HeadCircle extends Vue {
-  @Prop()
-  readonly item!: Parts
+const props = defineProps<{
+  item: Parts
+}>()
 
-  private keyFrame = [0, 60]
+const shape = ref<SVGCircleElement | null>(null)
+const keyFrame = [0, 60]
+const transform = computed(
+  () =>
+    `translate(${props.item.x}, ${props.item.y}) rotate(${props.item.rotate})`,
+)
 
-  get transform(): string {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
-  }
+onMounted(() => {
+  window.setTimeout(() => {
+    if (!shape.value) {
+      return
+    }
 
-  created() {
-    setTimeout(() => {
-      TweenMax.to(this.$refs.shape, partsCreateTime, {
-        attr: {
-          r: this.keyFrame[1]
-        },
-        ease: Power2.easeOut
-      })
-    }, 0)
-  }
-
-  beforeDestroy() {
-    TweenMax.to(this.$refs.shape, partsLeaveTime, {
+    gsap.to(shape.value, {
+      duration: partsCreateTime,
       attr: {
-        r: this.keyFrame[0]
+        r: keyFrame[1],
       },
-      ease: Power2.easeOut
+      ease: Power2.easeOut,
     })
+  }, 0)
+})
+
+onBeforeUnmount(() => {
+  if (!shape.value) {
+    return
   }
-}
+
+  gsap.to(shape.value, {
+    duration: partsLeaveTime,
+    attr: {
+      r: keyFrame[0],
+    },
+    ease: Power2.easeOut,
+  })
+})
 </script>
 
 <style lang="scss" scoped>

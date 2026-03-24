@@ -63,48 +63,13 @@
   </BaseMain>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import BaseMain from '~/components/BaseMain.vue'
-import BaseMainDescription from '~/components/BaseMainDescription.vue'
-import BaseButton from '~/components/BaseButton.vue'
+<script setup lang="ts">
+const route = useRoute()
 
-@Component({
-  components: {
-    BaseMain,
-    BaseMainDescription,
-    BaseButton
-  },
-  asyncData({ route }) {
-    return {
-      path: route.path
-    }
-  }
+usePageMetadata({
+  path: route.path,
+  title: '行動規範 | Vue Fes Japan 2019',
+  description:
+    'Vue Fes Japan のすべての参加者、スピーカー、スポンサー、スタッフは、オープンかつ友好的な環境を育むため、以下の行動規範に同意していただく必要があります。',
 })
-export default class CodeOfConductPage extends Vue {
-  path!: string
-
-  private head() {
-    const url = `https://vuefes.jp/2019${this.path}`
-    const title = '行動規範 | Vue Fes Japan 2019'
-    const description =
-      'Vue Fes Japan のすべての参加者、スピーカー、スポンサー、スタッフは、オープンかつ友好的な環境を育むため、以下の行動規範に同意していただく必要があります。'
-
-    return {
-      title,
-      meta: [
-        { hid: 'description', name: 'description', content: description },
-        { hid: 'og:url', name: 'og:url', content: url },
-        { hid: 'og:title', name: 'og:title', content: title },
-        { hid: 'og:description', name: 'og:description', content: description },
-        { hid: 'twitter:title', name: 'twitter:title', content: title },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: description
-        }
-      ]
-    }
-  }
-}
 </script>

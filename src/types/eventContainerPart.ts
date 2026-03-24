@@ -1,4 +1,5 @@
 import { EntrySys, EntryLink } from '~/types/contentful'
+import Event from '~/types/event'
 import Session from '~/types/session'
 
 export default interface EventContainerPart {

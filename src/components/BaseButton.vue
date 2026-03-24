@@ -1,39 +1,42 @@
-<script lang="ts">
-import { Component, Prop, Emit, Vue } from 'nuxt-property-decorator'
-import { VNode, VNodeData } from 'vue'
+<template>
+  <NuxtLink
+    v-if="to"
+    class="base-button"
+    :to="to"
+    v-bind="attrs"
+    @click="emit('click', $event)"
+  >
+    <slot />
+  </NuxtLink>
 
-@Component
-export default class BaseButton extends Vue {
-  @Prop(String)
-  readonly to?: string
+  <component
+    :is="tagName"
+    v-else
+    class="base-button"
+    v-bind="attrs"
+    @click="emit('click', $event)"
+  >
+    <slot />
+  </component>
+</template>
 
-  @Emit()
-  click(e: MouseEvent) {
-    return e
-  }
+<script setup lang="ts">
+defineOptions({
+  inheritAttrs: false,
+})
 
-  private render(h): VNode {
-    let tag: string
+defineProps<{
+  to?: string
+}>()
 
-    const data: VNodeData = {
-      class: 'base-button',
-      props: {},
-      [this.to ? 'nativeOn' : 'on']: {
-        ...this.$listeners,
-        click: this.click
-      }
-    }
+const attrs = useAttrs()
+const emit = defineEmits<{
+  click: [event: MouseEvent]
+}>()
 
-    if (this.to) {
-      tag = 'nuxt-link'
-      data.props!.to = this.to
-    } else {
-      tag = (this.$attrs.href && 'a') || 'button'
-    }
-
-    return h(tag, data, this.$slots.default)
-  }
-}
+const tagName = computed(() =>
+  typeof attrs.href === 'string' ? 'a' : 'button',
+)
 </script>
 
 <style lang="scss" scoped>

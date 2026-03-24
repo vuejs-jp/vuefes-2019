@@ -7,7 +7,7 @@
 ## Setup
 
 ```shell
-yarn install
+pnpm install
 ```
 
 ## Development
@@ -15,7 +15,7 @@ yarn install
 下記コマンドを実行すると Web サーバーがホットリロードで起動して `http://localhost:3000/2019/` で確認できます。
 
 ```shell
-yarn dev --open
+pnpm dev --open
 ```
 
 ### 画像の最適化
@@ -43,7 +43,13 @@ brew install gawk
 ## Testing
 
 ```shell
-yarn test
+pnpm test
+```
+
+## Lint / Format
+
+```shell
+pnpm check
 ```
 
 ## Generate
@@ -51,5 +57,5 @@ yarn test
 下記コマンドを実行すると、静的ファイルを `dist/2019/` 配下に生成できます。
 
 ```shell
-yarn generate
+pnpm generate
 ```

@@ -4,46 +4,55 @@
   </g>
 </template>
 
-<script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
-import { TweenMax, Power2 } from 'gsap'
-import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
+<script setup lang="ts">
+import { gsap, Power2 } from 'gsap'
+import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
 
-@Component
-export default class HeadSquare extends Vue {
-  @Prop()
-  readonly item!: Parts
+const props = defineProps<{
+  item: Parts
+}>()
 
-  get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
-  }
+const shape = ref<SVGRectElement | null>(null)
+const transform = computed(
+  () =>
+    `translate(${props.item.x}, ${props.item.y}) rotate(${props.item.rotate})`,
+)
 
-  beforeDestroy() {
-    TweenMax.to(this.$refs.shape, partsLeaveTime, {
+onMounted(() => {
+  window.setTimeout(() => {
+    if (!shape.value) {
+      return
+    }
+
+    gsap.to(shape.value, {
+      duration: partsCreateTime,
       attr: {
-        x: 0,
-        y: 0,
-        width: 0,
-        height: 0
+        x: -60,
+        y: -60,
+        width: 120,
+        height: 120,
       },
-      ease: Power2.easeOut
+      ease: Power2.easeOut,
     })
+  }, 0)
+})
+
+onBeforeUnmount(() => {
+  if (!shape.value) {
+    return
   }
 
-  created() {
-    setTimeout(() => {
-      TweenMax.to(this.$refs.shape, partsCreateTime, {
-        attr: {
-          x: -60,
-          y: -60,
-          width: 120,
-          height: 120
-        },
-        ease: Power2.easeOut
-      })
-    }, 0)
-  }
-}
+  gsap.to(shape.value, {
+    duration: partsLeaveTime,
+    attr: {
+      x: 0,
+      y: 0,
+      width: 0,
+      height: 0,
+    },
+    ease: Power2.easeOut,
+  })
+})
 </script>
 
 <style lang="scss" scoped>

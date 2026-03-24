@@ -6,8 +6,8 @@ const eventContainerWithParts: EventContainer = {
       sys: {
         type: 'Link',
         linkType: 'Space',
-        id: 'makqrw5hfm9d'
-      }
+        id: 'makqrw5hfm9d',
+      },
     },
     id: '6PY6mHPXXKLHAzMDmrR0gL',
     type: 'Entry',
@@ -17,18 +17,18 @@ const eventContainerWithParts: EventContainer = {
       sys: {
         id: 'master',
         type: 'Link',
-        linkType: 'Environment'
-      }
+        linkType: 'Environment',
+      },
     },
     revision: 1,
     contentType: {
       sys: {
         type: 'Link',
         linkType: 'ContentType',
-        id: 'eventContainer'
-      }
+        id: 'eventContainer',
+      },
     },
-    locale: 'en-US'
+    locale: 'en-US',
   },
   fields: {
     titleForContentful: '7-ye',
@@ -39,8 +39,8 @@ const eventContainerWithParts: EventContainer = {
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '2nMiFiFiZbnBYxCFeY72Wd',
           type: 'Entry',
@@ -50,18 +50,18 @@ const eventContainerWithParts: EventContainer = {
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'eventContainerPart'
-            }
+              id: 'eventContainerPart',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           titleForContentful: '7-ye-1',
@@ -71,10 +71,10 @@ const eventContainerWithParts: EventContainer = {
             sys: {
               type: 'Link',
               linkType: 'Entry',
-              id: '7fozsC9JQwpxPyxkYyARVJ'
-            }
-          }
-        }
+              id: '7fozsC9JQwpxPyxkYyARVJ',
+            },
+          },
+        },
       },
       {
         sys: {
@@ -82,8 +82,8 @@ const eventContainerWithParts: EventContainer = {
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '1kwdWOiQ783ICAnfh7vNWN',
           type: 'Entry',
@@ -93,18 +93,18 @@ const eventContainerWithParts: EventContainer = {
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'eventContainerPart'
-            }
+              id: 'eventContainerPart',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           titleForContentful: '7-ye-2',
@@ -114,11 +114,11 @@ const eventContainerWithParts: EventContainer = {
             sys: {
               type: 'Link',
               linkType: 'Entry',
-              id: '7aUz315q5gRNDDsC9ZPsiR'
-            }
-          }
-        }
-      }
+              id: '7aUz315q5gRNDDsC9ZPsiR',
+            },
+          },
+        },
+      },
     ],
     room: {
       sys: {
@@ -126,8 +126,8 @@ const eventContainerWithParts: EventContainer = {
           sys: {
             type: 'Link',
             linkType: 'Space',
-            id: 'makqrw5hfm9d'
-          }
+            id: 'makqrw5hfm9d',
+          },
         },
         id: '1rnDVEsknx6MhhPgMAS9Gj',
         type: 'Entry',
@@ -137,24 +137,24 @@ const eventContainerWithParts: EventContainer = {
           sys: {
             id: 'master',
             type: 'Link',
-            linkType: 'Environment'
-          }
+            linkType: 'Environment',
+          },
         },
         revision: 1,
         contentType: {
           sys: {
             type: 'Link',
             linkType: 'ContentType',
-            id: 'room'
-          }
+            id: 'room',
+          },
         },
-        locale: 'en-US'
+        locale: 'en-US',
       },
       fields: {
-        name: 'イエソドルーム'
-      }
-    }
-  }
+        name: 'イエソドルーム',
+      },
+    },
+  },
 }
 
 export default eventContainerWithParts

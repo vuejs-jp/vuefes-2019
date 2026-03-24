@@ -7,8 +7,8 @@ const rooms: Room[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4MMzyRoKhtw4BlxWnCHbW9',
       type: 'Entry',
@@ -18,20 +18,20 @@ const rooms: Room[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'room'
-        }
+          id: 'room',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { name: 'PLAID ルーム' }
+    fields: { name: 'PLAID ルーム' },
   },
   {
     sys: {
@@ -39,8 +39,8 @@ const rooms: Room[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '1rnDVEsknx6MhhPgMAS9Gj',
       type: 'Entry',
@@ -50,20 +50,20 @@ const rooms: Room[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'room'
-        }
+          id: 'room',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { name: 'イエソドルーム' }
+    fields: { name: 'イエソドルーム' },
   },
   {
     sys: {
@@ -71,8 +71,8 @@ const rooms: Room[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6DXe9VnLT91YWE9UkVgkep',
       type: 'Entry',
@@ -82,21 +82,21 @@ const rooms: Room[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'room'
-        }
+          id: 'room',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { name: 'YUMEMI ルーム' }
-  }
+    fields: { name: 'YUMEMI ルーム' },
+  },
 ]
 
 export default rooms

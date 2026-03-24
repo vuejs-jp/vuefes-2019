@@ -3,7 +3,7 @@ export type Getters<S, G, RS = {}, RG = {}> = {
     state: S,
     getters?: G,
     rootState?: RS,
-    rootGetters?: RG
+    rootGetters?: RG,
   ) => G[K]
 }
 

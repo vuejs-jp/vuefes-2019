@@ -1,0 +1,16 @@
+{
+  "plugins": ["vue", "vitest"],
+  "env": {
+    "builtin": true,
+    "browser": true,
+    "node": true
+  },
+  "ignorePatterns": [
+    ".nuxt/**",
+    ".output/**",
+    ".playwright-cli/**",
+    "coverage/**",
+    "node_modules/**",
+    "output/**"
+  ]
+}

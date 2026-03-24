@@ -6,8 +6,8 @@ const eventContainerWithSessionHavingTranslation: EventContainer = {
       sys: {
         type: 'Link',
         linkType: 'Space',
-        id: 'makqrw5hfm9d'
-      }
+        id: 'makqrw5hfm9d',
+      },
     },
     id: '5XJnxcznPvA7zvK581CIAr',
     type: 'Entry',
@@ -17,18 +17,18 @@ const eventContainerWithSessionHavingTranslation: EventContainer = {
       sys: {
         id: 'master',
         type: 'Link',
-        linkType: 'Environment'
-      }
+        linkType: 'Environment',
+      },
     },
     revision: 1,
     contentType: {
       sys: {
         type: 'Link',
         linkType: 'ContentType',
-        id: 'eventContainer'
-      }
+        id: 'eventContainer',
+      },
     },
-    locale: 'en-US'
+    locale: 'en-US',
   },
   fields: {
     titleForContentful: '8−pl',
@@ -39,8 +39,8 @@ const eventContainerWithSessionHavingTranslation: EventContainer = {
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '7lCuNn3wby0o7hooQ7gbQf',
           type: 'Entry',
@@ -50,18 +50,18 @@ const eventContainerWithSessionHavingTranslation: EventContainer = {
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 2,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'session'
-            }
+              id: 'session',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           title: 'Enterprise Vue: Patterns That Scale',
@@ -74,8 +74,8 @@ const eventContainerWithSessionHavingTranslation: EventContainer = {
                 sys: {
                   type: 'Link',
                   linkType: 'Space',
-                  id: 'makqrw5hfm9d'
-                }
+                  id: 'makqrw5hfm9d',
+                },
               },
               id: '5emFxpCHjWlov8fBlzWBmM',
               type: 'Asset',
@@ -85,41 +85,40 @@ const eventContainerWithSessionHavingTranslation: EventContainer = {
                 sys: {
                   id: 'master',
                   type: 'Link',
-                  linkType: 'Environment'
-                }
+                  linkType: 'Environment',
+                },
               },
               revision: 1,
-              locale: 'en-US'
+              locale: 'en-US',
             },
             fields: {
               title: 'chrisvfritz',
               file: {
-                url:
-                  '//images.ctfassets.net/makqrw5hfm9d/5emFxpCHjWlov8fBlzWBmM/7aadb8453f61f5639a47c4d67231855e/chrisvfritz.jpg',
+                url: '//images.ctfassets.net/makqrw5hfm9d/5emFxpCHjWlov8fBlzWBmM/7aadb8453f61f5639a47c4d67231855e/chrisvfritz.jpg',
                 details: {
                   size: 37340,
                   image: {
                     width: 1200,
-                    height: 630
-                  }
+                    height: 630,
+                  },
                 },
                 fileName: 'chrisvfritz.jpg',
-                contentType: 'image/jpeg'
-              }
-            }
+                contentType: 'image/jpeg',
+              },
+            },
           },
           speakers: [
             {
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '582L635Brdsa2epHP9HSMA'
-              }
-            }
+                id: '582L635Brdsa2epHP9HSMA',
+              },
+            },
           ],
-          hasTranslation: true
-        }
-      }
+          hasTranslation: true,
+        },
+      },
     ],
     room: {
       sys: {
@@ -127,8 +126,8 @@ const eventContainerWithSessionHavingTranslation: EventContainer = {
           sys: {
             type: 'Link',
             linkType: 'Space',
-            id: 'makqrw5hfm9d'
-          }
+            id: 'makqrw5hfm9d',
+          },
         },
         id: '4MMzyRoKhtw4BlxWnCHbW9',
         type: 'Entry',
@@ -138,22 +137,22 @@ const eventContainerWithSessionHavingTranslation: EventContainer = {
           sys: {
             id: 'master',
             type: 'Link',
-            linkType: 'Environment'
-          }
+            linkType: 'Environment',
+          },
         },
         revision: 1,
         contentType: {
           sys: {
             type: 'Link',
             linkType: 'ContentType',
-            id: 'room'
-          }
+            id: 'room',
+          },
         },
-        locale: 'en-US'
+        locale: 'en-US',
       },
-      fields: { name: 'PLAID ルーム' }
-    }
-  }
+      fields: { name: 'PLAID ルーム' },
+    },
+  },
 }
 
 export default eventContainerWithSessionHavingTranslation

@@ -5,7 +5,7 @@
       'event-container--has-room': eventContainer.fields.room,
       'event-container--has-sessions': hasSessions && !hasKeynote,
       'event-container--has-events': hasEvents,
-      'event-container--has-events-closed': hasEventsClosed
+      'event-container--has-events-closed': hasEventsClosed,
     }"
   >
     <Room
@@ -35,11 +35,11 @@
           class="event-container-part"
         >
           <div class="event-container-part__time">
-            {{ eventContainerPartById(eventContainerPart.sys.id).fields.startAt | toTime }} - {{ eventContainerPartById(eventContainerPart.sys.id).fields.endAt | toTime }}
+            {{ formatTime(eventContainerPartById(eventContainerPart.sys.id).fields.startAt) }} - {{ formatTime(eventContainerPartById(eventContainerPart.sys.id).fields.endAt) }}
           </div>
 
           <div class="event-container-part__content">
-            <EventContent :content="eventContainerPartById(eventContainerPart.sys.id).fields.content" />
+            <EventContent :content="eventContainerPartContent(eventContainerPart.sys.id)" />
           </div>
         </div>
       </div>
@@ -48,80 +48,103 @@
         <EventContent
           v-for="content in eventContainer.fields.contents"
           :key="content.sys.id"
-          :content="content"
+          :content="eventContent(content)"
         />
       </template>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Getter, Vue } from 'nuxt-property-decorator'
-import dayjs from 'dayjs'
-import EventContainerType from '~/types/eventContainer'
-import EventContainerPart from '~/types/eventContainerPart'
-import EventContent from '~/components/TheTimeTableSection/EventContent.vue'
-import Session from '~/types/session'
-import Room from '~/components/TheTimeTableSection/Room.vue'
+<script setup lang="ts">
+import { formatTime } from '~/lib/time'
+import type { EntryLink } from '~/types/contentful'
+import type EventContainerType from '~/types/eventContainer'
+import type EventType from '~/types/event'
+import type Session from '~/types/session'
 
-@Component({
-  components: {
-    EventContent,
-    Room
-  },
-  filters: {
-    toTime(dateTime: string): string {
-      return dayjs(dateTime).format('HH:mm')
-    }
-  }
-})
-export default class EventContainer extends Vue {
-  @Prop()
-  readonly eventContainer!: EventContainerType
+const props = defineProps<{
+  eventContainer: EventContainerType
+}>()
 
-  @Getter('find', { namespace: 'eventContainerParts' })
-  private eventContainerPartById!: (id: string) => EventContainerPart
+const { findEventContainerPartById } = useSiteData()
 
-  get hasEventContainerParts(): boolean {
-    return this.eventContainer.fields.contents.every(
-      content => content.sys.contentType.sys.id === 'eventContainerPart'
-    )
+function eventContainerPartById(id: string) {
+  const eventContainerPart = findEventContainerPartById(id)
+
+  if (!eventContainerPart) {
+    throw new Error(`Unknown event container part: ${id}`)
   }
 
-  get hasKeynote(): boolean {
-    return this.eventContainer.fields.contents.some(
-      content => content.sys.id === '7xvdef2fny01iVD0ra03Iz'
-    )
-  }
-
-  get hasSessions(): boolean {
-    return this.eventContainer.fields.contents.every(
-      content => content.sys.contentType.sys.id === 'session'
-    )
-  }
-
-  get hasTranslation(): boolean {
-    const isSession = (content): content is Session => {
-      return content.sys.contentType.sys.id === 'session'
-    }
-
-    return this.eventContainer.fields.contents.some(
-      content => isSession(content) && content.fields.hasTranslation === true
-    )
-  }
-
-  get hasEvents(): boolean {
-    return this.eventContainer.fields.contents.every(
-      content => content.sys.contentType.sys.id === 'event'
-    )
-  }
-
-  get hasEventsClosed(): boolean {
-    return this.eventContainer.fields.contents.every(
-      content => content.sys.id === '5NPCujTlHiEd7KcRmGp3hS'
-    )
-  }
+  return eventContainerPart
 }
+
+function isEntryLink(
+  content: Session | EventType | EntryLink,
+): content is EntryLink {
+  return content.sys.type === 'Link'
+}
+
+function eventContainerPartContent(id: string): Session | EventType {
+  const content = eventContainerPartById(id).fields.content
+
+  if (isEntryLink(content)) {
+    throw new Error(`Event container part content is unresolved: ${id}`)
+  }
+
+  return content
+}
+
+function eventContent(
+  content: EventContainerType['fields']['contents'][number],
+): Session | EventType {
+  if (content.sys.contentType.sys.id === 'eventContainerPart') {
+    throw new Error(
+      `Unexpected event container part content: ${content.sys.id}`,
+    )
+  }
+
+  return content as Session | EventType
+}
+
+const hasEventContainerParts = computed(() =>
+  props.eventContainer.fields.contents.every(
+    (content) => content.sys.contentType.sys.id === 'eventContainerPart',
+  ),
+)
+
+const hasKeynote = computed(() =>
+  props.eventContainer.fields.contents.some(
+    (content) => content.sys.id === '7xvdef2fny01iVD0ra03Iz',
+  ),
+)
+
+const hasSessions = computed(() =>
+  props.eventContainer.fields.contents.every(
+    (content) => content.sys.contentType.sys.id === 'session',
+  ),
+)
+
+const hasTranslation = computed(() => {
+  const isSession = (
+    content: EventContainerType['fields']['contents'][number],
+  ): content is Session => content.sys.contentType.sys.id === 'session'
+
+  return props.eventContainer.fields.contents.some(
+    (content) => isSession(content) && content.fields.hasTranslation === true,
+  )
+})
+
+const hasEvents = computed(() =>
+  props.eventContainer.fields.contents.every(
+    (content) => content.sys.contentType.sys.id === 'event',
+  ),
+)
+
+const hasEventsClosed = computed(() =>
+  props.eventContainer.fields.contents.every(
+    (content) => content.sys.id === '5NPCujTlHiEd7KcRmGp3hS',
+  ),
+)
 </script>
 
 <style lang="scss" scoped>

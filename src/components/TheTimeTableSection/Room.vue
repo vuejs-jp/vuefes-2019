@@ -4,21 +4,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator'
-import RoomType from '~/types/room'
+<script setup lang="ts">
+import type RoomType from '~/types/room'
 
-@Component
-export default class Room extends Vue {
-  @Prop()
-  readonly room!: RoomType
+defineProps<{
+  room: RoomType
+}>()
 
-  private roomClasses = new Map([
-    ['4MMzyRoKhtw4BlxWnCHbW9', 'room--is-plaid'],
-    ['6DXe9VnLT91YWE9UkVgkep', 'room--is-yumemi'],
-    ['1rnDVEsknx6MhhPgMAS9Gj', 'room--is-yesod']
-  ])
-}
+const roomClasses = new Map([
+  ['4MMzyRoKhtw4BlxWnCHbW9', 'room--is-plaid'],
+  ['6DXe9VnLT91YWE9UkVgkep', 'room--is-yumemi'],
+  ['1rnDVEsknx6MhhPgMAS9Gj', 'room--is-yesod'],
+])
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,4 @@
-@import "normalize.css/normalize.css";
-@import "./foundation/variables";
-@import "./foundation/colors";
-@import "./foundation/reset";
-@import "./foundation/typography";
-@import "./media_queries";
-@import "./utilities";
+@use './foundation/reset';
+@use './foundation/typography';
+@use './media_queries';
+@use './utilities';

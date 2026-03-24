@@ -1,8 +1,6 @@
 <template>
   <BaseSection id="the-event-section" class="the-event-section">
-    <template v-slot:heading>
-      EVENTS
-    </template>
+    <template v-slot:heading> EVENTS </template>
 
     <div class="notification-container">
       <div class="notification">
@@ -12,9 +10,7 @@
         </p>
       </div>
 
-      <div class="note">
-        ※画像はすべてイメージです。
-      </div>
+      <div class="note">※画像はすべてイメージです。</div>
     </div>
 
     <div class="mobile-app">
@@ -27,9 +23,7 @@
       </div>
 
       <div class="mobile-app-content">
-        <h3 class="mobile-app-title">
-          公式モバイルアプリ
-        </h3>
+        <h3 class="mobile-app-title">公式モバイルアプリ</h3>
 
         <p class="mobile-app-description">
           タイムテーブルやセッション情報をすばやく確認できるモバイルアプリをぜひお使いください。気になるセッションをまとめて、自分専用のタイムテーブルを作る機能もあります。
@@ -38,14 +32,14 @@
 
       <div class="mobile-app-badge">
         <a
-          class="app-store"
+          class="app-store app-store-badge"
           target="_blank"
           rel="noopener noreferrer"
           href="https://apps.apple.com/jp/app/vue-fes-japan-2019%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1479972980?mt=8"
+          aria-label="App Store で入手"
         >
-          <img
-            src="https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2019-09-24&kind=iossoftware&bubble=ios_apps"
-          />
+          <span class="app-store-badge__caption">Download on the</span>
+          <span class="app-store-badge__label">App Store</span>
         </a>
 
         <a
@@ -114,9 +108,7 @@
     </div>
 
     <div class="store">
-      <h3 class="store-title">
-        Vue Fes Store
-      </h3>
+      <h3 class="store-title">Vue Fes Store</h3>
 
       <!-- prettier-ignore -->
       <p class="store-description">
@@ -155,26 +147,20 @@
     </ul>
 
     <div class="donation">
-      <p>
-        グッズ販売における利益は以下に分割して全額寄付される予定です。
-      </p>
+      <p>グッズ販売における利益は以下に分割して全額寄付される予定です。</p>
 
       <ul>
-        <li>
-          Vue.js コアチームによる開発の支援
-        </li>
+        <li>Vue.js コアチームによる開発の支援</li>
 
-        <li>
-          Vue.js 日本ユーザーグループによるコミュニティ活動の支援
-        </li>
+        <li>Vue.js 日本ユーザーグループによるコミュニティ活動の支援</li>
       </ul>
     </div>
   </BaseSection>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import BaseSection from '~/components/BaseSection.vue'
+import { defineComponent } from 'vue'
+import { getAssetImage } from '~/lib/assets'
 
 interface Event {
   title: string
@@ -193,134 +179,132 @@ interface Product {
   image2x: string
 }
 
-@Component({
-  components: {
-    BaseSection
-  }
+const eventImage = (name: string) => getAssetImage(`event/${name}`)
+
+export default defineComponent({
+  data() {
+    return {
+      events: [
+        {
+          title: 'リフレッシュメントスペース',
+          description:
+            '喉が渇いたらお茶やコーヒーはいかがですか？小腹を満たすお菓子もご用意しています。もちろん無料です。休憩できる椅子は譲り合ってご利用ください。',
+          image: eventImage('refreshment.jpg'),
+        },
+        {
+          title: 'スポンサーブースシールラリー',
+          description:
+            '工夫を凝らした展示が楽しめるスポンサーブースが今年も登場。ブースで配られるシールを集めると、特製小物ケース（写真右下）をプレゼントします。数量限定のためお早めに！',
+          image: eventImage('sponsor-booths.jpg'),
+        },
+        {
+          title: '技術同人誌販売スペース',
+          description:
+            'Vue.js や JavaScript に関する技術同人誌を立ち読みし、気に入った本があれば実際に購入できます。あなたの知らない良書が見つかるチャンスかもしれません。',
+          image: eventImage('presents.jpg'),
+        },
+        {
+          title: 'タトゥースペース',
+          description:
+            '顔や手に Vue Fes Japan 特製タトゥーシールを貼り付けて、フェス気分を盛り上げましょう。Vue.js や Nuxt.js のロゴマークをその場ですぐに付けられます。',
+          image: eventImage('tattoo.jpg'),
+        },
+      ] as Event[],
+      caseImage: eventImage('case.jpg'),
+      caseImage2x: eventImage('case@2x.jpg'),
+      products: [
+        {
+          name: 'Tシャツ',
+          price: 2000,
+          description:
+            'Vue Fes Japan 2019 のメインビジュアルをあしらった Tシャツです。洗濯で伸び縮みしにくい生地を使用しています。<br />' +
+            '<br/>' +
+            'カラー：ネイビー<br />' +
+            'サイズ：S / M / L / XL',
+          image: eventImage('t-shirt.png'),
+          image2x: eventImage('t-shirt@2x.png'),
+        },
+        {
+          name: 'パーカー',
+          price: 4500,
+          description:
+            'ポケット付きのフルジップパーカー。肌触りが良いパイル裏地のスウェット生地を使用しています。<br />' +
+            '<br />' +
+            'カラー：ミックスグレー<br />' +
+            'サイズ：S / M / L / XL',
+          image: eventImage('parka.png'),
+          image2x: eventImage('parka@2x.png'),
+        },
+        {
+          name: 'ステンレスマグカップ',
+          price: 1800,
+          description:
+            'レーザー彫刻を施したステンレスマグカップ。オフィスやアウトドアでも活躍が期待できます。<br />' +
+            '<br />' +
+            'カラー：シルバー<br />' +
+            '容量：300ml',
+          image: eventImage('mug.png'),
+          image2x: eventImage('mug@2x.png'),
+        },
+        {
+          name: 'ステンレスタンブラー',
+          price: 2000,
+          description:
+            'レーザー彫刻を施したステンレスタンブラー。真空二重構造で氷を入れてもほとんど結露しません。<br />' +
+            '<br />' +
+            'カラー：シルバー<br />' +
+            '容量：450ml',
+          image: eventImage('tumbler.png'),
+          image2x: eventImage('tumbler@2x.png'),
+        },
+        {
+          name: 'Vue.js クッション',
+          price: 2500,
+          description:
+            '珍しい三角形のクッションです。もちもちとした触感がクセになります。<br />' +
+            '<br />' +
+            'サイズ：30cm以下（予定）',
+          image: eventImage('cushion.png'),
+          image2x: eventImage('cushion@2x.png'),
+        },
+        {
+          name: '缶バッジ 4個セット',
+          price: 500,
+          description:
+            '人気のロゴが入った缶バッジセットです。Vue.js のみ円形と三角形の 2種類が付属します。<br />' +
+            '<br />' +
+            'サイズ：44mm（円形）、70mm（三角形）',
+          image: eventImage('badges.png'),
+          image2x: eventImage('badges@2x.png'),
+        },
+        {
+          name: 'マルチクリーナー',
+          price: 300,
+          description:
+            'メガネ、スマートフォンなどマルチな用途で使えるクリーナーです。印刷面、裏面のどちらでも拭けます。<br />' +
+            '<br />' +
+            'サイズ：15 x 15cm',
+          image: eventImage('cleaner.png'),
+          image2x: eventImage('cleaner@2x.png'),
+        },
+        {
+          name: 'ステッカー',
+          price: 200,
+          description:
+            'テックカンファレンスの定番、ステッカーです。キートップに貼れるサイズのキーボードステッカーも付属。',
+          image: eventImage('stickers.png'),
+          image2x: eventImage('stickers@2x.png'),
+        },
+      ] as Product[],
+      mobileApp: eventImage('mobile-app.png'),
+      mobileApp2x: eventImage('mobile-app@2x.png'),
+      informationTable: eventImage('information-table.jpg'),
+      informationTable2x: eventImage('information-table@2x.jpg'),
+      party: eventImage('party.jpg'),
+      party2x: eventImage('party@2x.jpg'),
+    }
+  },
 })
-export default class TheEventSection extends Vue {
-  private events: Event[] = [
-    {
-      title: 'リフレッシュメントスペース',
-      description:
-        '喉が渇いたらお茶やコーヒーはいかがですか？小腹を満たすお菓子もご用意しています。もちろん無料です。休憩できる椅子は譲り合ってご利用ください。',
-      image: require('~/assets/images/event/refreshment.jpg')
-    },
-    {
-      title: 'スポンサーブースシールラリー',
-      description:
-        '工夫を凝らした展示が楽しめるスポンサーブースが今年も登場。ブースで配られるシールを集めると、特製小物ケース（写真右下）をプレゼントします。数量限定のためお早めに！',
-      image: require('~/assets/images/event/sponsor-booths.jpg')
-    },
-    {
-      title: '技術同人誌販売スペース',
-      description:
-        'Vue.js や JavaScript に関する技術同人誌を立ち読みし、気に入った本があれば実際に購入できます。あなたの知らない良書が見つかるチャンスかもしれません。',
-      image: require('~/assets/images/event/presents.jpg')
-    },
-    {
-      title: 'タトゥースペース',
-      description:
-        '顔や手に Vue Fes Japan 特製タトゥーシールを貼り付けて、フェス気分を盛り上げましょう。Vue.js や Nuxt.js のロゴマークをその場ですぐに付けられます。',
-      image: require('~/assets/images/event/tattoo.jpg')
-    }
-  ]
-
-  private caseImage = require('~/assets/images/event/case.jpg')
-  private caseImage2x = require('~/assets/images/event/case@2x.jpg')
-
-  private products: Product[] = [
-    {
-      name: 'Tシャツ',
-      price: 2000,
-      description:
-        'Vue Fes Japan 2019 のメインビジュアルをあしらった Tシャツです。洗濯で伸び縮みしにくい生地を使用しています。<br />' +
-        '<br/>' +
-        'カラー：ネイビー<br />' +
-        'サイズ：S / M / L / XL',
-      image: require('~/assets/images/event/t-shirt.png'),
-      image2x: require('~/assets/images/event/t-shirt@2x.png')
-    },
-    {
-      name: 'パーカー',
-      price: 4500,
-      description:
-        'ポケット付きのフルジップパーカー。肌触りが良いパイル裏地のスウェット生地を使用しています。<br />' +
-        '<br />' +
-        'カラー：ミックスグレー<br />' +
-        'サイズ：S / M / L / XL',
-      image: require('~/assets/images/event/parka.png'),
-      image2x: require('~/assets/images/event/parka@2x.png')
-    },
-    {
-      name: 'ステンレスマグカップ',
-      price: 1800,
-      description:
-        'レーザー彫刻を施したステンレスマグカップ。オフィスやアウトドアでも活躍が期待できます。<br />' +
-        '<br />' +
-        'カラー：シルバー<br />' +
-        '容量：300ml',
-      image: require('~/assets/images/event/mug.png'),
-      image2x: require('~/assets/images/event/mug@2x.png')
-    },
-    {
-      name: 'ステンレスタンブラー',
-      price: 2000,
-      description:
-        'レーザー彫刻を施したステンレスタンブラー。真空二重構造で氷を入れてもほとんど結露しません。<br />' +
-        '<br />' +
-        'カラー：シルバー<br />' +
-        '容量：450ml',
-      image: require('~/assets/images/event/tumbler.png'),
-      image2x: require('~/assets/images/event/tumbler@2x.png')
-    },
-    {
-      name: 'Vue.js クッション',
-      price: 2500,
-      description:
-        '珍しい三角形のクッションです。もちもちとした触感がクセになります。<br />' +
-        '<br />' +
-        'サイズ：30cm以下（予定）',
-      image: require('~/assets/images/event/cushion.png'),
-      image2x: require('~/assets/images/event/cushion@2x.png')
-    },
-    {
-      name: '缶バッジ 4個セット',
-      price: 500,
-      description:
-        '人気のロゴが入った缶バッジセットです。Vue.js のみ円形と三角形の 2種類が付属します。<br />' +
-        '<br />' +
-        'サイズ：44mm（円形）、70mm（三角形）',
-      image: require('~/assets/images/event/badges.png'),
-      image2x: require('~/assets/images/event/badges@2x.png')
-    },
-    {
-      name: 'マルチクリーナー',
-      price: 300,
-      description:
-        'メガネ、スマートフォンなどマルチな用途で使えるクリーナーです。印刷面、裏面のどちらでも拭けます。<br />' +
-        '<br />' +
-        'サイズ：15 x 15cm',
-      image: require('~/assets/images/event/cleaner.png'),
-      image2x: require('~/assets/images/event/cleaner@2x.png')
-    },
-    {
-      name: 'ステッカー',
-      price: 200,
-      description:
-        'テックカンファレンスの定番、ステッカーです。キートップに貼れるサイズのキーボードステッカーも付属。',
-      image: require('~/assets/images/event/stickers.png'),
-      image2x: require('~/assets/images/event/stickers@2x.png')
-    }
-  ]
-
-  private mobileApp = require('~/assets/images/event/mobile-app.png')
-  private mobileApp2x = require('~/assets/images/event/mobile-app@2x.png')
-  private informationTable = require('~/assets/images/event/information-table.jpg')
-  private informationTable2x = require('~/assets/images/event/information-table@2x.jpg')
-  private party = require('~/assets/images/event/party.jpg')
-  private party2x = require('~/assets/images/event/party@2x.jpg')
-}
 </script>
 
 <style lang="scss" scoped>
@@ -338,7 +322,8 @@ export default class TheEventSection extends Vue {
 
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     padding: calc(
-      #{$layout-column-width--is-small-up} + #{$layout-gutter-width--is-small-up}
+      #{$layout-column-width--is-small-up} +
+        #{$layout-gutter-width--is-small-up}
     );
     // prettier-ignore
     width: calc(
@@ -427,7 +412,9 @@ $layout-breakpoint--is-1300px: 1300px;
     }
 
     a {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     img {
@@ -437,6 +424,47 @@ $layout-breakpoint--is-1300px: 1300px;
       @media screen and (min-width: $layout-breakpoint--is-small-up) {
         height: 75px;
       }
+    }
+  }
+}
+
+.app-store-badge {
+  flex-direction: column;
+  gap: 0.2vw;
+  min-width: 21vw;
+  height: 12vw;
+  padding: 0 1.7vw;
+  border-radius: 1.1vw;
+  background-color: #000;
+  color: $white;
+  text-decoration: none;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    gap: 2px;
+    min-width: 130px;
+    height: 75px;
+    padding: 0 12px;
+    border-radius: 8px;
+  }
+
+  &__caption {
+    font-size: 1.35vw;
+    line-height: 1;
+    letter-spacing: 0.02em;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 9px;
+    }
+  }
+
+  &__label {
+    font-size: 3.4vw;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: -0.03em;
+
+    @media screen and (min-width: $layout-breakpoint--is-small-up) {
+      font-size: 23px;
     }
   }
 }

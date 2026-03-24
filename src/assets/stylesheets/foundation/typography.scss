@@ -1,10 +1,16 @@
+@use './variables' as *;
+@use './colors' as *;
+
 $font-size-default: 4vw;
 $font-size-default--is-small-up: 18px;
 
 html {
   // stylelint-disable
   // Unexpected missing generic font family / font-family-no-missing-generic-family-keyword
-  font-family: 'din-2014', 游ゴシック Medium, sans-serif;
+  font-family:
+    'din-2014',
+    游ゴシック Medium,
+    sans-serif;
   // stylelint-enable
   font-size: 16px;
   line-height: 1.5;

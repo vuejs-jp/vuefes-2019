@@ -1,8 +1,6 @@
 <template>
   <BaseSection id="the-sponsor-list-section" class="the-sponsor-list-section">
-    <template v-slot:heading>
-      SPONSORS
-    </template>
+    <template v-slot:heading> SPONSORS </template>
 
     <ul
       v-for="sponsorPlan in sponsorPlansHavingSponsors"
@@ -35,24 +33,8 @@
   </BaseSection>
 </template>
 
-<script lang="ts">
-import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import Sponsor from '~/types/sponsor'
-import SponsorPlan from '~/types/sponsorPlan'
-import BaseSection from '~/components/BaseSection.vue'
-
-@Component({
-  components: {
-    BaseSection
-  }
-})
-export default class TheSponsorListSection extends Vue {
-  @Getter('sponsorsByPlan', { namespace: 'sponsors' })
-  private sponsorsByPlan!: (plan: string) => Sponsor[]
-
-  @Getter('sponsorPlansHavingSponsors', { namespace: 'sponsors' })
-  private sponsorPlansHavingSponsors!: SponsorPlan[]
-}
+<script setup lang="ts">
+const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
 </script>
 
 <style lang="scss" scoped>

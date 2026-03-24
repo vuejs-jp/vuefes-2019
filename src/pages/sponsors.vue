@@ -1,8 +1,6 @@
 <template>
   <BaseMain class="sponsors-page">
-    <template v-slot:heading>
-      SPONSORS
-    </template>
+    <template v-slot:heading> SPONSORS </template>
 
     <ul class="index">
       <li
@@ -71,53 +69,19 @@
       </li>
     </ul>
 
-    <BaseButton to="/">
-      トップに戻る
-    </BaseButton>
+    <BaseButton to="/"> トップに戻る </BaseButton>
   </BaseMain>
 </template>
 
-<script lang="ts">
-import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import Sponsor from '~/types/sponsor'
-import SponsorPlan from '~/types/sponsorPlan'
-import BaseMain from '~/components/BaseMain.vue'
-import BaseButton from '~/components/BaseButton.vue'
+<script setup lang="ts">
+const route = useRoute()
+const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
 
-@Component({
-  components: {
-    BaseMain,
-    BaseButton
-  }
+usePageMetadata({
+  path: route.path,
+  title: 'スポンサー一覧 | Vue Fes Japan 2019',
+  description: 'Vue Fes Japan 2019 のスポンサー情報です。',
 })
-export default class SponsorsPage extends Vue {
-  @Getter('sponsorsByPlan', { namespace: 'sponsors' })
-  private sponsorsByPlan!: (plan: string) => Sponsor[]
-
-  @Getter('sponsorPlansHavingSponsors', { namespace: 'sponsors' })
-  private sponsorPlansHavingSponsors!: SponsorPlan[]
-
-  private head() {
-    const url = 'https://vuefes.jp/2019/sponsors/'
-    const title = 'スポンサー一覧 | Vue Fes Japan 2019'
-    const description = 'Vue Fes Japan 2019 のスポンサー情報です。'
-    return {
-      title,
-      meta: [
-        { hid: 'description', name: 'description', content: description },
-        { hid: 'og:url', name: 'og:url', content: url },
-        { hid: 'og:title', name: 'og:title', content: title },
-        { hid: 'og:description', name: 'og:description', content: description },
-        { hid: 'twitter:title', name: 'twitter:title', content: title },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: description
-        }
-      ]
-    }
-  }
-}
 </script>
 
 <style lang="scss" scoped>

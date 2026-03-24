@@ -6,8 +6,8 @@ const keynote: Session = {
       sys: {
         type: 'Link',
         linkType: 'Space',
-        id: 'makqrw5hfm9d'
-      }
+        id: 'makqrw5hfm9d',
+      },
     },
     id: '7xvdef2fny01iVD0ra03Iz',
     type: 'Entry',
@@ -17,18 +17,18 @@ const keynote: Session = {
       sys: {
         id: 'master',
         type: 'Link',
-        linkType: 'Environment'
-      }
+        linkType: 'Environment',
+      },
     },
     revision: 4,
     contentType: {
       sys: {
         type: 'Link',
         linkType: 'ContentType',
-        id: 'session'
-      }
+        id: 'session',
+      },
     },
-    locale: 'en-US'
+    locale: 'en-US',
   },
   fields: {
     title: 'Keynote',
@@ -38,20 +38,20 @@ const keynote: Session = {
       sys: {
         type: 'Link',
         linkType: 'Asset',
-        id: '5MWxt8IHkH1VpMdh6HgFa6'
-      }
+        id: '5MWxt8IHkH1VpMdh6HgFa6',
+      },
     },
     speakers: [
       {
         sys: {
           type: 'Link',
           linkType: 'Entry',
-          id: '7aHzCP1a1rYpR6KbWENRmB'
-        }
-      }
+          id: '7aHzCP1a1rYpR6KbWENRmB',
+        },
+      },
     ],
-    hasTranslation: true
-  }
+    hasTranslation: true,
+  },
 }
 
 export default keynote

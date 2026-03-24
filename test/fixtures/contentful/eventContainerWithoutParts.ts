@@ -6,8 +6,8 @@ const eventContainerWithoutParts: EventContainer = {
       sys: {
         type: 'Link',
         linkType: 'Space',
-        id: 'makqrw5hfm9d'
-      }
+        id: 'makqrw5hfm9d',
+      },
     },
     id: 'fYX56QW9IRf1BlkWR5CAY',
     type: 'Entry',
@@ -17,18 +17,18 @@ const eventContainerWithoutParts: EventContainer = {
       sys: {
         id: 'master',
         type: 'Link',
-        linkType: 'Environment'
-      }
+        linkType: 'Environment',
+      },
     },
     revision: 1,
     contentType: {
       sys: {
         type: 'Link',
         linkType: 'ContentType',
-        id: 'eventContainer'
-      }
+        id: 'eventContainer',
+      },
     },
-    locale: 'en-US'
+    locale: 'en-US',
   },
   fields: {
     titleForContentful: '3',
@@ -39,8 +39,8 @@ const eventContainerWithoutParts: EventContainer = {
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '7xvdef2fny01iVD0ra03Iz',
           type: 'Entry',
@@ -50,18 +50,18 @@ const eventContainerWithoutParts: EventContainer = {
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 4,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'session'
-            }
+              id: 'session',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
         fields: {
           title: 'Keynote',
@@ -73,8 +73,8 @@ const eventContainerWithoutParts: EventContainer = {
                 sys: {
                   type: 'Link',
                   linkType: 'Space',
-                  id: 'makqrw5hfm9d'
-                }
+                  id: 'makqrw5hfm9d',
+                },
               },
               id: '5MWxt8IHkH1VpMdh6HgFa6',
               type: 'Asset',
@@ -84,43 +84,42 @@ const eventContainerWithoutParts: EventContainer = {
                 sys: {
                   id: 'master',
                   type: 'Link',
-                  linkType: 'Environment'
-                }
+                  linkType: 'Environment',
+                },
               },
               revision: 1,
-              locale: 'en-US'
+              locale: 'en-US',
             },
             fields: {
               title: 'yyx990803',
               file: {
-                url:
-                  '//images.ctfassets.net/makqrw5hfm9d/5MWxt8IHkH1VpMdh6HgFa6/82601487a2fbf1de0d16a53e65cd6fe9/yyx990803.jpg',
+                url: '//images.ctfassets.net/makqrw5hfm9d/5MWxt8IHkH1VpMdh6HgFa6/82601487a2fbf1de0d16a53e65cd6fe9/yyx990803.jpg',
                 details: {
                   size: 41598,
                   image: {
                     width: 1200,
-                    height: 630
-                  }
+                    height: 630,
+                  },
                 },
                 fileName: 'yyx990803.jpg',
-                contentType: 'image/jpeg'
-              }
-            }
+                contentType: 'image/jpeg',
+              },
+            },
           },
           speakers: [
             {
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '7aHzCP1a1rYpR6KbWENRmB'
-              }
-            }
+                id: '7aHzCP1a1rYpR6KbWENRmB',
+              },
+            },
           ],
-          hasTranslation: true
-        }
-      }
-    ]
-  }
+          hasTranslation: true,
+        },
+      },
+    ],
+  },
 }
 
 export default eventContainerWithoutParts

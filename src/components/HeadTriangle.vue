@@ -4,42 +4,50 @@
   </g>
 </template>
 
-<script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
-import { TweenMax, Power2 } from 'gsap'
-import { Parts, partsCreateTime, partsLeaveTime } from './TheHeadSection.vue'
+<script setup lang="ts">
+import { gsap, Power2 } from 'gsap'
+import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
 
-@Component
-export default class HeadTriangle extends Vue {
-  @Prop()
-  readonly item!: Parts
+const props = defineProps<{
+  item: Parts
+}>()
 
-  keyFrame = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
+const shape = ref<SVGPolygonElement | null>(null)
+const keyFrame = ['60 60 60 60 60 60', '60 60 -52 60 60 -52']
+const transform = computed(
+  () =>
+    `translate(${props.item.x}, ${props.item.y}) rotate(${props.item.rotate})`,
+)
 
-  get transform() {
-    return `translate(${this.item.x}, ${this.item.y}) rotate(${this.item.rotate})`
-  }
+onMounted(() => {
+  window.setTimeout(() => {
+    if (!shape.value) {
+      return
+    }
 
-  beforeDestroy() {
-    TweenMax.to(this.$refs.shape, partsLeaveTime, {
+    gsap.to(shape.value, {
+      duration: partsCreateTime,
       attr: {
-        points: this.keyFrame[0]
+        points: keyFrame[1],
       },
-      ease: Power2.easeOut
+      ease: Power2.easeOut,
     })
+  }, 0)
+})
+
+onBeforeUnmount(() => {
+  if (!shape.value) {
+    return
   }
 
-  created() {
-    setTimeout(() => {
-      TweenMax.to(this.$refs.shape, partsCreateTime, {
-        attr: {
-          points: this.keyFrame[1]
-        },
-        ease: Power2.easeOut
-      })
-    }, 0)
-  }
-}
+  gsap.to(shape.value, {
+    duration: partsLeaveTime,
+    attr: {
+      points: keyFrame[0],
+    },
+    ease: Power2.easeOut,
+  })
+})
 </script>
 
 <style lang="scss" scoped>

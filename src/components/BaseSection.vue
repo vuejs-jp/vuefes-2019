@@ -18,17 +18,10 @@
   </section>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-
-@Component
-export default class BaseSection extends Vue {}
-</script>
-
 <style lang="scss" scoped>
 .section-container {
   padding: 10vw 7.8vw;
-  background-image: url('~assets/images/texture.png');
+  background-image: url('@/assets/images/texture.png');
 }
 
 .section-content {
