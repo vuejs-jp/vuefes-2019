@@ -1,6 +1,6 @@
 [build.environment]
-  # Netlify's bundled npm for Node 10.15.3 is too old for the installed extension.
-  # Pin a newer npm so extension dependency resolution succeeds during builds.
+  # Keep Netlify on a newer Node 10 patch so the extension installer gets a modern npm.
+  NODE_VERSION = "10.24.1"
   NPM_VERSION = "6.14.18"
 
 [[redirects]]
