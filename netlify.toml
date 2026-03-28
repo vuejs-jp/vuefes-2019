@@ -1,4 +1,3 @@
-# https://github.com/vuejs-jp/vuefes-2019/issues/235
 [build]
 command = "corepack pnpm run generate"
 publish = "dist/2019"
