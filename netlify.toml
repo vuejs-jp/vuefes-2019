@@ -1,5 +1,5 @@
 [build]
-command = "npm run generate"
+command = "corepack enable && corepack pnpm run generate"
 publish = ".output/public"
 
 [build.environment]
