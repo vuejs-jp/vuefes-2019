@@ -1,3 +1,59 @@
+<script setup lang="ts">
+import { gsap, Power2 } from 'gsap'
+import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
+import image01 from '~/assets/images/header/image01.png?url'
+import image02 from '~/assets/images/header/image02.png?url'
+import image03 from '~/assets/images/header/image03.png?url'
+import image04 from '~/assets/images/header/image04.png?url'
+import image05 from '~/assets/images/header/image05.png?url'
+import image06 from '~/assets/images/header/image06.png?url'
+
+const props = defineProps<{
+  item: Parts
+}>()
+
+const shape = ref<SVGCircleElement | null>(null)
+const keyFrame = [0, 60 * (2 ^ 0.5)]
+const images = [image01, image02, image03, image04, image05, image06]
+
+const transform = computed(
+  () =>
+    `translate(${props.item.x}, ${props.item.y}) rotate(${props.item.rotate})`,
+)
+const clipId = computed(() => `photo-clip${props.item.key}`)
+const clipPath = computed(() => `url(#${clipId.value})`)
+
+onMounted(() => {
+  window.setTimeout(() => {
+    if (!shape.value) {
+      return
+    }
+
+    gsap.to(shape.value, {
+      duration: partsCreateTime,
+      attr: {
+        r: keyFrame[1],
+      },
+      ease: Power2.easeOut,
+    })
+  }, 0)
+})
+
+onBeforeUnmount(() => {
+  if (!shape.value) {
+    return
+  }
+
+  gsap.to(shape.value, {
+    duration: partsLeaveTime,
+    attr: {
+      r: keyFrame[0],
+    },
+    ease: Power2.easeOut,
+  })
+})
+</script>
+
 <template>
   <g :transform="transform">
     <clipPath id="clip-boundary">
@@ -68,62 +124,6 @@
     />
   </g>
 </template>
-
-<script setup lang="ts">
-import { gsap, Power2 } from 'gsap'
-import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
-import image01 from '~/assets/images/header/image01.png?url'
-import image02 from '~/assets/images/header/image02.png?url'
-import image03 from '~/assets/images/header/image03.png?url'
-import image04 from '~/assets/images/header/image04.png?url'
-import image05 from '~/assets/images/header/image05.png?url'
-import image06 from '~/assets/images/header/image06.png?url'
-
-const props = defineProps<{
-  item: Parts
-}>()
-
-const shape = ref<SVGCircleElement | null>(null)
-const keyFrame = [0, 60 * (2 ^ 0.5)]
-const images = [image01, image02, image03, image04, image05, image06]
-
-const transform = computed(
-  () =>
-    `translate(${props.item.x}, ${props.item.y}) rotate(${props.item.rotate})`,
-)
-const clipId = computed(() => `photo-clip${props.item.key}`)
-const clipPath = computed(() => `url(#${clipId.value})`)
-
-onMounted(() => {
-  window.setTimeout(() => {
-    if (!shape.value) {
-      return
-    }
-
-    gsap.to(shape.value, {
-      duration: partsCreateTime,
-      attr: {
-        r: keyFrame[1],
-      },
-      ease: Power2.easeOut,
-    })
-  }, 0)
-})
-
-onBeforeUnmount(() => {
-  if (!shape.value) {
-    return
-  }
-
-  gsap.to(shape.value, {
-    duration: partsLeaveTime,
-    attr: {
-      r: keyFrame[0],
-    },
-    ease: Power2.easeOut,
-  })
-})
-</script>
 
 <style lang="scss" scoped>
 rect {

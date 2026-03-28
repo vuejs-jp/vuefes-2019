@@ -1,3 +1,14 @@
+<script setup lang="ts">
+const route = useRoute()
+const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
+
+usePageMetadata({
+  path: route.path,
+  title: 'スポンサー一覧 | Vue Fes Japan 2019',
+  description: 'Vue Fes Japan 2019 のスポンサー情報です。',
+})
+</script>
+
 <template>
   <BaseMain class="sponsors-page">
     <template v-slot:heading> SPONSORS </template>
@@ -72,17 +83,6 @@
     <BaseButton to="/"> トップに戻る </BaseButton>
   </BaseMain>
 </template>
-
-<script setup lang="ts">
-const route = useRoute()
-const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
-
-usePageMetadata({
-  path: route.path,
-  title: 'スポンサー一覧 | Vue Fes Japan 2019',
-  description: 'Vue Fes Japan 2019 のスポンサー情報です。',
-})
-</script>
 
 <style lang="scss" scoped>
 ul,

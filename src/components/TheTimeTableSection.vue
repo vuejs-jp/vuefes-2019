@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import { formatTime } from '~/lib/time'
+
+const { timeTableSections, findEventContainerById } = useSiteData()
+
+function eventContainerById(id: string) {
+  const eventContainer = findEventContainerById(id)
+
+  if (!eventContainer) {
+    throw new Error(`Unknown event container: ${id}`)
+  }
+
+  return eventContainer
+}
+</script>
+
 <template>
   <BaseSection id="the-time-table-section" class="the-time-table-section">
     <template v-slot:heading> TIME TABLE </template>
@@ -39,22 +55,6 @@
     </div>
   </BaseSection>
 </template>
-
-<script setup lang="ts">
-import { formatTime } from '~/lib/time'
-
-const { timeTableSections, findEventContainerById } = useSiteData()
-
-function eventContainerById(id: string) {
-  const eventContainer = findEventContainerById(id)
-
-  if (!eventContainer) {
-    throw new Error(`Unknown event container: ${id}`)
-  }
-
-  return eventContainer
-}
-</script>
 
 <style lang="scss" scoped>
 .the-time-table-section {

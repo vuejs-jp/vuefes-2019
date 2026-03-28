@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
+</script>
+
 <template>
   <BaseSection id="the-sponsor-list-section" class="the-sponsor-list-section">
     <template v-slot:heading> SPONSORS </template>
@@ -32,10 +36,6 @@
     </ul>
   </BaseSection>
 </template>
-
-<script setup lang="ts">
-const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
-</script>
 
 <style lang="scss" scoped>
 ul {

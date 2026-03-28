@@ -1,12 +1,3 @@
-<template>
-  <g :transform="transform">
-    <!-- eslint-disable vue/max-attributes-per-line -->
-    <rect key="1" ref="shape1" x="-60" y="-60" width="120" height="0" />
-    <rect key="2" ref="shape2" x="-60" y="60" width="120" height="0" />
-    <!-- eslint-enable vue/max-attributes-per-line -->
-  </g>
-</template>
-
 <script setup lang="ts">
 import { gsap, Power2 } from 'gsap'
 import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
@@ -72,6 +63,15 @@ onBeforeUnmount(() => {
   }
 })
 </script>
+
+<template>
+  <g :transform="transform">
+    <!-- eslint-disable vue/max-attributes-per-line -->
+    <rect key="1" ref="shape1" x="-60" y="-60" width="120" height="0" />
+    <rect key="2" ref="shape2" x="-60" y="60" width="120" height="0" />
+    <!-- eslint-enable vue/max-attributes-per-line -->
+  </g>
+</template>
 
 <style lang="scss" scoped>
 rect {

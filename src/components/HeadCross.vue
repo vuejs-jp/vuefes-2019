@@ -1,12 +1,3 @@
-<template>
-  <g :transform="transform">
-    <polygon key="1" ref="shape1" :points="keyFrame1[0]" />
-    <polygon key="2" ref="shape2" :points="keyFrame2[0]" />
-    <polygon key="3" ref="shape3" :points="keyFrame3[0]" />
-    <polygon key="4" ref="shape4" :points="keyFrame4[0]" />
-  </g>
-</template>
-
 <script setup lang="ts">
 import { gsap, Power2 } from 'gsap'
 import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
@@ -98,6 +89,15 @@ onMounted(() => {
 
 onBeforeUnmount(animateOut)
 </script>
+
+<template>
+  <g :transform="transform">
+    <polygon key="1" ref="shape1" :points="keyFrame1[0]" />
+    <polygon key="2" ref="shape2" :points="keyFrame2[0]" />
+    <polygon key="3" ref="shape3" :points="keyFrame3[0]" />
+    <polygon key="4" ref="shape4" :points="keyFrame4[0]" />
+  </g>
+</template>
 
 <style lang="scss" scoped>
 polygon {

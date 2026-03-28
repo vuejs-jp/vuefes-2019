@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import accessImage from '~/assets/images/access.jpg?url'
+import accessImage2x from '~/assets/images/access@2x.jpg?url'
+
+const image2x = accessImage2x
+const imageSrcSet = `${accessImage}, ${accessImage2x} 2x`
+</script>
+
 <template>
   <BaseSection id="the-access-section" class="the-access-section">
     <template v-slot:heading> ACCESS </template>
@@ -53,14 +61,6 @@
     </BaseButton>
   </BaseSection>
 </template>
-
-<script setup lang="ts">
-import accessImage from '~/assets/images/access.jpg?url'
-import accessImage2x from '~/assets/images/access@2x.jpg?url'
-
-const image2x = accessImage2x
-const imageSrcSet = `${accessImage}, ${accessImage2x} 2x`
-</script>
 
 <style lang="scss" scoped>
 .access-container {

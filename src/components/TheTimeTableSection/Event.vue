@@ -1,10 +1,3 @@
-<template>
-  <div class="event">
-    {{ event.fields.title }}
-    <span v-if="isCommunitySession" class="note-mark">※</span>
-  </div>
-</template>
-
 <script setup lang="ts">
 import type EventType from '~/types/event'
 
@@ -16,6 +9,13 @@ const isCommunitySession = computed(
   () => props.event.sys.id === '7HH2CbTRcGkUYp9OF1LIVu',
 )
 </script>
+
+<template>
+  <div class="event">
+    {{ event.fields.title }}
+    <span v-if="isCommunitySession" class="note-mark">※</span>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .event {

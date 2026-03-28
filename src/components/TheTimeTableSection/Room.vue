@@ -1,9 +1,3 @@
-<template>
-  <div class="room" :class="roomClasses.get(room.sys.id)">
-    {{ room.fields.name }}
-  </div>
-</template>
-
 <script setup lang="ts">
 import type RoomType from '~/types/room'
 
@@ -17,6 +11,12 @@ const roomClasses = new Map([
   ['1rnDVEsknx6MhhPgMAS9Gj', 'room--is-yesod'],
 ])
 </script>
+
+<template>
+  <div class="room" :class="roomClasses.get(room.sys.id)">
+    {{ room.fields.name }}
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .room {

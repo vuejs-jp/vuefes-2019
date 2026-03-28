@@ -1,3 +1,7 @@
+<script setup lang="ts">
+await useSiteDataFetch()
+</script>
+
 <template>
   <div>
     <TheHeader />
@@ -5,7 +9,3 @@
     <TheFooter />
   </div>
 </template>
-
-<script setup lang="ts">
-await useSiteDataFetch()
-</script>

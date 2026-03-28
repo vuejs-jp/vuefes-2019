@@ -1,121 +1,3 @@
-<template>
-  <BaseMain class="the-contact-form">
-    <template v-slot:heading> お問い合わせ </template>
-
-    <BaseMainDescription>
-      <!-- prettier-ignore -->
-      <p>
-        Vue.js 日本ユーザーグループへのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者から 3営業日以内でお答えさせていただきます。
-      </p>
-    </BaseMainDescription>
-
-    <form
-      name="contact"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      netlify
-      @submit.prevent="handleSubmit"
-    >
-      <!-- Anti-spam Measures -->
-      <div class="hidden">
-        <p>
-          <label>
-            Don’t fill this out:
-            <input name="bot-field" />
-          </label>
-        </p>
-
-        <input type="hidden" name="form-name" value="contact" />
-      </div>
-
-      <!-- Name -->
-      <div class="form-content">
-        <label for="name">お名前<span class="required">（必須）</span></label>
-        <input
-          id="name"
-          v-model.trim="formData.name"
-          :class="{ error: errors.has('name') }"
-          @blur="validateField('name')"
-          name="name"
-          placeholder="お名前"
-          type="text"
-        />
-
-        <div v-show="errors.has('name')" id="name-error" class="has-error">
-          {{ errors.first('name') }}
-        </div>
-      </div>
-
-      <!-- Email -->
-      <div class="form-content">
-        <label for="email">
-          メールアドレス<span class="required">（必須）</span>
-        </label>
-
-        <input
-          id="email"
-          v-model.trim="formData.email"
-          :class="{ error: errors.has('email') }"
-          @blur="validateField('email')"
-          name="email"
-          placeholder="メールアドレス"
-          type="text"
-        />
-
-        <div v-show="errors.has('email')" id="email-error" class="has-error">
-          {{ errors.first('email') }}
-        </div>
-      </div>
-
-      <!-- Organization -->
-      <div class="form-content">
-        <label for="organization"> 会社・団体名等 </label>
-
-        <input
-          id="organization"
-          v-model="formData.organization"
-          name="organization"
-          placeholder="会社・団体名等"
-          type="text"
-        />
-      </div>
-
-      <!-- Message -->
-      <div class="form-content">
-        <label for="message">
-          内容<span class="required">（必須）</span>
-        </label>
-
-        <textarea
-          id="message"
-          v-model="formData.message"
-          :class="{ error: errors.has('message') }"
-          @blur="validateField('message')"
-          name="message"
-          placeholder="例：お問い合わせ内容をご記入ください"
-        />
-
-        <div
-          v-show="errors.has('message')"
-          id="message-error"
-          class="has-error"
-        >
-          {{ errors.first('message') }}
-        </div>
-      </div>
-
-      <BaseButton
-        :disabled="status.hasSent || status.inProgress"
-        :class="{ 'has-sent': status.hasSent }"
-        class="submit-button"
-        type="submit"
-      >
-        {{ buttonValue }}
-      </BaseButton>
-    </form>
-  </BaseMain>
-</template>
-
 <script setup lang="ts">
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -260,6 +142,124 @@ async function handleSubmit() {
   }
 }
 </script>
+
+<template>
+  <BaseMain class="the-contact-form">
+    <template v-slot:heading> お問い合わせ </template>
+
+    <BaseMainDescription>
+      <!-- prettier-ignore -->
+      <p>
+        Vue.js 日本ユーザーグループへのご質問及びお問い合わせは、以下のお問い合わせフォームよりお願いします。通常、担当者から 3営業日以内でお答えさせていただきます。
+      </p>
+    </BaseMainDescription>
+
+    <form
+      name="contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      netlify
+      @submit.prevent="handleSubmit"
+    >
+      <!-- Anti-spam Measures -->
+      <div class="hidden">
+        <p>
+          <label>
+            Don’t fill this out:
+            <input name="bot-field" />
+          </label>
+        </p>
+
+        <input type="hidden" name="form-name" value="contact" />
+      </div>
+
+      <!-- Name -->
+      <div class="form-content">
+        <label for="name">お名前<span class="required">（必須）</span></label>
+        <input
+          id="name"
+          v-model.trim="formData.name"
+          :class="{ error: errors.has('name') }"
+          @blur="validateField('name')"
+          name="name"
+          placeholder="お名前"
+          type="text"
+        />
+
+        <div v-show="errors.has('name')" id="name-error" class="has-error">
+          {{ errors.first('name') }}
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-content">
+        <label for="email">
+          メールアドレス<span class="required">（必須）</span>
+        </label>
+
+        <input
+          id="email"
+          v-model.trim="formData.email"
+          :class="{ error: errors.has('email') }"
+          @blur="validateField('email')"
+          name="email"
+          placeholder="メールアドレス"
+          type="text"
+        />
+
+        <div v-show="errors.has('email')" id="email-error" class="has-error">
+          {{ errors.first('email') }}
+        </div>
+      </div>
+
+      <!-- Organization -->
+      <div class="form-content">
+        <label for="organization"> 会社・団体名等 </label>
+
+        <input
+          id="organization"
+          v-model="formData.organization"
+          name="organization"
+          placeholder="会社・団体名等"
+          type="text"
+        />
+      </div>
+
+      <!-- Message -->
+      <div class="form-content">
+        <label for="message">
+          内容<span class="required">（必須）</span>
+        </label>
+
+        <textarea
+          id="message"
+          v-model="formData.message"
+          :class="{ error: errors.has('message') }"
+          @blur="validateField('message')"
+          name="message"
+          placeholder="例：お問い合わせ内容をご記入ください"
+        />
+
+        <div
+          v-show="errors.has('message')"
+          id="message-error"
+          class="has-error"
+        >
+          {{ errors.first('message') }}
+        </div>
+      </div>
+
+      <BaseButton
+        :disabled="status.hasSent || status.inProgress"
+        :class="{ 'has-sent': status.hasSent }"
+        class="submit-button"
+        type="submit"
+      >
+        {{ buttonValue }}
+      </BaseButton>
+    </form>
+  </BaseMain>
+</template>
 
 <style lang="scss" scoped>
 $form-border-color: #eee;

@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import type { Asset, AssetLink } from '~/types/contentful'
+import type Speaker from '~/types/speaker'
+
+const { speakers } = useSiteData()
+
+function assetUrl(asset: Asset | AssetLink): string {
+  if (!('fields' in asset)) {
+    throw new Error('Speaker asset was not resolved')
+  }
+
+  return asset.fields.file.url
+}
+
+function speakerAvatarSrcSet(speaker: Speaker): string {
+  return `${assetUrl(speaker.fields.avatar)}, ${assetUrl(speaker.fields.avatar2x)} 2x`
+}
+</script>
+
 <template>
   <BaseSection id="the-speaker-list-section" class="the-speaker-list-section">
     <template v-slot:heading> SPEAKERS </template>
@@ -37,25 +56,6 @@
     </div>
   </BaseSection>
 </template>
-
-<script setup lang="ts">
-import type { Asset, AssetLink } from '~/types/contentful'
-import type Speaker from '~/types/speaker'
-
-const { speakers } = useSiteData()
-
-function assetUrl(asset: Asset | AssetLink): string {
-  if (!('fields' in asset)) {
-    throw new Error('Speaker asset was not resolved')
-  }
-
-  return asset.fields.file.url
-}
-
-function speakerAvatarSrcSet(speaker: Speaker): string {
-  return `${assetUrl(speaker.fields.avatar)}, ${assetUrl(speaker.fields.avatar2x)} 2x`
-}
-</script>
 
 <style lang="scss" scoped>
 .speaker-container {

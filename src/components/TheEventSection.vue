@@ -1,3 +1,152 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { getAssetImage } from '~/lib/assets'
+
+interface Event {
+  title: string
+  description: string
+  image: string
+
+  // シャギーが目立ったため、オリジナルサイズの画像を利用。そのため image2x を用意していない
+  // https://github.com/kazupon/vuefes-2019/pull/171#issuecomment-530706539
+}
+
+interface Product {
+  name: string
+  price: number
+  description: string
+  image: string
+  image2x: string
+}
+
+const eventImage = (name: string) => getAssetImage(`event/${name}`)
+
+export default defineComponent({
+  data() {
+    return {
+      events: [
+        {
+          title: 'リフレッシュメントスペース',
+          description:
+            '喉が渇いたらお茶やコーヒーはいかがですか？小腹を満たすお菓子もご用意しています。もちろん無料です。休憩できる椅子は譲り合ってご利用ください。',
+          image: eventImage('refreshment.jpg'),
+        },
+        {
+          title: 'スポンサーブースシールラリー',
+          description:
+            '工夫を凝らした展示が楽しめるスポンサーブースが今年も登場。ブースで配られるシールを集めると、特製小物ケース（写真右下）をプレゼントします。数量限定のためお早めに！',
+          image: eventImage('sponsor-booths.jpg'),
+        },
+        {
+          title: '技術同人誌販売スペース',
+          description:
+            'Vue.js や JavaScript に関する技術同人誌を立ち読みし、気に入った本があれば実際に購入できます。あなたの知らない良書が見つかるチャンスかもしれません。',
+          image: eventImage('presents.jpg'),
+        },
+        {
+          title: 'タトゥースペース',
+          description:
+            '顔や手に Vue Fes Japan 特製タトゥーシールを貼り付けて、フェス気分を盛り上げましょう。Vue.js や Nuxt.js のロゴマークをその場ですぐに付けられます。',
+          image: eventImage('tattoo.jpg'),
+        },
+      ] as Event[],
+      caseImage: eventImage('case.jpg'),
+      caseImage2x: eventImage('case@2x.jpg'),
+      products: [
+        {
+          name: 'Tシャツ',
+          price: 2000,
+          description:
+            'Vue Fes Japan 2019 のメインビジュアルをあしらった Tシャツです。洗濯で伸び縮みしにくい生地を使用しています。<br />' +
+            '<br/>' +
+            'カラー：ネイビー<br />' +
+            'サイズ：S / M / L / XL',
+          image: eventImage('t-shirt.png'),
+          image2x: eventImage('t-shirt@2x.png'),
+        },
+        {
+          name: 'パーカー',
+          price: 4500,
+          description:
+            'ポケット付きのフルジップパーカー。肌触りが良いパイル裏地のスウェット生地を使用しています。<br />' +
+            '<br />' +
+            'カラー：ミックスグレー<br />' +
+            'サイズ：S / M / L / XL',
+          image: eventImage('parka.png'),
+          image2x: eventImage('parka@2x.png'),
+        },
+        {
+          name: 'ステンレスマグカップ',
+          price: 1800,
+          description:
+            'レーザー彫刻を施したステンレスマグカップ。オフィスやアウトドアでも活躍が期待できます。<br />' +
+            '<br />' +
+            'カラー：シルバー<br />' +
+            '容量：300ml',
+          image: eventImage('mug.png'),
+          image2x: eventImage('mug@2x.png'),
+        },
+        {
+          name: 'ステンレスタンブラー',
+          price: 2000,
+          description:
+            'レーザー彫刻を施したステンレスタンブラー。真空二重構造で氷を入れてもほとんど結露しません。<br />' +
+            '<br />' +
+            'カラー：シルバー<br />' +
+            '容量：450ml',
+          image: eventImage('tumbler.png'),
+          image2x: eventImage('tumbler@2x.png'),
+        },
+        {
+          name: 'Vue.js クッション',
+          price: 2500,
+          description:
+            '珍しい三角形のクッションです。もちもちとした触感がクセになります。<br />' +
+            '<br />' +
+            'サイズ：30cm以下（予定）',
+          image: eventImage('cushion.png'),
+          image2x: eventImage('cushion@2x.png'),
+        },
+        {
+          name: '缶バッジ 4個セット',
+          price: 500,
+          description:
+            '人気のロゴが入った缶バッジセットです。Vue.js のみ円形と三角形の 2種類が付属します。<br />' +
+            '<br />' +
+            'サイズ：44mm（円形）、70mm（三角形）',
+          image: eventImage('badges.png'),
+          image2x: eventImage('badges@2x.png'),
+        },
+        {
+          name: 'マルチクリーナー',
+          price: 300,
+          description:
+            'メガネ、スマートフォンなどマルチな用途で使えるクリーナーです。印刷面、裏面のどちらでも拭けます。<br />' +
+            '<br />' +
+            'サイズ：15 x 15cm',
+          image: eventImage('cleaner.png'),
+          image2x: eventImage('cleaner@2x.png'),
+        },
+        {
+          name: 'ステッカー',
+          price: 200,
+          description:
+            'テックカンファレンスの定番、ステッカーです。キートップに貼れるサイズのキーボードステッカーも付属。',
+          image: eventImage('stickers.png'),
+          image2x: eventImage('stickers@2x.png'),
+        },
+      ] as Product[],
+      mobileApp: eventImage('mobile-app.png'),
+      mobileApp2x: eventImage('mobile-app@2x.png'),
+      informationTable: eventImage('information-table.jpg'),
+      informationTable2x: eventImage('information-table@2x.jpg'),
+      party: eventImage('party.jpg'),
+      party2x: eventImage('party@2x.jpg'),
+    }
+  },
+})
+</script>
+
 <template>
   <BaseSection id="the-event-section" class="the-event-section">
     <template v-slot:heading> EVENTS </template>
@@ -157,155 +306,6 @@
     </div>
   </BaseSection>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { getAssetImage } from '~/lib/assets'
-
-interface Event {
-  title: string
-  description: string
-  image: string
-
-  // シャギーが目立ったため、オリジナルサイズの画像を利用。そのため image2x を用意していない
-  // https://github.com/kazupon/vuefes-2019/pull/171#issuecomment-530706539
-}
-
-interface Product {
-  name: string
-  price: number
-  description: string
-  image: string
-  image2x: string
-}
-
-const eventImage = (name: string) => getAssetImage(`event/${name}`)
-
-export default defineComponent({
-  data() {
-    return {
-      events: [
-        {
-          title: 'リフレッシュメントスペース',
-          description:
-            '喉が渇いたらお茶やコーヒーはいかがですか？小腹を満たすお菓子もご用意しています。もちろん無料です。休憩できる椅子は譲り合ってご利用ください。',
-          image: eventImage('refreshment.jpg'),
-        },
-        {
-          title: 'スポンサーブースシールラリー',
-          description:
-            '工夫を凝らした展示が楽しめるスポンサーブースが今年も登場。ブースで配られるシールを集めると、特製小物ケース（写真右下）をプレゼントします。数量限定のためお早めに！',
-          image: eventImage('sponsor-booths.jpg'),
-        },
-        {
-          title: '技術同人誌販売スペース',
-          description:
-            'Vue.js や JavaScript に関する技術同人誌を立ち読みし、気に入った本があれば実際に購入できます。あなたの知らない良書が見つかるチャンスかもしれません。',
-          image: eventImage('presents.jpg'),
-        },
-        {
-          title: 'タトゥースペース',
-          description:
-            '顔や手に Vue Fes Japan 特製タトゥーシールを貼り付けて、フェス気分を盛り上げましょう。Vue.js や Nuxt.js のロゴマークをその場ですぐに付けられます。',
-          image: eventImage('tattoo.jpg'),
-        },
-      ] as Event[],
-      caseImage: eventImage('case.jpg'),
-      caseImage2x: eventImage('case@2x.jpg'),
-      products: [
-        {
-          name: 'Tシャツ',
-          price: 2000,
-          description:
-            'Vue Fes Japan 2019 のメインビジュアルをあしらった Tシャツです。洗濯で伸び縮みしにくい生地を使用しています。<br />' +
-            '<br/>' +
-            'カラー：ネイビー<br />' +
-            'サイズ：S / M / L / XL',
-          image: eventImage('t-shirt.png'),
-          image2x: eventImage('t-shirt@2x.png'),
-        },
-        {
-          name: 'パーカー',
-          price: 4500,
-          description:
-            'ポケット付きのフルジップパーカー。肌触りが良いパイル裏地のスウェット生地を使用しています。<br />' +
-            '<br />' +
-            'カラー：ミックスグレー<br />' +
-            'サイズ：S / M / L / XL',
-          image: eventImage('parka.png'),
-          image2x: eventImage('parka@2x.png'),
-        },
-        {
-          name: 'ステンレスマグカップ',
-          price: 1800,
-          description:
-            'レーザー彫刻を施したステンレスマグカップ。オフィスやアウトドアでも活躍が期待できます。<br />' +
-            '<br />' +
-            'カラー：シルバー<br />' +
-            '容量：300ml',
-          image: eventImage('mug.png'),
-          image2x: eventImage('mug@2x.png'),
-        },
-        {
-          name: 'ステンレスタンブラー',
-          price: 2000,
-          description:
-            'レーザー彫刻を施したステンレスタンブラー。真空二重構造で氷を入れてもほとんど結露しません。<br />' +
-            '<br />' +
-            'カラー：シルバー<br />' +
-            '容量：450ml',
-          image: eventImage('tumbler.png'),
-          image2x: eventImage('tumbler@2x.png'),
-        },
-        {
-          name: 'Vue.js クッション',
-          price: 2500,
-          description:
-            '珍しい三角形のクッションです。もちもちとした触感がクセになります。<br />' +
-            '<br />' +
-            'サイズ：30cm以下（予定）',
-          image: eventImage('cushion.png'),
-          image2x: eventImage('cushion@2x.png'),
-        },
-        {
-          name: '缶バッジ 4個セット',
-          price: 500,
-          description:
-            '人気のロゴが入った缶バッジセットです。Vue.js のみ円形と三角形の 2種類が付属します。<br />' +
-            '<br />' +
-            'サイズ：44mm（円形）、70mm（三角形）',
-          image: eventImage('badges.png'),
-          image2x: eventImage('badges@2x.png'),
-        },
-        {
-          name: 'マルチクリーナー',
-          price: 300,
-          description:
-            'メガネ、スマートフォンなどマルチな用途で使えるクリーナーです。印刷面、裏面のどちらでも拭けます。<br />' +
-            '<br />' +
-            'サイズ：15 x 15cm',
-          image: eventImage('cleaner.png'),
-          image2x: eventImage('cleaner@2x.png'),
-        },
-        {
-          name: 'ステッカー',
-          price: 200,
-          description:
-            'テックカンファレンスの定番、ステッカーです。キートップに貼れるサイズのキーボードステッカーも付属。',
-          image: eventImage('stickers.png'),
-          image2x: eventImage('stickers@2x.png'),
-        },
-      ] as Product[],
-      mobileApp: eventImage('mobile-app.png'),
-      mobileApp2x: eventImage('mobile-app@2x.png'),
-      informationTable: eventImage('information-table.jpg'),
-      informationTable2x: eventImage('information-table@2x.jpg'),
-      party: eventImage('party.jpg'),
-      party2x: eventImage('party@2x.jpg'),
-    }
-  },
-})
-</script>
 
 <style lang="scss" scoped>
 .notification-container {

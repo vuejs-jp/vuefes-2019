@@ -1,9 +1,3 @@
-<template>
-  <g :transform="transform">
-    <circle ref="shape" cx="0" cy="0" r="0" />
-  </g>
-</template>
-
 <script setup lang="ts">
 import { gsap, Power2 } from 'gsap'
 import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
@@ -49,6 +43,12 @@ onBeforeUnmount(() => {
   })
 })
 </script>
+
+<template>
+  <g :transform="transform">
+    <circle ref="shape" cx="0" cy="0" r="0" />
+  </g>
+</template>
 
 <style lang="scss" scoped>
 circle {

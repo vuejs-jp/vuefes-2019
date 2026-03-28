@@ -1,60 +1,3 @@
-<template>
-  <div
-    class="event-container"
-    :class="{
-      'event-container--has-room': eventContainer.fields.room,
-      'event-container--has-sessions': hasSessions && !hasKeynote,
-      'event-container--has-events': hasEvents,
-      'event-container--has-events-closed': hasEventsClosed,
-    }"
-  >
-    <Room
-      v-if="eventContainer.fields.room"
-      :room="eventContainer.fields.room"
-    />
-
-    <div
-      v-if="hasTranslation"
-      class="translation"
-      :class="{ 'translation--is-keynote': hasKeynote }"
-    >
-      <img src="~/assets/images/icon-translation.svg" alt="" />
-      <span class="translation-text">同時通訳あり</span>
-    </div>
-
-    <div class="content">
-      <div
-        v-if="hasEventContainerParts"
-        class="session__content half-session__container"
-      >
-        <!-- eventContainerPart -->
-        <!-- prettier-ignore -->
-        <div
-          v-for="eventContainerPart in eventContainer.fields.contents"
-          :key="eventContainerPart.sys.id"
-          class="event-container-part"
-        >
-          <div class="event-container-part__time">
-            {{ formatTime(eventContainerPartById(eventContainerPart.sys.id).fields.startAt) }} - {{ formatTime(eventContainerPartById(eventContainerPart.sys.id).fields.endAt) }}
-          </div>
-
-          <div class="event-container-part__content">
-            <EventContent :content="eventContainerPartContent(eventContainerPart.sys.id)" />
-          </div>
-        </div>
-      </div>
-
-      <template v-else>
-        <EventContent
-          v-for="content in eventContainer.fields.contents"
-          :key="content.sys.id"
-          :content="eventContent(content)"
-        />
-      </template>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { formatTime } from '~/lib/time'
 import type { EntryLink } from '~/types/contentful'
@@ -146,6 +89,63 @@ const hasEventsClosed = computed(() =>
   ),
 )
 </script>
+
+<template>
+  <div
+    class="event-container"
+    :class="{
+      'event-container--has-room': eventContainer.fields.room,
+      'event-container--has-sessions': hasSessions && !hasKeynote,
+      'event-container--has-events': hasEvents,
+      'event-container--has-events-closed': hasEventsClosed,
+    }"
+  >
+    <Room
+      v-if="eventContainer.fields.room"
+      :room="eventContainer.fields.room"
+    />
+
+    <div
+      v-if="hasTranslation"
+      class="translation"
+      :class="{ 'translation--is-keynote': hasKeynote }"
+    >
+      <img src="~/assets/images/icon-translation.svg" alt="" />
+      <span class="translation-text">同時通訳あり</span>
+    </div>
+
+    <div class="content">
+      <div
+        v-if="hasEventContainerParts"
+        class="session__content half-session__container"
+      >
+        <!-- eventContainerPart -->
+        <!-- prettier-ignore -->
+        <div
+          v-for="eventContainerPart in eventContainer.fields.contents"
+          :key="eventContainerPart.sys.id"
+          class="event-container-part"
+        >
+          <div class="event-container-part__time">
+            {{ formatTime(eventContainerPartById(eventContainerPart.sys.id).fields.startAt) }} - {{ formatTime(eventContainerPartById(eventContainerPart.sys.id).fields.endAt) }}
+          </div>
+
+          <div class="event-container-part__content">
+            <EventContent :content="eventContainerPartContent(eventContainerPart.sys.id)" />
+          </div>
+        </div>
+      </div>
+
+      <template v-else>
+        <EventContent
+          v-for="content in eventContainer.fields.contents"
+          :key="content.sys.id"
+          :content="eventContent(content)"
+        />
+      </template>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 $event-container-min-height--is-small: 10.4vw;
