@@ -7,8 +7,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '52xcLDNWOkF7s46q93hGQs',
       type: 'Entry',
@@ -18,18 +18,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'Introduction to Nuxt 3',
@@ -40,20 +40,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '3cfR54yQy2r4F4l9aFn8S8'
-        }
+          id: '3cfR54yQy2r4F4l9aFn8S8',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4XnF0Cp1piQFkVEjUnCrci'
-          }
-        }
+            id: '4XnF0Cp1piQFkVEjUnCrci',
+          },
+        },
       ],
-      hasTranslation: true
-    }
+      hasTranslation: true,
+    },
   },
   {
     sys: {
@@ -61,8 +61,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4dgpT8P4uu8CkedDki92NS',
       type: 'Entry',
@@ -72,18 +72,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'アンチパターンから学ぶ Atomic Design with Vue.js',
@@ -94,20 +94,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '7wa7E8tM1TJCFNSXgf5ai'
-        }
+          id: '7wa7E8tM1TJCFNSXgf5ai',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '1wgsyNSXRjVrKe2NgZzmw3'
-          }
-        }
+            id: '1wgsyNSXRjVrKe2NgZzmw3',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -115,8 +115,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6o9an6K6nq1xemJ84oIfXq',
       type: 'Entry',
@@ -126,18 +126,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: "What's Nuxt?",
@@ -148,20 +148,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '7n20Yo4MMcOqiU7REZAkA9'
-        }
+          id: '7n20Yo4MMcOqiU7REZAkA9',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '2wJP0k4TL8blmOvUsiOswb'
-          }
-        }
+            id: '2wJP0k4TL8blmOvUsiOswb',
+          },
+        },
       ],
-      hasTranslation: true
-    }
+      hasTranslation: true,
+    },
   },
   {
     sys: {
@@ -169,8 +169,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7lCuNn3wby0o7hooQ7gbQf',
       type: 'Entry',
@@ -180,18 +180,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'Enterprise Vue: Patterns That Scale',
@@ -202,20 +202,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '5emFxpCHjWlov8fBlzWBmM'
-        }
+          id: '5emFxpCHjWlov8fBlzWBmM',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '582L635Brdsa2epHP9HSMA'
-          }
-        }
+            id: '582L635Brdsa2epHP9HSMA',
+          },
+        },
       ],
-      hasTranslation: true
-    }
+      hasTranslation: true,
+    },
   },
   {
     sys: {
@@ -223,8 +223,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: 'K56RNDgglthD48chr9Glr',
       type: 'Entry',
@@ -234,18 +234,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title:
@@ -257,20 +257,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '6ufbQXdZRrVM4c8m1rCaw5'
-        }
+          id: '6ufbQXdZRrVM4c8m1rCaw5',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '6JTRK0izrgCKgJg1ZeiG5a'
-          }
-        }
+            id: '6JTRK0izrgCKgJg1ZeiG5a',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -278,8 +278,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7j5mFetuuGDHaCWH0Cu6m6',
       type: 'Entry',
@@ -289,18 +289,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'The Present and Future about VuePress',
@@ -310,20 +310,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '6lixTxxPc4FPUdqwWn8Rw7'
-        }
+          id: '6lixTxxPc4FPUdqwWn8Rw7',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7LpjHMzGGnnFKt5DkMB3ik'
-          }
-        }
+            id: '7LpjHMzGGnnFKt5DkMB3ik',
+          },
+        },
       ],
-      hasTranslation: true
-    }
+      hasTranslation: true,
+    },
   },
   {
     sys: {
@@ -331,8 +331,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: 'h7DsizAR78p4g69rogvpK',
       type: 'Entry',
@@ -342,18 +342,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'TypeScript CompilerAPI で挑む Vuex の型推論',
@@ -364,20 +364,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '4KHSft7lLkHHOjUhgJIVp'
-        }
+          id: '4KHSft7lLkHHOjUhgJIVp',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: 'mku1WUPzuF9y5jPNgWNT7'
-          }
-        }
+            id: 'mku1WUPzuF9y5jPNgWNT7',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -385,8 +385,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6nPCnZejnlgdGmVulnMDEl',
       type: 'Entry',
@@ -396,18 +396,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 3,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'WineUp: Machine Learning, Mobile Apps, Wine, Cheese, and You',
@@ -418,20 +418,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '1g9hDoOP82wIwm27P466q6'
-        }
+          id: '1g9hDoOP82wIwm27P466q6',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '2s74eGvySj6AmTfE67VluB'
-          }
-        }
+            id: '2s74eGvySj6AmTfE67VluB',
+          },
+        },
       ],
-      hasTranslation: true
-    }
+      hasTranslation: true,
+    },
   },
   {
     sys: {
@@ -439,8 +439,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '3K6keW1beLVB89hcLrOR0n',
       type: 'Entry',
@@ -450,18 +450,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: '次世代のデザインとフロントエンド開発の GUI 化',
@@ -472,20 +472,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '3IpchLNyDcTaZSrRXUxedw'
-        }
+          id: '3IpchLNyDcTaZSrRXUxedw',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4Dq8ThsiSdm7JPA4zVMQAo'
-          }
-        }
+            id: '4Dq8ThsiSdm7JPA4zVMQAo',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -493,8 +493,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '64z2YruYMw1ZKQAZS7ojjm',
       type: 'Entry',
@@ -504,18 +504,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'とある Nuxt.js 案件の本当にあった怖い話。',
@@ -526,20 +526,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '3qVLT9iOYCCw4DoePYisCk'
-        }
+          id: '3qVLT9iOYCCw4DoePYisCk',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '6DeU68XA3PYjmXlu2RiIEI'
-          }
-        }
+            id: '6DeU68XA3PYjmXlu2RiIEI',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -547,8 +547,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7fozsC9JQwpxPyxkYyARVJ',
       type: 'Entry',
@@ -558,18 +558,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: '“何もない” を作る、コンポーネント指向な余白設計',
@@ -580,20 +580,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '4quZvlDAxfs8MeLZPKn7wE'
-        }
+          id: '4quZvlDAxfs8MeLZPKn7wE',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '6nXanQ9BH9YVSCEr44FcrD'
-          }
-        }
+            id: '6nXanQ9BH9YVSCEr44FcrD',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -601,8 +601,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '5zLpsJ3NSvAw34HQvLngMv',
       type: 'Entry',
@@ -612,18 +612,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'Vue Tooling について語るときに僕の語ること',
@@ -634,20 +634,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '2oFn5B2mmQg5RUFq4gkbzH'
-        }
+          id: '2oFn5B2mmQg5RUFq4gkbzH',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '1sySFRq9oK4mfSefnrR0Xq'
-          }
-        }
+            id: '1sySFRq9oK4mfSefnrR0Xq',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -655,8 +655,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7aUz315q5gRNDDsC9ZPsiR',
       type: 'Entry',
@@ -666,18 +666,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title:
@@ -689,20 +689,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '2UJd8BHuVvIAlBjvZdgtE7'
-        }
+          id: '2UJd8BHuVvIAlBjvZdgtE7',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4w4LHXhuKJn3BoWBQfcZx7'
-          }
-        }
+            id: '4w4LHXhuKJn3BoWBQfcZx7',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -710,8 +710,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '5SIsttQswXSNTCN2Oi2MZS',
       type: 'Entry',
@@ -721,18 +721,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'Vue.js meets Web Accessibility',
@@ -743,20 +743,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: 'ZeTyl9OBGpR96UkFzbF9s'
-        }
+          id: 'ZeTyl9OBGpR96UkFzbF9s',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4lNqSfqiA9P0NVNyhWWaPD'
-          }
-        }
+            id: '4lNqSfqiA9P0NVNyhWWaPD',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -764,8 +764,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7xvdef2fny01iVD0ra03Iz',
       type: 'Entry',
@@ -775,18 +775,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 4,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'Keynote',
@@ -796,20 +796,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '5MWxt8IHkH1VpMdh6HgFa6'
-        }
+          id: '5MWxt8IHkH1VpMdh6HgFa6',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7aHzCP1a1rYpR6KbWENRmB'
-          }
-        }
+            id: '7aHzCP1a1rYpR6KbWENRmB',
+          },
+        },
       ],
-      hasTranslation: true
-    }
+      hasTranslation: true,
+    },
   },
   {
     sys: {
@@ -817,8 +817,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6p8bcCeCJsMgW2QMJIq14I',
       type: 'Entry',
@@ -828,18 +828,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: 'Nuxt.js + TypeScript で 01 開発',
@@ -850,20 +850,20 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '4q5tyG2Ux3GBxnGixnGiQ7'
-        }
+          id: '4q5tyG2Ux3GBxnGixnGiQ7',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: 'kAJ3wEURjDaABWU3xDW6x'
-          }
-        }
+            id: 'kAJ3wEURjDaABWU3xDW6x',
+          },
+        },
       ],
-      hasTranslation: false
-    }
+      hasTranslation: false,
+    },
   },
   {
     sys: {
@@ -871,8 +871,8 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7yeyEFR9IxHjnS6vg5AKpW',
       type: 'Entry',
@@ -882,18 +882,18 @@ const sessions: Session[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'session'
-        }
+          id: 'session',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       title: '型がある楽しさとつらさ',
@@ -904,21 +904,21 @@ const sessions: Session[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '5hYDhUrORuxNhzwrAVNIph'
-        }
+          id: '5hYDhUrORuxNhzwrAVNIph',
+        },
       },
       speakers: [
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7myQ6DFjZOrkIVOolyJiJN'
-          }
-        }
+            id: '7myQ6DFjZOrkIVOolyJiJN',
+          },
+        },
       ],
-      hasTranslation: false
-    }
-  }
+      hasTranslation: false,
+    },
+  },
 ]
 
 export default sessions

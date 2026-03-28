@@ -6,8 +6,8 @@ const eventContainerWithEventsClosed: EventContainer = {
       sys: {
         type: 'Link',
         linkType: 'Space',
-        id: 'makqrw5hfm9d'
-      }
+        id: 'makqrw5hfm9d',
+      },
     },
     id: '6xarOqNqmbfdY7zNlXnkkv',
     type: 'Entry',
@@ -17,18 +17,18 @@ const eventContainerWithEventsClosed: EventContainer = {
       sys: {
         id: 'master',
         type: 'Link',
-        linkType: 'Environment'
-      }
+        linkType: 'Environment',
+      },
     },
     revision: 1,
     contentType: {
       sys: {
         type: 'Link',
         linkType: 'ContentType',
-        id: 'eventContainer'
-      }
+        id: 'eventContainer',
+      },
     },
-    locale: 'en-US'
+    locale: 'en-US',
   },
   fields: {
     titleForContentful: '11-ye',
@@ -39,8 +39,8 @@ const eventContainerWithEventsClosed: EventContainer = {
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '5NPCujTlHiEd7KcRmGp3hS',
           type: 'Entry',
@@ -50,21 +50,21 @@ const eventContainerWithEventsClosed: EventContainer = {
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'event'
-            }
+              id: 'event',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { title: 'クローズ' }
-      }
+        fields: { title: 'クローズ' },
+      },
     ],
     room: {
       sys: {
@@ -72,8 +72,8 @@ const eventContainerWithEventsClosed: EventContainer = {
           sys: {
             type: 'Link',
             linkType: 'Space',
-            id: 'makqrw5hfm9d'
-          }
+            id: 'makqrw5hfm9d',
+          },
         },
         id: '1rnDVEsknx6MhhPgMAS9Gj',
         type: 'Entry',
@@ -83,22 +83,22 @@ const eventContainerWithEventsClosed: EventContainer = {
           sys: {
             id: 'master',
             type: 'Link',
-            linkType: 'Environment'
-          }
+            linkType: 'Environment',
+          },
         },
         revision: 1,
         contentType: {
           sys: {
             type: 'Link',
             linkType: 'ContentType',
-            id: 'room'
-          }
+            id: 'room',
+          },
         },
-        locale: 'en-US'
+        locale: 'en-US',
       },
-      fields: { name: 'イエソドルーム' }
-    }
-  }
+      fields: { name: 'イエソドルーム' },
+    },
+  },
 }
 
 export default eventContainerWithEventsClosed

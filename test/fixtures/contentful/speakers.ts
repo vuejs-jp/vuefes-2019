@@ -11,8 +11,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2s74eGvySj6AmTfE67VluB',
       type: 'Entry',
@@ -22,18 +22,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: 'Jen Looper',
@@ -42,15 +42,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '1Bqb7VVTxdnL3zZIh8FNJD'
-        }
+          id: '1Bqb7VVTxdnL3zZIh8FNJD',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '1nDz7yqeU9ykdxJOQKyOVc'
-        }
+          id: '1nDz7yqeU9ykdxJOQKyOVc',
+        },
       },
       twitter: 'jenlooper',
       github: 'jlooper',
@@ -61,11 +61,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '6nPCnZejnlgdGmVulnMDEl'
-          }
-        }
-      ]
-    }
+            id: '6nPCnZejnlgdGmVulnMDEl',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -73,8 +73,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4w4LHXhuKJn3BoWBQfcZx7',
       type: 'Entry',
@@ -84,18 +84,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '浅野 慧',
@@ -104,15 +104,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '27AfDLTXhUeZHEnrSqCUVA'
-        }
+          id: '27AfDLTXhUeZHEnrSqCUVA',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '5ZqLjRLiE01Pbzi0aorN0g'
-        }
+          id: '5ZqLjRLiE01Pbzi0aorN0g',
+        },
       },
       twitter: 'ninjinkun',
       github: 'ninjinkun',
@@ -123,11 +123,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7aUz315q5gRNDDsC9ZPsiR'
-          }
-        }
-      ]
-    }
+            id: '7aUz315q5gRNDDsC9ZPsiR',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -135,8 +135,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4XnF0Cp1piQFkVEjUnCrci',
       type: 'Entry',
@@ -146,18 +146,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: 'Sébastien Chopin',
@@ -166,15 +166,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '12RlQ1n2J1mhKVJqZt5W5i'
-        }
+          id: '12RlQ1n2J1mhKVJqZt5W5i',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '575eFXXAjyzdl01Z5P2mF7'
-        }
+          id: '575eFXXAjyzdl01Z5P2mF7',
+        },
       },
       twitter: 'Atinux',
       github: 'Atinux',
@@ -185,11 +185,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '52xcLDNWOkF7s46q93hGQs'
-          }
-        }
-      ]
-    }
+            id: '52xcLDNWOkF7s46q93hGQs',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -197,8 +197,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: 'kAJ3wEURjDaABWU3xDW6x',
       type: 'Entry',
@@ -208,18 +208,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '石岡 将明',
@@ -228,15 +228,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '5x58csQonmS5RBCWXXKPom'
-        }
+          id: '5x58csQonmS5RBCWXXKPom',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '2TMhY3K20EhrONyMQ3ZKaV'
-        }
+          id: '2TMhY3K20EhrONyMQ3ZKaV',
+        },
       },
       twitter: 'masaakikunsan',
       github: 'masaakikunsan',
@@ -247,11 +247,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '6p8bcCeCJsMgW2QMJIq14I'
-          }
-        }
-      ]
-    }
+            id: '6p8bcCeCJsMgW2QMJIq14I',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -259,8 +259,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4Dq8ThsiSdm7JPA4zVMQAo',
       type: 'Entry',
@@ -270,18 +270,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '甲斐 啓真',
@@ -290,15 +290,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: 'PuCjgucYXQJIazrwHH0O8'
-        }
+          id: 'PuCjgucYXQJIazrwHH0O8',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '536NGEpaCPN4G76mQuG2wE'
-        }
+          id: '536NGEpaCPN4G76mQuG2wE',
+        },
       },
       twitter: 'keimakai1993',
       github: 'keimakai',
@@ -309,11 +309,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '3K6keW1beLVB89hcLrOR0n'
-          }
-        }
-      ]
-    }
+            id: '3K6keW1beLVB89hcLrOR0n',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -321,8 +321,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '582L635Brdsa2epHP9HSMA',
       type: 'Entry',
@@ -332,18 +332,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: 'Chris Fritz',
@@ -352,15 +352,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '2OtxAnAwc77d240ByI3t6Y'
-        }
+          id: '2OtxAnAwc77d240ByI3t6Y',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '6q9X6lRiw998jyiipgH72m'
-        }
+          id: '6q9X6lRiw998jyiipgH72m',
+        },
       },
       twitter: 'chrisvfritz',
       github: 'chrisvfritz',
@@ -371,11 +371,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7lCuNn3wby0o7hooQ7gbQf'
-          }
-        }
-      ]
-    }
+            id: '7lCuNn3wby0o7hooQ7gbQf',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -383,8 +383,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6DeU68XA3PYjmXlu2RiIEI',
       type: 'Entry',
@@ -394,18 +394,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '手島 拓也',
@@ -414,15 +414,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '7z76s7OZVUfNyKjLnQ2zBu'
-        }
+          id: '7z76s7OZVUfNyKjLnQ2zBu',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '5QHloDfRqhGamp1IfcfgAS'
-        }
+          id: '5QHloDfRqhGamp1IfcfgAS',
+        },
       },
       twitter: 'tejitak',
       github: 'tejitak',
@@ -433,11 +433,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '64z2YruYMw1ZKQAZS7ojjm'
-          }
-        }
-      ]
-    }
+            id: '64z2YruYMw1ZKQAZS7ojjm',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -445,8 +445,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7LpjHMzGGnnFKt5DkMB3ik',
       type: 'Entry',
@@ -456,18 +456,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: 'ULIVZ',
@@ -476,15 +476,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '3HZzgwGbJR175TAcUoIqt0'
-        }
+          id: '3HZzgwGbJR175TAcUoIqt0',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '6nNq4Avq7neelwqnhuYDa7'
-        }
+          id: '6nNq4Avq7neelwqnhuYDa7',
+        },
       },
       twitter: '_ulivz',
       github: 'ulivz',
@@ -495,11 +495,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7j5mFetuuGDHaCWH0Cu6m6'
-          }
-        }
-      ]
-    }
+            id: '7j5mFetuuGDHaCWH0Cu6m6',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -507,8 +507,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6nXanQ9BH9YVSCEr44FcrD',
       type: 'Entry',
@@ -518,18 +518,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '黒川 智',
@@ -538,15 +538,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '34swEtd98MBeaXZ5Cp5nN2'
-        }
+          id: '34swEtd98MBeaXZ5Cp5nN2',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '5P0nv2NctX9NPabqyFNsrl'
-        }
+          id: '5P0nv2NctX9NPabqyFNsrl',
+        },
       },
       twitter: 'blackawa0',
       github: 'blackawa',
@@ -557,11 +557,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7fozsC9JQwpxPyxkYyARVJ'
-          }
-        }
-      ]
-    }
+            id: '7fozsC9JQwpxPyxkYyARVJ',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -569,8 +569,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '1wgsyNSXRjVrKe2NgZzmw3',
       type: 'Entry',
@@ -580,18 +580,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '沼田 佳介',
@@ -600,15 +600,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '6LoC8VRCqltizKTEYjAcUP'
-        }
+          id: '6LoC8VRCqltizKTEYjAcUP',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '20NGISnV3ejA3CdjGoWfHm'
-        }
+          id: '20NGISnV3ejA3CdjGoWfHm',
+        },
       },
       twitter: 'keinuma15',
       github: 'keinuma',
@@ -619,11 +619,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4dgpT8P4uu8CkedDki92NS'
-          }
-        }
-      ]
-    }
+            id: '4dgpT8P4uu8CkedDki92NS',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -631,8 +631,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '1sySFRq9oK4mfSefnrR0Xq',
       type: 'Entry',
@@ -642,18 +642,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: 'Pine Wu',
@@ -662,15 +662,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '2UFRrCsnVof30cWcX2Mvve'
-        }
+          id: '2UFRrCsnVof30cWcX2Mvve',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '23wgmzghJMNbXAgysNgAFo'
-        }
+          id: '23wgmzghJMNbXAgysNgAFo',
+        },
       },
       twitter: 'octref',
       github: 'octref',
@@ -681,11 +681,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '5zLpsJ3NSvAw34HQvLngMv'
-          }
-        }
-      ]
-    }
+            id: '5zLpsJ3NSvAw34HQvLngMv',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -693,8 +693,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: 'mku1WUPzuF9y5jPNgWNT7',
       type: 'Entry',
@@ -704,18 +704,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '吉井 健文',
@@ -724,15 +724,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '3z3kjbx5KdUdZkbgbcx4rl'
-        }
+          id: '3z3kjbx5KdUdZkbgbcx4rl',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '4i8gaVESt5zcIrPNWWd0zn'
-        }
+          id: '4i8gaVESt5zcIrPNWWd0zn',
+        },
       },
       twitter: 'takepepe',
       github: 'takefumi-yoshii',
@@ -743,11 +743,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: 'h7DsizAR78p4g69rogvpK'
-          }
-        }
-      ]
-    }
+            id: 'h7DsizAR78p4g69rogvpK',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -755,8 +755,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4lNqSfqiA9P0NVNyhWWaPD',
       type: 'Entry',
@@ -766,18 +766,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '大山 奥人',
@@ -786,15 +786,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '6xCWLl6w13ag0farJIoby0'
-        }
+          id: '6xCWLl6w13ag0farJIoby0',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '52lbdiNOCjZyIhtlcvpspe'
-        }
+          id: '52lbdiNOCjZyIhtlcvpspe',
+        },
       },
       twitter: 'yamanoku',
       github: 'yamanoku',
@@ -805,11 +805,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '5SIsttQswXSNTCN2Oi2MZS'
-          }
-        }
-      ]
-    }
+            id: '5SIsttQswXSNTCN2Oi2MZS',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -817,8 +817,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6JTRK0izrgCKgJg1ZeiG5a',
       type: 'Entry',
@@ -828,18 +828,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '高瀬 悠磨',
@@ -848,15 +848,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '1ZLR3HqBPUPL9TicbE9vfE'
-        }
+          id: '1ZLR3HqBPUPL9TicbE9vfE',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '4ToBIFg8HnmqnOhUNnDXnQ'
-        }
+          id: '4ToBIFg8HnmqnOhUNnDXnQ',
+        },
       },
       twitter: null,
       github: 'retty-y-takase',
@@ -867,11 +867,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: 'K56RNDgglthD48chr9Glr'
-          }
-        }
-      ]
-    }
+            id: 'K56RNDgglthD48chr9Glr',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -879,8 +879,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7myQ6DFjZOrkIVOolyJiJN',
       type: 'Entry',
@@ -890,18 +890,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: '宇野 航平',
@@ -910,15 +910,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '4Lidfz2f9qCnKki6UUTtJe'
-        }
+          id: '4Lidfz2f9qCnKki6UUTtJe',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '48JFajH7V65lQDe5inETdW'
-        }
+          id: '48JFajH7V65lQDe5inETdW',
+        },
       },
       twitter: null,
       github: 'konu96',
@@ -929,11 +929,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7yeyEFR9IxHjnS6vg5AKpW'
-          }
-        }
-      ]
-    }
+            id: '7yeyEFR9IxHjnS6vg5AKpW',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -941,8 +941,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2wJP0k4TL8blmOvUsiOswb',
       type: 'Entry',
@@ -952,18 +952,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: 'Alexandre Chopin',
@@ -972,15 +972,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '4Nh5YADlfW9d6mTQElYcO8'
-        }
+          id: '4Nh5YADlfW9d6mTQElYcO8',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '3gGKasMLSIF33OFHOaEAff'
-        }
+          id: '3gGKasMLSIF33OFHOaEAff',
+        },
       },
       twitter: 'IamNuxt',
       github: 'alexchopin',
@@ -991,11 +991,11 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '6o9an6K6nq1xemJ84oIfXq'
-          }
-        }
-      ]
-    }
+            id: '6o9an6K6nq1xemJ84oIfXq',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -1003,8 +1003,8 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7aHzCP1a1rYpR6KbWENRmB',
       type: 'Entry',
@@ -1014,18 +1014,18 @@ const speakers: Speaker[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'speaker'
-        }
+          id: 'speaker',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       name: 'Evan You',
@@ -1034,15 +1034,15 @@ const speakers: Speaker[] = [
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '65PL15Kw0Siheq5LDRG66F'
-        }
+          id: '65PL15Kw0Siheq5LDRG66F',
+        },
       },
       avatar2x: {
         sys: {
           type: 'Link',
           linkType: 'Asset',
-          id: '2X8fB06lUIbesMR8NVSJJd'
-        }
+          id: '2X8fB06lUIbesMR8NVSJJd',
+        },
       },
       twitter: 'youyuxi',
       github: 'yyx990803',
@@ -1053,12 +1053,12 @@ const speakers: Speaker[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7xvdef2fny01iVD0ra03Iz'
-          }
-        }
-      ]
-    }
-  }
+            id: '7xvdef2fny01iVD0ra03Iz',
+          },
+        },
+      ],
+    },
+  },
 ]
 
 export default speakers

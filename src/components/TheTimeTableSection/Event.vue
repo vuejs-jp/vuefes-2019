@@ -1,24 +1,21 @@
+<script setup lang="ts">
+import type EventType from '~/types/event'
+
+const props = defineProps<{
+  event: EventType
+}>()
+
+const isCommunitySession = computed(
+  () => props.event.sys.id === '7HH2CbTRcGkUYp9OF1LIVu',
+)
+</script>
+
 <template>
   <div class="event">
     {{ event.fields.title }}
     <span v-if="isCommunitySession" class="note-mark">※</span>
   </div>
 </template>
-
-<script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator'
-import EventType from '~/types/event'
-
-@Component
-export default class Event extends Vue {
-  @Prop()
-  readonly event!: EventType
-
-  get isCommunitySession(): boolean {
-    return this.event.sys.id === '7HH2CbTRcGkUYp9OF1LIVu'
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .event {

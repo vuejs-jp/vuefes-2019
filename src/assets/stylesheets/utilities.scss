@@ -1,3 +1,6 @@
+@use './foundation/variables' as *;
+@use './foundation/colors' as *;
+
 .link {
   font-size: inherit;
   color: $primary-text-color;

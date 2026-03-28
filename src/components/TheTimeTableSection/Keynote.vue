@@ -1,37 +1,31 @@
+<script setup lang="ts">
+import keynoteAvatar from '~/assets/images/speakers/yyx990803.jpg?url'
+import keynoteAvatar2x from '~/assets/images/speakers/yyx990803@2x.jpg?url'
+
+const keynoteAvatarSrcSet = `${keynoteAvatar}, ${keynoteAvatar2x} 2x`
+</script>
+
 <template>
-  <div v-lazy-container="{ selector: 'img' }" class="keynote">
+  <div class="keynote">
     <nuxt-link class="link-to-session" to="/sessions/yyx990803/">
       <img
         class="avatar"
-        :data-srcset="`${keynoteAvatar}, ${keynoteAvatar2x} 2x`"
-        :data-src="keynoteAvatar2x"
+        :srcset="keynoteAvatarSrcSet"
+        :src="keynoteAvatar2x"
+        loading="lazy"
         alt=""
       />
     </nuxt-link>
 
     <div class="content">
       <nuxt-link class="link-to-session" to="/sessions/yyx990803/">
-        <div class="title">
-          キーノート
-        </div>
+        <div class="title">キーノート</div>
 
-        <div class="speaker-name">
-          Evan You
-        </div>
+        <div class="speaker-name">Evan You</div>
       </nuxt-link>
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-
-@Component
-export default class Keynote extends Vue {
-  private keynoteAvatar = require('~/assets/images/speakers/yyx990803.jpg')
-  private keynoteAvatar2x = require('~/assets/images/speakers/yyx990803@2x.jpg')
-}
-</script>
 
 <style lang="scss" scoped>
 .keynote {

@@ -7,8 +7,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2U2IB2ktLcO7QXmXsHBaUg',
       type: 'Entry',
@@ -18,18 +18,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '12-ye',
@@ -40,8 +40,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '5NPCujTlHiEd7KcRmGp3hS',
             type: 'Entry',
@@ -51,21 +51,21 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'クローズ' }
-        }
+          fields: { title: 'クローズ' },
+        },
       ],
       room: {
         sys: {
@@ -73,8 +73,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '1rnDVEsknx6MhhPgMAS9Gj',
           type: 'Entry',
@@ -84,22 +84,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'イエソドルーム' }
-      }
-    }
+        fields: { name: 'イエソドルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -107,8 +107,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4qV55oqaEFjQDU25hYhzo1',
       type: 'Entry',
@@ -118,18 +118,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '10-yu',
@@ -140,8 +140,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '5zLpsJ3NSvAw34HQvLngMv',
             type: 'Entry',
@@ -151,18 +151,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title: 'Vue Tooling について語るときに僕の語ること',
@@ -175,8 +175,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '2oFn5B2mmQg5RUFq4gkbzH',
                 type: 'Asset',
@@ -186,41 +186,40 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'octref',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/2oFn5B2mmQg5RUFq4gkbzH/fb9d66bf0178c2c4f169af66b55ed48b/octref.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/2oFn5B2mmQg5RUFq4gkbzH/fb9d66bf0178c2c4f169af66b55ed48b/octref.jpg',
                   details: {
                     size: 31479,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'octref.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '1sySFRq9oK4mfSefnrR0Xq'
-                }
-              }
+                  id: '1sySFRq9oK4mfSefnrR0Xq',
+                },
+              },
             ],
-            hasTranslation: false
-          }
-        }
+            hasTranslation: false,
+          },
+        },
       ],
       room: {
         sys: {
@@ -228,8 +227,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '6DXe9VnLT91YWE9UkVgkep',
           type: 'Entry',
@@ -239,22 +238,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'YUMEMI ルーム' }
-      }
-    }
+        fields: { name: 'YUMEMI ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -262,8 +261,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '3TITMuPHrDVoX7PCN1YDpT',
       type: 'Entry',
@@ -273,18 +272,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '12-pl',
@@ -295,8 +294,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '6hXLd0yVmRgqt0dp6VjS7z',
             type: 'Entry',
@@ -306,21 +305,21 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'アフターパーティー' }
-        }
+          fields: { title: 'アフターパーティー' },
+        },
       ],
       room: {
         sys: {
@@ -328,8 +327,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '4MMzyRoKhtw4BlxWnCHbW9',
           type: 'Entry',
@@ -339,22 +338,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'PLAID ルーム' }
-      }
-    }
+        fields: { name: 'PLAID ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -362,8 +361,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: 'EQg24z6gBkNEqvil1DJ1B',
       type: 'Entry',
@@ -373,18 +372,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '2',
@@ -395,8 +394,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '78mXcgUFFR10z27UgsyLpI',
             type: 'Entry',
@@ -406,23 +405,23 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'オープニング' }
-        }
-      ]
-    }
+          fields: { title: 'オープニング' },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -430,8 +429,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4dVw3jRVdvgkCF9UvXjlXk',
       type: 'Entry',
@@ -441,18 +440,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '11-yu',
@@ -463,8 +462,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '7HH2CbTRcGkUYp9OF1LIVu',
             type: 'Entry',
@@ -474,21 +473,21 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'コミュニティセッション' }
-        }
+          fields: { title: 'コミュニティセッション' },
+        },
       ],
       room: {
         sys: {
@@ -496,8 +495,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '6DXe9VnLT91YWE9UkVgkep',
           type: 'Entry',
@@ -507,22 +506,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'YUMEMI ルーム' }
-      }
-    }
+        fields: { name: 'YUMEMI ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -530,8 +529,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6jAYqkLZ8EPj1dYIQ0Lshf',
       type: 'Entry',
@@ -541,18 +540,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '9-pl',
@@ -563,8 +562,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '6nPCnZejnlgdGmVulnMDEl',
             type: 'Entry',
@@ -574,18 +573,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 3,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title:
@@ -599,8 +598,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '1g9hDoOP82wIwm27P466q6',
                 type: 'Asset',
@@ -610,41 +609,40 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'jlooper',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/1g9hDoOP82wIwm27P466q6/5009247e0adda583d787dd4d4ed90f06/jlooper.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/1g9hDoOP82wIwm27P466q6/5009247e0adda583d787dd4d4ed90f06/jlooper.jpg',
                   details: {
                     size: 38596,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'jlooper.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '2s74eGvySj6AmTfE67VluB'
-                }
-              }
+                  id: '2s74eGvySj6AmTfE67VluB',
+                },
+              },
             ],
-            hasTranslation: true
-          }
-        }
+            hasTranslation: true,
+          },
+        },
       ],
       room: {
         sys: {
@@ -652,8 +650,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '4MMzyRoKhtw4BlxWnCHbW9',
           type: 'Entry',
@@ -663,22 +661,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'PLAID ルーム' }
-      }
-    }
+        fields: { name: 'PLAID ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -686,8 +684,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2fJZQ6hM75MWx6gUZN8tXU',
       type: 'Entry',
@@ -697,18 +695,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '10-pl',
@@ -719,8 +717,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '7j5mFetuuGDHaCWH0Cu6m6',
             type: 'Entry',
@@ -730,18 +728,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title: 'The Present and Future about VuePress',
@@ -753,8 +751,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '6lixTxxPc4FPUdqwWn8Rw7',
                 type: 'Asset',
@@ -764,41 +762,40 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'ulivz',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/6lixTxxPc4FPUdqwWn8Rw7/f4718eaea0b6f8aacd1712346eed7772/ulivz.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/6lixTxxPc4FPUdqwWn8Rw7/f4718eaea0b6f8aacd1712346eed7772/ulivz.jpg',
                   details: {
                     size: 38964,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'ulivz.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '7LpjHMzGGnnFKt5DkMB3ik'
-                }
-              }
+                  id: '7LpjHMzGGnnFKt5DkMB3ik',
+                },
+              },
             ],
-            hasTranslation: true
-          }
-        }
+            hasTranslation: true,
+          },
+        },
       ],
       room: {
         sys: {
@@ -806,8 +803,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '4MMzyRoKhtw4BlxWnCHbW9',
           type: 'Entry',
@@ -817,22 +814,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'PLAID ルーム' }
-      }
-    }
+        fields: { name: 'PLAID ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -840,8 +837,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '3tiHW5xSg7x10Q1HRMOlXK',
       type: 'Entry',
@@ -851,18 +848,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '8-ye',
@@ -873,8 +870,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '4AQWbjUvuR9U650MSc1HII',
             type: 'Entry',
@@ -884,18 +881,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'eventContainerPart'
-              }
+                id: 'eventContainerPart',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             titleForContentful: '8-ye-1',
@@ -905,10 +902,10 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '5SIsttQswXSNTCN2Oi2MZS'
-              }
-            }
-          }
+                id: '5SIsttQswXSNTCN2Oi2MZS',
+              },
+            },
+          },
         },
         {
           sys: {
@@ -916,8 +913,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '7TF1MSAsD8f7XgQKEHzhR',
             type: 'Entry',
@@ -927,18 +924,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'eventContainerPart'
-              }
+                id: 'eventContainerPart',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             titleForContentful: '8-ye-2',
@@ -948,11 +945,11 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '6p8bcCeCJsMgW2QMJIq14I'
-              }
-            }
-          }
-        }
+                id: '6p8bcCeCJsMgW2QMJIq14I',
+              },
+            },
+          },
+        },
       ],
       room: {
         sys: {
@@ -960,8 +957,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '1rnDVEsknx6MhhPgMAS9Gj',
           type: 'Entry',
@@ -971,22 +968,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'イエソドルーム' }
-      }
-    }
+        fields: { name: 'イエソドルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -994,8 +991,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2POtjBsibEQHjF1XHAfml0',
       type: 'Entry',
@@ -1005,18 +1002,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '4',
@@ -1027,8 +1024,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '53hyjF5S3JKkoEZJUxao31',
             type: 'Entry',
@@ -1038,23 +1035,23 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'Platinum スポンサーセッション' }
-        }
-      ]
-    }
+          fields: { title: 'Platinum スポンサーセッション' },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -1062,8 +1059,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4hTwfDWjU9YH04meCRWt9q',
       type: 'Entry',
@@ -1073,18 +1070,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '10-ye',
@@ -1095,8 +1092,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: 'h7DsizAR78p4g69rogvpK',
             type: 'Entry',
@@ -1106,18 +1103,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title: 'TypeScript CompilerAPI で挑む Vuex の型推論',
@@ -1130,8 +1127,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '4KHSft7lLkHHOjUhgJIVp',
                 type: 'Asset',
@@ -1141,41 +1138,40 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'takefumi-yoshii',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/4KHSft7lLkHHOjUhgJIVp/953084d19d1b23cfb7b69de8d16ac662/takefumi-yoshii.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/4KHSft7lLkHHOjUhgJIVp/953084d19d1b23cfb7b69de8d16ac662/takefumi-yoshii.jpg',
                   details: {
                     size: 44293,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'takefumi-yoshii.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: 'mku1WUPzuF9y5jPNgWNT7'
-                }
-              }
+                  id: 'mku1WUPzuF9y5jPNgWNT7',
+                },
+              },
             ],
-            hasTranslation: false
-          }
-        }
+            hasTranslation: false,
+          },
+        },
       ],
       room: {
         sys: {
@@ -1183,8 +1179,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '1rnDVEsknx6MhhPgMAS9Gj',
           type: 'Entry',
@@ -1194,22 +1190,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'イエソドルーム' }
-      }
-    }
+        fields: { name: 'イエソドルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -1217,8 +1213,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '5hUuLkUm8Lj1CYxxMFgcXQ',
       type: 'Entry',
@@ -1228,18 +1224,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '7-pl',
@@ -1250,8 +1246,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '6o9an6K6nq1xemJ84oIfXq',
             type: 'Entry',
@@ -1261,18 +1257,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title: "What's Nuxt?",
@@ -1285,8 +1281,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '7n20Yo4MMcOqiU7REZAkA9',
                 type: 'Asset',
@@ -1296,40 +1292,39 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'alexchopin',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/7n20Yo4MMcOqiU7REZAkA9/d1fe3fd7a8cca3b4d937b4979252eed2/alexchopin.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/7n20Yo4MMcOqiU7REZAkA9/d1fe3fd7a8cca3b4d937b4979252eed2/alexchopin.jpg',
                   details: {
                     size: 41146,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'alexchopin.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '2wJP0k4TL8blmOvUsiOswb'
-                }
-              }
+                  id: '2wJP0k4TL8blmOvUsiOswb',
+                },
+              },
             ],
-            hasTranslation: true
-          }
+            hasTranslation: true,
+          },
         },
         {
           sys: {
@@ -1337,8 +1332,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '52xcLDNWOkF7s46q93hGQs',
             type: 'Entry',
@@ -1348,18 +1343,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title: 'Introduction to Nuxt 3',
@@ -1372,8 +1367,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '3cfR54yQy2r4F4l9aFn8S8',
                 type: 'Asset',
@@ -1383,41 +1378,40 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'Atinux',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/3cfR54yQy2r4F4l9aFn8S8/4716b49c27390c8ed1647824291b2675/Atinux.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/3cfR54yQy2r4F4l9aFn8S8/4716b49c27390c8ed1647824291b2675/Atinux.jpg',
                   details: {
                     size: 40027,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'Atinux.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '4XnF0Cp1piQFkVEjUnCrci'
-                }
-              }
+                  id: '4XnF0Cp1piQFkVEjUnCrci',
+                },
+              },
             ],
-            hasTranslation: true
-          }
-        }
+            hasTranslation: true,
+          },
+        },
       ],
       room: {
         sys: {
@@ -1425,8 +1419,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '4MMzyRoKhtw4BlxWnCHbW9',
           type: 'Entry',
@@ -1436,22 +1430,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'PLAID ルーム' }
-      }
-    }
+        fields: { name: 'PLAID ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -1459,8 +1453,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6xarOqNqmbfdY7zNlXnkkv',
       type: 'Entry',
@@ -1470,18 +1464,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '11-ye',
@@ -1492,8 +1486,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '5NPCujTlHiEd7KcRmGp3hS',
             type: 'Entry',
@@ -1503,21 +1497,21 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'クローズ' }
-        }
+          fields: { title: 'クローズ' },
+        },
       ],
       room: {
         sys: {
@@ -1525,8 +1519,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '1rnDVEsknx6MhhPgMAS9Gj',
           type: 'Entry',
@@ -1536,22 +1530,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'イエソドルーム' }
-      }
-    }
+        fields: { name: 'イエソドルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -1559,8 +1553,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2WC1emoTTBlt9qNA11J6SL',
       type: 'Entry',
@@ -1570,18 +1564,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '11-pl',
@@ -1592,8 +1586,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '5NPCujTlHiEd7KcRmGp3hS',
             type: 'Entry',
@@ -1603,21 +1597,21 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'クローズ' }
-        }
+          fields: { title: 'クローズ' },
+        },
       ],
       room: {
         sys: {
@@ -1625,8 +1619,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '4MMzyRoKhtw4BlxWnCHbW9',
           type: 'Entry',
@@ -1636,22 +1630,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'PLAID ルーム' }
-      }
-    }
+        fields: { name: 'PLAID ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -1659,8 +1653,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6WnFrEfL5CPrBc9yd66Qai',
       type: 'Entry',
@@ -1670,18 +1664,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '5-yu',
@@ -1692,8 +1686,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '5Yrbh3E4UPWjOmK4KlHEOm',
             type: 'Entry',
@@ -1703,21 +1697,21 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'ランチセッション' }
-        }
+          fields: { title: 'ランチセッション' },
+        },
       ],
       room: {
         sys: {
@@ -1725,8 +1719,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '6DXe9VnLT91YWE9UkVgkep',
           type: 'Entry',
@@ -1736,22 +1730,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'YUMEMI ルーム' }
-      }
-    }
+        fields: { name: 'YUMEMI ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -1759,8 +1753,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7sgOIbC53nRd6D3vEK661n',
       type: 'Entry',
@@ -1770,18 +1764,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '1',
@@ -1792,8 +1786,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '7bCVuySpTUioz7SqJYpq7s',
             type: 'Entry',
@@ -1803,23 +1797,23 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: '開場・受付' }
-        }
-      ]
-    }
+          fields: { title: '開場・受付' },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -1827,8 +1821,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '3m0gGobaUsEGBKgZsCG9qO',
       type: 'Entry',
@@ -1838,18 +1832,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '9-yu',
@@ -1860,8 +1854,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '3K6keW1beLVB89hcLrOR0n',
             type: 'Entry',
@@ -1871,18 +1865,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title: '次世代のデザインとフロントエンド開発の GUI 化',
@@ -1895,8 +1889,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '3IpchLNyDcTaZSrRXUxedw',
                 type: 'Asset',
@@ -1906,41 +1900,40 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'keimakai',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/3IpchLNyDcTaZSrRXUxedw/e681e9c2104c2162bf7fa8dd092065cf/keimakai.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/3IpchLNyDcTaZSrRXUxedw/e681e9c2104c2162bf7fa8dd092065cf/keimakai.jpg',
                   details: {
                     size: 35812,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'keimakai.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '4Dq8ThsiSdm7JPA4zVMQAo'
-                }
-              }
+                  id: '4Dq8ThsiSdm7JPA4zVMQAo',
+                },
+              },
             ],
-            hasTranslation: false
-          }
-        }
+            hasTranslation: false,
+          },
+        },
       ],
       room: {
         sys: {
@@ -1948,8 +1941,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '6DXe9VnLT91YWE9UkVgkep',
           type: 'Entry',
@@ -1959,22 +1952,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'YUMEMI ルーム' }
-      }
-    }
+        fields: { name: 'YUMEMI ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -1982,8 +1975,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2lhriLMBIque0ckJTdNLH4',
       type: 'Entry',
@@ -1993,18 +1986,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '6',
@@ -2015,8 +2008,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '2mZLXwFpA8bupnU7gAj20o',
             type: 'Entry',
@@ -2026,23 +2019,23 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'ランチブレーク' }
-        }
-      ]
-    }
+          fields: { title: 'ランチブレーク' },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -2050,8 +2043,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2AQ7yn9RVekHung6F4sWVo',
       type: 'Entry',
@@ -2061,18 +2054,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '5-ye',
@@ -2083,8 +2076,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '5Yrbh3E4UPWjOmK4KlHEOm',
             type: 'Entry',
@@ -2094,21 +2087,21 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'ランチセッション' }
-        }
+          fields: { title: 'ランチセッション' },
+        },
       ],
       room: {
         sys: {
@@ -2116,8 +2109,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '1rnDVEsknx6MhhPgMAS9Gj',
           type: 'Entry',
@@ -2127,22 +2120,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'イエソドルーム' }
-      }
-    }
+        fields: { name: 'イエソドルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -2150,8 +2143,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: 'E5oYum7YFDaHSUnMhsQBD',
       type: 'Entry',
@@ -2161,18 +2154,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '12-yu',
@@ -2183,8 +2176,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '5NPCujTlHiEd7KcRmGp3hS',
             type: 'Entry',
@@ -2194,21 +2187,21 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'クローズ' }
-        }
+          fields: { title: 'クローズ' },
+        },
       ],
       room: {
         sys: {
@@ -2216,8 +2209,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '6DXe9VnLT91YWE9UkVgkep',
           type: 'Entry',
@@ -2227,22 +2220,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'YUMEMI ルーム' }
-      }
-    }
+        fields: { name: 'YUMEMI ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -2250,8 +2243,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '1fdk0b9Nqwcsabq7Xo1pMK',
       type: 'Entry',
@@ -2261,18 +2254,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '9-ye',
@@ -2283,8 +2276,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '3exyRi0Sda9qVxw82uioIv',
             type: 'Entry',
@@ -2294,18 +2287,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'eventContainerPart'
-              }
+                id: 'eventContainerPart',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             titleForContentful: '9-ye-1',
@@ -2315,10 +2308,10 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '64z2YruYMw1ZKQAZS7ojjm'
-              }
-            }
-          }
+                id: '64z2YruYMw1ZKQAZS7ojjm',
+              },
+            },
+          },
         },
         {
           sys: {
@@ -2326,8 +2319,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '1Mv0tnaQWTzCnTd7xUzYcw',
             type: 'Entry',
@@ -2337,18 +2330,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'eventContainerPart'
-              }
+                id: 'eventContainerPart',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             titleForContentful: '9-ye-2',
@@ -2358,11 +2351,11 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '7yeyEFR9IxHjnS6vg5AKpW'
-              }
-            }
-          }
-        }
+                id: '7yeyEFR9IxHjnS6vg5AKpW',
+              },
+            },
+          },
+        },
       ],
       room: {
         sys: {
@@ -2370,8 +2363,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '1rnDVEsknx6MhhPgMAS9Gj',
           type: 'Entry',
@@ -2381,22 +2374,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'イエソドルーム' }
-      }
-    }
+        fields: { name: 'イエソドルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -2404,8 +2397,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4ftljEYI00LA6EoQ12qSDG',
       type: 'Entry',
@@ -2415,18 +2408,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '8-yu',
@@ -2437,8 +2430,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: 'K56RNDgglthD48chr9Glr',
             type: 'Entry',
@@ -2448,18 +2441,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title:
@@ -2473,8 +2466,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '6ufbQXdZRrVM4c8m1rCaw5',
                 type: 'Asset',
@@ -2484,41 +2477,40 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'retty-y-takase',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/6ufbQXdZRrVM4c8m1rCaw5/4f7b4113f64e4aa0c768af2616b18002/retty-y-takase.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/6ufbQXdZRrVM4c8m1rCaw5/4f7b4113f64e4aa0c768af2616b18002/retty-y-takase.jpg',
                   details: {
                     size: 40902,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'retty-y-takase.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '6JTRK0izrgCKgJg1ZeiG5a'
-                }
-              }
+                  id: '6JTRK0izrgCKgJg1ZeiG5a',
+                },
+              },
             ],
-            hasTranslation: false
-          }
-        }
+            hasTranslation: false,
+          },
+        },
       ],
       room: {
         sys: {
@@ -2526,8 +2518,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '6DXe9VnLT91YWE9UkVgkep',
           type: 'Entry',
@@ -2537,22 +2529,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'YUMEMI ルーム' }
-      }
-    }
+        fields: { name: 'YUMEMI ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -2560,8 +2552,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '1qkp3KPJ6kMGuwyPRwY0z3',
       type: 'Entry',
@@ -2571,18 +2563,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '7-yu',
@@ -2593,8 +2585,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '4dgpT8P4uu8CkedDki92NS',
             type: 'Entry',
@@ -2604,18 +2596,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title: 'アンチパターンから学ぶ Atomic Design with Vue.js',
@@ -2628,8 +2620,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '7wa7E8tM1TJCFNSXgf5ai',
                 type: 'Asset',
@@ -2639,41 +2631,40 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'keinuma',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/7wa7E8tM1TJCFNSXgf5ai/a721c3f3f9f30f4b93f54c06f47c801f/keinuma.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/7wa7E8tM1TJCFNSXgf5ai/a721c3f3f9f30f4b93f54c06f47c801f/keinuma.jpg',
                   details: {
                     size: 40773,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'keinuma.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '1wgsyNSXRjVrKe2NgZzmw3'
-                }
-              }
+                  id: '1wgsyNSXRjVrKe2NgZzmw3',
+                },
+              },
             ],
-            hasTranslation: false
-          }
-        }
+            hasTranslation: false,
+          },
+        },
       ],
       room: {
         sys: {
@@ -2681,8 +2672,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '6DXe9VnLT91YWE9UkVgkep',
           type: 'Entry',
@@ -2692,22 +2683,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'YUMEMI ルーム' }
-      }
-    }
+        fields: { name: 'YUMEMI ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -2715,8 +2706,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4in2dqjrZtO2tViqJOM4Ah',
       type: 'Entry',
@@ -2726,18 +2717,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '5-pl',
@@ -2748,8 +2739,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '5Yrbh3E4UPWjOmK4KlHEOm',
             type: 'Entry',
@@ -2759,21 +2750,21 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'event'
-              }
+                id: 'event',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
-          fields: { title: 'ランチセッション' }
-        }
+          fields: { title: 'ランチセッション' },
+        },
       ],
       room: {
         sys: {
@@ -2781,8 +2772,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '4MMzyRoKhtw4BlxWnCHbW9',
           type: 'Entry',
@@ -2792,22 +2783,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'PLAID ルーム' }
-      }
-    }
+        fields: { name: 'PLAID ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -2815,8 +2806,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '5XJnxcznPvA7zvK581CIAr',
       type: 'Entry',
@@ -2826,18 +2817,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '8−pl',
@@ -2848,8 +2839,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '7lCuNn3wby0o7hooQ7gbQf',
             type: 'Entry',
@@ -2859,18 +2850,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 2,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title: 'Enterprise Vue: Patterns That Scale',
@@ -2883,8 +2874,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '5emFxpCHjWlov8fBlzWBmM',
                 type: 'Asset',
@@ -2894,41 +2885,40 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'chrisvfritz',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/5emFxpCHjWlov8fBlzWBmM/7aadb8453f61f5639a47c4d67231855e/chrisvfritz.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/5emFxpCHjWlov8fBlzWBmM/7aadb8453f61f5639a47c4d67231855e/chrisvfritz.jpg',
                   details: {
                     size: 37340,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'chrisvfritz.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '582L635Brdsa2epHP9HSMA'
-                }
-              }
+                  id: '582L635Brdsa2epHP9HSMA',
+                },
+              },
             ],
-            hasTranslation: true
-          }
-        }
+            hasTranslation: true,
+          },
+        },
       ],
       room: {
         sys: {
@@ -2936,8 +2926,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '4MMzyRoKhtw4BlxWnCHbW9',
           type: 'Entry',
@@ -2947,22 +2937,22 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'PLAID ルーム' }
-      }
-    }
+        fields: { name: 'PLAID ルーム' },
+      },
+    },
   },
   {
     sys: {
@@ -2970,8 +2960,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: 'fYX56QW9IRf1BlkWR5CAY',
       type: 'Entry',
@@ -2981,18 +2971,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '3',
@@ -3003,8 +2993,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '7xvdef2fny01iVD0ra03Iz',
             type: 'Entry',
@@ -3014,18 +3004,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 4,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'session'
-              }
+                id: 'session',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             title: 'Keynote',
@@ -3037,8 +3027,8 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     type: 'Link',
                     linkType: 'Space',
-                    id: 'makqrw5hfm9d'
-                  }
+                    id: 'makqrw5hfm9d',
+                  },
                 },
                 id: '5MWxt8IHkH1VpMdh6HgFa6',
                 type: 'Asset',
@@ -3048,43 +3038,42 @@ const eventContainers: EventContainer[] = [
                   sys: {
                     id: 'master',
                     type: 'Link',
-                    linkType: 'Environment'
-                  }
+                    linkType: 'Environment',
+                  },
                 },
                 revision: 1,
-                locale: 'en-US'
+                locale: 'en-US',
               },
               fields: {
                 title: 'yyx990803',
                 file: {
-                  url:
-                    '//images.ctfassets.net/makqrw5hfm9d/5MWxt8IHkH1VpMdh6HgFa6/82601487a2fbf1de0d16a53e65cd6fe9/yyx990803.jpg',
+                  url: '//images.ctfassets.net/makqrw5hfm9d/5MWxt8IHkH1VpMdh6HgFa6/82601487a2fbf1de0d16a53e65cd6fe9/yyx990803.jpg',
                   details: {
                     size: 41598,
                     image: {
                       width: 1200,
-                      height: 630
-                    }
+                      height: 630,
+                    },
                   },
                   fileName: 'yyx990803.jpg',
-                  contentType: 'image/jpeg'
-                }
-              }
+                  contentType: 'image/jpeg',
+                },
+              },
             },
             speakers: [
               {
                 sys: {
                   type: 'Link',
                   linkType: 'Entry',
-                  id: '7aHzCP1a1rYpR6KbWENRmB'
-                }
-              }
+                  id: '7aHzCP1a1rYpR6KbWENRmB',
+                },
+              },
             ],
-            hasTranslation: true
-          }
-        }
-      ]
-    }
+            hasTranslation: true,
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -3092,8 +3081,8 @@ const eventContainers: EventContainer[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6PY6mHPXXKLHAzMDmrR0gL',
       type: 'Entry',
@@ -3103,18 +3092,18 @@ const eventContainers: EventContainer[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'eventContainer'
-        }
+          id: 'eventContainer',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: '7-ye',
@@ -3125,8 +3114,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '2nMiFiFiZbnBYxCFeY72Wd',
             type: 'Entry',
@@ -3136,18 +3125,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'eventContainerPart'
-              }
+                id: 'eventContainerPart',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             titleForContentful: '7-ye-1',
@@ -3157,10 +3146,10 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '7fozsC9JQwpxPyxkYyARVJ'
-              }
-            }
-          }
+                id: '7fozsC9JQwpxPyxkYyARVJ',
+              },
+            },
+          },
         },
         {
           sys: {
@@ -3168,8 +3157,8 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Space',
-                id: 'makqrw5hfm9d'
-              }
+                id: 'makqrw5hfm9d',
+              },
             },
             id: '1kwdWOiQ783ICAnfh7vNWN',
             type: 'Entry',
@@ -3179,18 +3168,18 @@ const eventContainers: EventContainer[] = [
               sys: {
                 id: 'master',
                 type: 'Link',
-                linkType: 'Environment'
-              }
+                linkType: 'Environment',
+              },
             },
             revision: 1,
             contentType: {
               sys: {
                 type: 'Link',
                 linkType: 'ContentType',
-                id: 'eventContainerPart'
-              }
+                id: 'eventContainerPart',
+              },
             },
-            locale: 'en-US'
+            locale: 'en-US',
           },
           fields: {
             titleForContentful: '7-ye-2',
@@ -3200,11 +3189,11 @@ const eventContainers: EventContainer[] = [
               sys: {
                 type: 'Link',
                 linkType: 'Entry',
-                id: '7aUz315q5gRNDDsC9ZPsiR'
-              }
-            }
-          }
-        }
+                id: '7aUz315q5gRNDDsC9ZPsiR',
+              },
+            },
+          },
+        },
       ],
       room: {
         sys: {
@@ -3212,8 +3201,8 @@ const eventContainers: EventContainer[] = [
             sys: {
               type: 'Link',
               linkType: 'Space',
-              id: 'makqrw5hfm9d'
-            }
+              id: 'makqrw5hfm9d',
+            },
           },
           id: '1rnDVEsknx6MhhPgMAS9Gj',
           type: 'Entry',
@@ -3223,23 +3212,23 @@ const eventContainers: EventContainer[] = [
             sys: {
               id: 'master',
               type: 'Link',
-              linkType: 'Environment'
-            }
+              linkType: 'Environment',
+            },
           },
           revision: 1,
           contentType: {
             sys: {
               type: 'Link',
               linkType: 'ContentType',
-              id: 'room'
-            }
+              id: 'room',
+            },
           },
-          locale: 'en-US'
+          locale: 'en-US',
         },
-        fields: { name: 'イエソドルーム' }
-      }
-    }
-  }
+        fields: { name: 'イエソドルーム' },
+      },
+    },
+  },
 ]
 
 export default eventContainers

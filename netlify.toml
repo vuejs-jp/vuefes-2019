@@ -1,7 +1,9 @@
+[build]
+command = "corepack enable && rm -rf node_modules && corepack pnpm install --frozen-lockfile && corepack pnpm run generate"
+publish = "dist/2019"
+
 [build.environment]
-  NODE_VERSION = "18"
-  NODE_OPTIONS = "--openssl-legacy-provider"
-  NPM_VERSION = "6.14.18"
+NODE_VERSION = "24"
 
 [[redirects]]
 from = "/2018/*"

@@ -7,8 +7,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4sxDoiKkgsNnAK6F7cTnbl',
       type: 'Entry',
@@ -18,18 +18,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 9',
@@ -40,25 +40,25 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '6jAYqkLZ8EPj1dYIQ0Lshf'
-          }
+            id: '6jAYqkLZ8EPj1dYIQ0Lshf',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '3m0gGobaUsEGBKgZsCG9qO'
-          }
+            id: '3m0gGobaUsEGBKgZsCG9qO',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '1fdk0b9Nqwcsabq7Xo1pMK'
-          }
-        }
-      ]
-    }
+            id: '1fdk0b9Nqwcsabq7Xo1pMK',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -66,8 +66,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6CQkxrM7cm7inIhskwo9G6',
       type: 'Entry',
@@ -77,18 +77,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 8',
@@ -99,25 +99,25 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '5XJnxcznPvA7zvK581CIAr'
-          }
+            id: '5XJnxcznPvA7zvK581CIAr',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4ftljEYI00LA6EoQ12qSDG'
-          }
+            id: '4ftljEYI00LA6EoQ12qSDG',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '3tiHW5xSg7x10Q1HRMOlXK'
-          }
-        }
-      ]
-    }
+            id: '3tiHW5xSg7x10Q1HRMOlXK',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -125,8 +125,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2PAOpWWMdsZwNGA9we1dwA',
       type: 'Entry',
@@ -136,18 +136,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 5',
@@ -158,25 +158,25 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4in2dqjrZtO2tViqJOM4Ah'
-          }
+            id: '4in2dqjrZtO2tViqJOM4Ah',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '6WnFrEfL5CPrBc9yd66Qai'
-          }
+            id: '6WnFrEfL5CPrBc9yd66Qai',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '2AQ7yn9RVekHung6F4sWVo'
-          }
-        }
-      ]
-    }
+            id: '2AQ7yn9RVekHung6F4sWVo',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -184,8 +184,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '721XM6bwVbWwo228c1OK9',
       type: 'Entry',
@@ -195,18 +195,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 10',
@@ -217,25 +217,25 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '2fJZQ6hM75MWx6gUZN8tXU'
-          }
+            id: '2fJZQ6hM75MWx6gUZN8tXU',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4qV55oqaEFjQDU25hYhzo1'
-          }
+            id: '4qV55oqaEFjQDU25hYhzo1',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4hTwfDWjU9YH04meCRWt9q'
-          }
-        }
-      ]
-    }
+            id: '4hTwfDWjU9YH04meCRWt9q',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -243,8 +243,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '1hbD2JZKd34MqeBnlzKRBw',
       type: 'Entry',
@@ -254,18 +254,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 11',
@@ -276,11 +276,11 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '4dVw3jRVdvgkCF9UvXjlXk'
-          }
-        }
-      ]
-    }
+            id: '4dVw3jRVdvgkCF9UvXjlXk',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -288,8 +288,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7kDbiZBBye058BLbC8hiD0',
       type: 'Entry',
@@ -299,18 +299,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 7',
@@ -321,25 +321,25 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '5hUuLkUm8Lj1CYxxMFgcXQ'
-          }
+            id: '5hUuLkUm8Lj1CYxxMFgcXQ',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '1qkp3KPJ6kMGuwyPRwY0z3'
-          }
+            id: '1qkp3KPJ6kMGuwyPRwY0z3',
+          },
         },
         {
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '6PY6mHPXXKLHAzMDmrR0gL'
-          }
-        }
-      ]
-    }
+            id: '6PY6mHPXXKLHAzMDmrR0gL',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -347,8 +347,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '5OCrpJMt878Kqov681xNEJ',
       type: 'Entry',
@@ -358,18 +358,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 1',
@@ -380,11 +380,11 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '7sgOIbC53nRd6D3vEK661n'
-          }
-        }
-      ]
-    }
+            id: '7sgOIbC53nRd6D3vEK661n',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -392,8 +392,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '5yjWwiVnz5je92UQ3dKeux',
       type: 'Entry',
@@ -403,18 +403,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 6',
@@ -425,11 +425,11 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '2lhriLMBIque0ckJTdNLH4'
-          }
-        }
-      ]
-    }
+            id: '2lhriLMBIque0ckJTdNLH4',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -437,8 +437,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '1ucunPvdSsNBCb0x95xfm2',
       type: 'Entry',
@@ -448,18 +448,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 4',
@@ -470,11 +470,11 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '2POtjBsibEQHjF1XHAfml0'
-          }
-        }
-      ]
-    }
+            id: '2POtjBsibEQHjF1XHAfml0',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -482,8 +482,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '4AB9NAFMzGxEeBKBOZ1v6l',
       type: 'Entry',
@@ -493,18 +493,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 12',
@@ -515,11 +515,11 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: '3TITMuPHrDVoX7PCN1YDpT'
-          }
-        }
-      ]
-    }
+            id: '3TITMuPHrDVoX7PCN1YDpT',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -527,8 +527,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '3pJ0kptU6zTIVagtjxxxPF',
       type: 'Entry',
@@ -538,18 +538,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 3',
@@ -560,11 +560,11 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: 'fYX56QW9IRf1BlkWR5CAY'
-          }
-        }
-      ]
-    }
+            id: 'fYX56QW9IRf1BlkWR5CAY',
+          },
+        },
+      ],
+    },
   },
   {
     sys: {
@@ -572,8 +572,8 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6s53Dfn7dSRbXLlr9nvofF',
       type: 'Entry',
@@ -583,18 +583,18 @@ const timeTableSections: TimeTableSection[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'timeTableSection'
-        }
+          id: 'timeTableSection',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
     fields: {
       titleForContentful: 'Section 2',
@@ -605,12 +605,12 @@ const timeTableSections: TimeTableSection[] = [
           sys: {
             type: 'Link',
             linkType: 'Entry',
-            id: 'EQg24z6gBkNEqvil1DJ1B'
-          }
-        }
-      ]
-    }
-  }
+            id: 'EQg24z6gBkNEqvil1DJ1B',
+          },
+        },
+      ],
+    },
+  },
 ]
 
 export default timeTableSections

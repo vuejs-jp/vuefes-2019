@@ -1,8 +1,16 @@
+<script setup lang="ts">
+import imageOne from '~/assets/images/ticket/image1.jpg?url'
+import imageOne2x from '~/assets/images/ticket/image1@2x.jpg?url'
+import imageTwo from '~/assets/images/ticket/image2.jpg?url'
+import imageTwo2x from '~/assets/images/ticket/image2@2x.jpg?url'
+
+const imageOneSrcSet = `${imageOne}, ${imageOne2x} 2x`
+const imageTwoSrcSet = `${imageTwo}, ${imageTwo2x} 2x`
+</script>
+
 <template>
   <BaseSection id="the-ticket-section" class="the-ticket-section">
-    <template v-slot:heading>
-      TICKET
-    </template>
+    <template v-slot:heading> TICKET </template>
 
     <div class="notification">
       <!-- prettier-ignore -->
@@ -32,10 +40,11 @@
           <p><span>7,000</span> 円</p>
         </div>
 
-        <div v-lazy-container="{ selector: 'img' }" class="image">
+        <div class="image">
           <img
-            :data-srcset="`${imageOne}, ${imageOne2x} 2x`"
-            :data-src="imageOne2x"
+            :srcset="imageOneSrcSet"
+            :src="imageOne2x"
+            loading="lazy"
             alt=""
           />
         </div>
@@ -47,10 +56,11 @@
           <p><span>10,000</span> 円</p>
         </div>
 
-        <div v-lazy-container="{ selector: 'img' }" class="image">
+        <div class="image">
           <img
-            :data-srcset="`${imageTwo}, ${imageTwo2x} 2x`"
-            :data-src="imageTwo2x"
+            :srcset="imageTwoSrcSet"
+            :src="imageTwo2x"
+            loading="lazy"
             alt=""
           />
         </div>
@@ -65,9 +75,7 @@
       <h3>FAQ</h3>
 
       <div class="faq-content">
-        <h4>
-          領収書について
-        </h4>
+        <h4>領収書について</h4>
         <!-- prettier-ignore -->
         <p>
           チケット購入後に届くメールに添付された PDF を領収書としてご利用ください。
@@ -75,9 +83,7 @@
       </div>
 
       <div class="faq-content">
-        <h4>
-          キャンセル、返金について
-        </h4>
+        <h4>キャンセル、返金について</h4>
         <!-- prettier-ignore -->
         <p>
           購入者都合によるキャンセルの場合、チケットの返金はできません。ただし、譲渡は購入者の責任において行うことができます。詳細は
@@ -96,9 +102,7 @@
       </div>
 
       <div class="faq-content">
-        <h4>
-          ランチは全員に提供されますか？
-        </h4>
+        <h4>ランチは全員に提供されますか？</h4>
         <!-- prettier-ignore -->
         <p>
           はい、会場内でお弁当とお飲み物をご提供します。各会場ではランチを召し上がりながら Lunch スポンサーセッション（10分 x 3本）にご参加いただけます。
@@ -106,18 +110,14 @@
       </div>
 
       <div class="faq-content">
-        <h4>
-          アフターパーティーはどのようなものですか？
-        </h4>
+        <h4>アフターパーティーはどのようなものですか？</h4>
         <p>
           全セッション終了後、会場内にて立食形式のお食事、お飲み物（アルコールあり）を召し上がりながらご歓談いただけます。お1人で参加される方でもお楽しみいただけるような工夫を行う予定です。お楽しみに！
         </p>
       </div>
 
       <div class="faq-content">
-        <h4>
-          チケットを購入しましたが、メールが届きません
-        </h4>
+        <h4>チケットを購入しましたが、メールが届きません</h4>
         <!-- prettier-ignore -->
         <p>
           迷惑メールとして扱われている可能性があります。迷惑メールに振り分けられていないかご確認ください。それでも届いていない場合、迷惑メールの対策のため受信できていない可能性があります。「universe.com」を受信できるように設定のうえ、Vue Fes Japan 2019 の
@@ -129,9 +129,7 @@
       </div>
 
       <div class="faq-content">
-        <h4>
-          当日の入場について
-        </h4>
+        <h4>当日の入場について</h4>
         <!-- prettier-ignore -->
         <p>
           当日は受付の混雑が予想されます。受付用の QR コードを読み取れるようご準備の上、列へお並びください。QR コードはチケット購入時に届くメールをご確認ください。
@@ -139,9 +137,7 @@
       </div>
 
       <div class="faq-content">
-        <h4>
-          Universe のアカウント作成について
-        </h4>
+        <h4>Universe のアカウント作成について</h4>
         <!-- prettier-ignore -->
         <p>
           購入時に Universe のアカウントを作成するか選択できますが、作成しなくともチケットの購入は可能です。また、チケット購入後でも購入時に届くメールからアカウントを作成することができます。
@@ -150,34 +146,6 @@
     </div>
   </BaseSection>
 </template>
-
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import BaseSection from '~/components/BaseSection.vue'
-import BaseButton from '~/components/BaseButton.vue'
-
-@Component({
-  components: {
-    BaseSection,
-    BaseButton
-  }
-})
-export default class TheTicketSection extends Vue {
-  private imageOne = require('~/assets/images/ticket/image1.jpg')
-
-  private imageOne2x = require('~/assets/images/ticket/image1@2x.jpg')
-
-  private imageTwo = require('~/assets/images/ticket/image2.jpg')
-
-  private imageTwo2x = require('~/assets/images/ticket/image2@2x.jpg')
-
-  openUniverse() {
-    window.open(
-      'https://www.universe.com/events/vue-fes-japan-2019-tickets--YG3SMV'
-    )
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 // prettier-ignore
@@ -206,7 +174,8 @@ $ticket-item-content-width--is-small-up: 140px;
   @media screen and (min-width: $layout-breakpoint--is-small-up) {
     margin: 0 auto 40px;
     padding: calc(
-      #{$layout-column-width--is-small-up} + #{$layout-gutter-width--is-small-up}
+      #{$layout-column-width--is-small-up} +
+        #{$layout-gutter-width--is-small-up}
     );
     width: $content-width--is-small-up;
     min-width: $content-min-width--is-small-up;

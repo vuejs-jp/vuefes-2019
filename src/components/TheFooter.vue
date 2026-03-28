@@ -1,3 +1,41 @@
+<script setup lang="ts">
+import {
+  faGithub,
+  faTwitter,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons'
+
+function encodedUri(): string {
+  return encodeURIComponent(window.location.href)
+}
+
+function hostAndPath(): string {
+  return window.location.host + window.location.pathname
+}
+
+function openTwitterForm() {
+  window.open(
+    `https://twitter.com/share?url=${encodedUri()}&hashtags=vuefes,vuejs&text=${encodeURIComponent(
+      '日本最大級の Vue.js カンファレンス「Vue Fes Japan 2019」',
+    )}`,
+    'tweet',
+    'width=650, height=470',
+  )
+}
+
+function openFacebookForm() {
+  window.open(
+    `https://www.facebook.com/sharer/sharer.php?u=${encodedUri()}&src=sdkpreparse`,
+    'share',
+    'width=670, height=328',
+  )
+}
+
+function openHatenaBookmarkForm() {
+  window.open(`http://b.hatena.ne.jp/entry/s/${hostAndPath()}`, 'bookmark')
+}
+</script>
+
 <template>
   <footer class="the-footer">
     <div class="footer-container">
@@ -29,29 +67,19 @@
         </div>
 
         <div class="menu-list">
-          <h2 class="title">
-            メニュー
-          </h2>
+          <h2 class="title">メニュー</h2>
 
-          <nuxt-link to="/code-of-conduct/">
-            行動規範
-          </nuxt-link>
+          <nuxt-link to="/code-of-conduct/"> 行動規範 </nuxt-link>
           <br />
 
-          <nuxt-link to="/privacy/">
-            プライバシーポリシー
-          </nuxt-link>
+          <nuxt-link to="/privacy/"> プライバシーポリシー </nuxt-link>
           <br />
 
-          <nuxt-link to="/contact/">
-            お問い合わせ
-          </nuxt-link>
+          <nuxt-link to="/contact/"> お問い合わせ </nuxt-link>
         </div>
 
         <div class="social-list">
-          <h2 class="title">
-            ソーシャル
-          </h2>
+          <h2 class="title">ソーシャル</h2>
 
           <a
             class="social-icon"
@@ -98,9 +126,7 @@
         </div>
 
         <div class="link-list">
-          <h2 class="title">
-            各種リンク
-          </h2>
+          <h2 class="title">各種リンク</h2>
 
           <a href="https://jp.vuejs.org/" target="_blank" rel="noopener">
             Vue.js
@@ -150,64 +176,6 @@
     </div>
   </footer>
 </template>
-
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import {
-  faGithub,
-  faTwitter,
-  faYoutube
-} from '@fortawesome/free-brands-svg-icons'
-import { IconDefinition } from '@fortawesome/fontawesome-common-types'
-
-@Component
-export default class TheFooter extends Vue {
-  get faGithub(): IconDefinition {
-    return faGithub
-  }
-
-  get faTwitter(): IconDefinition {
-    return faTwitter
-  }
-
-  get faYoutube(): IconDefinition {
-    return faYoutube
-  }
-
-  get encodedUri(): string {
-    return encodeURIComponent(location.href)
-  }
-
-  get hostAndPath(): string {
-    return location.host + location.pathname
-  }
-
-  // TODO: 文言を正式版に差し替える
-  openTwitterForm(): void {
-    window.open(
-      `https://twitter.com/share?url=${
-        this.encodedUri
-      }&hashtags=vuefes,vuejs&text=${encodeURIComponent(
-        '日本最大級の Vue.js カンファレンス「Vue Fes Japan 2019」'
-      )}`,
-      'tweet',
-      'width=650, height=470'
-    )
-  }
-
-  openFacebookForm(): void {
-    window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${this.encodedUri}&src=sdkpreparse`,
-      'share',
-      'width=670, height=328'
-    )
-  }
-
-  openHatenaBookmarkForm(): void {
-    window.open(`http://b.hatena.ne.jp/entry/s/${this.hostAndPath}`, 'bookmark')
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .the-footer {

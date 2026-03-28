@@ -7,8 +7,8 @@ const events: Event[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '5NPCujTlHiEd7KcRmGp3hS',
       type: 'Entry',
@@ -18,20 +18,20 @@ const events: Event[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'event'
-        }
+          id: 'event',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { title: 'クローズ' }
+    fields: { title: 'クローズ' },
   },
   {
     sys: {
@@ -39,8 +39,8 @@ const events: Event[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '2mZLXwFpA8bupnU7gAj20o',
       type: 'Entry',
@@ -50,20 +50,20 @@ const events: Event[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'event'
-        }
+          id: 'event',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { title: 'ランチブレーク' }
+    fields: { title: 'ランチブレーク' },
   },
   {
     sys: {
@@ -71,8 +71,8 @@ const events: Event[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '6hXLd0yVmRgqt0dp6VjS7z',
       type: 'Entry',
@@ -82,20 +82,20 @@ const events: Event[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'event'
-        }
+          id: 'event',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { title: 'アフターパーティー' }
+    fields: { title: 'アフターパーティー' },
   },
   {
     sys: {
@@ -103,8 +103,8 @@ const events: Event[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '53hyjF5S3JKkoEZJUxao31',
       type: 'Entry',
@@ -114,20 +114,20 @@ const events: Event[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'event'
-        }
+          id: 'event',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { title: 'Platinum スポンサーセッション' }
+    fields: { title: 'Platinum スポンサーセッション' },
   },
   {
     sys: {
@@ -135,8 +135,8 @@ const events: Event[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '5Yrbh3E4UPWjOmK4KlHEOm',
       type: 'Entry',
@@ -146,20 +146,20 @@ const events: Event[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'event'
-        }
+          id: 'event',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { title: 'ランチセッション' }
+    fields: { title: 'ランチセッション' },
   },
   {
     sys: {
@@ -167,8 +167,8 @@ const events: Event[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '78mXcgUFFR10z27UgsyLpI',
       type: 'Entry',
@@ -178,20 +178,20 @@ const events: Event[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'event'
-        }
+          id: 'event',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { title: 'オープニング' }
+    fields: { title: 'オープニング' },
   },
   {
     sys: {
@@ -199,8 +199,8 @@ const events: Event[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7HH2CbTRcGkUYp9OF1LIVu',
       type: 'Entry',
@@ -210,20 +210,20 @@ const events: Event[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 2,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'event'
-        }
+          id: 'event',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { title: 'コミュニティセッション' }
+    fields: { title: 'コミュニティセッション' },
   },
   {
     sys: {
@@ -231,8 +231,8 @@ const events: Event[] = [
         sys: {
           type: 'Link',
           linkType: 'Space',
-          id: 'makqrw5hfm9d'
-        }
+          id: 'makqrw5hfm9d',
+        },
       },
       id: '7bCVuySpTUioz7SqJYpq7s',
       type: 'Entry',
@@ -242,21 +242,21 @@ const events: Event[] = [
         sys: {
           id: 'master',
           type: 'Link',
-          linkType: 'Environment'
-        }
+          linkType: 'Environment',
+        },
       },
       revision: 1,
       contentType: {
         sys: {
           type: 'Link',
           linkType: 'ContentType',
-          id: 'event'
-        }
+          id: 'event',
+        },
       },
-      locale: 'en-US'
+      locale: 'en-US',
     },
-    fields: { title: '開場・受付' }
-  }
+    fields: { title: '開場・受付' },
+  },
 ]
 
 export default events

@@ -6,8 +6,8 @@ const asset: Asset = {
       sys: {
         type: 'Link',
         linkType: 'Space',
-        id: 'makqrw5hfm9d'
-      }
+        id: 'makqrw5hfm9d',
+      },
     },
     id: '1Bqb7VVTxdnL3zZIh8FNJD',
     type: 'Asset',
@@ -17,28 +17,27 @@ const asset: Asset = {
       sys: {
         id: 'master',
         type: 'Link',
-        linkType: 'Environment'
-      }
+        linkType: 'Environment',
+      },
     },
     revision: 1,
-    locale: 'en-US'
+    locale: 'en-US',
   },
   fields: {
     title: 'jlooper',
     file: {
-      url:
-        '//images.ctfassets.net/makqrw5hfm9d/1Bqb7VVTxdnL3zZIh8FNJD/ba31d2b26ab370284345ebaf82196f7e/jlooper.jpg',
+      url: '//images.ctfassets.net/makqrw5hfm9d/1Bqb7VVTxdnL3zZIh8FNJD/ba31d2b26ab370284345ebaf82196f7e/jlooper.jpg',
       details: {
         size: 21973,
         image: {
           width: 500,
-          height: 500
-        }
+          height: 500,
+        },
       },
       fileName: 'jlooper.jpg',
-      contentType: 'image/jpeg'
-    }
-  }
+      contentType: 'image/jpeg',
+    },
+  },
 }
 
 export default asset

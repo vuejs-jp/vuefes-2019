@@ -1,0 +1,14 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 80,
+  "sortPackageJson": false,
+  "ignorePatterns": [
+    ".nuxt/**",
+    ".output/**",
+    ".playwright-cli/**",
+    "coverage/**",
+    "node_modules/**",
+    "output/**"
+  ]
+}

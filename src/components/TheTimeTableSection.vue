@@ -1,22 +1,30 @@
+<script setup lang="ts">
+import { formatTime } from '~/lib/time'
+
+const { timeTableSections, findEventContainerById } = useSiteData()
+
+function eventContainerById(id: string) {
+  const eventContainer = findEventContainerById(id)
+
+  if (!eventContainer) {
+    throw new Error(`Unknown event container: ${id}`)
+  }
+
+  return eventContainer
+}
+</script>
+
 <template>
   <BaseSection id="the-time-table-section" class="the-time-table-section">
-    <template v-slot:heading>
-      TIME TABLE
-    </template>
+    <template v-slot:heading> TIME TABLE </template>
 
     <ul>
       <li class="time-table-section show-on-large">
         <div class="time-table-section__time" />
         <div class="time-table-section__body">
-          <div class="event-container room room--is-plaid">
-            PLAID ルーム
-          </div>
-          <div class="event-container room room--is-yumemi">
-            YUMEMI ルーム
-          </div>
-          <div class="event-container room room--is-yesod">
-            イエソドルーム
-          </div>
+          <div class="event-container room room--is-plaid">PLAID ルーム</div>
+          <div class="event-container room room--is-yumemi">YUMEMI ルーム</div>
+          <div class="event-container room room--is-yesod">イエソドルーム</div>
         </div>
       </li>
       <li
@@ -26,7 +34,7 @@
       >
         <!-- prettier-ignore -->
         <div class="time-table-section__time">
-          {{ timeTableSection.fields.startAt | toTime }} - {{ timeTableSection.fields.endAt | toTime }}
+          {{ formatTime(timeTableSection.fields.startAt) }} - {{ formatTime(timeTableSection.fields.endAt) }}
         </div>
 
         <div class="time-table-section__body">
@@ -47,34 +55,6 @@
     </div>
   </BaseSection>
 </template>
-
-<script lang="ts">
-import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import dayjs from 'dayjs'
-import TimeTableSection from '~/types/timeTableSection'
-import EventContainerType from '~/types/eventContainer'
-import BaseSection from '~/components/BaseSection.vue'
-import EventContainer from '~/components/TheTimeTableSection/EventContainer.vue'
-
-@Component({
-  components: {
-    BaseSection,
-    EventContainer
-  },
-  filters: {
-    toTime(dateTime: string): string {
-      return dayjs(dateTime).format('HH:mm')
-    }
-  }
-})
-export default class TheTimeTableSection extends Vue {
-  @Getter('all', { namespace: 'timeTableSections' })
-  private timeTableSections!: TimeTableSection[]
-
-  @Getter('find', { namespace: 'eventContainers' })
-  private eventContainerById!: (id: string) => EventContainerType
-}
-</script>
 
 <style lang="scss" scoped>
 .the-time-table-section {

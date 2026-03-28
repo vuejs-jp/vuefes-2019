@@ -10,17 +10,10 @@
   </main>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-
-@Component
-export default class BaseMain extends Vue {}
-</script>
-
 <style lang="scss" scoped>
 .base-main {
   padding: 14vw 7.8% 13vw;
-  background-image: url('~assets/images/texture.png');
+  background-image: url('@/assets/images/texture.png');
 }
 
 .heading {

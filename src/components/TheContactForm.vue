@@ -1,8 +1,151 @@
+<script setup lang="ts">
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+enum Messages {
+  Success = '送信しました',
+  Error = '送信に失敗しました',
+  Progress = '送信しています...',
+  Default = '送信する',
+}
+
+const formData = reactive({
+  name: '',
+  email: '',
+  organization: '',
+  message: '',
+})
+
+const status = reactive({
+  inProgress: false,
+  hasSent: false,
+  hasError: false,
+})
+
+const validationErrors = reactive({
+  name: '',
+  email: '',
+  message: '',
+})
+
+const errors = {
+  has(field: keyof typeof validationErrors) {
+    return Boolean(validationErrors[field])
+  },
+  first(field: keyof typeof validationErrors) {
+    return validationErrors[field]
+  },
+}
+
+const buttonValue = computed(() => {
+  if (status.hasError) {
+    return Messages.Error
+  }
+  if (status.inProgress) {
+    return Messages.Progress
+  }
+  if (status.hasSent) {
+    return Messages.Success
+  }
+  return Messages.Default
+})
+
+function setStatusError() {
+  status.inProgress = false
+  status.hasSent = false
+  status.hasError = true
+}
+
+function setStatusSuccess() {
+  status.inProgress = false
+  status.hasSent = true
+  status.hasError = false
+}
+
+function setStatusInProgress() {
+  status.inProgress = true
+  status.hasSent = false
+  status.hasError = false
+}
+
+function validateField(field: keyof typeof validationErrors) {
+  if (field === 'name') {
+    validationErrors.name = formData.name ? '' : '名前を正しく入力してください'
+    return !validationErrors.name
+  }
+
+  if (field === 'email') {
+    validationErrors.email =
+      formData.email && emailPattern.test(formData.email)
+        ? ''
+        : 'メールアドレスを正しく入力してください'
+    return !validationErrors.email
+  }
+
+  validationErrors.message = !formData.message
+    ? '内容を正しく入力してください'
+    : formData.message.length > 3000
+      ? '内容は 3,000 文字以内で入力してください'
+      : ''
+
+  return !validationErrors.message
+}
+
+function validateAll() {
+  const nameValid = validateField('name')
+  const emailValid = validateField('email')
+  const messageValid = validateField('message')
+
+  return nameValid && emailValid && messageValid
+}
+
+function encode(data: Record<string, string>) {
+  return Object.entries(data)
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
+    )
+    .join('&')
+}
+
+function createRequestBody() {
+  return {
+    'form-name': 'contact',
+    name: formData.name,
+    email: formData.email,
+    organization: formData.organization,
+    message: formData.message,
+  }
+}
+
+async function handleSubmit() {
+  if (!validateAll()) {
+    return
+  }
+
+  const body = createRequestBody()
+  setStatusInProgress()
+
+  try {
+    const response = await fetch('/2019/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode(body),
+    })
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok')
+    }
+
+    setStatusSuccess()
+  } catch {
+    setStatusError()
+  }
+}
+</script>
+
 <template>
   <BaseMain class="the-contact-form">
-    <template v-slot:heading>
-      お問い合わせ
-    </template>
+    <template v-slot:heading> お問い合わせ </template>
 
     <BaseMainDescription>
       <!-- prettier-ignore -->
@@ -36,9 +179,8 @@
         <input
           id="name"
           v-model.trim="formData.name"
-          v-validate="'required'"
           :class="{ error: errors.has('name') }"
-          data-vv-validate-on="blur"
+          @blur="validateField('name')"
           name="name"
           placeholder="お名前"
           type="text"
@@ -58,9 +200,8 @@
         <input
           id="email"
           v-model.trim="formData.email"
-          v-validate="'required|email'"
           :class="{ error: errors.has('email') }"
-          data-vv-validate-on="blur"
+          @blur="validateField('email')"
           name="email"
           placeholder="メールアドレス"
           type="text"
@@ -73,9 +214,7 @@
 
       <!-- Organization -->
       <div class="form-content">
-        <label for="organization">
-          会社・団体名等
-        </label>
+        <label for="organization"> 会社・団体名等 </label>
 
         <input
           id="organization"
@@ -95,9 +234,8 @@
         <textarea
           id="message"
           v-model="formData.message"
-          v-validate="'required|max:3000'"
           :class="{ error: errors.has('message') }"
-          data-vv-validate-on="blur"
+          @blur="validateField('message')"
           name="message"
           placeholder="例：お問い合わせ内容をご記入ください"
         />
@@ -122,125 +260,6 @@
     </form>
   </BaseMain>
 </template>
-
-<script lang="ts">
-import { Component, Vue, Inject } from 'nuxt-property-decorator'
-import BaseButton from '~/components/BaseButton.vue'
-import BaseMain from '~/components/BaseMain.vue'
-import BaseMainDescription from '~/components/BaseMainDescription.vue'
-
-enum Messages {
-  Success = '送信しました',
-  Error = '送信に失敗しました',
-  Progress = '送信しています...',
-  Default = '送信する'
-}
-
-@Component({
-  components: {
-    BaseMain,
-    BaseMainDescription,
-    BaseButton
-  }
-})
-export default class TheContactForm extends Vue {
-  formData = {
-    name: '',
-    email: '',
-    organization: '',
-    message: ''
-  }
-
-  status = {
-    inProgress: false,
-    hasSent: false,
-    hasError: false
-  }
-
-  @Inject('$validator')
-  $validator: any
-
-  get buttonValue(): string {
-    const status = this.status
-    if (status.hasError) {
-      return Messages.Error
-    } else if (status.inProgress) {
-      return Messages.Progress
-    } else if (status.hasSent) {
-      return Messages.Success
-    } else {
-      return Messages.Default
-    }
-  }
-
-  setStatusError(): void {
-    this.status = {
-      inProgress: false,
-      hasSent: false,
-      hasError: true
-    }
-  }
-
-  setStatusSuccess(): void {
-    this.status = {
-      inProgress: false,
-      hasSent: true,
-      hasError: false
-    }
-  }
-
-  setStatusInProgress(): void {
-    this.status = {
-      inProgress: true,
-      hasSent: false,
-      hasError: false
-    }
-  }
-
-  encode(data: object): string {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&')
-  }
-
-  createRequestBody(target): object {
-    return {
-      'form-name': 'contact',
-      name: target.name.value,
-      email: target.email.value,
-      organization: target.organization.value,
-      message: target.message.value
-    }
-  }
-
-  handleSubmit({ target }): void {
-    this.$validator.validateAll().then(isValid => {
-      if (!isValid) {
-        return
-      }
-
-      const body = this.createRequestBody(target)
-      this.setStatusInProgress()
-
-      fetch('/2019/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: this.encode(body)
-      })
-        .then(response => {
-          if (response.ok) {
-            return this.setStatusSuccess()
-          }
-
-          throw new Error('Network response was not ok')
-        })
-        .catch(() => {
-          this.setStatusError()
-        })
-    })
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 $form-border-color: #eee;
@@ -284,7 +303,7 @@ $form-border-color: #eee;
 
   .error {
     border-color: $sangosyu;
-    background-image: url('~assets/images/icon-exclamation.svg');
+    background-image: url('@/assets/images/icon-exclamation.svg');
     background-repeat: no-repeat;
     background-position: 97% center;
     background-size: auto 6vw;

@@ -1,24 +1,24 @@
+<script setup lang="ts">
+import accessImage from '~/assets/images/access.jpg?url'
+import accessImage2x from '~/assets/images/access@2x.jpg?url'
+
+const image2x = accessImage2x
+const imageSrcSet = `${accessImage}, ${accessImage2x} 2x`
+</script>
+
 <template>
   <BaseSection id="the-access-section" class="the-access-section">
-    <template v-slot:heading>
-      ACCESS
-    </template>
+    <template v-slot:heading> ACCESS </template>
 
     <div class="access-container">
       <div class="image-container">
-        <div v-lazy-container="{ selector: 'img' }" class="image">
-          <img
-            :data-srcset="`${image}, ${image2x} 2x`"
-            :data-src="image2x"
-            alt=""
-          />
+        <div class="image">
+          <img :srcset="imageSrcSet" :src="image2x" loading="lazy" alt="" />
         </div>
       </div>
 
       <div class="access-content">
-        <h3 class="title">
-          会場：TOC五反田メッセ
-        </h3>
+        <h3 class="title">会場：TOC五反田メッセ</h3>
 
         <div class="description">
           <p>
@@ -61,28 +61,6 @@
     </BaseButton>
   </BaseSection>
 </template>
-
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import BaseButton from '~/components/BaseButton.vue'
-import BaseSection from '~/components/BaseSection.vue'
-
-@Component({
-  components: {
-    BaseButton,
-    BaseSection
-  }
-})
-export default class TheAccessSection extends Vue {
-  private image = require('~/assets/images/access.jpg')
-
-  private image2x = require('~/assets/images/access@2x.jpg')
-
-  private get googleMapsApiKey(): string | undefined {
-    return process.env.GOOGLE_MAPS_API_KEY
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .access-container {
