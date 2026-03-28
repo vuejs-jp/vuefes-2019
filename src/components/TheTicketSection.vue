@@ -40,8 +40,13 @@ const imageTwoSrcSet = `${imageTwo}, ${imageTwo2x} 2x`
           <p><span>7,000</span> 円</p>
         </div>
 
-        <div v-lazy-container="{ selector: 'img' }" class="image">
-          <img :data-srcset="imageOneSrcSet" :data-src="imageOne2x" alt="" />
+        <div class="image">
+          <img
+            :srcset="imageOneSrcSet"
+            :src="imageOne2x"
+            loading="lazy"
+            alt=""
+          />
         </div>
       </div>
 
@@ -51,8 +56,13 @@ const imageTwoSrcSet = `${imageTwo}, ${imageTwo2x} 2x`
           <p><span>10,000</span> 円</p>
         </div>
 
-        <div v-lazy-container="{ selector: 'img' }" class="image">
-          <img :data-srcset="imageTwoSrcSet" :data-src="imageTwo2x" alt="" />
+        <div class="image">
+          <img
+            :srcset="imageTwoSrcSet"
+            :src="imageTwo2x"
+            loading="lazy"
+            alt=""
+          />
         </div>
       </div>
     </div>

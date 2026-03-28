@@ -22,20 +22,16 @@ function speakerAvatarSrcSet(speaker: Speaker): string {
     <template v-slot:heading> SPEAKERS </template>
 
     <div class="speaker-container">
-      <div
-        v-for="speaker in speakers"
-        :key="speaker.sys.id"
-        v-lazy-container="{ selector: 'img.avatar' }"
-        class="speaker"
-      >
+      <div v-for="speaker in speakers" :key="speaker.sys.id" class="speaker">
         <nuxt-link
           class="avatar-link"
           :to="`/sessions/${speaker.fields.github}/`"
         >
           <img
             class="avatar"
-            :data-srcset="speakerAvatarSrcSet(speaker)"
-            :data-src="assetUrl(speaker.fields.avatar2x)"
+            :srcset="speakerAvatarSrcSet(speaker)"
+            :src="assetUrl(speaker.fields.avatar2x)"
+            loading="lazy"
             alt=""
           />
         </nuxt-link>

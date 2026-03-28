@@ -6,12 +6,13 @@ const keynoteAvatarSrcSet = `${keynoteAvatar}, ${keynoteAvatar2x} 2x`
 </script>
 
 <template>
-  <div v-lazy-container="{ selector: 'img' }" class="keynote">
+  <div class="keynote">
     <nuxt-link class="link-to-session" to="/sessions/yyx990803/">
       <img
         class="avatar"
-        :data-srcset="keynoteAvatarSrcSet"
-        :data-src="keynoteAvatar2x"
+        :srcset="keynoteAvatarSrcSet"
+        :src="keynoteAvatar2x"
+        loading="lazy"
         alt=""
       />
     </nuxt-link>

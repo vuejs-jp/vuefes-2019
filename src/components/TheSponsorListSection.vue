@@ -22,10 +22,11 @@ const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
             class="sponsor"
           >
             <nuxt-link :to="`/sponsors/#sponsor_${sponsor.sys.id}`">
-              <div v-lazy-container="{ selector: 'img' }">
+              <div>
                 <img
                   class="sponsor-image"
-                  :data-src="sponsor.fields.banner.fields.file.url"
+                  :src="sponsor.fields.banner.fields.file.url"
+                  loading="lazy"
                   :alt="sponsor.fields.name"
                 />
               </div>

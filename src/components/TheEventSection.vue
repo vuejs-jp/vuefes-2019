@@ -163,10 +163,11 @@ export default defineComponent({
     </div>
 
     <div class="mobile-app">
-      <div v-lazy-container="{ selector: 'img' }" class="mobile-app-image">
+      <div class="mobile-app-image">
         <img
-          :data-srcset="`${mobileApp}, ${mobileApp2x} 2x`"
-          :data-src="mobileApp2x"
+          :srcset="`${mobileApp}, ${mobileApp2x} 2x`"
+          :src="mobileApp2x"
+          loading="lazy"
           alt=""
         />
       </div>
@@ -207,16 +208,17 @@ export default defineComponent({
 
     <ul class="event-list">
       <li v-for="(event, index) in events" :key="index" class="event">
-        <div v-lazy-container="{ selector: 'img' }" class="event-image">
-          <img :data-src="event.image" alt="" />
+        <div class="event-image">
+          <img :src="event.image" loading="lazy" alt="" />
 
           <div
             v-if="event.title === 'スポンサーブースシールラリー'"
             class="case-image-container"
           >
             <img
-              :data-srcset="`${caseImage}, ${caseImage2x} 2x`"
-              :data-src="caseImage2x"
+              :srcset="`${caseImage}, ${caseImage2x} 2x`"
+              :src="caseImage2x"
+              loading="lazy"
               alt=""
             />
           </div>
@@ -235,22 +237,21 @@ export default defineComponent({
     </ul>
 
     <div class="event-other-images">
-      <div
-        v-lazy-container="{ selector: 'img' }"
-        class="information-table-image"
-      >
+      <div class="information-table-image">
         <img
-          :data-srcset="`${informationTable}, ${informationTable2x} 2x`"
-          :data-src="informationTable2x"
+          :srcset="`${informationTable}, ${informationTable2x} 2x`"
+          :src="informationTable2x"
+          loading="lazy"
           alt=""
         />
       </div>
 
-      <div v-lazy-container="{ selector: 'img' }" class="party-image">
+      <div class="party-image">
         <img
           class="party"
-          :data-srcset="`${party}, ${party2x} 2x`"
-          :data-src="party2x"
+          :srcset="`${party}, ${party2x} 2x`"
+          :src="party2x"
+          loading="lazy"
           alt=""
         />
       </div>
@@ -268,10 +269,11 @@ export default defineComponent({
 
     <ul class="product-list">
       <li v-for="(product, index) in products" :key="index" class="product">
-        <div v-lazy-container="{ selector: 'img' }" class="product-image">
+        <div class="product-image">
           <img
-            :data-srcset="`${product.image}, ${product.image2x} 2x`"
-            :data-src="product.image2x"
+            :srcset="`${product.image}, ${product.image2x} 2x`"
+            :src="product.image2x"
+            loading="lazy"
             alt=""
           />
         </div>

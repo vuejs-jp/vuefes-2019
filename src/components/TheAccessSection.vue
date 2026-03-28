@@ -12,8 +12,8 @@ const imageSrcSet = `${accessImage}, ${accessImage2x} 2x`
 
     <div class="access-container">
       <div class="image-container">
-        <div v-lazy-container="{ selector: 'img' }" class="image">
-          <img :data-srcset="imageSrcSet" :data-src="image2x" alt="" />
+        <div class="image">
+          <img :srcset="imageSrcSet" :src="image2x" loading="lazy" alt="" />
         </div>
       </div>
 
