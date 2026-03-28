@@ -31,7 +31,11 @@ export function useSiteData() {
 
   const speakers = computed(() => siteData.value.speakers)
   const sessions = computed(() => siteData.value.sessions)
-  const timeTableSections = computed(() => siteData.value.timeTableSections)
+  const timeTableSections = computed(() =>
+    [...siteData.value.timeTableSections].sort((a, b) =>
+      a.fields.startAt.localeCompare(b.fields.startAt),
+    ),
+  )
   const eventContainers = computed(() => siteData.value.eventContainers)
   const eventContainerParts = computed(() => siteData.value.eventContainerParts)
   const sponsors = computed(() => siteData.value.sponsors)
