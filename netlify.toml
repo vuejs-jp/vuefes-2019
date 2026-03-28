@@ -1,5 +1,5 @@
 [build]
-command = "corepack enable && corepack pnpm run generate"
+command = "corepack enable && corepack pnpm install --frozen-lockfile && corepack pnpm run generate"
 publish = ".output/public"
 
 [build.environment]
