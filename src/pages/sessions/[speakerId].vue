@@ -1,67 +1,3 @@
-<template>
-  <BaseMain class="session-page">
-    <h2 class="heading">SESSION</h2>
-
-    <div class="session">
-      <!-- eslint-disable vue/singleline-html-element-content-newline -->
-      <div class="session-time">{{ session.fields.time }}min</div>
-      <!-- eslint-enable vue/singleline-html-element-content-newline -->
-
-      <h1 class="session-title">
-        {{ session.fields.title }}
-      </h1>
-
-      <!-- eslint-disable vue/no-v-html -->
-      <div class="session-description" v-html="sessionDescriptionHtml" />
-      <!-- eslint-enable vue/no-v-html -->
-    </div>
-
-    <div class="speaker">
-      <img
-        class="speaker-avatar"
-        :srcset="speakerAvatarSrcSet"
-        :src="assetUrl(speaker.fields.avatar2x)"
-        alt=""
-      />
-
-      <p class="speaker-title">
-        {{ speaker.fields.title }}
-      </p>
-
-      <h2 class="speaker-name">
-        {{ speaker.fields.name }}
-      </h2>
-
-      <!-- eslint-disable vue/no-v-html -->
-      <div class="speaker-description" v-html="speakerDescriptionHtml" />
-      <!-- eslint-enable vue/no-v-html -->
-
-      <div class="speaker-social">
-        <a
-          v-if="speaker.fields.twitter"
-          class="twitter"
-          :href="`https://twitter.com/${speaker.fields.twitter}`"
-          target="_blank"
-          rel="noopener"
-        >
-          <img src="~/assets/images/logo-twitter.svg" alt="Twitter" />
-        </a>
-
-        <a
-          class="github"
-          :href="`https://github.com/${speaker.fields.github}`"
-          target="_blank"
-          rel="noopener"
-        >
-          <img src="~/assets/images/icon-github.svg" alt="GitHub" />
-        </a>
-      </div>
-    </div>
-
-    <BaseButton to="/"> トップに戻る </BaseButton>
-  </BaseMain>
-</template>
-
 <script setup lang="ts">
 import { renderMarkdown } from '~/lib/markdown'
 import type { Asset, AssetLink } from '~/types/contentful'
@@ -159,6 +95,70 @@ useHead(() => {
   }
 })
 </script>
+
+<template>
+  <BaseMain class="session-page">
+    <h2 class="heading">SESSION</h2>
+
+    <div class="session">
+      <!-- eslint-disable vue/singleline-html-element-content-newline -->
+      <div class="session-time">{{ session.fields.time }}min</div>
+      <!-- eslint-enable vue/singleline-html-element-content-newline -->
+
+      <h1 class="session-title">
+        {{ session.fields.title }}
+      </h1>
+
+      <!-- eslint-disable vue/no-v-html -->
+      <div class="session-description" v-html="sessionDescriptionHtml" />
+      <!-- eslint-enable vue/no-v-html -->
+    </div>
+
+    <div class="speaker">
+      <img
+        class="speaker-avatar"
+        :srcset="speakerAvatarSrcSet"
+        :src="assetUrl(speaker.fields.avatar2x)"
+        alt=""
+      />
+
+      <p class="speaker-title">
+        {{ speaker.fields.title }}
+      </p>
+
+      <h2 class="speaker-name">
+        {{ speaker.fields.name }}
+      </h2>
+
+      <!-- eslint-disable vue/no-v-html -->
+      <div class="speaker-description" v-html="speakerDescriptionHtml" />
+      <!-- eslint-enable vue/no-v-html -->
+
+      <div class="speaker-social">
+        <a
+          v-if="speaker.fields.twitter"
+          class="twitter"
+          :href="`https://twitter.com/${speaker.fields.twitter}`"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="~/assets/images/logo-twitter.svg" alt="Twitter" />
+        </a>
+
+        <a
+          class="github"
+          :href="`https://github.com/${speaker.fields.github}`"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="~/assets/images/icon-github.svg" alt="GitHub" />
+        </a>
+      </div>
+    </div>
+
+    <BaseButton to="/"> トップに戻る </BaseButton>
+  </BaseMain>
+</template>
 
 <style lang="scss" scoped>
 .heading {
@@ -317,42 +317,6 @@ useHead(() => {
       &:hover {
         opacity: 0.4;
       }
-    }
-  }
-}
-</style>
-
-<style lang="scss">
-@use '~/assets/stylesheets/foundation/typography.scss' as *;
-
-.session-page {
-  .session-description {
-    font-size: $font-size-default;
-    line-height: 1.8;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: $font-size-default--is-small-up;
-    }
-
-    ul {
-      list-style-position: inside;
-
-      li {
-        list-style-type: disc;
-      }
-
-      ul {
-        padding-left: 2em;
-      }
-    }
-  }
-
-  .speaker-description,
-  .speaker-description p {
-    font-size: 3vw;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: 18px;
     }
   }
 }

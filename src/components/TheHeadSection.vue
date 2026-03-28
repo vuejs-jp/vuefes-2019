@@ -1,130 +1,3 @@
-<template>
-  <BaseSection class="the-head-section">
-    <div class="main-visual-wrapper">
-      <ClientOnly>
-        <svg
-          class="main-visual"
-          :viewBox="viewBox"
-          :width="width"
-          :height="height"
-        >
-          <g transform="translate(-6, -6)">
-            <transition-group
-              tag="g"
-              mode="out-in"
-              @enter="enter"
-              @leave="leave"
-            >
-              <g v-for="item in itemsFlatten" :key="item.key">
-                <component :is="item.component" :item="item" />
-              </g>
-            </transition-group>
-          </g>
-        </svg>
-      </ClientOnly>
-    </div>
-
-    <h1 class="title">Vue Fes Japan 2019</h1>
-
-    <div class="date-place">
-      <time datetime="2019-10-12">2019.10.12</time>
-      <span class="date-place__day">SAT</span>
-      <span class="date-place__place">TOC GOTANDA MESSE</span>
-    </div>
-
-    <div class="notification">
-      <h3>チケット返金について追加のお知らせ</h3>
-
-      <!-- prettier-ignore -->
-      <p>
-        2019/11/13 現在、販売元である Universe 側のトラブルにより、一部の方々に対して返金が完了していないことが判明いたしました。これまでの経緯は <a href="https://note.mu/ryamakuchi/n/ncdd3950d7580" target="_blank" rel="noopener noreferrer">note の記事</a> にまとめています。お待たせして申し訳ございませんが、現在対応中とのことです。返金されるまで今しばらくお待ちくださいますようお願い申し上げます。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        2019年11月16日 Vue.js 日本ユーザーグループ 代表 川口 和也
-      </p>
-    </div>
-
-    <div class="notification">
-      <h3>Vue Fes Japan 2019 チケット返金のお知らせ</h3>
-
-      <!-- prettier-ignore -->
-      <p>
-        2019年10月12日（土）TOC 五反田メッセにて開催を予定しておりました「Vue Fes Japan 2019」は、台風19号の接近に伴い開催中止を決定しました。皆様には多大なご迷惑をおかけしますことを、心より深くお詫び申し上げます。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        チケットをご購入いただいた皆様には、チケット代金を全額返金させていただきます。払い戻し処理は、10月12日（土）中に実施を予定しております。処理が完了後、決済プラットフォームの Universe からチケット購入時に入力したメールアドレスにキャンセルの旨を記したメールが送信されます。実際のご返金タイミングは利用されたクレジットカード会社様により異なります。返金確認は、クレジットカードの明細にてご確認いただけます。返金日については、カード会社様にお問い合わせいただくようお願いいたします。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        返金に際して、チケットご購入者側でのお手続きは不要です。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        なお、個人間でのチケット売買や譲渡に関しては、主催者側は責任を負いかねますのでご注意ください。また、Vue Fes Japan 2019 参加に伴って参加者ご自身が手配された交通機関・宿泊施設などの保証は致しかねますのであらかじめご了承ください。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        2019年10月11日 Vue.js 日本ユーザーグループ 代表 川口 和也
-      </p>
-    </div>
-
-    <div class="notification">
-      <h3>Vue Fes Japan 2019 開催中止のお知らせ</h3>
-
-      <!-- prettier-ignore -->
-      <p>
-        2019年10月12日（土）TOC 五反田メッセにて開催を予定しておりました「Vue Fes Japan 2019」は、台風19号の接近に伴い、参加者、スポンサー、スピーカー、スタッフ、すべての人の安全を最優先に考慮し、また JR 東日本の他、主要交通機関が計画運休を発表したことを受け、開催中止を決定しました。
-      </p>
-
-      <p>
-        開催を楽しみにお待ちいただいた皆様には多大なご迷惑をおかけしますことを、心より深くお詫び申し上げます。また中止の決定が開催前日となってしまったことにより、特に遠方からお越しいただく予定だった皆様には多大なご負担をおかけしましたことを重ねてお詫び申し上げます。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        ここで、今回の中止決定の経緯について改めてご説明させていただきます。主催者である我々 Vue.js 日本ユーザーグループは有志による非営利のコミュニティであり、今回のような大規模カンファレンスを開催するための費用は、スポンサー様による協賛金と、ご参加いただく皆様によるチケット売上のみに依存しております。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        そこで万が一の開催中止に備えて、Vue Fes Japan 2019 では <a href="https://note.mu/448jp/n/n36cbb8d2e91f" target="_blank" rel="noopener noreferrer">先日の発表</a> のとおり興行中止保険に加入しています。具体的には、開催当日に開催地より半径 100km 以内に開催に影響を与える自然現象（今回の場合は台風にあたります）がある場合、または開催地への交通機関が運休などで機能しなくなった場合、この 2つの条件のいずれかを満たした場合に一部費用を補償する契約内容です。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        同契約では、最終的に費用が補償されるかどうかの判断は開催当日になされることになります。つまり、計画運休の発表や台風の予想進路が確定的であっても、仮に当日に運休が取り消しになり交通機関が通常通り運行され、台風が開催に影響を与えないと判断された場合は、補償が行われない可能性があります。我々 Vue.js 日本ユーザーグループには、補償が行われなかった場合に多額の金銭的損失を補填できるだけの余力は残念ながらありません。このリスクを最小限に抑えるためには、開催中止のタイミングを当日早朝、または前日夜にすることが最善と考え先日の発表に至りました。
-      </p>
-
-      <p>
-        しかし連日連夜スタッフ内でも協議を重ねた結果、金銭面などのリスクよりも、最終的にはすべての人の安全が何よりも最優先に確保されるべきと考え、当初の予定よりも早く開催中止を決定することになりました。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        チケット代金の返金方法やスケジュールについては、決定次第、本 Web サイトおよび <a href="https://twitter.com/vuefes" target="_blank" rel="noopener noreferrer">公式 Twitter</a> でお知らせいたします。また、興行中止保険が適用となった場合、保険の規約上、Vue.js 日本ユーザーグループとして Vue Fes Japan 2019 の代替イベントを企画・開催することが禁止されております。こちらも併せてお知らせさせていただきます。
-      </p>
-
-      <p>
-        改めて、開催を楽しみにしてくださった皆様に多大なご迷惑、ご心配をおかけしましたことを心より深くお詫び申し上げます。何卒、ご理解いただけますようよろしくお願い申し上げます。
-      </p>
-
-      <!-- prettier-ignore -->
-      <p>
-        2019年10月11日 Vue.js 日本ユーザーグループ 代表 川口 和也
-      </p>
-    </div>
-
-    <LinkToTwitter />
-  </BaseSection>
-</template>
-
 <script setup lang="ts">
 import type { Component } from 'vue'
 import HeadCircle from '~/components/HeadCircle.vue'
@@ -346,6 +219,133 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', handleResize)
 })
 </script>
+
+<template>
+  <BaseSection class="the-head-section">
+    <div class="main-visual-wrapper">
+      <ClientOnly>
+        <svg
+          class="main-visual"
+          :viewBox="viewBox"
+          :width="width"
+          :height="height"
+        >
+          <g transform="translate(-6, -6)">
+            <transition-group
+              tag="g"
+              mode="out-in"
+              @enter="enter"
+              @leave="leave"
+            >
+              <g v-for="item in itemsFlatten" :key="item.key">
+                <component :is="item.component" :item="item" />
+              </g>
+            </transition-group>
+          </g>
+        </svg>
+      </ClientOnly>
+    </div>
+
+    <h1 class="title">Vue Fes Japan 2019</h1>
+
+    <div class="date-place">
+      <time datetime="2019-10-12">2019.10.12</time>
+      <span class="date-place__day">SAT</span>
+      <span class="date-place__place">TOC GOTANDA MESSE</span>
+    </div>
+
+    <div class="notification">
+      <h3>チケット返金について追加のお知らせ</h3>
+
+      <!-- prettier-ignore -->
+      <p>
+        2019/11/13 現在、販売元である Universe 側のトラブルにより、一部の方々に対して返金が完了していないことが判明いたしました。これまでの経緯は <a href="https://note.mu/ryamakuchi/n/ncdd3950d7580" target="_blank" rel="noopener noreferrer">note の記事</a> にまとめています。お待たせして申し訳ございませんが、現在対応中とのことです。返金されるまで今しばらくお待ちくださいますようお願い申し上げます。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        2019年11月16日 Vue.js 日本ユーザーグループ 代表 川口 和也
+      </p>
+    </div>
+
+    <div class="notification">
+      <h3>Vue Fes Japan 2019 チケット返金のお知らせ</h3>
+
+      <!-- prettier-ignore -->
+      <p>
+        2019年10月12日（土）TOC 五反田メッセにて開催を予定しておりました「Vue Fes Japan 2019」は、台風19号の接近に伴い開催中止を決定しました。皆様には多大なご迷惑をおかけしますことを、心より深くお詫び申し上げます。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        チケットをご購入いただいた皆様には、チケット代金を全額返金させていただきます。払い戻し処理は、10月12日（土）中に実施を予定しております。処理が完了後、決済プラットフォームの Universe からチケット購入時に入力したメールアドレスにキャンセルの旨を記したメールが送信されます。実際のご返金タイミングは利用されたクレジットカード会社様により異なります。返金確認は、クレジットカードの明細にてご確認いただけます。返金日については、カード会社様にお問い合わせいただくようお願いいたします。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        返金に際して、チケットご購入者側でのお手続きは不要です。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        なお、個人間でのチケット売買や譲渡に関しては、主催者側は責任を負いかねますのでご注意ください。また、Vue Fes Japan 2019 参加に伴って参加者ご自身が手配された交通機関・宿泊施設などの保証は致しかねますのであらかじめご了承ください。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        2019年10月11日 Vue.js 日本ユーザーグループ 代表 川口 和也
+      </p>
+    </div>
+
+    <div class="notification">
+      <h3>Vue Fes Japan 2019 開催中止のお知らせ</h3>
+
+      <!-- prettier-ignore -->
+      <p>
+        2019年10月12日（土）TOC 五反田メッセにて開催を予定しておりました「Vue Fes Japan 2019」は、台風19号の接近に伴い、参加者、スポンサー、スピーカー、スタッフ、すべての人の安全を最優先に考慮し、また JR 東日本の他、主要交通機関が計画運休を発表したことを受け、開催中止を決定しました。
+      </p>
+
+      <p>
+        開催を楽しみにお待ちいただいた皆様には多大なご迷惑をおかけしますことを、心より深くお詫び申し上げます。また中止の決定が開催前日となってしまったことにより、特に遠方からお越しいただく予定だった皆様には多大なご負担をおかけしましたことを重ねてお詫び申し上げます。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        ここで、今回の中止決定の経緯について改めてご説明させていただきます。主催者である我々 Vue.js 日本ユーザーグループは有志による非営利のコミュニティであり、今回のような大規模カンファレンスを開催するための費用は、スポンサー様による協賛金と、ご参加いただく皆様によるチケット売上のみに依存しております。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        そこで万が一の開催中止に備えて、Vue Fes Japan 2019 では <a href="https://note.mu/448jp/n/n36cbb8d2e91f" target="_blank" rel="noopener noreferrer">先日の発表</a> のとおり興行中止保険に加入しています。具体的には、開催当日に開催地より半径 100km 以内に開催に影響を与える自然現象（今回の場合は台風にあたります）がある場合、または開催地への交通機関が運休などで機能しなくなった場合、この 2つの条件のいずれかを満たした場合に一部費用を補償する契約内容です。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        同契約では、最終的に費用が補償されるかどうかの判断は開催当日になされることになります。つまり、計画運休の発表や台風の予想進路が確定的であっても、仮に当日に運休が取り消しになり交通機関が通常通り運行され、台風が開催に影響を与えないと判断された場合は、補償が行われない可能性があります。我々 Vue.js 日本ユーザーグループには、補償が行われなかった場合に多額の金銭的損失を補填できるだけの余力は残念ながらありません。このリスクを最小限に抑えるためには、開催中止のタイミングを当日早朝、または前日夜にすることが最善と考え先日の発表に至りました。
+      </p>
+
+      <p>
+        しかし連日連夜スタッフ内でも協議を重ねた結果、金銭面などのリスクよりも、最終的にはすべての人の安全が何よりも最優先に確保されるべきと考え、当初の予定よりも早く開催中止を決定することになりました。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        チケット代金の返金方法やスケジュールについては、決定次第、本 Web サイトおよび <a href="https://twitter.com/vuefes" target="_blank" rel="noopener noreferrer">公式 Twitter</a> でお知らせいたします。また、興行中止保険が適用となった場合、保険の規約上、Vue.js 日本ユーザーグループとして Vue Fes Japan 2019 の代替イベントを企画・開催することが禁止されております。こちらも併せてお知らせさせていただきます。
+      </p>
+
+      <p>
+        改めて、開催を楽しみにしてくださった皆様に多大なご迷惑、ご心配をおかけしましたことを心より深くお詫び申し上げます。何卒、ご理解いただけますようよろしくお願い申し上げます。
+      </p>
+
+      <!-- prettier-ignore -->
+      <p>
+        2019年10月11日 Vue.js 日本ユーザーグループ 代表 川口 和也
+      </p>
+    </div>
+
+    <LinkToTwitter />
+  </BaseSection>
+</template>
 
 <style lang="scss" scoped>
 $svg-gap: 12px;

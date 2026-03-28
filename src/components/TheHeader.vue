@@ -1,3 +1,64 @@
+<script setup lang="ts">
+const isScrolled = ref(false)
+const isOpen = ref(false)
+const rootElement = ref<HTMLElement>()
+let observer: IntersectionObserver | undefined
+
+function disableScrollHandler(e: TouchEvent) {
+  e.preventDefault()
+}
+
+onMounted(() => {
+  const sentinalElement = document.querySelector('.sentinal')
+
+  if (!sentinalElement) {
+    return
+  }
+
+  observer = new IntersectionObserver((entries) => {
+    const sentinal = entries[0]
+
+    if (!sentinal) {
+      return
+    }
+
+    isScrolled.value = !sentinal.isIntersecting
+  })
+  observer.observe(sentinalElement)
+
+  rootElement.value = document.documentElement
+})
+
+onBeforeUnmount(() => {
+  observer?.disconnect()
+  closeMenu()
+})
+
+function openMenu() {
+  isOpen.value = true
+
+  if (!rootElement.value) {
+    return
+  }
+
+  rootElement.value.style.overflow = 'hidden'
+  rootElement.value.addEventListener('touchmove', disableScrollHandler, {
+    passive: false,
+  })
+}
+
+function closeMenu() {
+  isOpen.value = false
+
+  if (!rootElement.value) {
+    return
+  }
+
+  rootElement.value.style.overflow = 'auto'
+  rootElement.value.removeEventListener('touchmove', disableScrollHandler)
+}
+</script>
+
 <template>
   <div class="the-header">
     <div class="sentinal" />
@@ -106,67 +167,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const isScrolled = ref(false)
-const isOpen = ref(false)
-const rootElement = ref<HTMLElement>()
-let observer: IntersectionObserver | undefined
-
-function disableScrollHandler(e: TouchEvent) {
-  e.preventDefault()
-}
-
-onMounted(() => {
-  const sentinalElement = document.querySelector('.sentinal')
-
-  if (!sentinalElement) {
-    return
-  }
-
-  observer = new IntersectionObserver((entries) => {
-    const sentinal = entries[0]
-
-    if (!sentinal) {
-      return
-    }
-
-    isScrolled.value = !sentinal.isIntersecting
-  })
-  observer.observe(sentinalElement)
-
-  rootElement.value = document.documentElement
-})
-
-onBeforeUnmount(() => {
-  observer?.disconnect()
-  closeMenu()
-})
-
-function openMenu() {
-  isOpen.value = true
-
-  if (!rootElement.value) {
-    return
-  }
-
-  rootElement.value.style.overflow = 'hidden'
-  rootElement.value.addEventListener('touchmove', disableScrollHandler, {
-    passive: false,
-  })
-}
-
-function closeMenu() {
-  isOpen.value = false
-
-  if (!rootElement.value) {
-    return
-  }
-
-  rootElement.value.style.overflow = 'auto'
-  rootElement.value.removeEventListener('touchmove', disableScrollHandler)
-}
-</script>
 
 <style lang="scss" scoped>
 .header-container {

@@ -1,53 +1,3 @@
-<template>
-  <BaseSection id="the-staff-list-section" class="the-staff-list-section">
-    <template v-slot:heading> TEAM </template>
-
-    <!-- prettier-ignore -->
-    <template v-slot:heading-copy>
-      Vue Fes Japan 2019 は、Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
-    </template>
-
-    <div class="staff-list-container">
-      <h3 class="sub-heading">CORE STAFF</h3>
-
-      <ul class="staff-list">
-        <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
-          <a :href="staff.link" target="_blank" rel="noopener">
-            <div v-lazy-container="{ selector: 'img' }">
-              <!-- prettier-ignore-attribute -->
-              <img
-                :data-srcset="staffAvatarSrcSet(staff.avatar)"
-                :data-src="staffAvatarSrc(staff.avatar)"
-                alt=""
-              />
-            </div>
-            @{{ staff.name }}
-          </a>
-        </li>
-      </ul>
-
-      <h3 class="sub-heading">VOLUNTEER</h3>
-
-      <ul class="volunteer-list">
-        <li
-          v-for="(volunteer, index) in sortedVolunteers"
-          :key="index"
-          class="volunteer"
-        >
-          <div v-lazy-container="{ selector: 'img' }">
-            <!-- prettier-ignore-attribute -->
-            <img
-              :data-srcset="volunteerAvatarSrcSet(volunteer.avatar)"
-              :data-src="volunteerAvatarSrc(volunteer.avatar)"
-              :alt="volunteer.name"
-            />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </BaseSection>
-</template>
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { createSrcSet, getAssetImage } from '~/lib/assets'
@@ -503,6 +453,58 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <BaseSection id="the-staff-list-section" class="the-staff-list-section">
+    <template v-slot:heading> TEAM </template>
+
+    <!-- prettier-ignore -->
+    <template v-slot:heading-copy>
+      Vue Fes Japan 2019 は、Vue.js 日本ユーザーグループのスタッフによって企画・運営されています。
+    </template>
+
+    <div class="staff-list-container">
+      <h3 class="sub-heading">CORE STAFF</h3>
+
+      <ul class="staff-list">
+        <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
+          <a :href="staff.link" target="_blank" rel="noopener">
+            <div>
+              <!-- prettier-ignore-attribute -->
+              <img
+                :srcset="staffAvatarSrcSet(staff.avatar)"
+                :src="staffAvatarSrc(staff.avatar)"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            @{{ staff.name }}
+          </a>
+        </li>
+      </ul>
+
+      <h3 class="sub-heading">VOLUNTEER</h3>
+
+      <ul class="volunteer-list">
+        <li
+          v-for="(volunteer, index) in sortedVolunteers"
+          :key="index"
+          class="volunteer"
+        >
+          <div>
+            <!-- prettier-ignore-attribute -->
+            <img
+              :srcset="volunteerAvatarSrcSet(volunteer.avatar)"
+              :src="volunteerAvatarSrc(volunteer.avatar)"
+              loading="lazy"
+              :alt="volunteer.name"
+            />
+          </div>
+        </li>
+      </ul>
+    </div>
+  </BaseSection>
+</template>
 
 <style lang="scss" scoped>
 .staff-list-container {

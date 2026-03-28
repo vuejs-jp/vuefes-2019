@@ -1,163 +1,3 @@
-<template>
-  <BaseSection id="the-event-section" class="the-event-section">
-    <template v-slot:heading> EVENTS </template>
-
-    <div class="notification-container">
-      <div class="notification">
-        <!-- prettier-ignore -->
-        <p>
-          今年の Vue Fes Japan には、より Vue.js を楽しんでいただくための企画を多数ご用意しています。セッションの合間にぜひお立ち寄りください。
-        </p>
-      </div>
-
-      <div class="note">※画像はすべてイメージです。</div>
-    </div>
-
-    <div class="mobile-app">
-      <div v-lazy-container="{ selector: 'img' }" class="mobile-app-image">
-        <img
-          :data-srcset="`${mobileApp}, ${mobileApp2x} 2x`"
-          :data-src="mobileApp2x"
-          alt=""
-        />
-      </div>
-
-      <div class="mobile-app-content">
-        <h3 class="mobile-app-title">公式モバイルアプリ</h3>
-
-        <p class="mobile-app-description">
-          タイムテーブルやセッション情報をすばやく確認できるモバイルアプリをぜひお使いください。気になるセッションをまとめて、自分専用のタイムテーブルを作る機能もあります。
-        </p>
-      </div>
-
-      <div class="mobile-app-badge">
-        <a
-          class="app-store app-store-badge"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://apps.apple.com/jp/app/vue-fes-japan-2019%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1479972980?mt=8"
-          aria-label="App Store で入手"
-        >
-          <span class="app-store-badge__caption">Download on the</span>
-          <span class="app-store-badge__label">App Store</span>
-        </a>
-
-        <a
-          class="google-play"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://play.google.com/store/apps/details?id=jp.vue.fes2019&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-        >
-          <img
-            alt="Google Play で手に入れよう"
-            src="https://play.google.com/intl/ja/badges/images/generic/ja_badge_web_generic.png"
-          />
-        </a>
-      </div>
-    </div>
-
-    <ul class="event-list">
-      <li v-for="(event, index) in events" :key="index" class="event">
-        <div v-lazy-container="{ selector: 'img' }" class="event-image">
-          <img :data-src="event.image" alt="" />
-
-          <div
-            v-if="event.title === 'スポンサーブースシールラリー'"
-            class="case-image-container"
-          >
-            <img
-              :data-srcset="`${caseImage}, ${caseImage2x} 2x`"
-              :data-src="caseImage2x"
-              alt=""
-            />
-          </div>
-        </div>
-
-        <h3 class="event-title">
-          {{ event.title }}
-        </h3>
-
-        <!-- eslint-disable vue/no-v-html -->
-        <!-- eslint-disable vue/html-self-closing -->
-        <p class="event-description" v-html="event.description"></p>
-        <!-- eslint-enable vue/html-self-closing -->
-        <!-- eslint-enable vue/no-v-html -->
-      </li>
-    </ul>
-
-    <div class="event-other-images">
-      <div
-        v-lazy-container="{ selector: 'img' }"
-        class="information-table-image"
-      >
-        <img
-          :data-srcset="`${informationTable}, ${informationTable2x} 2x`"
-          :data-src="informationTable2x"
-          alt=""
-        />
-      </div>
-
-      <div v-lazy-container="{ selector: 'img' }" class="party-image">
-        <img
-          class="party"
-          :data-srcset="`${party}, ${party2x} 2x`"
-          :data-src="party2x"
-          alt=""
-        />
-      </div>
-    </div>
-
-    <div class="store">
-      <h3 class="store-title">Vue Fes Store</h3>
-
-      <!-- prettier-ignore -->
-      <p class="store-description">
-        会場限定の Vue Fes Japan グッズをお買い求めいただける Vue Fes Store が登場します。<br />
-        当日しか手に入らないレアアイテムをお見逃しなく！
-      </p>
-    </div>
-
-    <ul class="product-list">
-      <li v-for="(product, index) in products" :key="index" class="product">
-        <div v-lazy-container="{ selector: 'img' }" class="product-image">
-          <img
-            :data-srcset="`${product.image}, ${product.image2x} 2x`"
-            :data-src="product.image2x"
-            alt=""
-          />
-        </div>
-
-        <div class="product-content">
-          <h4 class="product-name">
-            {{ product.name }}
-          </h4>
-
-          <!-- prettier-ignore -->
-          <p class="product-price">
-            <span class="price-unit">¥</span>{{ product.price.toLocaleString() }}
-          </p>
-
-          <!-- eslint-disable vue/no-v-html -->
-          <!-- eslint-disable vue/html-self-closing -->
-          <p class="product-description" v-html="product.description"></p>
-          <!-- eslint-enable vue/html-self-closing -->
-          <!-- eslint-enable vue/no-v-html -->
-        </div>
-      </li>
-    </ul>
-
-    <div class="donation">
-      <p>グッズ販売における利益は以下に分割して全額寄付される予定です。</p>
-
-      <ul>
-        <li>Vue.js コアチームによる開発の支援</li>
-
-        <li>Vue.js 日本ユーザーグループによるコミュニティ活動の支援</li>
-      </ul>
-    </div>
-  </BaseSection>
-</template>
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { getAssetImage } from '~/lib/assets'
@@ -306,6 +146,168 @@ export default defineComponent({
   },
 })
 </script>
+
+<template>
+  <BaseSection id="the-event-section" class="the-event-section">
+    <template v-slot:heading> EVENTS </template>
+
+    <div class="notification-container">
+      <div class="notification">
+        <!-- prettier-ignore -->
+        <p>
+          今年の Vue Fes Japan には、より Vue.js を楽しんでいただくための企画を多数ご用意しています。セッションの合間にぜひお立ち寄りください。
+        </p>
+      </div>
+
+      <div class="note">※画像はすべてイメージです。</div>
+    </div>
+
+    <div class="mobile-app">
+      <div class="mobile-app-image">
+        <img
+          :srcset="`${mobileApp}, ${mobileApp2x} 2x`"
+          :src="mobileApp2x"
+          loading="lazy"
+          alt=""
+        />
+      </div>
+
+      <div class="mobile-app-content">
+        <h3 class="mobile-app-title">公式モバイルアプリ</h3>
+
+        <p class="mobile-app-description">
+          タイムテーブルやセッション情報をすばやく確認できるモバイルアプリをぜひお使いください。気になるセッションをまとめて、自分専用のタイムテーブルを作る機能もあります。
+        </p>
+      </div>
+
+      <div class="mobile-app-badge">
+        <a
+          class="app-store app-store-badge"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://apps.apple.com/jp/app/vue-fes-japan-2019%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1479972980?mt=8"
+          aria-label="App Store で入手"
+        >
+          <span class="app-store-badge__caption">Download on the</span>
+          <span class="app-store-badge__label">App Store</span>
+        </a>
+
+        <a
+          class="google-play"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://play.google.com/store/apps/details?id=jp.vue.fes2019&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+        >
+          <img
+            alt="Google Play で手に入れよう"
+            src="https://play.google.com/intl/ja/badges/images/generic/ja_badge_web_generic.png"
+          />
+        </a>
+      </div>
+    </div>
+
+    <ul class="event-list">
+      <li v-for="(event, index) in events" :key="index" class="event">
+        <div class="event-image">
+          <img :src="event.image" loading="lazy" alt="" />
+
+          <div
+            v-if="event.title === 'スポンサーブースシールラリー'"
+            class="case-image-container"
+          >
+            <img
+              :srcset="`${caseImage}, ${caseImage2x} 2x`"
+              :src="caseImage2x"
+              loading="lazy"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <h3 class="event-title">
+          {{ event.title }}
+        </h3>
+
+        <!-- eslint-disable vue/no-v-html -->
+        <!-- eslint-disable vue/html-self-closing -->
+        <p class="event-description" v-html="event.description"></p>
+        <!-- eslint-enable vue/html-self-closing -->
+        <!-- eslint-enable vue/no-v-html -->
+      </li>
+    </ul>
+
+    <div class="event-other-images">
+      <div class="information-table-image">
+        <img
+          :srcset="`${informationTable}, ${informationTable2x} 2x`"
+          :src="informationTable2x"
+          loading="lazy"
+          alt=""
+        />
+      </div>
+
+      <div class="party-image">
+        <img
+          class="party"
+          :srcset="`${party}, ${party2x} 2x`"
+          :src="party2x"
+          loading="lazy"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="store">
+      <h3 class="store-title">Vue Fes Store</h3>
+
+      <!-- prettier-ignore -->
+      <p class="store-description">
+        会場限定の Vue Fes Japan グッズをお買い求めいただける Vue Fes Store が登場します。<br />
+        当日しか手に入らないレアアイテムをお見逃しなく！
+      </p>
+    </div>
+
+    <ul class="product-list">
+      <li v-for="(product, index) in products" :key="index" class="product">
+        <div class="product-image">
+          <img
+            :srcset="`${product.image}, ${product.image2x} 2x`"
+            :src="product.image2x"
+            loading="lazy"
+            alt=""
+          />
+        </div>
+
+        <div class="product-content">
+          <h4 class="product-name">
+            {{ product.name }}
+          </h4>
+
+          <!-- prettier-ignore -->
+          <p class="product-price">
+            <span class="price-unit">¥</span>{{ product.price.toLocaleString() }}
+          </p>
+
+          <!-- eslint-disable vue/no-v-html -->
+          <!-- eslint-disable vue/html-self-closing -->
+          <p class="product-description" v-html="product.description"></p>
+          <!-- eslint-enable vue/html-self-closing -->
+          <!-- eslint-enable vue/no-v-html -->
+        </div>
+      </li>
+    </ul>
+
+    <div class="donation">
+      <p>グッズ販売における利益は以下に分割して全額寄付される予定です。</p>
+
+      <ul>
+        <li>Vue.js コアチームによる開発の支援</li>
+
+        <li>Vue.js 日本ユーザーグループによるコミュニティ活動の支援</li>
+      </ul>
+    </div>
+  </BaseSection>
+</template>
 
 <style lang="scss" scoped>
 .notification-container {

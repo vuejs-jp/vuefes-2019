@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import imageOne from '~/assets/images/ticket/image1.jpg?url'
+import imageOne2x from '~/assets/images/ticket/image1@2x.jpg?url'
+import imageTwo from '~/assets/images/ticket/image2.jpg?url'
+import imageTwo2x from '~/assets/images/ticket/image2@2x.jpg?url'
+
+const imageOneSrcSet = `${imageOne}, ${imageOne2x} 2x`
+const imageTwoSrcSet = `${imageTwo}, ${imageTwo2x} 2x`
+</script>
+
 <template>
   <BaseSection id="the-ticket-section" class="the-ticket-section">
     <template v-slot:heading> TICKET </template>
@@ -30,8 +40,13 @@
           <p><span>7,000</span> 円</p>
         </div>
 
-        <div v-lazy-container="{ selector: 'img' }" class="image">
-          <img :data-srcset="imageOneSrcSet" :data-src="imageOne2x" alt="" />
+        <div class="image">
+          <img
+            :srcset="imageOneSrcSet"
+            :src="imageOne2x"
+            loading="lazy"
+            alt=""
+          />
         </div>
       </div>
 
@@ -41,8 +56,13 @@
           <p><span>10,000</span> 円</p>
         </div>
 
-        <div v-lazy-container="{ selector: 'img' }" class="image">
-          <img :data-srcset="imageTwoSrcSet" :data-src="imageTwo2x" alt="" />
+        <div class="image">
+          <img
+            :srcset="imageTwoSrcSet"
+            :src="imageTwo2x"
+            loading="lazy"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -126,16 +146,6 @@
     </div>
   </BaseSection>
 </template>
-
-<script setup lang="ts">
-import imageOne from '~/assets/images/ticket/image1.jpg?url'
-import imageOne2x from '~/assets/images/ticket/image1@2x.jpg?url'
-import imageTwo from '~/assets/images/ticket/image2.jpg?url'
-import imageTwo2x from '~/assets/images/ticket/image2@2x.jpg?url'
-
-const imageOneSrcSet = `${imageOne}, ${imageOne2x} 2x`
-const imageTwoSrcSet = `${imageTwo}, ${imageTwo2x} 2x`
-</script>
 
 <style lang="scss" scoped>
 // prettier-ignore

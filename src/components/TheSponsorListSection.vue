@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
+</script>
+
 <template>
   <BaseSection id="the-sponsor-list-section" class="the-sponsor-list-section">
     <template v-slot:heading> SPONSORS </template>
@@ -18,10 +22,11 @@
             class="sponsor"
           >
             <nuxt-link :to="`/sponsors/#sponsor_${sponsor.sys.id}`">
-              <div v-lazy-container="{ selector: 'img' }">
+              <div>
                 <img
                   class="sponsor-image"
-                  :data-src="sponsor.fields.banner.fields.file.url"
+                  :src="sponsor.fields.banner.fields.file.url"
+                  loading="lazy"
                   :alt="sponsor.fields.name"
                 />
               </div>
@@ -32,10 +37,6 @@
     </ul>
   </BaseSection>
 </template>
-
-<script setup lang="ts">
-const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
-</script>
 
 <style lang="scss" scoped>
 ul {

@@ -1,9 +1,3 @@
-<template>
-  <g :transform="transform">
-    <rect ref="shape" x="0" y="0" width="0" height="0" />
-  </g>
-</template>
-
 <script setup lang="ts">
 import { gsap, Power2 } from 'gsap'
 import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
@@ -54,6 +48,12 @@ onBeforeUnmount(() => {
   })
 })
 </script>
+
+<template>
+  <g :transform="transform">
+    <rect ref="shape" x="0" y="0" width="0" height="0" />
+  </g>
+</template>
 
 <style lang="scss" scoped>
 rect {

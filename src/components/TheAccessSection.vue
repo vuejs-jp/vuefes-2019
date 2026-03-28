@@ -1,11 +1,19 @@
+<script setup lang="ts">
+import accessImage from '~/assets/images/access.jpg?url'
+import accessImage2x from '~/assets/images/access@2x.jpg?url'
+
+const image2x = accessImage2x
+const imageSrcSet = `${accessImage}, ${accessImage2x} 2x`
+</script>
+
 <template>
   <BaseSection id="the-access-section" class="the-access-section">
     <template v-slot:heading> ACCESS </template>
 
     <div class="access-container">
       <div class="image-container">
-        <div v-lazy-container="{ selector: 'img' }" class="image">
-          <img :data-srcset="imageSrcSet" :data-src="image2x" alt="" />
+        <div class="image">
+          <img :srcset="imageSrcSet" :src="image2x" loading="lazy" alt="" />
         </div>
       </div>
 
@@ -53,14 +61,6 @@
     </BaseButton>
   </BaseSection>
 </template>
-
-<script setup lang="ts">
-import accessImage from '~/assets/images/access.jpg?url'
-import accessImage2x from '~/assets/images/access@2x.jpg?url'
-
-const image2x = accessImage2x
-const imageSrcSet = `${accessImage}, ${accessImage2x} 2x`
-</script>
 
 <style lang="scss" scoped>
 .access-container {

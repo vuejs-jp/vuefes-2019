@@ -1,10 +1,18 @@
+<script setup lang="ts">
+import keynoteAvatar from '~/assets/images/speakers/yyx990803.jpg?url'
+import keynoteAvatar2x from '~/assets/images/speakers/yyx990803@2x.jpg?url'
+
+const keynoteAvatarSrcSet = `${keynoteAvatar}, ${keynoteAvatar2x} 2x`
+</script>
+
 <template>
-  <div v-lazy-container="{ selector: 'img' }" class="keynote">
+  <div class="keynote">
     <nuxt-link class="link-to-session" to="/sessions/yyx990803/">
       <img
         class="avatar"
-        :data-srcset="keynoteAvatarSrcSet"
-        :data-src="keynoteAvatar2x"
+        :srcset="keynoteAvatarSrcSet"
+        :src="keynoteAvatar2x"
+        loading="lazy"
         alt=""
       />
     </nuxt-link>
@@ -18,13 +26,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import keynoteAvatar from '~/assets/images/speakers/yyx990803.jpg?url'
-import keynoteAvatar2x from '~/assets/images/speakers/yyx990803@2x.jpg?url'
-
-const keynoteAvatarSrcSet = `${keynoteAvatar}, ${keynoteAvatar2x} 2x`
-</script>
 
 <style lang="scss" scoped>
 .keynote {

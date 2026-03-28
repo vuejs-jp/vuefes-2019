@@ -1,19 +1,3 @@
-<template>
-  <div class="session">
-    <nuxt-link class="link-to-session" :to="`/sessions/${sessionIdAlias}/`">
-      {{ session.fields.title }}
-    </nuxt-link>
-
-    <div
-      v-for="speaker in session.fields.speakers"
-      :key="speaker.sys.id"
-      class="speaker-name"
-    >
-      {{ speakerById(speaker.sys.id).fields.name }}
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import type SessionType from '~/types/session'
 
@@ -38,6 +22,22 @@ function speakerById(id: string) {
   return speaker
 }
 </script>
+
+<template>
+  <div class="session">
+    <nuxt-link class="link-to-session" :to="`/sessions/${sessionIdAlias}/`">
+      {{ session.fields.title }}
+    </nuxt-link>
+
+    <div
+      v-for="speaker in session.fields.speakers"
+      :key="speaker.sys.id"
+      class="speaker-name"
+    >
+      {{ speakerById(speaker.sys.id).fields.name }}
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .session {

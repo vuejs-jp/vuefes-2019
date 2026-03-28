@@ -1,3 +1,22 @@
+<script setup lang="ts">
+defineOptions({
+  inheritAttrs: false,
+})
+
+defineProps<{
+  to?: string
+}>()
+
+const attrs = useAttrs()
+const emit = defineEmits<{
+  click: [event: MouseEvent]
+}>()
+
+const tagName = computed(() =>
+  typeof attrs.href === 'string' ? 'a' : 'button',
+)
+</script>
+
 <template>
   <NuxtLink
     v-if="to"
@@ -19,25 +38,6 @@
     <slot />
   </component>
 </template>
-
-<script setup lang="ts">
-defineOptions({
-  inheritAttrs: false,
-})
-
-defineProps<{
-  to?: string
-}>()
-
-const attrs = useAttrs()
-const emit = defineEmits<{
-  click: [event: MouseEvent]
-}>()
-
-const tagName = computed(() =>
-  typeof attrs.href === 'string' ? 'a' : 'button',
-)
-</script>
 
 <style lang="scss" scoped>
 .base-button {

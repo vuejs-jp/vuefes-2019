@@ -1,22 +1,37 @@
+<script setup lang="ts">
+import type { Asset, AssetLink } from '~/types/contentful'
+import type Speaker from '~/types/speaker'
+
+const { speakers } = useSiteData()
+
+function assetUrl(asset: Asset | AssetLink): string {
+  if (!('fields' in asset)) {
+    throw new Error('Speaker asset was not resolved')
+  }
+
+  return asset.fields.file.url
+}
+
+function speakerAvatarSrcSet(speaker: Speaker): string {
+  return `${assetUrl(speaker.fields.avatar)}, ${assetUrl(speaker.fields.avatar2x)} 2x`
+}
+</script>
+
 <template>
   <BaseSection id="the-speaker-list-section" class="the-speaker-list-section">
     <template v-slot:heading> SPEAKERS </template>
 
     <div class="speaker-container">
-      <div
-        v-for="speaker in speakers"
-        :key="speaker.sys.id"
-        v-lazy-container="{ selector: 'img.avatar' }"
-        class="speaker"
-      >
+      <div v-for="speaker in speakers" :key="speaker.sys.id" class="speaker">
         <nuxt-link
           class="avatar-link"
           :to="`/sessions/${speaker.fields.github}/`"
         >
           <img
             class="avatar"
-            :data-srcset="speakerAvatarSrcSet(speaker)"
-            :data-src="assetUrl(speaker.fields.avatar2x)"
+            :srcset="speakerAvatarSrcSet(speaker)"
+            :src="assetUrl(speaker.fields.avatar2x)"
+            loading="lazy"
             alt=""
           />
         </nuxt-link>
@@ -37,25 +52,6 @@
     </div>
   </BaseSection>
 </template>
-
-<script setup lang="ts">
-import type { Asset, AssetLink } from '~/types/contentful'
-import type Speaker from '~/types/speaker'
-
-const { speakers } = useSiteData()
-
-function assetUrl(asset: Asset | AssetLink): string {
-  if (!('fields' in asset)) {
-    throw new Error('Speaker asset was not resolved')
-  }
-
-  return asset.fields.file.url
-}
-
-function speakerAvatarSrcSet(speaker: Speaker): string {
-  return `${assetUrl(speaker.fields.avatar)}, ${assetUrl(speaker.fields.avatar2x)} 2x`
-}
-</script>
 
 <style lang="scss" scoped>
 .speaker-container {

@@ -1,3 +1,13 @@
+<script setup lang="ts">
+const route = useRoute()
+
+usePageMetadata({
+  path: route.path,
+  title: 'プライバシーポリシー | Vue Fes Japan 2019',
+  description: 'Vue Fes Japan 2019 のプライバシーポリシー情報です。',
+})
+</script>
+
 <template>
   <BaseMain class="privacy-page">
     <template v-slot:heading> プライバシーポリシー </template>
@@ -254,16 +264,6 @@
     <BaseButton to="/"> トップに戻る </BaseButton>
   </BaseMain>
 </template>
-
-<script setup lang="ts">
-const route = useRoute()
-
-usePageMetadata({
-  path: route.path,
-  title: 'プライバシーポリシー | Vue Fes Japan 2019',
-  description: 'Vue Fes Japan 2019 のプライバシーポリシー情報です。',
-})
-</script>
 
 <style lang="scss" scoped>
 li {
