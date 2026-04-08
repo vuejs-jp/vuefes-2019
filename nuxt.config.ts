@@ -40,9 +40,14 @@ export default defineNuxtConfig({
         { name: 'twitter:image', content: defaultOgImageUrl },
         { name: 'application-name', content: applicationName },
         { name: 'apple-mobile-web-app-title', content: applicationName },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { name: 'author', content: 'INOUE Takuya' },
+        { name: 'theme-color', content: '#fff' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/2019/favicon.ico' },
+        { rel: 'manifest', href: '/2019/manifest.webmanifest' },
+        { rel: 'shortcut icon', href: '/2019/favicon.ico' },
         {
           rel: 'apple-touch-icon',
           href: '/2019/apple-touch-icon.png',

@@ -4,6 +4,7 @@ await useSiteDataFetch()
 
 <template>
   <div>
+    <NuxtLoadingIndicator color="#fff" error-color="red" :height="2" />
     <TheHeader />
     <NuxtPage />
     <TheFooter />

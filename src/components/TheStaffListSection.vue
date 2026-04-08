@@ -469,12 +469,11 @@ export default defineComponent({
       <ul class="staff-list">
         <li v-for="staff in leaderAndStaffs" :key="staff.name" class="staff">
           <a :href="staff.link" target="_blank" rel="noopener">
-            <div>
+            <div v-lazy-container="{ selector: 'img' }">
               <!-- prettier-ignore-attribute -->
               <img
-                :srcset="staffAvatarSrcSet(staff.avatar)"
-                :src="staffAvatarSrc(staff.avatar)"
-                loading="lazy"
+                :data-srcset="staffAvatarSrcSet(staff.avatar)"
+                :data-src="staffAvatarSrc(staff.avatar)"
                 alt=""
               />
             </div>
@@ -491,12 +490,11 @@ export default defineComponent({
           :key="index"
           class="volunteer"
         >
-          <div>
+          <div v-lazy-container="{ selector: 'img' }">
             <!-- prettier-ignore-attribute -->
             <img
-              :srcset="volunteerAvatarSrcSet(volunteer.avatar)"
-              :src="volunteerAvatarSrc(volunteer.avatar)"
-              loading="lazy"
+              :data-srcset="volunteerAvatarSrcSet(volunteer.avatar)"
+              :data-src="volunteerAvatarSrc(volunteer.avatar)"
               :alt="volunteer.name"
             />
           </div>

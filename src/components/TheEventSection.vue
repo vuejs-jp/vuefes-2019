@@ -163,11 +163,10 @@ export default defineComponent({
     </div>
 
     <div class="mobile-app">
-      <div class="mobile-app-image">
+      <div v-lazy-container="{ selector: 'img' }" class="mobile-app-image">
         <img
-          :srcset="`${mobileApp}, ${mobileApp2x} 2x`"
-          :src="mobileApp2x"
-          loading="lazy"
+          :data-srcset="`${mobileApp}, ${mobileApp2x} 2x`"
+          :data-src="mobileApp2x"
           alt=""
         />
       </div>
@@ -176,49 +175,25 @@ export default defineComponent({
         <h3 class="mobile-app-title">公式モバイルアプリ</h3>
 
         <p class="mobile-app-description">
-          タイムテーブルやセッション情報をすばやく確認できるモバイルアプリをぜひお使いください。気になるセッションをまとめて、自分専用のタイムテーブルを作る機能もあります。
+          2019
+          年当時は、タイムテーブルやセッション情報をすばやく確認できる公式モバイルアプリを提供していました。現在は配信を終了しており、App
+          Store / Google Play での取り扱いはありません。
         </p>
-      </div>
-
-      <div class="mobile-app-badge">
-        <a
-          class="app-store app-store-badge"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://apps.apple.com/jp/app/vue-fes-japan-2019%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1479972980?mt=8"
-          aria-label="App Store で入手"
-        >
-          <span class="app-store-badge__caption">Download on the</span>
-          <span class="app-store-badge__label">App Store</span>
-        </a>
-
-        <a
-          class="google-play"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://play.google.com/store/apps/details?id=jp.vue.fes2019&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-        >
-          <img
-            alt="Google Play で手に入れよう"
-            src="https://play.google.com/intl/ja/badges/images/generic/ja_badge_web_generic.png"
-          />
-        </a>
       </div>
     </div>
 
     <ul class="event-list">
       <li v-for="(event, index) in events" :key="index" class="event">
-        <div class="event-image">
-          <img :src="event.image" loading="lazy" alt="" />
+        <div v-lazy-container="{ selector: 'img' }" class="event-image">
+          <img :data-src="event.image" alt="" />
 
           <div
             v-if="event.title === 'スポンサーブースシールラリー'"
             class="case-image-container"
           >
             <img
-              :srcset="`${caseImage}, ${caseImage2x} 2x`"
-              :src="caseImage2x"
-              loading="lazy"
+              :data-srcset="`${caseImage}, ${caseImage2x} 2x`"
+              :data-src="caseImage2x"
               alt=""
             />
           </div>
@@ -237,21 +212,22 @@ export default defineComponent({
     </ul>
 
     <div class="event-other-images">
-      <div class="information-table-image">
+      <div
+        v-lazy-container="{ selector: 'img' }"
+        class="information-table-image"
+      >
         <img
-          :srcset="`${informationTable}, ${informationTable2x} 2x`"
-          :src="informationTable2x"
-          loading="lazy"
+          :data-srcset="`${informationTable}, ${informationTable2x} 2x`"
+          :data-src="informationTable2x"
           alt=""
         />
       </div>
 
-      <div class="party-image">
+      <div v-lazy-container="{ selector: 'img' }" class="party-image">
         <img
           class="party"
-          :srcset="`${party}, ${party2x} 2x`"
-          :src="party2x"
-          loading="lazy"
+          :data-srcset="`${party}, ${party2x} 2x`"
+          :data-src="party2x"
           alt=""
         />
       </div>
@@ -269,11 +245,10 @@ export default defineComponent({
 
     <ul class="product-list">
       <li v-for="(product, index) in products" :key="index" class="product">
-        <div class="product-image">
+        <div v-lazy-container="{ selector: 'img' }" class="product-image">
           <img
-            :srcset="`${product.image}, ${product.image2x} 2x`"
-            :src="product.image2x"
-            loading="lazy"
+            :data-srcset="`${product.image}, ${product.image2x} 2x`"
+            :data-src="product.image2x"
             alt=""
           />
         </div>
@@ -352,9 +327,6 @@ export default defineComponent({
   }
 }
 
-// small-up 以上 1300px 未満ではバッジが被ってしまうためブレークポイントを 1300px 以上にしている
-$layout-breakpoint--is-1300px: 1300px;
-
 .mobile-app {
   margin-top: 5vw;
 
@@ -383,11 +355,6 @@ $layout-breakpoint--is-1300px: 1300px;
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       margin-top: 40px;
     }
-
-    @media screen and (min-width: $layout-breakpoint--is-1300px) {
-      display: inline-block;
-      width: 50%;
-    }
   }
 
   &-title {
@@ -396,88 +363,6 @@ $layout-breakpoint--is-1300px: 1300px;
     @media screen and (min-width: $layout-breakpoint--is-small-up) {
       font-size: 30px;
     }
-  }
-
-  &-badge {
-    margin-top: 5vw;
-    display: flex;
-    align-items: center;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      margin-top: 35px;
-    }
-
-    @media screen and (min-width: $layout-breakpoint--is-1300px) {
-      justify-content: flex-end;
-      width: 50%;
-      transform: translateX(18px);
-    }
-
-    a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    img {
-      display: block;
-      height: 12vw;
-
-      @media screen and (min-width: $layout-breakpoint--is-small-up) {
-        height: 75px;
-      }
-    }
-  }
-}
-
-.app-store-badge {
-  flex-direction: column;
-  gap: 0.2vw;
-  min-width: 21vw;
-  height: 12vw;
-  padding: 0 1.7vw;
-  border-radius: 1.1vw;
-  background-color: #000;
-  color: $white;
-  text-decoration: none;
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    gap: 2px;
-    min-width: 130px;
-    height: 75px;
-    padding: 0 12px;
-    border-radius: 8px;
-  }
-
-  &__caption {
-    font-size: 1.35vw;
-    line-height: 1;
-    letter-spacing: 0.02em;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: 9px;
-    }
-  }
-
-  &__label {
-    font-size: 3.4vw;
-    font-weight: bold;
-    line-height: 1;
-    letter-spacing: -0.03em;
-
-    @media screen and (min-width: $layout-breakpoint--is-small-up) {
-      font-size: 23px;
-    }
-  }
-}
-
-.google-play img {
-  // Google Play の画像は画像自体に余白がついているため CSS で微調整している
-  height: 17.9vw;
-  margin: -3vw 0 -3vw 0.6vw;
-
-  @media screen and (min-width: $layout-breakpoint--is-small-up) {
-    height: 111px;
   }
 }
 

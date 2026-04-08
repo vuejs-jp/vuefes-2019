@@ -195,17 +195,24 @@ img {
 }
 
 @for $i from 1 through 7 {
-  .fadeInDown-enter-active {
-    transition: 0.5s $easeInOutCubic;
+  .fadeInDown-enter-active,
+  .fadeInDown-leave-active {
+    transition: opacity 0.5s $easeInOutCubic;
 
     .link-#{$i} {
       transition: 0.3s $easeInOutCubic;
       transition-property: opacity, transform;
+    }
+  }
+
+  .fadeInDown-enter-active {
+    .link-#{$i} {
       transition-delay: #{50ms * $i};
     }
   }
 
-  .fadeInDown-enter {
+  .fadeInDown-enter-from,
+  .fadeInDown-leave-to {
     opacity: 0;
 
     .link-#{$i} {

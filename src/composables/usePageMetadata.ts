@@ -24,7 +24,7 @@ export function usePageMetadata({
   title,
   description,
   image,
-  twitterCard = 'summary',
+  twitterCard,
 }: PageMetadataOptions) {
   const url = toAbsoluteUrl(path)
 
@@ -37,7 +37,7 @@ export function usePageMetadata({
       { name: 'og:description', content: description },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: description },
-      { name: 'twitter:card', content: twitterCard },
+      ...(twitterCard ? [{ name: 'twitter:card', content: twitterCard }] : []),
       ...(image
         ? [
             { name: 'og:image', content: image },

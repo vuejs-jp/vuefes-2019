@@ -3,6 +3,8 @@ type LazyContainerBinding = {
 }
 
 const observerMap = new WeakMap<HTMLElement, IntersectionObserver>()
+const OBSERVER_ROOT_MARGIN = '2160px'
+const OBSERVER_MARGIN_PX = 2160
 
 function loadImage(element: HTMLImageElement) {
   const src = element.dataset.src
@@ -15,8 +17,36 @@ function loadImage(element: HTMLImageElement) {
   if (srcset) {
     element.srcset = srcset
   }
+}
 
-  element.loading = 'lazy'
+function hasRenderableBox(element: HTMLElement): boolean {
+  const rect = element.getBoundingClientRect()
+  return rect.width > 0 && rect.height > 0
+}
+
+function observationTarget(element: HTMLElement): HTMLElement {
+  let current: HTMLElement | null = element
+
+  while (current) {
+    if (hasRenderableBox(current)) {
+      return current
+    }
+
+    current = current.parentElement
+  }
+
+  return element
+}
+
+function isWithinObserverMargin(element: HTMLElement): boolean {
+  const rect = element.getBoundingClientRect()
+
+  return (
+    rect.bottom >= -OBSERVER_MARGIN_PX &&
+    rect.right >= -OBSERVER_MARGIN_PX &&
+    rect.top <= window.innerHeight + OBSERVER_MARGIN_PX &&
+    rect.left <= window.innerWidth + OBSERVER_MARGIN_PX
+  )
 }
 
 function setupObserver(element: HTMLElement, selector = 'img') {
@@ -35,6 +65,13 @@ function setupObserver(element: HTMLElement, selector = 'img') {
     return
   }
 
+  const target = observationTarget(element)
+
+  if (isWithinObserverMargin(target)) {
+    targets.forEach(loadImage)
+    return
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       if (!entries.some((entry) => entry.isIntersecting)) {
@@ -45,12 +82,12 @@ function setupObserver(element: HTMLElement, selector = 'img') {
       observer.disconnect()
     },
     {
-      rootMargin: '2160px',
+      rootMargin: OBSERVER_ROOT_MARGIN,
       threshold: 0,
     },
   )
 
-  observer.observe(element)
+  observer.observe(target)
   observerMap.set(element, observer)
 }
 
