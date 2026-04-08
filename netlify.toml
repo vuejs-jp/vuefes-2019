@@ -1,5 +1,5 @@
 [build]
-command = "corepack enable && rm -rf node_modules && corepack pnpm install --frozen-lockfile && corepack pnpm exec vp run build"
+command = "VP_VERSION=$(node -p \"require('./package.json').devDependencies['vite-plus'].replace(/^[^0-9]*/, '')\") && curl -fsSL https://vite.plus | VP_VERSION=\"$VP_VERSION\" VP_NODE_MANAGER=no bash && export PATH=\"$HOME/.vite-plus/bin:$PATH\" && vp install --frozen-lockfile && vp run build"
 publish = ".output/public"
 
 [build.environment]
