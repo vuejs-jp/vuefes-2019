@@ -10,20 +10,27 @@ jobs:
       - checkout
 
       - run:
+          name: Install Vite+
+          command: |
+            VP_VERSION="$(node -p "require('./package.json').devDependencies['vite-plus'].replace(/^[^0-9]*/, '')")"
+            curl -fsSL https://vite.plus | VP_VERSION="$VP_VERSION" VP_NODE_MANAGER=no bash
+            echo 'export PATH="$HOME/.vite-plus/bin:$PATH"' >> "$BASH_ENV"
+
+      - run:
           name: Install dependencies
-          command: corepack pnpm install --frozen-lockfile
+          command: vp install --frozen-lockfile
 
       - run:
           name: Check
-          command: corepack pnpm check
+          command: vp check
 
       - run:
           name: Test
-          command: corepack pnpm test
+          command: vp test run
 
       - run:
           name: Build
-          command: corepack pnpm build
+          command: vp run build
 
 workflows:
   build:
