@@ -4,6 +4,7 @@ publish = ".output/public"
 
 [build.environment]
 NODE_VERSION = "24"
+NITRO_PRESET = "static"
 
 [[redirects]]
 from = "/2018/*"
