@@ -1,12 +1,12 @@
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath } from "node:url";
 
-const srcDir = fileURLToPath(new URL('../src', import.meta.url))
+const srcDir = fileURLToPath(new URL("../src", import.meta.url));
 
 export const nuxtViteConfig = {
   resolve: {
     alias: {
-      '~': srcDir,
-      '@': srcDir,
+      "~": srcDir,
+      "@": srcDir,
     },
   },
   css: {
@@ -15,17 +15,17 @@ export const nuxtViteConfig = {
         additionalData: [
           '@use "@/assets/stylesheets/foundation/variables.scss" as *;',
           '@use "@/assets/stylesheets/foundation/colors.scss" as *;',
-        ].join('\n'),
+        ].join("\n"),
       },
     },
   },
   optimizeDeps: {
     include: [
-      '@fortawesome/vue-fontawesome',
-      'dayjs',
-      'contentful',
-      '@fortawesome/free-brands-svg-icons',
-      'gsap',
+      "@fortawesome/vue-fontawesome",
+      "dayjs",
+      "contentful",
+      "@fortawesome/free-brands-svg-icons",
+      "gsap",
     ],
   },
-}
+};

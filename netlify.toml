@@ -1,6 +1,6 @@
 [build]
-command = "corepack enable && rm -rf node_modules && corepack pnpm install --frozen-lockfile && corepack pnpm run generate"
-publish = "dist/2019"
+command = "corepack enable && rm -rf node_modules && corepack pnpm install --frozen-lockfile && corepack pnpm exec vp run build"
+publish = ".output/public"
 
 [build.environment]
 NODE_VERSION = "24"

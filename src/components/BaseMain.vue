@@ -13,7 +13,7 @@
 <style lang="scss" scoped>
 .base-main {
   padding: 14vw 7.8% 13vw;
-  background-image: url('@/assets/images/texture.png');
+  background-image: url("@/assets/images/texture.png");
 }
 
 .heading {

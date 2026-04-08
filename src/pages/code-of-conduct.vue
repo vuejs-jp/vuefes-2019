@@ -1,12 +1,12 @@
 <script setup lang="ts">
-const route = useRoute()
+const route = useRoute();
 
 usePageMetadata({
   path: route.path,
-  title: '行動規範 | Vue Fes Japan 2019',
+  title: "行動規範 | Vue Fes Japan 2019",
   description:
-    'Vue Fes Japan のすべての参加者、スピーカー、スポンサー、スタッフは、オープンかつ友好的な環境を育むため、以下の行動規範に同意していただく必要があります。',
-})
+    "Vue Fes Japan のすべての参加者、スピーカー、スポンサー、スタッフは、オープンかつ友好的な環境を育むため、以下の行動規範に同意していただく必要があります。",
+});
 </script>
 
 <template>

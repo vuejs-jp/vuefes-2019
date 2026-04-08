@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import imageOne from '~/assets/images/ticket/image1.jpg?url'
-import imageOne2x from '~/assets/images/ticket/image1@2x.jpg?url'
-import imageTwo from '~/assets/images/ticket/image2.jpg?url'
-import imageTwo2x from '~/assets/images/ticket/image2@2x.jpg?url'
+import imageOne from "~/assets/images/ticket/image1.jpg?url";
+import imageOne2x from "~/assets/images/ticket/image1@2x.jpg?url";
+import imageTwo from "~/assets/images/ticket/image2.jpg?url";
+import imageTwo2x from "~/assets/images/ticket/image2@2x.jpg?url";
 
-const imageOneSrcSet = `${imageOne}, ${imageOne2x} 2x`
-const imageTwoSrcSet = `${imageTwo}, ${imageTwo2x} 2x`
+const imageOneSrcSet = `${imageOne}, ${imageOne2x} 2x`;
+const imageTwoSrcSet = `${imageTwo}, ${imageTwo2x} 2x`;
 </script>
 
 <template>

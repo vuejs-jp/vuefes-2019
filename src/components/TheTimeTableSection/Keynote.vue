@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import keynoteAvatar from '~/assets/images/speakers/yyx990803.jpg?url'
-import keynoteAvatar2x from '~/assets/images/speakers/yyx990803@2x.jpg?url'
+import keynoteAvatar from "~/assets/images/speakers/yyx990803.jpg?url";
+import keynoteAvatar2x from "~/assets/images/speakers/yyx990803@2x.jpg?url";
 
-const keynoteAvatarSrcSet = `${keynoteAvatar}, ${keynoteAvatar2x} 2x`
+const keynoteAvatarSrcSet = `${keynoteAvatar}, ${keynoteAvatar2x} 2x`;
 </script>
 
 <template>

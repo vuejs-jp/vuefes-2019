@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { formatTime } from '~/lib/time'
+import { formatTime } from "~/lib/time";
 
-const { timeTableSections, findEventContainerById } = useSiteData()
+const { timeTableSections, findEventContainerById } = useSiteData();
 
 function eventContainerById(id: string) {
-  const eventContainer = findEventContainerById(id)
+  const eventContainer = findEventContainerById(id);
 
   if (!eventContainer) {
-    throw new Error(`Unknown event container: ${id}`)
+    throw new Error(`Unknown event container: ${id}`);
   }
 
-  return eventContainer
+  return eventContainer;
 }
 </script>
 

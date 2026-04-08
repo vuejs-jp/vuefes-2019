@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const route = useRoute()
+const route = useRoute();
 
 usePageMetadata({
   path: route.path,
-  title: 'プライバシーポリシー | Vue Fes Japan 2019',
-  description: 'Vue Fes Japan 2019 のプライバシーポリシー情報です。',
-})
+  title: "プライバシーポリシー | Vue Fes Japan 2019",
+  description: "Vue Fes Japan 2019 のプライバシーポリシー情報です。",
+});
 </script>
 
 <template>

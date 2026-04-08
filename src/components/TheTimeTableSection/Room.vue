@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type RoomType from '~/types/room'
+import type RoomType from "~/types/room";
 
 defineProps<{
-  room: RoomType
-}>()
+  room: RoomType;
+}>();
 
 const roomClasses = new Map([
-  ['4MMzyRoKhtw4BlxWnCHbW9', 'room--is-plaid'],
-  ['6DXe9VnLT91YWE9UkVgkep', 'room--is-yumemi'],
-  ['1rnDVEsknx6MhhPgMAS9Gj', 'room--is-yesod'],
-])
+  ["4MMzyRoKhtw4BlxWnCHbW9", "room--is-plaid"],
+  ["6DXe9VnLT91YWE9UkVgkep", "room--is-yumemi"],
+  ["1rnDVEsknx6MhhPgMAS9Gj", "room--is-yesod"],
+]);
 </script>
 
 <template>

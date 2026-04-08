@@ -1,23 +1,23 @@
-'use strict'
+"use strict";
 
 // imagemin にオプションを渡して画像を最適化するためのスクリプト
 //
 // 使い方: node scripts/imagemin.js で実行できる
 // スクリプト作成の経緯: https://github.com/kazupon/vuefes-2019/pull/171#issuecomment-530369690
 
-const imagemin = require('imagemin')
-const imageminMozjpeg = require('imagemin-mozjpeg')
-const imageminPngquant = require('imagemin-pngquant')
+const imagemin = require("imagemin");
+const imageminMozjpeg = require("imagemin-mozjpeg");
+const imageminPngquant = require("imagemin-pngquant");
 
-;(async () => {
+(async () => {
   await imagemin(
     [
-      'test/fixtures/assets/images/event/*.{jpg,png}', // 最適化したい画像
+      "test/fixtures/assets/images/event/*.{jpg,png}", // 最適化したい画像
     ],
     {
       // 最適化した画像の出力先
       // NOTE: 例えば品質に応じてディレクトリ名を変えるなどしてください
-      destination: 'tmp/dist/imagemin/event/80',
+      destination: "tmp/dist/imagemin/event/80",
 
       plugins: [
         imageminMozjpeg({
@@ -37,7 +37,7 @@ const imageminPngquant = require('imagemin-pngquant')
         }),
       ],
     },
-  )
+  );
 
-  console.log('Images optimized')
-})()
+  console.log("Images optimized");
+})();

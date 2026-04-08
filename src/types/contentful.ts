@@ -1,63 +1,63 @@
 export interface EntrySys {
-  space: object
-  id: string
-  type: 'Entry'
-  createdAt: string
-  updatedAt: string
-  environment: object
-  revision: number
+  space: object;
+  id: string;
+  type: "Entry";
+  createdAt: string;
+  updatedAt: string;
+  environment: object;
+  revision: number;
   contentType: {
     sys: {
-      type: 'Link'
-      linkType: 'ContentType'
-      id: string
-    }
-  }
-  locale: 'en-US'
+      type: "Link";
+      linkType: "ContentType";
+      id: string;
+    };
+  };
+  locale: "en-US";
 }
 
 export interface EntryLink {
   sys: {
-    type: 'Link'
-    linkType: 'Entry'
-    id: string
-  }
+    type: "Link";
+    linkType: "Entry";
+    id: string;
+  };
 }
 
 export interface AssetSys {
-  space: object
-  id: string
-  type: 'Asset'
-  createdAt: string
-  updatedAt: string
-  environment: object
-  revision: number
-  locale: 'en-US'
+  space: object;
+  id: string;
+  type: "Asset";
+  createdAt: string;
+  updatedAt: string;
+  environment: object;
+  revision: number;
+  locale: "en-US";
 }
 
 export interface Asset {
-  sys: AssetSys
+  sys: AssetSys;
   fields: {
-    title: string
+    title: string;
     file: {
-      url: string
+      url: string;
       details: {
-        size: number
+        size: number;
         image: {
-          width: number
-          height: number
-        }
-      }
-      fileName: string
-      contentType: string
-    }
-  }
+          width: number;
+          height: number;
+        };
+      };
+      fileName: string;
+      contentType: string;
+    };
+  };
 }
 
 export interface AssetLink {
   sys: {
-    type: 'Link'
-    linkType: 'Asset'
-    id: string
-  }
+    type: "Link";
+    linkType: "Asset";
+    id: string;
+  };
 }

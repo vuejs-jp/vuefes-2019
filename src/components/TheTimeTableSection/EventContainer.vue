@@ -1,93 +1,93 @@
 <script setup lang="ts">
-import { formatTime } from '~/lib/time'
-import type { EntryLink } from '~/types/contentful'
-import type EventContainerType from '~/types/eventContainer'
-import type EventType from '~/types/event'
-import type Session from '~/types/session'
+import { formatTime } from "~/lib/time";
+import type { EntryLink } from "~/types/contentful";
+import type EventContainerType from "~/types/eventContainer";
+import type EventType from "~/types/event";
+import type Session from "~/types/session";
 
 const props = defineProps<{
-  eventContainer: EventContainerType
-}>()
+  eventContainer: EventContainerType;
+}>();
 
-const { findEventContainerPartById } = useSiteData()
+const { findEventContainerPartById } = useSiteData();
 
 function eventContainerPartById(id: string) {
-  const eventContainerPart = findEventContainerPartById(id)
+  const eventContainerPart = findEventContainerPartById(id);
 
   if (!eventContainerPart) {
-    throw new Error(`Unknown event container part: ${id}`)
+    throw new Error(`Unknown event container part: ${id}`);
   }
 
-  return eventContainerPart
+  return eventContainerPart;
 }
 
 function isEntryLink(
   content: Session | EventType | EntryLink,
 ): content is EntryLink {
-  return content.sys.type === 'Link'
+  return content.sys.type === "Link";
 }
 
 function eventContainerPartContent(id: string): Session | EventType {
-  const content = eventContainerPartById(id).fields.content
+  const content = eventContainerPartById(id).fields.content;
 
   if (isEntryLink(content)) {
-    throw new Error(`Event container part content is unresolved: ${id}`)
+    throw new Error(`Event container part content is unresolved: ${id}`);
   }
 
-  return content
+  return content;
 }
 
 function eventContent(
-  content: EventContainerType['fields']['contents'][number],
+  content: EventContainerType["fields"]["contents"][number],
 ): Session | EventType {
-  if (content.sys.contentType.sys.id === 'eventContainerPart') {
+  if (content.sys.contentType.sys.id === "eventContainerPart") {
     throw new Error(
       `Unexpected event container part content: ${content.sys.id}`,
-    )
+    );
   }
 
-  return content as Session | EventType
+  return content as Session | EventType;
 }
 
 const hasEventContainerParts = computed(() =>
   props.eventContainer.fields.contents.every(
-    (content) => content.sys.contentType.sys.id === 'eventContainerPart',
+    (content) => content.sys.contentType.sys.id === "eventContainerPart",
   ),
-)
+);
 
 const hasKeynote = computed(() =>
   props.eventContainer.fields.contents.some(
-    (content) => content.sys.id === '7xvdef2fny01iVD0ra03Iz',
+    (content) => content.sys.id === "7xvdef2fny01iVD0ra03Iz",
   ),
-)
+);
 
 const hasSessions = computed(() =>
   props.eventContainer.fields.contents.every(
-    (content) => content.sys.contentType.sys.id === 'session',
+    (content) => content.sys.contentType.sys.id === "session",
   ),
-)
+);
 
 const hasTranslation = computed(() => {
   const isSession = (
-    content: EventContainerType['fields']['contents'][number],
-  ): content is Session => content.sys.contentType.sys.id === 'session'
+    content: EventContainerType["fields"]["contents"][number],
+  ): content is Session => content.sys.contentType.sys.id === "session";
 
   return props.eventContainer.fields.contents.some(
     (content) => isSession(content) && content.fields.hasTranslation === true,
-  )
-})
+  );
+});
 
 const hasEvents = computed(() =>
   props.eventContainer.fields.contents.every(
-    (content) => content.sys.contentType.sys.id === 'event',
+    (content) => content.sys.contentType.sys.id === "event",
   ),
-)
+);
 
 const hasEventsClosed = computed(() =>
   props.eventContainer.fields.contents.every(
-    (content) => content.sys.id === '5NPCujTlHiEd7KcRmGp3hS',
+    (content) => content.sys.id === "5NPCujTlHiEd7KcRmGp3hS",
   ),
-)
+);
 </script>
 
 <template>

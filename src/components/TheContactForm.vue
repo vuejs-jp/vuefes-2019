@@ -1,101 +1,101 @@
 <script setup lang="ts">
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 enum Messages {
-  Success = '送信しました',
-  Error = '送信に失敗しました',
-  Progress = '送信しています...',
-  Default = '送信する',
+  Success = "送信しました",
+  Error = "送信に失敗しました",
+  Progress = "送信しています...",
+  Default = "送信する",
 }
 
 const formData = reactive({
-  name: '',
-  email: '',
-  organization: '',
-  message: '',
-})
+  name: "",
+  email: "",
+  organization: "",
+  message: "",
+});
 
 const status = reactive({
   inProgress: false,
   hasSent: false,
   hasError: false,
-})
+});
 
 const validationErrors = reactive({
-  name: '',
-  email: '',
-  message: '',
-})
+  name: "",
+  email: "",
+  message: "",
+});
 
 const errors = {
   has(field: keyof typeof validationErrors) {
-    return Boolean(validationErrors[field])
+    return Boolean(validationErrors[field]);
   },
   first(field: keyof typeof validationErrors) {
-    return validationErrors[field]
+    return validationErrors[field];
   },
-}
+};
 
 const buttonValue = computed(() => {
   if (status.hasError) {
-    return Messages.Error
+    return Messages.Error;
   }
   if (status.inProgress) {
-    return Messages.Progress
+    return Messages.Progress;
   }
   if (status.hasSent) {
-    return Messages.Success
+    return Messages.Success;
   }
-  return Messages.Default
-})
+  return Messages.Default;
+});
 
 function setStatusError() {
-  status.inProgress = false
-  status.hasSent = false
-  status.hasError = true
+  status.inProgress = false;
+  status.hasSent = false;
+  status.hasError = true;
 }
 
 function setStatusSuccess() {
-  status.inProgress = false
-  status.hasSent = true
-  status.hasError = false
+  status.inProgress = false;
+  status.hasSent = true;
+  status.hasError = false;
 }
 
 function setStatusInProgress() {
-  status.inProgress = true
-  status.hasSent = false
-  status.hasError = false
+  status.inProgress = true;
+  status.hasSent = false;
+  status.hasError = false;
 }
 
 function validateField(field: keyof typeof validationErrors) {
-  if (field === 'name') {
-    validationErrors.name = formData.name ? '' : '名前を正しく入力してください'
-    return !validationErrors.name
+  if (field === "name") {
+    validationErrors.name = formData.name ? "" : "名前を正しく入力してください";
+    return !validationErrors.name;
   }
 
-  if (field === 'email') {
+  if (field === "email") {
     validationErrors.email =
       formData.email && emailPattern.test(formData.email)
-        ? ''
-        : 'メールアドレスを正しく入力してください'
-    return !validationErrors.email
+        ? ""
+        : "メールアドレスを正しく入力してください";
+    return !validationErrors.email;
   }
 
   validationErrors.message = !formData.message
-    ? '内容を正しく入力してください'
+    ? "内容を正しく入力してください"
     : formData.message.length > 3000
-      ? '内容は 3,000 文字以内で入力してください'
-      : ''
+      ? "内容は 3,000 文字以内で入力してください"
+      : "";
 
-  return !validationErrors.message
+  return !validationErrors.message;
 }
 
 function validateAll() {
-  const nameValid = validateField('name')
-  const emailValid = validateField('email')
-  const messageValid = validateField('message')
+  const nameValid = validateField("name");
+  const emailValid = validateField("email");
+  const messageValid = validateField("message");
 
-  return nameValid && emailValid && messageValid
+  return nameValid && emailValid && messageValid;
 }
 
 function encode(data: Record<string, string>) {
@@ -104,41 +104,41 @@ function encode(data: Record<string, string>) {
       ([key, value]) =>
         `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
     )
-    .join('&')
+    .join("&");
 }
 
 function createRequestBody() {
   return {
-    'form-name': 'contact',
+    "form-name": "contact",
     name: formData.name,
     email: formData.email,
     organization: formData.organization,
     message: formData.message,
-  }
+  };
 }
 
 async function handleSubmit() {
   if (!validateAll()) {
-    return
+    return;
   }
 
-  const body = createRequestBody()
-  setStatusInProgress()
+  const body = createRequestBody();
+  setStatusInProgress();
 
   try {
-    const response = await fetch('/2019/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    const response = await fetch("/2019/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode(body),
-    })
+    });
 
     if (!response.ok) {
-      throw new Error('Network response was not ok')
+      throw new Error("Network response was not ok");
     }
 
-    setStatusSuccess()
+    setStatusSuccess();
   } catch {
-    setStatusError()
+    setStatusError();
   }
 }
 </script>
@@ -187,7 +187,7 @@ async function handleSubmit() {
         />
 
         <div v-show="errors.has('name')" id="name-error" class="has-error">
-          {{ errors.first('name') }}
+          {{ errors.first("name") }}
         </div>
       </div>
 
@@ -208,7 +208,7 @@ async function handleSubmit() {
         />
 
         <div v-show="errors.has('email')" id="email-error" class="has-error">
-          {{ errors.first('email') }}
+          {{ errors.first("email") }}
         </div>
       </div>
 
@@ -245,7 +245,7 @@ async function handleSubmit() {
           id="message-error"
           class="has-error"
         >
-          {{ errors.first('message') }}
+          {{ errors.first("message") }}
         </div>
       </div>
 
@@ -303,7 +303,7 @@ $form-border-color: #eee;
 
   .error {
     border-color: $sangosyu;
-    background-image: url('@/assets/images/icon-exclamation.svg');
+    background-image: url("@/assets/images/icon-exclamation.svg");
     background-repeat: no-repeat;
     background-position: 97% center;
     background-size: auto 6vw;

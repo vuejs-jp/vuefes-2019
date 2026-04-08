@@ -1,55 +1,55 @@
 type TypekitWindow = Window & {
   Typekit?: {
     load: (config: {
-      kitId: string
-      scriptTimeout: number
-      async: boolean
-    }) => void
-  }
-}
+      kitId: string;
+      scriptTimeout: number;
+      async: boolean;
+    }) => void;
+  };
+};
 
 export default defineNuxtPlugin(() => {
-  const windowWithTypekit = window as TypekitWindow
+  const windowWithTypekit = window as TypekitWindow;
 
   if (document.querySelector('script[data-typekit-loader="true"]')) {
-    return
+    return;
   }
 
   const config = {
-    kitId: 'ecl1lua',
+    kitId: "ecl1lua",
     scriptTimeout: 3000,
     async: true,
-  }
+  };
 
-  const root = document.documentElement
+  const root = document.documentElement;
   const timer = window.setTimeout(() => {
     root.className =
-      root.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive'
-  }, config.scriptTimeout)
+      root.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+  }, config.scriptTimeout);
 
-  const script = document.createElement('script')
-  const firstScript = document.getElementsByTagName('script')[0]
-  let isLoaded = false
+  const script = document.createElement("script");
+  const firstScript = document.getElementsByTagName("script")[0];
+  let isLoaded = false;
 
-  root.className += ' wf-loading'
-  script.src = `https://use.typekit.net/${config.kitId}.js`
-  script.async = true
-  script.dataset.typekitLoader = 'true'
+  root.className += " wf-loading";
+  script.src = `https://use.typekit.net/${config.kitId}.js`;
+  script.async = true;
+  script.dataset.typekitLoader = "true";
 
-  script.addEventListener('load', () => {
+  script.addEventListener("load", () => {
     if (isLoaded) {
-      return
+      return;
     }
 
-    isLoaded = true
-    window.clearTimeout(timer)
+    isLoaded = true;
+    window.clearTimeout(timer);
 
     try {
-      windowWithTypekit.Typekit?.load(config)
+      windowWithTypekit.Typekit?.load(config);
     } catch {
       // Ignore Typekit loading failures and keep the page usable.
     }
-  })
+  });
 
-  firstScript?.parentNode?.insertBefore(script, firstScript)
-})
+  firstScript?.parentNode?.insertBefore(script, firstScript);
+});

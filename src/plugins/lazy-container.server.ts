@@ -1,7 +1,7 @@
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.directive('lazy-container', {
+  nuxtApp.vueApp.directive("lazy-container", {
     getSSRProps() {
-      return {}
+      return {};
     },
-  })
-})
+  });
+});

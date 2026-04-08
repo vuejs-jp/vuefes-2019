@@ -1,20 +1,20 @@
 <script setup lang="ts">
 defineOptions({
   inheritAttrs: false,
-})
+});
 
 defineProps<{
-  to?: string
-}>()
+  to?: string;
+}>();
 
-const attrs = useAttrs()
+const attrs = useAttrs();
 const emit = defineEmits<{
-  click: [event: MouseEvent]
-}>()
+  click: [event: MouseEvent];
+}>();
 
 const tagName = computed(() =>
-  typeof attrs.href === 'string' ? 'a' : 'button',
-)
+  typeof attrs.href === "string" ? "a" : "button",
+);
 </script>
 
 <template>

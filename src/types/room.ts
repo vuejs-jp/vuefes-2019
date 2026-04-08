@@ -1,8 +1,8 @@
-import { EntrySys } from '~/types/contentful'
+import { EntrySys } from "~/types/contentful";
 
 export default interface Room {
-  sys: EntrySys
+  sys: EntrySys;
   fields: {
-    name: string
-  }
+    name: string;
+  };
 }

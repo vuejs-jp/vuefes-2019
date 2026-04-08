@@ -3,36 +3,36 @@ import {
   faGithub,
   faTwitter,
   faYoutube,
-} from '@fortawesome/free-brands-svg-icons'
+} from "@fortawesome/free-brands-svg-icons";
 
 function encodedUri(): string {
-  return encodeURIComponent(window.location.href)
+  return encodeURIComponent(window.location.href);
 }
 
 function hostAndPath(): string {
-  return window.location.host + window.location.pathname
+  return window.location.host + window.location.pathname;
 }
 
 function openTwitterForm() {
   window.open(
     `https://twitter.com/share?url=${encodedUri()}&hashtags=vuefes,vuejs&text=${encodeURIComponent(
-      '日本最大級の Vue.js カンファレンス「Vue Fes Japan 2019」',
+      "日本最大級の Vue.js カンファレンス「Vue Fes Japan 2019」",
     )}`,
-    'tweet',
-    'width=650, height=470',
-  )
+    "tweet",
+    "width=650, height=470",
+  );
 }
 
 function openFacebookForm() {
   window.open(
     `https://www.facebook.com/sharer/sharer.php?u=${encodedUri()}&src=sdkpreparse`,
-    'share',
-    'width=670, height=328',
-  )
+    "share",
+    "width=670, height=328",
+  );
 }
 
 function openHatenaBookmarkForm() {
-  window.open(`http://b.hatena.ne.jp/entry/s/${hostAndPath()}`, 'bookmark')
+  window.open(`http://b.hatena.ne.jp/entry/s/${hostAndPath()}`, "bookmark");
 }
 </script>
 

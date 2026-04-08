@@ -1,99 +1,99 @@
 <script setup lang="ts">
-import { renderMarkdown } from '~/lib/markdown'
-import type { Asset, AssetLink } from '~/types/contentful'
-import type SessionType from '~/types/session'
-import type SpeakerType from '~/types/speaker'
+import { renderMarkdown } from "~/lib/markdown";
+import type { Asset, AssetLink } from "~/types/contentful";
+import type SessionType from "~/types/session";
+import type SpeakerType from "~/types/speaker";
 
-const route = useRoute()
-const { findSessionById, findSpeakerByGithub } = useSiteData()
+const route = useRoute();
+const { findSessionById, findSpeakerByGithub } = useSiteData();
 
 const speakerId = computed(() => {
-  const value = route.params.speakerId
-  return Array.isArray(value) ? value[0] : value || 'yyx990803'
-})
+  const value = route.params.speakerId;
+  return Array.isArray(value) ? value[0] : value || "yyx990803";
+});
 
 const speaker = computed<SpeakerType>(() => {
-  const result = findSpeakerByGithub(speakerId.value)
+  const result = findSpeakerByGithub(speakerId.value);
 
   if (!result) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Session not found',
-    })
+      statusMessage: "Session not found",
+    });
   }
 
-  return result
-})
+  return result;
+});
 
 const session = computed<SessionType>(() => {
-  const sessionId = speaker.value?.fields.sessions[0]?.sys.id
+  const sessionId = speaker.value?.fields.sessions[0]?.sys.id;
 
   if (!sessionId) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Session not found',
-    })
+      statusMessage: "Session not found",
+    });
   }
 
-  const result = findSessionById(sessionId)
+  const result = findSessionById(sessionId);
 
   if (!result) {
     throw createError({
       statusCode: 404,
-      statusMessage: 'Session not found',
-    })
+      statusMessage: "Session not found",
+    });
   }
 
-  return result
-})
+  return result;
+});
 
 const ogImageUrl = computed(
   () => `https://vuefes.jp/2019/session-og-images/${speakerId.value}.jpg`,
-)
+);
 const sessionDescriptionHtml = computed(() =>
   renderMarkdown(session.value!.fields.description),
-)
+);
 const speakerDescriptionHtml = computed(() =>
   renderMarkdown(speaker.value!.fields.description),
-)
+);
 
 function assetUrl(asset: Asset | AssetLink): string {
-  if (!('fields' in asset)) {
+  if (!("fields" in asset)) {
     throw createError({
       statusCode: 500,
-      statusMessage: 'Speaker asset was not resolved',
-    })
+      statusMessage: "Speaker asset was not resolved",
+    });
   }
 
-  return asset.fields.file.url
+  return asset.fields.file.url;
 }
 
 const speakerAvatarSrcSet = computed(
   () =>
     `${assetUrl(speaker.value.fields.avatar)}, ${assetUrl(speaker.value.fields.avatar2x)} 2x`,
-)
+);
 
 useHead(() => {
-  const title = `${session.value!.fields.title}（${speaker.value!.fields.name}） | Vue Fes Japan 2019`
-  const description = `Vue Fes Japan 2019 のセッション情報です。スピーカーの ${speaker.value!.fields.name} が、「${session.value!.fields.title}」を発表します。`
-  const url = `https://vuefes.jp/2019${route.path}`
+  const title = `${session.value!.fields.title}（${speaker.value!.fields.name}） | Vue Fes Japan 2019`;
+  const description = `Vue Fes Japan 2019 のセッション情報です。スピーカーの ${speaker.value!.fields.name} が、「${session.value!.fields.title}」を発表します。`;
+  const url = `https://vuefes.jp/2019${route.path}`;
 
   return {
     title,
     meta: [
-      { name: 'description', content: description },
-      { name: 'og:url', content: url },
-      { name: 'og:title', content: title },
-      { name: 'og:description', content: description },
-      { name: 'og:image', content: ogImageUrl.value },
-      { name: 'og:image:secure_url', content: ogImageUrl.value },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:description', content: description },
-      { name: 'twitter:title', content: title },
-      { name: 'twitter:image', content: ogImageUrl.value },
+      { name: "description", content: description },
+      { name: "og:url", content: url },
+      { name: "og:title", content: title },
+      { name: "og:description", content: description },
+      { name: "og:image", content: ogImageUrl.value },
+      { name: "og:image:secure_url", content: ogImageUrl.value },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:description", content: description },
+      { name: "twitter:title", content: title },
+      { name: "twitter:image", content: ogImageUrl.value },
     ],
-  }
-})
+  };
+});
 </script>
 
 <template>
@@ -258,7 +258,7 @@ useHead(() => {
       height: auto;
 
       &::after {
-        content: '';
+        content: "";
         padding-bottom: calc(25% + 20px);
       }
     }

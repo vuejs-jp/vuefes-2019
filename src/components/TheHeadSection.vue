@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { Component } from 'vue'
-import HeadCircle from '~/components/HeadCircle.vue'
-import HeadCross from '~/components/HeadCross.vue'
-import HeadHorizontal from '~/components/HeadHorizontal.vue'
-import HeadPhoto from '~/components/HeadPhoto.vue'
-import HeadSlash from '~/components/HeadSlash.vue'
-import HeadSquare from '~/components/HeadSquare.vue'
-import HeadTriangle from '~/components/HeadTriangle.vue'
+import type { Component } from "vue";
+import HeadCircle from "~/components/HeadCircle.vue";
+import HeadCross from "~/components/HeadCross.vue";
+import HeadHorizontal from "~/components/HeadHorizontal.vue";
+import HeadPhoto from "~/components/HeadPhoto.vue";
+import HeadSlash from "~/components/HeadSlash.vue";
+import HeadSquare from "~/components/HeadSquare.vue";
+import HeadTriangle from "~/components/HeadTriangle.vue";
 import {
   gap,
   grid,
@@ -16,117 +16,117 @@ import {
   type Parts,
   type PartsType,
   type WindowMode,
-} from '~/lib/head-visual'
+} from "~/lib/head-visual";
 
-const height = 384
+const height = 384;
 const pattern = [
-  ['-⧄|⧅⧄⧅⮽⧄o', 'o⮽⧄◢-⧄⧅◥|', '⧅◣⧅⧄⧅|⧄⧅⧄'],
-  ['1⧄|⧅o⧅⮽⧄◥', 'o⮽⧄◢⧄-⧅2|', '◥◣o⧄⧅|⧄⧅⧄'],
-  ['1⧄|3◤⧅o⧄◥', '-⮽■◣⧄4⧅2|', '⧅⧅o⧄⧅◤⧄■⧄'],
-  ['◣⧄⧅3◤⧅o⧄6', '-⮽1⧅⧄4⧅|⧄', '⧅◣o⧄2-⧄⧄⧄'],
-  ['5⧄◣3◤⧅o⧄6', '-⮽1⧅⧄4⮽|⧄', '⧄◣o⧅2-⧄⧄⧄'],
-  ['o⧄⧅3⧄⧅o⧄6', '-⮽1⧅⧄4⧄|⧄', '⧄◣o⧄2⧅⧄◥⮽'],
-  ['3⧄4⧅⧄⧅⮽5o', 'o⮽⧄◤2⧄6◥|', '⧅◢⧅1⧅⧅⧄-⧄'],
-] as const
+  ["-⧄|⧅⧄⧅⮽⧄o", "o⮽⧄◢-⧄⧅◥|", "⧅◣⧅⧄⧅|⧄⧅⧄"],
+  ["1⧄|⧅o⧅⮽⧄◥", "o⮽⧄◢⧄-⧅2|", "◥◣o⧄⧅|⧄⧅⧄"],
+  ["1⧄|3◤⧅o⧄◥", "-⮽■◣⧄4⧅2|", "⧅⧅o⧄⧅◤⧄■⧄"],
+  ["◣⧄⧅3◤⧅o⧄6", "-⮽1⧅⧄4⧅|⧄", "⧅◣o⧄2-⧄⧄⧄"],
+  ["5⧄◣3◤⧅o⧄6", "-⮽1⧅⧄4⮽|⧄", "⧄◣o⧅2-⧄⧄⧄"],
+  ["o⧄⧅3⧄⧅o⧄6", "-⮽1⧅⧄4⧄|⧄", "⧄◣o⧄2⧅⧄◥⮽"],
+  ["3⧄4⧅⧄⧅⮽5o", "o⮽⧄◤2⧄6◥|", "⧅◢⧅1⧅⧅⧄-⧄"],
+] as const;
 
-const width = ref(0)
-const patternIndex = ref(0)
-const t = ref(0)
-const tMax = ref(0)
-const visible = ref(true)
-const windowMode = ref<WindowMode>('sm')
+const width = ref(0);
+const patternIndex = ref(0);
+const t = ref(0);
+const tMax = ref(0);
+const visible = ref(true);
+const windowMode = ref<WindowMode>("sm");
 
-let drawTimer: number | undefined
-let patternTimer: number | undefined
-let resizeTimer: number | undefined
+let drawTimer: number | undefined;
+let patternTimer: number | undefined;
+let resizeTimer: number | undefined;
 
 interface RenderableParts extends Parts {
-  component: Component
+  component: Component;
 }
 
 const partsComponents: Record<PartsType, Component> = {
-  'head-circle': HeadCircle,
-  'head-horizontal': HeadHorizontal,
-  'head-square': HeadSquare,
-  'head-triangle': HeadTriangle,
-  'head-cross': HeadCross,
-  'head-photo': HeadPhoto,
-  'head-slash': HeadSlash,
-}
+  "head-circle": HeadCircle,
+  "head-horizontal": HeadHorizontal,
+  "head-square": HeadSquare,
+  "head-triangle": HeadTriangle,
+  "head-cross": HeadCross,
+  "head-photo": HeadPhoto,
+  "head-slash": HeadSlash,
+};
 
-const viewBox = computed(() => `0 0 ${width.value} ${height}`)
+const viewBox = computed(() => `0 0 ${width.value} ${height}`);
 const items = computed<RenderableParts[][]>(() =>
   pattern[patternIndex.value].map((line, row) =>
     Array.from(line)
       .slice(0, t.value)
       .map((p, col): RenderableParts => {
-        let type: PartsType = 'head-circle'
-        let rotate = 0
-        let src = ''
+        let type: PartsType = "head-circle";
+        let rotate = 0;
+        let src = "";
 
         switch (p) {
-          case '⮽':
-            type = 'head-cross'
-            break
-          case '⧅':
-            type = 'head-slash'
-            rotate = 90
-            break
-          case '⧄':
-            type = 'head-slash'
-            break
-          case '■':
-            type = 'head-square'
-            break
-          case '|':
-            type = 'head-horizontal'
-            rotate = 90
-            break
-          case 'o':
-            type = 'head-circle'
-            break
-          case '-':
-            type = 'head-horizontal'
-            break
-          case '◢':
-            type = 'head-triangle'
-            break
-          case '◥':
-            type = 'head-triangle'
-            rotate = 270
-            break
-          case '◣':
-            type = 'head-triangle'
-            rotate = 90
-            break
-          case '◤':
-            type = 'head-triangle'
-            rotate = 180
-            break
-          case '1':
-            type = 'head-photo'
-            src = 'image01.png'
-            break
-          case '2':
-            type = 'head-photo'
-            src = 'image02.png'
-            break
-          case '3':
-            type = 'head-photo'
-            src = 'image03.png'
-            break
-          case '4':
-            type = 'head-photo'
-            src = 'image04.png'
-            break
-          case '5':
-            type = 'head-photo'
-            src = 'image05.png'
-            break
-          case '6':
-            type = 'head-photo'
-            src = 'image06.png'
-            break
+          case "⮽":
+            type = "head-cross";
+            break;
+          case "⧅":
+            type = "head-slash";
+            rotate = 90;
+            break;
+          case "⧄":
+            type = "head-slash";
+            break;
+          case "■":
+            type = "head-square";
+            break;
+          case "|":
+            type = "head-horizontal";
+            rotate = 90;
+            break;
+          case "o":
+            type = "head-circle";
+            break;
+          case "-":
+            type = "head-horizontal";
+            break;
+          case "◢":
+            type = "head-triangle";
+            break;
+          case "◥":
+            type = "head-triangle";
+            rotate = 270;
+            break;
+          case "◣":
+            type = "head-triangle";
+            rotate = 90;
+            break;
+          case "◤":
+            type = "head-triangle";
+            rotate = 180;
+            break;
+          case "1":
+            type = "head-photo";
+            src = "image01.png";
+            break;
+          case "2":
+            type = "head-photo";
+            src = "image02.png";
+            break;
+          case "3":
+            type = "head-photo";
+            src = "image03.png";
+            break;
+          case "4":
+            type = "head-photo";
+            src = "image04.png";
+            break;
+          case "5":
+            type = "head-photo";
+            src = "image05.png";
+            break;
+          case "6":
+            type = "head-photo";
+            src = "image06.png";
+            break;
         }
 
         return {
@@ -137,87 +137,87 @@ const items = computed<RenderableParts[][]>(() =>
           rotate,
           src,
           key: `${row}-${col}-${type}-${rotate}`,
-        }
+        };
       }),
   ),
-)
+);
 
-const itemsFlatten = computed(() => (visible.value ? items.value.flat() : []))
+const itemsFlatten = computed(() => (visible.value ? items.value.flat() : []));
 
 function adjustSvg(mode: WindowMode) {
-  t.value = 0
-  width.value = (grid + gap) * 5 - gap
-  tMax.value = 15
+  t.value = 0;
+  width.value = (grid + gap) * 5 - gap;
+  tMax.value = 15;
 
-  if (mode === 'md') {
-    width.value = (grid + gap) * 6 - gap
-    tMax.value = 18
+  if (mode === "md") {
+    width.value = (grid + gap) * 6 - gap;
+    tMax.value = 18;
   }
 
-  if (mode === 'lg') {
-    width.value = (grid + gap) * 9 - gap
-    tMax.value = 27
+  if (mode === "lg") {
+    width.value = (grid + gap) * 9 - gap;
+    tMax.value = 27;
   }
 }
 
 function leave(_element: Element, done: () => void) {
-  window.setTimeout(done, partsLeaveTime * 1000)
+  window.setTimeout(done, partsLeaveTime * 1000);
 }
 
 function enter(_element: Element, done: () => void) {
-  window.setTimeout(done, partsCreateTime * 1000)
+  window.setTimeout(done, partsCreateTime * 1000);
 }
 
 function handleResize() {
   if (resizeTimer) {
-    window.clearTimeout(resizeTimer)
+    window.clearTimeout(resizeTimer);
   }
 
   resizeTimer = window.setTimeout(() => {
-    const previousWindowMode = windowMode.value
-    windowMode.value = getWindowMode(window.innerWidth)
+    const previousWindowMode = windowMode.value;
+    windowMode.value = getWindowMode(window.innerWidth);
 
     if (previousWindowMode !== windowMode.value) {
-      visible.value = false
+      visible.value = false;
 
       window.setTimeout(() => {
-        visible.value = true
-        adjustSvg(windowMode.value)
-      }, 400)
+        visible.value = true;
+        adjustSvg(windowMode.value);
+      }, 400);
     }
-  }, 100)
+  }, 100);
 }
 
 onMounted(() => {
-  windowMode.value = getWindowMode(window.innerWidth)
-  adjustSvg(windowMode.value)
+  windowMode.value = getWindowMode(window.innerWidth);
+  adjustSvg(windowMode.value);
 
   drawTimer = window.setInterval(() => {
     if (t.value < tMax.value) {
-      t.value += 1
+      t.value += 1;
     }
-  }, 90)
+  }, 90);
 
   patternTimer = window.setInterval(() => {
-    patternIndex.value = (patternIndex.value + 1) % pattern.length
-  }, 2000)
+    patternIndex.value = (patternIndex.value + 1) % pattern.length;
+  }, 2000);
 
-  window.addEventListener('resize', handleResize)
-})
+  window.addEventListener("resize", handleResize);
+});
 
 onBeforeUnmount(() => {
   if (drawTimer) {
-    window.clearInterval(drawTimer)
+    window.clearInterval(drawTimer);
   }
   if (patternTimer) {
-    window.clearInterval(patternTimer)
+    window.clearInterval(patternTimer);
   }
   if (resizeTimer) {
-    window.clearTimeout(resizeTimer)
+    window.clearTimeout(resizeTimer);
   }
 
-  window.removeEventListener('resize', handleResize)
-})
+  window.removeEventListener("resize", handleResize);
+});
 </script>
 
 <template>

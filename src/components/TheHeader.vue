@@ -1,61 +1,61 @@
 <script setup lang="ts">
-const isScrolled = ref(false)
-const isOpen = ref(false)
-const rootElement = ref<HTMLElement>()
-let observer: IntersectionObserver | undefined
+const isScrolled = ref(false);
+const isOpen = ref(false);
+const rootElement = ref<HTMLElement>();
+let observer: IntersectionObserver | undefined;
 
 function disableScrollHandler(e: TouchEvent) {
-  e.preventDefault()
+  e.preventDefault();
 }
 
 onMounted(() => {
-  const sentinalElement = document.querySelector('.sentinal')
+  const sentinalElement = document.querySelector(".sentinal");
 
   if (!sentinalElement) {
-    return
+    return;
   }
 
   observer = new IntersectionObserver((entries) => {
-    const sentinal = entries[0]
+    const sentinal = entries[0];
 
     if (!sentinal) {
-      return
+      return;
     }
 
-    isScrolled.value = !sentinal.isIntersecting
-  })
-  observer.observe(sentinalElement)
+    isScrolled.value = !sentinal.isIntersecting;
+  });
+  observer.observe(sentinalElement);
 
-  rootElement.value = document.documentElement
-})
+  rootElement.value = document.documentElement;
+});
 
 onBeforeUnmount(() => {
-  observer?.disconnect()
-  closeMenu()
-})
+  observer?.disconnect();
+  closeMenu();
+});
 
 function openMenu() {
-  isOpen.value = true
+  isOpen.value = true;
 
   if (!rootElement.value) {
-    return
+    return;
   }
 
-  rootElement.value.style.overflow = 'hidden'
-  rootElement.value.addEventListener('touchmove', disableScrollHandler, {
+  rootElement.value.style.overflow = "hidden";
+  rootElement.value.addEventListener("touchmove", disableScrollHandler, {
     passive: false,
-  })
+  });
 }
 
 function closeMenu() {
-  isOpen.value = false
+  isOpen.value = false;
 
   if (!rootElement.value) {
-    return
+    return;
   }
 
-  rootElement.value.style.overflow = 'auto'
-  rootElement.value.removeEventListener('touchmove', disableScrollHandler)
+  rootElement.value.style.overflow = "auto";
+  rootElement.value.removeEventListener("touchmove", disableScrollHandler);
 }
 </script>
 

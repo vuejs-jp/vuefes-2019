@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type EventType from '~/types/event'
+import type EventType from "~/types/event";
 
 const props = defineProps<{
-  event: EventType
-}>()
+  event: EventType;
+}>();
 
 const isCommunitySession = computed(
-  () => props.event.sys.id === '7HH2CbTRcGkUYp9OF1LIVu',
-)
+  () => props.event.sys.id === "7HH2CbTRcGkUYp9OF1LIVu",
+);
 </script>
 
 <template>

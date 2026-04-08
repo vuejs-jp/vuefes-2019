@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import type SessionType from '~/types/session'
+import type SessionType from "~/types/session";
 
 const props = defineProps<{
-  session: SessionType
-}>()
+  session: SessionType;
+}>();
 
-const { findSpeakerById } = useSiteData()
+const { findSpeakerById } = useSiteData();
 
 const sessionIdAlias = computed(() => {
-  const primarySpeaker = props.session.fields.speakers[0]
-  return findSpeakerById(primarySpeaker.sys.id)?.fields.github || 'yyx990803'
-})
+  const primarySpeaker = props.session.fields.speakers[0];
+  return findSpeakerById(primarySpeaker.sys.id)?.fields.github || "yyx990803";
+});
 
 function speakerById(id: string) {
-  const speaker = findSpeakerById(id)
+  const speaker = findSpeakerById(id);
 
   if (!speaker) {
-    throw new Error(`Unknown speaker: ${id}`)
+    throw new Error(`Unknown speaker: ${id}`);
   }
 
-  return speaker
+  return speaker;
 }
 </script>
 

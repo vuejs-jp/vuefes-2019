@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { gsap, Power2 } from 'gsap'
-import { partsCreateTime, partsLeaveTime, type Parts } from '~/lib/head-visual'
+import { gsap, Power2 } from "gsap";
+import { partsCreateTime, partsLeaveTime, type Parts } from "~/lib/head-visual";
 
 const props = defineProps<{
-  item: Parts
-}>()
+  item: Parts;
+}>();
 
-const shape = ref<SVGRectElement | null>(null)
+const shape = ref<SVGRectElement | null>(null);
 const transform = computed(
   () =>
     `translate(${props.item.x}, ${props.item.y}) rotate(${props.item.rotate})`,
-)
+);
 
 onMounted(() => {
   window.setTimeout(() => {
     if (!shape.value) {
-      return
+      return;
     }
 
     gsap.to(shape.value, {
@@ -27,13 +27,13 @@ onMounted(() => {
         height: 120,
       },
       ease: Power2.easeOut,
-    })
-  }, 0)
-})
+    });
+  }, 0);
+});
 
 onBeforeUnmount(() => {
   if (!shape.value) {
-    return
+    return;
   }
 
   gsap.to(shape.value, {
@@ -45,8 +45,8 @@ onBeforeUnmount(() => {
       height: 0,
     },
     ease: Power2.easeOut,
-  })
-})
+  });
+});
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-await useSiteDataFetch()
+await useSiteDataFetch();
 </script>
 
 <template>

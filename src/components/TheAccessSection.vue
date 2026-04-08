@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import accessImage from '~/assets/images/access.jpg?url'
-import accessImage2x from '~/assets/images/access@2x.jpg?url'
+import accessImage from "~/assets/images/access.jpg?url";
+import accessImage2x from "~/assets/images/access@2x.jpg?url";
 
-const image2x = accessImage2x
-const imageSrcSet = `${accessImage}, ${accessImage2x} 2x`
+const image2x = accessImage2x;
+const imageSrcSet = `${accessImage}, ${accessImage2x} 2x`;
 </script>
 
 <template>

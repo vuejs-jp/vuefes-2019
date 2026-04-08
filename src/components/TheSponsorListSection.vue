@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData()
+const { sponsorPlansHavingSponsors, sponsorsByPlan } = useSiteData();
 </script>
 
 <template>
