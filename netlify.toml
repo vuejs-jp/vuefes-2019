@@ -1,10 +1,9 @@
 [build]
 command = "VP_VERSION=$(node -p \"require('./package.json').devDependencies['vite-plus'].replace(/^[^0-9]*/, '')\") && curl -fsSL https://vite.plus | VP_VERSION=\"$VP_VERSION\" VP_NODE_MANAGER=no bash && export PATH=\"$HOME/.vite-plus/bin:$PATH\" && vp install --frozen-lockfile && vp run build"
-publish = ".output/public"
+publish = "dist"
 
 [build.environment]
 NODE_VERSION = "24"
-NITRO_PRESET = "static"
 
 [[redirects]]
 from = "/2018/*"
@@ -12,9 +11,9 @@ to = "https://vuefes-2018.netlify.app/2018/:splat"
 status = 200
 
 [[redirects]]
-from = "/2019/*"
-to = "https://vuefes-2019.netlify.app/2019/:splat"
-status = 200
+from = "/2019"
+to = "/2019/"
+status = 301
 
 [[redirects]]
 from = "/2020/*"
