@@ -4,6 +4,7 @@
 logs
 *.log
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
@@ -44,9 +45,6 @@ typings/
 # Optional npm cache directory
 .npm
 
-# Optional eslint cache
-.eslintcache
-
 # Optional REPL history
 .node_repl_history
 
@@ -67,6 +65,10 @@ typings/
 
 # nuxt.js build output
 .nuxt
+.nuxtrc
+.output
+.playwright-cli
+output/
 
 # Nuxt generate
 dist
@@ -84,3 +86,4 @@ dist
 sw.*
 
 /tmp/
+*.tsbuildinfo

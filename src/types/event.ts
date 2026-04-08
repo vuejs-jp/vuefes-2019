@@ -1,8 +1,8 @@
-import { EntrySys } from '~/types/contentful'
+import { EntrySys } from "~/types/contentful";
 
 export default interface Event {
-  sys: EntrySys
+  sys: EntrySys;
   fields: {
-    title: string
-  }
+    title: string;
+  };
 }

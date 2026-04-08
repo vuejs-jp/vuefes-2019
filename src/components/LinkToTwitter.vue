@@ -12,18 +12,6 @@
   </BaseButton>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import BaseButton from '~/components/BaseButton.vue'
-
-@Component({
-  components: {
-    BaseButton
-  }
-})
-export default class LinkToTwitter extends Vue {}
-</script>
-
 <style lang="scss" scoped>
 .icon-twitter {
   display: block;

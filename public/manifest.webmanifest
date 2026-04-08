@@ -1,0 +1,17 @@
+{
+  "name": "Vue Fes",
+  "short_name": "Vue Fes",
+  "lang": "ja",
+  "start_url": "/2019/",
+  "scope": "/2019/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/2019/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -6,8 +6,12 @@
 
 ## Setup
 
+`vp` のインストールは公式ドキュメントを参照してください。
+
+[Vite+ Getting Started](https://viteplus.dev/)
+
 ```shell
-yarn install
+vp install
 ```
 
 ## Development
@@ -15,7 +19,7 @@ yarn install
 下記コマンドを実行すると Web サーバーがホットリロードで起動して `http://localhost:3000/2019/` で確認できます。
 
 ```shell
-yarn dev --open
+vp run dev --open
 ```
 
 ### 画像の最適化
@@ -43,13 +47,19 @@ brew install gawk
 ## Testing
 
 ```shell
-yarn test
+vp test run
 ```
 
-## Generate
-
-下記コマンドを実行すると、静的ファイルを `dist/2019/` 配下に生成できます。
+## Lint / Format
 
 ```shell
-yarn generate
+vp check
+```
+
+## Build
+
+下記コマンドを実行すると、静的ファイルを `.output/public/` 配下に生成できます。
+
+```shell
+vp run build
 ```

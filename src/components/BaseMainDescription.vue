@@ -8,13 +8,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-
-@Component
-export default class BaseMainDescription extends Vue {}
-</script>
-
 <style lang="scss" scoped>
 .base-main-description {
   margin-bottom: 8.4vw;

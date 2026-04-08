@@ -1,8 +1,25 @@
+<script setup lang="ts">
+import type { Asset, AssetLink } from "~/types/contentful";
+import type Speaker from "~/types/speaker";
+
+const { speakers } = useSiteData();
+
+function assetUrl(asset: Asset | AssetLink): string {
+  if (!("fields" in asset)) {
+    throw new Error("Speaker asset was not resolved");
+  }
+
+  return asset.fields.file.url;
+}
+
+function speakerAvatarSrcSet(speaker: Speaker): string {
+  return `${assetUrl(speaker.fields.avatar)}, ${assetUrl(speaker.fields.avatar2x)} 2x`;
+}
+</script>
+
 <template>
   <BaseSection id="the-speaker-list-section" class="the-speaker-list-section">
-    <template v-slot:heading>
-      SPEAKERS
-    </template>
+    <template v-slot:heading> SPEAKERS </template>
 
     <div class="speaker-container">
       <div
@@ -17,10 +34,8 @@
         >
           <img
             class="avatar"
-            :data-srcset="
-              `${speaker.fields.avatar.fields.file.url}, ${speaker.fields.avatar2x.fields.file.url} 2x`
-            "
-            :data-src="speaker.fields.avatar2x.fields.file.url"
+            :data-srcset="speakerAvatarSrcSet(speaker)"
+            :data-src="assetUrl(speaker.fields.avatar2x)"
             alt=""
           />
         </nuxt-link>
@@ -41,22 +56,6 @@
     </div>
   </BaseSection>
 </template>
-
-<script lang="ts">
-import { Component, Getter, Vue } from 'nuxt-property-decorator'
-import Speaker from '~/types/speaker'
-import BaseSection from '~/components/BaseSection.vue'
-
-@Component({
-  components: {
-    BaseSection
-  }
-})
-export default class TheSpeakerListSection extends Vue {
-  @Getter('all', { namespace: 'speakers' })
-  speakers!: Speaker[]
-}
-</script>
 
 <style lang="scss" scoped>
 .speaker-container {
@@ -84,7 +83,7 @@ export default class TheSpeakerListSection extends Vue {
     &::before,
     &::after {
       box-sizing: inherit;
-      content: '';
+      content: "";
       position: absolute;
       border: 1px solid transparent;
       width: 0;
@@ -114,13 +113,16 @@ export default class TheSpeakerListSection extends Vue {
     &:hover::before {
       border-top-color: $primary-text-color;
       border-right-color: $primary-text-color;
-      transition: width 0.075s $easeOutExpo, height 0.075s $easeOutExpo 0.075s;
+      transition:
+        width 0.075s $easeOutExpo,
+        height 0.075s $easeOutExpo 0.075s;
     }
 
     &:hover::after {
       border-bottom-color: $primary-text-color;
       border-left-color: $primary-text-color;
-      transition: width 0.075s $easeOutExpo 0.15s,
+      transition:
+        width 0.075s $easeOutExpo 0.15s,
         height 0.075s $easeOutExpo 0.225s;
     }
 
