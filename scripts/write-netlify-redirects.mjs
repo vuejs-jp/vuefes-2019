@@ -5,10 +5,7 @@ const context = process.env.CONTEXT ?? "";
 const publishDir = resolve("dist");
 const redirectsPath = resolve(publishDir, "_redirects");
 
-const previewRedirects = [
-  "/ /2019/ 302",
-  "/2019 /2019/ 301",
-];
+const previewRedirects = ["/ /2019/ 302", "/2019 /2019/ 301"];
 
 if (context === "production") {
   await rm(redirectsPath, { force: true });
