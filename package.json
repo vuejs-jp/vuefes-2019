@@ -19,7 +19,7 @@
     "gsap": "^3.14.2",
     "marked": "^18.0.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^4.4.2"
+    "nuxt": "^4.4.7"
   },
   "devDependencies": {
     "@nuxt/test-utils": "^4.0.0",
